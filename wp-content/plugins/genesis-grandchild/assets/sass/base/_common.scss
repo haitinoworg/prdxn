@@ -1,0 +1,113 @@
+
+/*
+Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+
+/* Search Form
+--------------------------------------------- */
+
+.entry-header {
+	h1.entry-title,
+	h2.entry-title,
+	h3.entry-title,
+	h4.entry-title,
+	h5.entry-title,
+	h6.entry-title {
+		margin-top: 79px;
+		@include common-title();
+		@include title-after();
+	}
+	&:after { display: none; }
+}
+
+h1.entry-title,
+h2.entry-title,
+h3.entry-title,
+h4.entry-title,
+h5.entry-title,
+h6.entry-title {
+	margin-top: 79px;
+	@include common-title();
+	@include title-after();
+}
+
+.site-header {
+	.widget-area {
+		@include maxWidth(1140) { width: 83%;	}
+	}
+	.search-form{
+		float: right;
+		margin-top: 4px;
+	}
+}
+
+.entry-content,
+.site-header {
+	.search-form {
+		@include minWidth(1200) { width: 70px; }
+		width: auto;
+		overflow: hidden;
+	}
+}
+
+
+/* Titles
+--------------------------------------------- */
+
+.sidebar {
+	font-size: 24px;
+	text-align: left;
+
+	.entry-title {
+		font-size: 36px;
+		a {
+			color: #000;
+			&:hover { color: $cta-color;	}
+		}
+	}
+}
+
+		// Home Even odd section title and text styling
+		.home-even,
+		.home-odd {
+			// padding: 184px 0 200px;
+			height: calc(100vh - 70px);
+			// height: 100vh;
+			padding: 0;
+			position: relative;
+
+			.wrap { 
+				width: 93%;
+				margin: 0 auto;
+				padding: 0; 
+				position: relative;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%); 
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+
+			}
+
+			.widget { margin-bottom: 0; }
+
+			@include tab() { padding: 80px 0; }
+
+			.widget-title {	@include common-title(); }
+
+			.textwidget {
+				p { @include common-desc();	}
+				a.button {
+					@include cta();
+				}
+			}
+		}
+
+		#text-5 {
+			.button { margin: 30px 2% 0; }
+		}
+
+
+// Slider Cursor Pointer
+div#n2-ss-2 .n2-grab { 	cursor: default; }

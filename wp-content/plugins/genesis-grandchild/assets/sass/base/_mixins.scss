@@ -1,0 +1,130 @@
+
+
+// Mixin for box model css
+@mixin boxmodel($n1,$value1,$n2,$value2,$n3,$value3) {
+	#{nth($box-model,$n1)}: #{$value1};
+	#{nth($box-model,$n2)}: #{$value2};
+	#{nth($box-model,$n3)}: #{$value3};
+}
+
+
+// Css Properties and Values Mixin n arguments
+@mixin props($values...) {
+	@each $val in $values {
+		#{map-get($props,$val)}: #{map-get($css-values,$val)};
+	}
+}
+
+// Mixin for Border-radius property
+
+@mixin property($name,$value) {
+	-ms-#{$name}: $value;
+	-moz-#{$name}: $value;
+	-webkit-#{$name}: $value;
+	#{$name}: $value;
+}
+
+
+/*
+Media Queries ============================================
+*/
+
+/** User Defined Media Query Mixin **/
+@mixin maxWidth($max-width) {
+	@media screen and (max-width: #{$max-width}) {
+		@content;
+	}
+}
+
+@mixin minWidth($min-width) {
+	@media screen and (min-width: #{$min-width}) {
+		@content;
+	}
+}
+
+/*** Large Desktop Media Query Mixin **/
+
+@mixin lg() {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+
+/*** Desktop Media Query Mixin **/
+
+@mixin md() {
+	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+/*** Tab Media Query Mixin **/
+
+@mixin tab() {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+/*** Mobile Media Query Mixin **/
+
+@mixin mobile() {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+
+/*
+Common Mixins ============================================
+*/
+
+@mixin common-title() {
+	margin-bottom: 30px;
+	font: 57px/46px $font;
+	text-transform: capitalize;
+	text-align: center;
+	@include md() { font-size: 50px; }
+
+	@include mobile() { font-size: 35px; }
+}
+
+@mixin title-after() {
+	&:after {
+		border-bottom: 1px solid #000;
+		content: "";
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 30px;
+		width: 10%;
+	}
+}
+
+@mixin common-desc() {
+	@include boxmodel(2,"border-box",7,0,1,"");
+	font: 20px/33px $font;
+	@include md() { font-size: 23px; }
+	@include mobile() { font-size: 18px; }
+}
+
+@mixin cta() {
+	@include boxmodel(3,auto,5,10px 15px,7,30px 0 0);
+	border-color: $cta-color;
+	background-color: $cta-color;
+	color: #fff;
+	font: 14px $font;
+	@include tab() { background-color: #fff; }
+	&:focus {
+		border-color: $cta-color;
+		background-color: $cta-color;
+		color: #fff;
+	}
+	&:hover {
+		border-color: $cta-color;
+		background-color: $cta-color;
+
+		// important used here, to override parent theme styling
+		color: #fff !important;
+	}
+}
