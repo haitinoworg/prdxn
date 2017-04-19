@@ -21,54 +21,38 @@ Site Header
 
 		// Style to override theme style
 		@include maxWidth(960px) {
-			height: auto;
+			height: 90px;
 			padding-bottom: 0;
 		}
 
 		/* Title Area
 		--------------------------------------------- */
-		.title-area {
-			@include boxmodel(3,150px,4,auto,5,8px 0 0);
-
-			@include md() {
-				width: 15%;
-				display: inline-block;
-			}
-
-			@include tab() { width: 100px; }
-		}
+		.title-area { @include boxmodel(3,250px,4,auto,5,8px 0 0); }
 
 		/* Widget Area and Search Option
 		--------------------------------------------- */
 
 		// Widget Styling
 		.widget-area {
-			@include boxmodel(1," ",3,79%,5,9px 0 4px);
+			@include boxmodel(1," ",3,70%,5,9px 0 4px);
 			float: right;
 			text-align: right;
 
 			@include md() {
-				@include boxmodel(1,"",3,80%,5,0);
+				@include boxmodel(1,"",3,auto,5,0);
 				.nav-header {
 					text-align: right;
-					margin-top: 14px;
+					margin-top: 22px;
 				}
 			}
-
-			@include tab() { width: 70%;	}
-			@include mobile() { width: 65%; }
 		}
 
 		// divs alignments
 		.widget_nav_menu {
-			width: 81%;
+			width: 100%;
 			display: inline-block;
 			vertical-align: middle;
 			.widget-wrap { width: 100%; }
-
-			@include  tab() { width: 86.5%; }
-
-			@include mobile() { width: 67%; }
 		}
 
 
@@ -172,9 +156,16 @@ Site Header
 
 .header-image {	
 	.site-title {	
+		text-align: left;
 		a { 
+			padding: 22px 10px;
 			margin: 0; 
 			display: inline-block;
+			// Important used to override theme styling
+			color: #f16522 !important;
+			text-indent: 50px;
+			font-family: Roboto;
+			font-size: 16px;
 		}	
 	}	
 }

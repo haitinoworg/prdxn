@@ -51,25 +51,49 @@
 
 /* News
 --------------------------------------------- */
-
-.home-section-5 section {
+.home-odd.home-section-5 {
+	.wrap { 
+		width: 73%;
+		@include maxWidth(768px) {
+			width: 93%;
+		}
+	}
+}
+.home-odd.home-section-5 section {
 	width: 100%;
 	margin: 0 auto;
 	font: 16px $font;
 
-	.widget-title { margin-bottom: 30px; }
+	.widget-title { 
+		margin-bottom: 14px; 
+		color: #fff;
+		font: 26px $font;
+	}
 
 	form {
 		clear: both;
 		&>div { 
 			width: 25%;
 			float: left;
+
+			@include maxWidth(768px) {
+				width: 100%;
+				display: block;
+				float: none;
+			}
+
 			input { 
-				padding: 13px 12px;
+				margin-bottom: 4px;
+				padding: 11px 12px;
 				font: 16px $font;
 
+				@include mobile() {	margin-bottom: 0; }
+
 				&::-webkit-input-placeholder
-				{	color: #aaa;	}
+				{	
+					color: #aaa;	
+					font-size: 13px;
+				}
 				&::-moz-placeholder
 				{	color: #aaa;	}
 				&:-ms-input-placeholder
@@ -78,7 +102,7 @@
 				&:hover { border: 1px solid #aaa; }
 			}
 			input[type="submit"] { 
-				padding: 13px;
+				padding: 11px;
 				border: 1px solid #f16522;
 				background-color: #f16522;
 
@@ -89,7 +113,35 @@
 					color: #f16522; 
 				}
 			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: 0;
+				color: #f00;
+				font-size: 14px;
+				text-align: left;
+			}
 		}
 	}
+}
 
+.salesforce_w2l_lead {
+
+	form.w2llead {
+		&>div { 
+			input { margin-bottom: 4px; }
+			p {
+				margin-top: 0;
+				margin-bottom: 0;
+				color: #f00;
+				font-size: 14px;
+			}
+		}
+		.sf_field { min-height: 82px; }
+		
+	}
+	.submit {
+		border: 1px solid #f16522;
+		background-color: #f16522;
+	}
 }

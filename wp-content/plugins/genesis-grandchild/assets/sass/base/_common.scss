@@ -71,9 +71,7 @@ h6.entry-title {
 		// Home Even odd section title and text styling
 		.home-even,
 		.home-odd {
-			// padding: 184px 0 200px;
 			height: calc(100vh - 70px);
-			// height: 100vh;
 			padding: 0;
 			position: relative;
 
@@ -83,16 +81,22 @@ h6.entry-title {
 				padding: 0; 
 				position: relative;
 				top: 50%;
-				-webkit-transform: translateY(-50%);
-				-moz-transform: translateY(-50%); 
-				-ms-transform: translateY(-50%);
-				transform: translateY(-50%);
+				@include property(transform, translateY(-50%));
+
+				@include maxWidth(768px) {
+					position: static;		
+					@include property(transform, translateY(0%));
+				}
 
 			}
 
 			.widget { margin-bottom: 0; }
 
-			@include tab() { padding: 80px 0; }
+			@include tab() { 
+				box-sizing: initial;
+				height: auto;
+				padding: 80px 0; 
+			}
 
 			.widget-title {	@include common-title(); }
 
