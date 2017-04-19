@@ -1,0 +1,157 @@
+
+/* Program Page - Two Column Layout
+--------------------------------------------- */
+.page-template-page_twocolumns {
+	.content {
+		padding: 0;
+		// position: absolute;
+		div.entry {
+			@include boxmodel(3,93%,5,0,7,0 auto);
+			text-align: center;
+		}
+		article.entry {
+			@include boxmodel(3,93%,5,0,7,0 auto);
+			text-align: center;
+			.entry-content {
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					margin-top: 79px;
+					@include common-title();
+					@include title-after();
+				}
+
+				p {
+					@include common-desc();
+					margin-bottom: 50px;
+				}
+			}
+		}
+
+
+		// Default Posts Styling
+		.program-posts {
+			padding: 16px 0 65px;
+			text-align: center;
+
+			&>.entry { width: 78%; }
+			// Default Two Column Styling Ends Here
+			.button {
+				border: 3px solid #000;
+				@include cta();
+				@include props(bgw,cb);
+			}
+
+			// Default Two Column Styling Starts Here
+			.post-images {
+				@include boxmodel(1,"",3,44%,7,0 -3px 49px);
+				@include props(dib,tac,vat);
+
+				&:nth-of-type(2n) { margin-left: 12%;	}
+
+				// Responsive Styling
+				@include md() { width: 50%; }
+				@include tab() { width: 100%; }
+
+				&>a {
+					width: 100%;
+					max-height: 200px;
+					@include props(dib,ovh,e);
+					@include tab() { max-height: 300px;	}
+					@include mobile() { max-height: 158px; }
+				}
+
+				img {
+					@include boxmodel(1,"",3,100%,4,initial);
+					max-width: 100%;
+				}
+
+				// Video Styling Starts Here
+
+				iframe {
+					@include boxmodel(1,"",3,400px,4,200px);
+					@include md() {
+						@include boxmodel(1,"",3,300px,4,158px);
+					}
+					@include tab() {
+						@include boxmodel(1,"",3,500px,4,initial);
+					}
+					@include mobile() { width: 300px; }
+				}
+
+				// Video Styling Ends Here
+
+				.entry-content {
+					width: 400px;
+					@include props(dib,ovh);
+
+					@include md() { width: 300px; }
+					@include tab() { width: 100%; }
+					@include mobile() { width: 300px; }
+
+					h3,h4,h5,h6 {
+						margin-top: 15px;
+						font: 600 27px/32px $font;
+						text-transform: capitalize;
+					}
+					p {
+						margin: 0 0 15px;
+						font: 20px/26px $font;
+						@include mobile() { font-size: 18px; }
+					}
+				}
+
+
+			// Image Overlay styling Starts Here
+			&.content-image {
+				@include props(ovh);
+
+				&>a { @include props(posr);	}
+
+				.entry-content {
+					@include props(posa);
+					left: 50%;
+					@include props(ovh);
+					@include property(transform,translateX(-50%));
+					&, h3 {	color: #fff;	}
+					h3 { font-size: 22px;	}
+					p {
+						@include boxmodel(4,126px,5,0 25px 0 15px,1,"");
+						margin-right: -15px;
+						font-size: 18px;
+						@include props(ovh);
+
+						@include md() { height: 106px; }
+						@include tab() { height: 225px; }
+						@include mobile() { height: 88px; }
+					}
+				}
+
+				&>a:hover {
+					@include props(bgb);
+					img { opacity: 0.3;	}
+
+					.entry-content {
+						box-sizing: border-box;
+						@include property(animation,text-overlay 0.3s ease-in forwards);
+					}
+				}
+			}
+			// Image Overlay styling Ends Here
+		}
+	}
+		// Video and Image Posts styling Ends here
+	}
+}
+
+div#n2-ss-6 .n2-grab { cursor: default; }
+
+// Two Column Image Overlay Animation Keyframe
+
+@keyframes text-overlay {
+	from { top: 100%; }
+	to { top: 0; }
+}

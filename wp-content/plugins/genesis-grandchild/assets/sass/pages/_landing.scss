@@ -1,0 +1,35 @@
+
+/* Landing Page Template
+--------------------------------------------- */
+
+.parallax-landing {
+	font-family: $font;
+	.entry { @include boxmodel(1,"",5,0,7,0);	}
+	.site-inner {  margin: 0; }
+	.content {
+		@include boxmodel(3,93%,5,0,7,0 auto);
+		float: none;
+		.entry-content {
+			h1, h2 {
+				@include common-title();
+				background-color: #ddd;
+			}
+
+			h2,h3,h4,h5,h6 { text-align: left; }
+		}
+
+		h2,h3,h4,h5,h6 { margin-bottom: 8px; }
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a,
+		span { font-family: $font; }
+
+	}
+
+}

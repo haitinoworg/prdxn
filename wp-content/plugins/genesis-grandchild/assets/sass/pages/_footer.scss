@@ -5,7 +5,7 @@ Footer Widgets
 .footer-widgets {
 	padding: 40px 0;
 	clear: both;
-	background-color: #000;
+	background-color: #f9f9f9;
 	font: 16px $font;
 	
 
@@ -13,33 +13,81 @@ Footer Widgets
 
 		// Important used to override parallax-pro
 		a {
-			color: #fff !important;
+			color: #5f5f5f !important;
 			&:hover {
 				color: #f16522 !important;
 			}
 		}
 
+		p,
+		span { color: #5f5f5f !important; }
+
 		.footer-widgets-1 { 
 			width: 100%; 
 			clear: both;
+			.textwidget {
+				@include maxWidth(768px) {
+					text-align: center;
+					clear: both;
+
+					p { 
+						float: right; 
+						text-align: left;
+					}
+				}
+
+				@include mobile() {
+					p {
+						float: none;
+						text-align: center;
+					}
+				}
+			}
+
+			.title-area { 
+				width: 250px;
+				margin-bottom: 30px;
+				float: none; 
+
+				@include maxWidth(768px) {
+					width: auto;
+					float: left;
+					@include mobile() { float: none; }
+					.site-title { text-align: center; }
+				}
+			}
 		}
 
 		section {
-			width: 50%;
+			width: 30%;
 			padding-bottom: 25px;
 			margin-bottom: 0;
 			float: left;
 
+			
 			#menu-secondary-menus {
 				text-align: left;
+
+				@include maxWidth(768px) {
+					text-align: right;
+				}
 			}
 
 			#menu-secondary-menus>li {
-				width: 28%;
 				margin: 0;
 				display: inline-block;
 				text-align: left;
 				vertical-align: top;
+
+				@include maxWidth(768px) {
+					width: 32%;
+					text-align: left;
+				}
+
+				@include mobile() {
+					width: 100%;
+					text-align: center;
+				}
 
 
 				&>a { 
@@ -51,9 +99,17 @@ Footer Widgets
 				li { 
 					margin: 8px 0; 
 					font: 14px $font;
-					&:first-child { margin: 20px 0 8px; }
+					&:first-child { 
+						margin: 20px 0 8px; 
+						@include mobile() {
+							margin: 10px 0 5px;
+						}
+					}
+
 				}
 			}
+
+			&:last-child { width: 100%; }
 			
 		}
 
@@ -78,6 +134,14 @@ Footer Widgets
 		text-align: left;
 		padding-top: 0;
 
+		@include maxWidth(1024px) {
+			width: 40%;
+		}
+
+		@include maxWidth(768px) {
+			width: 100%;
+		}
+
 		@include mobile() {
 			width: 100%;
 			text-align: center;
@@ -98,9 +162,12 @@ Footer Widgets
 	
 	#text-11,
 	#text-12 { 
-		width: 25%; 
+		width: 30%; 
 		font: 14px $font;
-		text-align: right;
+		text-align: center;
+		@include maxWidth(1024px) {
+			width: 100%;
+		}
 		.textwidget {
 			a { 
 				margin: 0 5px;
@@ -112,16 +179,24 @@ Footer Widgets
 	}
 
 	#text-13 { 
-		width: 100%; 
 		border-top: 1px solid #636363;
+		margin-bottom: 0;
+
+		@include maxWidth(1024px) {
+			width: 100%;
+		}
 	}
 
 	#text-8 {
-		width: 44%;
+		width: 32%;
 		display: inline-block;
 		text-align: center;
 		font-size: 14px;
 		line-height: 30px;
+
+		@include maxWidth(1024px) {
+			width: 100%;
+		}
 		p span {
 			font-size: 15px;
 			font-weight: bolder;
@@ -176,6 +251,27 @@ Site Footer
 /**
 Footer Section-1
 */
-.home-section-5 {
-	background-color: #1b64ba;
+
+.footer-widgets #nav_menu-4 {
+	width: 38%;
+
+	@include maxWidth(1024px) {
+		width: 60%;
+	}
+
+	@include maxWidth(768px) {
+		width: 100%;
+	}
+
+	#menu-secondary-menus {
+		&>li:nth-child(2) {
+			padding: 0 8%;
+			@include maxWidth(480px) {
+				padding: 25px 0;
+			}
+		}
+		@include maxWidth(1024px) { text-align: right;}
+		@include maxWidth(768px) { text-align: left; }
+		@include mobile() { text-align: center;	}
+	}
 }

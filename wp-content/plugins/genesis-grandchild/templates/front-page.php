@@ -12,11 +12,9 @@ add_action( 'genesis_meta', 'parallax_home_genesis_meta' );
  *
  */
 
-// echo do_shortcode('[smartslider3 slider=3]');
-
 function parallax_home_genesis_meta() {
 
-	if ( is_active_sidebar( 'home-section-1' ) || is_active_sidebar( 'home-section-2' ) || is_active_sidebar( 'home-section-3' ) || is_active_sidebar( 'home-section-4' ) || is_active_sidebar( 'home-section-5' ) ) {
+	if ( is_active_sidebar( 'home-section-1' ) || is_active_sidebar( 'home-section-2' ) || is_active_sidebar( 'home-section-3' ) || is_active_sidebar( 'home-section-4' ) || is_active_sidebar( 'home-section-5' ) || is_active_sidebar( 'footer-after-1' ) ) {
 
 		//* Enqueue parallax script
 		add_action( 'wp_enqueue_scripts', 'parallax_enqueue_parallax_script' );
@@ -53,7 +51,7 @@ function parallax_home_genesis_meta() {
 		add_action( 'genesis_loop', 'parallax_homepage_widgets' );
 
 		// * Remove Footer
-		remove_action( 'genesis_footer', 'genesis_do_footer' );
+		add_action( 'genesis_footer', 'genesis_do_footer', 5 );
 
 	}
 }
@@ -93,6 +91,11 @@ function parallax_homepage_widgets() {
 
 	genesis_widget_area( 'home-section-5', array(
 		'before' => '<div class="home-odd home-section-5 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+		) );
+
+	genesis_widget_area( 'footer-after-1', array(
+		'before' => '<div class="footer after widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
 }
