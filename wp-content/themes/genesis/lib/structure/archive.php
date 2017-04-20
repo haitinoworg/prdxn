@@ -203,7 +203,7 @@ function genesis_do_blog_template_heading() {
 	}
 
 	printf( '<div %s>', genesis_attr( 'blog-template-description' ) );
-		genesis_do_post_title();
+	genesis_do_post_title();
 	echo '</div>';
 
 }
@@ -236,7 +236,7 @@ function genesis_do_posts_page_heading() {
 	}
 
 	printf( '<div %s>', genesis_attr( 'posts-page-description' ) );
-		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), get_the_title( $posts_page ) );
+	printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), get_the_title( $posts_page ) );
 	echo '</div>';
 
 }

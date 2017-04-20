@@ -118,9 +118,8 @@ Common Classes
 .entry-header h4.entry-title,
 .entry-header h5.entry-title,
 .entry-header h6.entry-title {
-  margin-top: 79px;
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
 }
@@ -167,9 +166,8 @@ h3.entry-title,
 h4.entry-title,
 h5.entry-title,
 h6.entry-title {
-  margin-top: 79px;
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
 }
@@ -247,31 +245,14 @@ h6.entry-title:after {
 
 .home-even,
 .home-odd {
-  height: calc(100vh - 70px);
-  padding: 0;
-  position: relative;
+  height: auto;
+  padding: 63px 0 64px;
 }
 .home-even .wrap,
 .home-odd .wrap {
   width: 93%;
   margin: 0 auto;
   padding: 0;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-@media screen and (max-width: 768px) {
-  .home-even .wrap,
-  .home-odd .wrap {
-    position: static;
-    -ms-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-  }
 }
 .home-even .widget,
 .home-odd .widget {
@@ -287,8 +268,8 @@ h6.entry-title:after {
 }
 .home-even .widget-title,
 .home-odd .widget-title {
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
 }
@@ -308,7 +289,7 @@ h6.entry-title:after {
 .home-odd .textwidget p {
   box-sizing: border-box;
   margin: 0;
-  font: 20px/33px Roboto, sans-serif;
+  font: 17px/26px Roboto, sans-serif;
 }
 @media screen and (max-width: 1024px) {
   .home-even .textwidget p,
@@ -375,6 +356,9 @@ Site Header
   /* Widget Area and Search Option
   --------------------------------------------- */
   /* Navigatin Menus*/
+}
+.site-container .site-header .responsive-menu-icon::before {
+  font: normal 32px/1 'dashicons';
 }
 .site-container .site-header .wrap {
   box-sizing: border-box;
@@ -626,6 +610,7 @@ Content Area
 }
 .site-inner .content .ptsCol {
   width: 32%;
+  height: auto;
   -ms-transform: scaleY(1.1);
   -moz-transform: scaleY(1.1);
   -webkit-transform: scaleY(1.1);
@@ -766,10 +751,10 @@ Content Area
 }
 .site-inner .content .home-section-4 {
   height: auto;
-  padding: 122px 0 155px;
+  padding: 63px 0 125px;
 }
 .site-inner .content .home-section-4 .widget-title {
-  margin-bottom: 82px;
+  margin-bottom: 94px;
 }
 .site-inner .content .home-section-4 .textwidget {
   width: 90%;
@@ -780,11 +765,14 @@ Content Area
   text-align: center;
 }
 .site-inner .content .home-section-4 .textwidget .ptsRows p {
-  width: 90%;
+  width: 83%;
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  font: 20px/33px Roboto, sans-serif;
+  font: 17px/26px Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  font: 17px/26px Roboto, sans-serif;
 }
 @media screen and (max-width: 1024px) {
   .site-inner .content .home-section-4 .textwidget .ptsRows p {
@@ -820,13 +808,24 @@ Content Area
   -ms-transform: translateY(0%);
   transform: translateY(0%);
 }
+.site-inner .content .home-section-1 {
+  height: calc(100vh - 70px);
+  padding: 0;
+}
 .site-inner .content .home-section-1 .wrap {
   width: 93%;
   margin: 0 auto;
-  top: 30%;
+  padding: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 @media screen and (max-width: 768px) {
   .site-inner .content .home-section-1 .wrap {
+    position: static;
     -ms-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -webkit-transform: translateY(0%);
@@ -836,7 +835,7 @@ Content Area
 .site-inner .content .home-section-1 h4 {
   width: 80%;
   margin-bottom: 5px;
-  font: 900 35px Roboto, sans-serif;
+  font: 900 39px Roboto, sans-serif;
   text-align: left;
 }
 .site-inner .content .home-section-1 section {
@@ -853,7 +852,7 @@ Content Area
 .site-inner .content .home-section-1 .textwidget {
   width: 77%;
   margin-bottom: 35px;
-  font: 19px/23px Roboto, sans-serif;
+  font: 17px/23px Roboto, sans-serif;
 }
 @media screen and (max-width: 1024px) {
   .site-inner .content .home-section-1 .textwidget {
@@ -874,19 +873,32 @@ Content Area
   color: #fff;
   background-color: #1e73be;
 }
+.site-inner .content .home-section-2 {
+  height: auto;
+}
+.site-inner .content .home-section-2 .wrap {
+  width: 70%;
+}
 .site-inner .content .home-section-2 section {
   box-sizing: border-box;
   width: 100%;
+  padding: 0;
 }
 .site-inner .content .home-section-2 section h3 {
-  font: 57px/46px Roboto, sans-serif;
+  font: 50px/46px Roboto, sans-serif;
 }
 .site-inner .content .home-section-2 section .statistics-inner {
+  padding: 0;
   margin-top: 30px;
 }
 .site-inner .content .home-section-2 section .statistics-inner .stat {
-  width: 32%;
-  margin: 0;
+  width: 26%;
+  margin: 0 0 0 7%;
+  background-color: #ddd;
+  padding: 40px 0;
+}
+.site-inner .content .home-section-2 section .statistics-inner .stat .number {
+  margin: 0 !important;
 }
 @media screen and (max-width: 768px) {
   .site-inner .content .home-section-2 section .statistics-inner .stat {
@@ -897,6 +909,7 @@ Content Area
 
 .home-section-5.home-odd {
   height: auto;
+  padding: 31px 0 5px;
   background-color: #2e2b2b;
   border-top: 1px solid #e3ffbc;
 }
@@ -905,7 +918,6 @@ Content Area
   color: #333333;
 }
 .home-section-5.home-odd .wrap {
-  padding: 31px 0 0px;
   position: static;
   -ms-transform: translateY(0%);
   -moz-transform: translateY(0%);
@@ -988,6 +1000,7 @@ Content Area
 * Home Section 3 Styling
 */
 .home-section-3 {
+  height: auto;
   background-color: #f2f2f2;
   clear: both;
 }
@@ -1001,16 +1014,12 @@ Content Area
   width: 48%;
   padding: 0;
   margin: 0;
-  height: 272px;
   overflow: hidden;
-  display: table;
   float: left;
   position: relative;
 }
-@media screen and (max-width: 1024px) {
-  .home-section-3 .featured-content article {
-    min-height: 200px;
-  }
+.home-section-3 .featured-content article .widget-title {
+  margin-bottom: 44px;
 }
 .home-section-3 .featured-content article:last-child {
   margin-left: 4%;
@@ -1018,7 +1027,6 @@ Content Area
 @media screen and (max-width: 768px) {
   .home-section-3 .featured-content article {
     width: 100%;
-    height: 300px;
     float: none;
   }
   .home-section-3 .featured-content article:last-child {
@@ -1027,8 +1035,8 @@ Content Area
 }
 .home-section-3 .featured-content article > a {
   width: 100%;
+  margin: 0 0 3px;
   display: block;
-  position: absolute;
   background-color: #000;
   -ms-transition: "0.3s linear";
   -moz-transition: "0.3s linear";
@@ -1036,30 +1044,23 @@ Content Area
   transition: "0.3s linear";
 }
 .home-section-3 .featured-content article > a img {
-  width: 507px;
-  max-width: 507px;
+  width: 100%;
+  height: auto;
+  max-width: auto;
   opacity: 0.5;
-}
-@media screen and (max-width: 1024px) {
-  .home-section-3 .featured-content article > a img {
-    width: 400px;
-    height: 200px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .home-section-3 .featured-content article > a img {
-    width: 615px;
-    max-width: 615px;
-    height: 300px;
-  }
 }
 .home-section-3 .featured-content article > a:hover img {
   opacity: 1;
 }
 .home-section-3 .featured-content article header.entry-header {
   width: 100%;
-  display: table-cell;
-  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .home-section-3 .featured-content article header.entry-header a {
   position: absolute;
@@ -1072,19 +1073,19 @@ Content Area
 .home-section-3 .featured-content article header.entry-header a:hover {
   color: #fff;
 }
-.home-section-3 .featured-content article header.entry-header h2 {
+.home-section-3 .featured-content article header.entry-header h2.entry-title {
   margin: 0;
   font: 23px Roboto, sans-serif;
   text-shadow: 0px 2px 2px #000;
 }
 @media screen and (max-width: 1024px) {
-  .home-section-3 .featured-content article header.entry-header h2 {
+  .home-section-3 .featured-content article header.entry-header h2.entry-title {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .home-section-3 .featured-content article header.entry-header h2 {
-    font-size: 25px;
+  .home-section-3 .featured-content article header.entry-header h2.entry-title {
+    font-size: calc(1.5vw + 10px);
   }
 }
 
@@ -1112,8 +1113,8 @@ Content Area
 .page-template-page_twocolumns .content article.entry .entry-content h5,
 .page-template-page_twocolumns .content article.entry .entry-content h6 {
   margin-top: 79px;
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
 }
@@ -1153,7 +1154,7 @@ Content Area
 .page-template-page_twocolumns .content article.entry .entry-content p {
   box-sizing: border-box;
   margin: 0;
-  font: 20px/33px Roboto, sans-serif;
+  font: 17px/26px Roboto, sans-serif;
   margin-bottom: 50px;
 }
 @media screen and (max-width: 1024px) {
@@ -1379,8 +1380,8 @@ div#n2-ss-6 .n2-grab {
   margin: 0 auto;
 }
 .archive .content-sidebar-wrap .entry-title {
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
   text-transform: uppercase;
@@ -1458,8 +1459,8 @@ Single Post Page Styling ==================================
 }
 .single .entry-title {
   margin-top: 79px;
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
 }
@@ -1590,8 +1591,8 @@ Single Post Page Styling ==================================
   float: none;
 }
 .parallax-landing .content .entry-content h1, .parallax-landing .content .entry-content h2 {
-  margin-bottom: 30px;
-  font: 57px/46px Roboto, sans-serif;
+  margin-bottom: 42px;
+  font: 50px/46px Roboto, sans-serif;
   text-transform: capitalize;
   text-align: center;
   background-color: #ddd;
@@ -1626,42 +1627,58 @@ Single Post Page Styling ==================================
 
 /* Contact Form
 --------------------------------------------- */
-.contact-form-7 .entry-content {
+.contact-form-7 h1.entry-title {
+  margin-top: 0;
+  margin-bottom: 45px;
+}
+.contact-form-7 h1.entry-title:after {
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 480px) {
+  .contact-form-7 h1.entry-title {
+    font: 50px Roboto, sans-serif;
+  }
+}
+.contact-form-7 .content {
+  width: 100%;
+}
+.contact-form-7 .content .entry-content {
   width: 62%;
   min-width: 692px;
+  padding-bottom: 36px;
   margin: 0 auto;
   font-family: Roboto, sans-serif;
 }
 @media screen and (max-width: 768px) {
-  .contact-form-7 .entry-content {
+  .contact-form-7 .content .entry-content {
     min-width: 275px;
   }
 }
-.contact-form-7 .entry-content label {
+.contact-form-7 .content .entry-content label {
   color: #000;
   font-size: 18px;
 }
-.contact-form-7 .entry-content form input + p,
-.contact-form-7 .entry-content form textarea + p,
-.contact-form-7 .entry-content form select + p {
+.contact-form-7 .content .entry-content form input + p,
+.contact-form-7 .content .entry-content form textarea + p,
+.contact-form-7 .content .entry-content form select + p {
   height: 30px;
   margin-bottom: 0;
   color: #f00;
   font: 13px/33px Roboto, sans-serif;
 }
-.contact-form-7 .entry-content form input,
-.contact-form-7 .entry-content form select,
-.contact-form-7 .entry-content form textarea {
+.contact-form-7 .content .entry-content form input,
+.contact-form-7 .content .entry-content form select,
+.contact-form-7 .content .entry-content form textarea {
   padding: 10px;
 }
-.contact-form-7 .entry-content form textarea {
+.contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
 }
-.contact-form-7 .entry-content form label {
+.contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
   display: block;
 }
-.contact-form-7 .entry-content .submit-button {
+.contact-form-7 .content .entry-content .submit-button {
   width: auto;
   padding: 10px 15px;
   margin: 30px 0 0;
@@ -1675,30 +1692,85 @@ Single Post Page Styling ==================================
   color: #000;
 }
 @media screen and (max-width: 768px) {
-  .contact-form-7 .entry-content .submit-button {
+  .contact-form-7 .content .entry-content .submit-button {
     background-color: #fff;
   }
 }
-.contact-form-7 .entry-content .submit-button:focus {
+.contact-form-7 .content .entry-content .submit-button:focus {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
 }
-.contact-form-7 .entry-content .submit-button:hover {
+.contact-form-7 .content .entry-content .submit-button:hover {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff !important;
+}
+.contact-form-7 .content .entry-content h1, .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
+  background-color: transparent;
+  font: 30px Roboto, sans-serif;
+  text-transform: capitalize;
+}
+.contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
+  margin: 38px 0 0;
+  text-align: left;
+}
+.contact-form-7 .content .entry-content tbody td {
+  text-align: left;
+}
+.contact-form-7 .content .entry-content p {
+  margin-bottom: 5px;
+}
+.contact-form-7 .content .entry-content p strong {
+  margin: 28px 0 8px;
+  display: block;
+  font: 700 20px Roboto, sans-serif;
+}
+.contact-form-7 article.entry {
+  padding: 63px 0 0;
+  border-bottom: 1px solid #ccc;
+}
+.contact-form-7 .email-us {
+  padding: 50px 0;
+  background-color: #f2f2f2;
+  font: 23px Roboto, sans-serif;
+  text-align: center;
+}
+.contact-form-7 .email-us p {
+  margin: 0;
+}
+.contact-form-7 .email-us a {
+  color: #5f5f5f;
+}
+.contact-form-7 .email-us a:hover {
+  color: #f16522;
+}
+.contact-form-7 .volunteer-form .sf_field {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+.contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
+  margin: 0 4.5%;
+}
+@media screen and (max-width: 480px) {
+  .contact-form-7 .volunteer-form .sf_field {
+    width: 100%;
+  }
+  .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
+    margin-left: 0;
+  }
+}
+.contact-form-7 .volunteer-form .sf_field:nth-child(7) {
+  width: 100%;
+  min-height: 102px;
+  margin-left: 0;
 }
 
 /* News
 --------------------------------------------- */
 .home-odd.home-section-5 .wrap {
   width: 73%;
-}
-@media screen and (max-width: 768px) {
-  .home-odd.home-section-5 .wrap {
-    width: 93%;
-  }
 }
 
 .home-odd.home-section-5 section {
@@ -1726,7 +1798,7 @@ Single Post Page Styling ==================================
   }
 }
 .home-odd.home-section-5 section form > div input {
-  margin-bottom: 4px;
+  margin-bottom: 0px;
   padding: 11px 12px;
   font: 16px Roboto, sans-serif;
 }
@@ -1770,8 +1842,61 @@ Single Post Page Styling ==================================
   text-align: left;
 }
 
-.salesforce_w2l_lead form.w2llead > div input {
-  margin-bottom: 4px;
+.salesforce_w2l_lead {
+  margin: 48px 0 40px;
+}
+.salesforce_w2l_lead form.w2llead > div input,
+.salesforce_w2l_lead form.w2llead > div select,
+.salesforce_w2l_lead form.w2llead > div textarea {
+  margin-bottom: 0px;
+  padding: 11px 12px;
+  font: 16px Roboto, sans-serif;
+  resize: none;
+}
+@media screen and (max-width: 480px) {
+  .salesforce_w2l_lead form.w2llead > div input,
+  .salesforce_w2l_lead form.w2llead > div select,
+  .salesforce_w2l_lead form.w2llead > div textarea {
+    margin-bottom: 0;
+  }
+}
+.salesforce_w2l_lead form.w2llead > div input:focus,
+.salesforce_w2l_lead form.w2llead > div select:focus,
+.salesforce_w2l_lead form.w2llead > div textarea:focus {
+  border: 1px solid #ddd;
+}
+.salesforce_w2l_lead form.w2llead > div input::-webkit-input-placeholder,
+.salesforce_w2l_lead form.w2llead > div textarea::-webkit-input-placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+.salesforce_w2l_lead form.w2llead > div input::-moz-placeholder,
+.salesforce_w2l_lead form.w2llead > div textarea::-moz-placeholder {
+  color: #aaa;
+}
+.salesforce_w2l_lead form.w2llead > div input:-ms-input-placeholder,
+.salesforce_w2l_lead form.w2llead > div textarea:-ms-input-placeholder {
+  color: #aaa;
+}
+.salesforce_w2l_lead form.w2llead > div select {
+  color: #aaa;
+}
+.salesforce_w2l_lead form.w2llead > div select option {
+  color: #000;
+}
+.salesforce_w2l_lead form.w2llead > div input[type="submit"] {
+  padding: 11px;
+  border: 1px solid #f16522;
+  background-color: #f16522;
+}
+@media screen and (max-width: 768px) {
+  .salesforce_w2l_lead form.w2llead > div input[type="submit"] {
+    width: 100%;
+  }
+}
+.salesforce_w2l_lead form.w2llead > div input[type="submit"]:hover {
+  background-color: #fff;
+  color: #f16522;
 }
 .salesforce_w2l_lead form.w2llead > div p {
   margin-top: 0;
@@ -1782,8 +1907,11 @@ Single Post Page Styling ==================================
 .salesforce_w2l_lead form.w2llead .sf_field {
   min-height: 82px;
 }
-.salesforce_w2l_lead .submit {
+.salesforce_w2l_lead .w2lsubmit {
+  min-width: 215px;
+  max-width: 216px;
   border: 1px solid #f16522;
+  margin: 0 auto;
   background-color: #f16522;
 }
 
@@ -1791,7 +1919,7 @@ Single Post Page Styling ==================================
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
-  padding: 40px 0;
+  padding: 53px 0 56px;
   clear: both;
   background-color: #f9f9f9;
   font: 16px Roboto, sans-serif;
@@ -1818,20 +1946,10 @@ Footer Widgets
     text-align: center;
     clear: both;
   }
-  .footer-widgets .footer-widgets-1 .textwidget p {
-    float: right;
-    text-align: left;
-  }
-}
-@media screen and (max-width: 480px) {
-  .footer-widgets .footer-widgets-1 .textwidget p {
-    float: none;
-    text-align: center;
-  }
 }
 .footer-widgets .footer-widgets-1 .title-area {
   width: 250px;
-  margin-bottom: 30px;
+  margin-bottom: 21px;
   float: none;
 }
 @media screen and (max-width: 768px) {
@@ -1878,8 +1996,11 @@ Footer Widgets
 }
 @media screen and (max-width: 480px) {
   .footer-widgets section #menu-secondary-menus > li {
-    width: 100%;
-    text-align: center;
+    width: 35%;
+    min-width: 120px;
+    margin: 0 auto;
+    text-align: left;
+    display: block;
   }
 }
 .footer-widgets section #menu-secondary-menus > li > a {
@@ -1901,6 +2022,7 @@ Footer Widgets
 }
 .footer-widgets section:last-child {
   width: 100%;
+  padding-bottom: 0;
 }
 .footer-widgets .wrap {
   width: 93%;
@@ -1920,6 +2042,7 @@ Footer Widgets
   width: 30%;
   text-align: left;
   padding-top: 0;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #text-7 {
@@ -1929,6 +2052,17 @@ Footer Widgets
 @media screen and (max-width: 768px) {
   .footer-widgets #text-7 {
     width: 100%;
+    padding-bottom: 0;
+  }
+  .footer-widgets #text-7 p {
+    float: right;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer-widgets #text-7 p {
+    float: none;
+    text-align: center;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1950,11 +2084,15 @@ Footer Widgets
   width: 30%;
   font: 14px Roboto, sans-serif;
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #text-11,
   .footer-widgets #text-12 {
     width: 100%;
+    padding-bottom: 30px;
   }
 }
 .footer-widgets #text-11 .textwidget a,
@@ -1969,6 +2107,7 @@ Footer Widgets
 .footer-widgets #text-13 {
   border-top: 1px solid #636363;
   margin-bottom: 0;
+  padding-bottom: 16px;
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #text-13 {
@@ -1977,6 +2116,7 @@ Footer Widgets
 }
 .footer-widgets #text-8 {
   width: 32%;
+  padding-bottom: 18px;
   display: inline-block;
   text-align: center;
   font-size: 14px;
@@ -1986,6 +2126,9 @@ Footer Widgets
   .footer-widgets #text-8 {
     width: 100%;
   }
+}
+.footer-widgets #text-8 p {
+  line-height: 20px;
 }
 .footer-widgets #text-8 p span {
   font-size: 15px;
@@ -2042,6 +2185,7 @@ Footer Section-1
 */
 .footer-widgets #nav_menu-4 {
   width: 38%;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #nav_menu-4 {
@@ -2051,6 +2195,8 @@ Footer Section-1
 @media screen and (max-width: 768px) {
   .footer-widgets #nav_menu-4 {
     width: 100%;
+    padding: 40px 0;
+    margin-bottom: 0;
   }
 }
 .footer-widgets #nav_menu-4 #menu-secondary-menus > li:nth-child(2) {
@@ -2074,6 +2220,23 @@ Footer Section-1
 @media screen and (max-width: 480px) {
   .footer-widgets #nav_menu-4 #menu-secondary-menus {
     text-align: center;
+  }
+}
+
+/*
+* Social Icons
+*/
+.social-icons a {
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  margin-left: 35px;
+  display: block;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .social-icons a {
+    margin: 10px;
   }
 }
 

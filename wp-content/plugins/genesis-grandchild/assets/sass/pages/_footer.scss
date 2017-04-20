@@ -3,7 +3,7 @@
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
-	padding: 40px 0;
+	padding: 53px 0 56px;
 	clear: both;
 	background-color: #f9f9f9;
 	font: 16px $font;
@@ -22,31 +22,21 @@ Footer Widgets
 		p,
 		span { color: #5f5f5f !important; }
 
-		.footer-widgets-1 { 
+		.footer-widgets-1  { 
 			width: 100%; 
 			clear: both;
 			.textwidget {
 				@include maxWidth(768px) {
 					text-align: center;
 					clear: both;
-
-					p { 
-						float: right; 
-						text-align: left;
-					}
 				}
 
-				@include mobile() {
-					p {
-						float: none;
-						text-align: center;
-					}
-				}
+				
 			}
 
 			.title-area { 
 				width: 250px;
-				margin-bottom: 30px;
+				margin-bottom: 21px;
 				float: none; 
 
 				@include maxWidth(768px) {
@@ -85,8 +75,11 @@ Footer Widgets
 				}
 
 				@include mobile() {
-					width: 100%;
-					text-align: center;
+					width: 35%;
+					min-width: 120px;
+					margin: 0 auto;
+					text-align: left;
+					display: block;
 				}
 
 
@@ -109,7 +102,10 @@ Footer Widgets
 				}
 			}
 
-			&:last-child { width: 100%; }
+			&:last-child { 
+				width: 100%; 
+				padding-bottom: 0;
+			}
 			
 		}
 
@@ -133,6 +129,7 @@ Footer Widgets
 		width: 30%;
 		text-align: left;
 		padding-top: 0;
+		padding-bottom: 0;
 
 		@include maxWidth(1024px) {
 			width: 40%;
@@ -140,6 +137,18 @@ Footer Widgets
 
 		@include maxWidth(768px) {
 			width: 100%;
+			padding-bottom: 0;
+			p {
+				float: right;
+				text-align: left;
+			}
+		}
+
+		@include mobile() {
+			p {
+				float: none;
+				text-align: center;
+			}
 		}
 
 		@include mobile() {
@@ -165,9 +174,14 @@ Footer Widgets
 		width: 30%; 
 		font: 14px $font;
 		text-align: center;
+		padding-top: 5px;
+		padding-bottom: 0;
+		margin-bottom: 0;
 		@include maxWidth(1024px) {
 			width: 100%;
+			padding-bottom: 30px;
 		}
+
 		.textwidget {
 			a { 
 				margin: 0 5px;
@@ -181,7 +195,7 @@ Footer Widgets
 	#text-13 { 
 		border-top: 1px solid #636363;
 		margin-bottom: 0;
-
+		padding-bottom: 16px;
 		@include maxWidth(1024px) {
 			width: 100%;
 		}
@@ -189,6 +203,7 @@ Footer Widgets
 
 	#text-8 {
 		width: 32%;
+		padding-bottom: 18px;
 		display: inline-block;
 		text-align: center;
 		font-size: 14px;
@@ -197,6 +212,7 @@ Footer Widgets
 		@include maxWidth(1024px) {
 			width: 100%;
 		}
+		p { line-height: 20px; }
 		p span {
 			font-size: 15px;
 			font-weight: bolder;
@@ -254,13 +270,15 @@ Footer Section-1
 
 .footer-widgets #nav_menu-4 {
 	width: 38%;
-
+	margin-bottom: 20px;
 	@include maxWidth(1024px) {
 		width: 60%;
 	}
 
-	@include maxWidth(768px) {
-		width: 100%;
+	@include maxWidth(768px) { 
+		width: 100%; 
+		padding: 40px 0;
+		margin-bottom: 0;
 	}
 
 	#menu-secondary-menus {
@@ -273,5 +291,89 @@ Footer Section-1
 		@include maxWidth(1024px) { text-align: right;}
 		@include maxWidth(768px) { text-align: left; }
 		@include mobile() { text-align: center;	}
+	}
+}
+
+/*
+* Social Icons
+*/
+
+.social-icons {
+	a {
+		box-sizing: border-box;
+		width: 25px;
+		height: 25px;
+		margin-left: 35px;
+		display: block;
+		text-align: center;
+
+		@include maxWidth(768px)  {
+			margin: 10px;
+		}
+
+		// &[title="Facebook"] {
+		// 	img { 
+		// 		width: 8px; 
+		// 		height: 18px;
+		// 		margin-left: 8px !important
+		// 	}
+		// }
+
+		// &[title="Google Plus"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Pinterest"] {
+		// 	img { 
+		// 		width: 18px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Twitter"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Youtube"] {
+		// 	img { 
+		// 		width: 16px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Scoop It"] {
+		// 	img { 
+		// 		width: 16px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Quora"] {
+		// 	img { 
+		// 		width: 18px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Amazon"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="eBay"] {
+		// 	padding-top: 14px;
+		// 	img { 
+		// 		width: 29px;
+		// 		height: 10px;
+		// 	}
+		// }
 	}
 }

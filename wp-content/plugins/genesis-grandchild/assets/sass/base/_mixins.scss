@@ -81,8 +81,8 @@ Common Mixins ============================================
 */
 
 @mixin common-title() {
-	margin-bottom: 30px;
-	font: 57px/46px $font;
+	margin-bottom: 42px;
+	font: 50px/46px $font;
 	text-transform: capitalize;
 	text-align: center;
 	@include md() { font-size: 50px; }
@@ -103,7 +103,7 @@ Common Mixins ============================================
 
 @mixin common-desc() {
 	@include boxmodel(2,"border-box",7,0,1,"");
-	font: 20px/33px $font;
+	font: 17px/26px $font;
 	@include md() { font-size: 23px; }
 	@include mobile() { font-size: 18px; }
 }

@@ -13,7 +13,9 @@ Site Header
 		top: 0;
 		z-index: 999;
 
-
+		.responsive-menu-icon::before {
+			font: normal 32px/1 'dashicons';
+		}
 		.wrap {
 			@include boxmodel(2,border-box,3,93%,5,10px 0);
 			@include md() { width: 93%; }
