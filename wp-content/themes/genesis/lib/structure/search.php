@@ -58,7 +58,7 @@ function genesis_search_form() {
 				$value_or_placeholder,
 				esc_attr( $search_text ),
 				esc_attr( $button_text )
-			);
+				);
 
 		} else {
 
@@ -69,7 +69,7 @@ function genesis_search_form() {
 				$value_or_placeholder,
 				esc_attr( $search_text ),
 				esc_attr( $button_text )
-			);
+				);
 		}
 
 
@@ -83,7 +83,7 @@ function genesis_search_form() {
 			esc_attr( $onfocus ),
 			esc_attr( $onblur ),
 			esc_attr( $button_text )
-		);
+			);
 
 	}
 

@@ -14,7 +14,6 @@ Common Classes
 	h4.entry-title,
 	h5.entry-title,
 	h6.entry-title {
-		margin-top: 79px;
 		@include common-title();
 		@include title-after();
 	}
@@ -27,7 +26,6 @@ h3.entry-title,
 h4.entry-title,
 h5.entry-title,
 h6.entry-title {
-	margin-top: 79px;
 	@include common-title();
 	@include title-after();
 }
@@ -71,23 +69,13 @@ h6.entry-title {
 		// Home Even odd section title and text styling
 		.home-even,
 		.home-odd {
-			height: calc(100vh - 70px);
-			padding: 0;
-			position: relative;
-
+			height: auto;
+			padding: 63px 0 64px;
+			
 			.wrap { 
 				width: 93%;
 				margin: 0 auto;
 				padding: 0; 
-				position: relative;
-				top: 50%;
-				@include property(transform, translateY(-50%));
-
-				@include maxWidth(768px) {
-					position: static;		
-					@include property(transform, translateY(0%));
-				}
-
 			}
 
 			.widget { margin-bottom: 0; }

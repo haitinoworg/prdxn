@@ -13,7 +13,7 @@ add_action( 'customize_register', 'parallax_customizer' );
 function parallax_customizer(){
 
 	require_once( get_stylesheet_directory() . '/lib/customize.php' );
-	
+
 }
 
 //* Include Section Image CSS
@@ -54,7 +54,7 @@ add_filter( 'wp_nav_menu_args', 'parallax_secondary_menu_args' );
 function parallax_secondary_menu_args( $args ){
 
 	if( 'secondary' != $args['theme_location'] )
-	return $args;
+		return $args;
 
 	$args['depth'] = 1;
 	return $args;
@@ -72,7 +72,7 @@ add_theme_support( 'genesis-style-selector', array(
 	'parallax-pro-green'  => __( 'Parallax Pro Green', 'parallax' ),
 	'parallax-pro-orange' => __( 'Parallax Pro Orange', 'parallax' ),
 	'parallax-pro-pink'   => __( 'Parallax Pro Pink', 'parallax' ),
-) );
+	) );
 
 //* Unregister secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
@@ -83,7 +83,7 @@ add_theme_support( 'custom-header', array(
 	'height'          => 70,
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
-) );
+	) );
 
 //* Add support for structural wraps
 add_theme_support( 'genesis-structural-wraps', array(
@@ -92,7 +92,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'subnav',
 	'footer-widgets',
 	'footer',
-) );
+	) );
 
 //* Modify the size of the Gravatar in the author box
 add_filter( 'genesis_author_box_gravatar_size', 'parallax_author_box_gravatar' );
@@ -127,24 +127,26 @@ genesis_register_sidebar( array(
 	'id'          => 'home-section-1',
 	'name'        => __( 'Home Section 1', 'parallax' ),
 	'description' => __( 'This is the home section 1 section.', 'parallax' ),
-) );
+	) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-2',
 	'name'        => __( 'Home Section 2', 'parallax' ),
 	'description' => __( 'This is the home section 2 section.', 'parallax' ),
-) );
+	) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-3',
 	'name'        => __( 'Home Section 3', 'parallax' ),
 	'description' => __( 'This is the home section 3 section.', 'parallax' ),
-) );
+	) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-4',
 	'name'        => __( 'Home Section 4', 'parallax' ),
 	'description' => __( 'This is the home section 4 section.', 'parallax' ),
-) );
+	) );
+
+// Custome Section Registering
 genesis_register_sidebar( array(
 	'id'          => 'home-section-5',
 	'name'        => __( 'Home Section 5', 'parallax' ),
 	'description' => __( 'This is the home section 5 section.', 'parallax' ),
-) );
+	) );
