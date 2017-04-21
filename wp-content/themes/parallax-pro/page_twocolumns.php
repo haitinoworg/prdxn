@@ -47,7 +47,7 @@ function programs_loop() {
 		if($post_style == "Content Default") {
 			get_template_part( 'template-parts/page/content', 'default' );
 		}	elseif($post_style == "Products") {
-			get_template_part( 'template-parts/page/content', 'products' );
+			get_template_part( 'template-parts/page/content', 'pages' );
 		} elseif($post_style == "Image with Overlay") {
 			get_template_part( 'template-parts/page/content', 'image' );
 
