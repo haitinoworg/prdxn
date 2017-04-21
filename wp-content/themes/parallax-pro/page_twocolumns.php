@@ -16,8 +16,10 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 add_action( 'genesis_before_entry', 'programs_featured_image' );
 function programs_featured_image() {
 	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" /><header class="entry-header"><h1 class="entry-title" itemprop="headline">', $image, the_title_attribute( 'echo=0' ) );
-		echo the_title(). '</h1></header></div>';
+		echo '<div class="programs-hero-image"><div class="wrap">';
+		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
+		printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
+		echo '</div>';
 
 	}
 

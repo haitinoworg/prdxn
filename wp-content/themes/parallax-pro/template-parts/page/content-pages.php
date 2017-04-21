@@ -29,7 +29,7 @@ foreach( $videos as $args ) : setup_postdata( $args );
 
 	//* Condition for checking post thumbnail
 ?>
-<div class="post-images content-default" >
+<div class="post-images" >
 	<?php 
 	
 	
