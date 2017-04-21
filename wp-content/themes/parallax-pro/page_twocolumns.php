@@ -11,6 +11,19 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 // echo get_page_template_slug( $post_id );
 
 
+
+// * Add the featured image after post title
+add_action( 'genesis_before_entry', 'programs_featured_image' );
+function programs_featured_image() {
+	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
+		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
+		echo '<header class="entry-header"><h1 class="entry-title" itemprop="headline">' .the_title(). '</h1> 
+	</header></div>';
+
+}
+
+}
+
 // Add our custom loop
 // remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'programs_loop' );
@@ -50,19 +63,6 @@ function programs_loop() {
 
 }
 
-
-// * Add the featured image after post title
-add_action( 'genesis_before_entry', 'programs_featured_image' );
-function programs_featured_image() {
-	$title = the_title();
-	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
-		echo '<header class="entry-header"><h1 class="entry-title" itemprop="headline">' .the_title(). '</h1> 
-	</header></div>';
-
-}
-
-}
 
 add_action('genesis_after_sidebar_widget_area','custom_sidebar');
 
