@@ -104,7 +104,7 @@ Common Mixins ============================================
 @mixin common-desc() {
 	@include boxmodel(2,"border-box",7,0,1,"");
 	font: 17px/26px $font;
-	@include md() { font-size: 23px; }
+	@include md() { font-size: 17px; }
 	@include mobile() { font-size: 18px; }
 }
 

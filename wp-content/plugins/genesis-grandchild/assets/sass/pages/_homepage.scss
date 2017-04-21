@@ -220,11 +220,6 @@ Content Area
 				position: relative;
 				top: 50%;
 				@include property(transform, translateY(-50%));
-
-				@include maxWidth(768px) {
-					position: static;		
-					@include property(transform, translateY(0%));
-				}
 			}
 			h4 { 
 				width: 80%;

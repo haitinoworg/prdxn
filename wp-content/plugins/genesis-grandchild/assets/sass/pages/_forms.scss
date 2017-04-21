@@ -4,27 +4,19 @@
 
 .contact-form-7 {
 
-	h1.entry-title {
-		margin-top: 0;
-		margin-bottom: 45px;
-
-		&:after { padding-bottom: 20px;	}
-
-		@include mobile() {
-			font: 50px $font;
-		}
-	}
-
 	.content {
 
 		width: 100%;
 
 		// Form Styling
 
+		article.entry {
+			padding: 63px 0 0;
+		}
+
 		.entry-content {
 			width: 62%;
 			min-width: 692px;
-			padding-bottom: 36px;
 			margin: 0 auto;
 			font-family: $font;
 
@@ -96,10 +88,7 @@
 
 	// Volunteer Heading Styilng
 
-	article.entry {
-		padding: 63px 0 0;
-		border-bottom: 1px solid #ccc;
-	}
+
 
 	.email-us {
 		padding: 50px 0;
@@ -137,6 +126,16 @@
 				min-height: 102px;
 				margin-left: 0;
 			}
+		}
+	}
+
+	.salesforce_w2l_lead {
+		.w2lsubmit {
+			min-width: 215px;
+			max-width: 216px;
+			border: 1px solid #f16522;
+			margin: 48px auto 64px;
+			background-color: #f16522;
 		}
 	}
 
@@ -278,12 +277,6 @@
 		}
 
 	}
-	.w2lsubmit {
-		min-width: 215px;
-		max-width: 216px;
-		border: 1px solid #f16522;
-		margin: 0 auto;
-		background-color: #f16522;
-	}
+	
 }
 

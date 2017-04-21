@@ -116,7 +116,6 @@ Site Header
 				.sub-menu {
 					width: auto;
 					padding: 20px 0 0 12px;
-					@include property(transform,translateX(-13px));
 					a, a:hover {
 						line-height: 20px;
 						padding: 0 15px 15px;

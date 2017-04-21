@@ -16,11 +16,10 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 add_action( 'genesis_before_entry', 'programs_featured_image' );
 function programs_featured_image() {
 	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
-		echo '<header class="entry-header"><h1 class="entry-title" itemprop="headline">' .the_title(). '</h1> 
-	</header></div>';
+		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" /><header class="entry-header"><h1 class="entry-title" itemprop="headline">', $image, the_title_attribute( 'echo=0' ) );
+		echo the_title(). '</h1></header></div>';
 
-}
+	}
 
 }
 

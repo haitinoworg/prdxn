@@ -1,0 +1,16 @@
+.single-post {
+
+
+	
+
+	.entry-content {
+		width: 62%;
+		min-width: 692px;
+		padding-bottom: 36px;
+		margin: 0 auto;
+		font-family: $font;
+
+		@include tab() { min-width: 275px; }
+
+	}
+}

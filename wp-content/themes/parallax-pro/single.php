@@ -11,13 +11,13 @@ remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
 
-// * Add the featured image after post title
-add_action( 'genesis_before_entry', 'programs_featured_image' );
-function programs_featured_image() {
-	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" /></div>', $image, the_title_attribute( 'echo=0' ) );
-	}
-}
+// // * Add the featured image after post title
+// add_action( 'genesis_before_entry', 'programs_featured_image' );
+// function programs_featured_image() {
+// 	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
+// 		printf( '<div class="programs-hero-image"><img src="%s" alt="%s" /></div>', $image, the_title_attribute( 'echo=0' ) );
+// 	}
+// }
 
 
 add_action( 'genesis_entry_footer', 'programs_custom_video' );

@@ -10,10 +10,7 @@
 		@include boxmodel(3,93%,5,0,7,0 auto);
 		float: none;
 		.entry-content {
-			h1, h2 {
-				@include common-title();
-				background-color: #ddd;
-			}
+			h1, h2 { @include common-title();}
 
 			h2,h3,h4,h5,h6 { text-align: left; }
 		}

@@ -13,28 +13,55 @@
 			@include boxmodel(3,93%,5,0,7,0 auto);
 			text-align: center;
 			.entry-content {
-				h1,
-				h2,
-				h3,
-				h4,
-				h5,
-				h6 {
-					margin-top: 79px;
-					@include common-title();
-					@include title-after();
-				}
-
+				padding: 42px 0;
 				p {
 					@include common-desc();
-					margin-bottom: 50px;
+					margin-bottom: 0;
 				}
 			}
 		}
 
 
-		// Default Posts Styling
+		/*
+		* Default Posts Styling -----------------
+		*/
+
+		// Hero Image
+		.programs-hero-image {
+			@include boxmodel(1,"",3,100%,4,250px);
+			max-height: 266px;
+			position: relative;
+			overflow: hidden;
+			@include md() { max-height: 374px; }
+			img { width: 100%; }
+
+			.entry-header {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				@include property(transform,translateY(-50%));
+				.entry-title {
+					color: #fff;
+					&:after {
+						border-color: #fff;
+					}
+				}
+			}
+		}
+
+		.post_content {
+			@include boxmodel(1,border-box,3,49.7%,5,0 0 0 3%);
+			@include md() { padding: 25px 0 0;	}
+
+			a {
+				color: #000;
+				font: 27px/23px $font;
+				&:hover { color: $cta-color; }
+			}
+
+		}
+
 		.program-posts {
-			padding: 16px 0 65px;
 			text-align: center;
 
 			&>.entry { width: 78%; }
@@ -46,28 +73,24 @@
 			}
 
 			// Default Two Column Styling Starts Here
-			.post-images {
-				@include boxmodel(1,"",3,44%,7,0 -3px 49px);
-				@include props(dib,tac,vat);
-
-				&:nth-of-type(2n) { margin-left: 12%;	}
-
-				// Responsive Styling
-				@include md() { width: 50%; }
-				@include tab() { width: 100%; }
+			.content-default {
+				width: 100%;
+				@include props(db,tac);
 
 				&>a {
 					width: 100%;
-					max-height: 200px;
-					@include props(dib,ovh,e);
+					max-height: 300px;
+					@include props(db);
 					@include tab() { max-height: 300px;	}
 					@include mobile() { max-height: 158px; }
-				}
+					overflow: hidden;
 
-				img {
-					@include boxmodel(1,"",3,100%,4,initial);
-					max-width: 100%;
+					img { @include boxmodel(1,"",3,100%,4,100%); }
 				}
+			}
+			.post-images {
+				
+				
 
 				// Video Styling Starts Here
 
