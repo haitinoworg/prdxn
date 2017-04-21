@@ -41,11 +41,22 @@ foreach( $videos as $post ) : setup_postdata( $post );
 			?>
 		</a>
 		<?php
+	} else {
+		?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			<?php 
+
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png" />';
+			?>
+		</a>
+		<?php
 	}
 	?>
-
-	<h3><?php the_title(); ?></h3>
-	<?php the_excerpt(); ?>
+	<div class="entry-content">
+		<h3><?php the_title(); ?></h3>
+		<?php the_excerpt(); ?>
+	</div>
 </div>
 
 <?php 

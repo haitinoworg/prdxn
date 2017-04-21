@@ -75,14 +75,15 @@
 			// Default Two Column Styling Starts Here
 			.content-default {
 				width: 100%;
+				@include boxmodel(1,"",3,100%,5,0 0 37px);
 				@include props(db,tac);
 
 				&>a {
 					width: 100%;
-					max-height: 300px;
+					max-height: 400px;
 					@include props(db);
-					@include tab() { max-height: 300px;	}
-					@include mobile() { max-height: 158px; }
+					@include tab() { max-height: 200px;	}
+					@include mobile() { max-height: 136px; }
 					overflow: hidden;
 
 					img { @include boxmodel(1,"",3,100%,4,100%); }
@@ -108,21 +109,19 @@
 				// Video Styling Ends Here
 
 				.entry-content {
-					width: 400px;
+					width: 60%;
 					@include props(dib,ovh);
+					@include tab() { width: 80%; }
+					@include mobile() {	width: 100%; }
 
-					@include md() { width: 300px; }
-					@include tab() { width: 100%; }
-					@include mobile() { width: 300px; }
 
 					h3,h4,h5,h6 {
-						margin-top: 15px;
-						font: 600 27px/32px $font;
-						text-transform: capitalize;
+						margin-top: 25px;
+						@include sub-title();
 					}
 					p {
 						margin: 0 0 15px;
-						font: 20px/26px $font;
+						
 						@include mobile() { font-size: 18px; }
 					}
 				}
