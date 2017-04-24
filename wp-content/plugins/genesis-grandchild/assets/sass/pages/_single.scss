@@ -1,8 +1,5 @@
 .single-post {
 
-
-	
-
 	.entry-content {
 		width: 62%;
 		min-width: 692px;
@@ -13,4 +10,27 @@
 		@include tab() { min-width: 275px; }
 
 	}
+}
+
+/*
+* Single Programs Styling  -----------------------------
+*/
+
+.single-programs {
+	.wrap { 
+		width: 93%; 
+		@include mobile() { padding: 45px 0 0; }
+	}
+	.one-half { 
+		padding: 45px 0 0;
+		text-align: left; 
+		@include mobile() {
+			padding: 0 0 0;
+			width: 100%;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 { margin-bottom: 5px; }
+
+	p { margin: 0 0 30px; }
 }

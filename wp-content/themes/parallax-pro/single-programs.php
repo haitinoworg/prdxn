@@ -34,10 +34,16 @@
 	// * Post List Content
 	add_action('genesis_after_entry','custom_list_content');
 	function custom_list_content() {
-		$list_content = get_field('list-content');
-		if($list_content) {
-			echo $list_content;
+		$list_title = get_field('list-title');
+		$left_content = get_field('left_column_topic');
+		$right_content = get_field('right_column_topic');
+		if($list_title) {	echo '<h2>'. $list_title . '</h2>';	} 
+		else { echo '';	}
+		if($left_content && $right_content) {	
+			echo '<div class="wrap"><div class="one-half first">'. $left_content . '</div>';
+			echo '<div class="one-half">' . $right_content . '</div></div>';
 		} else { echo '';	}
+
 	}
 
 

@@ -26,57 +26,6 @@
 		* Default Posts Styling -----------------
 		*/
 
-		// Hero Image
-		.programs-hero-image {
-			@include boxmodel(1,"",3,100%,4,250px);
-			max-height: 266px;
-			position: relative;
-			overflow: hidden;
-			@include md() { max-height: 374px; }
-			img { width: 100%; }
-
-			.entry-header {
-				width: 100%;
-				position: absolute;
-				top: 50%;
-				@include property(transform,translateY(-50%));
-				.entry-title {
-					color: #fff;
-					&:after {
-						border-color: #fff;
-					}
-				}
-			}
-
-			.wrap {
-				box-sizing: border-box;
-				width: 93%;
-			}
-			form {
-				width: 40%;
-				display: inline-block;
-				position: absolute;
-				top: 50%;
-				@include property(transform,translateY(-50%));
-				.donation-box {
-					width: 100%;
-					margin-bottom: 20px;
-					text-align: center;
-					span {
-						width: 11%;
-						display: inline-block;
-						color: #aaa;
-						font: 19px Roboto, sans-serif;
-
-						&:first-child {
-							width: 5%;
-						}
-					}
-				}
-				button { width: 100%; }
-			}
-		}
-
 		.post_content {
 			@include boxmodel(1,border-box,3,49.7%,5,0 0 0 3%);
 			@include md() { padding: 25px 0 0;	}
@@ -216,6 +165,13 @@
 	}
 		// Video and Image Posts styling Ends here
 	}
+
+	.common-links {
+		@include cta();
+		background-color: #f16522;
+		padding: 10px 25px;
+		line-height: 20px;
+	}
 }
 
 div#n2-ss-6 .n2-grab { cursor: default; }
@@ -226,3 +182,6 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	from { top: 100%; }
 	to { top: 0; }
 }
+
+@include donation-hero-content();
+

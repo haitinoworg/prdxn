@@ -1115,67 +1115,6 @@ Content Area
     font-size: 18px;
   }
 }
-.page-template-page_twocolumns .content .programs-hero-image {
-  width: 100%;
-  height: 250px;
-  max-height: 266px;
-  position: relative;
-  overflow: hidden;
-}
-@media screen and (max-width: 1024px) {
-  .page-template-page_twocolumns .content .programs-hero-image {
-    max-height: 374px;
-  }
-}
-.page-template-page_twocolumns .content .programs-hero-image img {
-  width: 100%;
-}
-.page-template-page_twocolumns .content .programs-hero-image .entry-header {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.page-template-page_twocolumns .content .programs-hero-image .entry-header .entry-title {
-  color: #fff;
-}
-.page-template-page_twocolumns .content .programs-hero-image .entry-header .entry-title:after {
-  border-color: #fff;
-}
-.page-template-page_twocolumns .content .programs-hero-image .wrap {
-  box-sizing: border-box;
-  width: 93%;
-}
-.page-template-page_twocolumns .content .programs-hero-image form {
-  width: 40%;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.page-template-page_twocolumns .content .programs-hero-image form .donation-box {
-  width: 100%;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.page-template-page_twocolumns .content .programs-hero-image form .donation-box span {
-  width: 11%;
-  display: inline-block;
-  color: #aaa;
-  font: 19px Roboto, sans-serif;
-}
-.page-template-page_twocolumns .content .programs-hero-image form .donation-box span:first-child {
-  width: 5%;
-}
-.page-template-page_twocolumns .content .programs-hero-image form button {
-  width: 100%;
-}
 .page-template-page_twocolumns .content .post_content {
   : border-box;
   width: 49.7%;
@@ -1373,6 +1312,33 @@ Content Area
   -webkit-animation: text-overlay 0.3s ease-in forwards;
   animation: text-overlay 0.3s ease-in forwards;
 }
+.page-template-page_twocolumns .common-links {
+  width: auto;
+  padding: 10px 15px;
+  margin: 30px 0 0;
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+  font: 14px Roboto, sans-serif;
+  background-color: #f16522;
+  padding: 10px 25px;
+  line-height: 20px;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .common-links {
+    background-color: #fff;
+  }
+}
+.page-template-page_twocolumns .common-links:focus {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+}
+.page-template-page_twocolumns .common-links:hover {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff !important;
+}
 
 div#n2-ss-6 .n2-grab {
   cursor: default;
@@ -1386,6 +1352,63 @@ div#n2-ss-6 .n2-grab {
     top: 0;
   }
 }
+.programs-hero-image {
+  width: 100%;
+  height: 300px;
+  max-height: 310px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .programs-hero-image {
+    max-height: 400px;
+  }
+}
+.programs-hero-image img {
+  width: 100%;
+}
+.programs-hero-image h1, .programs-hero-image h2, .programs-hero-image h3, .programs-hero-image h4, .programs-hero-image h5, .programs-hero-image h6 {
+  width: 100%;
+  color: #fff;
+}
+.programs-hero-image .wrap {
+  box-sizing: border-box;
+  width: 93%;
+  color: #fff;
+}
+.programs-hero-image .hero-content {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.programs-hero-image form {
+  width: 100%;
+  display: inline-block;
+}
+.programs-hero-image form .donation-box {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.programs-hero-image form .donation-box span {
+  width: 11%;
+  display: inline-block;
+  color: #aaa;
+  font: 19px Roboto, sans-serif;
+}
+.programs-hero-image form .donation-box span:first-child {
+  width: 5%;
+}
+.programs-hero-image form button {
+  width: 100%;
+}
+.programs-hero-image .direct-stripe-button:hover {
+  background-color: #1e73be;
+}
+
 .archive .content {
   padding: 0;
 }
@@ -1435,40 +1458,6 @@ Single Post Page Styling ==================================
   padding: 0 0 60px;
   float: none;
 }
-.single h1.entry-title {
-  margin-bottom: 42px;
-  font: 50px/46px Roboto, sans-serif;
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 45px;
-}
-@media screen and (max-width: 1024px) {
-  .single h1.entry-title {
-    font-size: 50px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .single h1.entry-title {
-    font-size: 35px;
-  }
-}
-.single h1.entry-title:after {
-  border-bottom: 1px solid #000;
-  content: "";
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 30px;
-  width: 10%;
-}
-.single h1.entry-title:after {
-  padding-bottom: 20px;
-}
-@media screen and (max-width: 480px) {
-  .single h1.entry-title {
-    font: 50px Roboto, sans-serif;
-  }
-}
 .single .entry-content {
   text-align: left;
 }
@@ -1476,67 +1465,57 @@ Single Post Page Styling ==================================
   margin: 0 0 11px;
 }
 .single article.entry {
-  width: 73.8%;
-  padding: 63px 0 0;
-  border-bottom: 1px solid #ccc;
+  padding: 0;
+  margin-bottom: 63px;
+  background-color: #f2f2f2;
+}
+.single article.entry .entry-content {
+  width: 70%;
+  padding: 63px 0;
   margin: 0 auto;
-}
-.single article.entry .lightbox-video div {
-  width: 47.5%;
-  display: inline-block;
-}
-.single article.entry .lightbox-video div:nth-of-type(2n) {
-  margin-left: 4%;
+  clear: both;
 }
 @media screen and (max-width: 768px) {
-  .single article.entry .lightbox-video div:nth-of-type(2n) {
-    margin-left: 0;
+  .single article.entry .entry-content {
+    width: 93%;
   }
 }
-@media screen and (max-width: 768px) {
-  .single article.entry .lightbox-video div {
+@media screen and (max-width: 480px) {
+  .single article.entry .entry-content {
+    text-align: center;
+  }
+}
+.single article.entry,
+.single article.entry p {
+  text-align: center;
+}
+.single article.entry ul {
+  width: 65%;
+  margin: 30px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1024px) {
+  .single article.entry ul {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .single article.entry ul {
+    width: 60%;
+    min-width: 260px;
+    display: inline-block;
+    text-align: left;
+  }
+}
+.single article.entry ul li {
+  width: 49%;
+  margin: 5px 0;
+  list-style-position: inside;
+}
+@media screen and (max-width: 480px) {
+  .single article.entry ul li {
     width: 100%;
-    display: block;
-  }
-}
-.single article.entry .lightbox-video div.video-fullscreen {
-  width: 100%;
-  height: 100%;
-  padding: 80px 0 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1001;
-  background-color: rgba(0, 0, 0, 0.7);
-  animation: close-animate 0.2s linear both;
-}
-.single article.entry .lightbox-video div.video-fullscreen iframe {
-  width: 60%;
-  max-height: 510px;
-  height: 100%;
-}
-.single article.entry .lightbox-video div.video-fullscreen .close-button {
-  content: " ";
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  top: -20px;
-  left: -12px;
-  background: url(assets/images/close.png) rgba(219, 112, 147, 0.48);
-  background-size: 100%;
-}
-.single article.entry iframe {
-  max-height: 250px;
-  position: relative;
-  z-index: -1;
-}
-@media screen and (max-width: 768px) {
-  .single article.entry iframe {
-    height: 100%;
   }
 }
 
@@ -1907,6 +1886,34 @@ Single Post Page Styling ==================================
   .single-post .entry-content {
     min-width: 275px;
   }
+}
+
+/*
+* Single Programs Styling  -----------------------------
+*/
+.single-programs .wrap {
+  width: 93%;
+}
+@media screen and (max-width: 480px) {
+  .single-programs .wrap {
+    padding: 45px 0 0;
+  }
+}
+.single-programs .one-half {
+  padding: 45px 0 0;
+  text-align: left;
+}
+@media screen and (max-width: 480px) {
+  .single-programs .one-half {
+    padding: 0 0 0;
+    width: 100%;
+  }
+}
+.single-programs h1, .single-programs h2, .single-programs h3, .single-programs h4, .single-programs h5, .single-programs h6 {
+  margin-bottom: 5px;
+}
+.single-programs p {
+  margin: 0 0 30px;
 }
 
 /*

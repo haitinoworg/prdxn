@@ -134,3 +134,93 @@ Common Mixins ============================================
 	font: 30px Roboto, sans-serif;
 	text-transform: capitalize;
 }
+
+
+@mixin donation-hero-content() {
+	.programs-hero-image {
+		@include boxmodel(1,"",3,100%,4,300px);
+		max-height: 310px;
+		position: relative;
+		overflow: hidden;
+		@include md() { max-height: 400px; }
+		img { width: 100%; }
+
+		h1,h2,h3,h4,h5,h6 { 
+			width: 100%;	
+			color: #fff;
+		}
+
+		.wrap {
+			box-sizing: border-box;
+			width: 93%;
+			color: #fff;
+		}
+
+		.hero-content {
+			position: absolute;
+			top: 50%;
+			@include property(transform,translateY(-50%));
+		}
+
+		form {
+			width: 100%;
+			display: inline-block;
+			
+			.donation-box {
+				width: 100%;
+				margin-bottom: 20px;
+				text-align: center;
+				span {
+					width: 11%;
+					display: inline-block;
+					color: #aaa;
+					font: 19px Roboto, sans-serif;
+
+					&:first-child {
+						width: 5%;
+					}
+				}
+			}
+			button { width: 100%; }
+		}
+
+		.direct-stripe-button:hover { background-color: #1e73be; }
+	}
+}
+
+
+@mixin single-article-content() {
+	article.entry {
+		padding: 0;
+		margin-bottom: 63px;
+		background-color: #f2f2f2;
+		.entry-content { 
+			@include boxmodel(3,70%,5,63px 0,7,0 auto);
+			clear: both;
+			@include tab() { width: 93%; }
+			@include mobile() { text-align: center; }
+		}
+		&,
+		p { text-align: center; }
+
+		ul { 
+			width: 65%;
+			margin: 30px auto 0;
+			display: flex;
+			flex-wrap: wrap;
+			@include md() { width: 90%; }
+			@include mobile() { 
+				width: 60%; 
+				min-width: 260px;
+				display: inline-block;
+				text-align: left;
+			}
+		}
+		ul li { 
+			width: 49%;
+			margin: 5px 0;
+			list-style-position: inside;
+			@include mobile() { width: 100%; }
+		}
+	}
+}
