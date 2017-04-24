@@ -8,6 +8,7 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 
+
 // echo get_page_template_slug( $post_id );
 
 
