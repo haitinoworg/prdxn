@@ -23,28 +23,28 @@ add_action( 'wp_print_scripts', 'grandchild_add_files' );
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
 //hook into the init action and call create_book_taxonomies when it fires
-add_action( 'init', 'new_category' );
+// add_action( 'init', 'new_category' );
 
-function new_category() {
+// function new_category() {
 
-// Now register the taxonomy
+// // Now register the taxonomy
 
-	register_taxonomy('program_category',array('programs'), array(
-		'hierarchical' => true,
-		'labels' => 'New Program Category',
-		'show_ui' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'program_category' ),
-		));
-}
+// 	register_taxonomy('program_category',array('programs'), array(
+// 		'hierarchical' => true,
+// 		'labels' => 'New Program Category',
+// 		'show_ui' => true,
+// 		'show_admin_column' => true,
+// 		'query_var' => true,
+// 		'rewrite' => array( 'slug' => 'program_category' ),
+// 		));
+// }
 
 
 /**
 * Custom Programs post
 */
-// add_theme_support('post-thumbnails');
-// add_post_type_support( 'my_product', 'thumbnail' );
+add_theme_support('post-thumbnails');
+add_post_type_support( 'programs', 'thumbnail' );
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 	register_post_type( 'programs',
@@ -57,6 +57,23 @@ function create_post_type() {
 			'hierarchical' => true,
 			'public' => true,
 			'rewrite'=> array('slug'=>'programs'),
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			)
+		);
+}
+
+add_action( 'init', 'create_post_types' );
+function create_post_types() {
+	register_post_type( 'sponsors',
+		array(
+			'labels' => array(
+				'name' => __( 'Sponsors' ),
+				'singular_name' => __( 'Sponsors' )
+				),
+			'has_archive' => true,
+			'hierarchical' => true,
+			'public' => true,
+			'rewrite'=> array('slug'=>'sponsors'),
 			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
 			)
 		);
@@ -96,7 +113,7 @@ function sp_excerpt_length( $length ) {
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-	return '&nbsp;<a class="common-links" href="' . get_permalink() . '">...Read&nbsp;More</a>';
+	return '&nbsp;<a class="common-links" href="' . get_permalink() . '">Read&nbsp;More</a>';
 }
 
 /** Add support for post format images */
