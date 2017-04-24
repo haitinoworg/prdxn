@@ -15,9 +15,13 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 // * Add the featured image after post title
 add_action( 'genesis_before_entry', 'programs_featured_image' );
 function programs_featured_image() {
+	echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
+	echo '<h3>';
+	echo the_title() .'</h3>';
+	echo '<p>';
+	echo the_field("donate_text") . '</p>';
+	echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div></div>';
 	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		echo '<div class="programs-hero-image"><div class="wrap">';
-		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
 		printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 		echo '</div>';
 

@@ -14,15 +14,11 @@ $post_slug=$post->post_name;
 
 
 if(have_posts()): the_post();
-		// global $post;
-		// $post_slug=$post->post_name;
-		// echo $post_slug;
-//Protect against arbitrary paged values
+
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $args = array(
-	'post_type' => 'post',
-	'category_name' => $post_slug
+	'post_type' => 'programs'
 	);
 
 $videos = get_posts( $args );

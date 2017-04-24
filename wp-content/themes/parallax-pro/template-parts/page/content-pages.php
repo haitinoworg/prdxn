@@ -12,12 +12,6 @@ global $post;
 $post_slug=$post->post_name;
 
 if(have_posts()): the_post();
-		// global $post;
-		// $post_slug=$post->post_name;
-		// echo $post_slug;
-//Protect against arbitrary paged values
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-
 $args = array( 
 	'post_parent' => get_the_ID(),
 	'post_type' => 'page'
@@ -27,7 +21,6 @@ $videos = get_posts( $args );
 
 foreach( $videos as $args ) : setup_postdata( $args );
 
-	//* Condition for checking post thumbnail
 ?>
 <div class="post-images content-default" >
 	<?php 

@@ -1622,15 +1622,13 @@ Single Post Page Styling ==================================
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 .contact-form-7 .content article.entry {
   padding: 63px 0 0;
 }
 .contact-form-7 .content .entry-content {
-  width: 62%;
-  min-width: 692px;
-  margin: 0 auto;
   font-family: Roboto, sans-serif;
 }
 @media screen and (max-width: 768px) {
@@ -1726,12 +1724,12 @@ Single Post Page Styling ==================================
   color: #f16522;
 }
 .contact-form-7 .volunteer-form .sf_field {
-  width: 30%;
-  display: inline-block;
+  width: 47.5%;
+  float: left;
   vertical-align: top;
 }
-.contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
-  margin: 0 4.5%;
+.contact-form-7 .volunteer-form .sf_field:nth-child(2n+2) {
+  margin: 0 0 0 5%;
 }
 @media screen and (max-width: 480px) {
   .contact-form-7 .volunteer-form .sf_field {
@@ -1740,6 +1738,9 @@ Single Post Page Styling ==================================
   .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
     margin-left: 0;
   }
+}
+.contact-form-7 .volunteer-form .sf_field textarea[placeholder="Volunteer Professional Skills"] {
+  max-height: 45px;
 }
 .contact-form-7 .volunteer-form .sf_field:nth-child(7) {
   width: 100%;
@@ -1837,7 +1838,7 @@ Single Post Page Styling ==================================
 .salesforce_w2l_lead form.w2llead > div textarea {
   margin-bottom: 0px;
   padding: 11px 12px;
-  font: 16px Roboto, sans-serif;
+  font: 13px Roboto, sans-serif;
   resize: none;
 }
 @media screen and (max-width: 480px) {

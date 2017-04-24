@@ -6,7 +6,8 @@
 
 	.content {
 
-		width: 100%;
+		width: 70%;
+		margin: 0 auto;
 
 		// Form Styling
 
@@ -15,9 +16,7 @@
 		}
 
 		.entry-content {
-			width: 62%;
-			min-width: 692px;
-			margin: 0 auto;
+			
 			font-family: $font;
 
 			@include tab() { min-width: 275px; }
@@ -107,12 +106,12 @@
 
 	.volunteer-form {
 		.sf_field { 
-			width: 30%; 
-			display: inline-block;
+			width: 47.5%; 
+			float: left;
 			vertical-align: top;
 
-			&:nth-child(3n+2) {
-				margin: 0 4.5%;
+			&:nth-child(2n+2) {
+				margin: 0 0 0 5%;
 			}
 
 			@include mobile() {
@@ -120,6 +119,8 @@
 
 				&:nth-child(3n+2) { margin-left: 0; }
 			}
+
+			textarea[placeholder="Volunteer Professional Skills"] { max-height: 45px; }
 
 			&:nth-child(7) {
 				width: 100%;
@@ -221,7 +222,7 @@
 			textarea { 
 				margin-bottom: 0px;
 				padding: 11px 12px;
-				font: 16px $font;
+				font: 13px $font;
 				resize: none;
 
 				@include mobile() {	margin-bottom: 0; }
