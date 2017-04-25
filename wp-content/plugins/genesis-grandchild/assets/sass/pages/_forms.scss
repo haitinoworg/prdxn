@@ -40,9 +40,21 @@
 				}
 				input,
 				select,
-				textarea { padding: 10px;	}
+				textarea { 
+					padding: 10px;	
+					outline: none;
+					font-size: 15px;
+				}
 
-				textarea { max-height: 150px; }
+				textarea { 
+					max-height: 150px; 
+					min-height: 120px;
+				}
+
+				#sf_00NA000000723Db { 
+					max-height: 42px; 
+					min-height: 42px;
+				}
 
 				label {
 					margin-bottom: -18px;
@@ -130,11 +142,16 @@
 	}
 
 	.salesforce_w2l_lead {
+		#sf_form_salesforce_w2l_lead_6 {
+		     .w2lsubmit { border-radius: 0px; }
+	     }
+
 		.w2lsubmit {
 			min-width: 215px;
 			max-width: 216px;
-			border: 1px solid #f16522;
-			margin: 48px auto 64px;
+			border: 0px solid #f16522;
+			border-radius: 3px;
+			margin: 25px auto 64px;
 			background-color: #f16522;
 		}
 	}
@@ -172,7 +189,7 @@
 			input { 
 				margin-bottom: 0px;
 				padding: 11px 12px;
-				font: 16px $font;
+				font: 15px $font;
 
 				@include mobile() {	margin-bottom: 0; }
 
@@ -186,7 +203,7 @@
 				&:-ms-input-placeholder
 				{	color: #aaa;	}
 
-				&:hover { border: 1px solid #aaa; }
+				&:hover {/* border: 1px solid #aaa;*/ }
 			}
 			input[type="submit"] { 
 				padding: 11px;
@@ -251,10 +268,10 @@
 				}
 			}
 
-
 			input[type="submit"] { 
 				padding: 11px;
 				border: 1px solid #f16522;
+				border-radius: 3px;
 				background-color: #f16522;
 
 				@include tab() { width: 100%; }
@@ -269,14 +286,47 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				color: #f00;
-				font-size: 14px;
+				font-size: 13px;
 			}
 		}
 		.sf_field { 
-			min-height: 82px; 
+			min-height: 75px; 
 		}
 
 	}
 	
+}
+
+.home .salesforce_w2l_lead form.w2llead > div input[type="submit"],
+.salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 input[type="submit"] {border-radius: 0px;}
+
+/* volunteer page responsive */
+@include tab() {
+	.contact-form-7 { 
+	    .volunteer-form { 
+	    	.sf_field {
+	            width: 100%;
+	        }
+
+	        .sf_field:nth-child(3n+2) {
+	            margin: 0px;	
+	        }
+        }
+
+        .salesforce_w2l_lead {
+        	.w2lsubmit {
+        		margin: 25px auto 64px;
+        	}
+        }
+
+
+       .content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
+    }
+
+    .contact-form-7 {
+    	.email-us {
+    		a { display: block; }
+    	}
+    }
 }
 

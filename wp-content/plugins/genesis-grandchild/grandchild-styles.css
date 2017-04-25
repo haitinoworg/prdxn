@@ -450,12 +450,14 @@ Site Header
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a,
 .site-container .site-header .genesis-nav-menu > li:last-child a:hover {
-  padding: 10px 25px;
+  padding: 10px 42px;
   line-height: 20px;
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a {
   background: #f16522;
   font-weight: 100;
+  font-size: 15px;
+  border-radius: 2px;
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a:hover {
   background: #fff;
@@ -911,6 +913,12 @@ Content Area
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
+.home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit {
+  margin-top: 0px;
+}
+.home-section-5.home-odd .salesforce_w2l_lead .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
+  border: 0px solid;
+}
 
 .donation-box {
   width: 100%;
@@ -994,7 +1002,7 @@ Content Area
 .home-section-3 .wrap {
   width: 82%;
 }
-.home-section-3 #featured-post-5 > div > h4 {
+.home-section-3 .widget-title {
   color: #333;
 }
 .home-section-3 .featured-content article {
@@ -1654,9 +1662,16 @@ Single Post Page Styling ==================================
 .contact-form-7 .content .entry-content form select,
 .contact-form-7 .content .entry-content form textarea {
   padding: 10px;
+  outline: none;
+  font-size: 15px;
 }
 .contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
+  min-height: 120px;
+}
+.contact-form-7 .content .entry-content form #sf_00NA000000723Db {
+  max-height: 42px;
+  min-height: 42px;
 }
 .contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
@@ -1746,11 +1761,15 @@ Single Post Page Styling ==================================
   min-height: 102px;
   margin-left: 0;
 }
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 .w2lsubmit {
+  border-radius: 0px;
+}
 .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
   min-width: 215px;
   max-width: 216px;
-  border: 1px solid #f16522;
-  margin: 48px auto 64px;
+  border: 0px solid #f16522;
+  border-radius: 3px;
+  margin: 25px auto 64px;
   background-color: #f16522;
 }
 
@@ -1787,7 +1806,7 @@ Single Post Page Styling ==================================
 .home-odd.home-section-5 section form > div input {
   margin-bottom: 0px;
   padding: 11px 12px;
-  font: 16px Roboto, sans-serif;
+  font: 15px Roboto, sans-serif;
 }
 @media screen and (max-width: 480px) {
   .home-odd.home-section-5 section form > div input {
@@ -1805,7 +1824,7 @@ Single Post Page Styling ==================================
   color: #aaa;
 }
 .home-odd.home-section-5 section form > div input:hover {
-  border: 1px solid #aaa;
+  /* border: 1px solid #aaa;*/
 }
 .home-odd.home-section-5 section form > div input[type="submit"] {
   padding: 11px;
@@ -1874,6 +1893,7 @@ Single Post Page Styling ==================================
 .salesforce_w2l_lead form.w2llead > div input[type="submit"] {
   padding: 11px;
   border: 1px solid #f16522;
+  border-radius: 3px;
   background-color: #f16522;
 }
 @media screen and (max-width: 768px) {
@@ -1889,12 +1909,36 @@ Single Post Page Styling ==================================
   margin-top: 0;
   margin-bottom: 0;
   color: #f00;
-  font-size: 14px;
+  font-size: 13px;
 }
 .salesforce_w2l_lead form.w2llead .sf_field {
-  min-height: 82px;
+  min-height: 75px;
 }
 
+.home .salesforce_w2l_lead form.w2llead > div input[type="submit"],
+.salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 input[type="submit"] {
+  border-radius: 0px;
+}
+
+/* volunteer page responsive */
+@media screen and (max-width: 768px) {
+  .contact-form-7 .volunteer-form .sf_field {
+    width: 100%;
+  }
+  .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
+    margin: 0px;
+  }
+  .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
+    margin: 25px auto 64px;
+  }
+  .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
+    max-height: 150px;
+  }
+
+  .contact-form-7 .email-us a {
+    display: block;
+  }
+}
 .single-post .entry-content {
   width: 62%;
   min-width: 692px;

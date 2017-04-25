@@ -320,6 +320,14 @@ Content Area
 		position: static; 
 		@include property(transform,translateY(0%));
 	}
+
+	.salesforce_w2l_lead {
+		.w2lsubmit {
+			margin-top: 0px;
+        }
+
+        .contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
+	}
 }
 
 // Stripe Plugin Styling
@@ -416,7 +424,7 @@ Content Area
 	// Featured Content
 
 
-	#featured-post-5 > div > h4 { color: #333; }
+	.widget-title { color: #333; }
 
 	.featured-content article {
 		width: 48%;
