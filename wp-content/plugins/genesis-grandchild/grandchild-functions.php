@@ -22,7 +22,7 @@ add_action( 'wp_print_scripts', 'grandchild_add_files' );
 // Post Format Supports
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
-//hook into the init action and call create_book_taxonomies when it fires
+// //hook into the init action and call create_book_taxonomies when it fires
 // add_action( 'init', 'new_category' );
 
 // function new_category() {
@@ -57,7 +57,8 @@ function create_post_type() {
 			'hierarchical' => true,
 			'public' => true,
 			'rewrite'=> array('slug'=>'programs'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),
+			'taxonomies' => array('category')
 			)
 		);
 }
@@ -74,7 +75,7 @@ function create_post_types() {
 			'hierarchical' => true,
 			'public' => true,
 			'rewrite'=> array('slug'=>'sponsors'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
 			)
 		);
 }
@@ -141,5 +142,13 @@ function custom_site_logo( $atts ) {
 	return do_action( 'genesis_site_title', 'genesis_seo_site_title' );
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
+
+
+
+
+
+
+
+
 
 
