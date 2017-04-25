@@ -17,20 +17,41 @@
 */
 
 .single-programs {
-	.wrap { 
-		width: 93%; 
-		@include mobile() { padding: 45px 0 0; }
+	font-family: $font;
+	.entry-content {
+		h1, h2, h3, h4, h5, h6 { 
+			text-align: center; 
+			color: #333;
+		}
 	}
+	.wrap { 
+		width: 71%; 
+		@include tab() { width: 93%; }
+	}
+
 	.one-half { 
-		padding: 45px 0 0;
+		padding: 45px 71px 0 0;
+		font-family: $font;
 		text-align: left; 
-		@include mobile() {
+		@include tab() {
 			padding: 0 0 0;
 			width: 100%;
 		}
+
+		h1,h2,h3,h4,h5,h6,p { font-family: $font; }
 	}
 
 	h1, h2, h3, h4, h5, h6 { margin-bottom: 5px; }
 
-	p { margin: 0 0 30px; }
+	.list-title { 
+		font-family: $font;
+		text-align: center; 
+	}
+
+	p { 
+		margin: 0 0 30px;
+		font: 17px $font;
+		line-height: 24px; 
+		text-align: left;
+	}
 }

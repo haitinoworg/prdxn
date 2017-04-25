@@ -29,10 +29,7 @@ Site Header
 
 		/* Title Area
 		--------------------------------------------- */
-		.title-area { 
-			@include boxmodel(3,250px,4,auto,5,8px 0 0); 
-			@include tab() { width: 200px; }
-		}
+		.title-area { @include boxmodel(3,250px,4,auto,5,8px 0 0); }
 
 		/* Widget Area and Search Option
 		--------------------------------------------- */
@@ -92,12 +89,14 @@ Site Header
 					@include md() { margin-left: auto; }
 					a,
 					a:hover {
-						padding: 10px 25px;
+						padding: 10px 42px;
 						line-height: 20px;
 					}
 					a {
 						background: #f16522;
 						font-weight: 100;
+						font-size: 15px;
+						border-radius: 2px;
 						&:hover {
 							background: #fff;
 							color: #f16522;

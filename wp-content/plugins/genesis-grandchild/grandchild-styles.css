@@ -375,11 +375,6 @@ Site Header
   height: auto;
   padding: 8px 0 0;
 }
-@media screen and (max-width: 768px) {
-  .site-container .site-header .title-area {
-    width: 200px;
-  }
-}
 .site-container .site-header .widget-area {
   :  ;
   width: 70%;
@@ -449,12 +444,14 @@ Site Header
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a,
 .site-container .site-header .genesis-nav-menu > li:last-child a:hover {
-  padding: 10px 25px;
+  padding: 10px 42px;
   line-height: 20px;
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a {
   background: #f16522;
   font-weight: 100;
+  font-size: 15px;
+  border-radius: 2px;
 }
 .site-container .site-header .genesis-nav-menu > li:last-child a:hover {
   background: #fff;
@@ -906,10 +903,10 @@ Content Area
   transform: translateY(0%);
 }
 .home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit {
-  margin: 0;
+  margin-top: 0px;
 }
-.home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit input {
-  padding: 10px;
+.home-section-5.home-odd .salesforce_w2l_lead .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
+  border: 0px solid;
 }
 
 .donation-box {
@@ -994,7 +991,7 @@ Content Area
 .home-section-3 .wrap {
   width: 82%;
 }
-.home-section-3 #featured-post-5 > div > h4 {
+.home-section-3 .widget-title {
   color: #333;
 }
 .home-section-3 .featured-content article {
@@ -1078,6 +1075,12 @@ Content Area
 
 /* Program Page - Two Column Layout
 --------------------------------------------- */
+.page-template-page_twocolumns {
+  font-family: Roboto, sans-serif;
+}
+.page-template-page_twocolumns p {
+  font-size: 17px;
+}
 .page-template-page_twocolumns .content {
   padding: 0;
   /*
@@ -1088,6 +1091,8 @@ Content Area
   width: 78%;
   padding: 0;
   margin: 0 auto;
+  max-width: 2000px;
+  margin: 0 auto;
   text-align: center;
 }
 @media screen and (max-width: 768px) {
@@ -1096,7 +1101,7 @@ Content Area
   }
 }
 .page-template-page_twocolumns .content article.entry {
-  width: 60%;
+  width: 85%;
   padding: 0;
   margin: 0 auto;
   text-align: center;
@@ -1107,13 +1112,15 @@ Content Area
   }
 }
 .page-template-page_twocolumns .content article.entry .entry-content {
-  padding: 42px 0;
+  padding: 59px 0;
 }
 .page-template-page_twocolumns .content article.entry .entry-content p {
   box-sizing: border-box;
   margin: 0;
   font: 17px/26px Roboto, sans-serif;
-  margin-bottom: 0;
+  max-width: 2000px;
+  margin: 0 auto;
+  text-align: left;
 }
 @media screen and (max-width: 1024px) {
   .page-template-page_twocolumns .content article.entry .entry-content p {
@@ -1176,7 +1183,6 @@ Content Area
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default > a,
 .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content {
-  width: 48%;
   display: inline-block;
   vertical-align: top;
 }
@@ -1186,13 +1192,23 @@ Content Area
     width: 100%;
   }
 }
+.page-template-page_twocolumns .content .program-posts .post-images.content-default > div.entry-content {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > div.entry-content {
+    width: 100%;
+  }
+}
 .page-template-page_twocolumns .content .program-posts .post-images.content-default > a {
+  width: 40%;
   height: 250px;
   display: inline-block;
   overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .page-template-page_twocolumns .content .program-posts .post-images.content-default > a {
+    width: 100%;
     height: 350px;
   }
 }
@@ -1232,10 +1248,11 @@ Content Area
 .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content h3 {
   margin: 0 0 20px;
   line-height: 24px;
+  font-size: 32px;
 }
 .page-template-page_twocolumns .content .program-posts .post-images {
   width: 48%;
-  padding: 0 0 37px;
+  padding: 0;
   display: inline-block;
   text-align: center;
   vertical-align: top;
@@ -1247,7 +1264,7 @@ Content Area
 }
 .page-template-page_twocolumns .content .program-posts .post-images:last-child {
   padding: 0;
-  margin-bottom: 38px;
+  margin-bottom: 55px;
 }
 .page-template-page_twocolumns .content .program-posts .post-images iframe {
   width: 400px;
@@ -1365,7 +1382,9 @@ Content Area
   font: 14px Roboto, sans-serif;
   border: 1px solid #f16522;
   padding: 10px 25px;
+  margin-top: 10px;
   line-height: 20px;
+  display: inline-block;
 }
 .page-template-page_twocolumns .common-links:focus {
   border-color: #f16522;
@@ -1399,10 +1418,10 @@ div#n2-ss-6 .n2-grab {
 */
 .programs-hero-image {
   width: 100%;
-  height: 300px;
-  max-height: 310px;
+  height: 376px;
   position: relative;
   overflow: hidden;
+  background-color: #000;
 }
 @media screen and (max-width: 1024px) {
   .programs-hero-image {
@@ -1412,10 +1431,10 @@ div#n2-ss-6 .n2-grab {
 .programs-hero-image img {
   width: 100%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .programs-hero-image img {
-    width: 681px;
-    max-width: 681px;
+    width: 769px;
+    max-width: 769px;
     height: auto;
   }
 }
@@ -1437,31 +1456,66 @@ div#n2-ss-6 .n2-grab {
   box-sizing: border-box;
   width: 93%;
   color: #fff;
-}
-.programs-hero-image .hero-content {
-  padding: 0 3.5%;
   position: absolute;
   top: 50%;
-  left: 0%;
+  left: 0;
+  right: 0;
   -ms-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 100;
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .wrap {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+}
+.programs-hero-image .wrap > h1, .programs-hero-image .wrap > h2, .programs-hero-image .wrap > h3, .programs-hero-image .wrap > h4, .programs-hero-image .wrap > h5, .programs-hero-image .wrap > h6 {
+  width: 39%;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .wrap > h1, .programs-hero-image .wrap > h2, .programs-hero-image .wrap > h3, .programs-hero-image .wrap > h4, .programs-hero-image .wrap > h5, .programs-hero-image .wrap > h6 {
+    width: 100%;
+    left: 0;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 480px) {
+  .programs-hero-image .wrap > h1, .programs-hero-image .wrap > h2, .programs-hero-image .wrap > h3, .programs-hero-image .wrap > h4, .programs-hero-image .wrap > h5, .programs-hero-image .wrap > h6 {
+    font-size: 26px;
+  }
+}
+.programs-hero-image .hero-content {
+  width: 61%;
+  display: inline-block;
+}
+.programs-hero-image .hero-content h1, .programs-hero-image .hero-content h2, .programs-hero-image .hero-content h3, .programs-hero-image .hero-content h4, .programs-hero-image .hero-content h5, .programs-hero-image .hero-content h6 {
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .hero-content h1, .programs-hero-image .hero-content h2, .programs-hero-image .hero-content h3, .programs-hero-image .hero-content h4, .programs-hero-image .hero-content h5, .programs-hero-image .hero-content h6 {
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
   .programs-hero-image .hero-content {
     width: 100%;
-    left: 50%;
-    -ms-transform: translateY(-50%) translateX(-50%);
-    -moz-transform: translateY(-50%) translateX(-50%);
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
-    text-align: center;
   }
 }
-@media screen and (max-width: 480px) {
-  .programs-hero-image .hero-content {
-    padding: 0 15px;
+.programs-hero-image .hero-content form {
+  width: 70%;
+  min-width: 426px;
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .hero-content form {
+    width: 100%;
+    min-width: inherit;
   }
 }
 .programs-hero-image form {
@@ -1470,13 +1524,7 @@ div#n2-ss-6 .n2-grab {
 }
 .programs-hero-image form .donation-box {
   width: 100%;
-  margin-bottom: 20px;
   text-align: center;
-}
-@media screen and (max-width: 480px) {
-  .programs-hero-image form .donation-box {
-    margin-bottom: 10px;
-  }
 }
 .programs-hero-image form .donation-box span {
   width: 11%;
@@ -1487,20 +1535,29 @@ div#n2-ss-6 .n2-grab {
 .programs-hero-image form .donation-box span:first-child {
   width: 5%;
 }
-@media screen and (max-width: 480px) {
-  .programs-hero-image form .donation-box input {
-    padding: 5px;
-  }
-}
 .programs-hero-image form button {
   width: 100%;
 }
 .programs-hero-image .direct-stripe-button {
-  padding: 6px 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  margin-top: 30px;
 }
 .programs-hero-image .direct-stripe-button:hover {
   background-color: #1e73be;
   color: #fff;
+}
+
+.programs-hero-image:after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .archive .content {
@@ -1545,11 +1602,8 @@ div#n2-ss-6 .n2-grab {
 /*
 Single Post Page Styling ==================================
 */
-.single {
-  text-align: center;
-}
 .single .content {
-  padding: 0 0 60px;
+  padding: 0 0 31px;
   float: none;
 }
 .single .entry-content {
@@ -1706,6 +1760,7 @@ Single Post Page Styling ==================================
   text-align: center;
   float: left;
   cursor: pointer;
+  font-family: Roboto, sans-serif;
 }
 
 .sponsor-list:nth-child(3n+3) {
@@ -1714,6 +1769,7 @@ Single Post Page Styling ==================================
 
 .sponsor-list a {
   display: inline-block;
+  font-family: Roboto, sans-serif;
 }
 
 .news-image {
@@ -1722,6 +1778,7 @@ Single Post Page Styling ==================================
   display: table-cell;
   vertical-align: middle;
   position: relative;
+  font-family: Roboto, sans-serif;
 }
 
 .sponsor-list:hover .news-image a::after {
@@ -1739,6 +1796,7 @@ Single Post Page Styling ==================================
   .sponsor-list {
     width: 46%;
     margin: 28px 8% 0px 0px;
+    font-family: Roboto, sans-serif;
   }
 
   .sponsor-list:nth-child(3n+3) {
@@ -1758,13 +1816,15 @@ Single Post Page Styling ==================================
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
 }
 .contact-form-7 .content article.entry {
   padding: 63px 0 0;
 }
 .contact-form-7 .content .entry-content {
+  width: 62%;
+  min-width: 692px;
+  margin: 0 auto;
   font-family: Roboto, sans-serif;
 }
 @media screen and (max-width: 768px) {
@@ -1788,9 +1848,16 @@ Single Post Page Styling ==================================
 .contact-form-7 .content .entry-content form select,
 .contact-form-7 .content .entry-content form textarea {
   padding: 10px;
+  outline: none;
+  font-size: 15px;
 }
 .contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
+  min-height: 120px;
+}
+.contact-form-7 .content .entry-content form #sf_00NA000000723Db {
+  max-height: 42px;
+  min-height: 42px;
 }
 .contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
@@ -1825,7 +1892,7 @@ Single Post Page Styling ==================================
   text-transform: capitalize;
 }
 .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
-  margin: 38px 0 22px;
+  margin: 38px 0;
   text-align: left;
 }
 .contact-form-7 .content .entry-content tbody td {
@@ -1835,7 +1902,7 @@ Single Post Page Styling ==================================
   margin-bottom: 5px;
 }
 .contact-form-7 .content .entry-content p strong {
-  margin: 22px 0 8px;
+  margin: 39px 0 8px;
   display: block;
   font: 700 20px Roboto, sans-serif;
 }
@@ -1855,12 +1922,12 @@ Single Post Page Styling ==================================
   color: #f16522;
 }
 .contact-form-7 .volunteer-form .sf_field {
-  width: 47.5%;
-  float: left;
+  width: 30%;
+  display: inline-block;
   vertical-align: top;
 }
-.contact-form-7 .volunteer-form .sf_field:nth-child(2n+2) {
-  margin: 0 0 0 5%;
+.contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
+  margin: 0 4.5%;
 }
 @media screen and (max-width: 480px) {
   .contact-form-7 .volunteer-form .sf_field {
@@ -1870,20 +1937,20 @@ Single Post Page Styling ==================================
     margin-left: 0;
   }
 }
-.contact-form-7 .volunteer-form .sf_field textarea[placeholder="Volunteer Professional Skills"] {
-  max-height: 38px;
-}
 .contact-form-7 .volunteer-form .sf_field:nth-child(7) {
   width: 100%;
   min-height: 102px;
   margin-left: 0;
 }
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 .w2lsubmit {
+  border-radius: 0px;
+}
 .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
   min-width: 215px;
   max-width: 216px;
-  margin: 48px auto 64px;
-}
-.contact-form-7 .salesforce_w2l_lead .w2lsubmit input {
+  border: 0px solid #f16522;
+  border-radius: 3px;
+  margin: 25px auto 64px;
   background-color: #f16522;
 }
 
@@ -1920,7 +1987,7 @@ Single Post Page Styling ==================================
 .home-odd.home-section-5 section form > div input {
   margin-bottom: 0px;
   padding: 11px 12px;
-  font: 16px Roboto, sans-serif;
+  font: 15px Roboto, sans-serif;
 }
 @media screen and (max-width: 480px) {
   .home-odd.home-section-5 section form > div input {
@@ -1938,7 +2005,7 @@ Single Post Page Styling ==================================
   color: #aaa;
 }
 .home-odd.home-section-5 section form > div input:hover {
-  border: 1px solid #aaa;
+  /* border: 1px solid #aaa;*/
 }
 .home-odd.home-section-5 section form > div input[type="submit"] {
   padding: 11px;
@@ -1970,7 +2037,7 @@ Single Post Page Styling ==================================
 .salesforce_w2l_lead form.w2llead > div textarea {
   margin-bottom: 0px;
   padding: 11px 12px;
-  font: 13px Roboto, sans-serif;
+  font: 16px Roboto, sans-serif;
   resize: none;
 }
 @media screen and (max-width: 480px) {
@@ -2007,6 +2074,7 @@ Single Post Page Styling ==================================
 .salesforce_w2l_lead form.w2llead > div input[type="submit"] {
   padding: 11px;
   border: 1px solid #f16522;
+  border-radius: 3px;
   background-color: #f16522;
 }
 @media screen and (max-width: 768px) {
@@ -2022,12 +2090,36 @@ Single Post Page Styling ==================================
   margin-top: 0;
   margin-bottom: 0;
   color: #f00;
-  font-size: 14px;
+  font-size: 13px;
 }
 .salesforce_w2l_lead form.w2llead .sf_field {
-  min-height: 82px;
+  min-height: 75px;
 }
 
+.home .salesforce_w2l_lead form.w2llead > div input[type="submit"],
+.salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 input[type="submit"] {
+  border-radius: 0px;
+}
+
+/* volunteer page responsive */
+@media screen and (max-width: 768px) {
+  .contact-form-7 .volunteer-form .sf_field {
+    width: 100%;
+  }
+  .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
+    margin: 0px;
+  }
+  .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
+    margin: 25px auto 64px;
+  }
+  .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
+    max-height: 150px;
+  }
+
+  .contact-form-7 .email-us a {
+    display: block;
+  }
+}
 .single-post .entry-content {
   width: 62%;
   min-width: 692px;
@@ -2044,29 +2136,47 @@ Single Post Page Styling ==================================
 /*
 * Single Programs Styling  -----------------------------
 */
-.single-programs .wrap {
-  width: 93%;
+.single-programs {
+  font-family: Roboto, sans-serif;
 }
-@media screen and (max-width: 480px) {
+.single-programs .entry-content h1, .single-programs .entry-content h2, .single-programs .entry-content h3, .single-programs .entry-content h4, .single-programs .entry-content h5, .single-programs .entry-content h6 {
+  text-align: center;
+  color: #333;
+}
+.single-programs .wrap {
+  width: 71%;
+}
+@media screen and (max-width: 768px) {
   .single-programs .wrap {
-    padding: 45px 0 0;
+    width: 93%;
   }
 }
 .single-programs .one-half {
-  padding: 45px 0 0;
+  padding: 45px 71px 0 0;
+  font-family: Roboto, sans-serif;
   text-align: left;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .single-programs .one-half {
     padding: 0 0 0;
     width: 100%;
   }
 }
+.single-programs .one-half h1, .single-programs .one-half h2, .single-programs .one-half h3, .single-programs .one-half h4, .single-programs .one-half h5, .single-programs .one-half h6, .single-programs .one-half p {
+  font-family: Roboto, sans-serif;
+}
 .single-programs h1, .single-programs h2, .single-programs h3, .single-programs h4, .single-programs h5, .single-programs h6 {
   margin-bottom: 5px;
 }
+.single-programs .list-title {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
 .single-programs p {
   margin: 0 0 30px;
+  font: 17px Roboto, sans-serif;
+  line-height: 24px;
+  text-align: left;
 }
 
 /*
@@ -2139,7 +2249,6 @@ Footer Widgets
 .footer-widgets section #menu-secondary-menus > li {
   margin: 0;
   display: inline-block;
-  text-align: left;
   vertical-align: top;
 }
 @media screen and (max-width: 768px) {
@@ -2153,7 +2262,7 @@ Footer Widgets
     width: 35%;
     min-width: 120px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
     display: block;
   }
 }
@@ -2383,7 +2492,7 @@ Footer Section-1
 .social-icons a {
   box-sizing: border-box;
   width: 25px;
-  height: 25px;
+  height: 20px;
   margin-left: 35px;
   display: block;
   text-align: center;

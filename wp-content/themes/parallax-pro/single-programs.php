@@ -16,16 +16,18 @@
 	add_action( 'genesis_before_entry', 'programs_single_hero' );
 	function programs_single_hero() {
 		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-		echo '<h3>';
-		echo the_title() .'</h3>';
+		echo '<h3>Donate for this programs</h3>';
 		echo '<p>';
 		echo the_field("donate_text") . '</p>';
-		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div></div>';
+		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
+		echo '<h3>';
+		echo the_title() .'</h3></div>';
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
-
 		}
+
+		
 
 	}
 
@@ -37,7 +39,7 @@
 		$list_title = get_field('list-title');
 		$left_content = get_field('left_column_topic');
 		$right_content = get_field('right_column_topic');
-		if($list_title) {	echo '<h2>'. $list_title . '</h2>';	} 
+		if($list_title) {	echo '<h2 class="list-title">'. $list_title . '</h2>';	} 
 		else { echo '';	}
 		if($left_content && $right_content) {	
 			echo '<div class="wrap"><div class="one-half first">'. $left_content . '</div>';
