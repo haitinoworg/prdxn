@@ -64,7 +64,7 @@
 			}
 
 			h2,h3,h4,h5,h6 {
-				margin: 38px 0;
+				margin: 38px 0 22px;
 				text-align: left;
 			}
 
@@ -75,7 +75,7 @@
 			p { 
 				margin-bottom: 5px; 
 				strong { 
-					margin: 39px 0 8px;
+					margin: 22px 0 8px;
 					display: block;
 					font: 700 20px $font;
 				}
@@ -120,7 +120,7 @@
 				&:nth-child(3n+2) { margin-left: 0; }
 			}
 
-			textarea[placeholder="Volunteer Professional Skills"] { max-height: 45px; }
+			textarea[placeholder="Volunteer Professional Skills"] { max-height: 38px; }
 
 			&:nth-child(7) {
 				width: 100%;
@@ -134,9 +134,8 @@
 		.w2lsubmit {
 			min-width: 215px;
 			max-width: 216px;
-			border: 1px solid #f16522;
 			margin: 48px auto 64px;
-			background-color: #f16522;
+			input { background-color: #f16522; }
 		}
 	}
 

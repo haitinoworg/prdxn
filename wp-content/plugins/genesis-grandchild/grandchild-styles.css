@@ -313,12 +313,6 @@ h6.entry-title:after {
   color: #fff;
   font: 14px Roboto, sans-serif;
 }
-@media screen and (max-width: 768px) {
-  .home-even .textwidget a.button,
-  .home-odd .textwidget a.button {
-    background-color: #fff;
-  }
-}
 .home-even .textwidget a.button:focus,
 .home-odd .textwidget a.button:focus {
   border-color: #f16522;
@@ -329,7 +323,7 @@ h6.entry-title:after {
 .home-odd .textwidget a.button:hover {
   border-color: #f16522;
   background-color: #f16522;
-  color: #fff !important;
+  color: #fff;
 }
 
 #text-5 .button {
@@ -380,6 +374,11 @@ Site Header
   width: 250px;
   height: auto;
   padding: 8px 0 0;
+}
+@media screen and (max-width: 768px) {
+  .site-container .site-header .title-area {
+    width: 200px;
+  }
 }
 .site-container .site-header .widget-area {
   :  ;
@@ -680,11 +679,6 @@ Content Area
   font: 14px Roboto, sans-serif !important;
   text-align: center;
 }
-@media screen and (max-width: 768px) {
-  .site-inner .content .ptsCol .ptsActBtn .ptsEditArea {
-    background-color: #fff;
-  }
-}
 .site-inner .content .ptsCol .ptsActBtn .ptsEditArea:focus {
   border-color: #f16522;
   background-color: #f16522;
@@ -693,7 +687,7 @@ Content Area
 .site-inner .content .ptsCol .ptsActBtn .ptsEditArea:hover {
   border-color: #f16522;
   background-color: #f16522;
-  color: #fff !important;
+  color: #fff;
 }
 .site-inner .content .ptsCol-1 .ptsColHeader,
 .site-inner .content .ptsCol-3 .ptsColHeader {
@@ -911,6 +905,12 @@ Content Area
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
+.home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit {
+  margin: 0;
+}
+.home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit input {
+  padding: 10px;
+}
 
 .donation-box {
   width: 100%;
@@ -1085,16 +1085,26 @@ Content Area
   */
 }
 .page-template-page_twocolumns .content div.entry {
-  width: 93%;
+  width: 78%;
   padding: 0;
   margin: 0 auto;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content div.entry {
+    width: 93%;
+  }
+}
 .page-template-page_twocolumns .content article.entry {
-  width: 93%;
+  width: 60%;
   padding: 0;
   margin: 0 auto;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content article.entry {
+    width: 93%;
+  }
 }
 .page-template-page_twocolumns .content article.entry .entry-content {
   padding: 42px 0;
@@ -1135,9 +1145,6 @@ Content Area
 .page-template-page_twocolumns .content .program-posts {
   text-align: center;
 }
-.page-template-page_twocolumns .content .program-posts > .entry {
-  width: 78%;
-}
 .page-template-page_twocolumns .content .program-posts .button {
   border: 3px solid #000;
   width: auto;
@@ -1150,11 +1157,6 @@ Content Area
   background-color: #fff;
   color: #000;
 }
-@media screen and (max-width: 768px) {
-  .page-template-page_twocolumns .content .program-posts .button {
-    background-color: #fff;
-  }
-}
 .page-template-page_twocolumns .content .program-posts .button:focus {
   border-color: #f16522;
   background-color: #f16522;
@@ -1163,7 +1165,7 @@ Content Area
 .page-template-page_twocolumns .content .program-posts .button:hover {
   border-color: #f16522;
   background-color: #f16522;
-  color: #fff !important;
+  color: #fff;
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default {
   width: 100%;
@@ -1178,22 +1180,54 @@ Content Area
   display: inline-block;
   vertical-align: top;
 }
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a,
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content {
+    width: 100%;
+  }
+}
 .page-template-page_twocolumns .content .program-posts .post-images.content-default > a {
-  padding: 10% 0;
+  height: 250px;
   display: inline-block;
-  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a {
+    height: 200px;
+  }
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default > a img {
-  width: 100%;
+  width: 400px;
   height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
+  max-width: 481px;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a img {
+    width: 768px;
+    max-width: 768px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a img {
+    width: 480px;
+    max-width: 480px;
+  }
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content {
   box-sizing: border-box;
   padding: 0 0 0 30px;
   text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content {
+    padding: 30px 0 0;
+    margin: 0;
+  }
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content h3 {
   margin: 0 0 20px;
@@ -1205,6 +1239,15 @@ Content Area
   display: inline-block;
   text-align: center;
   vertical-align: top;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images {
+    padding: 0;
+  }
+}
+.page-template-page_twocolumns .content .program-posts .post-images:last-child {
+  padding: 0;
+  margin-bottom: 38px;
 }
 .page-template-page_twocolumns .content .program-posts .post-images iframe {
   width: 400px;
@@ -1320,14 +1363,9 @@ Content Area
   background-color: #f16522;
   color: #fff;
   font: 14px Roboto, sans-serif;
-  background-color: #f16522;
+  border: 1px solid #f16522;
   padding: 10px 25px;
   line-height: 20px;
-}
-@media screen and (max-width: 768px) {
-  .page-template-page_twocolumns .common-links {
-    background-color: #fff;
-  }
 }
 .page-template-page_twocolumns .common-links:focus {
   border-color: #f16522;
@@ -1337,7 +1375,11 @@ Content Area
 .page-template-page_twocolumns .common-links:hover {
   border-color: #f16522;
   background-color: #f16522;
-  color: #fff !important;
+  color: #fff;
+}
+.page-template-page_twocolumns .common-links:hover {
+  background-color: #fff;
+  color: #f16522;
 }
 
 div#n2-ss-6 .n2-grab {
@@ -1352,6 +1394,9 @@ div#n2-ss-6 .n2-grab {
     top: 0;
   }
 }
+/*
+* Donation Hero Image Styling
+*/
 .programs-hero-image {
   width: 100%;
   height: 300px;
@@ -1367,9 +1412,26 @@ div#n2-ss-6 .n2-grab {
 .programs-hero-image img {
   width: 100%;
 }
+@media screen and (max-width: 480px) {
+  .programs-hero-image img {
+    width: 681px;
+    max-width: 681px;
+    height: auto;
+  }
+}
 .programs-hero-image h1, .programs-hero-image h2, .programs-hero-image h3, .programs-hero-image h4, .programs-hero-image h5, .programs-hero-image h6 {
   width: 100%;
   color: #fff;
+  font: 900 39px Roboto, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .programs-hero-image h1, .programs-hero-image h2, .programs-hero-image h3, .programs-hero-image h4, .programs-hero-image h5, .programs-hero-image h6 {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+}
+.programs-hero-image p {
+  font-size: 17px;
 }
 .programs-hero-image .wrap {
   box-sizing: border-box;
@@ -1377,12 +1439,30 @@ div#n2-ss-6 .n2-grab {
   color: #fff;
 }
 .programs-hero-image .hero-content {
+  padding: 0 3.5%;
   position: absolute;
   top: 50%;
+  left: 0%;
   -ms-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .hero-content {
+    width: 100%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .programs-hero-image .hero-content {
+    padding: 0 15px;
+  }
 }
 .programs-hero-image form {
   width: 100%;
@@ -1393,6 +1473,11 @@ div#n2-ss-6 .n2-grab {
   margin-bottom: 20px;
   text-align: center;
 }
+@media screen and (max-width: 480px) {
+  .programs-hero-image form .donation-box {
+    margin-bottom: 10px;
+  }
+}
 .programs-hero-image form .donation-box span {
   width: 11%;
   display: inline-block;
@@ -1402,11 +1487,20 @@ div#n2-ss-6 .n2-grab {
 .programs-hero-image form .donation-box span:first-child {
   width: 5%;
 }
+@media screen and (max-width: 480px) {
+  .programs-hero-image form .donation-box input {
+    padding: 5px;
+  }
+}
 .programs-hero-image form button {
   width: 100%;
 }
+.programs-hero-image .direct-stripe-button {
+  padding: 6px 0;
+}
 .programs-hero-image .direct-stripe-button:hover {
   background-color: #1e73be;
+  color: #fff;
 }
 
 .archive .content {
@@ -1598,6 +1692,69 @@ Single Post Page Styling ==================================
   }
 }
 
+.sponsors-container {
+  display: block;
+}
+
+.sponsor-list {
+  width: 32.05%;
+  min-height: 140px;
+  margin-top: 16px;
+  margin-right: 2%;
+  border: 1px solid #333;
+  display: table;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+
+.sponsor-list:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+.sponsor-list a {
+  display: inline-block;
+}
+
+.news-image {
+  padding: 3%;
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.sponsor-list:hover .news-image a::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(241, 101, 34, 0.49);
+}
+
+@media screen and (max-width: 768px) {
+  .sponsor-list {
+    width: 46%;
+    margin: 28px 8% 0px 0px;
+  }
+
+  .sponsor-list:nth-child(3n+3) {
+    margin-right: 8%;
+  }
+
+  .sponsor-list:nth-child(2n+2) {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sponsor-list {
+    width: 80%;
+    margin: 12px 10%;
+  }
+}
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
@@ -1652,11 +1809,6 @@ Single Post Page Styling ==================================
   background-color: #fff;
   color: #000;
 }
-@media screen and (max-width: 768px) {
-  .contact-form-7 .content .entry-content .submit-button {
-    background-color: #fff;
-  }
-}
 .contact-form-7 .content .entry-content .submit-button:focus {
   border-color: #f16522;
   background-color: #f16522;
@@ -1665,7 +1817,7 @@ Single Post Page Styling ==================================
 .contact-form-7 .content .entry-content .submit-button:hover {
   border-color: #f16522;
   background-color: #f16522;
-  color: #fff !important;
+  color: #fff;
 }
 .contact-form-7 .content .entry-content h1, .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
   background-color: transparent;
@@ -1673,7 +1825,7 @@ Single Post Page Styling ==================================
   text-transform: capitalize;
 }
 .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
-  margin: 38px 0;
+  margin: 38px 0 22px;
   text-align: left;
 }
 .contact-form-7 .content .entry-content tbody td {
@@ -1683,7 +1835,7 @@ Single Post Page Styling ==================================
   margin-bottom: 5px;
 }
 .contact-form-7 .content .entry-content p strong {
-  margin: 39px 0 8px;
+  margin: 22px 0 8px;
   display: block;
   font: 700 20px Roboto, sans-serif;
 }
@@ -1719,7 +1871,7 @@ Single Post Page Styling ==================================
   }
 }
 .contact-form-7 .volunteer-form .sf_field textarea[placeholder="Volunteer Professional Skills"] {
-  max-height: 45px;
+  max-height: 38px;
 }
 .contact-form-7 .volunteer-form .sf_field:nth-child(7) {
   width: 100%;
@@ -1729,8 +1881,9 @@ Single Post Page Styling ==================================
 .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
   min-width: 215px;
   max-width: 216px;
-  border: 1px solid #f16522;
   margin: 48px auto 64px;
+}
+.contact-form-7 .salesforce_w2l_lead .w2lsubmit input {
   background-color: #f16522;
 }
 
@@ -2341,7 +2494,6 @@ Footer Section-1
     background: none;
   }
 
-  .site-header .genesis-nav-menu.responsive-menu .current-menu-item > a,
   .site-header .genesis-nav-menu.responsive-menu .sub-menu li a,
   .site-header .genesis-nav-menu.responsive-menu .sub-menu li a:hover,
   .site-header .genesis-nav-menu.responsive-menu .sub-menu {
@@ -2351,6 +2503,7 @@ Footer Section-1
     color: #f16522;
   }
   .site-header .genesis-nav-menu .current-menu-item > a {
+    padding: 0 1vw !important;
     color: #f16522;
   }
 }

@@ -29,7 +29,10 @@ Site Header
 
 		/* Title Area
 		--------------------------------------------- */
-		.title-area { @include boxmodel(3,250px,4,auto,5,8px 0 0); }
+		.title-area { 
+			@include boxmodel(3,250px,4,auto,5,8px 0 0); 
+			@include tab() { width: 200px; }
+		}
 
 		/* Widget Area and Search Option
 		--------------------------------------------- */

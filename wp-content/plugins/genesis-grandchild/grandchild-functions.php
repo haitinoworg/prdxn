@@ -81,6 +81,23 @@ function people_init() {
 		);
 }
 
+add_action( 'init', 'create_post_types' );
+function create_post_types() {
+	register_post_type( 'sponsors',
+		array(
+			'labels' => array(
+				'name' => __( 'Sponsors' ),
+				'singular_name' => __( 'Sponsors' )
+				),
+			'has_archive' => true,
+			'hierarchical' => true,
+			'public' => true,
+			'rewrite'=> array('slug'=>'sponsors'),
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			)
+		);
+}
+
 
 //* Unregister primary navigation menu
 add_theme_support( 'genesis-menus', array( 'secondary' => __( 'Secondary Navigation Menu', 'genesis' ) ) );
@@ -96,7 +113,7 @@ function sp_excerpt_length( $length ) {
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-	return '&nbsp;<a class="common-links" href="' . get_permalink() . '">Read&nbsp;More</a>';
+	return '<div><a class="common-links read-more" href="' . get_permalink() . '">Read&nbsp;More</a></div>';
 }
 
 /** Add support for post format images */

@@ -320,6 +320,11 @@ Content Area
 		position: static; 
 		@include property(transform,translateY(0%));
 	}
+
+	.salesforce_w2l_lead .w2lsubmit {
+		margin: 0;
+		input { padding: 10px; }
+	}
 }
 
 // Stripe Plugin Styling
