@@ -42,6 +42,17 @@
   background: rgba(241, 101, 34, 0.49);
 }
 
+.sponsor-list:hover .news-image a::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(241, 101, 34, 0.49);
+}
+
 @include tab() {
   .sponsor-list {
     width: 46%;
@@ -66,7 +77,6 @@
 
 }
 
-
 .content {
   .entry-content {
     h1,h2,h3,h4,h4,h6,p { 
@@ -74,3 +84,4 @@
     }
   }
 }
+

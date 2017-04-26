@@ -916,7 +916,8 @@ Content Area
 .home-section-5.home-odd .salesforce_w2l_lead .w2lsubmit {
   margin-top: 0px;
 }
-.home-section-5.home-odd .salesforce_w2l_lead .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
+
+.contact-form-7 .salesforce_w2l_lead .w2lsubmit {
   border: 0px solid;
 }
 
@@ -1764,77 +1765,6 @@ Single Post Page Styling ==================================
   .parallax-landing .content p {
     font-size: 18px;
   }
-}
-
-.sponsors-container {
-  display: block;
-}
-
-.sponsor-list {
-  width: 32.05%;
-  min-height: 140px;
-  margin-top: 16px;
-  margin-right: 2%;
-  border: 1px solid #333;
-  display: table;
-  text-align: center;
-  float: left;
-  cursor: pointer;
-  font-family: Roboto, sans-serif;
-}
-
-.sponsor-list:nth-child(3n+3) {
-  margin-right: 0px;
-}
-
-.sponsor-list a {
-  display: inline-block;
-  font-family: Roboto, sans-serif;
-}
-
-.news-image {
-  padding: 3%;
-  white-space: nowrap;
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  font-family: Roboto, sans-serif;
-}
-
-.sponsor-list:hover .news-image a::after {
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: rgba(241, 101, 34, 0.49);
-}
-
-@media screen and (max-width: 768px) {
-  .sponsor-list {
-    width: 46%;
-    margin: 28px 8% 0px 0px;
-    font-family: Roboto, sans-serif;
-  }
-
-  .sponsor-list:nth-child(3n+3) {
-    margin-right: 8%;
-  }
-
-  .sponsor-list:nth-child(2n+2) {
-    margin-right: 0px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .sponsor-list {
-    width: 80%;
-    margin: 12px 10%;
-  }
-}
-.content .entry-content h1, .content .entry-content h2, .content .entry-content h3, .content .entry-content h4, .content .entry-content h4, .content .entry-content h6, .content .entry-content p {
-  font-family: Roboto, sans-serif;
 }
 
 /* Contact Form
@@ -2697,6 +2627,98 @@ Footer Section-1
   .genesis-nav-menu.responsive-menu a:hover {
     background: none;
   }
+}
+.sponsors-container {
+  display: block;
+}
+
+.sponsor-list {
+  width: 32.05%;
+  min-height: 140px;
+  margin-top: 16px;
+  margin-right: 2%;
+  border: 1px solid #333;
+  display: table;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+}
+
+.sponsor-list:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+.sponsor-list a {
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+}
+
+.news-image {
+  padding: 3%;
+  white-space: nowrap;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  font-family: Roboto, sans-serif;
+}
+
+.sponsor-list:hover .news-image a::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(241, 101, 34, 0.49);
+}
+
+.sponsor-list:hover .news-image a::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(241, 101, 34, 0.49);
+}
+
+@media screen and (max-width: 768px) {
+  .sponsor-list {
+    width: 46%;
+    margin: 28px 8% 0px 0px;
+    font-family: Roboto, sans-serif;
+  }
+
+  .sponsor-list:nth-child(3n+3) {
+    margin-right: 8%;
+  }
+
+  .sponsor-list:nth-child(2n+2) {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sponsor-list {
+    width: 80%;
+    margin: 12px 10%;
+  }
+}
+.content .entry-content h1, .content .entry-content h2, .content .entry-content h3, .content .entry-content h4, .content .entry-content h4, .content .entry-content h6, .content .entry-content p {
+  font-family: Roboto, sans-serif;
+}
+
+/*
+* Error Page Styling ----------------------------------------------------
+*/
+.error404 .search-form input[type="submit"] {
+  margin: 31px 0;
+}
+.error404 .search-form input[type="submit"]:hover, .error404 .search-form input[type="submit"]:focus {
+  background-color: #f16522;
+  color: #fff;
 }
 
 /*# sourceMappingURL=grandchild-styles.css.map */

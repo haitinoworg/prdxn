@@ -39,7 +39,6 @@ function programs_category() {
 		));
 }
 
-
 /**
 * Custom Programs post
 */
@@ -57,7 +56,25 @@ function create_post_type() {
 			'hierarchical' => true,
 			'public' => true,
 			'rewrite'=> array('slug'=>'programs'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),
+			'taxonomies' => array('category')
+			)
+		);
+}
+
+add_action( 'init', 'create_post_types' );
+function create_post_types() {
+	register_post_type( 'sponsors',
+		array(
+			'labels' => array(
+				'name' => __( 'Sponsors' ),
+				'singular_name' => __( 'Sponsors' )
+				),
+			'has_archive' => true,
+			'hierarchical' => true,
+			'public' => true,
+			'rewrite'=> array('slug'=>'sponsors'),
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
 			)
 		);
 }
@@ -77,23 +94,6 @@ function people_init() {
 			// 	'assign_terms' => 'edit_guides',
 			// 	'edit_terms' => 'publish_guides'
 			// 	)
-			)
-		);
-}
-
-add_action( 'init', 'create_post_types' );
-function create_post_types() {
-	register_post_type( 'sponsors',
-		array(
-			'labels' => array(
-				'name' => __( 'Sponsors' ),
-				'singular_name' => __( 'Sponsors' )
-				),
-			'has_archive' => true,
-			'hierarchical' => true,
-			'public' => true,
-			'rewrite'=> array('slug'=>'sponsors'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
 			)
 		);
 }
@@ -143,26 +143,4 @@ function custom_site_logo( $atts ) {
 add_shortcode( 'site_title', 'custom_site_logo' );
 
 
-/*
-* Donation Form
-*/
 
-function custom_function_donation() {
-	echo do_shortcode('[salesforce form="9"]');
-	$value = $_POST['sf_00N7F000001aMVs'];
-	if(isset($_POST['submit'])) {
-		echo '<form action="/your-server-side-code" method="POST">		
-		<script
-		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		data-key="pk_test_KVecPez3pulhmvexufQsCrUi"
-		data-amount="<?php echo $value; ?>"
-		data-name="Demo Site"
-		data-description="2 widgets"
-		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-		data-locale="auto">
-	</script>
-</form>';
-}
-}
-
-add_shortcode('dn_shortcode','custom_function_donation');

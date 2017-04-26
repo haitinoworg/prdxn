@@ -85,25 +85,6 @@ function custom_sidebar() {
 
 }
 
-// //Remove Default Post Pagination
-// remove_action( 'genesis_post_content', 'genesis_do_post_content_nav' );
-
-
-// function pagination_two_columns() {
-
-// 	$args = array(
-// 		'before' => '<div class="pagenums"><div class="pages">',
-// 		'after' => '</div></div>',
-// 		'next_or_number' => 'next',
-// 		'nextpagelink' => __('Next Page'),
-// 		'previouspagelink' => __('Previous Page'),
-// 		'pagelink' => '%',
-// 		'echo' => 1
-// 		);
-// 	wp_link_pages( $args );
-
-// }
-
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 genesis();
