@@ -297,12 +297,17 @@ Footer Section-1
 /*
 * Social Icons
 */
+.footer-widgets{
 
-.social-icons {
+	.textwidget {color: #5f5f5f;}
+
+   .social-icons {
+	  margin: 5px auto 0;
+	  display: table;
+
 	a {
 		box-sizing: border-box;
 		width: 25px;
-		height: 25px;
 		margin-left: 35px;
 		display: block;
 		text-align: center;
@@ -311,7 +316,7 @@ Footer Section-1
 			margin: 10px;
 		}
 
-		// &[title="Facebook"] {
+		/* &[title="Facebook"] {
 		// 	img { 
 		// 		width: 8px; 
 		// 		height: 18px;
@@ -374,6 +379,11 @@ Footer Section-1
 		// 		width: 29px;
 		// 		height: 10px;
 		// 	}
-		// }
+		// }*/	
 	}
+
+	li {
+		display: table-cell !important;
+	}
+  }
 }
