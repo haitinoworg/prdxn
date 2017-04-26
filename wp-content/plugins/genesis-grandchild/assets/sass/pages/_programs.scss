@@ -306,7 +306,13 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		width: 61%;
 		display: inline-block;
 
-		h1,h2,h3,h4,h5,h6 { margin-bottom: 8px;	}
+		h1,h2,h3,h4,h5,h6 { margin-bottom: 4px;	}
+
+		p { 
+			width: 74%;
+			margin: 0 0 34px; 
+			@include tab() { width: 100%; }
+		}
 
 		@include tab(){
 			h1,h2,h3,h4,h5,h6 { display: none;	}
@@ -353,7 +359,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		width: 100%;
 		padding-top: 10px;
 		padding-bottom: 8px;
-		margin-top: 30px;
+		margin-top: 29px;
 	}
 
 	.direct-stripe-button:hover { 

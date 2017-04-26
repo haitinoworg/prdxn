@@ -10,6 +10,7 @@
 		@include tab() { min-width: 275px; }
 
 	}
+
 }
 
 /*
@@ -24,7 +25,9 @@
 			color: #333;
 		}
 	}
-	.wrap { 
+	.wrap { width: 93%; }
+
+	.content>.wrap { 
 		width: 71%; 
 		@include tab() { width: 93%; }
 	}

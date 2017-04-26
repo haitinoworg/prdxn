@@ -143,3 +143,26 @@ function custom_site_logo( $atts ) {
 add_shortcode( 'site_title', 'custom_site_logo' );
 
 
+/*
+* Donation Form
+*/
+
+function custom_function_donation() {
+	echo do_shortcode('[salesforce form="9"]');
+	$value = $_POST['sf_00N7F000001aMVs'];
+	if(isset($_POST['submit'])) {
+		echo '<form action="/your-server-side-code" method="POST">		
+		<script
+		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		data-key="pk_test_KVecPez3pulhmvexufQsCrUi"
+		data-amount="<?php echo $value; ?>"
+		data-name="Demo Site"
+		data-description="2 widgets"
+		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+		data-locale="auto">
+	</script>
+</form>';
+}
+}
+
+add_shortcode('dn_shortcode','custom_function_donation');

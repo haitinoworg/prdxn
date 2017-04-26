@@ -480,15 +480,6 @@ Site Header
   line-height: 20px;
   padding: 0 15px 15px;
 }
-.site-container .site-header .genesis-nav-menu > li .sub-menu li:first-child {
-  padding-top: 10px;
-}
-.site-container .site-header .genesis-nav-menu > li .sub-menu li:first-child a, .site-container .site-header .genesis-nav-menu > li .sub-menu li:first-child a:hover {
-  padding: 15px;
-}
-.site-container .site-header .genesis-nav-menu > li .sub-menu li:last-child {
-  padding-bottom: 10px;
-}
 
 @keyframes search-icon {
   from {
@@ -539,6 +530,13 @@ Site Header
     display: inline-block;
   }
 }
+.stripe-button-el {
+  border-radius: 0;
+}
+.stripe-button-el span {
+  border-radius: 0;
+}
+
 /*
 Content Area
 ---------------------------------------------------------------------------------------------------- */
@@ -816,6 +814,11 @@ Content Area
   font: 900 39px Roboto, sans-serif;
   text-align: left;
 }
+@media screen and (max-width: 480px) {
+  .site-inner .content .home-section-1 h4 {
+    font-size: 26px;
+  }
+}
 .site-inner .content .home-section-1 section {
   width: 60%;
   text-align: left;
@@ -841,15 +844,23 @@ Content Area
   width: 100%;
   text-align: center;
 }
-.site-inner .content .home-section-1 .direct-stripe-button {
+.site-inner .content .home-section-1 .stripe-button-el {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 8px;
+  padding-top: 15px;
+  padding-bottom: 2px;
   margin-top: 30px;
+  background-color: #1e73be;
+  background-image: none;
 }
-.site-inner .content .home-section-1 .direct-stripe-button:hover {
+.site-inner .content .home-section-1 .stripe-button-el:hover {
   color: #fff;
   background-color: #1e73be;
+}
+.site-inner .content .home-section-1 .stripe-button-el span {
+  box-shadow: none;
+  background-image: none;
+  background-color: #1e73be;
+  font: 16px Roboto, sans-serif;
 }
 .site-inner .content .home-section-2 {
   height: auto;
@@ -1496,7 +1507,16 @@ div#n2-ss-6 .n2-grab {
   display: inline-block;
 }
 .programs-hero-image .hero-content h1, .programs-hero-image .hero-content h2, .programs-hero-image .hero-content h3, .programs-hero-image .hero-content h4, .programs-hero-image .hero-content h5, .programs-hero-image .hero-content h6 {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+.programs-hero-image .hero-content p {
+  width: 74%;
+  margin: 0 0 34px;
+}
+@media screen and (max-width: 768px) {
+  .programs-hero-image .hero-content p {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
   .programs-hero-image .hero-content h1, .programs-hero-image .hero-content h2, .programs-hero-image .hero-content h3, .programs-hero-image .hero-content h4, .programs-hero-image .hero-content h5, .programs-hero-image .hero-content h6 {
@@ -1542,7 +1562,7 @@ div#n2-ss-6 .n2-grab {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 8px;
-  margin-top: 30px;
+  margin-top: 29px;
 }
 .programs-hero-image .direct-stripe-button:hover {
   background-color: #1e73be;
@@ -1813,6 +1833,10 @@ Single Post Page Styling ==================================
     margin: 12px 10%;
   }
 }
+.content .entry-content h1, .content .entry-content h2, .content .entry-content h3, .content .entry-content h4, .content .entry-content h4, .content .entry-content h6, .content .entry-content p {
+  font-family: Roboto, sans-serif;
+}
+
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
@@ -2144,10 +2168,13 @@ Single Post Page Styling ==================================
   color: #333;
 }
 .single-programs .wrap {
+  width: 93%;
+}
+.single-programs .content > .wrap {
   width: 71%;
 }
 @media screen and (max-width: 768px) {
-  .single-programs .wrap {
+  .single-programs .content > .wrap {
     width: 93%;
   }
 }
@@ -2612,7 +2639,7 @@ Footer Section-1
     color: #f16522;
   }
   .site-header .genesis-nav-menu .current-menu-item > a {
-    padding: 0 1vw !important;
+    padding: 0 1vw;
     color: #f16522;
   }
 }

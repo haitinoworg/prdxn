@@ -226,6 +226,10 @@ Content Area
 				margin-bottom: 5px;
 				font: 900 39px $font;
 				text-align: left; 
+
+				@include mobile() {
+					font-size: 26px;
+				}
 			}
 			section {
 				width: 60%;
@@ -234,7 +238,7 @@ Content Area
 
 			h4,
 			section {
-				@include maxWidth(768px) {
+				@include tab() {
 					width: 100%;
 					text-align: center;
 				}
@@ -245,7 +249,7 @@ Content Area
 				// min-width: 531px;
 				margin-bottom: 35px;
 				font: 17px/23px $font;
-				@include maxWidth(1024px) {
+				@include md() {
 					width: 100%;
 				}
 			}
@@ -255,14 +259,22 @@ Content Area
 				text-align: center;
 			}
 
-			.direct-stripe-button {
+			.stripe-button-el {
 				width: 100%;
-				padding-top: 10px;
-				padding-bottom: 8px;
+				padding-top: 15px;
+				padding-bottom: 2px;
 				margin-top: 30px;
+				background-color: #1e73be;
+				background-image: none;
 				&:hover {
 					color:#fff;
 					background-color: #1e73be;
+				}
+				span {
+					box-shadow: none; 
+					background-image: none;
+					background-color: #1e73be;
+					font: 16px $font;
 				}
 			}
 		}
@@ -324,9 +336,9 @@ Content Area
 	.salesforce_w2l_lead {
 		.w2lsubmit {
 			margin-top: 0px;
-        }
+		}
 
-        .contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
+		.contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
 	}
 }
 
