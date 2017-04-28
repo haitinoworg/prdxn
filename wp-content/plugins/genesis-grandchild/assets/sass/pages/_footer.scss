@@ -42,7 +42,10 @@ Footer Widgets
 				@include maxWidth(768px) {
 					width: auto;
 					float: left;
-					@include mobile() { float: none; }
+				}
+
+				@include mobile() { 
+					float: none; 
 					.site-title { text-align: center; }
 				}
 			}
@@ -66,6 +69,7 @@ Footer Widgets
 			#menu-secondary-menus>li {
 				margin: 0;
 				display: inline-block;
+				text-align: left;
 				vertical-align: top;
 
 				@include maxWidth(768px) {
@@ -74,8 +78,7 @@ Footer Widgets
 				}
 
 				@include mobile() {
-					width: 35%;
-					min-width: 120px;
+					width: 100%;
 					margin: 0 auto;
 					text-align: center;
 					display: block;
@@ -296,16 +299,99 @@ Footer Section-1
 /*
 * Social Icons
 */
+.footer-widgets{
 
-.social-icons {
-	a {
-		box-sizing: border-box;
-		width: 25px;
-		height: 20px;
-		margin-left: 35px;
-		display: block;
-		text-align: center;
+	.textwidget {color: #5f5f5f;}
 
-		@include maxWidth(768px)  {	margin: 10px; }
+	.social-icons {
+		margin: 5px auto 0;
+		display: table;
+
+		a {
+			box-sizing: border-box;
+			width: 25px;
+			margin-left: 35px;
+			display: block;
+			text-align: center;
+
+			@include maxWidth(768px)  {
+				margin: 10px;
+			}
+
+		/* &[title="Facebook"] {
+		// 	img { 
+		// 		width: 8px; 
+		// 		height: 18px;
+		// 		margin-left: 8px !important
+		// 	}
+		// }
+
+		// &[title="Google Plus"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Pinterest"] {
+		// 	img { 
+		// 		width: 18px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Twitter"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Youtube"] {
+		// 	img { 
+		// 		width: 16px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Scoop It"] {
+		// 	img { 
+		// 		width: 16px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Quora"] {
+		// 	img { 
+		// 		width: 18px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="Amazon"] {
+		// 	img { 
+		// 		width: 20px; 
+		// 		height: 18px;
+		// 	}
+		// }
+
+		// &[title="eBay"] {
+		// 	padding-top: 14px;
+		// 	img { 
+		// 		width: 29px;
+		// 		height: 10px;
+		// 	}
+		// }*/	
 	}
+
+	li {
+		display: table-cell !important;
+	}
+}
+}
+
+@include tab() {
+		.footer-widgets  .social-icons  li{
+            display: inline-block !important;
+         }
 }
