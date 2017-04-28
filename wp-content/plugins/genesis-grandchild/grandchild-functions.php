@@ -12,32 +12,38 @@ function grandchild_add_files() {
 	
 	wp_enqueue_style( 'fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5' );
 
-	// Static url given because, its post publishing error on new post.
-	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery' ));
+	
 }
 add_action( 'wp_print_scripts', 'grandchild_add_files' );
+
+function custom_footer_script() {
+	// Static url given because, its post publishing error on new post.
+	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
+}
+
+add_action('wp_footer','custom_footer_script');
 
 
 
 // Post Format Supports
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
-//hook into the init action and call create_book_taxonomies when it fires
+// //hook into the init action and call create_book_taxonomies when it fires
+// add_action( 'init', 'new_category' );
 
-add_action( 'init', 'programs_category' );
-
+// function new_category() {
 
 // // Now register the taxonomy
-function programs_category() {
-	register_taxonomy('program_category',array('programs'), array(
-		'hierarchical' => true,
-		'labels' => 'New Program Category',
-		'show_ui' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'program_category' ),
-		));
-}
+
+// 	register_taxonomy('program_category',array('programs'), array(
+// 		'hierarchical' => true,
+// 		'labels' => 'New Program Category',
+// 		'show_ui' => true,
+// 		'show_admin_column' => true,
+// 		'query_var' => true,
+// 		'rewrite' => array( 'slug' => 'program_category' ),
+// 		));
+// }
 
 
 /**
@@ -57,7 +63,25 @@ function create_post_type() {
 			'hierarchical' => true,
 			'public' => true,
 			'rewrite'=> array('slug'=>'programs'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),
+			'taxonomies' => array('category')
+			)
+		);
+}
+
+add_action( 'init', 'create_post_types' );
+function create_post_types() {
+	register_post_type( 'sponsors',
+		array(
+			'labels' => array(
+				'name' => __( 'Sponsors' ),
+				'singular_name' => __( 'Sponsors' )
+				),
+			'has_archive' => true,
+			'hierarchical' => true,
+			'public' => true,
+			'rewrite'=> array('slug'=>'sponsors'),
+			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
 			)
 		);
 }
@@ -77,23 +101,6 @@ function people_init() {
 			// 	'assign_terms' => 'edit_guides',
 			// 	'edit_terms' => 'publish_guides'
 			// 	)
-			)
-		);
-}
-
-add_action( 'init', 'create_post_types' );
-function create_post_types() {
-	register_post_type( 'sponsors',
-		array(
-			'labels' => array(
-				'name' => __( 'Sponsors' ),
-				'singular_name' => __( 'Sponsors' )
-				),
-			'has_archive' => true,
-			'hierarchical' => true,
-			'public' => true,
-			'rewrite'=> array('slug'=>'sponsors'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' )
 			)
 		);
 }
@@ -143,26 +150,11 @@ function custom_site_logo( $atts ) {
 add_shortcode( 'site_title', 'custom_site_logo' );
 
 
-/*
-* Donation Form
-*/
 
-function custom_function_donation() {
-	echo do_shortcode('[salesforce form="9"]');
-	$value = $_POST['sf_00N7F000001aMVs'];
-	if(isset($_POST['submit'])) {
-		echo '<form action="/your-server-side-code" method="POST">		
-		<script
-		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		data-key="pk_test_KVecPez3pulhmvexufQsCrUi"
-		data-amount="<?php echo $value; ?>"
-		data-name="Demo Site"
-		data-description="2 widgets"
-		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-		data-locale="auto">
-	</script>
-</form>';
-}
-}
 
-add_shortcode('dn_shortcode','custom_function_donation');
+
+
+
+
+
+

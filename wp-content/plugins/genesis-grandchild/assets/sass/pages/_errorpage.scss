@@ -1,0 +1,16 @@
+/*
+* Error Page Styling ----------------------------------------------------
+*/
+
+.error404 {
+	.search-form {
+		input[type="submit"] {
+			margin: 31px 0;
+			&:hover,
+			&:focus {
+				background-color: $cta-color;
+				color: #fff;
+			}
+		}
+	}
+}

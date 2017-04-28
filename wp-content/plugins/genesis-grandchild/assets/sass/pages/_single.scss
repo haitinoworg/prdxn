@@ -32,6 +32,11 @@
 		@include tab() { width: 93%; }
 	}
 
+	.content>.entry {
+		max-width: 2000px;
+		margin: 0 auto;
+	}
+
 	.one-half { 
 		padding: 45px 71px 0 0;
 		font-family: $font;
