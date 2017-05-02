@@ -1,8 +1,5 @@
 .single-post {
 
-
-	
-
 	.entry-content {
 		width: 62%;
 		min-width: 692px;
@@ -12,5 +9,57 @@
 
 		@include tab() { min-width: 275px; }
 
+	}
+
+}
+
+/*
+* Single Programs Styling  -----------------------------
+*/
+
+.single-programs {
+	font-family: $font;
+	.entry-content {
+		h1, h2, h3, h4, h5, h6 { 
+			text-align: center; 
+			color: #333;
+		}
+	}
+	.wrap { width: 93%; }
+
+	.content>.wrap { 
+		width: 71%; 
+		@include tab() { width: 93%; }
+	}
+
+	.content>.entry {
+		max-width: 2000px;
+		margin: 0 auto;
+	}
+
+	.one-half { 
+		padding: 30px 35px 0 0;
+		font-family: $font;
+		text-align: left; 
+		@include tab() {
+			padding: 0 0 0;
+			width: 100%;
+		}
+
+		h1,h2,h3,h4,h5,h6,p { font-family: $font; }
+	}
+
+	h1, h2, h3, h4, h5, h6 { margin-bottom: 5px; }
+
+	.list-title { 
+		font-family: $font;
+		text-align: center; 
+	}
+
+	p { 
+		margin: 0 0 30px;
+		font: 17px $font;
+		line-height: 24px; 
+		text-align: left;
 	}
 }

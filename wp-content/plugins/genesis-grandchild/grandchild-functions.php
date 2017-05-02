@@ -12,10 +12,16 @@ function grandchild_add_files() {
 	
 	wp_enqueue_style( 'fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5' );
 
-	// Static url given because, its post publishing error on new post.
-	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery' ));
+	
 }
 add_action( 'wp_print_scripts', 'grandchild_add_files' );
+
+function custom_footer_script() {
+	// Static url given because, its post publishing error on new post.
+	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
+}
+
+add_action('wp_footer','custom_footer_script');
 
 
 
@@ -114,7 +120,7 @@ function sp_excerpt_length( $length ) {
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-	return '&nbsp;<a class="common-links" href="' . get_permalink() . '">Read&nbsp;More</a>';
+	return '<div><a class="common-links" href="' . get_permalink() . '">Read&nbsp;More</a></div>';
 }
 
 /** Add support for post format images */

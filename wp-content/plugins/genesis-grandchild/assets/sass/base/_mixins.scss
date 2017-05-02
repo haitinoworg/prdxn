@@ -114,7 +114,6 @@ Common Mixins ============================================
 	background-color: $cta-color;
 	color: #fff;
 	font: 14px $font;
-	@include tab() { background-color: #fff; }
 	&:focus {
 		border-color: $cta-color;
 		background-color: $cta-color;
@@ -125,7 +124,7 @@ Common Mixins ============================================
 		background-color: $cta-color;
 
 		// important used here, to override parent theme styling
-		color: #fff !important;
+		color: #fff;
 	}
 }
 
@@ -133,4 +132,41 @@ Common Mixins ============================================
 	margin-bottom: 5px;
 	font: 30px Roboto, sans-serif;
 	text-transform: capitalize;
+}
+
+
+@mixin single-article-content() {
+	article.entry {
+		padding: 0;
+		margin-bottom: 63px;
+		background-color: #f2f2f2;
+		.entry-content { 
+			@include boxmodel(3,70%,5,63px 0,7,0 auto);
+			clear: both;
+			@include tab() { width: 93%; }
+			@include mobile() { text-align: center; }
+		}
+		&,
+		p { text-align: center; }
+
+		ul { 
+			width: 65%;
+			margin: 30px auto 0;
+			display: flex;
+			flex-wrap: wrap;
+			@include md() { width: 90%; }
+			@include mobile() { 
+				width: 60%; 
+				min-width: 260px;
+				display: inline-block;
+				text-align: left;
+			}
+		}
+		ul li { 
+			width: 49%;
+			margin: 5px 0;
+			list-style-position: inside;
+			@include mobile() { width: 100%; }
+		}
+	}
 }

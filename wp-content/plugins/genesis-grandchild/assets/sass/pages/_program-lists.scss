@@ -24,23 +24,11 @@ Single Post Page Styling ==================================
 */
 
 .single {
-	text-align: center;
+	
 	// Changing Default Style
 	.content {
-		padding: 0 0 60px;
+		padding: 0px;
 		float: none;
-	}
-
-	h1.entry-title {
-		@include common-title();
-		margin-top: 0;
-		margin-bottom: 45px;
-		@include title-after();
-		&:after { padding-bottom: 20px;	}
-
-		@include mobile() {
-			font: 50px $font;
-		}
 	}
 
 	.entry-content {
@@ -49,70 +37,53 @@ Single Post Page Styling ==================================
 	}
 
 	article.entry {
-		width: 73.8%;
-		padding: 63px 0 0;
-		border-bottom: 1px solid #ccc;
-		margin: 0 auto;
+		padding: 0;
+		margin-bottom: 63px;
+		background-color: #f2f2f2;
+		.entry-content { 
+			@include boxmodel(3,70%,5,63px 0,7,0 auto);
+			clear: both;
+			@include tab() { width: 93%; }
+			@include mobile() { text-align: center; }
+		}
+		&,
+		p { text-align: center; }
 
-		.lightbox-video  {
-			div {
-				width: 47.5%;
+		ul { 
+			width: 100%;
+			margin: 30px 0px 0px 55px;
+			display: flex;
+			flex-wrap: wrap;
+			@include md() { width: 90%; }
+			@include mobile() { 
+				width: 60%; 
+				min-width: 260px;
 				display: inline-block;
-				&:nth-of-type(2n) {
-					margin-left: 4%;
-					@include tab() { margin-left: 0; }
-				}
-
-				@include tab() {
-					width: 100%;
-					display: block;
-				}
-				// Lightbox class
-
-				&.video-fullscreen {
-					width: 100%;
-					height: 100%;
-					padding: 80px 0 0;
-					margin: 0;
-					position: fixed;
-					top: 0;
-					left: 0;
-					z-index: 1001;
-					background-color: rgba(0,0,0,0.7);
-					animation: close-animate 0.2s linear both;
-
-					iframe {
-						width: 60%;
-						max-height: 510px;
-						height: 100%;
-					}
-					.close-button {
-						content: " ";
-						width: 30px;
-						height: 30px;
-						border-radius: 30px;
-						display: inline-block;
-						vertical-align: top;
-						position: relative;
-						top: -20px;
-						left: -12px;
-						background: url(assets/images/close.png) rgba(219, 112, 147, 0.48);
-						background-size: 100%;
-					}
-				}
+				text-align: left;
 			}
 		}
-
-		iframe {
-			max-height: 250px;
+		ul li { 
+			width: 33.33333%;
+			margin: 5px 0 10px;
 			position: relative;
-			z-index: -1;
-			@include tab() { height: 100%; }
+			list-style-position: inside;
+			list-style: none;
+			@include mobile() { width: 100%; }
 		}
-
+		ul li::after {
+      content: '.';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -60px;
+      left: -28px;
+      color: #f16522;
+      font-size: 70px;
+		}
 	}
-
 }
+
 
 @keyframes close-animate {
 	from { top: 50%; }
@@ -122,3 +93,4 @@ Single Post Page Styling ==================================
 .toggle-scroll {
 	overflow: hidden;
 }
+
