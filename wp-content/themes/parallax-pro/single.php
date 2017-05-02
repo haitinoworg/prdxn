@@ -20,6 +20,24 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 )
 // }
 
 
+add_action( 'genesis_entry_footer', 'programs_custom_video' );
+function programs_custom_video() {
+	?>
+	<div class="lightbox-video">
+		<?php
+
+		if ( $value1 = get_field( "video1" ) ) {
+			echo '<div>'. wp_oembed_get($value1) . '</div>';
+		}
+		if( $value2 = get_field("video2")) {
+			echo '<div>'. wp_oembed_get($value2) . '</div>';
+		}
+
+		?>
+	</div>
+	<?php
+}
+
 // * Removing Comment Section
 remove_action( 'genesis_after_post', 'genesis_get_comments_template' );
 

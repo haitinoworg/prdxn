@@ -99,7 +99,6 @@
 	.site-header {
 		.genesis-nav-menu {
 			&.responsive-menu	{
-<<<<<<< HEAD
 				// .sub-menu li a,
 				// .sub-menu { color: #fff; }
 				li a:hover,
@@ -109,18 +108,6 @@
 				padding: 0 1vw;
 				color: #f16522;	
 			}
-=======
-				.sub-menu li a,
-				.sub-menu li a:hover,
-				.sub-menu { color: #fff; }
-				&>li:hover>a,
-				& a:hover {	color: #f16522;	}
-			}
-			.current-menu-item > a	{ 
-				padding: 0 1vw;
-				color: #f16522;	
-			}
->>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 		}
 	}
 
