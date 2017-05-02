@@ -20,9 +20,15 @@ Content Area
 			border: 1px solid #cfcfcf;
 			background-color: #fff;
 			@include property(transition, 0.4s linear);
+<<<<<<< HEAD
 
 			&:nth-of-type(1) { margin-right: 4%;	}
 
+=======
+
+			&:nth-of-type(1) { margin-right: 4%;	}
+
+>>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 			@include maxWidth(553px) {
 				min-width: 100%;
 				margin-right: 0;
@@ -75,6 +81,7 @@ Content Area
 					p { text-align: left; }
 				}
 
+<<<<<<< HEAD
 				.ptsElImg { 
 					width: 100%; 
 					height: 100%;
@@ -94,14 +101,21 @@ Content Area
 						top: 0;
 					}
 				}
+=======
+				.ptsElImg { width: 100%; }
+>>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 
 				.ptsBlock .ptsBlockContent .ptsCol .ptsRows .ptsCell.ptsCellAlignLeft {
 					text-align: center;
 				}
 
 				.ptsColHeader { 
+<<<<<<< HEAD
 					padding: 26% 0;
 					position: relative;
+=======
+					max-height: 350px; 
+>>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 					overflow: hidden;
 				}
 			}
@@ -320,6 +334,7 @@ Content Area
 
 	.featured-content article {
 		width: 48%;
+		max-height: 283px;
 		padding: 0;
 		margin: 0;
 		@include props(ovh,fll,posr);
@@ -351,6 +366,7 @@ Content Area
 			display: block;
 			position: relative;
 			background-color: #000;
+<<<<<<< HEAD
 
 			img {
 				width: 100%;
@@ -359,6 +375,14 @@ Content Area
 				position: absolute;
 				top: 0;
 				left: 0;
+=======
+			// @include property(transition,0.3s linear);
+			img {
+				width: 100%;
+				min-width: 506px;
+				height: auto;
+				max-width: auto;
+>>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 				@include property(transition, all 0.4s ease-in);
 				&:hover { opacity: 1;}
 			}
@@ -419,7 +443,10 @@ Content Area
 	}
 }
 
+<<<<<<< HEAD
 // Pricing Table Animation
+=======
+>>>>>>> e9223894e14201e71f95fd334e0453d32eaf0c29
 
 .ptsCol:hover .ptsColHeader img {
 	animation: cols 1s both;

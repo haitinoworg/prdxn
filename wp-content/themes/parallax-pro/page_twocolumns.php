@@ -17,17 +17,16 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 add_action( 'genesis_before_entry', 'programs_featured_image' );
 function programs_featured_image() {
 	echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-	echo '<h3>';
-	echo the_title() .'</h3>';
+	echo '<h3>Donate for this programs</h3>';
 	echo '<p>';
 	echo the_field("donate_text") . '</p>';
-	echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div></div>';
+	echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
+	echo '<h3>';
+	echo the_title() .'</h3></div>';
 	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 		printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 		echo '</div>';
-
 	}
-
 }
 
 // Add our custom loop
@@ -85,25 +84,6 @@ function custom_sidebar() {
 	<?php
 
 }
-
-// //Remove Default Post Pagination
-// remove_action( 'genesis_post_content', 'genesis_do_post_content_nav' );
-
-
-// function pagination_two_columns() {
-
-// 	$args = array(
-// 		'before' => '<div class="pagenums"><div class="pages">',
-// 		'after' => '</div></div>',
-// 		'next_or_number' => 'next',
-// 		'nextpagelink' => __('Next Page'),
-// 		'previouspagelink' => __('Previous Page'),
-// 		'pagelink' => '%',
-// 		'echo' => 1
-// 		);
-// 	wp_link_pages( $args );
-
-// }
 
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
