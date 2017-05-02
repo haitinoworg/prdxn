@@ -123,17 +123,6 @@ Site Header
 						padding: 0 15px 15px;
 					}
 
-					li:first-child {
-						padding-top: 10px;
-						a, a:hover {
-							padding: 15px;
-						}
-					}
-
-					li:last-child {
-						padding-bottom: 10px;
-					}
-
 				}
 			}
 		}
@@ -186,4 +175,9 @@ Site Header
 }
 
 
-
+.stripe-button-el {
+	border-radius: 0;
+	span {
+		border-radius: 0;
+	}
+}
