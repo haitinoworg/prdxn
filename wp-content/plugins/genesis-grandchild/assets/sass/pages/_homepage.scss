@@ -120,7 +120,7 @@ Content Area
 			height: calc(100vh - 70px);
 			padding: 0;
 			.wrap { 
-				width: 93%;
+				width: 84%;
 				margin: 0 auto;
 				padding: 0; 
 				position: relative;
@@ -138,7 +138,7 @@ Content Area
 				}
 			}
 			section {
-				width: 60%;
+				width: 46%;
 				text-align: left;
 			}
 
@@ -242,7 +242,9 @@ Content Area
 	}
 
 	.salesforce_w2l_lead {
-		margin: 0;
+		width: 75%;
+		margin: 0 auto;
+		overflow: auto;
 
 		@include mobile() {
 			margin-bottom: 30px;
@@ -319,7 +321,7 @@ Content Area
 	}
 
 	.featured-content article {
-		width: 48%;
+		width: 100%;
 		padding: 0;
 		margin: 0;
 		@include props(ovh,fll,posr);
@@ -328,7 +330,7 @@ Content Area
 
 		.widget-title { margin-bottom: 44px; }
 
-		&:last-child { margin-left: 4%; }
+		&:last-child { margin-top: 4%; }
 
 		@include tab() {
 			width: 100%;
@@ -345,11 +347,12 @@ Content Area
 		}
 
 		&>a { 
-			width: 100%;
-			padding: 26% 0;
-			margin: 0;
-			display: block;
+			width: 48%;
+			padding: 13% 0;
+			margin-right: 4%;
+			/*display: block;*/
 			position: relative;
+			float: left;
 			background-color: #000;
 
 			img {
@@ -381,31 +384,54 @@ Content Area
 					opacity: 0;
 					border-radius: 0;
 				}
-
-				& + .entry-header {
-					animation: title 0.3s linear forwards;
-				}
 			}
 		}
+
+		.entry-content {
+      width: 48%;
+      float: left;
+      text-align: left;
+
+      p{
+      	margin-bottom: 0;
+      	color: #333;
+      	font-size: 17px;
+      	text-align: left;
+      }
+
+      .common-links {
+        width: auto;
+        padding: 10px 25px;
+        margin: 30px 0 0;      
+        border: 1px solid #f16522;
+        display: inline-block;
+        background-color: #f16522;
+        color: #fff;
+        font: 14px/20px Roboto, sans-serif;  
+      }
+
+      .common-links:hover {    
+      	background-color: #fff;
+        color: #f16522;}
+		  }
+
 		header.entry-header {
-			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 0;
-			@include property(transform,translateY(-50%));
+			width: 48%;
+			float: left;
+
 			a { 
-				position: absolute;
-				left: 50%;
-				@include property(transform,translateX(-50%));
+			  	color: #333;
+
 				&:hover {
-					color: #fff;
+					color: #333;
 				}
 			}
 
 			h2.entry-title {
-				margin: 0;
-				font: 23px $font;
-				text-shadow: 0px 2px 2px #000;
+        margin-bottom: 12px;
+				font: 32px $font;
+				text-align: left;
+
 				&:after { display: none; }
 				@include maxWidth(1024px) {
 					font-size: 18px;
