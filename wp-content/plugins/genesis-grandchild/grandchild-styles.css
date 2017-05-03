@@ -799,7 +799,7 @@ Content Area
 
 .home-section-5.home-odd {
   height: auto;
-  padding: 31px 0 5px;
+  padding: 31px 0;
   background-color: #2e2b2b;
   border-top: 1px solid #e3ffbc;
 }
@@ -920,7 +920,7 @@ Content Area
 }
 @media screen and (max-width: 480px) {
   .home-section-3 .featured-content article {
-    max-height: 180px;
+    /*max-height: 180px;*/
   }
 }
 .home-section-3 .featured-content article > a {
@@ -931,10 +931,16 @@ Content Area
   position: relative;
   float: left;
   background-color: #000;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .home-section-3 .featured-content article > a {
+    width: 100%;
+    padding: 23% 0;
+  }
 }
 .home-section-3 .featured-content article > a img {
   width: 100%;
-  min-width: 506px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -967,6 +973,11 @@ Content Area
   width: 48%;
   float: left;
   text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .home-section-3 .featured-content article .entry-content {
+    width: 100%;
+  }
 }
 .home-section-3 .featured-content article .entry-content p {
   margin-bottom: 0;
@@ -1013,7 +1024,7 @@ Content Area
 }
 @media screen and (max-width: 768px) {
   .home-section-3 .featured-content article header.entry-header h2.entry-title {
-    font-size: calc(1.5vw + 10px);
+    font-size: calc(1.5vw + 13px);
   }
 }
 
@@ -2528,7 +2539,7 @@ Footer Widgets
 }
 @media screen and (max-width: 480px) {
   .footer-widgets .footer-widgets-1 .title-area {
-    float: none;
+    /*float: none; */
   }
   .footer-widgets .footer-widgets-1 .title-area .site-title {
     text-align: center;
@@ -2558,14 +2569,14 @@ Footer Widgets
 }
 @media screen and (max-width: 768px) {
   .footer-widgets section #menu-secondary-menus > li {
-    width: 32%;
-    text-align: left;
+    width: 100%;
+    text-align: center;
   }
 }
 @media screen and (max-width: 480px) {
   .footer-widgets section #menu-secondary-menus > li {
     width: 100%;
-    margin: 0 auto;
+    margin: 13px auto;
     text-align: center;
     display: block;
   }
@@ -2614,6 +2625,9 @@ Footer Widgets
   text-align: left;
   padding-top: 0;
   padding-bottom: 0;
+}
+.footer-widgets #text-7 .title-area {
+  display: none;
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #text-7 {
@@ -2782,13 +2796,13 @@ Footer Section-1
 @media screen and (max-width: 768px) {
   .footer-widgets #nav_menu-4 {
     width: 100%;
-    padding: 40px 0;
+    padding: 40px 0 15;
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 480px) {
   .footer-widgets #nav_menu-4 #menu-secondary-menus > li:nth-child(2) {
-    padding: 25px 0;
+    /*padding: 25px 0;*/
   }
 }
 @media screen and (max-width: 1024px) {
@@ -2903,7 +2917,80 @@ Footer Section-1
 
 @media screen and (max-width: 768px) {
   .footer-widgets .social-icons li {
+    margin: 10px 0px 0 !important;
     display: inline-block !important;
+  }
+}
+#text-19 .title-area {
+  display: none;
+}
+
+/*footer responsive styling*/
+@media screen and (max-width: 768px) {
+  .footer-widgets {
+    padding: 0 0 20px;
+  }
+  .footer-widgets .sub-menu {
+    display: none;
+  }
+  .footer-widgets li {
+    margin: 25px 0;
+  }
+  .footer-widgets section #menu-secondary-menus > li:last-child {
+    padding-left: 0;
+    margin-bottom: 23px;
+  }
+  .footer-widgets #text-19 {
+    width: 100%;
+    margin: 25px 0;
+  }
+  .footer-widgets #text-19 .title-area {
+    width: 100%;
+    display: inline-block;
+  }
+  .footer-widgets #text-19 .title-area .site-title {
+    text-align: center;
+  }
+  .footer-widgets #text-7 .title-area {
+    display: inline-block;
+  }
+  .footer-widgets #text-7 h4 {
+    display: none;
+  }
+  .footer-widgets #text-7 .title-area {
+    width: 47%;
+    float: left;
+  }
+  .footer-widgets #text-7 .address {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-widgets #text-18 {
+    width: 100%;
+  }
+  .footer-widgets .widget_cnss_widget {
+    width: 100%;
+    /*float: none;*/
+    text-align: center;
+  }
+  .footer-widgets .widget_cnss_widget ul {
+    text-align: center !important;
+  }
+  .footer-widgets .like {
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+    overflow: auto;
+  }
+  .footer-widgets .like iframe {
+    float: none;
+  }
+  .footer-widgets .copyright .site-title {
+    display: none;
+  }
+  .footer-widgets .footer-right,
+  .footer-widgets .footer-left {
+    float: none;
   }
 }
 .site-header .genesis-nav-menu.responsive-menu li > a:hover {

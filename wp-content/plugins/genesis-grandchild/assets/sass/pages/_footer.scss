@@ -45,7 +45,7 @@ Footer Widgets
 				}
 
 				@include mobile() { 
-					float: none; 
+					/*float: none; */
 					.site-title { text-align: center; }
 				}
 			}
@@ -74,13 +74,13 @@ Footer Widgets
 				vertical-align: top;
 
 				@include maxWidth(768px) {
-					width: 32%;
-					text-align: left;
+					width: 100%;
+					text-align: center;
 				}
 
 				@include mobile() {
 					width: 100%;
-					margin: 0 auto;
+					margin: 13px auto;
 					text-align: center;
 					display: block;
 				}
@@ -138,6 +138,8 @@ Footer Widgets
 		text-align: left;
 		padding-top: 0;
 		padding-bottom: 0;
+
+		.title-area {display: none;}
 
 		@include maxWidth(1024px) {
 			width: 40%;
@@ -303,14 +305,14 @@ Footer Section-1
 
 	@include maxWidth(768px) { 
 		width: 100%; 
-		padding: 40px 0;
+		padding: 40px 0 15;
 		margin-bottom: 0;
 	}
 
 	#menu-secondary-menus {
 		&>li:nth-child(2) {
 			@include maxWidth(480px) {
-				padding: 25px 0;
+				/*padding: 25px 0;*/
 			}
 		}
 		@include maxWidth(1024px) { text-align: right;}
@@ -427,6 +429,98 @@ span { font-size: 12px; }
 
 @include tab() {
 		.footer-widgets  .social-icons  li{
+			      margin: 10px 0px 0!important;
             display: inline-block !important;
          }
 }
+
+#text-19 {
+	.title-area {
+	  display: none;
+  }
+}
+
+/*footer responsive styling*/
+@include tab() {
+	.footer-widgets {
+		padding: 0 0 20px;
+
+		.sub-menu {
+      display: none;
+		}
+
+		li {
+			margin: 25px 0;
+		}
+
+		section {
+			#menu-secondary-menus > li:last-child {
+				padding-left: 0;
+				margin-bottom: 23px;
+			}
+		}
+
+		#text-19 {
+			width: 100%;
+			margin: 25px 0;
+
+       .title-area {
+       	   width: 100%;
+       	   display: inline-block;
+
+         	.site-title{
+            text-align: center;
+        	}
+       }
+		}
+
+		#text-7 {
+
+			.title-area {display: inline-block;}
+
+			 h4 {display: none;}
+
+       .title-area {
+       	  width: 47%;
+       	  float: left;
+       }
+
+       .address {
+       	  width: 100%;
+       	  text-align: center;
+       }
+		}
+
+		#text-18 {
+			width: 100%;
+		}
+
+		.widget_cnss_widget {
+			width: 100%;
+			/*float: none;*/
+			text-align: center;
+
+			ul {
+				text-align: center !important;
+			}
+		}
+
+		.like {
+			width: 75%;
+			margin: 0 auto;
+			float: none;
+			overflow: auto;
+
+			iframe {
+				float: none;
+			}
+		}
+
+		.copyright {
+			.site-title {display: none;}
+		}
+
+		.footer-right,
+		.footer-left {float: none;}
+	}
+} 

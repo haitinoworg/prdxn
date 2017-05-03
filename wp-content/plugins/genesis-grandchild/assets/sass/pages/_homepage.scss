@@ -228,7 +228,7 @@ Content Area
 
 .home-section-5.home-odd {
 	height: auto;
-	padding: 31px 0 5px;
+	padding: 31px 0;
 	background-color: #2e2b2b;
 	border-top: 1px solid #e3ffbc;
 
@@ -343,7 +343,7 @@ Content Area
 		}
 
 		@include mobile() {
-			max-height: 180px;
+			/*max-height: 180px;*/
 		}
 
 		&>a { 
@@ -354,10 +354,15 @@ Content Area
 			position: relative;
 			float: left;
 			background-color: #000;
+			overflow: hidden;
+
+			@include tab() {
+			  width: 100%;
+			  padding: 23% 0;
+		  }
 
 			img {
 				width: 100%;
-				min-width: 506px;
 				height: 100%;
 				position: absolute;
 				top: 0;
@@ -391,6 +396,10 @@ Content Area
       width: 48%;
       float: left;
       text-align: left;
+
+      @include tab() {
+      	width: 100%;
+      }
 
       p{
       	margin-bottom: 0;
@@ -438,7 +447,7 @@ Content Area
 				}
 
 				@include maxWidth(768px) {
-					font-size: calc(1.5vw + 10px);
+					font-size: calc(1.5vw + 13px);
 				}
 			}
 		}
