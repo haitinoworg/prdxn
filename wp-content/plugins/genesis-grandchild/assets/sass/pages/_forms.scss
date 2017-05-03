@@ -5,18 +5,14 @@
 .contact-form-7 {
 
 	.content {
-
-		width: 100%;
+		width: 84%;
 
 		// Form Styling
-
 		article.entry {
 			padding: 63px 0 0;
 		}
 
 		.entry-content {
-			width: 62%;
-			min-width: 692px;
 			margin: 0 auto;
 			font-family: $font;
 
@@ -143,16 +139,20 @@
 
 	.salesforce_w2l_lead {
 		#sf_form_salesforce_w2l_lead_6 {
-		     .w2lsubmit { border-radius: 0px; }
-	     }
+			.w2lsubmit { border-radius: 0px; }
+		}
 
-		.w2lsubmit {
-			min-width: 215px;
-			max-width: 216px;
-			border: 0px solid #f16522;
-			border-radius: 3px;
-			margin: 25px auto 64px;
-			background-color: #f16522;
+		#sf_form_salesforce_w2l_lead_7 {
+			text-align: center;
+			input,
+			p { text-align: left; }
+			.w2lsubmit { 		
+				display: inline-block; 
+				input {
+					padding: 11px 25px;
+					border-radius: 0px;
+				}
+			}
 		}
 	}
 
@@ -203,34 +203,34 @@
 				&:-ms-input-placeholder
 				{	color: #aaa;	}
 
-				&:hover {/* border: 1px solid #aaa;*/ }
-			}
-			input[type="submit"] { 
-				padding: 11px;
-				border: 1px solid #f16522;
-				background-color: #f16522;
+			&:hover {/* border: 1px solid #aaa;*/ }
+		}
+		input[type="submit"] { 
+			padding: 11px;
+			border: 1px solid #f16522;
+			background-color: #f16522;
 
-				@include tab() { width: 100%; }
+			@include tab() { width: 100%; }
 
-				&:hover { 
-					background-color: #fff;
-					color: #f16522; 
-				}
+			&:hover { 
+				background-color: #fff;
+				color: #f16522; 
 			}
+		}
 
-			p {
-				margin-top: 0;
-				margin-bottom: 0;
-				color: #f00;
-				font-size: 14px;
-				text-align: left;
-			}
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+			color: #f00;
+			font-size: 14px;
+			text-align: left;
 		}
 	}
 }
+}
 
 .salesforce_w2l_lead {
-	margin: 48px 0 40px;
+	margin: 0 0 40px;
 	form.w2llead {
 		&>div { 
 			input,
@@ -303,30 +303,23 @@
 /* volunteer page responsive */
 @include tab() {
 	.contact-form-7 { 
-	    .volunteer-form { 
-	    	.sf_field {
-	            width: 100%;
-	        }
+		.volunteer-form { 
+			.sf_field {
+				width: 100%;
+			}
 
-	        .sf_field:nth-child(3n+2) {
-	            margin: 0px;	
-	        }
-        }
+			.sf_field:nth-child(3n+2) {
+				margin: 0px;	
+			}
+		}
 
-        .salesforce_w2l_lead {
-        	.w2lsubmit {
-        		margin: 25px auto 64px;
-        	}
-        }
+		.content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
+	}
 
-
-       .content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
-    }
-
-    .contact-form-7 {
-    	.email-us {
-    		a { display: block; }
-    	}
-    }
+	.contact-form-7 {
+		.email-us {
+			a { display: block; }
+		}
+	}
 }
 

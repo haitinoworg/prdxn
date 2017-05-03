@@ -7,7 +7,7 @@
       margin: 0 auto;
       float: none;
 
-      article.entry { padding: 50px 0; }
+      article.entry { padding: 50px 0 0; }
     }
   }
 }
@@ -64,9 +64,9 @@
     font-family: $font;
   }
 
-  .sponsor-list:nth-child(3n+3) {
-  	margin-right: 8%; 
-  }
+  // .sponsor-list:nth-child(3n+3) {
+  // 	margin-right: 8%; 
+  // }
 
   .sponsor-list:nth-child(2n+2) {
   	margin-right: 0px; 
@@ -77,6 +77,10 @@
   .sponsor-list {
     width: 80%;
     margin: 12px 10%;
+  }
+
+  .sponsor-list:nth-child(2n+2) {
+    margin-right: 10%; 
   }
 
 }
