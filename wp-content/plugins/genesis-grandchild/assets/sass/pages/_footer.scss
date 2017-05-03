@@ -3,7 +3,7 @@
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
-	padding: 53px 0 56px;
+	padding: 53px 0 0;
 	clear: both;
 	background-color: #f9f9f9;
 	font: 16px $font;
@@ -37,7 +37,7 @@ Footer Widgets
 			.title-area { 
 				width: 250px;
 				margin-bottom: 21px;
-				float: none; 
+				float: left; 
 
 				@include maxWidth(768px) {
 					width: auto;
@@ -53,10 +53,9 @@ Footer Widgets
 
 		section {
 			width: 30%;
-			padding-bottom: 25px;
-			margin-bottom: 0;
+			padding-bottom: 0px;
+			margin-bottom: 0px !important;
 			float: left;
-
 			
 			#menu-secondary-menus {
 				text-align: left;
@@ -67,8 +66,10 @@ Footer Widgets
 			}
 
 			#menu-secondary-menus>li {
-				margin: 0;
+        width: 21%;
+        margin: 0 5.3% 30px 0;
 				display: inline-block;
+				float: left;
 				text-align: left;
 				vertical-align: top;
 
@@ -86,7 +87,7 @@ Footer Widgets
 
 
 				&>a { 
-					font: 900 14px $font;	
+					font: 900 16px $font;	
 					letter-spacing: 1px;
 					text-transform: uppercase;
 				}
@@ -104,6 +105,11 @@ Footer Widgets
 				}
 			}
 
+			#menu-secondary-menus>li:last-child {
+				padding-left: 20px;
+				margin-right: 0;
+			}
+
 			&:last-child { 
 				width: 100%; 
 				padding-bottom: 0;
@@ -112,7 +118,7 @@ Footer Widgets
 		}
 
 		.wrap {
-			@include boxmodel(1,"",3,93%,5,0);
+			@include boxmodel(1,"",3,84%,5,0);
 			@include tab() { width: 90%; }
 		}
 
@@ -128,7 +134,7 @@ Footer Widgets
 	// Address Styling
 
 	#text-7 {
-		width: 30%;
+		width: 27%;
 		text-align: left;
 		padding-top: 0;
 		padding-bottom: 0;
@@ -159,6 +165,7 @@ Footer Widgets
 		}
 
 		h4 { 
+			font-size: 16px;
 			margin-bottom: 5px;
 			letter-spacing: 1px;
 			text-transform: uppercase; 
@@ -195,9 +202,9 @@ Footer Widgets
 	}
 
 	#text-13 { 
-		border-top: 1px solid #636363;
+/*		border-top: 1px solid #636363;
 		margin-bottom: 0;
-		padding-bottom: 16px;
+		padding-bottom: 16px;*/
 		@include maxWidth(1024px) {
 			width: 100%;
 		}
@@ -265,13 +272,34 @@ Site Footer
 	text-transform: uppercase;
 }
 
+.copyright {
+    padding-top: 18px;
+    margin-top: 20px;
+    border-top: 2px solid #f16522;
+    overflow: auto;
+}
+
+.footer-right {
+	margin: 7px 0 0 5px;
+	float: right;
+}
+
+.footer-left {
+	margin-top: 7px;
+	float: right;
+
+	p {
+		display: inline-block;
+	}
+}
+
 
 /**
 Footer Section-1
 */
 
 .footer-widgets #nav_menu-4 {
-	width: 38%;
+	width: 73%;
 	margin-bottom: 20px;
 	@include maxWidth(1024px) {
 		width: 60%;
@@ -285,7 +313,6 @@ Footer Section-1
 
 	#menu-secondary-menus {
 		&>li:nth-child(2) {
-			padding: 0 8%;
 			@include maxWidth(480px) {
 				padding: 25px 0;
 			}
@@ -305,89 +332,95 @@ Footer Section-1
 
 	.social-icons {
 		margin: 5px auto 0;
-		display: table;
+		display: inline-block;
 
-		a {
+		a { 
 			box-sizing: border-box;
 			width: 25px;
-			margin-left: 35px;
+			margin-left: 14px;
+			position: relative;
 			display: block;
 			text-align: center;
 
 			@include maxWidth(768px)  {
 				margin: 10px;
 			}
+	    }
 
-		/* &[title="Facebook"] {
-		// 	img { 
-		// 		width: 8px; 
-		// 		height: 18px;
-		// 		margin-left: 8px !important
-		// 	}
-		// }
-
-		// &[title="Google Plus"] {
-		// 	img { 
-		// 		width: 20px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Pinterest"] {
-		// 	img { 
-		// 		width: 18px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Twitter"] {
-		// 	img { 
-		// 		width: 20px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Youtube"] {
-		// 	img { 
-		// 		width: 16px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Scoop It"] {
-		// 	img { 
-		// 		width: 16px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Quora"] {
-		// 	img { 
-		// 		width: 18px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="Amazon"] {
-		// 	img { 
-		// 		width: 20px; 
-		// 		height: 18px;
-		// 	}
-		// }
-
-		// &[title="eBay"] {
-		// 	padding-top: 14px;
-		// 	img { 
-		// 		width: 29px;
-		// 		height: 10px;
-		// 	}
-		// }*/	
-	}
+	    a:hover::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+      margin-left: 2px;
+    	border-radius: 50%;
+    	display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(241, 101, 34, 0.48);
+		} 
 
 	li {
-		display: table-cell !important;
+		margin: 10px 0px !important
 	}
 }
+
+a, 
+span { font-size: 12px; }
+.copyright {
+    p {
+  	    padding-left: 8px;
+ 	    margin-left: 5px;
+ 	    border-left: 2px solid;
+ 	    display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+    }   
+}
+
+ section {
+ 	#menu-secondary-menus  > li > a {
+       color: #f16522 !important;
+ 	}
+
+ 	#menu-secondary-menus {
+ 		.sub-menu {
+ 		    margin-top: -8px;
+
+        a, 
+        span { font-size: 14px; }
+ 	    	}
+   	}
+ }
+
+ .widget-title {color: #f16522;}
+}
+
+.footer-widgets {
+    .widget_cnss_widget {
+	    width: 50%;
+        float: right;
+        text-align: right;
+
+       ul {
+       	text-align: right !important;
+       }
+    }
+
+    .like {
+    	padding-top: 25px;
+    	float: left;
+
+    	iframe {
+    		height: 20px;
+    	}
+
+    	._51mx ._51mw {display: none;}
+    }
+}
+
+#text-18 {
+	width: 40%;
 }
 
 @include tab() {

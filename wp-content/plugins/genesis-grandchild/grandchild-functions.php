@@ -126,4 +126,3 @@ function custom_site_logo( $atts ) {
 	return do_action( 'genesis_site_title', 'genesis_seo_site_title' );
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
-

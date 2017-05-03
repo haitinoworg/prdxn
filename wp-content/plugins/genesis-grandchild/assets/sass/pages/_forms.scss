@@ -177,7 +177,7 @@
 	form {
 		clear: both;
 		&>div { 
-			width: 25%;
+			width: 33.333%;
 			float: left;
 
 			@include maxWidth(768px) {

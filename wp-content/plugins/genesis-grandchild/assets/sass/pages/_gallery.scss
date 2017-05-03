@@ -28,10 +28,35 @@
 	.col-lg-4 {
 		a {
             display: block;
+            position: relative;
 		}
+    
+    a::before {
+              content: ' ';
+              width: 100%;
+              height: 100%;
+              display: block;
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              background: rgba(0, 0, 0, 0.38);
+    }
+
+    a:hover:before {
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.4s;
+      -webkit-transition: background 0.4s;
+    }
 
 		a::after {
-
+            content: ' ';
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background: url('../../uploads/2017/04/album.png') no-repeat;
+            background-position: 95% 5%;
+            background-size: 11% 18%; 
 		}
 	}
 }
@@ -56,11 +81,11 @@
 
         li {   	   
             padding: 9px 28px;
-            /*border: 1px solid;*/
             float: left;
             font-size: 16px;
             cursor: pointer;
         }
+
         .active,
         li:hover {
         	background: #fff;
@@ -100,7 +125,7 @@
                 border-radius: 0px;
             }
 
-            .overLayer,
+        .overLayer,
 	    	.infoLayer {display: none;}
 
             a::after {
@@ -117,7 +142,7 @@
 	    }
 
 	    .huge_it_big_li:nth-child(3n+2) {
-	        margin: 0px !important;
+	        margin-right: 0px !important;
         }
     }
 }
@@ -131,6 +156,30 @@
 	        	width: 100%;
 	        }
 	    }
+    }
+  
+  .page-template-page-gallery {
+    .programs-hero-image {
+      max-height: 220px;
+    }
+  }
+}
+
+@include mobile() {
+    .page-template-page-gallery {
+	    .entry {
+ 	        padding: 50px 0px;
+        }
+    }
+    
+    .page-template-page-gallery {
+      .programs-hero-image {
+        height: 150px;
+      }
+    }
+
+    img {
+    	width: auto;
     }
 }
 

@@ -109,15 +109,26 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
 });
 
+// gallery page tab
+$("#tabs li").on('click',function(){
+   $("#tabs li").removeClass('active');
+   $(this).addClass('active');
+   var index = $(this).index();
+   var child = index+1;
+   $(".tabs .tab-detail").css('display','none');
+   $(".tabs .tab-detail:nth-child("+child+")").css('display','block');
+});
+
+var section_height = $('.program-desc').offset().top + 250;
+$(this).scroll(function(){
+    var x = $(this).scrollTop();
+
+    var window_height = $(window).scrollTop() + $(window).height();
+    if(window_height > section_height){
+      $(".program-desc").css('visibility','visible');
+      $(".program-desc").addClass("active");
+    }
+});
+
 })(jQuery);
 
-
-// Facebook Script
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
