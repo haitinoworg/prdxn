@@ -66,8 +66,8 @@ Footer Widgets
 			}
 
 			#menu-secondary-menus>li {
-				width: 25%;
-				margin: 0 0 30px 0;
+        width: 21%;
+        margin: 0 5.3% 30px 0;
 				display: inline-block;
 				float: left;
 				text-align: left;
@@ -87,7 +87,7 @@ Footer Widgets
 
 
 				&>a { 
-					font: 900 14px $font;	
+					font: 900 16px $font;	
 					letter-spacing: 1px;
 					text-transform: uppercase;
 				}
@@ -103,6 +103,11 @@ Footer Widgets
 					}
 
 				}
+			}
+
+			#menu-secondary-menus>li:last-child {
+				padding-left: 20px;
+				margin-right: 0;
 			}
 
 			&:last-child { 
@@ -129,7 +134,7 @@ Footer Widgets
 	// Address Styling
 
 	#text-7 {
-		width: 22%;
+		width: 27%;
 		text-align: left;
 		padding-top: 0;
 		padding-bottom: 0;
@@ -160,6 +165,7 @@ Footer Widgets
 		}
 
 		h4 { 
+			font-size: 16px;
 			margin-bottom: 5px;
 			letter-spacing: 1px;
 			text-transform: uppercase; 
@@ -196,9 +202,6 @@ Footer Widgets
 	}
 
 	#text-13 { 
-/*		border-top: 1px solid #636363;
-		margin-bottom: 0;
-		padding-bottom: 16px;*/
 		@include maxWidth(1024px) {
 			width: 100%;
 		}
@@ -274,7 +277,7 @@ Site Footer
 }
 
 .footer-right {
-	margin-top: 7px;
+	margin: 7px 0 0 5px;
 	float: right;
 }
 
@@ -287,13 +290,12 @@ Site Footer
 	}
 }
 
-
 /**
 Footer Section-1
 */
 
 .footer-widgets #nav_menu-4 {
-	width: 76%;
+	width: 73%;
 	margin-bottom: 20px;
 	@include maxWidth(1024px) {
 		width: 60%;
@@ -331,7 +333,7 @@ Footer Section-1
 		a { 
 			box-sizing: border-box;
 			width: 25px;
-			margin-left: 13px;
+			margin-left: 14px;
 			position: relative;
 			display: block;
 			text-align: center;
@@ -358,10 +360,9 @@ Footer Section-1
 		margin: 10px 0px !important
 	}
 }
+
 a, 
-span {
-	font-size: 12px;
-    }
+span { font-size: 12px; }
 .copyright {
     p {
   	    padding-left: 8px;
@@ -381,8 +382,11 @@ span {
  	#menu-secondary-menus {
  		.sub-menu {
  		    margin-top: -8px;
- 		}
- 	}
+
+        a, 
+        span { font-size: 14px; }
+ 	    	}
+   	}
  }
 
  .widget-title {color: #f16522;}
@@ -404,8 +408,14 @@ span {
     	float: left;
 
     	iframe {
+    		width: 100px;
     		height: 20px;
+    		margin-right: 10px;
+    		float: left;
+    		overflow: hidden !important;
     	}
+
+    	#u_0_3 {display: none;}
 
     	._51mx ._51mw {display: none;}
     }

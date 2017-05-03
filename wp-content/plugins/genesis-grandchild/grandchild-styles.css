@@ -521,6 +521,7 @@ Site Header
   text-indent: 50px;
   font-family: Roboto;
   font-size: 16px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 960) {
@@ -1499,7 +1500,7 @@ div#n2-ss-6 .n2-grab {
 }
 .programs-hero-image .wrap {
   box-sizing: border-box;
-  width: 93%;
+  width: 84%;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -1739,6 +1740,10 @@ div#n2-ss-6 .n2-grab {
     transform: translateX(0%);
   }
 }
+.footer-widgets #text-7 p {
+  font-size: 14px;
+}
+
 .archive .content {
   padding: 0;
 }
@@ -2269,7 +2274,7 @@ Single Post Page Styling ==================================
   color: #333;
 }
 .single-programs .wrap {
-  width: 93%;
+  width: 84%;
 }
 .single-programs .content > .wrap {
   width: 71%;
@@ -2544,8 +2549,8 @@ Footer Widgets
   }
 }
 .footer-widgets section #menu-secondary-menus > li {
-  width: 25%;
-  margin: 0 0 30px 0;
+  width: 21%;
+  margin: 0 5.3% 30px 0;
   display: inline-block;
   float: left;
   text-align: left;
@@ -2566,7 +2571,7 @@ Footer Widgets
   }
 }
 .footer-widgets section #menu-secondary-menus > li > a {
-  font: 900 14px Roboto, sans-serif;
+  font: 900 16px Roboto, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -2581,6 +2586,10 @@ Footer Widgets
   .footer-widgets section #menu-secondary-menus > li li:first-child {
     margin: 10px 0 5px;
   }
+}
+.footer-widgets section #menu-secondary-menus > li:last-child {
+  padding-left: 20px;
+  margin-right: 0;
 }
 .footer-widgets section:last-child {
   width: 100%;
@@ -2601,7 +2610,7 @@ Footer Widgets
   text-align: left;
 }
 .footer-widgets #text-7 {
-  width: 22%;
+  width: 27%;
   text-align: left;
   padding-top: 0;
   padding-bottom: 0;
@@ -2634,6 +2643,7 @@ Footer Widgets
   }
 }
 .footer-widgets #text-7 h4 {
+  font-size: 16px;
   margin-bottom: 5px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2665,11 +2675,6 @@ Footer Widgets
 .footer-widgets #text-11 .textwidget a:last-child,
 .footer-widgets #text-12 .textwidget a:last-child {
   margin-right: 0;
-}
-.footer-widgets #text-13 {
-  /*		border-top: 1px solid #636363;
-  		margin-bottom: 0;
-  		padding-bottom: 16px;*/
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #text-13 {
@@ -2750,7 +2755,7 @@ Site Footer
 }
 
 .footer-right {
-  margin-top: 7px;
+  margin: 7px 0 0 5px;
   float: right;
 }
 
@@ -2766,7 +2771,7 @@ Site Footer
 Footer Section-1
 */
 .footer-widgets #nav_menu-4 {
-  width: 76%;
+  width: 73%;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 1024px) {
@@ -2815,7 +2820,7 @@ Footer Section-1
 .footer-widgets .social-icons a {
   box-sizing: border-box;
   width: 25px;
-  margin-left: 13px;
+  margin-left: 14px;
   position: relative;
   display: block;
   text-align: center;
@@ -2858,6 +2863,10 @@ Footer Section-1
 .footer-widgets section #menu-secondary-menus .sub-menu {
   margin-top: -8px;
 }
+.footer-widgets section #menu-secondary-menus .sub-menu a,
+.footer-widgets section #menu-secondary-menus .sub-menu span {
+  font-size: 14px;
+}
 .footer-widgets .widget-title {
   color: #f16522;
 }
@@ -2875,7 +2884,14 @@ Footer Section-1
   float: left;
 }
 .footer-widgets .like iframe {
+  width: 100px;
   height: 20px;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden !important;
+}
+.footer-widgets .like #u_0_3 {
+  display: none;
 }
 .footer-widgets .like ._51mx ._51mw {
   display: none;

@@ -278,7 +278,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 	.wrap {
 		box-sizing: border-box;
-		width: 93%;
+		width: 84%;
 		color: #fff;
 		position: absolute;
 		top: 50%;
@@ -494,4 +494,11 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		opacity: 1;
          @include property(transform,translateX(0%));
 	}
+}
+
+
+.footer-widgets  {
+	#text-7 {
+	  p { font-size: 14px; }
+  }
 }
