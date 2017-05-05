@@ -51,9 +51,9 @@ endif;
 
 $post_object = get_field('select_post');
 
-if( $post_object ): 
-	setup_postdata( $post_object ); 
-?>
+if( $post_object ): setup_postdata( $post_object ); 
+foreach($post_object as $post):
+	?>
 <div class="post-images content-image">
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php	
 		if(has_post_thumbnail()) {
@@ -68,6 +68,8 @@ if( $post_object ):
 		</div>
 	</a>
 </div>
-<?php wp_reset_postdata(); 
+<?php 
+endforeach;
+wp_reset_postdata(); 
 endif;
 
