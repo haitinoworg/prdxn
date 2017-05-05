@@ -16,7 +16,7 @@
 	add_action( 'genesis_before_entry', 'programs_single_hero' );
 	function programs_single_hero() {
 		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-		echo '<h3>Donate for this programs</h3>';
+		echo '<h3>Donate for this programs</h3>'; 
 		echo '<p>';
 		echo the_field("donate_text") . '</p>';
 		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
@@ -39,11 +39,14 @@
 		$list_title = get_field('list-title');
 		$left_content = get_field('left_column_topic');
 		$right_content = get_field('right_column_topic');
-		if($list_title) {	echo '<h2 class="list-title">'. $list_title . '</h2>';	} 
+		$third_content = get_field('third_column_topic');
+
+		if($list_title) {	echo '<div class="prgram-wrapper"><h2 class="list-title">'. $list_title . '</h2>';	} 
 		else { echo '';	}
 		if($left_content && $right_content) {	
-			echo '<div class="wrap"><div class="one-half first">'. $left_content . '</div>';
-			echo '<div class="one-half">' . $right_content . '</div></div>';
+			echo '<div class="wrap program-desc"><div class="one-half first">'. $left_content . '</div>';
+			echo '<div class="one-half">' . $right_content . '</div>';
+			echo '<div class="third">' . $third_content . '</div></div></div>';
 		} else { echo '';	}
 
 	}

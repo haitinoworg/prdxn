@@ -51,7 +51,6 @@ add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','vi
 */
 add_theme_support('post-thumbnails');
 add_post_type_support( 'programs', 'thumbnail' );
-
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 	register_post_type( 'programs',
@@ -87,6 +86,24 @@ function create_post_types() {
 		);
 }
 
+
+// Custom Programs Tags
+add_action( 'init', 'people_init' );
+function people_init() {
+	// create a new taxonomy
+	register_taxonomy(
+		'program-tags',
+		'programs',
+		array(
+			'label' => __( 'New Tags' ),
+			'rewrite' => array( 'slug' => 'program-tags' ),
+			// 'capabilities' => array(
+			// 	'assign_terms' => 'edit_guides',
+			// 	'edit_terms' => 'publish_guides'
+			// 	)
+			)
+		);
+}
 
 
 //* Unregister primary navigation menu
@@ -133,20 +150,11 @@ function custom_site_logo( $atts ) {
 add_shortcode( 'site_title', 'custom_site_logo' );
 
 
-// Donation Form
-function custom_donate_shortcode() {
-	?>
-	<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"><input type=hidden name="oid" value="00D7F0000002Vh5"><input type=hidden name="retURL" value="http://prdxnstaging2.com/ayiti/"><input type="hidden" id="sf_debug" class="w2linput hidden" name="debug" value="1">	
-		<input type="hidden" id="sf_debugEmail" class="w2linput hidden" name="debugEmail" value="pravin.chukkala.prdxn@gmail.com">	
-		<input type="text" name="message" class="w2linput" value="" style="display: none;"><input type="hidden" name="form_id" class="w2linput" value="6">
-		<div class="donation-box">
-			<span>$</span>
-			<input aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj"  type="text" name="00N7F000001pAWj" value="60">
-			<span>USD</span>
-		</div>
-		<input type="submit" class="stripe-button-el" name="submit" value="Donate Now"></form>
-		<?php
-		echo do_shortcode('[direct-stripe type="donation" button_id="stripe_donate_btn" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" capture="true" display_amount="false" currency="USD" success_url="prdxnstaging2.com/ayiti" coupon="localhost/ayiti2/404"]');
-	}
 
-	add_shortcode( 'custom_donate_form', 'custom_donate_shortcode' );	
+
+
+
+
+
+
+

@@ -96,9 +96,9 @@
 
 
 	.email-us {
-		padding: 50px 0;
+		padding: 32px 0;
 		background-color: #f2f2f2;
-		font: 23px $font;
+		font: 17px $font;
 		text-align: center;
 		p { margin: 0; }
 		a {	
@@ -136,21 +136,44 @@
 		}
 	}
 
-	.salesforce_w2l_lead {
-		#sf_form_salesforce_w2l_lead_6 {
-			.w2lsubmit { border-radius: 0px; }
+	.inside {
+		.salesforce_w2l_lead {
+			text-align: center;
+			.sf_field { 
+				text-align: left;
+				width: 30%; 
+				display: inline-block;
+				vertical-align: top;
+
+				&:nth-child(3n+2) {
+					margin: 0 4.5%;
+				}
+
+
+				@include tab() {
+					width: 100%;
+
+					&:nth-child(3n+2) { margin: 0; }
+				}
+			}
+			.sf_type_textarea { 
+				width: 100%;
+				min-height: 102px;
+				margin-left: 0;
+			}
 		}
 
+		.w2lsubmit { display: inline-block;	}
+	}
+
+	.salesforce_w2l_lead {
 		#sf_form_salesforce_w2l_lead_7 {
 			text-align: center;
 			input,
 			p { text-align: left; }
 			.w2lsubmit { 		
 				display: inline-block; 
-				input {
-					padding: 11px 25px;
-					border-radius: 0px;
-				}
+				input {	padding: 11px 25px;	}
 			}
 		}
 	}
@@ -242,9 +265,7 @@
 
 				@include mobile() {	margin-bottom: 0; }
 
-				&:focus {
-					border: 1px solid #ddd;
-				}
+				&:focus { border: 1px solid #ddd; }
 			}
 			input,
 			textarea {
@@ -328,9 +349,11 @@
 
 // Volunter Wrapper
 
-.volunteer-form {
+.volunteer-form,
+.inside {
 	.salesforce_w2l_lead {
 		width: 74%;
-		margin: 40px auto 40px;
+		padding: 40px 0 66px;
+		margin: 0 auto;
 	}
 }
