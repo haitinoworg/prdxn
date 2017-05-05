@@ -49,6 +49,31 @@ h6.entry-title {
 	}
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li { font-family: $font; }
+
+main.content {
+	.entry-content {
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 { margin: 5px 0;	}	
+
+		p {	margin-bottom: 30px; }
+	}
+}
 
 /* Titles
 --------------------------------------------- */

@@ -8,9 +8,7 @@
 		width: 84%;
 
 		// Form Styling
-		article.entry {
-			padding: 63px 0 0;
-		}
+		article.entry { padding: 63px 0 0; }
 
 		.entry-content {
 			margin: 0 auto;
@@ -35,11 +33,11 @@
 					}
 				}
 				input,
-				select,
 				textarea { 
-					padding: 10px;	
+					padding: 11px;	
 					outline: none;
 					font-size: 15px;
+					line-height: 10px;
 				}
 
 				textarea { 
@@ -48,8 +46,8 @@
 				}
 
 				#sf_00NA000000723Db { 
-					max-height: 42px; 
 					min-height: 42px;
+					padding: 16px 11px 5px;
 				}
 
 				label {
@@ -68,23 +66,22 @@
 			// Volunteer Paragraph Styling
 			h1,h2,h3,h4,h5,h6 {
 				background-color: transparent;
-				font: 30px $font;
 				text-transform: capitalize;
 			}
 
 			h2,h3,h4,h5,h6 {
-				margin: 38px 0;
+				margin: 5px 0;
 				text-align: left;
 			}
+
 
 			tbody td {
 				text-align: left;
 			}
 
 			p { 
-				margin-bottom: 5px; 
 				strong { 
-					margin: 39px 0 8px;
+					// margin: 39px 0 8px;
 					display: block;
 					font: 700 20px $font;
 				}
@@ -112,6 +109,8 @@
 		}
 
 	}
+
+	.form-title { text-align: center; }
 
 	.volunteer-form {
 		.sf_field { 
@@ -262,7 +261,10 @@
 			}	
 
 			select {
+				padding: 11px;	
 				color: #aaa;
+				font-size: 13px;
+				line-height: 10px;
 				option {
 					color: #000;
 				}
@@ -323,3 +325,12 @@
 	}
 }
 
+
+// Volunter Wrapper
+
+.volunteer-form {
+	.salesforce_w2l_lead {
+		width: 74%;
+		margin: 40px auto 40px;
+	}
+}

@@ -227,6 +227,32 @@ h6.entry-title:after {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li {
+  font-family: Roboto, sans-serif;
+}
+
+main.content .entry-content h1,
+main.content .entry-content h2,
+main.content .entry-content h3,
+main.content .entry-content h4,
+main.content .entry-content h5,
+main.content .entry-content h6 {
+  margin: 5px 0;
+}
+main.content .entry-content p {
+  margin-bottom: 30px;
+}
+
 /* Titles
 --------------------------------------------- */
 .sidebar {
@@ -1941,14 +1967,12 @@ Single Post Page Styling ==================================
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
-  width: 100%;
+  width: 84%;
 }
 .contact-form-7 .content article.entry {
   padding: 63px 0 0;
 }
 .contact-form-7 .content .entry-content {
-  width: 62%;
-  min-width: 692px;
   margin: 0 auto;
   font-family: Roboto, sans-serif;
 }
@@ -1970,19 +1994,19 @@ Single Post Page Styling ==================================
   font: 13px/33px Roboto, sans-serif;
 }
 .contact-form-7 .content .entry-content form input,
-.contact-form-7 .content .entry-content form select,
 .contact-form-7 .content .entry-content form textarea {
-  padding: 10px;
+  padding: 11px;
   outline: none;
   font-size: 15px;
+  line-height: 10px;
 }
 .contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
   min-height: 120px;
 }
 .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
-  max-height: 42px;
   min-height: 42px;
+  padding: 16px 11px 5px;
 }
 .contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
@@ -2013,21 +2037,16 @@ Single Post Page Styling ==================================
 }
 .contact-form-7 .content .entry-content h1, .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
   background-color: transparent;
-  font: 30px Roboto, sans-serif;
   text-transform: capitalize;
 }
 .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
-  margin: 38px 0;
+  margin: 5px 0;
   text-align: left;
 }
 .contact-form-7 .content .entry-content tbody td {
   text-align: left;
 }
-.contact-form-7 .content .entry-content p {
-  margin-bottom: 5px;
-}
 .contact-form-7 .content .entry-content p strong {
-  margin: 39px 0 8px;
   display: block;
   font: 700 20px Roboto, sans-serif;
 }
@@ -2045,6 +2064,9 @@ Single Post Page Styling ==================================
 }
 .contact-form-7 .email-us a:hover {
   color: #f16522;
+}
+.contact-form-7 .form-title {
+  text-align: center;
 }
 .contact-form-7 .volunteer-form .sf_field {
   width: 30%;
@@ -2070,13 +2092,19 @@ Single Post Page Styling ==================================
 .contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 .w2lsubmit {
   border-radius: 0px;
 }
-.contact-form-7 .salesforce_w2l_lead .w2lsubmit {
-  min-width: 215px;
-  max-width: 216px;
-  border: 0px solid #f16522;
-  border-radius: 3px;
-  margin: 25px auto 64px;
-  background-color: #f16522;
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 {
+  text-align: center;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 input,
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 p {
+  text-align: left;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit {
+  display: inline-block;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit input {
+  padding: 11px 25px;
+  border-radius: 0px;
 }
 
 /* News
@@ -2155,7 +2183,7 @@ Single Post Page Styling ==================================
 }
 
 .salesforce_w2l_lead {
-  margin: 48px 0 40px;
+  margin: 0 0 40px;
 }
 .salesforce_w2l_lead form.w2llead > div input,
 .salesforce_w2l_lead form.w2llead > div select,
@@ -2191,7 +2219,10 @@ Single Post Page Styling ==================================
   color: #aaa;
 }
 .salesforce_w2l_lead form.w2llead > div select {
+  padding: 11px;
   color: #aaa;
+  font-size: 13px;
+  line-height: 10px;
 }
 .salesforce_w2l_lead form.w2llead > div select option {
   color: #000;
@@ -2234,9 +2265,6 @@ Single Post Page Styling ==================================
   .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
     margin: 0px;
   }
-  .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
-    margin: 25px auto 64px;
-  }
   .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
     max-height: 150px;
   }
@@ -2245,6 +2273,11 @@ Single Post Page Styling ==================================
     display: block;
   }
 }
+.volunteer-form .salesforce_w2l_lead {
+  width: 74%;
+  margin: 40px auto 40px;
+}
+
 .single-post .entry-content {
   width: 62%;
   min-width: 692px;
@@ -3071,7 +3104,7 @@ Footer Section-1
   float: none;
 }
 .page-template-page-sponsor .site-inner .content article.entry {
-  padding: 50px 0;
+  padding: 50px 0 0;
 }
 
 .sponsors-container {
@@ -3132,10 +3165,6 @@ Footer Section-1
     font-family: Roboto, sans-serif;
   }
 
-  .sponsor-list:nth-child(3n+3) {
-    margin-right: 8%;
-  }
-
   .sponsor-list:nth-child(2n+2) {
     margin-right: 0px;
   }
@@ -3144,6 +3173,10 @@ Footer Section-1
   .sponsor-list {
     width: 80%;
     margin: 12px 10%;
+  }
+
+  .sponsor-list:nth-child(2n+2) {
+    margin-right: 10%;
   }
 }
 .content .entry-content h1, .content .entry-content h2, .content .entry-content h3, .content .entry-content h4, .content .entry-content h4, .content .entry-content h6, .content .entry-content p {
