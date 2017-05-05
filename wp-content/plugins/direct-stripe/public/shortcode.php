@@ -16,7 +16,9 @@ if ( $crios === 'crios' ) { ?>
 </style>
 <?php } ?>
 <!-- pass in the $params array and the URL -->
-<form action="<?php echo add_query_arg($params); ?>" id="stripeForm" value="submit" method="POST" >
+<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST" >
+	
+
 		<?php //Donation condition and input
 		if(  isset($directStripeAttrValues['type']) && $directStripeAttrValues['type'] === 'donation' ) { ?>
 		<div class="donation-box">
@@ -64,5 +66,11 @@ if ( $crios === 'crios' ) { ?>
 			<br/><input type="checkbox" class="conditions" id="conditions" required>&nbsp; <?php echo esc_attr($d_stripe_styles['direct_stripe_tc_text']); ?> <a target="_blank" href="<?php echo get_permalink($d_stripe_styles['direct_stripe_tc_link']); ?>"><?php  echo $d_stripe_styles['direct_stripe_tc_link_text']; ?></a><br />
 			<?php } ?>
 			<?php } ?>
+			<input type="hidden" id="sf_oid" class="w2linput hidden" name="oid" value="00D7F0000002Vh5">		
+			<input type="hidden" id="sf_retURL" class="w2linput hidden" name="retURL" value="http://localhost/ayiti2/">		
+			<input type="hidden" id="sf_debug" class="w2linput hidden" name="debug" value="1">		
+			<input type="hidden" id="sf_debugEmail" class="w2linput hidden" name="debugEmail" value="pravin.chukkala.prdxn@gmail.com">	
+			<input type="hidden" name="form_id" class="w2linput" value="6">	
+
 		</form>
 		<?php do_action( 'direct_stripe_after_form' ); ?>

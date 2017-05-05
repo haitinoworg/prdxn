@@ -42,7 +42,11 @@ remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 // Form Section Structure
 add_action('genesis_after_entry','form_structure');
 function form_structure() {
+	$form_desc = get_field("form_description");
 	$form = get_field( "form-field" );
+	if($form_desc) {
+		echo '<h3 class="form-title">' . $form_desc . '</h3>';
+	}
 	if ( $form) {
 		echo '<div class="entry-content volunteer-form">'.  do_shortcode($form) . '</div>';
 	}  
