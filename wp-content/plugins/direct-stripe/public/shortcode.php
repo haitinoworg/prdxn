@@ -66,6 +66,7 @@ if ( $crios === 'crios' ) { ?>
 			<br/><input type="checkbox" class="conditions" id="conditions" required>&nbsp; <?php echo esc_attr($d_stripe_styles['direct_stripe_tc_text']); ?> <a target="_blank" href="<?php echo get_permalink($d_stripe_styles['direct_stripe_tc_link']); ?>"><?php  echo $d_stripe_styles['direct_stripe_tc_link_text']; ?></a><br />
 			<?php } ?>
 			<?php } ?>
+			
 			<input type="hidden" id="sf_oid" class="w2linput hidden" name="oid" value="00D7F0000002Vh5">		
 			<input type="hidden" id="sf_retURL" class="w2linput hidden" name="retURL" value="http://localhost/ayiti2/">		
 			<input type="hidden" id="sf_debug" class="w2linput hidden" name="debug" value="1">		

@@ -282,13 +282,12 @@
 			}	
 
 			select {
-				padding: 11px;	
+				padding: 16px 11px;	
+				display: block;
 				color: #aaa;
 				font-size: 13px;
 				line-height: 10px;
-				option {
-					color: #000;
-				}
+				option { color: #000; }
 			}
 
 			input[type="submit"] { 
@@ -356,4 +355,17 @@
 		padding: 40px 0 66px;
 		margin: 0 auto;
 	}
+}
+
+
+select {
+	@include boxmodel(2,border-box,3,100%,5,15px 11px);
+	display: block;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('../../uploads/2017/05/caret-down.png') no-repeat 97% 50% #ffffff;
+	background-size: 5px 10px;
+	outline: none;
 }

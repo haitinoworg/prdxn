@@ -71,15 +71,15 @@ Single Post Page Styling ==================================
 			@include mobile() { width: 100%; }
 		}
 		ul li::after {
-      content: '.';
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: -60px;
-      left: -28px;
-      color: #f16522;
-      font-size: 70px;
+			content: '.';
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: -60px;
+			left: -28px;
+			color: #f16522;
+			font-size: 70px;
 		}
 	}
 }
@@ -94,3 +94,23 @@ Single Post Page Styling ==================================
 	overflow: hidden;
 }
 
+
+
+/*
+* Campaign Styilng
+*/
+
+.campaign-template-default {
+	article.entry {
+		width: 84%;
+		padding: 64px 0 0;
+		margin: 0 auto;
+		background-color: #fff;
+
+		.entry-content { 
+			padding: 0; 
+			text-align: center;
+		}
+	}
+
+}

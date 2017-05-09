@@ -1,0 +1,166 @@
+/*
+* Columns Styling -------------------------------------------
+*/
+
+.page-template-page_columns {
+
+	@include property(transform-style,preserve-3d);
+	@include property(perspective, 100px);
+
+	// main
+	.content {
+		@include boxmodel(3,84%,5,0,7,0 auto);
+		float: none;
+
+		article.entry { margin: 0; }
+	}
+
+	article.entry {	padding: 63px 0 0;	}
+
+	.program-posts .entry { 
+		@include boxmodel(3,89%,5,0,7,0 auto 66px);
+		padding: 0; 
+		margin: 0 auto 66px;
+	}
+
+	div.entry {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// Two Columns Styling
+	.two-columns {
+		@include boxmodel(3,48%,5,0,7,42px 0 0);
+		@include props(dib,tac,vat);
+		@include props(ovh);
+
+		&:nth-child(2n) { margin-left: 4%; }
+
+		@include tab() {
+			width: 100%;
+			display: block;
+			margin: 30px 0 0;
+			&:nth-child(2n) { margin-left: 0; }
+		}
+
+		&>a { 
+			padding: 26% 0; 
+			@include props(db,posr);	
+			overflow: hidden;
+			background-color: #000;
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.3;
+			}
+		}
+
+		.entry-content {
+			width: 80%;
+			height: auto;
+			@include props(posa);
+			left: 50%;
+			top: 100%;
+			@include props(ovh);
+			@include property(transform, translateX(-50%));
+			@include minWidth(768px) {
+				@include property(animation,text-overlay-out 0.4s linear backwards);
+			}
+
+			&, h3 {	color: #fff;	}
+			h3 { font-size: 32px;	}
+			p {
+				max-height: 105px;
+				@include boxmodel(4,auto,5,0,7,0 -15px 0 15px);
+				color: #fff;
+				font-size: 17px;
+				overflow: auto;
+			}
+
+			@include tab() {
+				width: 100%;
+				padding: 0 4%;
+				left: auto;
+				top: 50%;
+				@include property(transform, translateY(-50%));
+
+				p {
+					max-height: 100px;
+					overflow: auto;
+				}
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+		}
+
+		&>a:hover {
+			@include props(bgb);
+
+			.entry-content {
+				box-sizing: border-box;
+				@include minWidth(768px) {
+					@include property(animation,text-overlay 0.4s linear forwards);
+					
+				}
+			}
+		}
+	}
+}
+
+// Two Column Image Overlay Animation Keyframe
+
+@keyframes text-overlay {
+	from { top: 100%; }
+	to { 
+		top: 50%; 
+		@include property(transform,translateX(-50%) translateY(-50%));
+	}
+}
+
+@-webkit-keyframes text-overlay {
+	from { top: 100%; }
+	to { 
+		top: 50%; 
+		@include property(transform,translateX(-50%) translateY(-50%));
+	}
+}
+
+
+@-moz-keyframes text-overlay {
+	from { top: 100%; }
+	to { 
+		top: 50%; 
+		@include property(transform,translateX(-50%) translateY(-50%));
+	}
+}
+
+
+@-o-keyframes text-overlay {
+	from { top: 100%; }
+	to { 
+		top: 50%; 
+		@include property(transform,translateX(-50%) translateY(-50%));
+	}
+}
+
+@-ms-keyframes text-overlay {
+	from { top: 100%; }
+	to { 
+		top: 50%; 
+		@include property(transform,translateX(-50%) translateY(-50%));
+	}
+}
+
+
+@keyframes text-overlay-out {
+	from { top: 50%; }
+	to { 
+		top: 100%; 
+		@include property(transform,translateX(-50%) translateY(0));
+	}	
+}

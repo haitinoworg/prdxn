@@ -43,11 +43,12 @@ function columns_loop() {
 		*/
 
 		//* Condition for checking post thumbnail
-		if($post_style == "Image with Overlay") {
-			get_template_part( 'template-parts/page/content', 'image' );
+		if($post_style == "Two Columns") {
+			get_template_part( 'template-parts/page/two', 'columns' );
 
-		} else {
-			get_template_part( 'template-parts/page/content', 'links' );
+		}  
+		if($post_style == "Three Columns") {
+			get_template_part( 'template-parts/page/three', 'columns' );
 		}
 
 		?>
