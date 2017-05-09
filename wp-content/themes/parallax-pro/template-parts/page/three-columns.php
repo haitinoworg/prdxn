@@ -33,3 +33,6 @@ $rows_count = round($i/3);
 
 echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="3" category="'. $post_slug .'" scroll="false" button_label="View More" button_loading_label="Loading..." transition_container="false" destroy_after="'. $rows_count .'"]');
 
+
+global $wp_query; // you can remove this line if everything works for you
+

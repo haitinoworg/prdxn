@@ -81,5 +81,41 @@ remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 genesis();
 
-
-
+/*
+<?php 
+if(locate_template('page_twocolumns.php') != "") {
+   ?>
+<div class="post-images content-default" >
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php	
+		if(has_post_thumbnail()){
+			the_post_thumbnail();	
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+		}
+		?>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+		</div>
+	</a>
+</div>
+<?php
+} else if(locate_template('page_columns.php') ! ="") {
+?>
+<div class="three-columns">
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php	
+		if(has_post_thumbnail()){
+			the_post_thumbnail();	
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+		}
+		?>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_content(); ?>
+		</div>
+	</a>
+</div>
+<?php
+ }
+?>*/

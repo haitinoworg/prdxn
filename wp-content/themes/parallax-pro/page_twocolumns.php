@@ -10,25 +10,29 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 
 
 // echo get_page_template_slug( $post_id );
+global $post;
+$post_slug=$post->post_name;
 
 
-
-// * Add the featured image after post title
-add_action( 'genesis_before_entry', 'programs_featured_image' );
-function programs_featured_image() {
-	echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-	echo '<h3>Donate for this programs</h3>';
-	echo '<p>';
-	echo the_field("donate_text") . '</p>';
-	echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
-	echo '<h3>';
-	echo the_title() .'</h3></div>';
-	if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
-		printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
-		echo '</div>';
+if($post_slug == "program" || $post_slug == "get-involved") {
+	// * Add the featured image after post title
+	add_action( 'genesis_before_entry', 'programs_featured_image' );
+	function programs_featured_image() {
+		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
+		echo '<h3>Donate for this programs</h3>';
+		echo '<p>';
+		echo the_field("donate_text") . '</p>';
+		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
+		echo '<h3>';
+		echo the_title() .'</h3></div>';
+		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
+			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
+			echo '</div>';
+		}
 	}
+} else {
+	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 }
-
 // Add our custom loop
 // remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'programs_loop' );
@@ -52,15 +56,10 @@ function programs_loop() {
 
 		if($post_style == "Content Default") {
 			get_template_part( 'template-parts/page/content', 'default' );
-		}	elseif($post_style == "Products") {
+		}	
+		if($post_style == "Products") {
 			get_template_part( 'template-parts/page/content', 'pages' );
-		} elseif($post_style == "Image with Overlay") {
-			get_template_part( 'template-parts/page/content', 'image' );
-
-		} else {
-			get_template_part( 'template-parts/page/content', 'links' );
 		}
-
 		?>
 	</div>
 </section>

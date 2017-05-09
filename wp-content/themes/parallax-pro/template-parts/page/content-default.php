@@ -9,54 +9,82 @@
  * @version 1.0
  */
 global $post;
-$post_slug=$post->post_name;
+$post_slug = $post->post_name;
 
 
 
 if(have_posts()): the_post();
 
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+if($post_slug == "program") {
+	$args = array(
+		'post_type' => 'programs',
+		'post_per_page' => -1
+		);
 
-$args = array(
-	'post_type' => 'programs'
-	);
+	$post_query = get_posts( $args );
 
-$videos = get_posts( $args );
-
-foreach( $videos as $post ) : setup_postdata( $post );
-
-
-		//* Condition for checking post thumbnail
-?>
-<div class="post-images content-default" >
-	<?php 
-	if ( has_post_thumbnail() ) { 
-		?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php the_post_thumbnail(array(150,150));	
-			?>
-		</a>
-		<?php
-	} else {
+	foreach( $post_query as $post ) : setup_postdata( $post );
+	?>
+	<div class="post-images content-default" >
+		<?php 
+	// Condition for Featured Image
 		?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php 
-
-			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-			. '/images/empty-image.png" />';
+			if ( has_post_thumbnail() ) { 
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" />';
+			}
 			?>
 		</a>
-		<?php
-	}
-	?>
-	<div class="entry-content">
-		<h3><?php the_title(); ?></h3>
-		<?php the_excerpt(); ?>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+		</div>
 	</div>
-</div>
 
-<?php 
-endforeach;
+	<?php 
+	endforeach;
+	wp_reset_postdata();
+
+} else {
+	$args = array(
+		'post_type' => 'post',
+		'category_name' => $post_slug,
+		'posts_per_page' => -1
+		);	
+
+	$post_query = get_posts( $args );
+	
+	foreach( $post_query as $post ) : setup_postdata( $post );
+	?>
+	<div class="post-images content-default" >
+		<?php 
+	// Condition for Featured Image
+		?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			<?php 
+			if ( has_post_thumbnail() ) { 
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" />';
+			}
+			?>
+		</a>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+		</div>
+	</div>
+
+	<?php 
+	endforeach;
+	wp_reset_postdata();
+}
+
 endif;
 
 

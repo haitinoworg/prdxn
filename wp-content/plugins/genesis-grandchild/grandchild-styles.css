@@ -1971,7 +1971,7 @@ div#n2-ss-6 .n2-grab {
   font-size: 17px;
 }
 .page-template-page_columns .three-columns {
-  width: 32%;
+  width: 31%;
   padding: 0;
   margin: 30px 0 0;
   display: inline-block;
@@ -1980,7 +1980,7 @@ div#n2-ss-6 .n2-grab {
   overflow: hidden;
 }
 .page-template-page_columns .three-columns:nth-child(3n + 2) {
-  margin: 30px 2% 0;
+  margin: 30px 3% 0;
 }
 @media screen and (max-width: 1024px) {
   .page-template-page_columns .three-columns {
@@ -2009,10 +2009,10 @@ div#n2-ss-6 .n2-grab {
   height: 100%;
   padding: 5px 8% 10px;
   top: 0;
-  -ms-animation: text-off 1s linear both;
-  -moz-animation: text-off 1s linear both;
-  -webkit-animation: text-off 1s linear both;
-  animation: text-off 1s linear both;
+  -ms-animation: text-off 0.4s linear both;
+  -moz-animation: text-off 0.4s linear both;
+  -webkit-animation: text-off 0.4s linear both;
+  animation: text-off 0.4s linear both;
   color: #000;
 }
 .page-template-page_columns .three-columns .entry-content h3 {
@@ -2048,22 +2048,22 @@ div#n2-ss-6 .n2-grab {
   background-color: #fff;
 }
 .page-template-page_columns .three-columns > a img {
-  -ms-animation: image-flip 0.8s linear both;
-  -moz-animation: image-flip 0.8s linear both;
-  -webkit-animation: image-flip 0.8s linear both;
-  animation: image-flip 0.8s linear both;
+  -ms-animation: image-flip 0.4s linear both;
+  -moz-animation: image-flip 0.4s linear both;
+  -webkit-animation: image-flip 0.4s linear both;
+  animation: image-flip 0.4s linear both;
 }
 .page-template-page_columns .three-columns > a:hover img {
-  -ms-animation: image-off 0.8s linear both;
-  -moz-animation: image-off 0.8s linear both;
-  -webkit-animation: image-off 0.8s linear both;
-  animation: image-off 0.8s linear both;
+  -ms-animation: image-off 0.4s linear both;
+  -moz-animation: image-off 0.4s linear both;
+  -webkit-animation: image-off 0.4s linear both;
+  animation: image-off 0.4s linear both;
 }
 .page-template-page_columns .three-columns > a:hover .entry-content {
-  -ms-animation: text-on 0.8s linear both;
-  -moz-animation: text-on 0.8s linear both;
-  -webkit-animation: text-on 0.8s linear both;
-  animation: text-on 0.8s linear both;
+  -ms-animation: text-on 0.4s linear both;
+  -moz-animation: text-on 0.4s linear both;
+  -webkit-animation: text-on 0.4s linear both;
+  animation: text-on 0.4s linear both;
 }
 @media screen and (max-width: 768px) {
   .page-template-page_columns .three-columns > a {
@@ -2197,6 +2197,26 @@ div#n2-ss-6 .n2-grab {
     transform: translateY(0);
   }
 }
+.misha_loadmore {
+  background-color: #ddd;
+  border-radius: 2px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.misha_loadmore:hover {
+  background-color: #767676;
+  color: #fff;
+}
+
 .archive .content {
   padding: 0;
 }
