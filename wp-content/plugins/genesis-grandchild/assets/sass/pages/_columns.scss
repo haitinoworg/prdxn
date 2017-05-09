@@ -5,7 +5,7 @@
 .page-template-page_columns {
 
 	@include property(transform-style,preserve-3d);
-	@include property(perspective, 100px);
+	@include property(perspective, 30px);
 
 	// main
 	.content {
@@ -19,8 +19,16 @@
 
 	.program-posts .entry { 
 		@include boxmodel(3,89%,5,0,7,0 auto 66px);
-		padding: 0; 
-		margin: 0 auto 66px;
+
+		.ajax-load-more-wrap { 
+			width: 100%;	
+			text-align: center;
+			button#load-more.read-more {
+				@include cta();
+				display: inline-block;
+			}
+
+		}
 	}
 
 	div.entry {
@@ -29,6 +37,41 @@
 	}
 
 	// Two Columns Styling
+	.two-columns,
+	.three-columns {
+		&>a { 
+			@include props(db,posr);	
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		.entry-content {
+			box-sizing: border-box;
+			width: 100%;
+			@include props(posa);
+			left: 0;
+			@include props(ovh);
+
+			@include tab() {
+				width: 100%;
+				padding: 0 4%;
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+		}
+
+	}
+
+	// Two Columns Styling
+
 	.two-columns {
 		@include boxmodel(3,48%,5,0,7,42px 0 0);
 		@include props(dib,tac,vat);
@@ -44,81 +87,193 @@
 		}
 
 		&>a { 
-			padding: 26% 0; 
-			@include props(db,posr);	
-			overflow: hidden;
+			padding: 26% 0;
 			background-color: #000;
-			img {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				left: 0;
-				top: 0;
-				opacity: 0.3;
-			}
+			img { opacity: 0.4; } 
 		}
 
-		.entry-content {
-			width: 80%;
-			height: auto;
-			@include props(posa);
-			left: 50%;
-			top: 100%;
-			@include props(ovh);
-			@include property(transform, translateX(-50%));
-			@include minWidth(768px) {
-				@include property(animation,text-overlay-out 0.4s linear backwards);
-			}
-
-			&, h3 {	color: #fff;	}
-			h3 { font-size: 32px;	}
-			p {
-				max-height: 105px;
-				@include boxmodel(4,auto,5,0,7,0 -15px 0 15px);
-				color: #fff;
-				font-size: 17px;
-				overflow: auto;
-			}
-
-			@include tab() {
-				width: 100%;
-				padding: 0 4%;
-				left: auto;
-				top: 50%;
-				@include property(transform, translateY(-50%));
-
-				p {
-					max-height: 100px;
-					overflow: auto;
-				}
-			}
-
-			@include mobile() {
-				p { display: none; }
-			}
-		}
 
 		&>a:hover {
 			@include props(bgb);
 
 			.entry-content {
-				box-sizing: border-box;
 				@include minWidth(768px) {
 					@include property(animation,text-overlay 0.4s linear forwards);
 					
 				}
 			}
 		}
-	}
-}
 
+		.entry-content {
+			height: 100%;
+			padding: 5px 8%;
+			top: 100%;
+			@include minWidth(768px) {
+				@include property(animation,text-overlay-out 0.4s linear backwards);
+			}
+
+			@include tab() {
+				height: auto;
+				left: auto;
+				top: 50%;
+				@include property(transform, translateY(-50%));
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+
+			&, h3 {	color: #fff;	}
+			h3 { font-size: 32px;	}
+			p {
+				@include boxmodel(4,auto,5,0,7,0);
+				color: #fff;
+				font-size: 17px;
+			}
+		}
+	}
+
+
+	// Three Columns Styling 
+	.three-columns {
+		@include boxmodel(3,32%,5,0,7,30px 0 0);
+		@include props(dib,tac,vat);
+		@include props(ovh);
+		&:nth-child(3n + 2) { margin: 30px 2% 0; }
+
+		@include md() { 
+			width: 48%;
+			&:nth-child(3n + 2) { margin: 30px 0 0; }			
+			&:nth-child(2n) { 
+				margin-left: 4%; 
+				margin-top: 30px;
+			}
+			margin: 30px 0 0;
+		}
+		@include tab() {
+			width: 100%;
+			display: block;
+			&:nth-child(2n) { margin-left: 0; }
+			margin: 30px 0 0;
+		}
+
+		.entry-content {
+			height: 100%;
+			padding: 5px 8% 10px;
+			top: 0;
+			@include property(animation, text-off 1s linear both);
+			color: #000;
+			
+			h3 { 
+				color: #000;
+				font-size: 26px;	}
+				p {
+					@include boxmodel(4,auto,5,0,7,0);
+					font-size: 14px;
+				}
+
+				@include tab() {
+					height: auto;
+					top: 50%;
+					color: #fff;
+					@include property(transform, translateY(-50%));
+					h3 { 
+						color: #fff; 
+						font-size: 32px;
+					}
+					p { font-size: 17px; }
+				}
+			}
+
+
+			&>a { 
+				padding: 31% 0;
+				background-color: #fff;
+				img {
+					@include property(animation, image-flip 0.8s linear both);
+				}
+				&:hover {
+					img {	@include property(animation, image-off 0.8s linear both);	}
+					.entry-content { @include property(animation, text-on 0.8s linear both); }
+				}
+
+				@include tab() { 
+					background-color: #000;
+					img {	opacity: 0.4; }
+				}
+
+				@include minWidth(769px) {
+					img,
+					.entry-content {
+						border: 1px solid #7b7b7b;
+					}
+				}
+			}
+		}
+
+	}
+
+// Three Columns Animation Keyframes
+
+@include minWidth(769px) {
+
+	@keyframes text-off {
+		0% { }
+		100% { 	
+			z-index: 0;
+			transform: scaleX(-1);
+			opacity: 0; 
+		}
+	}
+
+	@keyframes text-on {
+		0% {
+			z-index: 0;
+			transform: scaleX(-1);
+			opacity: 0;
+		}
+		100% { 
+			z-index: 1;
+			transform: scaleX(1);
+			opacity: 1;
+		}	
+
+	}
+
+	@keyframes image-flip {
+		0% { 
+			transform: scaleX(-1); 
+			z-index: 0;
+			opacity: 0;
+		}
+		100% { 
+			z-index: 1;
+			transform: scaleX(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes image-off {
+		0% {
+			z-index: 1;	
+			transform: scaleX(1);
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;	
+			transform: scaleX(-1);
+			opacity: 0;
+		}
+	}
+
+}
 // Two Column Image Overlay Animation Keyframe
 
 @keyframes text-overlay {
 	from { top: 100%; }
 	to { 
 		top: 50%; 
-		@include property(transform,translateX(-50%) translateY(-50%));
+		@include property(transform,translateY(-50%));
 	}
 }
 
@@ -126,7 +281,7 @@
 	from { top: 100%; }
 	to { 
 		top: 50%; 
-		@include property(transform,translateX(-50%) translateY(-50%));
+		@include property(transform,translateY(-50%));
 	}
 }
 
@@ -135,7 +290,7 @@
 	from { top: 100%; }
 	to { 
 		top: 50%; 
-		@include property(transform,translateX(-50%) translateY(-50%));
+		@include property(transform,translateY(-50%));
 	}
 }
 
@@ -144,7 +299,7 @@
 	from { top: 100%; }
 	to { 
 		top: 50%; 
-		@include property(transform,translateX(-50%) translateY(-50%));
+		@include property(transform,translateY(-50%));
 	}
 }
 
@@ -152,7 +307,7 @@
 	from { top: 100%; }
 	to { 
 		top: 50%; 
-		@include property(transform,translateX(-50%) translateY(-50%));
+		@include property(transform,translateY(-50%));
 	}
 }
 
@@ -161,6 +316,7 @@
 	from { top: 50%; }
 	to { 
 		top: 100%; 
-		@include property(transform,translateX(-50%) translateY(0));
+		@include property(transform,translateY(0));
 	}	
 }
+

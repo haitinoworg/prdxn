@@ -1,11 +1,3 @@
-<?php
-if(have_posts()): the_post();
-
-$args = array( 	'post_type' => 'post'	);
-$posts = get_posts( $args );
-
-foreach( $posts as $post ) : setup_postdata( $post );
-?.
 <div class="three-columns">
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php	
 		if(has_post_thumbnail()){
@@ -20,7 +12,3 @@ foreach( $posts as $post ) : setup_postdata( $post );
 		</div>
 	</a>
 </div>
-<?php
-endforeach;
-wp_reset_postdata();
-endif;
