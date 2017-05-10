@@ -1913,12 +1913,29 @@ div#n2-ss-6 .n2-grab {
 .page-template-page_columns .two-columns > a {
   padding: 26% 0;
   background-color: #000;
+  text-align: center;
 }
 .page-template-page_columns .two-columns > a img {
   opacity: 0.4;
 }
+.page-template-page_columns .two-columns > a > h3 {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  color: #fff;
+  font-size: 32px;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 .page-template-page_columns .two-columns > a:hover {
   background-color: #000;
+}
+.page-template-page_columns .two-columns > a:hover > h3 {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .page-template-page_columns .two-columns > a:hover .entry-content {
@@ -2084,43 +2101,36 @@ div#n2-ss-6 .n2-grab {
   @keyframes text-off {
     100% {
       z-index: 0;
-      transform: scaleX(-1);
       opacity: 0;
     }
   }
   @keyframes text-on {
     0% {
       z-index: 0;
-      transform: scaleX(-1);
       opacity: 0;
     }
     100% {
       z-index: 1;
-      transform: scaleX(1);
       opacity: 1;
     }
   }
   @keyframes image-flip {
     0% {
-      transform: scaleX(-1);
       z-index: 0;
       opacity: 0;
     }
     100% {
       z-index: 1;
-      transform: scaleX(1);
       opacity: 1;
     }
   }
   @keyframes image-off {
     0% {
       z-index: 1;
-      transform: scaleX(1);
       opacity: 1;
     }
     100% {
       z-index: 0;
-      transform: scaleX(-1);
       opacity: 0;
     }
   }
@@ -2771,7 +2781,7 @@ Single Post Page Styling ==================================
   margin: 0 auto;
 }
 
-select {
+.salesforce_w2l_lead select {
   box-sizing: border-box;
   width: 100%;
   padding: 15px 11px;
@@ -2851,8 +2861,13 @@ select {
   text-align: left;
 }
 
-.page-template-page-gallery .entry {
+.page-template-page-gallery .entry,
+.page-template-page-research .entry {
   margin-bottom: 0px;
+}
+.page-template-page-gallery .content,
+.page-template-page-research .content {
+  padding: 0;
 }
 
 .tab-detail {
@@ -2907,10 +2922,6 @@ select {
 
 .tab-detail:nth-child(1) {
   display: block;
-}
-
-.page-template-page-gallery .content {
-  padding: 0px;
 }
 
 .programs-hero-image .tabs ul {
@@ -3753,7 +3764,7 @@ Footer Section-1
 
 .sponsor-list {
   width: 23%;
-  min-height: 140px;
+  min-height: 165px;
   margin-top: 16px;
   margin-right: 2%;
   display: table;
@@ -3831,18 +3842,18 @@ Footer Section-1
     transform: scale(1);
   }
   to {
-    -ms-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
   }
 }
 @keyframes sponsors-icons-back {
   from {
-    -ms-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
   }
   to {
     -ms-transform: scale(1);

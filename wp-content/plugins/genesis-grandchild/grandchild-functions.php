@@ -131,3 +131,25 @@ function custom_site_logo( $atts ) {
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
 
+
+/*
+* Ajax Load More
+*/
+
+add_action('wp_ajax_my_action','data_fetch');
+add_action('wp_ajax_nopriv_my_action','data_fetch');
+function data_fetch() {
+	$the_query = new WP_Query(array(
+		'post_type' => 'post',
+		'posts_per_page'=>2,
+		));
+	if($the_query->have_posts()):
+		while($the_query->have_posts()): $the_query->the_post();
+	?>
+	<h2><?php the_title(); ?></h2>
+	<?php
+	endwhile;
+	wp_reset_postdata();
+	endif;
+	die();
+}

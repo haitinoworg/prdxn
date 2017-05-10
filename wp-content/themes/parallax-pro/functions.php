@@ -150,3 +150,4 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Home Section 5', 'parallax' ),
 	'description' => __( 'This is the home section 5 section.', 'parallax' ),
 	) );
+
