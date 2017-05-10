@@ -359,7 +359,7 @@ Footer Section-1
 		} 
 
 	li {
-		margin: 10px 0px !important
+		margin: 10px 3px !important
 	}
 }
 
@@ -425,6 +425,7 @@ span { font-size: 12px; }
 
 #text-18 {
 	width: 40%;
+	clear: both;
 }
 
 @include tab() {
@@ -441,6 +442,20 @@ span { font-size: 12px; }
 }
 
 /*footer responsive styling*/
+@include md() {
+  .footer-widgets {
+	  section {
+		  #menu-secondary-menus > li {
+        width: 45%;
+        margin: 0 4.3% 30px 0;
+      }
+      #menu-secondary-menus > li:last-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
 @include tab() {
 	.footer-widgets {
 		padding: 0 0 20px;
@@ -458,6 +473,7 @@ span { font-size: 12px; }
 				padding-left: 0;
 				margin-bottom: 23px;
 			}
+			#menu-secondary-menus > li {width: 100%;}
 		}
 
 		#text-19 {
