@@ -12,6 +12,9 @@ global $post;
 $post_slug = $post->post_name;
 
 
+if (  $post_slug->max_num_pages > 1 )
+	echo '<div class="misha_loadmore">More posts</div>'; 
+
 
 if(have_posts()): the_post();
 

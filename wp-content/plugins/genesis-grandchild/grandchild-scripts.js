@@ -119,6 +119,5 @@ $(this).scroll(function(){
   }
 });
 
-
 })(jQuery);
 
