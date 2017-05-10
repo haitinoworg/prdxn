@@ -428,6 +428,10 @@ Content Area
 			width: 48%;
 			float: left;
 
+			@include maxWidth(768px) {
+        width: 100%;
+				}
+
 			a { 
 			  	color: #333;
 
@@ -447,7 +451,8 @@ Content Area
 				}
 
 				@include maxWidth(768px) {
-					font-size: calc(1.5vw + 13px);
+					line-height: 36px;
+          font-size: 32px;
 				}
 			}
 		}

@@ -31,22 +31,18 @@
 
 	}
 
-
-
 	// * Post List Content
 	add_action('genesis_after_entry','custom_list_content');
 	function custom_list_content() {
 		$list_title = get_field('list-title');
 		$left_content = get_field('left_column_topic');
 		$right_content = get_field('right_column_topic');
-		$third_content = get_field('third_column_topic');
-
+        // the_field('activities_list');
 		if($list_title) {	echo '<div class="prgram-wrapper"><h2 class="list-title">'. $list_title . '</h2>';	} 
 		else { echo '';	}
 		if($left_content && $right_content) {	
 			echo '<div class="wrap program-desc"><div class="one-half first">'. $left_content . '</div>';
-			echo '<div class="one-half">' . $right_content . '</div>';
-			echo '<div class="third">' . $third_content . '</div></div></div>';
+			echo '<div class="one-half">' . $right_content . '</div></div></div>';
 		} else { echo '';	}
 
 	}

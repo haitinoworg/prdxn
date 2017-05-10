@@ -227,6 +227,32 @@ h6.entry-title:after {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li {
+  font-family: Roboto, sans-serif;
+}
+
+main.content .entry-content h1,
+main.content .entry-content h2,
+main.content .entry-content h3,
+main.content .entry-content h4,
+main.content .entry-content h5,
+main.content .entry-content h6 {
+  margin: 5px 0;
+}
+main.content .entry-content p {
+  margin-bottom: 30px;
+}
+
 /* Titles
 --------------------------------------------- */
 .sidebar {
@@ -1003,6 +1029,11 @@ Content Area
   width: 48%;
   float: left;
 }
+@media screen and (max-width: 768px) {
+  .home-section-3 .featured-content article header.entry-header {
+    width: 100%;
+  }
+}
 .home-section-3 .featured-content article header.entry-header a {
   color: #333;
 }
@@ -1024,7 +1055,8 @@ Content Area
 }
 @media screen and (max-width: 768px) {
   .home-section-3 .featured-content article header.entry-header h2.entry-title {
-    font-size: calc(1.5vw + 13px);
+    line-height: 36px;
+    font-size: 32px;
   }
 }
 
@@ -1957,14 +1989,12 @@ Single Post Page Styling ==================================
 /* Contact Form
 --------------------------------------------- */
 .contact-form-7 .content {
-  width: 100%;
+  width: 84%;
 }
 .contact-form-7 .content article.entry {
   padding: 63px 0 0;
 }
 .contact-form-7 .content .entry-content {
-  width: 62%;
-  min-width: 692px;
   margin: 0 auto;
   font-family: Roboto, sans-serif;
 }
@@ -1986,19 +2016,19 @@ Single Post Page Styling ==================================
   font: 13px/33px Roboto, sans-serif;
 }
 .contact-form-7 .content .entry-content form input,
-.contact-form-7 .content .entry-content form select,
 .contact-form-7 .content .entry-content form textarea {
-  padding: 10px;
+  padding: 11px;
   outline: none;
   font-size: 15px;
+  line-height: 10px;
 }
 .contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
   min-height: 120px;
 }
 .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
-  max-height: 42px;
   min-height: 42px;
+  padding: 16px 11px 5px;
 }
 .contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
@@ -2029,21 +2059,16 @@ Single Post Page Styling ==================================
 }
 .contact-form-7 .content .entry-content h1, .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
   background-color: transparent;
-  font: 30px Roboto, sans-serif;
   text-transform: capitalize;
 }
 .contact-form-7 .content .entry-content h2, .contact-form-7 .content .entry-content h3, .contact-form-7 .content .entry-content h4, .contact-form-7 .content .entry-content h5, .contact-form-7 .content .entry-content h6 {
-  margin: 38px 0;
+  margin: 5px 0;
   text-align: left;
 }
 .contact-form-7 .content .entry-content tbody td {
   text-align: left;
 }
-.contact-form-7 .content .entry-content p {
-  margin-bottom: 5px;
-}
 .contact-form-7 .content .entry-content p strong {
-  margin: 39px 0 8px;
   display: block;
   font: 700 20px Roboto, sans-serif;
 }
@@ -2061,6 +2086,9 @@ Single Post Page Styling ==================================
 }
 .contact-form-7 .email-us a:hover {
   color: #f16522;
+}
+.contact-form-7 .form-title {
+  text-align: center;
 }
 .contact-form-7 .volunteer-form .sf_field {
   width: 30%;
@@ -2086,13 +2114,19 @@ Single Post Page Styling ==================================
 .contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 .w2lsubmit {
   border-radius: 0px;
 }
-.contact-form-7 .salesforce_w2l_lead .w2lsubmit {
-  min-width: 215px;
-  max-width: 216px;
-  border: 0px solid #f16522;
-  border-radius: 3px;
-  margin: 25px auto 64px;
-  background-color: #f16522;
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 {
+  text-align: center;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 input,
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 p {
+  text-align: left;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit {
+  display: inline-block;
+}
+.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit input {
+  padding: 11px 25px;
+  border-radius: 0px;
 }
 
 /* News
@@ -2171,7 +2205,7 @@ Single Post Page Styling ==================================
 }
 
 .salesforce_w2l_lead {
-  margin: 48px 0 40px;
+  margin: 0 0 40px;
 }
 .salesforce_w2l_lead form.w2llead > div input,
 .salesforce_w2l_lead form.w2llead > div select,
@@ -2207,7 +2241,10 @@ Single Post Page Styling ==================================
   color: #aaa;
 }
 .salesforce_w2l_lead form.w2llead > div select {
+  padding: 11px;
   color: #aaa;
+  font-size: 13px;
+  line-height: 10px;
 }
 .salesforce_w2l_lead form.w2llead > div select option {
   color: #000;
@@ -2250,9 +2287,6 @@ Single Post Page Styling ==================================
   .contact-form-7 .volunteer-form .sf_field:nth-child(3n+2) {
     margin: 0px;
   }
-  .contact-form-7 .salesforce_w2l_lead .w2lsubmit {
-    margin: 25px auto 64px;
-  }
   .contact-form-7 .content .entry-content form #sf_00NA000000723Db {
     max-height: 150px;
   }
@@ -2261,6 +2295,11 @@ Single Post Page Styling ==================================
     display: block;
   }
 }
+.volunteer-form .salesforce_w2l_lead {
+  width: 74%;
+  margin: 40px auto 40px;
+}
+
 .single-post .entry-content {
   width: 62%;
   min-width: 692px;
@@ -2857,7 +2896,7 @@ Footer Section-1
   background: rgba(241, 101, 34, 0.48);
 }
 .footer-widgets .social-icons li {
-  margin: 10px 0px !important;
+  margin: 10px 3px !important;
 }
 .footer-widgets a,
 .footer-widgets span {
@@ -2913,6 +2952,7 @@ Footer Section-1
 
 #text-18 {
   width: 40%;
+  clear: both;
 }
 
 @media screen and (max-width: 768px) {
@@ -2926,6 +2966,15 @@ Footer Section-1
 }
 
 /*footer responsive styling*/
+@media screen and (max-width: 1024px) {
+  .footer-widgets section #menu-secondary-menus > li {
+    width: 45%;
+    margin: 0 4.3% 30px 0;
+  }
+  .footer-widgets section #menu-secondary-menus > li:last-child {
+    padding-left: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   .footer-widgets {
     padding: 0 0 20px;
@@ -2939,6 +2988,9 @@ Footer Section-1
   .footer-widgets section #menu-secondary-menus > li:last-child {
     padding-left: 0;
     margin-bottom: 23px;
+  }
+  .footer-widgets section #menu-secondary-menus > li {
+    width: 100%;
   }
   .footer-widgets #text-19 {
     width: 100%;
@@ -3157,30 +3209,57 @@ Footer Section-1
     color: #f16522;
   }
 }
+.page-template-page-sponsor .site-inner .content {
+  width: 84%;
+  max-width: 1900px;
+  padding: 0;
+  margin: 0 auto;
+  float: none;
+}
+.page-template-page-sponsor .site-inner .content article.entry {
+  padding: 50px 0 0;
+}
+
 .sponsors-container {
   display: block;
 }
 
 .sponsor-list {
-  width: 32.05%;
+  width: 23%;
   min-height: 140px;
   margin-top: 16px;
   margin-right: 2%;
-  border: 1px solid #333;
   display: table;
-  text-align: center;
   float: left;
   cursor: pointer;
   font-family: Roboto, sans-serif;
+  text-align: center;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -ms-perspective: 1px;
+  -moz-perspective: 1px;
+  -webkit-perspective: 1px;
+  perspective: 1px;
 }
-
-.sponsor-list:nth-child(3n+3) {
-  margin-right: 0px;
-}
-
-.sponsor-list a {
+.sponsor-list .news-image a {
+  width: 56%;
   display: inline-block;
   font-family: Roboto, sans-serif;
+  -ms-animation: sponsors-icons-back 0.3s ease-in forwards;
+  -moz-animation: sponsors-icons-back 0.3s ease-in forwards;
+  -webkit-animation: sponsors-icons-back 0.3s ease-in forwards;
+  animation: sponsors-icons-back 0.3s ease-in forwards;
+}
+.sponsor-list:nth-child(4n+4) {
+  margin-right: 0px;
+}
+.sponsor-list:hover .news-image a {
+  -ms-animation: sponsors-icons 0.3s ease-in-out forwards;
+  -moz-animation: sponsors-icons 0.3s ease-in-out forwards;
+  -webkit-animation: sponsors-icons 0.3s ease-in-out forwards;
+  animation: sponsors-icons 0.3s ease-in-out forwards;
 }
 
 .news-image {
@@ -3192,37 +3271,11 @@ Footer Section-1
   font-family: Roboto, sans-serif;
 }
 
-.sponsor-list:hover .news-image a::after {
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: rgba(241, 101, 34, 0.49);
-}
-
-.sponsor-list:hover .news-image a::after {
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: rgba(241, 101, 34, 0.49);
-}
-
 @media screen and (max-width: 768px) {
   .sponsor-list {
     width: 46%;
     margin: 28px 8% 0px 0px;
     font-family: Roboto, sans-serif;
-  }
-
-  .sponsor-list:nth-child(3n+3) {
-    margin-right: 8%;
   }
 
   .sponsor-list:nth-child(2n+2) {
@@ -3234,9 +3287,42 @@ Footer Section-1
     width: 80%;
     margin: 12px 10%;
   }
+
+  .sponsor-list:nth-child(2n+2) {
+    margin-right: 10%;
+  }
 }
 .content .entry-content h1, .content .entry-content h2, .content .entry-content h3, .content .entry-content h4, .content .entry-content h4, .content .entry-content h6, .content .entry-content p {
   font-family: Roboto, sans-serif;
+}
+
+@keyframes sponsors-icons {
+  from {
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@keyframes sponsors-icons-back {
+  from {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  to {
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=grandchild-styles.css.map */
