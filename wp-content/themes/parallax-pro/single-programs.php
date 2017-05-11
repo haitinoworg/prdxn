@@ -19,7 +19,7 @@
 		echo '<h3>Donate for this programs</h3>'; 
 		echo '<p>';
 		echo the_field("donate_text") . '</p>';
-		echo do_shortcode('[direct-stripe type="donation" name="My plugin" currency="USD" description="Help me improve the plugin" label="Donate Now" panellabel="This will add one more setting option!"]').'</div>';
+		echo do_shortcode('[direct-stripe type="donation" button_id="stripe_donate_btn" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" capture="true" display_amount="false" currency="USD" success_url="prdxnstaging2.com/ayiti"]').'</div>';
 		echo '<h3>';
 		echo the_title() .'</h3></div>';
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {

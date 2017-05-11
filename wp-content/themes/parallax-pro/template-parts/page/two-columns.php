@@ -35,7 +35,7 @@ foreach( $videos as $post ) : setup_postdata( $post );
 		?>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
-			<?php the_content(); ?>
+			<?php the_excerpt(); ?>
 		</div>
 	</a>
 </div>
@@ -56,8 +56,9 @@ foreach($post_object as $post):
 			the_post_thumbnail();	
 		} else {
 			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
-		}
+		} 
 		?>
+		<h3><?php the_title(); ?></h3>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
 			<?php the_content(); ?>

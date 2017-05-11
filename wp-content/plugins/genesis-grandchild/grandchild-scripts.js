@@ -1,6 +1,5 @@
 (function( $ ) {
 
- $(document).ready(function(){
   // Header Height
   var headerHeight = $('.site-header').outerHeight();
 
@@ -96,7 +95,6 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
   });
 
-});
 
 // gallery page tab
 $(".page-template-page-gallery .entry-content").addClass("tab-detail");
@@ -119,6 +117,7 @@ $(this).scroll(function(){
     $(".program-desc").addClass("active");
   }
 });
+
 
 })(jQuery);
 

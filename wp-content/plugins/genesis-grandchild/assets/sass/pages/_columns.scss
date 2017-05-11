@@ -90,12 +90,24 @@
 			padding: 26% 0;
 			background-color: #000;
 			img { opacity: 0.4; } 
+
+			text-align: center;
+			&>h3 {
+				width: 100%;
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				color: #fff; 
+				font-size: 32px;	
+				@include property(transform,translateY(-50%));
+			}
 		}
 
 
 		&>a:hover {
 			@include props(bgb);
-
+			&>h3 { display: none; }
 			.entry-content {
 				@include minWidth(768px) {
 					@include property(animation,text-overlay 0.4s linear forwards);
@@ -221,7 +233,7 @@
 		0% { }
 		100% { 	
 			z-index: 0;
-			transform: scaleX(-1);
+			// transform: scaleX(-1);
 			opacity: 0; 
 		}
 	}
@@ -229,12 +241,12 @@
 	@keyframes text-on {
 		0% {
 			z-index: 0;
-			transform: scaleX(-1);
+			// transform: scaleX(-1);
 			opacity: 0;
 		}
 		100% { 
 			z-index: 1;
-			transform: scaleX(1);
+			// transform: scaleX(1);
 			opacity: 1;
 		}	
 
@@ -242,13 +254,13 @@
 
 	@keyframes image-flip {
 		0% { 
-			transform: scaleX(-1); 
+			// transform: scaleX(-1); 
 			z-index: 0;
 			opacity: 0;
 		}
 		100% { 
 			z-index: 1;
-			transform: scaleX(1);
+			// transform: scaleX(1);
 			opacity: 1;
 		}
 	}
@@ -256,12 +268,12 @@
 	@keyframes image-off {
 		0% {
 			z-index: 1;	
-			transform: scaleX(1);
+			// transform: scaleX(1);
 			opacity: 1;
 		}
 		100% {
 			z-index: 0;	
-			transform: scaleX(-1);
+			// transform: scaleX(-1);
 			opacity: 0;
 		}
 	}
