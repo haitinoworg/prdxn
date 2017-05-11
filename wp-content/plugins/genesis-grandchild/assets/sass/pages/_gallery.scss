@@ -8,6 +8,23 @@
 
 .tab-detail {
 	display: none;
+
+  p {
+    a{
+      width: 30%;
+      min-height: 300px;
+      max-height: 300px;
+      margin-right: 5%;
+      display: inline-block;
+      float: left;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    a:nth-child(4n+4){margin-right: 0;}
+  }
 }
 
 .album {
