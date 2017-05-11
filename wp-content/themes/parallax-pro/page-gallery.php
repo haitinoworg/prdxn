@@ -12,6 +12,7 @@ add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 // remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 //* Remove navigation
 remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
