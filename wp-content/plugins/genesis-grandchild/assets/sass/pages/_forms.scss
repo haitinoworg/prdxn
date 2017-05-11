@@ -5,18 +5,12 @@
 .contact-form-7 {
 
 	.content {
-
-		width: 100%;
+		width: 84%;
 
 		// Form Styling
-
-		article.entry {
-			padding: 63px 0 0;
-		}
+		article.entry { padding: 63px 0 0; }
 
 		.entry-content {
-			width: 62%;
-			min-width: 692px;
 			margin: 0 auto;
 			font-family: $font;
 
@@ -39,11 +33,11 @@
 					}
 				}
 				input,
-				select,
 				textarea { 
-					padding: 10px;	
+					padding: 11px;	
 					outline: none;
 					font-size: 15px;
+					line-height: 10px;
 				}
 
 				textarea { 
@@ -52,8 +46,8 @@
 				}
 
 				#sf_00NA000000723Db { 
-					max-height: 42px; 
 					min-height: 42px;
+					padding: 16px 11px 5px;
 				}
 
 				label {
@@ -72,23 +66,22 @@
 			// Volunteer Paragraph Styling
 			h1,h2,h3,h4,h5,h6 {
 				background-color: transparent;
-				font: 30px $font;
 				text-transform: capitalize;
 			}
 
 			h2,h3,h4,h5,h6 {
-				margin: 38px 0;
+				margin: 5px 0;
 				text-align: left;
 			}
+
 
 			tbody td {
 				text-align: left;
 			}
 
 			p { 
-				margin-bottom: 5px; 
 				strong { 
-					margin: 39px 0 8px;
+					// margin: 39px 0 8px;
 					display: block;
 					font: 700 20px $font;
 				}
@@ -103,9 +96,9 @@
 
 
 	.email-us {
-		padding: 50px 0;
+		padding: 32px 0;
 		background-color: #f2f2f2;
-		font: 23px $font;
+		font: 17px $font;
 		text-align: center;
 		p { margin: 0; }
 		a {	
@@ -116,6 +109,8 @@
 		}
 
 	}
+
+	.form-title { text-align: center; }
 
 	.volunteer-form {
 		.sf_field { 
@@ -141,18 +136,45 @@
 		}
 	}
 
-	.salesforce_w2l_lead {
-		#sf_form_salesforce_w2l_lead_6 {
-		     .w2lsubmit { border-radius: 0px; }
-	     }
+	.inside {
+		.salesforce_w2l_lead {
+			text-align: center;
+			.sf_field { 
+				text-align: left;
+				width: 30%; 
+				display: inline-block;
+				vertical-align: top;
 
-		.w2lsubmit {
-			min-width: 215px;
-			max-width: 216px;
-			border: 0px solid #f16522;
-			border-radius: 3px;
-			margin: 25px auto 64px;
-			background-color: #f16522;
+				&:nth-child(3n+2) {
+					margin: 0 4.5%;
+				}
+
+
+				@include tab() {
+					width: 100%;
+
+					&:nth-child(3n+2) { margin: 0; }
+				}
+			}
+			.sf_type_textarea { 
+				width: 100%;
+				min-height: 102px;
+				margin-left: 0;
+			}
+		}
+
+		.w2lsubmit { display: inline-block;	}
+	}
+
+	.salesforce_w2l_lead {
+		#sf_form_salesforce_w2l_lead_7 {
+			text-align: center;
+			input,
+			p { text-align: left; }
+			.w2lsubmit { 		
+				display: inline-block; 
+				input {	padding: 11px 25px;	}
+			}
 		}
 	}
 
@@ -177,7 +199,7 @@
 	form {
 		clear: both;
 		&>div { 
-			width: 25%;
+			width: 33.333%;
 			float: left;
 
 			@include maxWidth(768px) {
@@ -203,34 +225,34 @@
 				&:-ms-input-placeholder
 				{	color: #aaa;	}
 
-				&:hover {/* border: 1px solid #aaa;*/ }
-			}
-			input[type="submit"] { 
-				padding: 11px;
-				border: 1px solid #f16522;
-				background-color: #f16522;
+			&:hover {/* border: 1px solid #aaa;*/ }
+		}
+		input[type="submit"] { 
+			padding: 11px;
+			border: 1px solid #f16522;
+			background-color: #f16522;
 
-				@include tab() { width: 100%; }
+			@include tab() { width: 100%; }
 
-				&:hover { 
-					background-color: #fff;
-					color: #f16522; 
-				}
+			&:hover { 
+				background-color: #fff;
+				color: #f16522; 
 			}
+		}
 
-			p {
-				margin-top: 0;
-				margin-bottom: 0;
-				color: #f00;
-				font-size: 14px;
-				text-align: left;
-			}
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+			color: #f00;
+			font-size: 14px;
+			text-align: left;
 		}
 	}
 }
+}
 
 .salesforce_w2l_lead {
-	margin: 48px 0 40px;
+	margin: 0 0 40px;
 	form.w2llead {
 		&>div { 
 			input,
@@ -243,9 +265,7 @@
 
 				@include mobile() {	margin-bottom: 0; }
 
-				&:focus {
-					border: 1px solid #ddd;
-				}
+				&:focus { border: 1px solid #ddd; }
 			}
 			input,
 			textarea {
@@ -262,10 +282,12 @@
 			}	
 
 			select {
+				padding: 16px 11px;	
+				display: block;
 				color: #aaa;
-				option {
-					color: #000;
-				}
+				font-size: 13px;
+				line-height: 10px;
+				option { color: #000; }
 			}
 
 			input[type="submit"] { 
@@ -303,30 +325,48 @@
 /* volunteer page responsive */
 @include tab() {
 	.contact-form-7 { 
-	    .volunteer-form { 
-	    	.sf_field {
-	            width: 100%;
-	        }
+		.volunteer-form { 
+			.sf_field {
+				width: 100%;
+			}
 
-	        .sf_field:nth-child(3n+2) {
-	            margin: 0px;	
-	        }
-        }
+			.sf_field:nth-child(3n+2) {
+				margin: 0px;	
+			}
+		}
 
-        .salesforce_w2l_lead {
-        	.w2lsubmit {
-        		margin: 25px auto 64px;
-        	}
-        }
+		.content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
+	}
 
-
-       .content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
-    }
-
-    .contact-form-7 {
-    	.email-us {
-    		a { display: block; }
-    	}
-    }
+	.contact-form-7 {
+		.email-us {
+			a { display: block; }
+		}
+	}
 }
 
+
+// Volunter Wrapper
+
+.volunteer-form,
+.inside {
+	.salesforce_w2l_lead {
+		width: 74%;
+		padding: 40px 0 66px;
+		margin: 0 auto;
+	}
+}
+
+.salesforce_w2l_lead {
+	select {
+		@include boxmodel(2,border-box,3,100%,5,15px 11px);
+		display: block;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0px;
+		-moz-appearance: none;
+		appearance: none;
+		background: url('../../uploads/2017/05/caret-down.png') no-repeat 97% 50% #ffffff;
+		background-size: 5px 10px;
+		outline: none;
+	}
+}

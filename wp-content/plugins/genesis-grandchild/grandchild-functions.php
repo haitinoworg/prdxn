@@ -28,24 +28,6 @@ add_action('wp_footer','custom_footer_script');
 // Post Format Supports
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
-// //hook into the init action and call create_book_taxonomies when it fires
-// add_action( 'init', 'new_category' );
-
-// function new_category() {
-
-// // Now register the taxonomy
-
-// 	register_taxonomy('program_category',array('programs'), array(
-// 		'hierarchical' => true,
-// 		'labels' => 'New Program Category',
-// 		'show_ui' => true,
-// 		'show_admin_column' => true,
-// 		'query_var' => true,
-// 		'rewrite' => array( 'slug' => 'program_category' ),
-// 		));
-// }
-
-
 /**
 * Custom Programs post
 */
@@ -120,7 +102,7 @@ function sp_excerpt_length( $length ) {
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-	return '<div><a class="common-links" href="' . get_permalink() . '">Read&nbsp;More</a></div>';
+	return '<div><a class="common-links read-more" href="' . get_permalink() . '">Read&nbsp;More</a></div>';
 }
 
 /** Add support for post format images */
@@ -150,11 +132,24 @@ function custom_site_logo( $atts ) {
 add_shortcode( 'site_title', 'custom_site_logo' );
 
 
+/*
+* Ajax Load More
+*/
 
-
-
-
-
-
-
-
+add_action('wp_ajax_my_action','data_fetch');
+add_action('wp_ajax_nopriv_my_action','data_fetch');
+function data_fetch() {
+	$the_query = new WP_Query(array(
+		'post_type' => 'post',
+		'posts_per_page'=>2,
+		));
+	if($the_query->have_posts()):
+		while($the_query->have_posts()): $the_query->the_post();
+	?>
+	<h2><?php the_title(); ?></h2>
+	<?php
+	endwhile;
+	wp_reset_postdata();
+	endif;
+	die();
+}

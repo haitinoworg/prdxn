@@ -15,13 +15,19 @@ Content Area
 		
 		// Pricing Table Styling
 		.ptsCol { 
-			max-width: 48%;
+			max-width: 31%;
 			height: auto;
 			border: 1px solid #cfcfcf;
 			background-color: #fff;
 			@include property(transition, 0.4s linear);
 
-			&:nth-of-type(1) { margin-right: 4%;	}
+			&:nth-of-type(2) { margin: 0 3%;	}
+
+			@include tab() { 
+				min-width: 100%; 
+				max-width: 100%;
+				&:nth-of-type(2) {	margin: 30px 0;	}
+			}
 
 			@include maxWidth(553px) {
 				min-width: 100%;
@@ -120,7 +126,7 @@ Content Area
 			height: calc(100vh - 70px);
 			padding: 0;
 			.wrap { 
-				width: 93%;
+				width: 84%;
 				margin: 0 auto;
 				padding: 0; 
 				position: relative;
@@ -138,7 +144,7 @@ Content Area
 				}
 			}
 			section {
-				width: 60%;
+				width: 46%;
 				text-align: left;
 			}
 
@@ -228,7 +234,7 @@ Content Area
 
 .home-section-5.home-odd {
 	height: auto;
-	padding: 31px 0 5px;
+	padding: 31px 0;
 	background-color: #2e2b2b;
 	border-top: 1px solid #e3ffbc;
 
@@ -242,7 +248,9 @@ Content Area
 	}
 
 	.salesforce_w2l_lead {
-		margin: 0;
+		width: 75%;
+		margin: 0 auto;
+		overflow: auto;
 
 		@include mobile() {
 			margin-bottom: 30px;
@@ -319,7 +327,7 @@ Content Area
 	}
 
 	.featured-content article {
-		width: 48%;
+		width: 100%;
 		padding: 0;
 		margin: 0;
 		@include props(ovh,fll,posr);
@@ -328,7 +336,7 @@ Content Area
 
 		.widget-title { margin-bottom: 44px; }
 
-		&:last-child { margin-left: 4%; }
+		&:nth-of-type(3n+2) { margin: 4% 0; }
 
 		@include tab() {
 			width: 100%;
@@ -341,20 +349,26 @@ Content Area
 		}
 
 		@include mobile() {
-			max-height: 180px;
+			/*max-height: 180px;*/
 		}
 
 		&>a { 
-			width: 100%;
-			padding: 26% 0;
-			margin: 0;
-			display: block;
+			width: 48%;
+			padding: 13% 0;
+			margin-right: 4%;
+			/*display: block;*/
 			position: relative;
+			float: left;
 			background-color: #000;
+			overflow: hidden;
+
+			@include tab() {
+				width: 100%;
+				padding: 23% 0;
+			}
 
 			img {
 				width: 100%;
-				min-width: 506px;
 				height: 100%;
 				position: absolute;
 				top: 0;
@@ -381,43 +395,75 @@ Content Area
 					opacity: 0;
 					border-radius: 0;
 				}
-
-				& + .entry-header {
-					animation: title 0.3s linear forwards;
-				}
 			}
 		}
-		header.entry-header {
-			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 0;
-			@include property(transform,translateY(-50%));
-			a { 
-				position: absolute;
-				left: 50%;
-				@include property(transform,translateX(-50%));
-				&:hover {
-					color: #fff;
-				}
+
+		.entry-content {
+			width: 48%;
+			float: left;
+			text-align: left;
+
+			@include tab() {
+				width: 100%;
 			}
 
-			h2.entry-title {
-				margin: 0;
-				font: 23px $font;
-				text-shadow: 0px 2px 2px #000;
-				&:after { display: none; }
-				@include maxWidth(1024px) {
-					font-size: 18px;
-				}
+			p{
+				margin-bottom: 0;
+				color: #333;
+				font-size: 17px;
+				text-align: left;
+			}
+
+			.common-links {
+				width: auto;
+				padding: 10px 25px;
+				margin: 30px 0 0;      
+				border: 1px solid #f16522;
+				display: inline-block;
+				background-color: #f16522;
+				color: #fff;
+				font: 14px/20px Roboto, sans-serif;  
+			}
+
+			.common-links:hover {    
+				background-color: #fff;
+				color: #f16522;}
+			}
+
+			header.entry-header {
+				width: 48%;
+				float: left;
 
 				@include maxWidth(768px) {
-					font-size: calc(1.5vw + 10px);
+					width: 100%;
+				}
+
+				a { 
+					color: #333;
+
+					&:hover {
+						color: #333;
+					}
+				}
+
+				h2.entry-title {
+					margin-bottom: 12px;
+					font: 32px $font;
+					text-align: left;
+
+					&:after { display: none; }
+					@include maxWidth(1024px) {
+						font-size: 18px;
+					}
+
+					@include maxWidth(768px) {
+						line-height: 36px;
+						font-size: 32px;
+					}
 				}
 			}
 		}
 	}
-}
 
 // Pricing Table Animation
 

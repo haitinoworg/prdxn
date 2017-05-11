@@ -1,1 +1,14 @@
-<li <?php if (!has_post_thumbnail()) { ?> class="no-img"<?php } ?>><?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(150,150));}?><h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3><p class="entry-meta"><?php the_time("F d, Y"); ?></p><?php the_excerpt(); ?></li>
+<div class="three-columns">
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php	
+		if(has_post_thumbnail()){
+			the_post_thumbnail();	
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+		}
+		?>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_content(); ?>
+		</div>
+	</a>
+</div>
