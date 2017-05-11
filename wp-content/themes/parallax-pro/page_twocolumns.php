@@ -30,9 +30,9 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 			echo '</div>';
 		}
 		?>
-		<!-- <div id="#datafetch">
+		<div id="#datafetch">
 			<button class="load-more-posts">Load More</button>
-		</div> -->
+		</div>
 		<?php
 	}
 } else {
