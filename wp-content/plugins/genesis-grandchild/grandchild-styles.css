@@ -547,7 +547,6 @@ Site Header
   text-indent: 50px;
   font-family: Roboto;
   font-size: 16px;
-  text-decoration: none;
 }
 
 @media screen and (max-width: 960) {
@@ -940,13 +939,8 @@ Content Area
 .home-section-3 .featured-content article .widget-title {
   margin-bottom: 44px;
 }
-<<<<<<< HEAD
-.home-section-3 .featured-content article:last-child {
-  margin-top: 4%;
-=======
 .home-section-3 .featured-content article:nth-of-type(3n+2) {
   margin: 4% 0;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 @media screen and (max-width: 768px) {
   .home-section-3 .featured-content article {
@@ -1801,9 +1795,6 @@ div#n2-ss-6 .n2-grab {
   font-size: 14px;
 }
 
-<<<<<<< HEAD
-.archive .content {
-=======
 /*
 * Columns Styling -------------------------------------------
 */
@@ -1819,7 +1810,6 @@ div#n2-ss-6 .n2-grab {
 }
 .page-template-page_columns .content {
   width: 84%;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   padding: 0;
   margin: 0 auto;
   float: none;
@@ -2568,8 +2558,6 @@ Single Post Page Styling ==================================
 .contact-form-7 .inside .salesforce_w2l_lead {
   text-align: center;
 }
-<<<<<<< HEAD
-=======
 .contact-form-7 .inside .salesforce_w2l_lead .sf_field {
   text-align: left;
   width: 30%;
@@ -2595,7 +2583,6 @@ Single Post Page Styling ==================================
 .contact-form-7 .inside .w2lsubmit {
   display: inline-block;
 }
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 .contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 {
   text-align: center;
 }
@@ -2608,10 +2595,6 @@ Single Post Page Styling ==================================
 }
 .contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit input {
   padding: 11px 25px;
-<<<<<<< HEAD
-  border-radius: 0px;
-=======
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 
 /* News
@@ -2726,12 +2709,8 @@ Single Post Page Styling ==================================
   color: #aaa;
 }
 .salesforce_w2l_lead form.w2llead > div select {
-<<<<<<< HEAD
-  padding: 11px;
-=======
   padding: 16px 11px;
   display: block;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   color: #aaa;
   font-size: 13px;
   line-height: 10px;
@@ -2785,11 +2764,6 @@ Single Post Page Styling ==================================
     display: block;
   }
 }
-<<<<<<< HEAD
-.volunteer-form .salesforce_w2l_lead {
-  width: 74%;
-  margin: 40px auto 40px;
-=======
 .volunteer-form .salesforce_w2l_lead,
 .inside .salesforce_w2l_lead {
   width: 74%;
@@ -2809,7 +2783,6 @@ select {
   background: url("../../uploads/2017/05/caret-down.png") no-repeat 97% 50% #ffffff;
   background-size: 5px 10px;
   outline: none;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 
 .single-post .entry-content {
@@ -2884,6 +2857,20 @@ select {
 
 .tab-detail {
   display: none;
+}
+.tab-detail p a {
+  width: 30%;
+  min-height: 300px;
+  max-height: 300px;
+  margin-right: 5%;
+  display: inline-block;
+  float: left;
+}
+.tab-detail p a img {
+  width: 100%;
+}
+.tab-detail p a:nth-child(4n+4) {
+  margin-right: 0;
 }
 
 .album {
@@ -3111,13 +3098,8 @@ Footer Widgets
   }
 }
 .footer-widgets section #menu-secondary-menus > li {
-<<<<<<< HEAD
-  width: 21%;
-  margin: 0 5.3% 30px 0;
-=======
   width: 26%;
   margin: 0 3% 30px 0;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   display: inline-block;
   float: left;
   text-align: left;
@@ -3155,10 +3137,6 @@ Footer Widgets
   }
 }
 .footer-widgets section #menu-secondary-menus > li:last-child {
-<<<<<<< HEAD
-  padding-left: 20px;
-  margin-right: 0;
-=======
   width: 8%;
   min-width: 68px;
   margin: 0 0 30px 4.2%;
@@ -3169,7 +3147,6 @@ Footer Widgets
     width: 100%;
     padding: 0;
   }
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 .footer-widgets section:last-child {
   width: 100%;
@@ -3190,11 +3167,7 @@ Footer Widgets
   text-align: left;
 }
 .footer-widgets #text-7 {
-<<<<<<< HEAD
-  width: 27%;
-=======
   width: 32%;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   text-align: left;
   padding-top: 0;
   padding-bottom: 0;
@@ -3362,14 +3335,9 @@ Site Footer
 Footer Section-1
 */
 .footer-widgets #nav_menu-4 {
-<<<<<<< HEAD
-  width: 73%;
-  margin-bottom: 20px;
-=======
   width: 72%;
   margin: 0 auto 20px;
   float: none;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets #nav_menu-4 {
@@ -3379,11 +3347,7 @@ Footer Section-1
 @media screen and (max-width: 768px) {
   .footer-widgets #nav_menu-4 {
     width: 100%;
-<<<<<<< HEAD
-    padding: 40px 0 15;
-=======
     padding: 40px 0 0;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
     margin-bottom: 0;
   }
 }
@@ -3415,11 +3379,7 @@ Footer Section-1
   color: #5f5f5f;
 }
 .footer-widgets .social-icons {
-<<<<<<< HEAD
-  margin: 5px auto 0;
-=======
   margin: 10px auto 0;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   display: inline-block;
 }
 .footer-widgets .social-icons a {
@@ -3477,18 +3437,6 @@ Footer Section-1
 }
 
 .footer-widgets .widget_cnss_widget {
-<<<<<<< HEAD
-  width: 50%;
-  float: right;
-  text-align: right;
-}
-.footer-widgets .widget_cnss_widget ul {
-  text-align: right !important;
-}
-.footer-widgets .like {
-  padding-top: 25px;
-  float: left;
-=======
   width: 35%;
   float: right;
   text-align: right;
@@ -3514,7 +3462,6 @@ Footer Section-1
   .footer-widgets .like {
     text-align: center;
   }
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 .footer-widgets .like iframe {
   width: 100px;
@@ -3523,15 +3470,12 @@ Footer Section-1
   float: left;
   overflow: hidden !important;
 }
-<<<<<<< HEAD
-=======
 @media screen and (max-width: 1024px) {
   .footer-widgets .like iframe {
     display: inline-block;
     float: none;
   }
 }
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 .footer-widgets .like #u_0_3 {
   display: none;
 }
@@ -3540,10 +3484,6 @@ Footer Section-1
 }
 
 #text-18 {
-<<<<<<< HEAD
-  width: 40%;
-  clear: both;
-=======
   width: 33%;
   text-align: right;
 }
@@ -3554,7 +3494,6 @@ Footer Section-1
   #text-18 iframe {
     margin: 10px 0;
   }
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
 }
 
 @media screen and (max-width: 768px) {
@@ -3570,13 +3509,8 @@ Footer Section-1
 /*footer responsive styling*/
 @media screen and (max-width: 1024px) {
   .footer-widgets section #menu-secondary-menus > li {
-<<<<<<< HEAD
-    width: 45%;
-    margin: 0 4.3% 30px 0;
-=======
     width: 26%;
     margin: 0 3% 30px 0;
->>>>>>> c4d1fdaa1fcb928972df15a05d0ff5db4667a09a
   }
   .footer-widgets section #menu-secondary-menus > li:last-child {
     padding-left: 0;
@@ -3833,7 +3767,7 @@ Footer Section-1
 
 .sponsor-list {
   width: 23%;
-  min-height: 140px;
+  min-height: 165px;
   margin-top: 16px;
   margin-right: 2%;
   display: table;
@@ -3911,18 +3845,18 @@ Footer Section-1
     transform: scale(1);
   }
   to {
-    -ms-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
   }
 }
 @keyframes sponsors-icons-back {
   from {
-    -ms-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
   }
   to {
     -ms-transform: scale(1);

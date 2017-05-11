@@ -99,6 +99,7 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 });
 
 // gallery page tab
+$(".page-template-page-gallery .entry-content").addClass("tab-detail");
 $("#tabs li").on('click',function(){
  $("#tabs li").removeClass('active');
  $(this).addClass('active');
@@ -119,14 +120,5 @@ $(this).scroll(function(){
   }
 });
 
-
-
 })(jQuery);
 
- (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));

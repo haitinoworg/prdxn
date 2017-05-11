@@ -18,7 +18,7 @@
 
 .sponsor-list {
   width: 23%;
-  min-height: 140px;
+  min-height: 165px;
   margin-top: 16px;
   margin-right: 2%;
   display: table;
@@ -95,10 +95,10 @@
 
 @keyframes sponsors-icons {
   from { @include property(transform,scale(1)); }
-  to { @include property(transform,scale(1.5)); }
+  to { @include property(transform,scale(1.4)); }
 }
 
 @keyframes sponsors-icons-back {
- from { @include property(transform,scale(1.5)); }
+ from { @include property(transform,scale(1.4)); }
  to { @include property(transform,scale(1)); } 
 }
