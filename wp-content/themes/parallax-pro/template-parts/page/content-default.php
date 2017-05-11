@@ -11,9 +11,11 @@
 global $post;
 $post_slug = $post->post_name;
 
+
 if(have_posts()): the_post();
 
 if($post_slug == "program") {
+
 	$args = array(
 		'post_type' => 'programs',
 		'post_per_page' => -1
@@ -24,9 +26,6 @@ if($post_slug == "program") {
 	foreach( $post_query as $post ) : setup_postdata( $post );
 	?>
 	<div class="post-images content-default" >
-		<?php 
-	// Condition for Featured Image
-		?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php 
 			if ( has_post_thumbnail() ) { 
@@ -48,10 +47,14 @@ if($post_slug == "program") {
 	wp_reset_postdata();
 
 } else {
+
+	/*
+	* Post Loop using post_slug
+	*/
 	$args = array(
 		'post_type' => 'post',
 		'category_name' => $post_slug,
-		'posts_per_page' => -1
+		'posts_per_page' => 2
 		);	
 
 	$post_query = get_posts( $args );
@@ -59,9 +62,6 @@ if($post_slug == "program") {
 	foreach( $post_query as $post ) : setup_postdata( $post );
 	?>
 	<div class="post-images content-default" >
-		<?php 
-	// Condition for Featured Image
-		?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php 
 			if ( has_post_thumbnail() ) { 
@@ -71,18 +71,23 @@ if($post_slug == "program") {
 				. '/images/empty-image.png" />';
 			}
 			?>
+			<div class="entry-content">
+				<h3><?php the_title(); ?></h3>
+				<?php the_excerpt(); ?>
+			</div>
 		</a>
-		<div class="entry-content">
-			<h3><?php the_title(); ?></h3>
-			<?php the_excerpt(); ?>
-		</div>
+		
 	</div>
 
 	<?php 
 	endforeach;
 	wp_reset_postdata();
 }
-
 endif;
+
+
+
+
+
 
 

@@ -170,3 +170,31 @@ Common Mixins ============================================
 		}
 	}
 }
+
+/*
+* Keyframes ======================================
+*/
+
+@mixin keyfm($name) {
+	@keyframes $name {
+		@content;
+	}
+	@-webkit-keyframes $name {
+		@content;
+	}
+
+
+	@-moz-keyframes $name {
+		@content;
+	}
+
+
+	@-o-keyframes $name {
+		@content;
+	}
+
+	@-ms-keyframes $name {
+		@content;
+	}
+
+}

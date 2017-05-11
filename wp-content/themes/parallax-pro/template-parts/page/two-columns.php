@@ -35,7 +35,10 @@ foreach( $videos as $post ) : setup_postdata( $post );
 		?>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
-			<?php the_excerpt(); ?>
+			<?php 
+			$content = get_the_content();
+			echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>';
+			?>
 		</div>
 	</a>
 </div>
@@ -58,10 +61,14 @@ foreach($post_object as $post):
 			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
 		} 
 		?>
-		<h3><?php the_title(); ?></h3>
+
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
-			<?php the_content(); ?>
+
+			<?php 
+			$content = get_the_content();
+			echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>';
+			?>
 		</div>
 	</a>
 </div>

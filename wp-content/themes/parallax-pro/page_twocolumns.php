@@ -29,11 +29,6 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
 		}
-		?>
-		<!-- <div id="#datafetch">
-			<button class="load-more-posts">Load More</button>
-		</div> -->
-		<?php
 	}
 } else {
 	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
@@ -53,22 +48,17 @@ function programs_loop() {
 		<div class="entry">
 			<?php
 			$post_style = get_field('select_post_styling');
-		/*
-		Image Post Section Ends Here ========================
-		*/
 
-		//* Condition for checking post thumbnail
-
-		if($post_style == "Content Default") {
-			get_template_part( 'template-parts/page/content', 'default' );
-		}	
-		if($post_style == "Products") {
-			get_template_part( 'template-parts/page/content', 'pages' );
-		}
-		?>
-	</div>
-</section>
-<?php
+			if($post_style == "Content Default") {
+				get_template_part( 'template-parts/page/content', 'default' );
+			}	
+			if($post_style == "Products") {
+				get_template_part( 'template-parts/page/content', 'pages' );
+			}
+			?>
+		</div>
+	</section>
+	<?php
 
 }
 

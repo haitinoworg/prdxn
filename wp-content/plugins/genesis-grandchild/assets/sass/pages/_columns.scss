@@ -92,7 +92,7 @@
 			img { opacity: 0.4; } 
 
 			text-align: center;
-			&>h3 {
+			h3 {
 				width: 100%;
 				display: inline-block;
 				position: absolute;
@@ -101,28 +101,42 @@
 				color: #fff; 
 				font-size: 32px;	
 				@include property(transform,translateY(-50%));
+				// @include property(animation,text-overlay-out 0.3s linear backwards);
+			}
+			p {
+				width: 100%;
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				@include minWidth(768px) {
+					@include property(animation,text-overlay-out 0.3s linear both);
+				}
 			}
 		}
 
 
 		&>a:hover {
 			@include props(bgb);
-			&>h3 { display: none; }
-			.entry-content {
+			h3 {
+				position: static;
+				@include property(transform,translateY(0));
+			}
+			p {   
 				@include minWidth(768px) {
-					@include property(animation,text-overlay 0.4s linear forwards);
-					
+					@include property(animation,text-overlay 0.3s linear both);
 				}
 			}
+
+			// .entry-content { height: auto; }
 		}
 
 		.entry-content {
-			height: 100%;
-			padding: 5px 8%;
-			top: 100%;
-			@include minWidth(768px) {
-				@include property(animation,text-overlay-out 0.4s linear backwards);
-			}
+			height: 60%;
+			padding: 0 8%;
+			position: absolute;
+			top: 50%;
+			@include property(transform,translateY(-50%));
 
 			@include tab() {
 				height: auto;
@@ -215,7 +229,6 @@
 				}
 
 				@include minWidth(769px) {
-					img,
 					.entry-content {
 						border: 1px solid #7b7b7b;
 					}
@@ -282,71 +295,31 @@
 // Two Column Image Overlay Animation Keyframe
 
 @keyframes text-overlay {
-	from { top: 100%; }
+	from {  }
 	to { 
-		top: 50%; 
-		@include property(transform,translateY(-50%));
+		position: static;
+		top: 0; 
+		@include property(transform,translateY(0));
 	}
 }
-
-@-webkit-keyframes text-overlay {
-	from { top: 100%; }
-	to { 
-		top: 50%; 
-		@include property(transform,translateY(-50%));
-	}
-}
-
-
-@-moz-keyframes text-overlay {
-	from { top: 100%; }
-	to { 
-		top: 50%; 
-		@include property(transform,translateY(-50%));
-	}
-}
-
-
-@-o-keyframes text-overlay {
-	from { top: 100%; }
-	to { 
-		top: 50%; 
-		@include property(transform,translateY(-50%));
-	}
-}
-
-@-ms-keyframes text-overlay {
-	from { top: 100%; }
-	to { 
-		top: 50%; 
-		@include property(transform,translateY(-50%));
-	}
-}
-
 
 @keyframes text-overlay-out {
 	from { top: 50%; }
-	to { 
-		top: 100%; 
+	to {  
 		@include property(transform,translateY(0));
 	}	
 }
 
-.misha_loadmore{
-	background-color: #ddd;
-	border-radius: 2px;
-	display: block;
-	text-align: center;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	letter-spacing:1px;
-	cursor:pointer;
-	text-transform: uppercase;
-	padding: 10px 0;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;  
-}
-.misha_loadmore:hover{
-	background-color: #767676;
-	color: #fff;
+
+/*
+* Gallery Accordion Styling =========================================
+*/
+
+.accordions-themes {
+	width: 50%;
+	p a {
+		display: inline;
+		float: none;
+		text-decoration: none;
+	}
 }

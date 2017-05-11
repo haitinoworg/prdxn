@@ -6,7 +6,6 @@
   $('.site-inner').css('padding-top',headerHeight + 'px');
 
 
-
 // form validation
 var validate = function(field,id,regx) {
   var input_value = $(id).val();
@@ -119,4 +118,6 @@ $(this).scroll(function(){
 
 
 })(jQuery);
+
+
 
