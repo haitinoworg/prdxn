@@ -359,6 +359,19 @@ div#n2-ss-2 .n2-grab {
   cursor: default;
 }
 
+.page-id-42 .content .entry-content p {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 2px dotted;
+}
+.page-id-42 .content .entry-content h2 {
+  padding: 6px 12px;
+  margin-top: 35px;
+  border-radius: 2px;
+  background: rgba(241, 101, 34, 0.82);
+  color: #fff;
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -2864,27 +2877,80 @@ Single Post Page Styling ==================================
 .page-template-page-gallery .entry,
 .page-template-page-research .entry {
   margin-bottom: 0px;
+  padding: 55px 0 0 0;
 }
 .page-template-page-gallery .content,
 .page-template-page-research .content {
   padding: 0;
 }
 
+.gallery {
+  width: 84%;
+  margin: 0 auto;
+}
+
 .tab-detail {
   display: none;
 }
+.tab-detail p {
+  overflow: auto;
+}
 .tab-detail p a {
-  width: 30%;
+  width: 31.3333%;
   min-height: 300px;
   max-height: 300px;
-  margin-right: 5%;
+  margin-right: 3%;
+  margin-bottom: 30px;
   display: inline-block;
+  position: relative;
   float: left;
 }
 .tab-detail p a img {
   width: 100%;
+  min-height: 300px;
+  max-height: 300px;
 }
-.tab-detail p a:nth-child(4n+4) {
+.tab-detail p a span {
+  width: 100%;
+  padding: 0 16px;
+  position: absolute;
+  top: 45%;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  z-index: 100;
+}
+.tab-detail p a::after {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.39);
+  animation: hover-album-rev 0.4s forwards;
+}
+.tab-detail p a:hover::after {
+  animation: hover-album 0.4s forwards;
+}
+@keyframes hover-album {
+  0% {
+    background: rgba(0, 0, 0, 0.39);
+  }
+  100% {
+    background: transparent;
+  }
+}
+@keyframes hover-album-rev {
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.39);
+  }
+}
+.tab-detail p a:nth-child(3n+3) {
   margin-right: 0;
 }
 
@@ -2942,7 +3008,7 @@ Single Post Page Styling ==================================
   margin: 0px;
   position: absolute;
   bottom: 0px;
-  left: 4%;
+  left: 8%;
   z-index: 100;
   background: #f16522;
   color: #fff;
@@ -2960,7 +3026,7 @@ Single Post Page Styling ==================================
 }
 
 .gallery-video-content #huge_it_videogallery {
-  padding: 0px 15px;
+  padding: 0;
   background: #fff;
   box-shadow: none;
   text-align: left;
