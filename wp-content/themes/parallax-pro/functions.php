@@ -151,3 +151,53 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the home section 5 section.', 'parallax' ),
 	) );
 
+
+
+add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
+function be_load_more_js() {
+	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
+}
+
+
+add_action('wp_ajax_ajax_load_more','ajax_load_more');
+add_action('wp_ajax_ajax_load_more','ajax_load_more');
+function ajax_load_more() {
+	$paged = $_POST["page"] + 1;
+	$category = $_POST["category"];
+	
+	$query = new WP_Query( array(
+		'post_type' => 'post',
+		'category_name' => $category,
+		'paged' => $paged
+		));
+
+	if( $query->have_posts() ): 
+		while( $query->have_posts() ): $query->the_post();
+	?>
+	<div class="post-images content-default" >
+		<a href="<?php echo the_permalink(); ?>" title="<?php the_title(); ?>">
+			<?php 
+			if ( has_post_thumbnail() ) { 
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" />';
+			}
+			?>
+			<div class="entry-content">
+				<h3><?php the_title(); ?></h3>
+				<?php the_excerpt(); ?>
+			</div>
+		</a>
+
+	</div>
+	<?php
+	endwhile; 
+	endif; 
+	wp_reset_postdata();
+	die();
+}
+
+
+
+
