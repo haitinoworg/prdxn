@@ -1378,6 +1378,11 @@ Content Area
     padding: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.two-columns {
+    width: 100%;
+  }
+}
 .page-template-page_twocolumns .content .program-posts .post-images:last-child {
   padding: 0;
   margin-bottom: 55px;
@@ -1822,6 +1827,10 @@ div#n2-ss-6 .n2-grab {
 /*
 * Movies page styling
 */
+#loadmore-data {
+  width: 72%;
+}
+
 main.content {
   text-align: center;
 }
@@ -1830,7 +1839,7 @@ main.content .two-columns {
   text-align: left;
 }
 main.content .two-columns:nth-child(2n) {
-  margin-left: 3.5%;
+  margin-left: 3.1%;
 }
 main.content .loadmore {
   width: auto;
