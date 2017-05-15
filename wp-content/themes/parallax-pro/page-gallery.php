@@ -11,7 +11,8 @@ add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 // remove_action( 'genesis_header', 'genesis_do_header' );
 // remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-
+remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 //* Remove navigation
 remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
@@ -30,8 +31,8 @@ function programs_featured_image() {
         echo '     
           <div id="tabs" class="tabs">
             <ul>
-              <li class="active">Videos</li>
-              <li>Photos</li>
+              <li class="active">Photos</li>
+              <li>Videos</li>
             </ul></div></div></div>';
     }
 }
@@ -44,12 +45,12 @@ function sponsors_loop(){
           <div id="tab-content" class="tabs">
           <div class="tab-detail">
             <?php
-             the_field('videos-list');
+             the_content();
             ?>
           </div>
           <div class="tab-detail album">  
             <?php            
-              the_field('album_photo'); 
+              the_field('videos-list'); 
             ?>
           </div>
         </div>

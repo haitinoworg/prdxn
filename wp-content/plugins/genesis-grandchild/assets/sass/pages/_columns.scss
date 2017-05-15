@@ -100,8 +100,8 @@
 				left: 0;
 				color: #fff; 
 				font-size: 32px;	
-				@include property(transform,translateY(-50%));
-				// @include property(animation,text-overlay-out 0.3s linear backwards);
+				@include property(animation,heading-fade-w 0.3s linear both);
+				
 			}
 			p {
 				width: 100%;
@@ -110,7 +110,7 @@
 				top: 100%;
 				left: 0;
 				@include minWidth(768px) {
-					@include property(animation,text-overlay-out 0.3s linear both);
+					@include property(animation,text-overlay-w 0.3s linear both);
 				}
 			}
 		}
@@ -119,8 +119,8 @@
 		&>a:hover {
 			@include props(bgb);
 			h3 {
-				position: static;
 				@include property(transform,translateY(0));
+				@include property(animation,heading-fade 0.3s linear both);
 			}
 			p {   
 				@include minWidth(768px) {
@@ -132,7 +132,7 @@
 		}
 
 		.entry-content {
-			height: 60%;
+			height: 100%;
 			padding: 0 8%;
 			position: absolute;
 			top: 50%;
@@ -152,7 +152,7 @@
 			&, h3 {	color: #fff;	}
 			h3 { font-size: 32px;	}
 			p {
-				@include boxmodel(4,auto,5,0,7,0);
+				@include boxmodel(4,auto,5,0 8%,7,0);
 				color: #fff;
 				font-size: 17px;
 			}
@@ -242,6 +242,11 @@
 
 @include minWidth(769px) {
 
+	@keyframes heading-hover {
+		0% { @include property(transform, translateY(-50%)); }
+		100% { @include property(transform, translateY(0)); }	
+	}
+
 	@keyframes text-off {
 		0% { }
 		100% { 	
@@ -294,32 +299,82 @@
 }
 // Two Column Image Overlay Animation Keyframe
 
-@keyframes text-overlay {
-	from {  }
-	to { 
-		position: static;
-		top: 0; 
-		@include property(transform,translateY(0));
+@include minWidth(769px) {
+
+	@keyframes heading-fade {
+		0% {
+			top: 42%; 
+		}
+		50%{
+			top: 42%; 
+			@include property(transform,translateY(0));
+		}
+		100% { 
+			top: 20%;
+			@include property(transform,translateY(0));
+		}
 	}
+
+	@keyframes text-overlay {
+		0% { top: 100%; }
+		50% { 
+			top: 63%;
+		}
+		100% {
+			top: 40%;
+		}
+	}
+
+	@keyframes heading-fade-w {
+		0% {
+			top: 20%; 
+		}
+		50%{
+			top: 50%; 
+			@include property(transform,translateY(-50%));
+		}
+		100% { 
+			top: 50%;
+			@include property(transform,translateY(-50%));
+		}
+	}
+
+	@keyframes text-overlay-w {
+		0% { top: 28%; }
+		50% { 
+			top: 63%;
+		}
+		100% {
+			top: 100%;
+		}
+	}
+
 }
-
-@keyframes text-overlay-out {
-	from { top: 50%; }
-	to {  
-		@include property(transform,translateY(0));
-	}	
-}
-
-
 /*
 * Gallery Accordion Styling =========================================
 */
 
 .accordions-themes {
 	width: 50%;
-	p a {
-		display: inline;
-		float: none;
-		text-decoration: none;
+	margin-bottom: 57px;
+	display: inline-block;
+	.accordion-content {
+		p { margin: 15px 0; }
+		p a {
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			min-height: 100%;
+			margin: 0;
+			float: none;
+			text-decoration: none;
+			&:after {
+				display: none;
+			}
+
+			&:hover {
+				color: $cta-color;
+			}
+		}
 	}
 }

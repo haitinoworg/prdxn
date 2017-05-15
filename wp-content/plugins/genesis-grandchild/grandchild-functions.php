@@ -23,6 +23,8 @@ function custom_footer_script() {
 
 add_action('wp_footer','custom_footer_script');
 
+// Enable Custom Background
+add_theme_support( 'custom-background' );
 
 
 // Post Format Supports
@@ -130,3 +132,4 @@ function custom_site_logo( $atts ) {
 	return do_action( 'genesis_site_title', 'genesis_seo_site_title' );
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
+

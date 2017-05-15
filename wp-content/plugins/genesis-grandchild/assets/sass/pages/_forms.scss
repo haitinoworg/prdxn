@@ -2,7 +2,13 @@
 /* Contact Form
 --------------------------------------------- */
 
+.parallax-landing,
 .contact-form-7 {
+	.content { article.entry { padding: 63px 0 0; } }
+}
+
+.contact-form-7 {
+
 
 	.content {
 		width: 84%;
@@ -70,7 +76,7 @@
 			}
 
 			h2,h3,h4,h5,h6 {
-				margin: 5px 0;
+				margin: 5px 0 15px;
 				text-align: left;
 			}
 
@@ -130,7 +136,7 @@
 
 			&:nth-child(7) {
 				width: 100%;
-				min-height: 102px;
+				min-height: 162px;
 				margin-left: 0;
 			}
 		}
@@ -167,6 +173,7 @@
 	}
 
 	.salesforce_w2l_lead {
+		position: relative;
 		#sf_form_salesforce_w2l_lead_7 {
 			text-align: center;
 			input,
@@ -175,6 +182,12 @@
 				display: inline-block; 
 				input {	padding: 11px 25px;	}
 			}
+		}
+		.sf_required_fields_msg {
+			position: absolute;
+			bottom: 97px;
+			color: #f00;
+			font-size: 13px;
 		}
 	}
 
@@ -282,12 +295,19 @@
 			}	
 
 			select {
-				padding: 16px 11px;	
+				max-height: 42px;
+				padding: 8px 11px;	
 				display: block;
 				color: #aaa;
 				font-size: 13px;
 				line-height: 10px;
-				option { color: #000; }
+				option { 
+					padding: 5px 0;
+					color: #000; 
+					&:first-child {
+						color: #b9afaa;
+					}
+				}
 			}
 
 			input[type="submit"] { 

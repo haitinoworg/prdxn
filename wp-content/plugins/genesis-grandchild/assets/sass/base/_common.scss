@@ -71,7 +71,7 @@ main.content {
 		h5,
 		h6 { margin: 5px 0;	}	
 
-		p {	margin-bottom: 30px; }
+		p {	margin-bottom: 15px; }
 	}
 }
 
@@ -127,3 +127,26 @@ main.content {
 
 // Slider Cursor Pointer
 div#n2-ss-2 .n2-grab { 	cursor: default; }
+
+//faq styling
+.page-id-42 {
+	.content{
+		.entry-content {
+			p{
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+				border-bottom: 2px dotted;
+			}
+			h2 {    
+				padding: 6px 12px;
+				margin-top: 35px;
+				border-radius: 2px;
+				background: rgba(241, 101, 34, 0.82);
+				color: #fff;
+			}
+		}
+	}
+	entry-header{
+		padding-top: 63px;
+	}
+}

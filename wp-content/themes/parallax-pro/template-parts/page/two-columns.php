@@ -61,7 +61,6 @@ foreach($post_object as $post):
 			echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
 		} 
 		?>
-
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
 

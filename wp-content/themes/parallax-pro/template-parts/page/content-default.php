@@ -71,11 +71,11 @@ if($post_slug == "program") {
 				. '/images/empty-image.png" />';
 			}
 			?>
-			<div class="entry-content">
-				<h3><?php the_title(); ?></h3>
-				<?php the_excerpt(); ?>
-			</div>
 		</a>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+		</div>
 		
 	</div>
 
