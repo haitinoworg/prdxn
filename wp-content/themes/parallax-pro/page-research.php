@@ -37,10 +37,6 @@ function programs_featured_image() {
   }
 }
 
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
-remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
-
 //* Remove site footer widgets
 // remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_entry_footer', 'sponsors_loop' );

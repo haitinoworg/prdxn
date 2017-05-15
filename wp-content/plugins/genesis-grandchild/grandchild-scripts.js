@@ -99,6 +99,7 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 });
 
 // gallery page tab
+$(".page-template-page-gallery .entry-content").addClass("tab-detail");
 $("#tabs li").on('click',function(){
  $("#tabs li").removeClass('active');
  $(this).addClass('active');

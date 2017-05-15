@@ -28,6 +28,7 @@ function columns_loop() {
 	global $post;
 	$post_slug=$post->post_name;
 
+	// $cat_id = get_field('select_post_category');
 	?>
 
 	<!-- Program Post Images -->
@@ -36,19 +37,24 @@ function columns_loop() {
 			<?php
 			$post_style = get_field('column_layout');
 
+			// $select_post = get_field('select_post');
+		/*
+		Image Post Section Ends Here ========================
+		*/
+
 		//* Condition for checking post thumbnail
-			if($post_style == "Two Columns") {
-				get_template_part( 'template-parts/page/two', 'columns' );
+		if($post_style == "Two Columns") {
+			get_template_part( 'template-parts/page/two', 'columns' );
 
-			}  
-			if($post_style == "Three Columns") {
-				get_template_part( 'template-parts/page/three', 'columns' );
-			}
+		}  
+		if($post_style == "Three Columns") {
+			get_template_part( 'template-parts/page/three', 'columns' );
+		}
 
-			?>
-		</div>
-	</section>
-	<?php
+		?>
+	</div>
+</section>
+<?php
 
 }
 

@@ -19,8 +19,9 @@ jQuery(function($){
 				console.log(response);
 			},
 			success: function( response ) {
-				that.data('page', newPage);
+				that.data(newPage);
 				$('#loadmore-data').append( response );
+				console.log(response);
 			}
 
 		});
