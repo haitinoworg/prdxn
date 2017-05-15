@@ -84,21 +84,28 @@ else {
 					if( $loop->have_posts() ): 
 						while( $loop->have_posts() ): $loop->the_post();
 					?>
-					<div class="post-images content-default" >
-						<a href="<?php echo the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php 
-							if ( has_post_thumbnail() ) { 
-								the_post_thumbnail();	
-							} else {
-								echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-								. '/images/empty-image.png" />';
-							}
-							?>
-						</a>
+					<div class="post-images two-columns" >
+						<?php 
+						if ( has_post_thumbnail() ) { 
+							the_post_thumbnail();	
+						} else {
+							echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+							. '/images/empty-image.png" />';
+						}
+						?>
 
 						<div class="entry-content">
 							<h3><?php the_title(); ?></h3>
-							<?php the_excerpt(); ?>
+							<div class="excerpt-content active">
+								<?php 
+								$content = get_the_content();
+								echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
+								<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+							</div>
+							<div class="detailed-content">
+								<?php the_content(); ?>
+								<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+							</div>
 						</div>
 
 					</div>
@@ -113,7 +120,7 @@ else {
 
 		add_action('genesis_after_loop','load_more_btn');
 		function load_more_btn() {
-			echo '<button class="loadmore" data-page="1" data-category="'. $slug_name .'" data-url="' . admin_url('admin-ajax.php') .'">View More</button>';
+			echo '<button class="loadmore" data-page="1" data-category="movies" data-url="' . admin_url('admin-ajax.php') .'">View More</button>';
 		}
 	}
 

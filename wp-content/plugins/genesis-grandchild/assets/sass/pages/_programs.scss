@@ -16,12 +16,12 @@
 		}
 
 		article.entry {
-			@include boxmodel(3,85%,5,0,7,0 auto);
+			@include boxmodel(3,85%,5,63px 0 0,7,0 auto);
 			text-align: center;
 
 			@include tab() { width: 93%;  }
 			.entry-content {
-				padding: 59px 0;
+				padding: 0 0 59px;
 				p {
 					@include common-desc();
 					max-width: 2000px;
@@ -219,20 +219,22 @@
 	}
 		// Video and Image Posts styling Ends here
 	}
+}
 
-	.common-links {
-		@include cta();
-		border: 1px solid $cta-color;
-		padding: 10px 25px;
-		margin-top: 10px;
-		line-height: 20px;
-		display: inline-block;
-		&:hover {
-			background-color: #fff;
-			color: $cta-color;
-		}
+.custom-links,
+.common-links {
+	@include cta();
+	border: 1px solid $cta-color;
+	padding: 10px 25px;
+	margin-top: 10px;
+	line-height: 20px;
+	display: inline-block;
+	&:hover {
+		background-color: #fff;
+		color: $cta-color;
 	}
 }
+
 
 div#n2-ss-6 .n2-grab { cursor: default; }
 
@@ -501,4 +503,32 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	#text-7 {
 		p { font-size: 14px; }
 	}
+}
+
+/*
+* Movies page styling
+*/
+main.content {
+	text-align: center;
+	.two-columns {
+		margin-bottom: 4%;
+		float: left;
+		&:nth-child(2n) {
+			margin-left: 4%;
+		}
+
+		text-align: left;
+	}
+
+	.loadmore {
+		@include cta();
+		border: 1px solid $cta-color;
+		padding: 10px 25px;
+		margin-top: 0;
+		margin-bottom: 67px;
+		display: inline-block;
+		outline: none;
+		line-height: 20px;
+	}
+
 }

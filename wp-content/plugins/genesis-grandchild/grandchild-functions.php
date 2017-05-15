@@ -104,7 +104,7 @@ function sp_excerpt_length( $length ) {
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
 function get_read_more_link() {
-	return '<div><a class="common-links read-more" href="' . get_permalink() . '">Read&nbsp;More</a></div>';
+	return '<div><a class="common-links read-more more-content"  href="' . get_permalink() . '">Read&nbsp;More</a></div>';
 }
 
 /** Add support for post format images */

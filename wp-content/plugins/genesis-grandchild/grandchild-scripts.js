@@ -8,6 +8,23 @@
 
 
 
+
+
+/*
+* Read More Content Functionality
+*/
+
+$('.more-content').click(function() {
+  $('.excerpt-content').removeClass('active');
+  $('.detailed-content').addClass('active');
+});
+
+$('.less-content').click(function(){
+  $('.excerpt-content').addClass('active');
+  $('.detailed-content').removeClass('active');
+});
+
+
 // form validation
 var validate = function(field,id,regx) {
   var input_value = $(id).val();
@@ -119,6 +136,9 @@ $(this).scroll(function(){
     $(".program-desc").addClass("active");
   }
 });
+
+
+
 
 })(jQuery);
 

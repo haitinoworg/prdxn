@@ -165,12 +165,12 @@ add_action( 'genesis_before_loop', 'sk_opening', 20 );
 add_action('wp_ajax_ajax_load_more','ajax_load_more');
 add_action('wp_ajax_ajax_load_more','ajax_load_more');
 function ajax_load_more() {
-	$paged = $_POST["page"];
+	$paged = $_POST["page"] + 1;
 	$category = $_POST["category"];
 	
 	$query = new WP_Query( array(
 		'post_type' => 'post',
-		'category_name' => $category,
+		'category_name' => 'movies',
 		'paged' => $paged,
 		'posts_per_page' => 8
 		));

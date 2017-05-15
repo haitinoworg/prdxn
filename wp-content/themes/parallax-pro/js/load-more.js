@@ -19,7 +19,7 @@ jQuery(function($){
 				console.log(response);
 			},
 			success: function( response ) {
-				that.data(newPage);
+				that.data('page',newPage);
 				$('#loadmore-data').append( response );
 				console.log(response);
 			}

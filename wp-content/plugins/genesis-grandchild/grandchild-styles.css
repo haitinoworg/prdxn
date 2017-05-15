@@ -1208,7 +1208,7 @@ Content Area
 }
 .page-template-page_twocolumns .content article.entry {
   width: 85%;
-  padding: 0;
+  padding: 63px 0 0;
   margin: 0 auto;
   text-align: center;
 }
@@ -1218,7 +1218,7 @@ Content Area
   }
 }
 .page-template-page_twocolumns .content article.entry .entry-content {
-  padding: 59px 0;
+  padding: 0 0 59px;
 }
 .page-template-page_twocolumns .content article.entry .entry-content p {
   box-sizing: border-box;
@@ -1488,7 +1488,9 @@ Content Area
   -webkit-animation: text-overlay 0.3s ease-in forwards;
   animation: text-overlay 0.3s ease-in forwards;
 }
-.page-template-page_twocolumns .common-links {
+
+.custom-links,
+.common-links {
   width: auto;
   padding: 10px 15px;
   margin: 30px 0 0;
@@ -1502,17 +1504,20 @@ Content Area
   line-height: 20px;
   display: inline-block;
 }
-.page-template-page_twocolumns .common-links:focus {
+.custom-links:focus,
+.common-links:focus {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
 }
-.page-template-page_twocolumns .common-links:hover {
+.custom-links:hover,
+.common-links:hover {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
 }
-.page-template-page_twocolumns .common-links:hover {
+.custom-links:hover,
+.common-links:hover {
   background-color: #fff;
   color: #f16522;
 }
@@ -1812,6 +1817,47 @@ div#n2-ss-6 .n2-grab {
 }
 .footer-widgets #text-7 p {
   font-size: 14px;
+}
+
+/*
+* Movies page styling
+*/
+main.content {
+  text-align: center;
+}
+main.content .two-columns {
+  margin-bottom: 4%;
+  float: left;
+  text-align: left;
+}
+main.content .two-columns:nth-child(2n) {
+  margin-left: 4%;
+}
+main.content .loadmore {
+  width: auto;
+  padding: 10px 15px;
+  margin: 30px 0 0;
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+  font: 14px Roboto, sans-serif;
+  border: 1px solid #f16522;
+  padding: 10px 25px;
+  margin-top: 0;
+  margin-bottom: 67px;
+  display: inline-block;
+  outline: none;
+  line-height: 20px;
+}
+main.content .loadmore:focus {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+}
+main.content .loadmore:hover {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
 }
 
 /*
@@ -2273,6 +2319,15 @@ div#n2-ss-6 .n2-grab {
 }
 .accordions-themes .accordion-content p a:hover {
   color: #f16522;
+}
+
+.excerpt-content,
+.detailed-content {
+  display: none;
+}
+.excerpt-content.active,
+.detailed-content.active {
+  display: inline-block;
 }
 
 .archive .content {
