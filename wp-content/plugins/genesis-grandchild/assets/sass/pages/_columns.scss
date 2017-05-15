@@ -1,0 +1,380 @@
+/*
+* Columns Styling -------------------------------------------
+*/
+
+.page-template-page_columns {
+
+	@include property(transform-style,preserve-3d);
+	@include property(perspective, 30px);
+
+	// main
+	.content {
+		@include boxmodel(3,84%,5,0,7,0 auto);
+		float: none;
+
+		article.entry { margin: 0; }
+	}
+
+	article.entry {	padding: 63px 0 0;	}
+
+	.program-posts .entry { 
+		@include boxmodel(3,89%,5,0,7,0 auto 66px);
+
+		.ajax-load-more-wrap { 
+			width: 100%;	
+			text-align: center;
+			button#load-more.read-more {
+				@include cta();
+				display: inline-block;
+			}
+
+		}
+	}
+
+	div.entry {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// Two Columns Styling
+	.two-columns,
+	.three-columns {
+		&>a { 
+			@include props(db,posr);	
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		.entry-content {
+			box-sizing: border-box;
+			width: 100%;
+			@include props(posa);
+			left: 0;
+			@include props(ovh);
+
+			@include tab() {
+				width: 100%;
+				padding: 0 4%;
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+		}
+
+	}
+
+	// Two Columns Styling
+
+	.two-columns {
+		@include boxmodel(3,48%,5,0,7,42px 0 0);
+		@include props(dib,tac,vat);
+		@include props(ovh);
+
+		&:nth-child(2n) { margin-left: 4%; }
+
+		@include tab() {
+			width: 100%;
+			display: block;
+			margin: 30px 0 0;
+			&:nth-child(2n) { margin-left: 0; }
+		}
+
+		&>a { 
+			padding: 26% 0;
+			background-color: #000;
+			img { opacity: 0.4; } 
+
+			text-align: center;
+			h3 {
+				width: 100%;
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				color: #fff; 
+				font-size: 32px;	
+				@include property(animation,heading-fade-w 0.3s linear both);
+				
+			}
+			p {
+				width: 100%;
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				@include minWidth(768px) {
+					@include property(animation,text-overlay-w 0.3s linear both);
+				}
+			}
+		}
+
+
+		&>a:hover {
+			@include props(bgb);
+			h3 {
+				@include property(transform,translateY(0));
+				@include property(animation,heading-fade 0.3s linear both);
+			}
+			p {   
+				@include minWidth(768px) {
+					@include property(animation,text-overlay 0.3s linear both);
+				}
+			}
+
+			// .entry-content { height: auto; }
+		}
+
+		.entry-content {
+			height: 100%;
+			padding: 0 8%;
+			position: absolute;
+			top: 50%;
+			@include property(transform,translateY(-50%));
+
+			@include tab() {
+				height: auto;
+				left: auto;
+				top: 50%;
+				@include property(transform, translateY(-50%));
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+
+			&, h3 {	color: #fff;	}
+			h3 { font-size: 32px;	}
+			p {
+				@include boxmodel(4,auto,5,0 8%,7,0);
+				color: #fff;
+				font-size: 17px;
+			}
+		}
+	}
+
+
+	// Three Columns Styling 
+	.three-columns {
+		@include boxmodel(3,31%,5,0,7,30px 0 0);
+		@include props(dib,tac,vat);
+		@include props(ovh);
+		&:nth-child(3n + 2) { margin: 30px 3% 0; }
+
+		@include md() { 
+			width: 48%;
+			&:nth-child(3n + 2) { margin: 30px 0 0; }			
+			&:nth-child(2n) { 
+				margin-left: 4%; 
+				margin-top: 30px;
+			}
+			margin: 30px 0 0;
+		}
+		@include tab() {
+			width: 100%;
+			display: block;
+			&:nth-child(2n) { margin-left: 0; }
+			margin: 30px 0 0;
+		}
+
+		.entry-content {
+			height: 100%;
+			padding: 5px 8% 10px;
+			top: 0;
+			@include property(animation, text-off 0.4s linear both);
+			color: #000;
+			
+			h3 { 
+				color: #000;
+				font-size: 26px;	}
+				p {
+					@include boxmodel(4,auto,5,0,7,0);
+					font-size: 14px;
+				}
+
+				@include tab() {
+					height: auto;
+					top: 50%;
+					color: #fff;
+					@include property(transform, translateY(-50%));
+					h3 { 
+						color: #fff; 
+						font-size: 32px;
+					}
+					p { font-size: 17px; }
+				}
+			}
+
+
+			&>a { 
+				padding: 31% 0;
+				background-color: #fff;
+				img {
+					@include property(animation, image-flip 0.4s linear both);
+				}
+				&:hover {
+					img {	@include property(animation, image-off 0.4s linear both);	}
+					.entry-content { @include property(animation, text-on 0.4s linear both); }
+				}
+
+				@include tab() { 
+					background-color: #000;
+					img {	opacity: 0.4; }
+				}
+
+				@include minWidth(769px) {
+					.entry-content {
+						border: 1px solid #7b7b7b;
+					}
+				}
+			}
+		}
+
+	}
+
+// Three Columns Animation Keyframes
+
+@include minWidth(769px) {
+
+	@keyframes heading-hover {
+		0% { @include property(transform, translateY(-50%)); }
+		100% { @include property(transform, translateY(0)); }	
+	}
+
+	@keyframes text-off {
+		0% { }
+		100% { 	
+			z-index: 0;
+			// transform: scaleX(-1);
+			opacity: 0; 
+		}
+	}
+
+	@keyframes text-on {
+		0% {
+			z-index: 0;
+			// transform: scaleX(-1);
+			opacity: 0;
+		}
+		100% { 
+			z-index: 1;
+			// transform: scaleX(1);
+			opacity: 1;
+		}	
+
+	}
+
+	@keyframes image-flip {
+		0% { 
+			// transform: scaleX(-1); 
+			z-index: 0;
+			opacity: 0;
+		}
+		100% { 
+			z-index: 1;
+			// transform: scaleX(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes image-off {
+		0% {
+			z-index: 1;	
+			// transform: scaleX(1);
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;	
+			// transform: scaleX(-1);
+			opacity: 0;
+		}
+	}
+
+}
+// Two Column Image Overlay Animation Keyframe
+
+@include minWidth(769px) {
+
+	@keyframes heading-fade {
+		0% {
+			top: 42%; 
+		}
+		50%{
+			top: 42%; 
+			@include property(transform,translateY(0));
+		}
+		100% { 
+			top: 20%;
+			@include property(transform,translateY(0));
+		}
+	}
+
+	@keyframes text-overlay {
+		0% { top: 100%; }
+		50% { 
+			top: 63%;
+		}
+		100% {
+			top: 40%;
+		}
+	}
+
+	@keyframes heading-fade-w {
+		0% {
+			top: 20%; 
+		}
+		50%{
+			top: 50%; 
+			@include property(transform,translateY(-50%));
+		}
+		100% { 
+			top: 50%;
+			@include property(transform,translateY(-50%));
+		}
+	}
+
+	@keyframes text-overlay-w {
+		0% { top: 28%; }
+		50% { 
+			top: 63%;
+		}
+		100% {
+			top: 100%;
+		}
+	}
+
+}
+/*
+* Gallery Accordion Styling =========================================
+*/
+
+.accordions-themes {
+	width: 50%;
+	margin-bottom: 57px;
+	display: inline-block;
+	.accordion-content {
+		p { margin: 15px 0; }
+		p a {
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			min-height: 100%;
+			margin: 0;
+			float: none;
+			text-decoration: none;
+			&:after {
+				display: none;
+			}
+
+			&:hover {
+				color: $cta-color;
+			}
+		}
+	}
+}

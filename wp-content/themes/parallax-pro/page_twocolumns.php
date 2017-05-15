@@ -64,11 +64,11 @@ else {
 
 	add_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+	global $post;
+	$slug_name=$post->post_name;
 
 	add_action( 'genesis_loop', 'programs_loop' );
 	function programs_loop() {
-		global $post;
-		$slug_name=$post->post_name;
 		
 		$scroller_query = array( 
 			'post_type' => 'post',
@@ -94,11 +94,12 @@ else {
 								. '/images/empty-image.png" />';
 							}
 							?>
-							<div class="entry-content">
-								<h3><?php the_title(); ?></h3>
-								<?php the_excerpt(); ?>
-							</div>
 						</a>
+
+						<div class="entry-content">
+							<h3><?php the_title(); ?></h3>
+							<?php the_excerpt(); ?>
+						</div>
 
 					</div>
 					<?php
@@ -107,9 +108,12 @@ else {
 				</div>
 
 				<?php
-				echo '<button class="loadmore" data-page="1" data-category="'. $slug_name .'" data-url="' . admin_url('admin-ajax.php') .'">Load More</button></section>';
+				
 			}
-
+			add_action('genesis_after_loop','load_more_btn');
+			function load_more_btn() {
+				echo '<button class="loadmore" data-page="Sample data" data-category="'. $slug_name .'" data-url="' . admin_url('admin-ajax.php') .'">Load More</button></section>';
+			}
 		}
 
 
