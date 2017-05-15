@@ -7,7 +7,6 @@ jQuery(function($){
 		var ajaxurl = that.data('url');
 		var category = that.data('category');
 		$.ajax({
-
 			url: ajaxurl,
 			type: 'post',
 			data: {
@@ -19,13 +18,12 @@ jQuery(function($){
 				console.log(response);
 			},
 			success: function( response ) {
-				that.data('page',newPage);
+				that.data("page", newPage);
 				$('#loadmore-data').append( response );
 				console.log(response);
 			}
 
 		});
-		console.log(page);
 
 	});
 

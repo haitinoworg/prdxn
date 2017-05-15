@@ -530,4 +530,19 @@ main.content {
 		line-height: 20px;
 	}
 
+	.image {
+		width: 100%;
+		padding: 45% 0;
+		overflow: hidden;
+		position: relative;
+		img {
+			width: auto;
+			max-width: 700px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
 }

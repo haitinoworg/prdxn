@@ -1858,6 +1858,20 @@ main.content .loadmore:hover {
   background-color: #f16522;
   color: #fff;
 }
+main.content .image {
+  width: 100%;
+  padding: 45% 0;
+  overflow: hidden;
+  position: relative;
+}
+main.content .image img {
+  width: auto;
+  max-width: 700px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 /*
 * Columns Styling -------------------------------------------

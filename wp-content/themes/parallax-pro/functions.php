@@ -163,14 +163,14 @@ add_action( 'genesis_before_loop', 'sk_opening', 20 );
 
 
 add_action('wp_ajax_ajax_load_more','ajax_load_more');
-add_action('wp_ajax_ajax_load_more','ajax_load_more');
+add_action('wp_ajax_nopriv_ajax_load_more','ajax_load_more');
 function ajax_load_more() {
 	$paged = $_POST["page"] + 1;
 	$category = $_POST["category"];
 	
 	$query = new WP_Query( array(
 		'post_type' => 'post',
-		'category_name' => 'movies',
+		'category_name' => $category,
 		'paged' => $paged,
 		'posts_per_page' => 8
 		));
@@ -179,15 +179,16 @@ function ajax_load_more() {
 		while( $query->have_posts() ): $query->the_post();
 	?>
 	<div class="post-images two-columns" >
-		<?php 
-		if ( has_post_thumbnail() ) { 
-			the_post_thumbnail();	
-		} else {
-			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-			. '/images/empty-image.png" />';
-		}
-		?>
-
+		<div class="image">
+			<?php 
+			if ( has_post_thumbnail() ) { 
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" />';
+			}
+			?>
+		</div>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
 			<div class="excerpt-content active">

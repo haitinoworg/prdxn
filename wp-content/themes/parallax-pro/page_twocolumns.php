@@ -85,15 +85,16 @@ else {
 						while( $loop->have_posts() ): $loop->the_post();
 					?>
 					<div class="post-images two-columns" >
-						<?php 
-						if ( has_post_thumbnail() ) { 
-							the_post_thumbnail();	
-						} else {
-							echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-							. '/images/empty-image.png" />';
-						}
-						?>
-
+						<div class="image">
+							<?php 
+							if ( has_post_thumbnail() ) { 
+								the_post_thumbnail();	
+							} else {
+								echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+								. '/images/empty-image.png" />';
+							}
+							?>
+						</div>
 						<div class="entry-content">
 							<h3><?php the_title(); ?></h3>
 							<div class="excerpt-content active">
