@@ -62,18 +62,18 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 */
 else {
 
+	global $post_title;
+	$slug_name = $post_title->post_name;
+
 	add_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
-	global $post;
-	$slug_name=$post->post_name;
 
 	add_action( 'genesis_loop', 'programs_loop' );
 	function programs_loop() {
-		
 		$scroller_query = array( 
 			'post_type' => 'post',
 			'category_name' => $slug_name,
-			'posts_per_page' => 2,
+			'posts_per_page' => 8,
 			);
 
 			?>
@@ -106,20 +106,21 @@ else {
 					endwhile; endif; wp_reset_postdata();
 					?>
 				</div>
+			</section>
+			<?php
 
-				<?php
-				
-			}
-			add_action('genesis_after_loop','load_more_btn');
-			function load_more_btn() {
-				echo '<button class="loadmore" data-page="Sample data" data-category="'. $slug_name .'" data-url="' . admin_url('admin-ajax.php') .'">Load More</button></section>';
-			}
 		}
 
+		add_action('genesis_after_loop','load_more_btn');
+		function load_more_btn() {
+			echo '<button class="loadmore" data-page="1" data-category="'. $slug_name .'" data-url="' . admin_url('admin-ajax.php') .'">View More</button>';
+		}
+	}
 
 
-		remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-		remove_action( 'genesis_footer', 'genesis_do_footer' );
-		genesis();
+
+	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+	remove_action( 'genesis_footer', 'genesis_do_footer' );
+	genesis();
 
 

@@ -155,6 +155,7 @@ genesis_register_sidebar( array(
 
 add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
 function be_load_more_js() {
+
 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 }
 
@@ -170,7 +171,8 @@ function ajax_load_more() {
 	$query = new WP_Query( array(
 		'post_type' => 'post',
 		'category_name' => $category,
-		'paged' => $paged
+		'paged' => $paged,
+		'posts_per_page' => 8
 		));
 
 	if( $query->have_posts() ): 

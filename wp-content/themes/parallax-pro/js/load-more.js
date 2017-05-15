@@ -24,7 +24,7 @@ jQuery(function($){
 			}
 
 		});
-
+		console.log(page);
 
 	});
 
