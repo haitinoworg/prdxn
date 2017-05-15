@@ -1827,11 +1827,10 @@ main.content {
 }
 main.content .two-columns {
   margin-bottom: 4%;
-  float: left;
   text-align: left;
 }
 main.content .two-columns:nth-child(2n) {
-  margin-left: 4%;
+  margin-left: 3.5%;
 }
 main.content .loadmore {
   width: auto;

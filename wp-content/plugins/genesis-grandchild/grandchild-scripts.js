@@ -15,13 +15,13 @@
 */
 
 $('.more-content').click(function() {
-  $('.excerpt-content').removeClass('active');
-  $('.detailed-content').addClass('active');
+  $(this).parent().removeClass('active');
+  $(this).parent().siblings('div').addClass('active');
 });
 
 $('.less-content').click(function(){
-  $('.excerpt-content').addClass('active');
-  $('.detailed-content').removeClass('active');
+  $(this).parent().removeClass('active');
+  $(this).parent().siblings('div').addClass('active');
 });
 
 

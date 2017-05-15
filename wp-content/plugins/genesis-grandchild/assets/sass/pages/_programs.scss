@@ -512,9 +512,8 @@ main.content {
 	text-align: center;
 	.two-columns {
 		margin-bottom: 4%;
-		float: left;
 		&:nth-child(2n) {
-			margin-left: 4%;
+			margin-left: 3.5%;
 		}
 
 		text-align: left;

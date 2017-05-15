@@ -178,21 +178,29 @@ function ajax_load_more() {
 	if( $query->have_posts() ): 
 		while( $query->have_posts() ): $query->the_post();
 	?>
-	<div class="post-images content-default" >
-		<a href="<?php echo the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php 
-			if ( has_post_thumbnail() ) { 
-				the_post_thumbnail();	
-			} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-				. '/images/empty-image.png" />';
-			}
-			?>
-			<div class="entry-content">
-				<h3><?php the_title(); ?></h3>
-				<?php the_excerpt(); ?>
+	<div class="post-images two-columns" >
+		<?php 
+		if ( has_post_thumbnail() ) { 
+			the_post_thumbnail();	
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png" />';
+		}
+		?>
+
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<div class="excerpt-content active">
+				<?php 
+				$content = get_the_content();
+				echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
+				<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
 			</div>
-		</a>
+			<div class="detailed-content">
+				<?php the_content(); ?>
+				<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+			</div>
+		</div>
 
 	</div>
 	<?php
