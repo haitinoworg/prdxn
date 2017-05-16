@@ -31,19 +31,32 @@
 		}
 	}
 
+
+
 	div.entry {
 		display: flex;
 		flex-wrap: wrap;
+	}
+
+	.columns-page {
+
+			div.entry { 
+				display: block; 
+				text-align: center;
+			}
+
 	}
 
 	// Two Columns Styling
 	.two-columns,
 	.three-columns {
 		&>a { 
+			padding: 54%;
 			@include props(db,posr);	
 			overflow: hidden;
 			img {
 				width: 100%;
+				max-width: inherit;
 				height: 100%;
 				position: absolute;
 				left: 0;
@@ -73,11 +86,11 @@
 	// Two Columns Styling
 
 	.two-columns {
-		@include boxmodel(3,48%,5,0,7,42px 0 0);
+		@include boxmodel(3,38%,5,0,7,0);
 		@include props(dib,tac,vat);
 		@include props(ovh);
 
-		&:nth-child(2n) { margin-left: 4%; }
+		&:nth-child(2n) { margin-left: 9.1%; }
 
 		@include tab() {
 			width: 100%;
@@ -87,8 +100,11 @@
 		}
 
 		&>a { 
-			padding: 26% 0;
+			padding: 31% 0;
 			background-color: #000;
+
+			@include md() { padding: 38% 0; }
+
 			img { opacity: 0.4; } 
 
 			text-align: center;
@@ -100,7 +116,7 @@
 				left: 0;
 				color: #fff; 
 				font-size: 32px;	
-				@include property(animation,heading-fade-w 0.3s linear both);
+				@include property(animation,heading-fade-w 0.5s linear both);
 				
 			}
 			p {
@@ -110,7 +126,7 @@
 				top: 100%;
 				left: 0;
 				@include minWidth(768px) {
-					@include property(animation,text-overlay-w 0.3s linear both);
+					@include property(animation,text-overlay-w 0.5s linear both);
 				}
 			}
 		}
@@ -120,11 +136,11 @@
 			@include props(bgb);
 			h3 {
 				@include property(transform,translateY(0));
-				@include property(animation,heading-fade 0.3s linear both);
+				@include property(animation,heading-fade 0.5s linear both);
 			}
 			p {   
 				@include minWidth(768px) {
-					@include property(animation,text-overlay 0.3s linear both);
+					@include property(animation,text-overlay 0.5s linear both);
 				}
 			}
 

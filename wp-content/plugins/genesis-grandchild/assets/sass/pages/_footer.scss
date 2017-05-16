@@ -66,10 +66,11 @@ Footer Widgets
 			}
 
 			#menu-secondary-menus>li {
-				width: 21%;
+				width: 27%;
 				margin: 0 0 30px 3%;
 				display: inline-block;
 				float: left;
+				position: relative;
 				text-align: left;
 				vertical-align: top;
 
@@ -104,10 +105,15 @@ Footer Widgets
 					}
 
 				}
+
+
+				.sub-menu:last-child:after {
+					display: none;
+				}
 			}
 
 			#menu-secondary-menus>li:first-child {
-				width: 17.5%;
+				width: 28%;
 				margin: 0 0 30px;
 
 				@include tab() { 
@@ -121,8 +127,8 @@ Footer Widgets
 
 
 			#menu-secondary-menus>li:last-child {
-				width: 10.5%;
-				margin: 0 0 30px;
+				width: 9%;
+				margin-bottom: 30px;
 				text-align: left;
 
 				@include tab() { 
@@ -455,6 +461,17 @@ Footer Section-1
 
 				a, 
 				span { font-size: 14px; }
+
+				&:after {
+					height: 70px;
+					content: " ";
+					display: inline-block;
+					border: 0.5px solid #8e8e8e;
+					position: absolute;
+					top: 32px;
+					right: 20%;
+				}
+
 			}
 		}
 	}
@@ -542,7 +559,7 @@ Footer Section-1
 	.footer-widgets {
 		section {
 			#menu-secondary-menus > li {
-				width: 17.5%;
+				width: 27%;
 				margin: 0 0 30px 3%;
 			}
 			#menu-secondary-menus > li:last-child {
@@ -559,7 +576,11 @@ Footer Section-1
 		.sub-menu {
 			display: none;
 		}
-
+		section {
+			#menu-secondary-menus > li {
+				margin: 0 0 30px;
+			}
+		}
 		li {
 			margin: 25px 0;
 		}

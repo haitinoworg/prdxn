@@ -19,42 +19,77 @@ remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
 //* Remove breadcrumbs
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
+/*
+* Removing Post Content
+*/
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+
+
 // * Add the featured image after post title
-add_action( 'genesis_before_entry', 'programs_featured_image' );
-function programs_featured_image() {
+add_action( 'genesis_before_loop', 'custom_featured_image' );
+function custom_featured_image() {
  echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
  echo '<h3>';
  echo the_title() .'</h3></div></div>';
  if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
   printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
-  echo '     
-  <div id="tabs" class="tabs">
-    <ul>
-      <li class="active">Research</li>
-      <li>Sanitation</li>
-      <li>History</li>
-    </ul></div></div></div>';
-  }
+}
+echo '<div id="tabs" class="tabs"><ul>';
+
+}
+
+
+add_action('genesis_loop','research_tabs_loop');
+function research_tabs_loop() {
+  global $post;
+  $post_slug = $post->post_name;
+
+  $page_object = get_field('select_tab_pages');
+
+  if( $page_object ): setup_postdata( $page_object ); 
+  foreach($page_object as $post):
+    ?>
+  <li class="active"><?php the_title(); ?></li>
+  <?php 
+  endforeach;
+  endif;
+  wp_reset_postdata(); 
 }
 
 //* Remove site footer widgets
 // remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_entry_footer', 'sponsors_loop' );
+add_action( 'genesis_after_loop', 'sponsors_loop' );
 function sponsors_loop(){
-  ?>      <div class="gallery">
-  <div id="tab-content" class="tabs">
-    <div class="tab-detail">
-      <?php echo do_shortcode("[accordions id='964']"); ?>
-    </div>
-    <div class="tab-detail">  
-      <?php  echo do_shortcode("[accordions id='965']"); ?>
-    </div>
-    <div class="tab-detail">  
-      <?php  echo do_shortcode("[accordions id='965']"); ?>
+  echo '</ul></div></div></div>';
+  ?>      
+  <div class="gallery">
+    <div id="tab-content" class="tabs">
+      <?php
+      global $post;
+      $post_slug = $post->post_name;
+
+      $page_object = get_field('select_tab_pages');
+
+      if( $page_object ): setup_postdata( $page_object ); 
+      foreach($page_object as $post):
+        ?>
+      <div class="tab-detail">
+        <p><?php the_content(); ?></p>
+        <?php
+        $accordion_code = get_field('accordion_shortcode'); 
+        if($accordion_code) {
+          echo do_shortcode($accordion_code); 
+        }
+        ?>
+      </div>
+      <?php 
+      endforeach;
+      endif;
+      wp_reset_postdata(); 
+      ?>
     </div>
   </div>
-</div>
-<?php
+  <?php
 }
 
 

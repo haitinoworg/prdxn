@@ -1831,9 +1831,6 @@ div#n2-ss-6 .n2-grab {
   width: 72%;
 }
 
-main.content {
-  text-align: center;
-}
 main.content .two-columns {
   margin-bottom: 4%;
   text-align: left;
@@ -1875,7 +1872,7 @@ main.content .image {
 }
 main.content .image img {
   width: auto;
-  max-width: 700px;
+  max-width: inherit;
   height: 100%;
   position: absolute;
   top: 0;
@@ -1940,8 +1937,13 @@ main.content .image img {
   display: flex;
   flex-wrap: wrap;
 }
+.page-template-page_columns .columns-page div.entry {
+  display: block;
+  text-align: center;
+}
 .page-template-page_columns .two-columns > a,
 .page-template-page_columns .three-columns > a {
+  padding: 54%;
   display: block;
   position: relative;
   overflow: hidden;
@@ -1949,6 +1951,7 @@ main.content .image img {
 .page-template-page_columns .two-columns > a img,
 .page-template-page_columns .three-columns > a img {
   width: 100%;
+  max-width: inherit;
   height: 100%;
   position: absolute;
   left: 0;
@@ -1976,16 +1979,16 @@ main.content .image img {
   }
 }
 .page-template-page_columns .two-columns {
-  width: 48%;
+  width: 38%;
   padding: 0;
-  margin: 42px 0 0;
+  margin: 0;
   display: inline-block;
   text-align: center;
   vertical-align: top;
   overflow: hidden;
 }
 .page-template-page_columns .two-columns:nth-child(2n) {
-  margin-left: 4%;
+  margin-left: 9.1%;
 }
 @media screen and (max-width: 768px) {
   .page-template-page_columns .two-columns {
@@ -1998,9 +2001,14 @@ main.content .image img {
   }
 }
 .page-template-page_columns .two-columns > a {
-  padding: 26% 0;
+  padding: 31% 0;
   background-color: #000;
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .page-template-page_columns .two-columns > a {
+    padding: 38% 0;
+  }
 }
 .page-template-page_columns .two-columns > a img {
   opacity: 0.4;
@@ -2013,10 +2021,10 @@ main.content .image img {
   left: 0;
   color: #fff;
   font-size: 32px;
-  -ms-animation: heading-fade-w 0.3s linear both;
-  -moz-animation: heading-fade-w 0.3s linear both;
-  -webkit-animation: heading-fade-w 0.3s linear both;
-  animation: heading-fade-w 0.3s linear both;
+  -ms-animation: heading-fade-w 0.5s linear both;
+  -moz-animation: heading-fade-w 0.5s linear both;
+  -webkit-animation: heading-fade-w 0.5s linear both;
+  animation: heading-fade-w 0.5s linear both;
 }
 .page-template-page_columns .two-columns > a p {
   width: 100%;
@@ -2027,10 +2035,10 @@ main.content .image img {
 }
 @media screen and (min-width: 768px) {
   .page-template-page_columns .two-columns > a p {
-    -ms-animation: text-overlay-w 0.3s linear both;
-    -moz-animation: text-overlay-w 0.3s linear both;
-    -webkit-animation: text-overlay-w 0.3s linear both;
-    animation: text-overlay-w 0.3s linear both;
+    -ms-animation: text-overlay-w 0.5s linear both;
+    -moz-animation: text-overlay-w 0.5s linear both;
+    -webkit-animation: text-overlay-w 0.5s linear both;
+    animation: text-overlay-w 0.5s linear both;
   }
 }
 .page-template-page_columns .two-columns > a:hover {
@@ -2041,17 +2049,17 @@ main.content .image img {
   -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  -ms-animation: heading-fade 0.3s linear both;
-  -moz-animation: heading-fade 0.3s linear both;
-  -webkit-animation: heading-fade 0.3s linear both;
-  animation: heading-fade 0.3s linear both;
+  -ms-animation: heading-fade 0.5s linear both;
+  -moz-animation: heading-fade 0.5s linear both;
+  -webkit-animation: heading-fade 0.5s linear both;
+  animation: heading-fade 0.5s linear both;
 }
 @media screen and (min-width: 768px) {
   .page-template-page_columns .two-columns > a:hover p {
-    -ms-animation: text-overlay 0.3s linear both;
-    -moz-animation: text-overlay 0.3s linear both;
-    -webkit-animation: text-overlay 0.3s linear both;
-    animation: text-overlay 0.3s linear both;
+    -ms-animation: text-overlay 0.5s linear both;
+    -moz-animation: text-overlay 0.5s linear both;
+    -webkit-animation: text-overlay 0.5s linear both;
+    animation: text-overlay 0.5s linear both;
   }
 }
 .page-template-page_columns .two-columns .entry-content {
@@ -3144,6 +3152,9 @@ Single Post Page Styling ==================================
   background: #f16522;
   color: #fff;
 }
+.programs-hero-image .tabs ul article {
+  display: none;
+}
 .programs-hero-image .tabs li {
   padding: 9px 28px;
   float: left;
@@ -3306,10 +3317,11 @@ Footer Widgets
   }
 }
 .footer-widgets section #menu-secondary-menus > li {
-  width: 21%;
+  width: 27%;
   margin: 0 0 30px 3%;
   display: inline-block;
   float: left;
+  position: relative;
   text-align: left;
   vertical-align: top;
 }
@@ -3345,8 +3357,11 @@ Footer Widgets
     margin: 10px 0 5px;
   }
 }
+.footer-widgets section #menu-secondary-menus > li .sub-menu:last-child:after {
+  display: none;
+}
 .footer-widgets section #menu-secondary-menus > li:first-child {
-  width: 17.5%;
+  width: 28%;
   margin: 0 0 30px;
 }
 @media screen and (max-width: 768px) {
@@ -3360,8 +3375,8 @@ Footer Widgets
   cursor: default;
 }
 .footer-widgets section #menu-secondary-menus > li:last-child {
-  width: 10.5%;
-  margin: 0 0 30px;
+  width: 9%;
+  margin-bottom: 30px;
   text-align: left;
 }
 @media screen and (max-width: 768px) {
@@ -3695,6 +3710,15 @@ Footer Section-1
 .footer-widgets section #menu-secondary-menus .sub-menu span {
   font-size: 14px;
 }
+.footer-widgets section #menu-secondary-menus .sub-menu:after {
+  height: 70px;
+  content: " ";
+  display: inline-block;
+  border: 0.5px solid #8e8e8e;
+  position: absolute;
+  top: 32px;
+  right: 20%;
+}
 .footer-widgets .widget-title {
   color: #f16522;
 }
@@ -3781,7 +3805,7 @@ Footer Section-1
 }
 @media screen and (max-width: 1024px) {
   .footer-widgets section #menu-secondary-menus > li {
-    width: 17.5%;
+    width: 27%;
     margin: 0 0 30px 3%;
   }
   .footer-widgets section #menu-secondary-menus > li:last-child {
@@ -3794,6 +3818,9 @@ Footer Section-1
   }
   .footer-widgets .sub-menu {
     display: none;
+  }
+  .footer-widgets section #menu-secondary-menus > li {
+    margin: 0 0 30px;
   }
   .footer-widgets li {
     margin: 25px 0;
@@ -4136,6 +4163,22 @@ Footer Section-1
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+/*
+* Content Links Styling ===================================================
+*/
+.page-template-page_columns .links-page div.entry {
+  max-width: 2000px;
+  text-align: left;
+}
+.page-template-page_columns .links-page .content-links {
+  width: 47.5%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+.page-template-page_columns .links-page .content-links:nth-child(2n) {
+  margin-left: 4%;
 }
 
 /*# sourceMappingURL=grandchild-styles.css.map */

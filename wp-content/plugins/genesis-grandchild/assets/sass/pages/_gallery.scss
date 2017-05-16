@@ -141,6 +141,8 @@
       z-index: 100;
       background: #f16522;
       color: #fff;
+
+      article { display: none; }
     }
 
     li {   	   
@@ -156,6 +158,8 @@
      color: #f16522;
    }
  }
+
+
 }
 
 .gallery-video-content { 

@@ -159,7 +159,6 @@ function be_load_more_js() {
 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 }
 
-add_action( 'genesis_before_loop', 'sk_opening', 20 );
 
 
 add_action('wp_ajax_ajax_load_more','ajax_load_more');
@@ -210,7 +209,3 @@ function ajax_load_more() {
 	wp_reset_postdata();
 	die();
 }
-
-
-
-

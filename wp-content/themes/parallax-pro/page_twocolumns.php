@@ -68,6 +68,11 @@ else {
 	add_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 
+		add_action('genesis_before_loop','section_structure');
+		function section_structure() {
+			echo '<section class="program-posts">';
+		}
+
 	add_action( 'genesis_loop', 'programs_loop' );
 	function programs_loop() {
 		$scroller_query = array( 
@@ -77,7 +82,7 @@ else {
 			);
 
 			?>
-			<section class="program-posts" >
+			
 				<div class="entry" id="loadmore-data">
 					<?php
 					$loop = new WP_Query( $scroller_query );
@@ -114,14 +119,13 @@ else {
 					endwhile; endif; wp_reset_postdata();
 					?>
 				</div>
-			</section>
 			<?php
 
 		}
 
 		add_action('genesis_after_loop','load_more_btn');
 		function load_more_btn() {
-			echo '<button class="loadmore" data-page="1" data-category="movies" data-url="' . admin_url('admin-ajax.php') .'">View More</button>';
+			echo '<button class="loadmore" data-page="1" data-category="movies" data-url="' . admin_url('admin-ajax.php') .'">View More</button></section>';
 		}
 	}
 

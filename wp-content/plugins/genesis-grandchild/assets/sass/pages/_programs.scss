@@ -519,7 +519,6 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 }
 
 main.content {
-	text-align: center;
 	.two-columns {
 		margin-bottom: 4%;
 		&:nth-child(2n) {
@@ -547,7 +546,7 @@ main.content {
 		position: relative;
 		img {
 			width: auto;
-			max-width: 700px;
+			max-width: inherit;
 			height: 100%;
 			position: absolute;
 			top: 0;

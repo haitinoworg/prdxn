@@ -32,10 +32,9 @@ function columns_loop() {
 	?>
 
 	<!-- Program Post Images -->
-	<section class="program-posts">
-		<div class="entry">
-			<?php
-			$post_style = get_field('column_layout');
+	
+	<?php
+	$post_style = get_field('column_layout');
 
 			// $select_post = get_field('select_post');
 		/*
@@ -50,15 +49,17 @@ function columns_loop() {
 		if($post_style == "Three Columns") {
 			get_template_part( 'template-parts/page/three', 'columns' );
 		}
+		if($post_style == "Two Column Links") {
+			get_template_part( 'template-parts/page/content', 'links' );
+		}
 
 		?>
-	</div>
-</section>
-<?php
+		
+		<?php
 
-}
+	}
 
 
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-remove_action( 'genesis_footer', 'genesis_do_footer' );
-genesis();
+	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+	remove_action( 'genesis_footer', 'genesis_do_footer' );
+	genesis();
