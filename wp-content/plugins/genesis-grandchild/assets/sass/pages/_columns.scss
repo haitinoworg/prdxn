@@ -40,10 +40,10 @@
 
 	.columns-page {
 
-			div.entry { 
-				display: block; 
-				text-align: center;
-			}
+		div.entry { 
+			display: block; 
+			text-align: center;
+		}
 
 	}
 
@@ -356,7 +356,7 @@
 	}
 
 	@keyframes text-overlay-w {
-		0% { top: 28%; }
+		0% { top: 40%; }
 		50% { 
 			top: 63%;
 		}
@@ -400,5 +400,3 @@
 	display: none; 
 	&.active { display: inline-block; }
 }
-
-

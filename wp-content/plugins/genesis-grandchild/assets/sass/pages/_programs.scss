@@ -539,19 +539,22 @@ main.content {
 		line-height: 20px;
 	}
 
-	.image {
-		width: 100%;
-		padding: 45% 0;
-		overflow: hidden;
-		position: relative;
-		img {
-			width: auto;
-			max-width: inherit;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
+	.movies {
+
+		.image {
+			width: 100%;
+			padding: 45% 0;
+			overflow: hidden;
+			position: relative;
+			img {
+				width: 100%;
+				max-width: inherit;
+				height: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
 		}
 	}
-
 }
+

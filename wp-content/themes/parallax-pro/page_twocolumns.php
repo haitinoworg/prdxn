@@ -13,6 +13,7 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 global $post;
 $post_slug=$post->post_name;
 
+
 if($post_slug == "program" || $post_slug == "get-involved") {
 	// * Add the featured image after post title
 	add_action( 'genesis_before_entry', 'programs_featured_image' );
@@ -61,71 +62,81 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 * Movies Post Setup with Load More
 */
 else {
+	global $post;
+	$post_slug=$post->post_name;
 
-	global $post_title;
-	$slug_name = $post_title->post_name;
 
+	/* Page Title */
 	add_action( 'genesis_entry_header', 'genesis_do_post_title' );
-	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 
-		add_action('genesis_before_loop','section_structure');
-		function section_structure() {
-			echo '<section class="program-posts">';
-		}
+	/* Post Section Start*/
+	add_action('genesis_before_loop','section_structure');
+	function section_structure() {
+		echo '<section class="program-posts columns-page">';
+	}
 
-	add_action( 'genesis_loop', 'programs_loop' );
-	function programs_loop() {
+	
+	add_action( 'genesis_loop', 'new_loop' );
+	function new_loop() {
+
+		global $post;
+		$post_slug=$post->post_name;
+
 		$scroller_query = array( 
 			'post_type' => 'post',
-			'category_name' => $slug_name,
+			'category_name' => $post_slug,
 			'posts_per_page' => 8,
 			);
 
 			?>
-			
-				<div class="entry" id="loadmore-data">
-					<?php
-					$loop = new WP_Query( $scroller_query );
-					if( $loop->have_posts() ): 
-						while( $loop->have_posts() ): $loop->the_post();
-					?>
-					<div class="post-images two-columns" >
-						<div class="image">
-							<?php 
-							if ( has_post_thumbnail() ) { 
-								the_post_thumbnail();	
-							} else {
-								echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-								. '/images/empty-image.png" />';
-							}
-							?>
-						</div>
-						<div class="entry-content">
-							<h3><?php the_title(); ?></h3>
-							<div class="excerpt-content active">
-								<?php 
-								$content = get_the_content();
-								echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
-								<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
-							</div>
-							<div class="detailed-content">
-								<?php the_content(); ?>
-								<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
-							</div>
-						</div>
 
+			<div class="entry" id="loadmore-data">
+				<?php
+				$loop = new WP_Query( $scroller_query );
+				if( $loop->have_posts() ): 
+					while( $loop->have_posts() ): $loop->the_post();
+				?>
+				<div class="post-images two-columns movies" >
+					<div class="image">
+						<?php 
+						if ( has_post_thumbnail() ) { 
+							the_post_thumbnail();	
+						} else {
+							echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+							. '/images/empty-image.png" />';
+						}
+						?>
 					</div>
-					<?php
-					endwhile; endif; wp_reset_postdata();
-					?>
+					<div class="entry-content">
+						<h3><?php the_title(); ?></h3>
+						<div class="excerpt-content active">
+							<?php 
+							$content = get_the_content();
+							echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
+							<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+						</div>
+						<div class="detailed-content">
+							<?php the_content(); ?>
+							<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+						</div>
+					</div>
+
 				</div>
+				<?php
+				endwhile; endif; wp_reset_postdata();
+				?>
+			</div>
 			<?php
 
 		}
 
 		add_action('genesis_after_loop','load_more_btn');
 		function load_more_btn() {
-			echo '<button class="loadmore" data-page="1" data-category="movies" data-url="' . admin_url('admin-ajax.php') .'">View More</button></section>';
+
+			global $post;
+			$post_slug=$post->post_name;
+
+			echo '<button class="loadmore" data-page="1" data-category="'. $post_slug .'" data-url="' . admin_url('admin-ajax.php') .'">View More</button></section>';
 		}
 	}
 

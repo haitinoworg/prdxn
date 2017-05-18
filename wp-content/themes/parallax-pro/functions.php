@@ -177,7 +177,7 @@ function ajax_load_more() {
 	if( $query->have_posts() ): 
 		while( $query->have_posts() ): $query->the_post();
 	?>
-	<div class="post-images two-columns" >
+	<div class="post-images two-columns movies" >
 		<div class="image">
 			<?php 
 			if ( has_post_thumbnail() ) { 

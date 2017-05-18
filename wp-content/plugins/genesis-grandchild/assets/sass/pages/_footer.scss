@@ -74,6 +74,30 @@ Footer Widgets
 				text-align: left;
 				vertical-align: top;
 
+				&:after {
+					height: 70px;
+					content: " ";
+					display: inline-block;
+					border: 0.5px solid #8e8e8e;
+					position: absolute;
+					top: 32px;
+					right: 25%;
+
+					@include md() {
+						right: 15%;
+					}
+
+					@include tab() {
+						display: none;
+					}
+				}
+
+				&:last-child {
+					&:after {
+						display: none;
+					}
+				}
+
 				@include maxWidth(768px) {
 					width: 100%;
 					margin-left: 0;
@@ -461,16 +485,6 @@ Footer Section-1
 
 				a, 
 				span { font-size: 14px; }
-
-				&:after {
-					height: 70px;
-					content: " ";
-					display: inline-block;
-					border: 0.5px solid #8e8e8e;
-					position: absolute;
-					top: 32px;
-					right: 20%;
-				}
 
 			}
 		}

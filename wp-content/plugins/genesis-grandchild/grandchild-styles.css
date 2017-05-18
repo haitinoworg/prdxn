@@ -1864,16 +1864,16 @@ main.content .loadmore:hover {
   background-color: #f16522;
   color: #fff;
 }
-main.content .image {
+main.content .movies .image {
   width: 100%;
   padding: 45% 0;
   overflow: hidden;
   position: relative;
 }
-main.content .image img {
-  width: auto;
+main.content .movies .image img {
+  width: 100%;
   max-width: inherit;
-  height: 100%;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -2314,7 +2314,7 @@ main.content .image img {
   }
   @keyframes text-overlay-w {
     0% {
-      top: 28%;
+      top: 40%;
     }
     50% {
       top: 63%;
@@ -3325,6 +3325,28 @@ Footer Widgets
   text-align: left;
   vertical-align: top;
 }
+.footer-widgets section #menu-secondary-menus > li:after {
+  height: 70px;
+  content: " ";
+  display: inline-block;
+  border: 0.5px solid #8e8e8e;
+  position: absolute;
+  top: 32px;
+  right: 25%;
+}
+@media screen and (max-width: 1024px) {
+  .footer-widgets section #menu-secondary-menus > li:after {
+    right: 15%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-widgets section #menu-secondary-menus > li:after {
+    display: none;
+  }
+}
+.footer-widgets section #menu-secondary-menus > li:last-child:after {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .footer-widgets section #menu-secondary-menus > li {
     width: 100%;
@@ -3709,15 +3731,6 @@ Footer Section-1
 .footer-widgets section #menu-secondary-menus .sub-menu a,
 .footer-widgets section #menu-secondary-menus .sub-menu span {
   font-size: 14px;
-}
-.footer-widgets section #menu-secondary-menus .sub-menu:after {
-  height: 70px;
-  content: " ";
-  display: inline-block;
-  border: 0.5px solid #8e8e8e;
-  position: absolute;
-  top: 32px;
-  right: 20%;
 }
 .footer-widgets .widget-title {
   color: #f16522;
