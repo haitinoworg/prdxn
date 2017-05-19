@@ -70,27 +70,8 @@ Footer Widgets
 				margin: 0 0 30px 3%;
 				display: inline-block;
 				float: left;
-				position: relative;
 				text-align: left;
 				vertical-align: top;
-
-				&:after {
-					height: 70px;
-					content: " ";
-					display: inline-block;
-					border: 0.5px solid #8e8e8e;
-					position: absolute;
-					top: 32px;
-					right: 25%;
-
-					@include md() {
-						right: 15%;
-					}
-
-					@include tab() {
-						display: none;
-					}
-				}
 
 				&:last-child {
 					&:after {

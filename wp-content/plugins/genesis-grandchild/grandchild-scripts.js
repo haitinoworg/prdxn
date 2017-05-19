@@ -9,19 +9,103 @@
 
 
 
-
-/*
-* Read More Content Functionality
+  /*
+* Ajax Load More
 */
 
+$( document ).on( 'click' , '.loadmore' , function() {
+  var that = $(this);
+  var page = that.data('page');
+  var newPage = page+1;
+  var ajaxurl = that.data('url');
+  var category = that.data('category');
+  $.ajax({
+    url: ajaxurl,
+    type: 'post',
+    data: {
+      page: page,
+      category: category,
+      action: 'ajax_load_more'
+    },
+    error: function( response ) {
+      console.log(response);
+    },
+    success: function( response ) {
+      that.data("page", newPage);
+      $('#loadmore-data').append( response );
+
+      $('.more-content').click(function() {
+        $(this).parent().removeClass('active');
+        $(this).parent().siblings('div').addClass('active');
+      });
+
+      $('.less-content').click(function(){
+        $(this).parent().removeClass('active');
+        $(this).parent().siblings('div').addClass('active');
+      });
+    }
+
+  });
+
+});
+
+// $('.more-content').click(function() {
+//   $(this).parent().removeClass('active');
+//   $(this).parent().siblings('div').addClass('active');
+// });
+
+// $('.less-content').click(function(){
+//   $(this).parent().removeClass('active');
+//   $(this).parent().siblings('div').addClass('active');
+// });
+
+$('.less-content').hide();
+
 $('.more-content').click(function() {
-  $(this).parent().removeClass('active');
-  $(this).parent().siblings('div').addClass('active');
+  $(this).hide();
+  $(this).siblings('a').show();
+  $(this).siblings('.excerpt-content').removeClass('active');
+  $(this).siblings('.detailed-content').slideDown();
+
 });
 
 $('.less-content').click(function(){
-  $(this).parent().removeClass('active');
-  $(this).parent().siblings('div').addClass('active');
+  $(this).hide();
+  $(this).siblings('a').show();
+  $(this).siblings('.detailed-content').slideUp();
+  $(this).siblings('.excerpt-content').addClass('active');
+});
+
+
+/*
+* Ajax Load More Functionality for books
+*/
+
+$( document ).on( 'click' , '.loadmore-books' , function() {
+  var that = $(this);
+  var page = that.data('page');
+  var newPage = page+1;
+  var ajaxurl = that.data('url');
+  var type = that.data('post');
+
+  $.ajax({
+    url: ajaxurl,
+    type: 'post',
+    data: {
+      page: page,
+      books: type,
+      action: 'ajax_load_more_books'
+    },
+    error: function( response ) {
+      console.log(response);
+    },
+    success: function( response ) {
+      that.data("page", newPage);
+      $('#load-books').append( response );
+    }
+
+  });
+
 });
 
 
@@ -121,7 +205,7 @@ $("#tabs li").on('click',function(){
  $("#tabs li").removeClass('active');
  $(this).addClass('active');
  var index = $(this).index();
- var child = index+1;
+ var child = index;
  $(".tabs .tab-detail").css('display','none');
  $(".tabs .tab-detail:nth-child("+child+")").css('display','block');
 });
@@ -136,8 +220,6 @@ $(this).scroll(function(){
     $(".program-desc").addClass("active");
   }
 });
-
-
 
 
 })(jQuery);

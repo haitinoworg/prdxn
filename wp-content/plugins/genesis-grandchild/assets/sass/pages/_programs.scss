@@ -528,7 +528,8 @@ main.content {
 		text-align: left;
 	}
 
-	.loadmore {
+	.loadmore,
+	.loadmore-books {
 		@include cta();
 		border: 1px solid $cta-color;
 		padding: 10px 25px;

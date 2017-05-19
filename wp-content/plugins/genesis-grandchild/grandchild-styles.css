@@ -1838,7 +1838,8 @@ main.content .two-columns {
 main.content .two-columns:nth-child(2n) {
   margin-left: 3.1%;
 }
-main.content .loadmore {
+main.content .loadmore,
+main.content .loadmore-books {
   width: auto;
   padding: 10px 15px;
   margin: 30px 0 0;
@@ -1854,12 +1855,14 @@ main.content .loadmore {
   outline: none;
   line-height: 20px;
 }
-main.content .loadmore:focus {
+main.content .loadmore:focus,
+main.content .loadmore-books:focus {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
 }
-main.content .loadmore:hover {
+main.content .loadmore:hover,
+main.content .loadmore-books:hover {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
@@ -2357,7 +2360,30 @@ main.content .movies .image img {
 }
 .excerpt-content.active,
 .detailed-content.active {
-  display: inline-block;
+  display: block;
+  -ms-animation: excerpt-content 0.2s linear both;
+  -moz-animation: excerpt-content 0.2s linear both;
+  -webkit-animation: excerpt-content 0.2s linear both;
+  animation: excerpt-content 0.2s linear both;
+  -ms-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@keyframes excerpt-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
+* Ajax Load More Books Styling
+*/
+.books {
+  text-align: center;
 }
 
 .archive .content {
@@ -3321,28 +3347,8 @@ Footer Widgets
   margin: 0 0 30px 3%;
   display: inline-block;
   float: left;
-  position: relative;
   text-align: left;
   vertical-align: top;
-}
-.footer-widgets section #menu-secondary-menus > li:after {
-  height: 70px;
-  content: " ";
-  display: inline-block;
-  border: 0.5px solid #8e8e8e;
-  position: absolute;
-  top: 32px;
-  right: 25%;
-}
-@media screen and (max-width: 1024px) {
-  .footer-widgets section #menu-secondary-menus > li:after {
-    right: 15%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .footer-widgets section #menu-secondary-menus > li:after {
-    display: none;
-  }
 }
 .footer-widgets section #menu-secondary-menus > li:last-child:after {
   display: none;

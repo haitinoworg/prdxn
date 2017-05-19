@@ -6,10 +6,6 @@
 //* Force full width content layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
-//* Remove site header elements
-// remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
-// remove_action( 'genesis_header', 'genesis_do_header' );
-// remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 
 //* Remove navigation
@@ -44,12 +40,16 @@ function research_tabs_loop() {
   global $post;
   $post_slug = $post->post_name;
 
+  ?>
+  <li class="active"><?php the_title(); ?></li>
+  <?php
+
   $page_object = get_field('select_tab_pages');
 
   if( $page_object ): setup_postdata( $page_object ); 
   foreach($page_object as $post):
     ?>
-  <li class="active"><?php the_title(); ?></li>
+  <li><?php the_title(); ?></li>
   <?php 
   endforeach;
   endif;
@@ -60,36 +60,48 @@ function research_tabs_loop() {
 // remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_after_loop', 'sponsors_loop' );
 function sponsors_loop(){
-  echo '</ul></div></div></div>';
-  ?>      
-  <div class="gallery">
-    <div id="tab-content" class="tabs">
+  ?>     
+</ul></div></div></div> 
+<div class="gallery">
+  <div id="tab-content" class="tabs">
+    <?php
+    global $post;
+    $post_slug = $post->post_name;
+
+    $page_object = get_field('select_tab_pages');
+    ?>
+
+    <div class="tab-detail">
+      <p><?php the_content(); ?></p>
       <?php
-      global $post;
-      $post_slug = $post->post_name;
-
-      $page_object = get_field('select_tab_pages');
-
-      if( $page_object ): setup_postdata( $page_object ); 
-      foreach($page_object as $post):
-        ?>
-      <div class="tab-detail">
-        <p><?php the_content(); ?></p>
-        <?php
-        $accordion_code = get_field('accordion_shortcode'); 
-        if($accordion_code) {
-          echo do_shortcode($accordion_code); 
-        }
-        ?>
-      </div>
-      <?php 
-      endforeach;
-      endif;
-      wp_reset_postdata(); 
+      $accordion_code = get_field('accordion_shortcode'); 
+      if($accordion_code) {
+        echo do_shortcode($accordion_code); 
+      }
       ?>
     </div>
+    <?php
+
+    if( $page_object ): setup_postdata( $page_object ); 
+    foreach($page_object as $post): 
+      ?>
+    <div class="tab-detail">
+      <p><?php the_content(); ?></p>
+      <?php
+      $accordion_code = get_field('accordion_shortcode'); 
+      if($accordion_code) {
+        echo do_shortcode($accordion_code); 
+      }
+      ?>
+    </div>
+    <?php 
+    endforeach;
+    endif;
+    wp_reset_postdata(); 
+    ?>
   </div>
-  <?php
+</div>
+<?php
 }
 
 

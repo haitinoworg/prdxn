@@ -28,6 +28,9 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
+		} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" /></div>';
 		}
 	}
 
@@ -112,13 +115,13 @@ else {
 						<div class="excerpt-content active">
 							<?php 
 							$content = get_the_content();
-							echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
-							<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+							echo '<p>' . mb_strimwidth($content, 0, 90, "...") . '</p>'; ?>
 						</div>
 						<div class="detailed-content">
 							<?php the_content(); ?>
-							<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 						</div>
+						<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+						<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 					</div>
 
 				</div>

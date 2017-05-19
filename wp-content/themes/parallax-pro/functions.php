@@ -153,59 +153,9 @@ genesis_register_sidebar( array(
 
 
 
-add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
-function be_load_more_js() {
+// add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
+// function be_load_more_js() {
 
-	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
-}
+// 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
+// }
 
-
-
-add_action('wp_ajax_ajax_load_more','ajax_load_more');
-add_action('wp_ajax_nopriv_ajax_load_more','ajax_load_more');
-function ajax_load_more() {
-	$paged = $_POST["page"] + 1;
-	$category = $_POST["category"];
-	
-	$query = new WP_Query( array(
-		'post_type' => 'post',
-		'category_name' => $category,
-		'paged' => $paged,
-		'posts_per_page' => 8
-		));
-
-	if( $query->have_posts() ): 
-		while( $query->have_posts() ): $query->the_post();
-	?>
-	<div class="post-images two-columns movies" >
-		<div class="image">
-			<?php 
-			if ( has_post_thumbnail() ) { 
-				the_post_thumbnail();	
-			} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-				. '/images/empty-image.png" />';
-			}
-			?>
-		</div>
-		<div class="entry-content">
-			<h3><?php the_title(); ?></h3>
-			<div class="excerpt-content active">
-				<?php 
-				$content = get_the_content();
-				echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
-				<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
-			</div>
-			<div class="detailed-content">
-				<?php the_content(); ?>
-				<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
-			</div>
-		</div>
-
-	</div>
-	<?php
-	endwhile; 
-	endif; 
-	wp_reset_postdata();
-	die();
-}

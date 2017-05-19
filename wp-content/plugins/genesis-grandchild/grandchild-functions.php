@@ -71,24 +71,6 @@ function create_post_types() {
 }
 
 
-// Custom Programs Tags
-add_action( 'init', 'people_init' );
-function people_init() {
-	// create a new taxonomy
-	register_taxonomy(
-		'program-tags',
-		'programs',
-		array(
-			'label' => __( 'New Tags' ),
-			'rewrite' => array( 'slug' => 'program-tags' ),
-			// 'capabilities' => array(
-			// 	'assign_terms' => 'edit_guides',
-			// 	'edit_terms' => 'publish_guides'
-			// 	)
-			)
-		);
-}
-
 
 //* Unregister primary navigation menu
 add_theme_support( 'genesis-menus', array( 'secondary' => __( 'Secondary Navigation Menu', 'genesis' ) ) );
@@ -133,3 +115,121 @@ function custom_site_logo( $atts ) {
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
 
+
+
+/*
+* Custom Books Post type
+**/
+
+add_action( 'init', 'post_types_books' );
+function post_types_books() {
+	register_post_type( 'books',
+		array(
+			'labels' => array(
+				'name' => __( 'Books' ),
+				'singular_name' => __( 'Books' )
+				),
+			'has_archive' => true,
+			'hierarchical' => true,
+			'public' => true,
+			'rewrite'=> array('slug'=>'books'),
+			'supports'            => array( 'title', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
+			)
+		);
+}
+
+
+/*
+* Ajax Load More for Movies Page
+*/
+
+add_action('wp_ajax_ajax_load_more','ajax_load_more');
+add_action('wp_ajax_nopriv_ajax_load_more','ajax_load_more');
+function ajax_load_more() {
+	$paged = $_POST["page"] + 1;
+	$category = $_POST["category"];
+	
+	$query = new WP_Query( array(
+		'post_type' => 'post',
+		'category_name' => $category,
+		'paged' => $paged,
+		'posts_per_page' => 8
+		));
+
+	if( $query->have_posts() ): 
+		while( $query->have_posts() ): $query->the_post();
+	?>
+	<div class="post-images two-columns movies" >
+		<div class="image">
+			<?php 
+			if ( has_post_thumbnail() ) { 
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+				. '/images/empty-image.png" />';
+			}
+			?>
+		</div>
+		<div class="entry-content">
+			<h3><?php the_title(); ?></h3>
+			<div class="excerpt-content active">
+				<?php 
+				$content = get_the_content();
+				echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
+				<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+			</div>
+			<div class="detailed-content">
+				<?php the_content(); ?>
+				<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+			</div>
+		</div>
+
+	</div>
+	<?php
+	endwhile; 
+	endif; 
+	wp_reset_postdata();
+	die();
+}
+
+
+/*
+* Ajax Load More for Books
+*/
+
+
+add_action('wp_ajax_ajax_load_more_books','ajax_load_more_books');
+add_action('wp_ajax_nopriv_ajax_load_more_books','ajax_load_more_books');
+function ajax_load_more_books() {
+	$paged = $_POST["page"] + 1;
+	$type = $_POST["books"];
+	
+	$query = new WP_Query( array(
+		'post_type' => $type,
+		'paged' => $paged,
+		'posts_per_page' => 9
+		));
+
+	if( $query->have_posts() ): 
+		while( $query->have_posts() ): $query->the_post();
+	?>
+	<div class="three-columns">
+		<a href="<?php the_field('book_link'); ?>" title="<?php the_title(); ?>" target="_blank"><?php	
+			if(has_post_thumbnail()){
+				the_post_thumbnail();	
+			} else {
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+			}
+			?>
+			<div class="entry-content">
+				<h3><?php the_title(); ?></h3>
+				<?php the_field('books_description'); ?>
+			</div>
+		</a>
+	</div>
+	<?php
+	endwhile; 
+	endif; 
+	wp_reset_postdata();
+	die();
+}

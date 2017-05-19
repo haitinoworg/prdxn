@@ -398,5 +398,27 @@
 .excerpt-content,
 .detailed-content { 
 	display: none; 
-	&.active { display: inline-block; }
+	&.active { 
+		display: block; 
+		@include property(animation,excerpt-content 0.2s linear both);
+		@include property(animation-delay, 0.2s);
+	}
+}
+
+@keyframes excerpt-content {
+	0% { 
+		opacity: 0;	
+	}
+	100% { 
+		opacity: 1; 
+
+	}
+}
+
+/*
+* Ajax Load More Books Styling
+*/
+
+.books {
+	text-align: center;
 }
