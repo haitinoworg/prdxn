@@ -72,7 +72,6 @@ function sponsors_loop(){
     ?>
 
     <div class="tab-detail">
-      <p><?php the_content(); ?></p>
       <?php
       $accordion_code = get_field('accordion_shortcode'); 
       if($accordion_code) {
@@ -86,7 +85,6 @@ function sponsors_loop(){
     foreach($page_object as $post): 
       ?>
     <div class="tab-detail">
-      <p><?php the_content(); ?></p>
       <?php
       $accordion_code = get_field('accordion_shortcode'); 
       if($accordion_code) {

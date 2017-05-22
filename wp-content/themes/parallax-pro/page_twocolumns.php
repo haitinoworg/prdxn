@@ -29,8 +29,8 @@ if($post_slug == "program" || $post_slug == "get-involved") {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
 		} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-				. '/images/empty-image.png" /></div>';
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png" /></div>';
 		}
 	}
 
@@ -86,8 +86,7 @@ else {
 		$post_slug=$post->post_name;
 
 		$scroller_query = array( 
-			'post_type' => 'post',
-			'category_name' => $post_slug,
+			'post_type' => $post_slug,
 			'posts_per_page' => 8,
 			);
 
@@ -112,7 +111,7 @@ else {
 					</div>
 					<div class="entry-content">
 						<h3><?php the_title(); ?></h3>
-							<div class="detailed-content">
+						<div class="detailed-content">
 							<?php the_content(); ?>
 						</div>
 						<div class="excerpt-content active">
@@ -120,7 +119,7 @@ else {
 							$content = get_the_content();
 							echo '<p>' . mb_strimwidth($content, 0, 90, "...") . '</p>'; ?>
 						</div>
-					
+						
 						<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
 						<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 					</div>

@@ -29,8 +29,7 @@ $( document ).on( 'click' , '.loadmore' , function() {
       console.log(response);
     },
     success: function( response ) {
-      ('.loadmore').data("page", newPage);
-      console.log(newPage);
+      that.data("page", newPage);
       $('#loadmore-data').append( response );
 
       $('.more-content').click(function() {

@@ -186,8 +186,7 @@ function ajax_load_more() {
 	$category = $_POST["category"];
 	
 	$query = new WP_Query( array(
-		'post_type' => 'post',
-		'category_name' => $category,
+		'post_type' => $category,
 		'paged' => $paged,
 		'posts_per_page' => 8
 		));
