@@ -4232,4 +4232,33 @@ Footer Section-1
   margin-bottom: 0;
 }
 
+/*
+* Corporate Info Page Tabs Styling
+*/
+.parallax-landing article.entry div.accordions-tabs-themes ul.ui-tabs-nav li.ui-tabs-active a.accordions-tab-head {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #fff;
+  color: #f16522 !important;
+}
+.parallax-landing article.entry div.accordions-tabs-themes ul.ui-tabs-nav li a {
+  padding: 12px 28px;
+  border: 1px solid transparent;
+  background-color: #f16522;
+  color: #fff;
+}
+.parallax-landing article.entry div.accordions-tabs-themes ul.ui-tabs-nav li a i {
+  display: none;
+}
+.parallax-landing article.entry div.accordions-tabs-themes .tabs-content p {
+  margin: 5px 0;
+}
+.parallax-landing article.entry div.accordions-tabs-themes .tabs-content a {
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+}
+.parallax-landing article.entry div.accordions-tabs-themes .tabs-content a:hover {
+  color: #f16522;
+}
+
 /*# sourceMappingURL=grandchild-styles.css.map */
