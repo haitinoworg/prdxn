@@ -31,45 +31,101 @@ add_theme_support( 'custom-background' );
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
 /**
-* Custom Programs post
+* Custom Post Types
 */
 add_theme_support('post-thumbnails');
 add_post_type_support( 'programs', 'thumbnail' );
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-	register_post_type( 'programs',
-		array(
-			'labels' => array(
-				'name' => __( 'Programs' ),
-				'singular_name' => __( 'Programs' )
-				),
-			'has_archive' => true,
-			'hierarchical' => true,
-			'public' => true,
-			'rewrite'=> array('slug'=>'programs'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),
-			'taxonomies' => array('category')
-			)
-		);
-}
 
-add_action( 'init', 'create_post_types' );
-function create_post_types() {
-	register_post_type( 'sponsors',
-		array(
-			'labels' => array(
-				'name' => __( 'Sponsors' ),
-				'singular_name' => __( 'Sponsors' )
-				),
-			'has_archive' => true,
-			'hierarchical' => true,
-			'public' => true,
-			'rewrite'=> array('slug'=>'sponsors'),
-			'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
-			)
-		);
-}
+/*
+* Custom Post Type Programs
+*/
 
+register_post_type( 'programs',
+	array(
+		'labels' => array(
+			'name' => __( 'Programs' ),
+			'singular_name' => __( 'Programs' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'programs'),
+		'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),
+		'taxonomies' => array('category')
+		)
+	);
+
+/*
+* Custom Post Type Sponsors
+*/
+
+register_post_type( 'sponsors',
+	array(
+		'labels' => array(
+			'name' => __( 'Sponsors' ),
+			'singular_name' => __( 'Sponsors' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'sponsors'),
+		'supports'            => array( 'title', 'editor','post-formats', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
+		)
+	);
+
+/*
+* Custom Post Type Books
+*/
+
+register_post_type( 'books',
+	array(
+		'labels' => array(
+			'name' => __( 'Books' ),
+			'singular_name' => __( 'Books' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'books'),
+		'supports'            => array( 'title', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
+		)
+	);
+
+/*
+* Custom Post Type Movies
+*/
+
+register_post_type( 'movies',
+	array(
+		'labels' => array(
+			'name' => __( 'Movies' ),
+			'singular_name' => __( 'Movies' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'movies'),
+		'supports'            => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
+		)
+	);
+
+register_post_type( 'staff',
+	array(
+		'labels' => array(
+			'name' => __( 'Staffs' ),
+			'singular_name' => __( 'Staffs' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'staff'),
+		'supports'            => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes' ),'taxonomies' => array('category')
+		)
+	);
+
+}
 
 
 //* Unregister primary navigation menu
@@ -108,35 +164,15 @@ function social_icons_section() {
 		) );
 }
 
-// ShortCode for Site Title
 
+//* Remove the site title
+remove_action( 'genesis_site_title', 'genesis_seo_site_title' ,22);
+
+// ShortCode for Site Title
 function custom_site_logo( $atts ) {
 	return do_action( 'genesis_site_title', 'genesis_seo_site_title' );
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
-
-
-
-/*
-* Custom Books Post type
-**/
-
-add_action( 'init', 'post_types_books' );
-function post_types_books() {
-	register_post_type( 'books',
-		array(
-			'labels' => array(
-				'name' => __( 'Books' ),
-				'singular_name' => __( 'Books' )
-				),
-			'has_archive' => true,
-			'hierarchical' => true,
-			'public' => true,
-			'rewrite'=> array('slug'=>'books'),
-			'supports'            => array( 'title', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes', 'genesis-seo' ),'taxonomies' => array('category')
-			)
-		);
-}
 
 
 /*
@@ -233,3 +269,21 @@ function ajax_load_more_books() {
 	wp_reset_postdata();
 	die();
 }
+
+
+
+
+
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+
+
+//* Remove the entry meta in the entry footer
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+
+
+//* Remove the entry meta in the entry footer
+remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );

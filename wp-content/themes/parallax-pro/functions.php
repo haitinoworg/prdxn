@@ -158,4 +158,3 @@ genesis_register_sidebar( array(
 
 // 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 // }
-

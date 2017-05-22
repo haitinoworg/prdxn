@@ -7,8 +7,6 @@
   $('.site-inner').css('padding-top',headerHeight + 'px');
 
 
-
-
   /*
 * Ajax Load More
 */
@@ -31,33 +29,30 @@ $( document ).on( 'click' , '.loadmore' , function() {
       console.log(response);
     },
     success: function( response ) {
-      that.data("page", newPage);
+      ('.loadmore').data("page", newPage);
+      console.log(newPage);
       $('#loadmore-data').append( response );
 
       $('.more-content').click(function() {
-        $(this).parent().removeClass('active');
-        $(this).parent().siblings('div').addClass('active');
+        $(this).hide();
+        $(this).siblings('a').show();
+        $(this).siblings('.excerpt-content').removeClass('active');
+        $(this).siblings('.detailed-content').slideDown();
+
       });
 
       $('.less-content').click(function(){
-        $(this).parent().removeClass('active');
-        $(this).parent().siblings('div').addClass('active');
+        $(this).hide();
+        $(this).siblings('a').show();
+        $(this).siblings('.detailed-content').slideUp();
+        $(this).siblings('.excerpt-content').addClass('active');
       });
+
     }
 
   });
 
 });
-
-// $('.more-content').click(function() {
-//   $(this).parent().removeClass('active');
-//   $(this).parent().siblings('div').addClass('active');
-// });
-
-// $('.less-content').click(function(){
-//   $(this).parent().removeClass('active');
-//   $(this).parent().siblings('div').addClass('active');
-// });
 
 $('.less-content').hide();
 
@@ -205,10 +200,22 @@ $("#tabs li").on('click',function(){
  $("#tabs li").removeClass('active');
  $(this).addClass('active');
  var index = $(this).index();
+ var child = index+1;
+ $(".tabs .tab-detail").css('display','none');
+ $(".tabs .tab-detail:nth-child("+child+")").css('display','block');
+});
+
+
+$("#research-tabs li").on('click',function(){
+ $("#research-tabs li").removeClass('active');
+ $(this).addClass('active');
+ var index = $(this).index();
  var child = index;
  $(".tabs .tab-detail").css('display','none');
  $(".tabs .tab-detail:nth-child("+child+")").css('display','block');
 });
+
+
 
 var section_height = $('.program-desc').offset().top + 250;
 $(this).scroll(function(){

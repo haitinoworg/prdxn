@@ -452,7 +452,12 @@ Footer Section-1
 			display: inline-block;
 			font-size: 12px;
 			font-weight: 700;
-		}   
+
+			@include mobile() {
+				border-left: none;
+			}
+		} 
+
 	}
 
 	section {

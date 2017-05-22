@@ -112,14 +112,15 @@ else {
 					</div>
 					<div class="entry-content">
 						<h3><?php the_title(); ?></h3>
+							<div class="detailed-content">
+							<?php the_content(); ?>
+						</div>
 						<div class="excerpt-content active">
 							<?php 
 							$content = get_the_content();
 							echo '<p>' . mb_strimwidth($content, 0, 90, "...") . '</p>'; ?>
 						</div>
-						<div class="detailed-content">
-							<?php the_content(); ?>
-						</div>
+					
 						<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
 						<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 					</div>

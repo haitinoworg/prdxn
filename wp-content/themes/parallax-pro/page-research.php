@@ -30,7 +30,7 @@ function custom_featured_image() {
  if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
   printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 }
-echo '<div id="tabs" class="tabs"><ul>';
+echo '<div id="research-tabs" class="tabs"><ul>';
 
 }
 
