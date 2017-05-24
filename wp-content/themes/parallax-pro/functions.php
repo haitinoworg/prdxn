@@ -153,8 +153,16 @@ genesis_register_sidebar( array(
 
 
 
-// add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
-// function be_load_more_js() {
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
-// 	wp_enqueue_script( 'be-load-more', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
-// }
+
+//* Remove the entry meta in the entry footer
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+
+
+//* Remove the entry meta in the entry footer
+remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );

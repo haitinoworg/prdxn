@@ -95,6 +95,7 @@ else {
 			<div class="entry" id="loadmore-data">
 				<?php
 				$loop = new WP_Query( $scroller_query );
+				$max = $loop->max_num_pages;
 				if( $loop->have_posts() ): 
 					while( $loop->have_posts() ): $loop->the_post();
 				?>
@@ -111,15 +112,15 @@ else {
 					</div>
 					<div class="entry-content">
 						<h3><?php the_title(); ?></h3>
-						<div class="detailed-content">
-							<?php the_content(); ?>
-						</div>
 						<div class="excerpt-content active">
 							<?php 
 							$content = get_the_content();
-							echo '<p>' . mb_strimwidth($content, 0, 90, "...") . '</p>'; ?>
+							echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
+							?>
 						</div>
-						
+						<div class="detailed-content">
+							<?php the_content(); ?>
+						</div>
 						<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
 						<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 					</div>
@@ -131,16 +132,9 @@ else {
 			</div>
 			<?php
 
+			echo '<button class="loadmore" data-total="'. $max .'" data-page="1" data-category="'. $post_slug .'" data-url="' . admin_url('admin-ajax.php') .'">View More</button></section>';
 		}
 
-		add_action('genesis_after_loop','load_more_btn');
-		function load_more_btn() {
-
-			global $post;
-			$post_slug=$post->post_name;
-
-			echo '<button class="loadmore" data-page="1" data-category="'. $post_slug .'" data-url="' . admin_url('admin-ajax.php') .'">View More</button></section>';
-		}
 	}
 
 

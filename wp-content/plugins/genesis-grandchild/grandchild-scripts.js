@@ -14,6 +14,7 @@
 $( document ).on( 'click' , '.loadmore' , function() {
   var that = $(this);
   var page = that.data('page');
+  var total = that.data('total');
   var newPage = page+1;
   var ajaxurl = that.data('url');
   var category = that.data('category');
@@ -31,6 +32,10 @@ $( document ).on( 'click' , '.loadmore' , function() {
     success: function( response ) {
       that.data("page", newPage);
       $('#loadmore-data').append( response );
+
+      if( newPage == total) {
+        $('.loadmore').css('display','none');
+      }
 
       $('.more-content').click(function() {
         $(this).hide();
@@ -55,20 +60,28 @@ $( document ).on( 'click' , '.loadmore' , function() {
 
 $('.less-content').hide();
 
+var text = $('.detailed-content').text();
+
+$('.excerpt-content').text(text.substring(0,90) + '...');
+
+
+
+
 $('.more-content').click(function() {
   $(this).hide();
   $(this).siblings('a').show();
   $(this).siblings('.excerpt-content').removeClass('active');
-  $(this).siblings('.detailed-content').slideDown();
+  $(this).siblings('.detailed-content').addClass('active');
 
 });
 
 $('.less-content').click(function(){
   $(this).hide();
   $(this).siblings('a').show();
-  $(this).siblings('.detailed-content').slideUp();
+  $(this).siblings('.detailed-content').removeClass('active');
   $(this).siblings('.excerpt-content').addClass('active');
 });
+
 
 
 /*
@@ -78,6 +91,7 @@ $('.less-content').click(function(){
 $( document ).on( 'click' , '.loadmore-books' , function() {
   var that = $(this);
   var page = that.data('page');
+  var total = that.data('totalcount');
   var newPage = page+1;
   var ajaxurl = that.data('url');
   var type = that.data('post');
@@ -95,7 +109,12 @@ $( document ).on( 'click' , '.loadmore-books' , function() {
     },
     success: function( response ) {
       that.data("page", newPage);
+
       $('#load-books').append( response );
+
+      if( newPage == total) {
+        $('.loadmore-books').css('display','none');
+      }
     }
 
   });

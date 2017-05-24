@@ -22,9 +22,8 @@ $post_slug=$post->post_name;
 			'posts_per_page'=> 9
 			);
 
-		$i = $paged = $_POST["page"] + 1;
-
 		$post_count = new WP_Query( $args );
+		$max = $post_count->max_num_pages;
 
 		if($post_count->have_posts()): setup_postdata($post_count);
 
@@ -62,9 +61,8 @@ $post_slug=$post->post_name;
 		endwhile;
 		endif;
 		wp_reset_postdata();
-		$totalpages = round($i);
 
-		echo '</div><button class="loadmore-books" data-page="1" data-post="'. $post_slug .'" data-url="' . admin_url('admin-ajax.php') .'" data-totalcount="'. $totalpages .'" data-count="empty">View More</button></section>';
+		echo '</div><button class="loadmore-books" data-page="1" data-post="'. $post_slug .'" data-url="' . admin_url('admin-ajax.php') .'" data-totalcount="'. $max .'" >View More</button></section>';
 
 		?>
 	</div>
