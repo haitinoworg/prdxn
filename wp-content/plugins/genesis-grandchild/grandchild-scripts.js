@@ -8,8 +8,22 @@
 
 
   /*
+  * Search Button on Blog
+  */
+  $('.search-form').children('input[type=submit]').addClass('fa fa-search fa-lg');
+  $('.search-form').children('input[type=submit]').remove();
+  $('.search-form').append('<button type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>');
+
+/*
 * Ajax Load More
 */
+var moviespage = $('.loadmore').data('page');
+var total = $('.loadmore').data('total');
+
+if( moviespage == total) {
+  $('.loadmore').css('display','none');
+  console.log('success');
+}
 
 $( document ).on( 'click' , '.loadmore' , function() {
   var that = $(this);
@@ -41,14 +55,14 @@ $( document ).on( 'click' , '.loadmore' , function() {
         $(this).hide();
         $(this).siblings('a').show();
         $(this).siblings('.excerpt-content').removeClass('active');
-        $(this).siblings('.detailed-content').slideDown();
+        $(this).siblings('.detailed-content').addClass('active');
 
       });
 
       $('.less-content').click(function(){
         $(this).hide();
         $(this).siblings('a').show();
-        $(this).siblings('.detailed-content').slideUp();
+        $(this).siblings('.detailed-content').removeClass('active');
         $(this).siblings('.excerpt-content').addClass('active');
       });
 
@@ -58,13 +72,13 @@ $( document ).on( 'click' , '.loadmore' , function() {
 
 });
 
+
+
 $('.less-content').hide();
 
 var text = $('.detailed-content').text();
 
 $('.excerpt-content').text(text.substring(0,90) + '...');
-
-
 
 
 $('.more-content').click(function() {
@@ -87,6 +101,13 @@ $('.less-content').click(function(){
 /*
 * Ajax Load More Functionality for books
 */
+
+var page = $('.loadmore-books').data('page');
+var totalpages = $('.loadmore-books').data('totalcount');
+if( page == totalpages) {
+  $('.loadmore-books').css('display','none');
+  console.log('remvoed');
+}
 
 $( document ).on( 'click' , '.loadmore-books' , function() {
   var that = $(this);
@@ -245,6 +266,7 @@ $(this).scroll(function(){
     $(".program-desc").addClass("active");
   }
 });
+
 
 
 })(jQuery);

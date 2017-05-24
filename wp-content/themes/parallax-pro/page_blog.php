@@ -15,21 +15,44 @@
 
 // The blog page loop logic is located in lib/structure/loops.php.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+// remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
 add_action('genesis_before_loop','custom_blog_title');
 
 function custom_blog_title() {
 	do_action( 'genesis_entry_header', 'genesis_do_post_title' );
-	echo 'blog';
 }
+
+remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 
 
 add_action('genesis_entry_content','custom_blog_loop');
 function custom_blog_loop() {
-	the_title();
-	the_content();
+
+	if(has_post_thumbnail()) {
+		echo '';
+	}
+	else {
+		?>
+		<a href="<?php the_permalink(); ?>">
+			<img src="<?php echo get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png'; ?>" alt="<?php the_title(); ?>">
+		</a>
+
+		<?php	
+	}
+
+	?>
+	<div>
+		<h2>
+			<?php the_title(); ?>	
+		</h2>
+		<?php the_content(); ?>
+	</div>
+	<?php
 }
 
 genesis();
