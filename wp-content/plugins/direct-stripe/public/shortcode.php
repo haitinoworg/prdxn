@@ -16,16 +16,16 @@ if ( $crios === 'crios' ) { ?>
 </style>
 <?php } ?>
 <!-- pass in the $params array and the URL -->
-<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST" >
-	
+<form action="<?php echo add_query_arg($params); ?>" id="stripeForm" value="submit" method="POST" >
+	<!-- <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST" >
+-->
+<input type=hidden name="oid" value="00D7F0000002Vh5">
+<input type=hidden name="retURL" value="http://www.google.com">
 
 		<?php //Donation condition and input
 		if(  isset($directStripeAttrValues['type']) && $directStripeAttrValues['type'] === 'donation' ) { ?>
-		<div class="donation-box">
-			<span>$</span>
-			<input type="text" name="donationvalue" id="donationvalue" value="60" required />
-			<span>USD</span>
-		</div>
+		<input type="number" name="donationvalue" id="donationvalue" required />
+		<!-- <input  aria-labelledby="00N7F000001pAWj_pcl" id=" donationvalue" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" /> -->
 		<?php } ?>
 		<script class="stripe-button" src="https://checkout.stripe.com/checkout.js"
 		<?php if( isset($d_stripe_general['direct_stripe_checkbox_api_keys']) && $d_stripe_general['direct_stripe_checkbox_api_keys'] === '1' ) { ?>
@@ -43,7 +43,7 @@ if ( $crios === 'crios' ) { ?>
 			data-label="<?php echo esc_attr($directStripeAttrValues['label']); ?>"
 			data-panel-label="<?php echo esc_attr($directStripeAttrValues['panellabel']); ?>"
 			data-locale="<?php echo esc_attr($directStripeAttrValues['locale']) ?>"
-			data-currency="<?php if( $directStripeAttrValues['currency'] != 'false' ) {
+			data-currency="<?php if( !empty( $directStripeAttrValues['currency'] )  ) {
 				echo esc_attr($directStripeAttrValues['currency']);
 			} else {
 				echo esc_attr($d_stripe_general['direct_stripe_currency']);
@@ -67,11 +67,6 @@ if ( $crios === 'crios' ) { ?>
 			<?php } ?>
 			<?php } ?>
 			
-			<input type="hidden" id="sf_oid" class="w2linput hidden" name="oid" value="00D7F0000002Vh5">		
-			<input type="hidden" id="sf_retURL" class="w2linput hidden" name="retURL" value="http://localhost/ayiti2/">		
-			<input type="hidden" id="sf_debug" class="w2linput hidden" name="debug" value="1">		
-			<input type="hidden" id="sf_debugEmail" class="w2linput hidden" name="debugEmail" value="pravin.chukkala.prdxn@gmail.com">	
-			<input type="hidden" name="form_id" class="w2linput" value="6">	
-
+			
 		</form>
 		<?php do_action( 'direct_stripe_after_form' ); ?>

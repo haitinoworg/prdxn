@@ -17,12 +17,12 @@
 /*
 * Ajax Load More
 */
+
 var moviespage = $('.loadmore').data('page');
 var total = $('.loadmore').data('total');
 
 if( moviespage == total) {
   $('.loadmore').css('display','none');
-  console.log('success');
 }
 
 $( document ).on( 'click' , '.loadmore' , function() {
@@ -106,7 +106,6 @@ var page = $('.loadmore-books').data('page');
 var totalpages = $('.loadmore-books').data('totalcount');
 if( page == totalpages) {
   $('.loadmore-books').css('display','none');
-  console.log('remvoed');
 }
 
 $( document ).on( 'click' , '.loadmore-books' , function() {
@@ -126,7 +125,6 @@ $( document ).on( 'click' , '.loadmore-books' , function() {
       action: 'ajax_load_more_books'
     },
     error: function( response ) {
-      console.log(response);
     },
     success: function( response ) {
       that.data("page", newPage);

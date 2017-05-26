@@ -270,5 +270,36 @@ function ajax_load_more_books() {
 }
 
 
+add_shortcode( 'donate_shortcode', 'custom_dn_shortcode' );
+
+function custom_dn_shortcode( ) {
+	?>
+	<section class="salesforce-form" >
+		<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST">
+
+			<input type=hidden name="oid" value="00D7F0000002Vh5">
+			<!-- <input type=hidden name="retURL" value="http://www.google.com"> -->
+
+			<div class="salesforce-form">
+				<div class="donation-box">
+					<span>$</span>
+					<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
+					<span>USD</span>
+				</div>
+				<button type="button" class="donate-btn">Donate</button>
+			</div>
+			
+			<div class="stripe-paypal-form">
+				<?php 
+				echo do_shortcode('[direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]');
+				// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
+				echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
+				?>
+			</div>
+		</form>
+	</section>
+	<?php	
+}
+
 
 

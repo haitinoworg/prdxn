@@ -1,5 +1,5 @@
 <?php //do
-?>    
+?>
 <script>
 function ds_insert_shortcode(){
       var ds_type = jQuery("#ds_type").val();
@@ -24,6 +24,7 @@ function ds_insert_shortcode(){
       var ds_capture = jQuery("#ds_capture").val();
       var ds_display_amount = jQuery("#ds_display_amount").val();
       var ds_currency = jQuery("#ds_currency").val();
+      var ds_custom_role = jQuery("#ds_custom_role").val();
       var ds_success_query = jQuery("#ds_success_query").val();
       var ds_error_query = jQuery("#ds_error_query").val();
       var ds_success_url = jQuery("#ds_success_url").val();
@@ -32,7 +33,7 @@ function ds_insert_shortcode(){
       var ds_button_shortcode = '[direct-stripe type="' + ds_type + '"';
       if( ds_amount !== "" ) {
            ds_button_shortcode = ds_button_shortcode + ' amount="' + ds_amount + '"';
-       } 
+       }
       if( ds_button_id !== "" ) {
          ds_button_shortcode = ds_button_shortcode + ' button_id="' + ds_button_id + '"';
       }
@@ -63,6 +64,9 @@ function ds_insert_shortcode(){
       if( ds_currency !== "" ) {
          ds_button_shortcode = ds_button_shortcode + ' currency="' + ds_currency + '"';
       }
+      if( ds_custom_role !== "" ) {
+        ds_button_shortcode = ds_button_shortcode + ' custom_role="' + ds_custom_role + '"';
+      }
       if( ds_success_query !== "" ) {
          ds_button_shortcode = ds_button_shortcode + ' success_query="' + ds_success_query + '"';
       }
@@ -79,12 +83,12 @@ function ds_insert_shortcode(){
       ds_button_shortcode = ds_button_shortcode  + ']';
 
       window.send_to_editor(ds_button_shortcode);
-        
+      
  }
 </script>
 <div id="ds_add_button" style="display:none;">
   <div class="ds-row">
-       <h4><?php _e('Main Button Options','direct-stripe');?></h4>
+      <h4><?php _e('Main Button Options','direct-stripe');?></h4>
       <p><?php _e('The button type is required, the amount is required for "payments" and "subscriptions" type buttons.', 'direct-stripe'); ?> </p>
   </div>
   
@@ -92,10 +96,10 @@ function ds_insert_shortcode(){
     <div class="ds-one-third">
             <strong><?php _e('Button Type','direct-stripe');?></strong><br />
             <select id="ds_type" required>
-                <option value=""><?php _e('Choose button type', 'direct-stripe'); ?></option>
-                <option value="payment"><?php _e('Payment', 'direct-stripe'); ?></option>
-              <option value="subscription"><?php _e('Subscription', 'direct-stripe'); ?></option>
-              <option value="donation"><?php _e('Donation', 'direct-stripe'); ?></option>
+                  <option value=""><?php _e('Choose button type', 'direct-stripe'); ?></option>
+                  <option value="payment"><?php _e('Payment', 'direct-stripe'); ?></option>
+                  <option value="subscription"><?php _e('Subscription', 'direct-stripe'); ?></option>
+                  <option value="donation"><?php _e('Donation', 'direct-stripe'); ?></option>
             </select>
     </div>
      <div class="ds-one-third">
@@ -196,6 +200,16 @@ function ds_insert_shortcode(){
     </div>
 
     <div class="ds-row">
+        <div class="ds-one-third">
+            <strong><?php _e('Custom Role','direct-stripe');?></strong>
+            <button class="ds_infos"><?php _e('infos', 'direct-stripe'); ?>
+                <span class="ds_button_infos"><?php _e('Add a per button custom role to user', 'direct-stripe'); ?></span></button>
+            <br />
+            <input id="ds_custom_role" type="text" class="ds-shortcode-custom-role" name="ds_custom_role">
+        </div>
+    </div>
+
+    <div class="ds-row">
         <h4><?php _e('Extra query arguments','direct-stripe');?></h4>
     </div>
     <div class="ds-row">
@@ -214,7 +228,7 @@ function ds_insert_shortcode(){
             <input id="ds_error_query" type="text" class="ds-shortcode-error-query" name="ds_error_query">
         </div>
     </div>
-        
+    
     <div class="ds-row">
         <h4><?php _e('Per button success/error redirections','direct-stripe');?></h4>
         <p><?php _e('Enter the entire http address "http://domain.ext/success-or-error-page" ; this will override redirections globally set.','direct-stripe');?></p>

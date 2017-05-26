@@ -1,4 +1,4 @@
-# Direct-Stripe
+﻿# Direct-Stripe
 Stripe payment button for WordPress
 
 === Direct Stripe ===
@@ -13,7 +13,7 @@ Requires at least: 4.2
 
 Tested up to: 4.7.3
 
-Stable tag: 1.2.0
+Stable tag: 1.2.2.1
 
 License: GPLv2 or later 
 
@@ -59,6 +59,7 @@ Ready for translations (Français déjà traduit)
 * **label** : Text displayed on button to display modal form
 * **button_id** : give your button the id you want ex: button_id="first_button"
 * **panellabel** : Text for modal form button
+* **custom_role** : Add the role of your choice to the user (Useful to restrict content)
 * **coupon** : coupon id set in stripe admin (only for subscriptions)
 * **setup_fee** : Only for subscriptions, charge a one time fee on subscription activation
 * **capture** : set it to false ( capture="false" ) in the shortcode to manually charge the transaction from your stripe'a admin panel later
@@ -131,9 +132,38 @@ Log in to your stripe's account or create one at https://dashboard.stripe.com/re
 
 
 == Changelog == 
+
+=1.2.2.1=
+* $admin_email restored
+
+=1.2.2=
+* Filters for emails subject
+    direct_stripe_success_user_email_subject
+    direct_stripe_success_admin_email_subject
+    direct_stripe_error_user_email_subject
+    direct_stripe_error_admin_email_subject
+
+* Filters for emails content
+    direct_stripe_success_user_email_content
+    direct_stripe_success_admin_email_content
+    direct_stripe_error_user_email_content
+    direct_stripe_error_admin_email_content
+
+    Filters explained at : https://newo.me/filter-direct-stripe-emails/
+
+=1.2.1.2=
+* Back to small id for stripe customer object in create payment
+
+=1.2.1.1=
+* Corrects error redirection link bug
+
+=1.2.1=
+* **Custom_role** added as shortcode argument custom_role="custom_user_role"
+* $user_id passed to 'direct_stripe_before_success_redirection' and 'direct_stripe_before_error_redirection' actions
+
  
 = 1.2.0 =
-**Button that triggers the options form to insert automatically the shortcode in editor area**
+* **Button that triggers the options form to insert automatically the shortcode in editor area**
 * New shortcode argument button_id
 * Fixed amount not showing in modal form since version 1.1.9 due to new amount encryption
 * Automatically recognize email address of logged_in users
