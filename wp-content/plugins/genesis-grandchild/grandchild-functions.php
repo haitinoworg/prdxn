@@ -174,7 +174,6 @@ function custom_site_logo( $atts ) {
 }
 add_shortcode( 'site_title', 'custom_site_logo' );
 
-
 /*
 * Ajax Load More for Movies Page
 */
@@ -275,30 +274,83 @@ add_shortcode( 'donate_shortcode', 'custom_dn_shortcode' );
 function custom_dn_shortcode( ) {
 	?>
 	<section class="salesforce-form" >
-		<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST">
 
-			<input type=hidden name="oid" value="00D7F0000002Vh5">
-			<!-- <input type=hidden name="retURL" value="http://www.google.com"> -->
+		<!-- <input type=hidden name="retURL" value="http://www.google.com"> -->
 
-			<div class="salesforce-form">
-				<div class="donation-box">
-					<span>$</span>
-					<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-					<span>USD</span>
-				</div>
-				<button type="button" class="donate-btn">Donate</button>
-			</div>
-			
-			<div class="stripe-paypal-form">
-				<?php 
-				echo do_shortcode('[direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]');
+
+
+		<div id="tabs" class="stripe-paypal dntplgn_form_wrapper">
+			<ul>
+				<li><a href="#tabs-1">Donate Monthly</a></li>
+				<li><a href="#tabs-2">Donate Once Only</a></li>
+			</ul>
+			<div id="tabs-1">
+				<form action="#" id="stripeForm" value="submit" method="POST">
+
+					<input type=hidden name="oid" value="00D7F0000002Vh5">
+					<div class="salesforce-form">
+						<div class="donation-box">
+							<span>$</span>
+							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
+							<span>USD</span>
+						</div>
+						<button type="submit" class="donate-btn">Donate</button>
+					</div>
+				</form>
+				<?php
+				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+					$value1 = $_POST["00N7F000001pAWj"];
+					?>
+
+					<div class="stripe-paypal-form">
+						<?php 
+						echo do_shortcode('[direct-stripe type="donation" amount="'. $value1 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
 				// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
-				echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
+						echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
+						?>
+					</div>
+					<div class="clear"></div>
+					<?php
+				}
 				?>
 			</div>
-		</form>
-	</section>
-	<?php	
+
+			<div id="tabs-2">
+				<form action="#" id="stripeForm" value="submit" method="POST">
+					<input type=hidden name="oid" value="00D7F0000002Vh5">
+					<div class="salesforce-form">
+						<div class="donation-box">
+							<span>$</span>
+							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
+							<span>USD</span>
+						</div>
+						<button type="button" class="donate-btn">Donate</button>
+					</div>
+				</form>
+				<?php
+				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+					$value2 = $_POST["00N7F000001pAWj"];
+					?>
+
+					<div class="stripe-paypal-form">
+						<?php 
+						echo do_shortcode('[direct-stripe type="donation" amount="'. $value2 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
+
+						// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
+					// echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
+						?>
+					</div>
+					<img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-60px.png" alt="PayPal">
+					<div class="clear"></div>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+
+	</form>
+</section>
+<?php	
 }
 
 

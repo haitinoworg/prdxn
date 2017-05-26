@@ -448,8 +448,25 @@ div#n2-ss-2 .n2-grab {
   padding-top: 63px;
 }
 
-.stripe-paypal-form {
-  display: none;
+/*
+* Donation Tabs
+*/
+.stripe-paypal {
+  padding: 0;
+}
+.stripe-paypal .ui-tabs-nav {
+  padding: 0;
+}
+.stripe-paypal .ui-tabs-nav .ui-state-default {
+  width: 50%;
+  margin: 0;
+  text-align: center;
+}
+.stripe-paypal .ui-tabs-nav .ui-state-default a.ui-tabs-anchor {
+  width: 100%;
+  display: block;
+  float: none;
+  font: 18px Roboto, sans-serif;
 }
 
 /*

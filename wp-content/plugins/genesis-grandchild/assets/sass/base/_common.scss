@@ -153,6 +153,23 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 }
 
 
-.stripe-paypal-form {
-	display: none;
+/*
+* Donation Tabs
+*/
+.stripe-paypal {
+	padding: 0;
+	.ui-tabs-nav {
+		padding: 0;
+		.ui-state-default {
+			width: 50%;
+			margin: 0;
+			text-align: center;
+			a.ui-tabs-anchor { 
+				width: 100%;
+				display: block;
+				float: none;
+				font: 18px $font;	
+			}
+		}
+	}
 }
