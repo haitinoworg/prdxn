@@ -65,7 +65,7 @@ function galleryVideolightboxInit() {
                 jQuery('div.slider-content.clone').find("a[href*='youtu'],a[href*='vimeo']").removeClass('vg_responsive_lightbox');
                 jQuery('.right-block').find("a[href*='youtu'],a[href*='vimeo']").removeClass('vg_responsive_lightbox');
             }
-            jQuery('.vg_responsive_lightbox').lightbox();
+            jQuery('.vg_responsive_lightbox').lightboxVideo();
         });
 
     }

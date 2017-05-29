@@ -32,6 +32,7 @@
                             <a class="vyoutube huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
                                href="<?php echo esc_url("//www.youtube.com/embed/". $videourl[0]); ?>"
                                title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
+                               data-description="<?php echo str_replace('__5_5_5__', '%', $row->description); ?>"
                                data-id="<?php echo esc_attr($row->id); ?>">
                                 <img src="<?php echo esc_attr($thumb_pic); ?>"
                                      alt="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"/>
@@ -49,6 +50,7 @@
                             <a class="vvimeo huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
                                href="<?php  echo esc_url("//player.vimeo.com/video/". $videourl[0]); ?>"
                                title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
+                               data-description="<?php echo str_replace('__5_5_5__', '%', $row->description); ?>"
                                data-id="<?php echo esc_attr($row->id); ?>">
                                 <img src="<?php echo esc_attr($imgsrc); ?>" alt=""/>
                                 <div class="play-icon <?php echo esc_url($videourl[1]); ?>-icon"></div>

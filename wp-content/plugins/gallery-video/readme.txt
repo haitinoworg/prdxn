@@ -1,10 +1,10 @@
 === Gallery - Video Gallery and Youtube Gallery ===
-Contributors: Huge-IT, galleryteam
+Contributors: Huge-IT
 Donate link: https://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, youtube gallery,
 Requires at least: 3.0.1
-Tested up to: 4.7.3
-Stable tag: 2.1.1
+Tested up to: 4.7.4
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,7 +21,7 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 * [FAQ Video Gallery](https://huge-it.com/wordpress-video-gallery-faq/)
 * [User Manual Video Gallery](https://huge-it.com/wordpress-video-gallery-user-manual/)
 * [Video Gallery Support](https://huge-it.com/contact-us/)
-* [Video Gallery Forum](https://huge-it.com/forums/forum/wordpress/wordpress-video-gallery/)
+* [Video Gallery Forum](https://wordpress.org/support/plugin/gallery-video)
 * [Video Gallery Github Project](https://github.com/Huge-IT/gallery-video)
 
 **Gallery - Video Gallery and Youtube Gallery**
@@ -289,9 +289,11 @@ Upgrade to [WordPress Video Gallery Pro](https://huge-it.com/wordpress-video-gal
 
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com)
 
+
+
 == Installation ==
 
-### Uploading in video gallery WordPress Dashboard
+#### Uploading in video gallery WordPress Dashboard
 
 1. First download the ZIP file from Wordpress website
 2. Log in to your website administrator panel
@@ -318,8 +320,6 @@ If you think, that you found a bug in our [WordPress Video Gallery](https://huge
 5. You can see the plugin installed on Wordpress left menu
 
 Now you can set your Video Gallery options, images and use our Video Gallery.
-
-If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com)
 
 == Screenshots ==
 
@@ -503,6 +503,12 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.2.0 =
+* 1) Fixed the compatibility issue with third party lightbox plugins.
+* 2) We have fixed the load more bug that stipped working after the integration of the new lightbox.
+* 3) We have added 2 new lightbox styles number 5,6 allowing to view video galleries by new views and looks.
+* 4) We have changed our display name of the plugin back to company name to follow guidelines.
 
 = 2.1.1 =
 *  We have received a support on this issue and fixed this.

@@ -41,10 +41,10 @@
         slideAnimation: true, //not for option
         overlayClose: gallery_video_resp_lightbox_obj.gallery_video_lightbox_overlayClose_new,
         loop: gallery_video_resp_lightbox_obj.gallery_video_lightbox_loop_new,
-        escKey: gallery_video_resp_lightbox_obj.gallery_video_lightbox_escKey_new,
-        keyPress: gallery_video_resp_lightbox_obj.gallery_video_lightbox_keyPress_new,
+        escKey: false,
+        keyPress: false,
         arrows: true,
-        mouseWheel: gallery_video_resp_lightbox_obj.gallery_video_lightbox_mouseWheel,
+        mouseWheel: false,
         showCounter: false,
         defaultTitle: '',  //some text
         preload: 10,  //not for option
@@ -129,7 +129,7 @@
 
         $object.structure();
 
-        $object.lightboxModul['modul'] = new $.fn.lightbox.lightboxModul['modul']($object.el);
+        $object.lightboxModul['modul'] = new $.fn.lightboxVideo.lightboxModul['modul']($object.el);
 
         $object.slide(index, false, false);
 
@@ -165,9 +165,12 @@
             subHtmlCont1 = '', subHtmlCont2 = '', subHtmlCont3 = '',
             close1 = '', close2 = '', socialIcons = '',
             template, $arrows, $next, $prev,
-            $_next, $_prev, $close_bg, $download_bg, $download_bg_, $contInner;
+            $_next, $_prev, $close_bg, $download_bg, $download_bg_, $contInner, $view;
+
+        $view = (this.settings.lightboxView === 'view6') ? 'rwd-view6' : '';
+
         this.$body.append(
-            this.objects.overlay = $('<div class="' + this.settings.classPrefix + 'overlay"></div>')
+            this.objects.overlay = $('<div class="' + this.settings.classPrefix + 'overlay ' + $view + '"></div>')
         );
         this.objects.overlay.css('transition-duration', this.settings.overlayDuration + 'ms');
 
@@ -237,6 +240,7 @@
                 close1 = '<span class="' + this.settings.classPrefix + 'close ' + $object.settings.classPrefix + 'icon">' + $close_bg + '</span>';
                 break;
             case 'view5':
+            case 'view6':
                 $_next = '<svg class="next_bg" width="22px" height="44px" fill="#999" x="0px" y="0px"' +
                     'viewBox="0 0 40 70" style="enable-background:new 0 0 40 70;" xml:space="preserve">' +
                     '<path id="XMLID_2_" class="st0" d="M3.3,1.5L1.8,2.9l31.8,31.8c0.5,0.5,0.5,0.9,0,1.4L1.8,67.9l1.5,1.4c0.3,0.5,0.9,0.5,1.4,0' +
@@ -250,8 +254,8 @@
                 $close_bg = '<svg class="close_bg" width="16px" height="16px" fill="#999" viewBox="-341 343.4 15.6 15.6">' +
                     '<path d="M-332.1,351.2l6.5-6.5c0.3-0.3,0.3-0.8,0-1.1s-0.8-0.3-1.1,0l-6.5,6.5l-6.5-6.5c-0.3-0.3-0.8-0.3-1.1,0s-0.3,0.8,0,1.1l6.5,6.5l-6.5,6.5c-0.3,0.3-0.3,0.8,0,1.1c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l6.5-6.5l6.5,6.5c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2c0.3-0.3,0.3-0.8,0-1.1L-332.1,351.2z"/>' +
                     '</svg>';
-                subHtmlCont3 = '<div class="' + this.settings.classPrefix + 'title"></div>' +
-                    '<div class="' + this.settings.classPrefix + 'description"></div>';
+                subHtmlCont3 += '<div class="' + this.settings.classPrefix + 'title"></div>';
+                subHtmlCont3 += '<div class="' + this.settings.classPrefix + 'description"></div>';
                 close1 = '<span class="' + this.settings.classPrefix + 'close ' + $object.settings.classPrefix + 'icon">' + $close_bg + '</span>';
                 break;
         }
@@ -263,14 +267,17 @@
                 '</div>';
         }
 
+        if (this.settings.socialSharing && (this.settings.lightboxView !== 'view5' || this.settings.lightboxView !== 'view6')) {
+            socialIcons = '<div class="' + this.settings.classPrefix + 'socialIcons"><button class="shareLook">share</button></div>';
+        }
 
-        $contInner = (this.settings.lightboxView === 'view5') ? '<div class="contInner">' + subHtmlCont3 + '</div>' : '';
+        $contInner = (this.settings.lightboxView === 'view5' || this.settings.lightboxView === 'view6') ? '<div class="contInner">' + subHtmlCont3 + '</div>' : '';
 
         var $zoomDiv = gallery_video_resp_lightbox_obj.gallery_video_lightbox_zoom ? '<div class="rwd-zoomDiv"></div>' : '';
-
+        var arrowHE = (this.settings.lightboxView !== 'view2' && this.settings.lightboxView !== 'view3') ? this.settings.arrowsHoverEffect : '';
         template = '<div class="' + this.settings.classPrefix + 'cont ">' +
             $zoomDiv +
-            '<div class="rwd-container rwd-' + this.settings.lightboxView + '">' +
+            '<div class="rwd-container rwd-' + this.settings.lightboxView + ' rwd-arrows_hover_effect-' + arrowHE + '">' +
             '<div class="cont-inner">' + list + '</div>' +
             $contInner +
             '<div class="' + this.settings.classPrefix + 'toolbar group">' +
@@ -278,7 +285,7 @@
             '</div>' +
             controls +
             '<div class="' + this.settings.classPrefix + 'bar">' +
-            close2 + subHtmlCont1 + socialIcons + '</div>' +
+            close2 + subHtmlCont1 + '</div>' +
             '</div>' +
             '</div>';
 
@@ -373,6 +380,7 @@
                     $('<a id="' + $object.settings.classPrefix + 'download" target="_blank" download class="' + this.settings.classPrefix + 'download ' + $object.settings.classPrefix + 'icon">' + $download_bg + '</a>').insertBefore($('.rwd-title'));
                     break;
                 case 'view5':
+                case 'view6':
                     $('.rwd-toolbar').append('<a id="' + $object.settings.classPrefix + 'download" target="_blank" download class="' + this.settings.classPrefix + 'download ' + $object.settings.classPrefix + 'icon">' + $download_bg_ + '</a>');
                     break;
             }
@@ -514,10 +522,14 @@
                     $('.' + this.settings.classPrefix + 'bar').append('<div class="barCont"></div>').append(this.objects.counter = $('<div id="' + this.settings.idPrefix + 'counter"></div>'));
                     break;
                 case 'view5':
+                case 'view6':
                     $('.contInner').append(this.objects.counter = $('<div id="' + this.settings.idPrefix + 'counter"></div>'));
                     break;
             }
-
+            if(this.settings.sequence_info === "image")
+            {
+                this.settings.sequence_info="video";
+            }
             this.objects.counter.append(
                 this.objects.current = $('<div>' + this.settings.sequence_info + ' <span id="' + this.settings.idPrefix + 'counter-current">' + (parseInt(this.index, 10) + 1) + '</span> ' +
                     this.settings.sequenceInfo + ' <span id="' + this.settings.idPrefix + 'counter-all">' + this.$items.length + '</span></div>')
@@ -550,7 +562,7 @@
         var $object = this, $description, $currentElement;
 
         $currentElement = this.$items.eq(index);
-        $description = $currentElement.find('img').attr('data-description') || '';
+        $description = $currentElement.attr('data-description') || '';
 
         this.$cont.find('.' + this.settings.classPrefix + 'description').html('<div class="rwd-description-text" title="' + $description + '">' + $description + '</div>');
     };
@@ -591,7 +603,11 @@
         shareButtons += '</ul>';
 
 
-        $('.' + this.settings.classPrefix + 'socialIcons').append(shareButtons);
+        if (this.settings.lightboxView === 'view5' || this.settings.lightboxView === 'view6') {
+            $('.contInner').append(shareButtons);
+        } else {
+            $('.' + this.settings.classPrefix + 'socialIcons').append(shareButtons);
+        }
 
 
         setTimeout(function () {
@@ -715,7 +731,7 @@
             $object.setTitle(index);
         }, time);
 
-        if ($object.settings.lightboxView === 'view5') {
+        if ($object.settings.lightboxView === 'view5' || $object.settings.lightboxView === 'view6') {
             setTimeout(function () {
                 $object.setDescription(index);
             }, time);
@@ -1236,7 +1252,7 @@
         window.scrollTo(0, $object.$_y_);
     };
 
-    $.fn.lightbox = function (options) {
+    $.fn.lightboxVideo = function (options) {
         return this.each(function () {
             if (!$.data(this, 'lightbox')) {
                 $.data(this, 'lightbox', new Lightbox(this, options));
@@ -1244,7 +1260,7 @@
         });
     };
 
-    $.fn.lightbox.lightboxModul = {};
+    $.fn.lightboxVideo.lightboxModul = {};
 
     var Modul = function (element) {
 
@@ -2196,7 +2212,7 @@
         }
     };
 
-    $.fn.lightbox.lightboxModul.modul = Modul;
+    $.fn.lightboxVideo.lightboxModul.modul = Modul;
 
     var WaterMark = function (element) {
         this.element = element;

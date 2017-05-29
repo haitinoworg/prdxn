@@ -418,30 +418,35 @@ button.paypal-button.large {
   padding: 60px 1.4em;
 }
 
-.stripe-paypal-form #stripeForm {
+.direct-stripe {
+  margin: 0;
+}
+
+.stripe-paypal-form .direct-stripe {
   width: 48%;
+  margin: 0;
   margin-right: 4%;
   float: left;
 }
-.stripe-paypal-form #stripeForm + div {
+.stripe-paypal-form .direct-stripe + div {
   width: 48%;
   margin-top: 30px;
   float: left;
 }
 
-.stripe-button-el {
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 2px;
-  margin-top: 30px;
-  background-color: #1e73be;
+.stripe-button-ds {
+  width: 100% !important;
+  padding-top: 15px !important;
+  padding-bottom: 10px !important;
+  margin-top: 30px !important;
+  background-color: #1e73be !important;
   background-image: none;
 }
-.stripe-button-el:hover {
+.stripe-button-ds:hover {
   color: #fff;
   background-color: #1e73be;
 }
-.stripe-button-el span {
+.stripe-button-ds span {
   box-shadow: none;
   background-image: none;
   background-color: #1e73be;

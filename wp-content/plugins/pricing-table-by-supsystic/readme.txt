@@ -2,8 +2,8 @@
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/pricing-table
 Tags: price table, pricing table, price, pricing, table, comparison table, css table, comparison, price gird, pricing gird, pricing box, price chart, price plan, chart, plan
-Tested up to: 4.7.3
-Stable tag: 1.4.2
+Tested up to: 4.7.4
+Stable tag: 1.4.4
 
 Pricing Table generator by Supsystic allows you to create responsive pricing tables or comparison table without any programming skills
 
@@ -92,6 +92,17 @@ Adding a pricing or product comparison table to your website makes it easier for
 Offering your own products with coparison table in a number of packages can also help increase the amount of revenue that is generated. These versions and upgrades can then be displayed in a comparison table. Also by comparing the products you are promoting against the competition, you can let your visitors do their research on your site, and increase the chances of them making a purchase through your affiliate link, rather than going elsewhere. Create comparison table from any pricing template with image or video embeding.
 
 == Changelog ==
+
+= 1.4.4 / 26.04.2017 =
+* Improved interactions with our users
+* Minor issues fix
+
+
+= 1.4.3 / 19.04.2017 =
+* Code review and improvements
+ 
+* Minor issues fix
+
 
 = 1.4.2 / 17.03.2017 =
 * Hotfix for short php tags

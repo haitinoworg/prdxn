@@ -78,6 +78,12 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                             <option <?php selected( 'view4', get_option('gallery_video_lightbox_lightboxView') ); ?>
                                     value="view4">4
                             </option>
+                            <option <?php selected( 'view5', get_option('gallery_video_lightbox_lightboxView') ); ?>
+                                    value="view5">5
+                            </option>
+                            <option <?php selected( 'view6', get_option('gallery_video_lightbox_lightboxView') ); ?>
+                                    value="view6">6
+                            </option>
                         </select>
                     </div>
                     <div>

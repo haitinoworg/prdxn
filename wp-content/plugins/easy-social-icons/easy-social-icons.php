@@ -3,7 +3,7 @@
 Plugin Name: Easy Social Icons
 Plugin URI: http://www.cybernetikz.com
 Description: You can upload your own social icon, set your social URL, choose weather you want to display vertical or horizontal. You can use the shortcode <strong>[cn-social-icon]</strong> in page/post, template tag for php file <strong>&lt;?php if ( function_exists('cn_social_icon') ) echo cn_social_icon(); ?&gt;</strong> also you can use the widget <strong>"Easy Social Icons"</strong> for sidebar.
-Version: 3.0.4
+Version: 3.0.5
 Author: cybernetikz
 Author URI: http://www.cybernetikz.com
 License: GPL2
@@ -687,6 +687,7 @@ function cnss_social_icon_sort_fn() {
 
 ?>
 	<div class="wrap">
+		<?php echo cnss_esi_review_text(); ?>
 		<h2>Sort Icons</h2>
 
 		<div id="ajax-response"></div>
@@ -909,6 +910,7 @@ function cnss_social_icon_add_fn() {
      <?php include_once 'fa-brand-icons.php'; ?>
 </div>
 <div class="wrap">
+<?php echo cnss_esi_review_text(); ?>
 <?php
 if($msg!='') echo '<div id="message" class="updated fade">'.$msg.'</div>';
 if($err!='') echo '<div id="message" class="error fade">'.$err.'</div>';
@@ -1040,7 +1042,7 @@ function cnss_manage_icon_table_header() {
 
 function cnss_esi_review_text()
 {
-	return '<div class="cnss-esi-review"><p><span>Please <a target="_blank" href="https://wordpress.org/support/plugin/easy-social-icons/reviews/">review</a> this plugins</span><span style="float: right;">Need support please <a target="_blank" href="http://www.cybernetikz.com/wordpress-magento-plugins/wordpress-plugins/easy-social-icons/#disqus_thread">contact us here</a></span></p></div>';
+	return '<div class="cnss-esi-review"><p><span>Please <a target="_blank" href="https://wordpress.org/support/plugin/easy-social-icons/reviews/">review</a> this plugin</span><span style="float: right;">Need support please <a target="_blank" href="http://www.cybernetikz.com/wordpress-magento-plugins/wordpress-plugins/easy-social-icons/#disqus_thread">contact us here</a></span></p></div>';
 }
 
 function cnss_social_icon_page_fn() {
@@ -1287,7 +1289,7 @@ function _cn_social_icon_sc( $selected_icons_array = array() ) {
 		$icon_count = count($icons);
 		
 		ob_start();
-		echo '<ul class="cnss-social-icon" style="text-align:left;">'."\r\n";
+		echo '<ul class="cnss-social-icon-admin" style="text-align:left;">'."\r\n";
 		$i=0;
 		foreach($icons as $icon)
 		{ 
@@ -1427,7 +1429,7 @@ class Cnss_Widget extends WP_Widget {
 		
 		ob_start();
 		if ($icons) {
-			echo '<ul class="cnss-social-icon" style="text-align:left;">'."\r\n";
+			echo '<ul class="cnss-social-icon-admin-widget" style="text-align:left;">'."\r\n";
 			$i=0;
 			foreach($icons as $icon)
 			{ 

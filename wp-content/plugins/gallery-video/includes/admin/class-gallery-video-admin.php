@@ -281,7 +281,7 @@ class Gallery_Video_Admin {
 					$videos_list = "";
 					foreach ( $videos as $key => $video ) {
 						$new_video = "('";
-						$new_video .= esc_sql($video->name) . "','" . esc_attr($last_key) . "','" . esc_sql($video->description) . "','" . esc_url($video->image_url) . "','" .
+						$new_video .= esc_sql($video->name) . "','" . esc_attr($last_key) . "','" . esc_sql( $video->description) . "','" . esc_url($video->image_url) . "','" .
                             esc_url($video->sl_url) . "','" . esc_attr($video->sl_type) . "','" . esc_attr($video->link_target) . "','" . esc_attr($video->ordering ). "','" .
                             esc_attr($video->published) . "','" . esc_attr($video->published_in_sl_width) . "','" . esc_url($video->thumb_url) . "','" .
                             esc_attr($video->show_controls) . "','" . esc_attr($video->show_info) . "')";

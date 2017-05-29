@@ -47,7 +47,7 @@
 	define('PTS_EOL', "\n");    
     
     define('PTS_PLUGIN_INSTALLED', true);
-    define('PTS_VERSION', '1.4.2');
+    define('PTS_VERSION', '1.4.4');
     define('PTS_USER', 'user');
     
     define('PTS_CLASS_PREFIX', 'ptsc');     

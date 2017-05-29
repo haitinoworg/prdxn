@@ -42,9 +42,13 @@ class supsystic_promoPts extends modulePts {
 			$enbPromoLinkMsg .= '<p><a href="#" class="button button-primary" data-statistic-code="done">'. __('Ok, you deserve it', PTS_LANG_CODE). '</a>
 			<a href="#" class="button" data-statistic-code="later">'. __('Nope, maybe later', PTS_LANG_CODE). '</a>
 			<a href="#" class="button" data-statistic-code="hide">'. __('Skip', PTS_LANG_CODE). '</a></p>';
+			$checkOtherPlugins = '<p>'
+				. sprintf(__('Check out <a href="%s" target="_blank" class="button button-primary" data-statistic-code="hide">our other Plugins</a>! Years of experience in WordPress plugins developers made those list unbreakable!', PTS_LANG_CODE), framePts::_()->getModule('options')->getTabUrl('featured-plugins'))
+			. '</p>';
 			$notices = array(
 				'rate_msg' => array('html' => $rateMsg, 'show_after' => 7 * $day),
 				'enb_promo_link_msg' => array('html' => $enbPromoLinkMsg, 'show_after' => 11 * $day),
+				'check_other_plugs_msg' => array('html' => $checkOtherPlugins, 'show_after' => 1 * $day),
 			);
 			foreach($notices as $nKey => $n) {
 				if($currTime - $startUsage <= $n['show_after']) {

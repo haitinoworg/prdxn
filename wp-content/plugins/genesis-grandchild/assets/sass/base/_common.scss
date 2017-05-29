@@ -196,10 +196,14 @@ button.paypal-button.large {
 	padding: 60px 1.4em;
 }
 
+.direct-stripe {
+	margin: 0;
+}
 // Stripe Plugin Styling
 .stripe-paypal-form {
-	#stripeForm {
+	.direct-stripe {
 		width: 48%;
+		margin: 0;
 		margin-right: 4%;
 		float: left;
 
@@ -213,12 +217,12 @@ button.paypal-button.large {
 
 }
 
-.stripe-button-el {
-	width: 100%;
-	padding-top: 15px;
-	padding-bottom: 2px;
-	margin-top: 30px;
-	background-color: #1e73be;
+.stripe-button-ds {
+	width: 100% !important;
+	padding-top: 15px !important;
+	padding-bottom: 10px !important;
+	margin-top: 30px !important;
+	background-color: #1e73be !important;
 	background-image: none;
 	&:hover {
 		color:#fff;

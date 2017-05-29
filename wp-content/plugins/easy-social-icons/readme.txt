@@ -3,8 +3,8 @@ Contributors: cybernetikz
 Donate link: 
 Tags: easy social icon,easy social icons,social icon,social icons,social,social share,follow,followus,follow us,share,icon,custom social icons, social media icons
 Requires at least: 3.5
-Tested up to: 4.7.3
-Stable tag: 3.0.4
+Tested up to: 4.7.5
+Stable tag: 3.0.5
 
 Upload your own social media icons or choose from font-awesome. Use widget|shortcode to place icons anywhere(sidebar, header, footer, page) in theme.
 
@@ -75,6 +75,10 @@ If you are using wordpress version lower than 3.5 please use Easy social Icon ve
 8. add Easy Social Icon widget to sidebar using drag drop
 
 == Changelog ==
+
+= 3.0.5 =
+* add color to youtube play icon
+* css fix for icons list in admin panel
 
 = 3.0.4 =
 * add email, address, mobile font-awesome icons

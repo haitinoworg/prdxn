@@ -20,6 +20,7 @@
                     <a class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
                        href="//www.youtube.com/embed/<?php echo esc_attr($videourl[0]); ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
+                       data-description="<?php echo str_replace('__5_5_5__', '%', $row->description); ?>"
                        data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($thumb_pic); ?>"
                          alt="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"/>
@@ -35,6 +36,7 @@
                     <a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
                        href="//player.vimeo.com/video/<?php echo esc_attr($videourl[0]); ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
+                       data-description="<?php echo str_replace('__5_5_5__', '%', $row->description); ?>"
                        data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($imgsrc); ?>"
                          alt="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"/>

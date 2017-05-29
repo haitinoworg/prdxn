@@ -288,7 +288,7 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 		$row   = $wpdb->get_row( $query );
 		$query = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = %d order by id ASC", $row->id );
 		$rowim = $wpdb->get_results( $query );
-
+        $allowed_tags = wp_kses_allowed_html('post');
 
 		foreach ( $rowim as $key => $rowimages ) {
 			if ( isset( $_POST[ "order_by_" . $rowimages->id . "" ] ) ) {
@@ -299,8 +299,8 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 					'off'
 				) ) ? $_POST[ "sl_link_target" . $rowimages->id ] : 'on';
 				$sl_url        = sanitize_text_field( str_replace( '%', '__5_5_5__', $_POST[ "sl_url" . $rowimages->id ] ) );
-				$title         = wp_kses( wp_unslash( str_replace( '%', '__5_5_5__', $_POST[ "titleimage" . $rowimages->id ] ) ), 'default' );
-				$description   = wp_kses( wp_unslash( str_replace( '%', '__5_5_5__', $_POST[ "im_description" . $rowimages->id ] ) ), 'default' );
+				$title         = wp_kses( wp_unslash( str_replace( '%', '__5_5_5__', $_POST[ "titleimage" . $rowimages->id ] ) ), $allowed_tags );
+				$description   = wp_kses( wp_unslash( str_replace( '%', '__5_5_5__', $_POST[ "im_description" . $rowimages->id ] ) ),$allowed_tags );
 				$video_url     = sanitize_text_field( $_POST[ "imagess" . $rowimages->id ] );
 				$thumb_url     = sanitize_text_field( $_POST[ "thumbs" . $rowimages->id ] );
 				if( !isset($_POST["show_controls". $rowimages->id ] ))
