@@ -285,38 +285,8 @@ function custom_dn_shortcode( ) {
 				<li><a href="#tabs-2">Donate Once Only</a></li>
 			</ul>
 			<div id="tabs-1">
-				<form action="#" id="stripeForm" value="submit" method="POST">
+				<form action="#" class="donate-form" value="submit" method="POST">
 
-					<input type=hidden name="oid" value="00D7F0000002Vh5">
-					<div class="salesforce-form">
-						<div class="donation-box">
-							<span>$</span>
-							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-							<span>USD</span>
-						</div>
-						<button type="submit" class="donate-btn">Donate</button>
-					</div>
-				</form>
-				<?php
-				if ($_SERVER["REQUEST_METHOD"] == "POST") {
-					$value1 = $_POST["00N7F000001pAWj"];
-					?>
-
-					<div class="stripe-paypal-form">
-						<?php 
-						echo do_shortcode('[direct-stripe type="donation" amount="'. $value1 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
-				// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
-						echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
-						?>
-					</div>
-					<div class="clear"></div>
-					<?php
-				}
-				?>
-			</div>
-
-			<div id="tabs-2">
-				<form action="#" id="stripeForm" value="submit" method="POST">
 					<input type=hidden name="oid" value="00D7F0000002Vh5">
 					<div class="salesforce-form">
 						<div class="donation-box">
@@ -327,24 +297,35 @@ function custom_dn_shortcode( ) {
 						<button type="button" class="donate-btn">Donate</button>
 					</div>
 				</form>
-				<?php
-				if ($_SERVER["REQUEST_METHOD"] == "POST") {
-					$value2 = $_POST["00N7F000001pAWj"];
+				<div class="stripe-paypal-form">
+					<?php 
+					echo do_shortcode('[direct-stripe type="donation" amount="" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
+				// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
+					echo do_shortcode('	[wp_paypal button="donate" amount="1.00" name="My product"]');
 					?>
+				</div>
+				<div class="clear"></div>
+			</div>
 
-					<div class="stripe-paypal-form">
-						<?php 
-						echo do_shortcode('[direct-stripe type="donation" amount="'. $value2 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
-
-						// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
-					// echo do_shortcode('	[wp_paypal button="donate" name="My product"]');
-						?>
+			<div id="tabs-2">
+				<form action="#" class="donate-form" value="submit" method="POST">
+					<input type=hidden name="oid" value="00D7F0000002Vh5">
+					<div class="salesforce-form">
+						<div class="donation-box">
+							<span>$</span>
+							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
+							<span>USD</span>
+						</div>
+						<button type="button" class="donate-btn">Donate</button>
 					</div>
-					<img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-60px.png" alt="PayPal">
-					<div class="clear"></div>
-					<?php
-				}
-				?>
+				</form>
+				<div class="stripe-paypal-form">
+					<?php 
+					echo do_shortcode('[direct-stripe type="donation" amount="'. $value2 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
+					echo do_shortcode('	[wp_paypal button="donate" amount="1.00" name="My product"]');
+					?>
+				</div>
+				<div class="clear"></div>
 			</div>
 		</div>
 

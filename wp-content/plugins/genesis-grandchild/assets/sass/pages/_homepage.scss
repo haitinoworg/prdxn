@@ -241,64 +241,7 @@ Content Area
 
 .contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
 
-// Stripe Plugin Styling
 
-
-.stripe-button-el {
-	width: 100%;
-	padding-top: 15px;
-	padding-bottom: 2px;
-	margin-top: 30px;
-	background-color: #1e73be;
-	background-image: none;
-	&:hover {
-		color:#fff;
-		background-color: #1e73be;
-	}
-	span {
-		box-shadow: none; 
-		background-image: none;
-		background-color: #1e73be;
-		font: 16px $font;
-	}
-}
-
-.donation-box {
-	width: 100%;
-	border: 1px solid #ccc;
-	position: relative;
-	background-color: #fff;
-	span {
-		position: absolute;
-		top: 9px;
-		width: auto;
-		right: 10px;
-		// min-width: 51px;
-		display: inline-block;
-		color: #aaa;
-		font: 20px $font;
-
-		&:first-child { 
-			width: 20px;
-			left: 8px;
-			right: auto;
-		}
-
-
-	}
-
-	input { 
-		width: 100%; 
-		padding: 8px 0;
-		padding-left: 25px;
-		padding-right: 50px;
-		border-color: transparent;
-		outline: none;
-		color: #747373;
-
-		@include maxWidth(768px) { width: 72%; }
-	}
-}
 
 
 #ptsBlock_167808 .ptsCol-1 .ptsTableElementContent,

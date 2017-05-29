@@ -19,8 +19,8 @@ if ( $crios === 'crios' ) { ?>
 <form action="<?php echo add_query_arg($params); ?>" id="stripeForm" value="submit" method="POST" >
 	<!-- <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" id="stripeForm" value="submit" method="POST" >
 -->
-<input type=hidden name="oid" value="00D7F0000002Vh5">
-<input type=hidden name="retURL" value="http://www.google.com">
+<!-- <input type=hidden name="oid" value="00D7F0000002Vh5">
+	<input type=hidden name="retURL" value="http://www.google.com"> -->
 
 		<?php //Donation condition and input
 		if(  isset($directStripeAttrValues['type']) && $directStripeAttrValues['type'] === 'donation' ) { ?>
@@ -52,7 +52,7 @@ if ( $crios === 'crios' ) { ?>
 			data-amount="<?php echo absint($original_amount); ?>"
 			<?php } ?>
 			<?php if( isset($d_stripe_general['direct_stripe_billing_infos_checkbox']) && $d_stripe_general['direct_stripe_billing_infos_checkbox'] === '1' ) { ?>
-			data-address="true"
+			data-billing-address="true"
 			<?php } ?>
 			<?php do_action( 'direct_stripe_after_data_fields' ); ?>
 			>

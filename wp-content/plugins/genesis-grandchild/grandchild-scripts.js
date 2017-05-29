@@ -10,9 +10,33 @@
 /*
 * Donate Tabs 
 */
+$("#donationvalue").parent().prepend('<div class="donation-box"><span>$</span><input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" /><span>USD</span></div>');  
+
+
+$("#donationvalue").hide();
+$('.stripe-paypal-form').hide();
+
+var donationVal = $('#00N7F000001pAWj').val();
+
+$("#donationvalue").val(donationVal);
+
+$('#00N7F000001pAWj').keyup(function(){
+  var donateVal = $(this).val();
+  $("#donationvalue").val(donateVal);
+});
+
+$('.stripe-paypal-form').hide();
 
 $('.donate-btn').click(function(){
   $(this).parent().hide();
+  $('.donation-box').remove();
+  var parent = $(this).parent('.salesforce-form');
+  parent.parent('.donate-form').siblings('.stripe-paypal-form').show();
+});
+
+
+$(".ui-state-default").click(function(){
+  $("#donationvalue").hide();
 });
 
 $( '.dntplgn_monthly_other_sum' ).hide();
