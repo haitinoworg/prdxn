@@ -60,6 +60,9 @@ TF-Numbers can be installed in two different ways:
 
 == Changelog ==
 
+= 1.4.13 =
+* Added redirect to the about page after plugin activation
+* improved pages code
 = 1.4.12 =
 * Fixed title notice that can be shown as result of conflict with title remover
 = 1.4.11 =

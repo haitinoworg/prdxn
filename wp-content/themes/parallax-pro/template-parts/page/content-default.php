@@ -14,7 +14,7 @@ $post_slug = $post->post_name;
 
 if(have_posts()): the_post();
 
-if($post_slug == "program") {
+if($post_slug == "our-programs") {
 
 	$args = array(
 		'post_type' => 'programs',

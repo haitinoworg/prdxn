@@ -434,19 +434,19 @@ button.paypal-button.large {
   float: left;
 }
 
-.stripe-button-ds {
-  width: 100% !important;
-  padding-top: 15px !important;
-  padding-bottom: 10px !important;
-  margin-top: 30px !important;
-  background-color: #1e73be !important;
+.stripe-button-el {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 4px;
+  margin-top: 30px;
+  background-color: #1e73be;
   background-image: none;
 }
-.stripe-button-ds:hover {
+.stripe-button-el:hover {
   color: #fff;
   background-color: #1e73be;
 }
-.stripe-button-ds span {
+.stripe-button-el span {
   box-shadow: none;
   background-image: none;
   background-color: #1e73be;
@@ -458,26 +458,34 @@ button.paypal-button.large {
   border: 1px solid #ccc;
   position: relative;
   background-color: #fff;
+  overflow: hidden;
 }
-.donation-box span {
+.donation-box:after {
+  content: "USD";
   position: absolute;
   top: 9px;
-  width: auto;
+  width: 40px;
   right: 10px;
-  display: inline-block;
+  background-color: #fff;
   color: #aaa;
   font: 20px Roboto, sans-serif;
 }
-.donation-box span:first-child {
-  width: 20px;
+.donation-box:before {
+  content: "$";
+  width: 10px;
+  position: absolute;
   left: 8px;
-  right: auto;
+  right: 10px;
+  top: 9px;
+  background-color: #fff;
+  color: #aaa;
+  font: 20px Roboto, sans-serif;
 }
 .donation-box input {
   width: 100%;
   padding: 8px 0;
-  padding-left: 25px;
-  padding-right: 50px;
+  padding-left: 23px;
+  padding-right: 38px;
   border-color: transparent;
   outline: none;
   color: #747373;
@@ -3398,12 +3406,32 @@ Single Post Page Styling ==================================
 /*
 * Error Page Styling ----------------------------------------------------
 */
-.error404 .search-form input[type="submit"] {
+.error404 .search-form {
+  position: relative;
   margin: 31px 0;
 }
-.error404 .search-form input[type="submit"]:hover, .error404 .search-form input[type="submit"]:focus {
+.error404 .search-form input[type="search"] {
+  padding-right: 80px;
+}
+.error404 .search-form ::-webkit-input-placeholder,
+.error404 .search-form ::-moz-placeholder,
+.error404 .search-form :-ms-input-placeholder {
+  color: #c4acac;
+}
+.error404 .search-form button[type="submit"] {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.error404 .search-form button[type="submit"]:hover, .error404 .search-form button[type="submit"]:focus {
   background-color: #f16522;
   color: #fff;
+}
+.error404 p a,
+.error404 li a {
+  color: #f16522;
+  cursor: pointer;
 }
 
 /*

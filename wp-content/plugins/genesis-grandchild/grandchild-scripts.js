@@ -10,9 +10,10 @@
 /*
 * Donate Tabs 
 */
-$("#donationvalue").parent().prepend('<div class="donation-box"><span>$</span><input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" /><span>USD</span></div>');  
+$("#donationvalue").wrap('<div class="donation-box"></div>');
 
-$("#donationvalue").hide();
+$("#donationvalue").val(60);
+
 $('.stripe-paypal-form').hide();
 
 $('.donate-btn').click(function(){

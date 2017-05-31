@@ -217,12 +217,12 @@ button.paypal-button.large {
 
 }
 
-.stripe-button-ds {
-	width: 100% !important;
-	padding-top: 15px !important;
-	padding-bottom: 10px !important;
-	margin-top: 30px !important;
-	background-color: #1e73be !important;
+.stripe-button-el {
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 4px;
+	margin-top: 30px;
+	background-color: #1e73be;
 	background-image: none;
 	&:hover {
 		color:#fff;
@@ -241,34 +241,39 @@ button.paypal-button.large {
 	border: 1px solid #ccc;
 	position: relative;
 	background-color: #fff;
-	span {
+	overflow: hidden;
+	&:after {
+		content: "USD";
 		position: absolute;
 		top: 9px;
-		width: auto;
+		width: 40px;
 		right: 10px;
-		// min-width: 51px;
-		display: inline-block;
+		background-color: #fff;
 		color: #aaa;
 		font: 20px $font;
-
-		&:first-child { 
-			width: 20px;
-			left: 8px;
-			right: auto;
-		}
-
-
 	}
 
+	&:before { 
+		content: "$";
+		width: 10px;
+		position: absolute;
+		left: 8px;
+		right: 10px;
+		top: 9px;
+		background-color: #fff;
+		color: #aaa;
+		font: 20px $font;
+	}
+
+
 	input { 
-		width: 100%; 
+		width: 100%;
 		padding: 8px 0;
-		padding-left: 25px;
-		padding-right: 50px;
+		padding-left: 23px;
+		padding-right: 38px;
 		border-color: transparent;
 		outline: none;
 		color: #747373;
-
 		@include maxWidth(768px) { width: 72%; }
 	}
 }

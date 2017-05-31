@@ -131,11 +131,11 @@ class StripeObject implements ArrayAccess, JsonSerializable
                     . "with the result returned by Stripe's API, "
                     . "probably as a result of a save(). The attributes currently "
                     . "available on this object are: $attrs";
-            Stripe::getLogger()->error($message);
+            error_log($message);
             return $nullval;
         } else {
             $class = get_class($this);
-            Stripe::getLogger()->error("Stripe Notice: Undefined property of $class instance: $k");
+            error_log("Stripe Notice: Undefined property of $class instance: $k");
             return $nullval;
         }
     }

@@ -2,7 +2,7 @@
 /**
   * Plugin Name: TF Random Numbers
   * Plugin URI: http://themeflection.com/plug/number-counter-animation-wordpress-plugin/
-  * Version: 1.4.12
+  * Version: 1.4.13
   * Author: Aleksej Vukomanovic
   * Author URI: http://themeflection.com
   * Description: Random numbers plugin for WordPress
@@ -15,7 +15,7 @@
 
   //define version
   if( !defined( 'TF_NUMBERS_VERSION' ) )
-    define( 'TF_NUMBERS_VERSION', '1.4.12' );
+    define( 'TF_NUMBERS_VERSION', '1.4.13' );
   //define translation string
   if( !defined( 'TF_NUMBERS_STRING' ) )
     define( 'TF_NUMBERS_STRING', 'tf_numbers' );
@@ -25,6 +25,9 @@
   // define store URL
   if( !defined('TF_STORE_URL') )
     define( 'TF_STORE_URL', 'http://themeflection.com' );
+  if( !defined('TF_NUMBERS_BASE') ) {
+      define('TF_NUMBERS_BASE', plugin_basename( __FILE__ ) );
+  }
  
   if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
     require_once dirname( __FILE__ ) . '/cmb2/init.php';
@@ -55,4 +58,4 @@
   TF_Numbers::init();  
   if( is_admin() ) $pages = new TF_Pages();
   $shortcode = new TF_Numbers_Shortcode;
-  ?>
+?>

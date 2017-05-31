@@ -8,8 +8,8 @@
 /**
  * Custom jQuery for Custom Metaboxes and Fields
  */
- window.CMB2 = (function(window, document, $, undefined){
- 	'use strict';
+window.CMB2 = (function(window, document, $, undefined){
+	'use strict';
 
 	// localization strings
 	var l10n = window.cmb2_l10;
@@ -53,7 +53,7 @@
 		/**
 		 * Initialize time/date/color pickers
 		 */
-		 cmb.initPickers( $metabox.find('input[type="text"].cmb2-timepicker'), $metabox.find('input[type="text"].cmb2-datepicker'), $metabox.find('input[type="text"].cmb2-colorpicker') );
+		cmb.initPickers( $metabox.find('input[type="text"].cmb2-timepicker'), $metabox.find('input[type="text"].cmb2-datepicker'), $metabox.find('input[type="text"].cmb2-colorpicker') );
 
 		// Wrap date picker in class to narrow the scope of jQuery UI CSS and prevent conflicts
 		$id( 'ui-datepicker-div' ).wrap('<div class="cmb2-element" />');
@@ -65,10 +65,10 @@
 		cmb.makeListSortable();
 
 		$metabox
-		.on( 'change', '.cmb2_upload_file', function() {
-			cmb.formfield = $(this).attr('id');
-			$id( cmb.formfield + '_id' ).val('');
-		})
+			.on( 'change', '.cmb2_upload_file', function() {
+				cmb.formfield = $(this).attr('id');
+				$id( cmb.formfield + '_id' ).val('');
+			})
 			// Media/file management
 			.on( 'click', '.cmb-multicheck-toggle', cmb.toggleCheckBoxes )
 			.on( 'click', '.cmb2-upload-button', cmb.handleMedia )
@@ -85,18 +85,18 @@
 			.on( 'cmb2_remove_row', '.cmb-repeatable-group', cmb.resetTitlesAndIterator )
 			.on( 'click', '.cmbhandle, .cmbhandle + .cmbhandle-title', cmb.toggleHandle );
 
-			if ( $repeatGroup.length ) {
-				$repeatGroup
+		if ( $repeatGroup.length ) {
+			$repeatGroup
 				.filter('.sortable').each( function() {
 					// Add sorting arrows
 					$(this).find( '.button.cmb-remove-group-row' ).before( '<a class="button cmb-shift-rows move-up alignleft" href="#"><span class="'+ l10n.up_arrow_class +'"></span></a> <a class="button cmb-shift-rows move-down alignleft" href="#"><span class="'+ l10n.down_arrow_class +'"></span></a>' );
 				})
 				.on( 'click', '.cmb-shift-rows', cmb.shiftRows )
 				.on( 'cmb2_add_row', cmb.emptyValue );
-			}
+		}
 
 		// on pageload
-		setTimeout( cmb.resizeoEmbeds, 5000);
+		setTimeout( cmb.resizeoEmbeds, 500);
 		// and on window resize
 		$(window).on( 'resize', cmb.resizeoEmbeds );
 
@@ -210,15 +210,15 @@
 
 					// image preview
 					uploadStatus = '<li class="img-status">'+
-					'<img width="'+ width +'" height="'+ height +'" src="' + this.url + '" class="attachment-'+ width +'px'+ height +'px" alt="'+ this.filename +'">'+
-					'<p><a href="#" class="cmb2-remove-file-button" rel="'+ cmb.formfield +'['+ this.id +']">'+ l10n.strings.remove_image +'</a></p>'+
-					'<input type="hidden" id="filelist-'+ this.id +'" data-id="'+ this.id +'" name="'+ formName +'['+ this.id +']" value="' + this.url + '">'+
+						'<img width="'+ width +'" height="'+ height +'" src="' + this.url + '" class="attachment-'+ width +'px'+ height +'px" alt="'+ this.filename +'">'+
+						'<p><a href="#" class="cmb2-remove-file-button" rel="'+ cmb.formfield +'['+ this.id +']">'+ l10n.strings.remove_image +'</a></p>'+
+						'<input type="hidden" id="filelist-'+ this.id +'" data-id="'+ this.id +'" name="'+ formName +'['+ this.id +']" value="' + this.url + '">'+
 					'</li>';
 
 				} else {
 					// Standard generic output if it's not an image.
 					uploadStatus = '<li class="file-status"><span>'+ l10n.strings.file +' <strong>'+ this.filename +'</strong></span>&nbsp;&nbsp; (<a href="' + this.url + '" target="_blank" rel="external">'+ l10n.strings.download +'</a> / <a href="#" class="cmb2-remove-file-button" rel="'+ cmb.formfield +'['+ this.id +']">'+ l10n.strings.remove_file +'</a>)'+
-					'<input type="hidden" id="filelist-'+ this.id +'" data-id="'+ this.id +'" name="'+ formName +'['+ this.id +']" value="' + this.url + '">'+
+						'<input type="hidden" id="filelist-'+ this.id +'" data-id="'+ this.id +'" name="'+ formName +'['+ this.id +']" value="' + this.url + '">'+
 					'</li>';
 
 				}
@@ -283,8 +283,8 @@
 
 		// When a file is selected, run a callback.
 		cmb.file_frames[ cmb.formfield ]
-		.on( 'select', cmb.mediaHandlers.selectFile )
-		.on( 'open', cmb.mediaHandlers.openModal );
+			.on( 'select', cmb.mediaHandlers.selectFile )
+			.on( 'open', cmb.mediaHandlers.openModal );
 
 		// Finally, open the modal
 		cmb.file_frames[ cmb.formfield ].open();
@@ -376,8 +376,8 @@
 			}
 
 			$newInput
-			.removeClass( 'hasDatepicker' )
-			.attr( attrs ).val('');
+				.removeClass( 'hasDatepicker' )
+				.attr( attrs ).val('');
 
 			// wysiwyg field
 			if ( isEditor ) {
@@ -757,14 +757,14 @@
 	/**
 	 * Resize oEmbed videos to fit in their respective metaboxes
 	 */
-	 cmb.resizeoEmbeds = function() {
-	 	cmb.metabox().each( function() {
-	 		var $self      = $(this);
-	 		var $tableWrap = $self.parents('.inside');
-	 		var isSide     = $self.parents('.inner-sidebar').length || $self.parents( '#side-sortables' ).length;
-	 		var isSmall    = isSide;
-	 		var isSmallest = false;
-	 		if ( ! $tableWrap.length )  {
+	cmb.resizeoEmbeds = function() {
+		cmb.metabox().each( function() {
+			var $self      = $(this);
+			var $tableWrap = $self.parents('.inside');
+			var isSide     = $self.parents('.inner-sidebar').length || $self.parents( '#side-sortables' ).length;
+			var isSmall    = isSide;
+			var isSmallest = false;
+			if ( ! $tableWrap.length )  {
 				return true; // continue
 			}
 
@@ -807,26 +807,26 @@
 			});
 
 		});
-	 };
+	};
 
 	/**
 	 * Safely log things if query var is set
 	 * @since  1.0.0
 	 */
-	 cmb.log = function() {
-	 	if ( l10n.script_debug && console && typeof console.log === 'function' ) {
-	 		console.log.apply(console, arguments);
-	 	}
-	 };
+	cmb.log = function() {
+		if ( l10n.script_debug && console && typeof console.log === 'function' ) {
+			console.log.apply(console, arguments);
+		}
+	};
 
-	 cmb.spinner = function( $context, hide ) {
-	 	if ( hide ) {
-	 		$('.cmb-spinner', $context ).hide();
-	 	}
-	 	else {
-	 		$('.cmb-spinner', $context ).show();
-	 	}
-	 };
+	cmb.spinner = function( $context, hide ) {
+		if ( hide ) {
+			$('.cmb-spinner', $context ).hide();
+		}
+		else {
+			$('.cmb-spinner', $context ).show();
+		}
+	};
 
 	// function for running our ajax
 	cmb.doAjax = function( $obj ) {

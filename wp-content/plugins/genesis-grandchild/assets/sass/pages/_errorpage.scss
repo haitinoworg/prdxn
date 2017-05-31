@@ -3,9 +3,23 @@
 */
 
 .error404 {
+	// Search Form Styling
 	.search-form {
-		input[type="submit"] {
-			margin: 31px 0;
+		position: relative;
+		margin: 31px 0;
+		input[type="search"] {
+			padding-right: 80px;
+		}
+
+		::-webkit-input-placeholder,
+		::-moz-placeholder,
+		:-ms-input-placeholder { color: #c4acac; }
+		button[type="submit"] {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+
 			&:hover,
 			&:focus {
 				background-color: $cta-color;
@@ -13,4 +27,12 @@
 			}
 		}
 	}
+
+	// Anchor Styling
+	p a,
+	li a {
+		color: $cta-color;
+		cursor: pointer;
+	}
+
 }
