@@ -2,14 +2,15 @@
 /*
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
-.footer-widgets {
-	padding: 53px 0 0;
-	clear: both;
-	background-color: #f9f9f9;
-	font: 16px $font;
-	
+body .site-container {
+	.footer-widgets {
+		padding: 53px 0 0;
+		clear: both;
+		background-color: #f9f9f9;
+		font: 16px $font;
+		
 
-	li { border-bottom: none; }
+		li { border-bottom: none; }
 
 		// Important used to override parallax-pro
 		a {
@@ -657,3 +658,5 @@ Footer Section-1
 		.footer-left {float: none;}
 	}
 } 
+
+}

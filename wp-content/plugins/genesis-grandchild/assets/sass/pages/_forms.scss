@@ -4,7 +4,7 @@
 
 .parallax-landing,
 .contact-form-7 {
-	.content { article.entry { padding: 63px 0 0; } }
+	.content { article.entry { padding: 63px 0; } }
 }
 
 .contact-form-7 {
@@ -12,9 +12,7 @@
 
 	.content {
 		width: 84%;
-
-		// Form Styling
-		article.entry { padding: 63px 0 0; }
+		max-width: 2000px;
 
 		.entry-content {
 			margin: 0 auto;
@@ -75,15 +73,13 @@
 				text-transform: capitalize;
 			}
 
-			h2,h3,h4,h5,h6 {
+			h2,h3,h4,h5,h6 {	text-align: left;	}
+			h2,h3 { 
+				font-size: 32px;
 				margin: 5px 0 15px;
-				text-align: left;
 			}
-
-
-			tbody td {
-				text-align: left;
-			}
+			h4,h5,h6 {	margin: 5px 0;	}
+			tbody td { text-align: left; }
 
 			p { 
 				strong { 
@@ -119,6 +115,7 @@
 	.form-title { text-align: center; }
 
 	.volunteer-form {
+		padding: 0 0 63px;
 		.sf_field { 
 			width: 30%; 
 			display: inline-block;
@@ -164,7 +161,7 @@
 			}
 			.sf_type_textarea { 
 				width: 100%;
-				min-height: 102px;
+				min-height: 162px;
 				margin-left: 0;
 			}
 		}
@@ -185,7 +182,7 @@
 		}
 		.sf_required_fields_msg {
 			position: absolute;
-			bottom: 97px;
+			bottom: 25px;
 			color: #f00;
 			font-size: 13px;
 		}
@@ -372,7 +369,6 @@
 .inside {
 	.salesforce_w2l_lead {
 		width: 74%;
-		padding: 40px 0 66px;
 		margin: 0 auto;
 	}
 }

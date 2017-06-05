@@ -18,23 +18,19 @@ $('.stripe-paypal-form').hide();
 
 $('.donate-btn').click(function(){
   $(this).parent().hide();
-  $('.donation-box').remove();
+  $(this).siblings('.donation-box').remove();
   var parent = $(this).parent('.salesforce-form');
+  $(".direct-stripe input").hide();
   parent.parent('.donate-form').siblings('.stripe-paypal-form').show();
 });
 
 var donationVal = $('#00N7F000001pAWj').val();
 $("#donationvalue").attr('value',donationVal);
-console.log($("#donationvalue").val());
 $('#00N7F000001pAWj').keyup(function(){
   var donateVal = $(this).val();
   $("#donationvalue").val(donateVal);
 });
 
-
-$(".ui-state-default").click(function(){
-  $("#donationvalue").hide();
-});
 
 $( '.dntplgn_monthly_other_sum' ).hide();
 $( '.dntplgn_donate_monthly input[ name="a3" ]' ).click( function() {

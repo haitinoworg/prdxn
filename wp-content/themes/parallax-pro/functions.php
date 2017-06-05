@@ -47,7 +47,7 @@ add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 
 //* Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_footer', 'genesis_do_subnav', 7 );
+// add_action( 'genesis_footer', 'genesis_do_subnav', 7 );
 
 //* Reduce the secondary navigation menu to one level depth
 add_filter( 'wp_nav_menu_args', 'parallax_secondary_menu_args' );
@@ -166,3 +166,4 @@ remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 )
 
 //* Remove the entry meta in the entry footer
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
+

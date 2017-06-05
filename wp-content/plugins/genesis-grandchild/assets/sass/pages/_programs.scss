@@ -76,6 +76,13 @@
 					width: 50%;
 
 					@include tab() { width: 100%; }
+
+					.post-object-content {
+						h2,h3,h4,h5,h6, p { 
+							font-size: 16px;
+							line-height: 24px;
+						}
+					}
 				}
 
 				&>a {
@@ -129,8 +136,11 @@
 
 					h3 { 
 						margin: 0 0 20px; 
-						line-height: 24px;
+						line-height: 22px;
 						font-size: 32px;
+						@include tab() {
+							line-height: 36px;
+						}
 					}
 				}
 			}
@@ -402,7 +412,8 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	margin-bottom: 60px;
 	padding: 54px 0px;
 	position: relative;
-	background: url("../../uploads/2017/04/child-in-kampala-uganda.jpg") no-repeat;
+	background: url("../../uploads/2017/04/child-in-kampala-uganda.jpg") no-repeat 100%;
+	background-size: auto 100%;
 	background-position: center center;
 
 	h2,

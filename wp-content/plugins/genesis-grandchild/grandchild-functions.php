@@ -135,14 +135,14 @@ add_theme_support( 'genesis-menus', array( 'secondary' => __( 'Secondary Navigat
 
 add_filter( 'excerpt_length', 'sp_excerpt_length' );
 function sp_excerpt_length( $length ) {
-	return 15; // pull first 50 words
+	return 15; // pull first 15 words
 }
 
 // Add Read More Link to Excerpts
 add_filter('excerpt_more', 'get_read_more_link');
 add_filter( 'the_content_more_link', 'get_read_more_link' );
-function get_read_more_link() {
-	return '<div><a class="common-links read-more more-content"  href="' . get_permalink() . '">Read&nbsp;More</a></div>';
+function get_read_more_link( $arguments ) {
+	return '<div><a class="common-links read-more more-content"  href="' . get_permalink($arguments) . '">Read&nbsp;More</a></div>';
 }
 
 /** Add support for post format images */
@@ -184,18 +184,12 @@ function ajax_load_more() {
 	$paged = $_POST["page"] + 1;
 	$category = $_POST["category"];
 	
-	// $query = new WP_Query( array(
-	// 	'post_type' => $category,
-	// 	'paged' => $paged,
-	// 	'posts_per_page' => 8
-	// 	));
-
-	$args =  array(
+	$query = new WP_Query( array(
 		'post_type' => $category,
 		'paged' => $paged,
 		'posts_per_page' => 8
-		);
-	$query = get_posts($args);
+		));
+
 	if( $query->have_posts() ): 
 		while( $query->have_posts() ): $query->the_post();
 	?>
@@ -281,14 +275,10 @@ function custom_dn_shortcode( ) {
 	?>
 	<section class="salesforce-form" >
 
-		<!-- <input type=hidden name="retURL" value="http://www.google.com"> -->
-
-
-
 		<div id="tabs" class="stripe-paypal dntplgn_form_wrapper">
 			<ul>
-				<li><a href="#tabs-1">Donate Monthly</a></li>
-				<li><a href="#tabs-2">Donate Once Only</a></li>
+				<li><a href="#tabs-1">Donate Once</a></li>
+				<li><a href="#tabs-2">Donate Monthly</a></li>
 			</ul>
 			<div id="tabs-1">
 				<form action="#" class="donate-form" value="submit" method="POST">
@@ -296,9 +286,7 @@ function custom_dn_shortcode( ) {
 					<input type=hidden name="oid" value="00D7F0000002Vh5">
 					<div class="salesforce-form">
 						<div class="donation-box">
-							<span>$</span>
 							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-							<span>USD</span>
 						</div>
 						<button type="button" class="donate-btn">Donate</button>
 					</div>
@@ -306,7 +294,6 @@ function custom_dn_shortcode( ) {
 				<div class="stripe-paypal-form">
 					<?php 
 					echo do_shortcode('[direct-stripe type="donation" amount="" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
-				// [direct-stripe type="donation" amount="60" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" currency="USD" display_amount="false"]
 					echo do_shortcode('	[wp_paypal button="donate" amount="1.00" name="My product"]');
 					?>
 				</div>
@@ -318,9 +305,7 @@ function custom_dn_shortcode( ) {
 					<input type=hidden name="oid" value="00D7F0000002Vh5">
 					<div class="salesforce-form">
 						<div class="donation-box">
-							<span>$</span>
 							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-							<span>USD</span>
 						</div>
 						<button type="button" class="donate-btn">Donate</button>
 					</div>
@@ -346,31 +331,7 @@ function custom_dn_shortcode( ) {
 * Removing Comments page
 */
 
-function remove_menus(){
-
-  // remove_menu_page( 'index.php' );                  //Dashboard
-  // remove_menu_page( 'jetpack' );                    //Jetpack* 
-  // remove_menu_page( 'edit.php' );                   //Posts
-  // remove_menu_page( 'upload.php' );                 //Media
-  // remove_menu_page( 'edit.php?post_type=page' );    //Pages
-  remove_menu_page( 'edit-comments.php' );          //Comments
-  // remove_menu_page( 'themes.php' );                 //Appearance
-  // remove_menu_page( 'plugins.php' );                //Plugins
-  // remove_menu_page( 'users.php' );                  //Users
-  // remove_menu_page( 'tools.php' );                  //Tools
-  // remove_menu_page( 'options-general.php' );        //Settings
-  
-}
 add_action( 'admin_menu', 'remove_menus' );
-
-
-/*
-* Removing Stripe User
-*/
-add_action('init','remove_stripe_roles');
-
-function remove_stripe_roles() {
-	if( get_role('stripe-user') ){
-		remove_role( 'stripe-user' );
-	}
+function remove_menus(){
+	remove_menu_page( 'edit-comments.php' );    
 }

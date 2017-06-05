@@ -5,7 +5,10 @@
 .parallax-landing {
 	font-family: $font;
 	.entry { @include boxmodel(1,"",5,0,7,0);	}
-	.site-inner {  margin: 0; }
+	.site-inner {  
+		max-width: 2000px;
+		margin: 0 auto; 
+	}
 	.content {
 		@include boxmodel(3,93%,5,0,7,0 auto);
 		float: none;

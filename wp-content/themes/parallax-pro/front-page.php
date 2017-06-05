@@ -12,8 +12,6 @@ add_action( 'genesis_meta', 'parallax_home_genesis_meta' );
  *
  */
 
-// echo do_shortcode('[smartslider3 slider=3]');
-
 function parallax_home_genesis_meta() {
 
 	if ( is_active_sidebar( 'home-section-1' ) || is_active_sidebar( 'home-section-2' ) || is_active_sidebar( 'home-section-3' ) || is_active_sidebar( 'home-section-4' ) || is_active_sidebar( 'home-section-5' ) ) {

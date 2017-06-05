@@ -17,18 +17,18 @@ $args = array(
 	'post_type' => 'page'
 	);
 
-$videos = get_posts( $args );
+$subpost = get_posts( $args );
 
-foreach( $videos as $args ) : setup_postdata( $args );
+foreach( $subpost as $posts ) : setup_postdata( $posts );
 
 ?>
 <div class="post-images content-default" >
 	<?php 
 	
 	
-	$thumbnail_image = get_the_post_thumbnail_url($args);
+	$thumbnail_image = get_the_post_thumbnail_url($posts);
 	?>
-	<a href="<?php the_permalink($args); ?>" title="<?php echo get_the_title($args); ?>">
+	<a href="<?php the_permalink($posts); ?>" title="<?php echo get_the_title($posts); ?>">
 		<?php
 		if ( isset($thumbnail_image) ) {  
 			?>
@@ -42,8 +42,15 @@ foreach( $videos as $args ) : setup_postdata( $args );
 		?>
 	</a>
 	<div class="entry-content">
-		<h3><?php echo get_the_title($args); ?></h3>
-		<?php the_excerpt($args); ?>
+		<h3><?php echo get_the_title($posts); ?></h3>
+		<div class="post-object-content">
+			<?php 
+			$content = get_the_content($posts);
+			echo '<p>';
+			echo mb_strimwidth($content, 0, 100, "...") . '</p>';
+			?>
+			<div><a class="common-links read-more more-content"  href="<?php the_permalink($posts); ?>">Read More</a></div>
+		</div>
 	</div>
 </div>
 

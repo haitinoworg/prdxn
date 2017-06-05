@@ -13,11 +13,10 @@
  */
 
 /**
- * Calls the init.php file, but only if the child theme hasn't called it first.
+ * Calls the init.php file, but only if the child theme has not called it first.
  *
  * This method allows the child theme to load
  * the framework so it can use the framework
  * components immediately.
  */
 require_once( dirname( __FILE__ ) . '/lib/init.php' );
-

@@ -2,10 +2,32 @@
 /*
 Common Classes
 ---------------------------------------------------------------------------------------------------- */
+@include minWidth(1200px) {
+	.site-container {
+		.site-inner,
+		.wrap {
+			max-width: 2000px;
+		}
+	}
+}
 
 
 /* Search Form
 --------------------------------------------- */
+
+.search-form {
+	input[type="search"] {
+		&::-webkit-input-placeholder
+		{	
+			color: #aaa;	
+			font: 16px $font;
+		}
+		&::-moz-placeholder
+		{	color: #aaa;	}
+		&:-ms-input-placeholder
+		{	color: #aaa;	}
+	}
+}
 
 .entry-header {
 	h1.entry-title,
@@ -91,38 +113,38 @@ main.content {
 	}
 }
 
-		// Home Even odd section title and text styling
-		.home-even,
-		.home-odd {
-			height: auto;
-			padding: 63px 0 64px;
-			
-			.wrap { 
-				width: 84%;
-				margin: 0 auto;
-				padding: 0; 
-			}
+// Home Even odd section title and text styling
+.home-even,
+.home-odd {
+	height: auto;
+	padding: 63px 0 64px;
 
-			.widget { margin-bottom: 0; }
+	.wrap { 
+		width: 84%;
+		margin: 0 auto;
+		padding: 0; 
+	}
 
-			@include tab() { 
-				box-sizing: initial;
-				height: auto;
-			}
+	.widget { margin-bottom: 0; }
 
-			.widget-title {	@include common-title(); }
+	@include tab() { 
+		box-sizing: initial;
+		height: auto;
+	}
 
-			.textwidget {
-				p { @include common-desc();	}
-				a.button {
-					@include cta();
-				}
-			}
+	.widget-title {	@include common-title(); }
+
+	.textwidget {
+		p { @include common-desc();	}
+		a.button {
+			@include cta();
 		}
+	}
+}
 
-		#text-5 {
-			.button { margin: 30px 2% 0; }
-		}
+#text-5 {
+	.button { margin: 30px 2% 0; }
+}
 
 
 // Slider Cursor Pointer
@@ -146,94 +168,37 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 			}
 		}
 	}
-	entry-header{
-		padding-top: 63px;
-	}
-	
+	.entry-header {	padding-top: 63px; }
 }
 
 
-/*
-* Donation Tabs
-*/
-.stripe-paypal {
-	padding: 0;
-	.ui-tabs-nav {
-		padding: 0;
-		.ui-state-default {
-			width: 50%;
-			margin: 0;
-			text-align: center;
-			a.ui-tabs-anchor { 
-				width: 100%;
-				display: block;
-				float: none;
-				font: 18px $font;	
-			}
-		}
-	}
-}
 
+.ui-tabs .ui-tabs-panel { padding: 30px 15px; }
+.direct-stripe { margin: 0; }
 
-/*
-* Paypal Button Styling
-*/
-
-button.paypal-button.large {
+.stripe-button-ds,
+.stripe-button-ds:focus {
 	width: 100%;
-	padding: 16px 19px;
-	border: none;
-	border-radius: 0;
-	position: static;
-	background: url(https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-60px.png) no-repeat center;
-	background-size: 45%;
-	background-color: #009cde;
-	text-indent: -9999px;
-
-}
-
-.ui-tabs .ui-tabs-panel {
-	padding: 60px 1.4em;
-}
-
-.direct-stripe {
-	margin: 0;
-}
-// Stripe Plugin Styling
-.stripe-paypal-form {
-	.direct-stripe {
-		width: 48%;
-		margin: 0;
-		margin-right: 4%;
-		float: left;
-
-		& + div {
-			width: 48%;
-			margin-top: 30px;
-			float: left;
-
-		}
-	}
-
-}
-
-.stripe-button-el {
-	width: 100%;
-	padding-top: 15px;
-	padding-bottom: 4px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 	margin-top: 30px;
 	background-color: #1e73be;
 	background-image: none;
-	&:hover {
-		color:#fff;
-		background-color: #1e73be;
-	}
-	span {
-		box-shadow: none; 
-		background-image: none;
-		background-color: #1e73be;
-		font: 16px $font;
-	}
+	color: #fff;
+}
+
+.stripe-button-ds:hover,
+.stripe-button-ds:focus:hover {
+	color: #fff;
+	background-color: #1e73be;
+}
+
+.stripe-button-ds span,
+.stripe-button-ds:focus span {
+	box-shadow: none;
+	background-image: none;
+	background-color: #1e73be;
+	font: 16px Roboto, sans-serif;
 }
 
 .donation-box {
@@ -242,40 +207,43 @@ button.paypal-button.large {
 	position: relative;
 	background-color: #fff;
 	overflow: hidden;
-	&:after {
-		content: "USD";
-		position: absolute;
-		top: 9px;
-		width: 40px;
-		right: 10px;
-		background-color: #fff;
-		color: #aaa;
-		font: 20px $font;
-	}
+}
 
-	&:before { 
-		content: "$";
-		width: 10px;
-		position: absolute;
-		left: 8px;
-		right: 10px;
-		top: 9px;
-		background-color: #fff;
-		color: #aaa;
-		font: 20px $font;
-	}
+.donation-box:after {
+	content: "USD";
+	position: absolute;
+	top: 9px;
+	width: 46px;
+	right: 10px;
+	background-color: #fff;
+	color: #aaa;
+	font: 20px Roboto, sans-serif;
+	text-align: center;
+}
 
+.donation-box:before {
+	content: "$";
+	width: 10px;
+	position: absolute;
+	left: 8px;
+	right: 10px;
+	top: 9px;
+	background-color: #fff;
+	color: #aaa;
+	font: 20px Roboto, sans-serif;
+}
 
-	input { 
-		width: 100%;
-		padding: 8px 0;
-		padding-left: 23px;
-		padding-right: 38px;
-		border-color: transparent;
-		outline: none;
-		color: #747373;
-		@include maxWidth(768px) { width: 72%; }
-	}
+.donation-box input {
+	min-width: 100%;
+	width: 100%;
+	padding: 8px 0;
+	padding-left: 23px;
+	padding-right: 38px;
+	border-color: transparent;
+	outline: none;
+	color: #747373;
+
+	@include tab() { width: 72%; }
 }
 
 /*
@@ -287,9 +255,73 @@ button.paypal-button.large {
 	margin-top: 30px;
 	background-color: #1e73be;
 	background-image: none;
-	font: 16px $font;
+	font: 16px Roboto, sans-serif;
+
 	&:hover {
-		color:#fff;
+		color: #fff;
 		background-color: #1e73be;
 	}
+
+}
+
+/*
+* Stripe Paypal Donate page styling
+*/
+
+.stripe-paypal {
+	width: 70%;
+	max-width: 700px;
+	padding: 0;
+	border: 0;
+	margin: 0 auto;
+
+	/* Tabs panel for stripe paypal */
+	.ui-tabs-panel { 
+		padding: 10% 15%;
+	}
+
+	/* Tabs for stripe paypal */
+	.ui-tabs-nav { 
+		padding: 0; 
+		border: 0;
+		.ui-state-default {
+			width: 50%;
+			border: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		.ui-state-default a.ui-tabs-anchor {
+			width: 100%;
+			display: block;
+			float: none;
+			font: 18px Roboto, sans-serif;
+		}
+	}
+
+	.stripe-button-ds { margin-top: 0; }
+
+}
+
+
+.stripe-paypal-form .direct-stripe {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 30px;
+	.donation-box { border: 0; }
+}
+
+/*
+* Paypal Button Styling
+*/
+.paypal-button button.paypal-button.large {
+	width: 100%;
+	padding: 12px 19px;
+	border: none;
+	border-radius: 0;
+	position: static;
+	background: url(https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-60px.png) no-repeat center;
+	background-size: 45%;
+	background-color: #009cde;
+	text-indent: -9999px;
 }
