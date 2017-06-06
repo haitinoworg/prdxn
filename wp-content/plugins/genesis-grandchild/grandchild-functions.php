@@ -30,8 +30,9 @@ add_theme_support( 'custom-background' );
 // Post Format Supports
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link','image','video','quote' ) );
 
+
 /**
-* Custom Post Types
+* Hook for creating custom post types
 */
 add_theme_support('post-thumbnails');
 add_post_type_support( 'programs', 'thumbnail' );
@@ -39,7 +40,7 @@ add_action( 'init', 'create_post_type' );
 function create_post_type() {
 
 /*
-* Custom Post Type Programs
+* Registering Custom Post Type Programs
 */
 
 register_post_type( 'programs',
@@ -58,7 +59,7 @@ register_post_type( 'programs',
 	);
 
 /*
-* Custom Post Type Sponsors
+* Registering Custom Post Type Sponsors
 */
 
 register_post_type( 'sponsors',
@@ -76,7 +77,7 @@ register_post_type( 'sponsors',
 	);
 
 /*
-* Custom Post Type Books
+* Registering Custom Post Type Books
 */
 
 register_post_type( 'books',
@@ -94,7 +95,7 @@ register_post_type( 'books',
 	);
 
 /*
-* Custom Post Type Movies
+* Registering Custom Post Type Movies
 */
 
 register_post_type( 'movies',
@@ -111,6 +112,11 @@ register_post_type( 'movies',
 		)
 	);
 
+
+/*
+* Registering Custom Post Type Staff
+*/
+
 register_post_type( 'staff',
 	array(
 		'labels' => array(
@@ -124,6 +130,26 @@ register_post_type( 'staff',
 		'supports'            => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes' ),'taxonomies' => array('category')
 		)
 	);
+
+
+/*
+*  Registering Custom Post Type For Donation Amount
+*/
+
+register_post_type( 'sfdonation',
+	array(
+		'labels' => array(
+			'name' => __( 'Donation Amount' ),
+			'singular_name' => __( 'Donation Amount' )
+			),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'public' => true,
+		'rewrite'=> array('slug'=>'sfdonation'),
+		'supports' => array( 'title', 'editor','post-formats', 'author', 'excerpt','genesis-seo' )
+		)
+	);
+
 
 }
 
@@ -335,3 +361,4 @@ add_action( 'admin_menu', 'remove_menus' );
 function remove_menus(){
 	remove_menu_page( 'edit-comments.php' );    
 }
+

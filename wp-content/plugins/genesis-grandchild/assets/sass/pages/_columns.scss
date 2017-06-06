@@ -61,6 +61,8 @@
 				position: absolute;
 				left: 0;
 				top: 0;
+
+				@include tab() { height: auto; }
 			}
 		}
 
@@ -103,7 +105,7 @@
 			padding: 31% 0;
 			background-color: #000;
 
-			@include md() { padding: 38% 0; }
+			@include md() { padding: 25% 0; }
 
 			img { opacity: 0.4; } 
 
@@ -117,6 +119,10 @@
 				color: #fff; 
 				font-size: 32px;	
 				@include property(animation,heading-fade-w 0.5s linear both);
+
+				@include tab() {
+					position: static;
+				}
 				
 			}
 			p {

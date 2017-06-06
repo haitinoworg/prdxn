@@ -17,9 +17,15 @@ Site Header
 			font: normal 32px/1 'dashicons';
 		}
 		.wrap {
-			@include boxmodel(2,border-box,3,93%,5,10px 0);
+			@include boxmodel(2,border-box,3,93%,1,"");
+			@include property(transform,translateY(18%));
 			max-width: 2000px;
 			@include md() { width: 93%; }
+
+			&.transform-wrap {
+				@include property(transform,translateY(10%));
+			}
+
 		}
 
 		// Style to override theme style
@@ -178,7 +184,7 @@ Site Header
 			color: #f16522 !important;
 			text-indent: 50px;
 			font-family: Roboto;
-			font-size: 16px;
+			font-size: 14px;
 		}	
 	}	
 }
