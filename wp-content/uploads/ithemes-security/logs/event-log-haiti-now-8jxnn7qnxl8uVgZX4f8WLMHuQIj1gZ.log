@@ -195,3 +195,7 @@ four_oh_four,3,404 Error,2017-06-05 14:02:08,2017-06-05 14:02:08,127.0.0.1,,,/ay
 four_oh_four,3,404 Error,2017-06-05 14:06:20,2017-06-05 14:06:20,127.0.0.1,,,/ayiti2/wp-content/themes/parallax-pro/style.css.map,,query_string=
 four_oh_four,3,404 Error,2017-06-05 14:07:19,2017-06-05 14:07:19,127.0.0.1,,,/ayiti2/wp-content/themes/parallax-pro/style.css.map,,query_string=
 four_oh_four,3,404 Error,2017-06-05 14:13:33,2017-06-05 14:13:33,127.0.0.1,,,/ayiti2/wp-content/themes/parallax-pro/style.css.map,,query_string=
+away_mode,5,Away Mode Triggered,2017-06-06 05:05:50,2017-06-06 05:05:50,127.0.0.1,,,,,0=A host was prevented from accessing the dashboard due to away-mode restrictions being in effect
+away_mode,5,Away Mode Triggered,2017-06-06 05:05:58,2017-06-06 05:05:58,127.0.0.1,,,,,0=A host was prevented from accessing the dashboard due to away-mode restrictions being in effect
+four_oh_four,3,404 Error,2017-06-06 05:06:05,2017-06-06 05:06:05,127.0.0.1,,,/ayiti2/404,,query_string=
+away_mode,5,Away Mode Triggered,2017-06-06 05:06:11,2017-06-06 05:06:11,127.0.0.1,,,,,0=A host was prevented from accessing the dashboard due to away-mode restrictions being in effect
