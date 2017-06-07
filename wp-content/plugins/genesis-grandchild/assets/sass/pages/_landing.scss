@@ -37,3 +37,48 @@
 	}
 
 }
+
+
+/*
+* Landing Template FAQ Page Styling
+*/
+
+body.faq {
+	h1.entry-title, 
+	h2.entry-title, 
+	h3.entry-title, 
+	h4.entry-title, 
+	h5.entry-title, 
+	h6.entry-title { margin-bottom: 48px; }
+
+	h2 { display: inline-block; }
+	main.content .entry-content {
+		h1,h2,h3,h4,h4,h6 { margin: 36px 0 10px; }
+	}
+
+	p a { 
+		color: $cta-color; 
+		cursor: pointer;
+	}
+}
+
+
+.page-id-42 {
+	.content{
+		.entry-content {
+			p{ margin-bottom: 15px; }
+			h2 {    
+				padding: 6px 12px;
+				margin-top: 36px;
+				margin-bottom: 0;
+				border-radius: 2px;
+				background: rgba(241, 101, 34, 0.82);
+				color: #fff;
+
+				&:first-child { margin: 0 0 5px; }
+			}
+		}
+	}
+	.entry-header {	padding-top: 63px; }
+}
+

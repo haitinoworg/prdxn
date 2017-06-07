@@ -13,19 +13,12 @@ Site Header
 		top: 0;
 		z-index: 999;
 
-		.responsive-menu-icon::before {
-			font: normal 32px/1 'dashicons';
-		}
+		.responsive-menu-icon::before { font: normal 32px/1 'dashicons'; }
+
 		.wrap {
-			@include boxmodel(2,border-box,3,93%,1,"");
-			@include property(transform,translateY(18%));
+			@include boxmodel(2, border-box, 3, 93%, 5, 10px 0);
 			max-width: 2000px;
 			@include md() { width: 93%; }
-
-			&.transform-wrap {
-				@include property(transform,translateY(10%));
-			}
-
 		}
 
 		// Style to override theme style
@@ -37,9 +30,6 @@ Site Header
 		/* Title Area
 		--------------------------------------------- */
 		.title-area { @include boxmodel(3,200px,4,auto,5,8px 0 0); }
-
-		/* Widget Area and Search Option
-		--------------------------------------------- */
 
 		// Widget Styling
 		.widget-area {
@@ -155,23 +145,6 @@ Site Header
 		}
 	}
 }
-
-@keyframes search-icon {
-	from { @include property(transform,rotate(0deg)); }
-	to { @include property(transform,rotate(90deg)); }
-}
-
-@keyframes search-close {
-	from {
-		opacity: 1;
-		@include property(transform,rotate(90deg));
-	}
-	to {
-		opacity: 0;
-		@include property(transform,rotate(0deg));
-	}
-}
-
 
 .header-image {	
 	.site-title {	

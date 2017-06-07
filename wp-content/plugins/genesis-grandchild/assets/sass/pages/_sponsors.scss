@@ -88,11 +88,18 @@
 
 }
 
-.content {
+main.content {
   .entry-content {
-    h1,h2,h3,h4,h4,h6,p { 
-      font-family: $font;
+    h1,h2,h3,h4,h4,h6 {
+      margin: 36px 0 10px; 
+      font-size: 32px;
+
+      &:first-child { margin-top: 0; }
     }
+
+    h1,h2,h3,h4,h4,h6,p { font-family: $font; }
+    p { font-size: 17px; }
+    p:last-child { margin-bottom: 0; }
   }
 }
 

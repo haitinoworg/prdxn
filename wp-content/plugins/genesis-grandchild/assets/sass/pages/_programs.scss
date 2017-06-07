@@ -16,7 +16,7 @@
 		}
 
 		article.entry {
-			@include boxmodel(3,85%,5,63px 0 0,7,0 auto);
+			@include boxmodel(3,85%,5,58px 0 0,7,0 auto);
 			text-align: center;
 
 			@include tab() { width: 93%;  }
@@ -145,7 +145,7 @@
 				}
 			}
 			.post-images {
-				@include boxmodel(1,"",3,48%,5,0);
+				@include boxmodel(1,"",3,47%,5,0);
 				@include props(dib,tac,vat);
 				
 				@include tab() { padding: 0; }
@@ -184,6 +184,7 @@
 					h3,h4,h5,h6 {
 						margin-top: 25px;
 						@include sub-title();
+						margin-bottom: 17px;
 					}
 					p {
 						margin: 0 0 15px;
@@ -230,6 +231,10 @@
 				}
 			}
 			// Image Overlay styling Ends Here
+		}
+
+		.movies {
+			&:last-child { margin-bottom: 47px; }
 		}
 	}
 		// Video and Image Posts styling Ends here
@@ -413,7 +418,6 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	padding: 54px 0px;
 	position: relative;
 	background: url("../../uploads/2017/04/child-in-kampala-uganda.jpg") no-repeat 100%;
-	background-size: auto 100%;
 	background-position: center center;
 
 	h2,
@@ -437,7 +441,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 .program-desc {
 	visibility: hidden;
-	.program-visible {
+	&.program-visible {
 		visibility: visible;
 	}
 }
@@ -448,11 +452,10 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 }
 
 .active .one-half:nth-child(2) {
-	padding-right: 0px;
 	padding-left: 35px;
-	transform: translateX(-300%);
-	animation: heading 3s forwards;
-	-webkit-animation: heading 3s forwards;
+	padding-right: 0px;
+	@include property(transform, translateX(-300%));
+	@include property(animation, heading 3s forwards);
 }
 
 @keyframes heading {
@@ -480,11 +483,9 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 }
 
 .active .one-half:nth-child(1) {
-	transform: translateX(-300%);
-	-webkit-animation: description 3s forwards;
-	-webkit-animation-delay: 1s;
-	animation: description 3s forwards;
-	animation-delay: 1s;
+	@include property(transform,translateX(-300%));
+	@include property(animation, description 3s forwards);
+	@include property(animation-delay, 1s);
 }
 
 @include tab() {
@@ -536,9 +537,9 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 main.content {
 	.two-columns {
-		margin-top: 44px;
+		margin-top: 4.4%;
 		&:nth-child(2n) {
-			margin-left: 3.1%;
+			margin-left: 4.1%;
 
 			@include tab() {
 				margin-left: 0;
@@ -561,6 +562,8 @@ main.content {
 	}
 
 	.movies {
+		margin-top: 0;
+		margin-bottom: 47px;
 
 		.image {
 			width: 100%;
