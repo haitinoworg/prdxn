@@ -252,3 +252,31 @@ img {
 }
 
 
+/*
+* Research Page Styling ==========================
+*/
+.site-inner {
+  .research-accordions {
+    padding: 63px 0;
+
+    .accordions-themes { 
+      margin-bottom: 0; 
+      .ui-accordion-header-active { 
+        border: 1px solid transparent; 
+        outline: none;
+      }
+      .ui-accordion-header {
+        border: 1px solid transparent; 
+        outline: none;  
+      }
+    }
+    .accordion-content { 
+      padding-top: 31px; 
+      padding-bottom: 29px;
+    }
+  }
+
+  .accordions-tabs-themes {
+    .tabs-content { padding-top: 32px; }
+  }  
+}

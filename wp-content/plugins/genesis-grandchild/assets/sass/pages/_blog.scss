@@ -1,9 +1,14 @@
+
+/*
+* Blog Page Styling =========================================================
+*/
+
 .page-template-page_blog {
 
 	.content-sidebar-wrap {
 		box-sizing: border-box;
 		width: 84%;
-		padding: 63px 0;
+		padding: 63px 0 66px;
 		margin: 0 auto;
 	}
 
@@ -14,12 +19,21 @@
 		@include tab() {
 			width: 100%;
 		}
+
+		h1.entry-title,
+		h2.entry-title,
+		h3.entry-title,
+		h4.entry-title,
+		h5.entry-title,
+		h6.entry-title {	margin-bottom: 48px;	}
 	}
 
 	aside.sidebar {
 		width: 40%;
 		padding-left: 50px;
-
+		padding-top: 118px;
+		font-family: $font;
+		
 		@include tab() {
 			width: 100%;
 			padding-left: 0;
@@ -28,14 +42,24 @@
 
 		.widget { padding: 0;	}
 
+		.widget-title { 
+			margin-bottom: 24px; 
+			font: 32px $font;
+			line-height: 28px;
+		}
+
 		.widget_search {
+			margin-bottom: 0;
+
+			.widget-wrap { margin-bottom: 48px; }
 			.search-form {
 				position: relative;
-
+				font-size: 15px;
 				input,
 				input:focus { 
-					outline: none;
 					border-color: #ddd;
+					outline: none;
+					font-size: 15px;
 				}
 
 				button {
@@ -51,6 +75,13 @@
 					@include property(transform,translateY(-50%));
 
 				}
+			}
+
+			&:after { 
+				content: "";
+				width: 100%;
+				border: 1px solid $cta-color;
+				margin-bottom: 45px;
 			}
 		}
 
@@ -71,7 +102,7 @@
 	}
 
 	article.entry {
-		padding: 0 0 50px;
+		padding: 0 0 48px;
 		margin: 0;
 
 		.entry-title { display: none;	}
@@ -99,6 +130,8 @@
 					width: 100%;
 				}
 			}
+
+			h2 { margin-top: 18px; }
 		}
 	}
 
@@ -112,12 +145,14 @@
 .archive-pagination.pagination {
 	margin: 0;
 	li a {
-		margin: 5px;
 		border: 1px solid $cta-color;
 		@include cta();
+		margin: 0px;
 	}
 
-	li.active a {
+	li.active a,
+	li.pagination-next a,
+	li.pagination-previous a {
 		background-color: #fff;
 		color: $cta-color;
 	}

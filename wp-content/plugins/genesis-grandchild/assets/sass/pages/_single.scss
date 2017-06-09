@@ -38,7 +38,7 @@
 	}
 
 	.one-half { 
-		padding: 30px 35px 0 0;
+		padding: 29px 35px 0 0;
 		font-family: $font;
 		text-align: left; 
 		@include tab() {
@@ -49,15 +49,18 @@
 		h1,h2,h3,h4,h5,h6,p { font-family: $font; }
 	}
 
-	h1, h2, h3, h4, h5, h6 { margin-bottom: 5px; }
+	h1, h2, h3, h4, h5, h6 { margin-bottom: 12px; }
 
 	.list-title { 
+		width: 84%;
+		margin: 0 auto;
 		font-family: $font;
+		font-size: 50px;
 		text-align: center; 
 	}
 
 	p { 
-		margin: 0 0 30px;
+		margin: 0 0 36px;
 		font: 17px $font;
 		line-height: 24px; 
 		text-align: left;

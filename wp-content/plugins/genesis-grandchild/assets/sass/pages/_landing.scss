@@ -52,8 +52,12 @@ body.faq {
 	h6.entry-title { margin-bottom: 48px; }
 
 	h2 { display: inline-block; }
-	main.content .entry-content {
-		h1,h2,h3,h4,h4,h6 { margin: 36px 0 10px; }
+	main.content {
+		.entry-content {
+			h1,h2,h3,h4,h4,h6 { margin: 36px 0 10px; }
+		}
+
+		article.entry { padding: 63px 0 58px; }
 	}
 
 	p a { 
@@ -66,7 +70,7 @@ body.faq {
 .page-id-42 {
 	.content{
 		.entry-content {
-			p{ margin-bottom: 15px; }
+			p{ margin-bottom: -2px; }
 			h2 {    
 				padding: 6px 12px;
 				margin-top: 36px;
@@ -82,3 +86,8 @@ body.faq {
 	.entry-header {	padding-top: 63px; }
 }
 
+.page-id-889 {
+	main.content {
+		article.entry { padding: 63px 0 60px; }
+	}
+}

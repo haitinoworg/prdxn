@@ -14,7 +14,7 @@ function grandchild_add_files() {
 
 	
 }
-add_action( 'wp_print_scripts', 'grandchild_add_files' );
+add_action( 'wp_enqueue_scripts', 'grandchild_add_files' );
 
 function custom_footer_script() {
 	// Static url given because, its post publishing error on new post.
@@ -235,15 +235,15 @@ function ajax_load_more() {
 			<div class="excerpt-content active">
 				<?php 
 				$content = get_the_content();
-				echo '<p>' . mb_strimwidth($content, 0, 135, "...") . '</p>'; ?>
-				<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+				echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
+				?>
 			</div>
 			<div class="detailed-content">
 				<?php the_content(); ?>
-				<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 			</div>
+			<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
+			<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
 		</div>
-
 	</div>
 	<?php
 	endwhile; 

@@ -106,6 +106,7 @@
           $loadmore.hide();
         }
 
+        $('.less-content').hide();
         $('.more-content').click(function() {
           $(this).hide();
           $(this).siblings('a').show();
@@ -237,10 +238,6 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
     $(".w2linput.submit").click(function(event) { 
      validate(param1, elemen_id, param2);
    });
-
-    $(".search-form button").click(function(event) {
-      validate(param1, elemen_id, param2);
-    });
   }
 
   // Adding Error Message
@@ -265,7 +262,13 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
   elements_validate(".search-form input[type='search']",'', name_reg);
 
+
+  $(".search-form button").click(function(event) {
+    validate('search', ".search-form input", '');
+  });
+
 });
+/* Document ready ends here */
 
 // gallery page1tab
 var $tabs_li = $("#tabs li");

@@ -62,7 +62,7 @@ add_action( 'genesis_after_loop', 'sponsors_loop' );
 function sponsors_loop(){
   ?>     
 </ul></div></div></div> 
-<div class="gallery">
+<div class="gallery research-accordions">
   <div id="tab-content" class="tabs">
     <?php
     global $post;

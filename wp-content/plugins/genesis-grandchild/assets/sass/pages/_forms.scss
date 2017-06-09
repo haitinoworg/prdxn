@@ -76,9 +76,9 @@
 			h2,h3,h4,h5,h6 {	text-align: left;	}
 			h2,h3 { 
 				font-size: 32px;
-				margin: 36px 0 0;
+				margin: 34px 0 0;
 			}
-			h4,h5,h6 {	margin: 36px 0 10px;	}
+			h4,h5,h6 {	margin: 34px 0 10px;	}
 			tbody td { text-align: left; }
 
 			p { 
@@ -93,6 +93,11 @@
 					display: block;
 					font: 700 20px $font;
 				}
+			}
+
+			&.volunteer-form,
+			& .inside {
+				p:last-child { margin-bottom: 11px; }
 			}
 
 		}
@@ -143,6 +148,8 @@
 				margin-left: 0;
 			}
 		}
+
+
 	}
 
 	.inside {

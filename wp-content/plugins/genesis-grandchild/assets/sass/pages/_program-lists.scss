@@ -23,6 +23,26 @@
 Single Post Page Styling ==================================
 */
 
+main.content { 
+	.programs .entry-content,
+	.entry-content {
+		h2.list-title,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 { font-size: 50px; }
+
+		.program-desc {
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 { font-size: 32px; }
+		}
+	}
+}
+
 .single {
 	
 	// Changing Default Style
@@ -41,7 +61,7 @@ Single Post Page Styling ==================================
 		margin-bottom: 63px;
 		background-color: #f2f2f2;
 		.entry-content { 
-			@include boxmodel(3,70%,5,63px 0,7,0 auto);
+			@include boxmodel(3,70%,5,57px 0 47px,7,0 auto);
 			clear: both;
 			@include tab() { width: 93%; }
 			@include mobile() { text-align: center; }
@@ -64,8 +84,9 @@ Single Post Page Styling ==================================
 		}
 		ul li { 
 			width: 33.33333%;
-			margin: 5px 0 10px;
+			margin: 2px 0 15px;
 			position: relative;
+			font: 17px $font;
 			list-style-position: inside;
 			list-style: none;
 			@include mobile() { width: 100%; }
@@ -76,7 +97,7 @@ Single Post Page Styling ==================================
 			width: 100%;
 			height: 100%;
 			position: absolute;
-			top: -60px;
+			top: -52px;
 			left: -28px;
 			color: #f16522;
 			font-size: 70px;

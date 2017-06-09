@@ -25,13 +25,11 @@
 			}
 
 			p { margin-bottom: 0; }
-
-			.entry-content {
-				clear: both;
-			}
+			.entry-content { clear: both;	}
 
 			.entry-content div {
-				padding: 30px;
+				&:first-child { padding: 30px; }
+				padding: 23px;
 				display: table;
 				clear: both;
 			}
@@ -46,15 +44,22 @@
 .parallax-landing {
 	article.entry {
 		.accordions-tabs-themes {
-			margin-top: 53px;
+			margin-top: 57px;
 			ul.ui-tabs-nav {
 				li.ui-tabs-active {
 					a.accordions-tab-head {
 						border: 1px solid #ddd;
 						border-bottom: none;
 						background-color: #fff;
+						/* Important used here to override plugin style */
 						color: $cta-color !important;
+						font-weight: 700;
+
 					}
+				}
+				a.accordions-tab-head { 
+					font-size: 15px;
+					font-weight: 700;  
 				}
 
 				li {
@@ -74,11 +79,9 @@
 				margin-bottom: 63px;
 				p { margin: 10px 0; }
 				a { 
-					font-size: 14px; 
+					font-size: 15px; 
 					font-family: $font;
-					&:hover {
-						color: $cta-color;
-					}
+					&:hover { color: $cta-color; }
 				}
 			}
 		}

@@ -11,3 +11,14 @@
 .enews-widget button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"] {
 	@include props(bgw,cb);
 }
+
+/* Focus */
+body {
+	a, input, button, select {
+		&:focus,
+		&:active { 
+			outline: none;	
+			border-color: transparent;
+		}
+	}
+}

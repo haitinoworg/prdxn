@@ -244,16 +244,21 @@
 .custom-links,
 .common-links {
 	@include cta();
-	border: 1px solid $cta-color;
 	padding: 10px 25px;
+	border: 1px solid $cta-color;
 	margin-top: 10px;
+	font-size: 15px;
 	line-height: 20px;
 	display: inline-block;
+
+	&.more-content { margin-top: 18px; }
+
 	&:hover {
 		background-color: #fff;
 		color: $cta-color;
 	}
 }
+
 
 
 div#n2-ss-6 .n2-grab { cursor: default; }
@@ -343,7 +348,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 		p { 
 			width: 74%;
-			margin: 0 0 34px; 
+			margin: 0 0 27px; 
 			@include tab() { width: 100%; }
 		}
 
@@ -414,12 +419,9 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 /*program acrivities description section*/
 .prgram-wrapper {
-	margin-bottom: 60px;
-	padding: 54px 0px;
+	margin-bottom: 66px;
+	padding: 58px 0px 27px;
 	position: relative;
-	background: url("../../uploads/2017/04/child-in-kampala-uganda.jpg") no-repeat 100%;
-	background-position: center center;
-
 	h2,
 	p {
 		position: relative;
@@ -537,7 +539,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 main.content {
 	.two-columns {
-		margin-top: 4.4%;
+		margin-top: 55px;
 		&:nth-child(2n) {
 			margin-left: 4.1%;
 
@@ -551,13 +553,15 @@ main.content {
 
 	.loadmore,
 	.loadmore-books {
-		@include cta();
-		border: 1px solid $cta-color;
+		font: 14px Roboto, sans-serif;
 		padding: 10px 25px;
+		border: 1px solid #f16522;
+		margin-bottom: 54px;
 		margin-top: 0;
-		margin-bottom: 67px;
 		display: inline-block;
-		outline: none;
+		background-color: #f16522;
+		color: #fff;
+		font-size: 15px;
 		line-height: 20px;
 	}
 
