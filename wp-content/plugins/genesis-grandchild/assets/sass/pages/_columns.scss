@@ -68,7 +68,7 @@
 			img {
 				width: 100%;
 				max-width: inherit;
-				height: 100%;
+				height: auto;
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -132,7 +132,7 @@
 				left: 0;
 				color: #fff; 
 				font-size: 32px;	
-				@include property(animation,heading-fade-w 0.5s linear both);
+				@include property(animation,heading-fade-w 0.5s ease-out both);
 
 				@include tab() {
 					position: static;
@@ -270,6 +270,14 @@
 			@include minWidth(769px) {
 				.entry-content {
 					border: 1px solid #7b7b7b;
+					&>div {
+						width: 100%;
+						padding: 0 15px;
+						position: absolute;
+						left: 0;
+						top: 50%;
+						@include property(transform, translateY(-50%));
+					}
 				}
 			}
 		}
@@ -345,15 +353,18 @@
 
 	@keyframes heading-fade {
 		0% {
-			top: 50%; 
-			@include property(transform, translateY(-50%));
+			top: 50%;
+			@include property(transform,translateY(-50%));	
+		}
+		40% { 
+			@include property(transform,translateY(-50%)); 
 		}
 		50%{
-			top: 42%; 
-			@include property(transform,translateY(0));
+			top: 40%; 
+			@include property(transform,translateY(-50%)); 
 		}
 		100% { 
-			top: 20%;
+			top: 21%;
 			@include property(transform,translateY(0));
 		}
 	}
@@ -368,7 +379,7 @@
 			@include property(transform,translateY(0));
 		}
 		100% { 
-			top: 20%;
+			top: 21%;
 			@include property(transform,translateY(0));
 		}
 	}
@@ -384,7 +395,7 @@
 			@include property(transform,translateY(0));
 		}
 		100% { 
-			top: 20%;
+			top: 21%;
 			@include property(transform,translateY(0));
 		}
 	}
@@ -399,7 +410,7 @@
 			@include property(transform,translateY(0));
 		}
 		100% { 
-			top: 20%;
+			top: 21%;
 			@include property(transform,translateY(0));
 		}
 	}
@@ -450,10 +461,10 @@
 
 	@keyframes heading-fade-w {
 		0% {
-			top: 20%; 
+			top: 21%; 
 		}
 		50%{
-			top: 50%; 
+
 			@include property(transform,translateY(-50%));
 		}
 		100% { 
@@ -464,7 +475,7 @@
 
 	@-webkit-keyframes heading-fade-w {
 		0% {
-			top: 20%; 
+			top: 21%; 
 		}
 		50%{
 			top: 50%; 
@@ -478,7 +489,7 @@
 
 	@-moz-keyframes heading-fade-w {
 		0% {
-			top: 20%; 
+			top: 21%; 
 		}
 		50%{
 			top: 50%; 
@@ -492,7 +503,7 @@
 
 	@-o-keyframes heading-fade-w {
 		0% {
-			top: 20%; 
+			top: 21%; 
 		}
 		50%{
 			top: 50%; 
@@ -762,4 +773,7 @@
 * Ajax Load More Books Styling
 */
 
-.books { text-align: center; }
+.books { 
+	padding: 30px 0 11px;
+	text-align: center; 
+}

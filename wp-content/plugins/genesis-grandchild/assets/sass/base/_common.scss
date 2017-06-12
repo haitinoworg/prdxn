@@ -30,24 +30,14 @@ Common Classes
 }
 
 .entry-header {
-	h1.entry-title,
-	h2.entry-title,
-	h3.entry-title,
-	h4.entry-title,
-	h5.entry-title,
-	h6.entry-title {
+	.entry-title {
 		@include common-title();
 		@include title-after();
 	}
 	&:after { display: none; }
 }
 
-h1.entry-title,
-h2.entry-title,
-h3.entry-title,
-h4.entry-title,
-h5.entry-title,
-h6.entry-title {
+.entry-title {
 	@include common-title();
 	@include title-after();
 }
@@ -93,7 +83,26 @@ main.content {
 		h5,
 		h6 { margin: 0;	}	
 
-		p {	margin-bottom: 15px; }
+		h1,
+		h2 { 
+			font-size: 50px; 
+			line-height: 46px;
+		}
+
+		h3 { 
+			font-size: 32px;	
+			line-height: 38px;
+		}
+
+		h4,h5 { font-size: 24px; }
+		h6 { font-size: 17px; }
+
+		p {	
+			font-size: 17px;
+			margin-bottom: 15px; 
+		}
+
+		a { font-size: 15px; }
 	}
 }
 
@@ -101,11 +110,9 @@ main.content {
 --------------------------------------------- */
 
 .sidebar {
-	font-size: 24px;
 	text-align: left;
 
 	.entry-title {
-		font-size: 36px;
 		a {
 			color: #000;
 			&:hover { color: $cta-color;	}

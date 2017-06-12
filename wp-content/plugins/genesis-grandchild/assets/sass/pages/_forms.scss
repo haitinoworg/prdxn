@@ -20,11 +20,6 @@
 
 			@include tab() { min-width: 275px; }
 
-			label {
-				color: #000;
-				font-size: 18px;
-			}
-
 			form {
 				input,
 				textarea,
@@ -154,6 +149,7 @@
 
 	.inside {
 		.salesforce_w2l_lead {
+			padding: 46px 0 3px;
 			text-align: center;
 			.sf_field { 
 				text-align: left;

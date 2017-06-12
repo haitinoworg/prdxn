@@ -20,12 +20,7 @@
 			width: 100%;
 		}
 
-		h1.entry-title,
-		h2.entry-title,
-		h3.entry-title,
-		h4.entry-title,
-		h5.entry-title,
-		h6.entry-title {	margin-bottom: 48px;	}
+		.entry-title {	margin-bottom: 48px;	}
 	}
 
 	aside.sidebar {
@@ -107,31 +102,14 @@
 
 		.entry-title { display: none;	}
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			font: 32px $font;
-			text-align: left;
-			&:after {
-				display: none;
-			}
-		}
-
-
-
 		.entry-content {
+			h3 { margin: 36px 0 10px; }
+
 			a {
 				display: block;
 				width: 100%;
-				img { 
-					width: 100%;
-				}
+				img { width: 100%;	}
 			}
-
-			h2 { margin-top: 18px; }
 		}
 	}
 

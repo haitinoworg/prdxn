@@ -2,40 +2,29 @@
 /* Landing Page Template
 --------------------------------------------- */
 
+
 .parallax-landing {
 	font-family: $font;
-	.entry { @include boxmodel(1,"",5,0,7,0);	}
+	.entry { @include boxmodel(1,"",5,63px 0 58px,7,0);	}
 	.site-inner {  
 		max-width: 2000px;
 		margin: 0 auto; 
 	}
 	.content {
-		@include boxmodel(3,93%,5,0,7,0 auto);
+		@include boxmodel(3,84%,5,0,7,0 auto);
 		float: none;
+
+		h3,h4,h5,h6 { margin: 0 0 13px;	}
 		.entry-content {
 			h1, h2 { @include common-title();}
-
 			h2,h3,h4,h5,h6 { text-align: left; }
 		}
-
-		h2,h3,h4,h5,h6 { margin-bottom: 8px; }
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		a,
-		span { font-family: $font; }
 
 		p {
 			@include common-desc();
 		}
 
 	}
-
 }
 
 
@@ -44,17 +33,13 @@
 */
 
 body.faq {
-	h1.entry-title, 
-	h2.entry-title, 
-	h3.entry-title, 
-	h4.entry-title, 
-	h5.entry-title, 
-	h6.entry-title { margin-bottom: 48px; }
+
+	.entry-title { margin-bottom: 48px; }
 
 	h2 { display: inline-block; }
 	main.content {
 		.entry-content {
-			h1,h2,h3,h4,h4,h6 { margin: 36px 0 10px; }
+			h1,h2,h3 { margin: 36px 0 10px; }
 		}
 
 		article.entry { padding: 63px 0 58px; }

@@ -25,9 +25,9 @@
 			'posts_per_page'=> -1
 			);
 
-		$videos = get_posts( $args );
+		$postdata = get_posts( $args );
 
-		foreach( $videos as $post ) : setup_postdata( $post );
+		foreach( $postdata as $post ) : setup_postdata( $post );
 
 		//* Condition for checking post thumbnail
 		?>
@@ -43,7 +43,8 @@
 					<h3><?php the_title(); ?></h3>
 					<?php 
 					$content = get_the_content();
-					echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
+					echo '<p>';
+					echo mb_strimwidth($content, 0, 100, "...") . '</p>';
 					?>
 				</div>
 			</a>

@@ -35,6 +35,14 @@ remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
 //* Remove breadcrumbs
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
+add_action( 'genesis_before_entry_content', 'rtug_before_entry_content', 5 );
+function rtug_before_entry_content() {
+	$subtitle = get_field('sub_title');
+	if($subtitle) {
+	echo '<h3>' . $subtitle . '</h3>';
+}
+}
+
 //* Remove site footer widgets
 // remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 

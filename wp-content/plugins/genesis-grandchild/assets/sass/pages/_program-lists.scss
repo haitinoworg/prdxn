@@ -26,20 +26,7 @@ Single Post Page Styling ==================================
 main.content { 
 	.programs .entry-content,
 	.entry-content {
-		h2.list-title,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 { font-size: 50px; }
-
-		.program-desc {
-			h2,
-			h3,
-			h4,
-			h5,
-			h6 { font-size: 32px; }
-		}
+		h2.list-title { font-size: 50px; }
 	}
 }
 
@@ -61,7 +48,7 @@ main.content {
 		margin-bottom: 63px;
 		background-color: #f2f2f2;
 		.entry-content { 
-			@include boxmodel(3,70%,5,57px 0 47px,7,0 auto);
+			@include boxmodel(3,70%,5,63px 0 48px,7,0 auto);
 			clear: both;
 			@include tab() { width: 93%; }
 			@include mobile() { text-align: center; }
@@ -71,7 +58,7 @@ main.content {
 
 		ul { 
 			width: 100%;
-			margin: 30px 0px 0px 55px;
+			margin: 18px 0px 0px 55px;
 			display: flex;
 			flex-wrap: wrap;
 			@include md() { width: 90%; }
