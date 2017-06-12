@@ -40,6 +40,10 @@
 		}
 	}
 
+	.columns-page.books {
+		.entry { margin: 0 auto 0; }
+	}
+
 
 
 	div.entry {
@@ -199,25 +203,26 @@
 	* Three Columns Styling (Books, Staff) ================================
 	*/
 	.three-columns {
-		@include boxmodel(3,31%,5,0,7,30px 0 0);
+		@include boxmodel(3,31%,5,0,7,0 0 54px);
 		@include props(dib,tac,vat);
 		@include props(ovh);
-		&:nth-child(3n + 2) { margin: 30px 3% 0; }
+		&:nth-child(3n + 2) { margin: 0 3% 54px; }
 
 		@include md() { 
 			width: 48%;
-			&:nth-child(3n + 2) { margin: 30px 0 0; }			
+			&:nth-child(3n + 2) { margin: 0; }			
 			&:nth-child(2n) { 
-				margin-left: 4%; 
-				margin-top: 30px;
+				margin-left: 2%; 
+				margin-bottom: 54px;
 			}
-			margin: 30px 0 0;
+			margin: 0 0 54px;
 		}
 
 		@include tab() {
 			width: 100%;
+			&:nth-child(3n + 2) { margin: 0 0 54px; }	
 			&:nth-child(2n) { margin-left: 0; }
-			margin: 30px 0 0;
+			margin: 0 0 54px;
 			display: block;
 		}
 
@@ -230,11 +235,11 @@
 			
 			h3 { 
 				color: #000;
-				font-size: 26px;	
+				font-size: 32px;	
 			}
 			p {
 				@include boxmodel(4,auto,5,0,7,0);
-				font-size: 14px;
+				font-size: 17px;
 			}
 
 			@include tab() {
@@ -252,7 +257,7 @@
 
 
 		&>a { 
-			padding: 31% 0;
+			padding: 31% 0 60%;
 			background-color: #fff;
 			img {
 				@include property(animation, image-flip 0.4s linear both);
@@ -774,6 +779,6 @@
 */
 
 .books { 
-	padding: 30px 0 11px;
+	padding: 60px 0 11px;
 	text-align: center; 
 }

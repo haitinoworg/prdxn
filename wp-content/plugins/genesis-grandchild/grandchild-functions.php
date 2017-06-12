@@ -282,8 +282,10 @@ function ajax_load_more_books() {
 			}
 			?>
 			<div class="entry-content">
-				<h3><?php the_title(); ?></h3>
-				<?php the_field('books_description'); ?>
+				<div>
+					<h3><?php the_title(); ?></h3>
+					<?php the_field('books_description'); ?>
+				</div>
 			</div>
 		</a>
 	</div>

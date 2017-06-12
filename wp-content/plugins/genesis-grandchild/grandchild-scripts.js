@@ -9,6 +9,14 @@
   var headerHeight = $('.site-header').outerHeight();
   $('.site-inner').css('margin-top', headerHeight + 'px');
 
+  /*
+  * Header Responsive Scroll
+  */
+
+  $('.responsive-menu-icon').click(function() { 
+    $('body').toggleClass('body-overflow');
+  });
+
 
   /*
   * Donate Tabs 

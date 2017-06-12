@@ -553,7 +553,6 @@ main.content {
 
 	.loadmore,
 	.loadmore-books {
-		font: 14px Roboto, sans-serif;
 		padding: 10px 25px;
 		border: 1px solid #f16522;
 		margin-bottom: 54px;
@@ -561,8 +560,9 @@ main.content {
 		display: inline-block;
 		background-color: #f16522;
 		color: #fff;
-		font-size: 15px;
+		font: 15px $font;
 		line-height: 20px;
+		text-transform: capitalize;
 	}
 
 	.movies {

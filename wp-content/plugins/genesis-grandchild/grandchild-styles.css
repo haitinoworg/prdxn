@@ -516,6 +516,21 @@ div#n2-ss-2 .n2-grab {
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
+body.body-overflow {
+  overflow: hidden;
+}
+
+.site-container ul#menu-main-menu:after {
+  content: " ";
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: #000;
+  width: 20px;
+  top: 0;
+  z-index: 10;
+}
 .site-container .site-header {
   box-shadow: 0px 2px 11px -3px #000;
   width: 100%;
@@ -2122,7 +2137,6 @@ main.content .two-columns:nth-child(2n) {
 }
 main.content .loadmore,
 main.content .loadmore-books {
-  font: 14px Roboto, sans-serif;
   padding: 10px 25px;
   border: 1px solid #f16522;
   margin-bottom: 54px;
@@ -2130,8 +2144,9 @@ main.content .loadmore-books {
   display: inline-block;
   background-color: #f16522;
   color: #fff;
-  font-size: 15px;
+  font: 15px Roboto, sans-serif;
   line-height: 20px;
+  text-transform: capitalize;
 }
 main.content .movies {
   margin-top: 0;
@@ -2222,6 +2237,9 @@ main.content .movies .image img {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff;
+}
+.page-template-page_columns .columns-page.books .entry {
+  margin: 0 auto 0;
 }
 .page-template-page_columns div.entry {
   display: flex;
@@ -2406,33 +2424,36 @@ main.content .movies .image img {
 .page-template-page_columns .three-columns {
   width: 31%;
   padding: 0;
-  margin: 30px 0 0;
+  margin: 0 0 54px;
   display: inline-block;
   text-align: center;
   vertical-align: top;
   overflow: hidden;
 }
 .page-template-page_columns .three-columns:nth-child(3n + 2) {
-  margin: 30px 3% 0;
+  margin: 0 3% 54px;
 }
 @media screen and (max-width: 1024px) {
   .page-template-page_columns .three-columns {
     width: 48%;
-    margin: 30px 0 0;
+    margin: 0 0 54px;
   }
   .page-template-page_columns .three-columns:nth-child(3n + 2) {
-    margin: 30px 0 0;
+    margin: 0;
   }
   .page-template-page_columns .three-columns:nth-child(2n) {
-    margin-left: 4%;
-    margin-top: 30px;
+    margin-left: 2%;
+    margin-bottom: 54px;
   }
 }
 @media screen and (max-width: 768px) {
   .page-template-page_columns .three-columns {
     width: 100%;
-    margin: 30px 0 0;
+    margin: 0 0 54px;
     display: block;
+  }
+  .page-template-page_columns .three-columns:nth-child(3n + 2) {
+    margin: 0 0 54px;
   }
   .page-template-page_columns .three-columns:nth-child(2n) {
     margin-left: 0;
@@ -2450,13 +2471,13 @@ main.content .movies .image img {
 }
 .page-template-page_columns .three-columns .entry-content h3 {
   color: #000;
-  font-size: 26px;
+  font-size: 32px;
 }
 .page-template-page_columns .three-columns .entry-content p {
   height: auto;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 17px;
 }
 @media screen and (max-width: 768px) {
   .page-template-page_columns .three-columns .entry-content {
@@ -2477,7 +2498,7 @@ main.content .movies .image img {
   }
 }
 .page-template-page_columns .three-columns > a {
-  padding: 31% 0;
+  padding: 31% 0 60%;
   background-color: #fff;
 }
 .page-template-page_columns .three-columns > a img {
@@ -3084,7 +3105,7 @@ main.content .movies .image img {
 * Ajax Load More Books Styling
 */
 .books {
-  padding: 30px 0 11px;
+  padding: 60px 0 11px;
   text-align: center;
 }
 
@@ -3172,7 +3193,7 @@ main.content .entry-content h2.list-title {
 }
 .single article.entry ul {
   width: 100%;
-  margin: 18px 0px 0px 55px;
+  margin: 39px 0px 0px 55px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -3261,6 +3282,10 @@ main.content .entry-content h2.list-title {
 }
 .parallax-landing .content h3, .parallax-landing .content h4, .parallax-landing .content h5, .parallax-landing .content h6 {
   margin: 0 0 13px;
+}
+.parallax-landing .content h3, .parallax-landing .content h4 {
+  font-size: 32px;
+  font-family: Roboto, sans-serif;
 }
 .parallax-landing .content .entry-content h1, .parallax-landing .content .entry-content h2 {
   margin-bottom: 42px;
