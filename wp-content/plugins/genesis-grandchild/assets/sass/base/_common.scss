@@ -126,6 +126,8 @@ main.content {
 	height: auto;
 	padding: 63px 0 64px;
 
+	@include tab() { padding: 63px 0 66px; }
+
 	.wrap { 
 		width: 84%;
 		margin: 0 auto;

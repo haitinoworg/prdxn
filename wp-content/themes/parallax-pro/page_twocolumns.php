@@ -18,13 +18,12 @@ if($post_slug == "our-programs" || $post_slug == "get-involved") {
 	// * Add the featured image after post title
 	add_action( 'genesis_before_entry', 'programs_featured_image' );
 	function programs_featured_image() {
-		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-		echo '<h3>Donate for this programs</h3>';
-		echo '<p>';
-		echo the_field("donate_text") . '</p>';
-		echo do_shortcode('[direct-stripe type="donation" button_id="stripe_donate_btn" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" capture="true" display_amount="false" currency="USD" success_url="prdxnstaging2.com/ayiti"]').'</div>';
+		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
+		echo the_field("donate_text");
 		echo '<h3>';
-		echo the_title() .'</h3></div>';
+		echo the_title() . '</h3></div>';
+		echo the_field("donate_shortcode");
+		echo '</div></div>';
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
@@ -112,17 +111,11 @@ else {
 					</div>
 					<div class="entry-content">
 						<h3><?php the_title(); ?></h3>
-						<div class="excerpt-content active">
-							<?php 
-							$content = get_the_content();
-							echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
-							?>
-						</div>
 						<div class="detailed-content">
 							<?php the_content(); ?>
 						</div>
-						<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
-						<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+						<span class="custom-links read-more more-content">Read More</span>
+						<span class="custom-links read-more less-content">Read Less</span>
 					</div>
 
 				</div>

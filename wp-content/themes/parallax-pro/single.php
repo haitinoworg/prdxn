@@ -27,9 +27,7 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
 // * Add the featured image after post title
 add_action( 'genesis_before_content', 'custom_about_heroimage' );
 function custom_about_heroimage() {
-	echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-	echo '<h3>';
-	echo the_title() .'</h3></div></div>';
+	echo '<div class="post-hero-image">';
 	if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
 	} else {

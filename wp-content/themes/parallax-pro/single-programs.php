@@ -13,22 +13,22 @@
 // remove_action( 'genesis_entry_content', 'genesis_do_post_content'); 
 
 // * Hero Image with donate content
+	
 	add_action( 'genesis_before_entry', 'programs_single_hero' );
 	function programs_single_hero() {
-		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content">';
-		echo '<h3>Donate for this programs</h3>'; 
-		echo '<p>';
-		echo the_field("donate_text") . '</p>';
-		echo do_shortcode('[direct-stripe type="donation" button_id="stripe_donate_btn" name="Pay for Ayiti Now" label="Donate" panellabel="Pay Amount" capture="true" display_amount="false" currency="USD" success_url="prdxnstaging2.com/ayiti"]').'</div>';
+		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
+		echo the_field("donate_text");
 		echo '<h3>';
-		echo the_title() .'</h3></div>';
+		echo the_title() . '</h3></div>';
+		echo the_field("donate_shortcode");
+		echo '</div></div>';
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png" /></div>';
 		}
-
-		
-
 	}
 
 	// * Post List Content

@@ -232,18 +232,13 @@ function ajax_load_more() {
 		</div>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
-			<div class="excerpt-content active">
-				<?php 
-				$content = get_the_content();
-				echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
-				?>
-			</div>
 			<div class="detailed-content">
 				<?php the_content(); ?>
 			</div>
-			<a href="#FIXME" class="custom-links read-more more-content">Read More</a>
-			<a href="#FIXME" class="custom-links read-more less-content">Read Less</a>
+			<span class="custom-links read-more more-content">Read More</span>
+			<span class="custom-links read-more less-content">Read Less</span>
 		</div>
+
 	</div>
 	<?php
 	endwhile; 
@@ -347,10 +342,14 @@ function custom_dn_shortcode( ) {
 				<div class="clear"></div>
 			</div>
 		</div>
+	</section>
+	<?php	
+}
 
-	</form>
-</section>
-<?php	
+
+add_shortcode('stripe_donate_cta','abc');
+function abc() {
+	echo '<script src="https://donations.blackthorn.io/loader" data-context="ecPh6YChXcP5TZeu_pNsVXyaAJxNuqnnc4-DvuugwEDjOHOmjz58rtPooanml6L_8o9B6PwSrQPoFhtqmfj2SQ">Donate</script>';
 }
 
 

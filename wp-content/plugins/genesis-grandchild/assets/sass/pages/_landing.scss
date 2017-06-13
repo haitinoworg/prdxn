@@ -22,6 +22,14 @@
 		.entry-content {
 			h1, h2 { @include common-title();}
 			h2,h3,h4,h5,h6 { text-align: left; }
+
+			& div {
+				width: auto;
+				margin: 0 auto;
+
+				/* important used here to override plugin style */
+				iframe { width: auto !important; }
+			}
 		}
 
 		p {

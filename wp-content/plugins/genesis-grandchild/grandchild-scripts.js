@@ -117,17 +117,18 @@
         $('.less-content').hide();
         $('.more-content').click(function() {
           $(this).hide();
-          $(this).siblings('a').show();
-          $(this).siblings('.excerpt-content').removeClass('active');
-          $(this).siblings('.detailed-content').addClass('active');
-
+          $(this).siblings('span').show();
+          $(this).siblings('.detailed-content').children('.excerpt-content').slideDown('fast', function(){
+            $(this).css('display','inline');
+          });
         });
 
         $('.less-content').click(function() {
           $(this).hide();
-          $(this).siblings('a').show();
-          $(this).siblings('.detailed-content').removeClass('active');
-          $(this).siblings('.excerpt-content').addClass('active');
+          $(this).siblings('span').show();
+          $(this).siblings('.detailed-content').children('.excerpt-content').slideUp('fast', function(){
+            $(this).css('display','none');
+          });
         });
 
       }
@@ -140,24 +141,31 @@
 
   $('.less-content').hide();
 
-  var posttxt = $('.detailed-content').text();
+  postcont = $('.detailed-content');
 
-  $('.excerpt-content').text(posttxt.substring(0, 90) + '...');
+  postcont.each(function(){ 
+    var posttxt = $(this).text();
+    $(this).html('<span>' + posttxt.slice(0,132) +  '</span>' + '<span class="excerpt-content">' + posttxt.slice(132,posttxt.length) + '</span>');
+  });
 
+  $('.excerpt-content').slideUp('fast', function(){
+    $(this).css('display','none');
+  });
 
   $('.more-content').click(function() {
     $(this).hide();
-    $(this).siblings('a').show();
-    $(this).siblings('.excerpt-content').removeClass('active');
-    $(this).siblings('.detailed-content').addClass('active');
-
+    $(this).siblings('span').show();
+    $(this).siblings('.detailed-content').children('.excerpt-content').slideDown(function(){
+      $(this).css('display','inline');
+    });
   });
 
   $('.less-content').click(function() {
     $(this).hide();
-    $(this).siblings('a').show();
-    $(this).siblings('.detailed-content').removeClass('active');
-    $(this).siblings('.excerpt-content').addClass('active');
+    $(this).siblings('span').show();
+    $(this).siblings('.detailed-content').children('.excerpt-content').slideUp('fast', function(){
+      $(this).css('display','none');
+    });
   });
 
 

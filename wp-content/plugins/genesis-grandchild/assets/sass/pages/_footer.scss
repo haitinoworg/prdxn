@@ -575,10 +575,7 @@ Footer Section-1
 @include tab() {
 	.footer-widgets {
 		padding: 0 0 20px;
-
-		.sub-menu {
-			display: none;
-		}
+		
 		section {
 			#menu-secondary-menus > li {
 				margin: 0 0 30px;
