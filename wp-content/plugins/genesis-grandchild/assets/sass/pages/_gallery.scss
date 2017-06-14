@@ -5,6 +5,15 @@
    padding: 55px 0 0 0;
  }
  .content { padding: 0; }
+
+ @include tab() {
+  .programs-hero-image {
+    padding: 85px 0 0;
+    .hero-content {
+      padding: 18px 0;
+    }
+  }
+}
 }
 
 .gallery {
@@ -140,7 +149,12 @@
       z-index: 100;
       background: #f16522;
       color: #fff;
-
+      @include tab() { 
+        position: relative;
+        left: 0;
+        display: flex;
+        overflow: auto;
+      }
       article { display: none; }
     }
 
@@ -150,6 +164,11 @@
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
+
+      @include tab() { 
+        background-color: #f16522; 
+        float: none;
+      }
     }
 
     .active,

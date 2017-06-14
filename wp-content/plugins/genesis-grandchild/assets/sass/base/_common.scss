@@ -165,12 +165,15 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 .stripe-button-ds,
 .stripe-button-ds:focus {
 	width: 100%;
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding: 12px 25px;
 	margin-top: 30px;
+	display: block;
 	background-color: #1e73be;
 	background-image: none;
 	color: #fff;
+	font-size: 20px;
+	text-align: center;
+
 }
 
 .stripe-button-ds:hover,

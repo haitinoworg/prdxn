@@ -3,6 +3,12 @@
 */
 
 .page-template-template_about.full-width-content {
+
+	.programs-hero-image {
+		height: 272px;
+		max-height: 500px;
+		.wrap { margin-top: 50px; }
+	}
 	.content {
 		width: 84%;
 		max-width: 2000px;
@@ -13,12 +19,9 @@
 			padding: 60px 0;
 			margin: 0;
 			
-			
-			
 			h3 { 
+				margin: 0 0 15px;  
 				font-size: 32px;
-
-				margin: 0 0 17px;  
 			}
 
 			p { margin-bottom: 0; }
@@ -26,7 +29,7 @@
 
 			.entry-content div {
 				&:first-child { padding: 30px; }
-				padding: 23px;
+				padding: 24px 0 23px;
 				display: table;
 				clear: both;
 			}
@@ -44,7 +47,15 @@
 		.accordions-tabs-themes {
 			margin-top: 59px;
 			ul.ui-tabs-nav {
+				@include tab() {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
 				li.ui-tabs-active {
+					@include mobile() {
+						width: 100%;
+					}
 					a.accordions-tab-head {
 						border: 1px solid #ddd;
 						border-bottom: none;
@@ -61,6 +72,15 @@
 				}
 
 				li {
+					@include tab() { 
+						float: none;
+						width: 50%; 
+						text-align: center;
+					}
+
+					@include mobile() {
+						width: 98%;
+					}
 					a {
 						padding: 12px 28px;
 						border: 1px solid transparent;
@@ -74,11 +94,16 @@
 
 			.tabs-content { 
 				min-height: 273px;
-				margin-bottom: 63px;
-				padding-left: 10px;
+				padding-left: 28px;
+				padding-bottom: 0;
+
+				ul { 
+					margin: 0; 
+					margin-left: 27px;
+				}
 
 				li { 
-					margin: 15px 0; 
+					margin: 15px 0 0; 
 					position: relative;
 					list-style-type: none;
 					&:after {
@@ -94,12 +119,12 @@
 
 				h2, h3, h4 { 
 					font-size: 32px;
-					margin: 36px 0 10px;
+					margin: 33px 0 9px;
 				}
 
 				h2, h3 { &:first-child { margin-top: 9px; } }
 
-				p { margin: 10px 0; }
+				p { margin: 10px 0 0; }
 
 				a { 
 					font-size: 15px; 

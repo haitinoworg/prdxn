@@ -46,9 +46,14 @@ function custom_blog_loop() {
 	}
 
 	?>
-	<div>
+	<div class="blog-post-main-title">
 		<h3><?php the_title(); ?></h3>
-		<?php the_content(); ?>
+		<div>
+			<?php 
+			$content = get_the_content();
+			echo mb_strimwidth($content, 0, 100, "...");
+			?>
+		</div>
 	</div>
 	<?php
 }

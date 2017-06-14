@@ -85,9 +85,6 @@ Common Mixins ============================================
 	font: 50px/46px $font;
 	text-transform: capitalize;
 	text-align: center;
-	@include md() { font-size: 50px; }
-
-	@include mobile() { font-size: 35px; }
 }
 
 @mixin title-after() {
@@ -104,8 +101,6 @@ Common Mixins ============================================
 @mixin common-desc() {
 	@include boxmodel(2,"border-box",7,0,1,"");
 	font: 17px/26px $font;
-	@include md() { font-size: 17px; }
-	@include mobile() { font-size: 18px; }
 }
 
 @mixin cta() {

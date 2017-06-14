@@ -5,11 +5,15 @@
 
 .page-template-page_blog {
 
+
+
 	.content-sidebar-wrap {
 		box-sizing: border-box;
 		width: 84%;
 		padding: 63px 0 66px;
 		margin: 0 auto;
+
+
 	}
 
 	main.content { 
@@ -109,6 +113,16 @@
 				display: block;
 				width: 100%;
 				img { width: 100%;	}
+			}
+
+			.blog-post-main-title {
+				div {
+					font: 17px $font;
+					h2, h3, h4, h5, p {
+						margin: 0;
+						font: 17px $font;
+					}
+				}
 			}
 		}
 	}

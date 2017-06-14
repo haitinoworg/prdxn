@@ -19,6 +19,7 @@ add_action( 'wp_enqueue_scripts', 'grandchild_add_files' );
 function custom_footer_script() {
 	// Static url given because, its post publishing error on new post.
 	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
+	wp_enqueue_script('blackthorn-script', 'https://donations.blackthorn.io/loader', array());
 }
 
 add_action('wp_footer','custom_footer_script');
@@ -279,7 +280,15 @@ function ajax_load_more_books() {
 			<div class="entry-content">
 				<div>
 					<h3><?php the_title(); ?></h3>
-					<?php the_field('books_description'); ?>
+					<p><?php 
+						$book_desc = get_field('books_description'); 
+						if($book_desc) {
+							echo $book_desc;
+						}
+						else { the_content(); }
+						
+						?>
+					</p>
 				</div>
 			</div>
 		</a>
@@ -349,7 +358,7 @@ function custom_dn_shortcode( ) {
 
 add_shortcode('stripe_donate_cta','abc');
 function abc() {
-	echo '<script src="https://donations.blackthorn.io/loader" data-context="ecPh6YChXcP5TZeu_pNsVXyaAJxNuqnnc4-DvuugwEDjOHOmjz58rtPooanml6L_8o9B6PwSrQPoFhtqmfj2SQ">Donate</script>';
+	echo '<script src="https://donations.blackthorn.io/loader" data-context="ecPh6YChXcP5TZeu_pNsVXyaAJxNuqnnc4-DvuugwEDjOHOmjz58rtPooanml6L_8o9B6PwSrQPoFhtqmfj2SQ" data-type="button"></script>';
 }
 
 

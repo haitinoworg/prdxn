@@ -56,6 +56,7 @@
 		div.entry { 
 			display: block; 
 			text-align: center;
+			@include tab() { width: 100%;  }
 		}
 
 	}
@@ -160,8 +161,10 @@
 			@include props(bgb);
 			h3 {
 				top: 50%;
-				@include property(transform, translateY(-50%));
-				@include property(animation,heading-fade 0.5s linear both);
+				@include minWidth(768px) {
+					@include property(transform, translateY(-50%));
+					@include property(animation,heading-fade 0.5s linear both);
+				}
 			}
 			p {   
 				@include minWidth(768px) {
@@ -574,6 +577,9 @@
 	width: 50%;
 	margin-bottom: 57px;
 	display: inline-block;
+
+	@include tab() { width: 100%; }
+	
 	.accordion-content {
 		p { margin: 15px 0 17px; }
 		p a {

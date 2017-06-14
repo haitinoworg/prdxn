@@ -1,25 +1,26 @@
 
 /* Program Page - Two Column Layout
 --------------------------------------------- */
-.page-template-page_twocolumns {
+.page-template-page_twocolumns,
+.page-template-page_get_involved {
 	font-family: $font;
 	p { font-size: 17px; }
 	.content {
 		padding: 0;
 		// position: absolute;
 		div.entry {
-			@include boxmodel(3,85%,5,0,7,0 auto);
+			@include boxmodel(3,84%,5,0,7,0 auto);
 			max-width: 2000px;
 			margin: 0 auto;
 			text-align: center;
-			@include tab() { width: 93%; }
+			@include tab() { width: 84%; }
 		}
 
 		article.entry {
-			@include boxmodel(3,85%,5,58px 0 0,7,0 auto);
+			@include boxmodel(3,84%,5,58px 0 0,7,0 auto);
 			text-align: center;
 
-			@include tab() { width: 93%;  }
+			@include tab() { width: 84%;  }
 			.entry-content {
 				padding: 0 0 59px;
 				p {
@@ -535,6 +536,9 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 #loadmore-data {
 	width: 72%;
+	@include tab() {
+		width: 84%;
+	}
 }
 
 main.content {

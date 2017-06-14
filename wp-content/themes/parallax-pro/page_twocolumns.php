@@ -37,22 +37,13 @@ if($post_slug == "our-programs" || $post_slug == "get-involved") {
 	function programs_loop() {
 		global $post;
 		$post_slug=$post->post_name;
-
-		$cat_id = get_field('select_post_category');
 		?>
 
 		<!-- Program Post Images -->
 		<section class="program-posts">
 			<div class="entry">
 				<?php
-				$post_style = get_field('select_post_styling');
-
-				if($post_style == "Content Default") {
-					get_template_part( 'template-parts/page/content', 'default' );
-				}	
-				if($post_style == "Products") {
-					get_template_part( 'template-parts/page/content', 'pages' );
-				}
+				get_template_part( 'template-parts/page/content', 'default' );
 				?>
 			</div>
 		</section>
