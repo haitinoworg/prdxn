@@ -79,6 +79,7 @@
 @include mobile() {
   .sponsor-list {
     width: 80%;
+    min-height: 75px;
     margin: 12px 10%;
   }
 
@@ -91,7 +92,7 @@
 main.content {
   .entry-content {
     h3 {
-      margin: 36px 0 10px; 
+      margin: 36px 0 11px; 
       font-size: 32px;
 
       &:first-child { margin-top: 0; }
@@ -111,7 +112,37 @@ main.content {
   to { @include property(transform,scale(1.4)); }
 }
 
+@-webkit-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@-moz-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@-o-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
 @keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-webkit-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-moz-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-o-keyframes sponsors-icons-back {
  from { @include property(transform,scale(1.4)); }
  to { @include property(transform,scale(1)); } 
 }

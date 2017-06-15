@@ -22,6 +22,9 @@
 			h3 { 
 				margin: 0 0 15px;  
 				font-size: 32px;
+				@include mobile() {
+					font-size: 30px;
+				}
 			}
 
 			p { margin-bottom: 0; }
@@ -29,7 +32,7 @@
 
 			.entry-content div {
 				&:first-child { padding: 30px; }
-				padding: 24px 0 23px;
+				padding: 24px 0;
 				display: table;
 				clear: both;
 			}
@@ -43,6 +46,18 @@
 */
 .parallax-landing,
 .page-template-page-research {
+
+	.programs-hero-image {
+		padding: 63px 0;
+		@include tab() {
+			padding: 63px 0;
+		}
+
+		@include mobile() {
+			padding: 85px 0 0;
+		}
+	}
+
 	article.entry {
 		.accordions-tabs-themes {
 			margin-top: 59px;
@@ -66,6 +81,7 @@
 
 					}
 				}
+				
 				a.accordions-tab-head { 
 					font-size: 15px;
 					font-weight: 700;  
@@ -83,8 +99,9 @@
 					}
 					a {
 						padding: 12px 28px;
-						border: 1px solid transparent;
-						
+						border: 1px solid #ddd;
+						border-bottom: 0;
+						border-left: 0;
 						background-color: $cta-color;
 						color: #fff;
 						i { display: none; }	
@@ -96,6 +113,11 @@
 				min-height: 273px;
 				padding-left: 28px;
 				padding-bottom: 0;
+
+				@include tab() {
+					padding-left: 0;
+					padding-right: 0;
+				}
 
 				ul { 
 					margin: 0; 
@@ -120,6 +142,10 @@
 				h2, h3, h4 { 
 					font-size: 32px;
 					margin: 33px 0 9px;
+
+					@include mobile() {
+						font-size: 30px;
+					}
 				}
 
 				h2, h3 { &:first-child { margin-top: 9px; } }

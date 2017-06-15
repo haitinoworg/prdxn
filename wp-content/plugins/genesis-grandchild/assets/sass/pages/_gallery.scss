@@ -149,10 +149,11 @@
       z-index: 100;
       background: #f16522;
       color: #fff;
-      @include tab() { 
+      @include mobile() { 
+        display: flex;
         position: relative;
         left: 0;
-        display: flex;
+        background-color: #c3c3c3;
         overflow: auto;
       }
       article { display: none; }
@@ -165,9 +166,12 @@
       font-weight: 700;
       cursor: pointer;
 
-      @include tab() { 
-        background-color: #f16522; 
+      @include mobile() { 
+        width: 100%;
+        border-left: 1px solid #c3c3c3;
         float: none;
+        background-color: #f16522; 
+        white-space: nowrap;
       }
     }
 

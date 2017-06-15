@@ -542,6 +542,12 @@ Footer Section-1
 	}
 }
 
+@include mobile() {
+	.footer-widgets  .social-icons  li{
+		margin: 10px 12px 0 !important;
+	}	
+}
+
 #text-19 {
 	.title-area {
 		display: none;

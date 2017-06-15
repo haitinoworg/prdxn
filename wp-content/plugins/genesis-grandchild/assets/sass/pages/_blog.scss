@@ -45,6 +45,10 @@
 			margin-bottom: 24px; 
 			font: 32px $font;
 			line-height: 28px;
+
+			@include mobile() {
+				font-size: 30px;
+			}
 		}
 
 		.widget_search {
@@ -101,13 +105,13 @@
 	}
 
 	article.entry {
-		padding: 0 0 48px;
+		padding: 0 0 50px;
 		margin: 0;
 
 		.entry-title { display: none;	}
 
 		.entry-content {
-			h3 { margin: 36px 0 10px; }
+			h3 { margin: 18px 0 13px; }
 
 			a {
 				display: block;

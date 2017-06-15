@@ -85,6 +85,10 @@ Common Mixins ============================================
 	font: 50px/46px $font;
 	text-transform: capitalize;
 	text-align: center;
+
+	@include mobile() {
+		font: 40px;
+	}
 }
 
 @mixin title-after() {

@@ -142,6 +142,10 @@
 						@include tab() {
 							line-height: 36px;
 						}
+
+						@include mobile() {
+							font-size: 30px;
+						}
 					}
 				}
 			}
@@ -459,6 +463,10 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	padding-right: 0px;
 	@include property(transform, translateX(-300%));
 	@include property(animation, heading 3s forwards);
+
+	@include tab() {
+		@include property(animation-duration,1.5s);
+	}
 }
 
 @keyframes heading {
@@ -489,6 +497,11 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	@include property(transform,translateX(-300%));
 	@include property(animation, description 3s forwards);
 	@include property(animation-delay, 1s);
+
+	@include tab() {
+		@include property(animation-delay, 0.2s);
+		@include property(animation-duration,1.5s);
+	}
 }
 
 @include tab() {

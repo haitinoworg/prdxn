@@ -18,11 +18,19 @@
 		h3,h4 { 
 			font-size: 32px; 
 			font-family: $font;
+			@include mobile() {
+				font-size: 30px;
+			}
 		}
 
 		article.entry { padding: 63px 0 58px; }
 		.entry-content {
-			h1, h2 { @include common-title();}
+			h1, h2 { 
+				@include common-title();
+				@include mobile() {
+					font-size: 40px;
+				}
+			}
 			h2,h3,h4,h5,h6 { text-align: left; }
 
 			&>div {

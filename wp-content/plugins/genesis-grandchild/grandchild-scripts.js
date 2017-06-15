@@ -12,7 +12,6 @@
   /*
   * Header Responsive Scroll
   */
-
   $('.responsive-menu-icon').click(function() { 
     $('body').toggleClass('body-overflow');
   });
@@ -283,6 +282,28 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
     validate('search', ".search-form input", '');
   });
 
+
+// $('.sf_type_multi-select').append('<span>Select</span>');
+
+// $('.sf_type_multi-select').click(function(){
+//   $(this).children('span').toggleClass('disablespan');
+// });
+
+
+/*
+* Tabs Functionality for Accordion Plugin
+*/
+
+$('.tabs-nav').click(function(){
+ var myEm = $(this).attr('aria-labelledby');
+ var tabcontent = $('div.tabs-content').attr('aria-labelledby');
+ $(this).addClass('ui-tabs-active');
+ $(this).siblings('.tabs-nav').removeClass('ui-tabs-active');
+ $('div.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','block');
+ $('div.tabs-content').not('.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','none');
+});
+
+
 });
 /* Document ready ends here */
 
@@ -309,8 +330,15 @@ $research_tabs.on('click', function() {
 });
 
 
+
 var $program_desc = $('.program-desc');
-var section_height = $program_desc.offset().top + 250;
+var section_height = $program_desc.offset().top;
+if($(window).width() > 480) {
+ section_height = section_height + 250;
+} else {
+  section_height = section_height + 100;
+}
+
 $(this).scroll(function() {
   var window_height = $(window).scrollTop() + $(window).height();
   if(window_height > section_height){
@@ -318,7 +346,6 @@ $(this).scroll(function() {
     $program_desc.addClass("active");
   }
 });
-
 
 })(jQuery);
 

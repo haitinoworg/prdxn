@@ -3,6 +3,36 @@
 --------------------------------------------- */
 .contact-form-7 {
 	.content { article.entry { padding: 63px 0; } }
+
+	.sf_field.sf_type_multi-select {
+		position: relative;
+		select { 
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		& span {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 12px 0 13px 10px;
+			border: 1px solid #ddd;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
+			background-size: 10px;
+			background-color: #fff;
+			color: #aaa;
+			font: 14px $font;
+			text-align: left;
+			&.disablespan {
+				display: none;
+			}
+		}
+	}
 }
 
 .contact-form-7 {
@@ -70,8 +100,12 @@
 			h2,h3 { 
 				font-size: 32px;
 				margin: 34px 0 0;
+
+				@include mobile() {
+					font-size: 30px;
+				}
 			}
-			h4,h5,h6 {	margin: 34px 0 10px;	}
+			h4,h5,h6 {	margin: 36px 0 12px;	}
 			tbody td { text-align: left; }
 
 			p { 
@@ -218,6 +252,9 @@
 		margin-bottom: 14px; 
 		color: #fff;
 		font: 32px $font;
+		@include mobile() {
+			font: 30px;
+		}
 	}
 
 	form {
