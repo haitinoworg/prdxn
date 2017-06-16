@@ -1,9 +1,30 @@
-(function($) {
+  (function($) {
 
   /*
   * Document Ready Starts Here
   */
+  $.holdReady( true );
+  $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js", function() {
+    $.holdReady( false );
+  });
+
+
   $(document).ready(function() {
+
+    /* Multiselect click */
+    $( "body" ).delegate( ".dropdown-toggle", "click", function() {
+      $('.check-mark').addClass('fa fa-check fa-1x');
+      $('.dropdown-menu.open').css('min-height', '100%');
+      $('.dropdown-menu.open').css('overflow', 'visible');
+      $('.dropdown-menu.open').slideToggle();
+      $('ul.dropdown-menu li:first-child').css('display','none');
+    });
+
+    /*Pagination on mobile*/
+    if($(window).width() < 481) {
+      $('.pagination-next').children('a').text('»');
+      $('.pagination-previous').children('a').text('«');
+    } 
 
   // Header Height
   var headerHeight = $('.site-header').outerHeight();
@@ -219,13 +240,12 @@ var validate = function(field, id, regx) {
   if(input_value != "") {
     if(!(reg.test(input_value))) {
       $(id).siblings('p').text('Please enter a valid ' + field);
-      event.preventDefault();
     } else {
       $(id).siblings('p').text('');
     }
   } else {
-    $(id).siblings('p').text('Please enter your ' + field);
     event.preventDefault();
+    $(id).siblings('p').text('Please enter your ' + field);
   }
 
 }
@@ -282,14 +302,6 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
     validate('search', ".search-form input", '');
   });
 
-
-// $('.sf_type_multi-select').append('<span>Select</span>');
-
-// $('.sf_type_multi-select').click(function(){
-//   $(this).children('span').toggleClass('disablespan');
-// });
-
-
 /*
 * Tabs Functionality for Accordion Plugin
 */
@@ -303,9 +315,42 @@ $('.tabs-nav').click(function(){
  $('div.tabs-content').not('.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','none');
 });
 
+  // Scroll (in pixels) after which the "To Top" link is shown
+  var offset = 300,
+    //Scroll (in pixels) after which the "back to top" link opacity is reduced
+    offset_opacity = 1200,
+    //Duration of the top scrolling animation (in ms)
+    scroll_top_duration = 700,
+    //Get the "To Top" link
+    $back_to_top = $('.to-top');
+
+  //Visible or not "To Top" link
+  $(window).scroll(function(){
+    ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('top-is-visible') : $back_to_top.removeClass('top-is-visible top-fade-out');
+    if( $(this).scrollTop() > offset_opacity ) { 
+      $back_to_top.addClass('top-fade-out');
+    }
+  });
+
+  //Smoothy scroll to top
+  $back_to_top.on('click', function(event){
+    event.preventDefault();
+    $('body,html').animate({
+      scrollTop: 0 ,
+    }, scroll_top_duration
+    );
+  });
+
+
+  $('.sf_type_multi-select').children('select').addClass('selectpicker');
+
+  $('ul.dropdown-menu a').parent().click(function(){
+    console.log('clickekdie');
+    $(this).addClass('fa-check');
+  });
 
 });
-/* Document ready ends here */
+  /* Document ready ends here */
 
 // gallery page1tab
 var $tabs_li = $("#tabs li");
@@ -330,13 +375,19 @@ $research_tabs.on('click', function() {
 });
 
 
-
+/*Program detail Page animation*/
 var $program_desc = $('.program-desc');
 var section_height = $program_desc.offset().top;
 if($(window).width() > 480) {
  section_height = section_height + 250;
 } else {
   section_height = section_height + 100;
+
+  /*Pagination on mobile*/
+
+  $('.pagination-next').children('a').text('»');
+  $('.pagination-previous').children('a').text('«');
+
 }
 
 $(this).scroll(function() {

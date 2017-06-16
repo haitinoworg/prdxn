@@ -496,10 +496,10 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 .active .one-half:nth-child(1) {
 	@include property(transform,translateX(-300%));
 	@include property(animation, description 3s forwards);
-	@include property(animation-delay, 1s);
+	// @include property(animation-delay, 1s);
 
 	@include tab() {
-		@include property(animation-delay, 0.2s);
+		// @include property(animation-delay, 0);
 		@include property(animation-duration,1.5s);
 	}
 }

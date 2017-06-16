@@ -12,26 +12,26 @@
 			left: 0;
 		}
 
-		& span {
-			box-sizing: border-box;
-			width: 100%;
-			padding: 12px 0 13px 10px;
-			border: 1px solid #ddd;
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 10;
-			background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
-			background-size: 10px;
-			background-color: #fff;
-			color: #aaa;
-			font: 14px $font;
-			text-align: left;
-			&.disablespan {
-				display: none;
-			}
-		}
+		// & span {
+		// 	box-sizing: border-box;
+		// 	width: 100%;
+		// 	padding: 12px 0 13px 10px;
+		// 	border: 1px solid #ddd;
+		// 	display: block;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	z-index: 10;
+		// 	background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
+		// 	background-size: 10px;
+		// 	background-color: #fff;
+		// 	color: #aaa;
+		// 	font: 14px $font;
+		// 	text-align: left;
+		// 	&.disablespan {
+		// 		display: none;
+		// 	}
+		// }
 	}
 }
 
@@ -212,7 +212,7 @@
 
 	.salesforce_w2l_lead {
 		position: relative;
-		#sf_form_salesforce_w2l_lead_7 {
+		form {
 			text-align: center;
 			input,
 			p { text-align: left; }
@@ -342,18 +342,59 @@
 
 			}	
 
-			select {
+			select,
+			button {
 				max-height: 42px;
-				padding: 8px 11px;	
+				padding: 13px 11px 10px; 	
+				border: 1px solid #ddd;
+				border-radius: 0;
+				outline: none;
 				display: block;
+				background-color: transparent;
 				color: #aaa;
 				font-size: 13px;
-				line-height: 10px;
+				line-height: 15px;
+				text-transform: capitalize;
 				option { 
 					padding: 5px 0;
 					color: #000; 
 					&:first-child {
 						color: #b9afaa;
+					}
+				}
+			}
+
+			button {
+				background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
+				background-size: 10px;
+			}
+
+			.bootstrap-select .dropdown-toggle:focus {
+				outline: 0 !important;
+			}
+
+			.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+				width: 100%;
+			}
+
+			div.dropdown-menu {
+				position: relative;
+				background-color: #fff;
+				display: none;
+				.dropdown-menu.inner {
+					border: 1px solid #ddd;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					background-color: #fff;
+					li { 
+						box-sizing: border-box;
+						padding: 5px 10px; 
+						list-style-type: none; 
+						text-align: left;
+						a {
+							color: #000;
+						}
 					}
 				}
 			}

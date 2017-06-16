@@ -1,19 +1,56 @@
-/* Box Modal Mixin
-*/
 /*
-Media Queries ============================================
-*/
-/** User Defined Media Query Mixin **/
-/*** Large Desktop Media Query Mixin **/
-/*** Desktop Media Query Mixin **/
-/*** Tab Media Query Mixin **/
-/*** Mobile Media Query Mixin **/
-/*
-Common Mixins ============================================
+* Reset Code ==========================================================
 */
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Reset Inputs */
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="text"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="search"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="radio"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="tel"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="time"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="url"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="week"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="password"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="checkbox"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="color"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="date"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="datetime"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="datetime-local"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="email"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="month"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead input[type="number"],
+.wp-admin.settings_page_salesforce-wordpress-to-lead select,
+.wp-admin.settings_page_salesforce-wordpress-to-lead textarea {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  line-height: normal;
+}
+
 .enews-widget input[type="submit"] {
-  background-color: #f16522;
+  background-color: #f1652;
 }
 
 .enews-widget button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"] {
@@ -27,6 +64,17 @@ body a:focus, body a:active, body input:focus, body input:active, body button:fo
   border-color: transparent;
 }
 
+/*
+Media Queries ============================================
+*/
+/** User Defined Media Query Mixin **/
+/*** Large Desktop Media Query Mixin **/
+/*** Desktop Media Query Mixin **/
+/*** Tab Media Query Mixin **/
+/*** Mobile Media Query Mixin **/
+/*
+Common Mixins ============================================
+*/
 /*
 Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -2130,17 +2178,9 @@ div#n2-ss-6 .n2-grab {
   -moz-animation: description 3s forwards;
   -webkit-animation: description 3s forwards;
   animation: description 3s forwards;
-  -ms-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
 }
 @media screen and (max-width: 768px) {
   .active .one-half:nth-child(1) {
-    -ms-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
     -ms-animation-duration: 1.5s;
     -moz-animation-duration: 1.5s;
     -webkit-animation-duration: 1.5s;
@@ -3293,26 +3333,6 @@ body.faq p a {
   top: 0;
   left: 0;
 }
-.contact-form-7 .sf_field.sf_type_multi-select span {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 12px 0 13px 10px;
-  border: 1px solid #ddd;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
-  background-size: 10px;
-  background-color: #fff;
-  color: #aaa;
-  font: 14px Roboto, sans-serif;
-  text-align: left;
-}
-.contact-form-7 .sf_field.sf_type_multi-select span.disablespan {
-  display: none;
-}
 
 .contact-form-7 .content {
   width: 84%;
@@ -3486,17 +3506,17 @@ body.faq p a {
 .contact-form-7 .salesforce_w2l_lead {
   position: relative;
 }
-.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 {
+.contact-form-7 .salesforce_w2l_lead form {
   text-align: center;
 }
-.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 input,
-.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 p {
+.contact-form-7 .salesforce_w2l_lead form input,
+.contact-form-7 .salesforce_w2l_lead form p {
   text-align: left;
 }
-.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit {
+.contact-form-7 .salesforce_w2l_lead form .w2lsubmit {
   display: inline-block;
 }
-.contact-form-7 .salesforce_w2l_lead #sf_form_salesforce_w2l_lead_7 .w2lsubmit input {
+.contact-form-7 .salesforce_w2l_lead form .w2lsubmit input {
   padding: 11px 25px;
 }
 .contact-form-7 .salesforce_w2l_lead .sf_required_fields_msg {
@@ -3627,20 +3647,59 @@ body.faq p a {
 .salesforce_w2l_lead form.w2llead > div textarea:-ms-input-placeholder {
   color: #aaa;
 }
-.salesforce_w2l_lead form.w2llead > div select {
+.salesforce_w2l_lead form.w2llead > div select,
+.salesforce_w2l_lead form.w2llead > div button {
   max-height: 42px;
-  padding: 8px 11px;
+  padding: 13px 11px 10px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  outline: none;
   display: block;
+  background-color: transparent;
   color: #aaa;
   font-size: 13px;
-  line-height: 10px;
+  line-height: 15px;
+  text-transform: capitalize;
 }
-.salesforce_w2l_lead form.w2llead > div select option {
+.salesforce_w2l_lead form.w2llead > div select option,
+.salesforce_w2l_lead form.w2llead > div button option {
   padding: 5px 0;
   color: #000;
 }
-.salesforce_w2l_lead form.w2llead > div select option:first-child {
+.salesforce_w2l_lead form.w2llead > div select option:first-child,
+.salesforce_w2l_lead form.w2llead > div button option:first-child {
   color: #b9afaa;
+}
+.salesforce_w2l_lead form.w2llead > div button {
+  background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
+  background-size: 10px;
+}
+.salesforce_w2l_lead form.w2llead > div .bootstrap-select .dropdown-toggle:focus {
+  outline: 0 !important;
+}
+.salesforce_w2l_lead form.w2llead > div .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
+}
+.salesforce_w2l_lead form.w2llead > div div.dropdown-menu {
+  position: relative;
+  background-color: #fff;
+  display: none;
+}
+.salesforce_w2l_lead form.w2llead > div div.dropdown-menu .dropdown-menu.inner {
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+}
+.salesforce_w2l_lead form.w2llead > div div.dropdown-menu .dropdown-menu.inner li {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  list-style-type: none;
+  text-align: left;
+}
+.salesforce_w2l_lead form.w2llead > div div.dropdown-menu .dropdown-menu.inner li a {
+  color: #000;
 }
 .salesforce_w2l_lead form.w2llead > div input[type="submit"] {
   padding: 11px;
@@ -4614,6 +4673,12 @@ body .footer-widgets .social-icons a {
     margin: 10px;
   }
 }
+@media screen and (max-width: 480px) {
+  body .site-container .footer-widgets .social-icons a,
+  body .footer-widgets .social-icons a {
+    margin: 6px 10px;
+  }
+}
 body .site-container .footer-widgets .social-icons a:hover:after,
 body .footer-widgets .social-icons a:hover:after {
   content: '';
@@ -4799,7 +4864,7 @@ body #text-18 {
 @media screen and (max-width: 480px) {
   body .site-container .footer-widgets .social-icons li,
   body .footer-widgets .social-icons li {
-    margin: 10px 12px 0 !important;
+    margin: 0 !important;
   }
 }
 body .site-container #text-19 .title-area,
@@ -4893,7 +4958,7 @@ body #text-19 .title-area {
   }
   body .site-container .footer-widgets .widget_cnss_widget ul,
   body .footer-widgets .widget_cnss_widget ul {
-    padding-bottom: 10px;
+    padding: 10px 37px;
     text-align: center !important;
   }
   body .site-container .footer-widgets .like,
@@ -4919,6 +4984,50 @@ body #text-19 .title-area {
   }
 }
 
+/*
+* Back to top button
+*/
+.to-top {
+  display: inline-block;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+.to-top i {
+  color: #f16522;
+}
+
+.to-top.top-is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.to-top.top-fade-out {
+  opacity: 1;
+}
+
+.no-touch .to-top:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .to-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .to-top {
+    right: 30px;
+    bottom: 30px;
+  }
+}
 .page-template-page-sponsor .site-inner .content {
   width: 84%;
   max-width: 2000px;
@@ -5234,7 +5343,10 @@ main.content .entry-content p:last-child {
 @media screen and (max-width: 480px) {
   .parallax-landing article.entry .accordions-tabs-themes ul.ui-tabs-nav li.ui-tabs-active,
   .page-template-page-research article.entry .accordions-tabs-themes ul.ui-tabs-nav li.ui-tabs-active {
-    width: 100%;
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 .parallax-landing article.entry .accordions-tabs-themes ul.ui-tabs-nav li.ui-tabs-active a.accordions-tab-head,
@@ -5262,13 +5374,13 @@ main.content .entry-content p:last-child {
 @media screen and (max-width: 480px) {
   .parallax-landing article.entry .accordions-tabs-themes ul.ui-tabs-nav li,
   .page-template-page-research article.entry .accordions-tabs-themes ul.ui-tabs-nav li {
-    width: 98%;
+    width: 100%;
   }
 }
 .parallax-landing article.entry .accordions-tabs-themes ul.ui-tabs-nav li a,
 .page-template-page-research article.entry .accordions-tabs-themes ul.ui-tabs-nav li a {
   padding: 12px 28px;
-  border: 1px solid #ddd;
+  border: 0.5px solid #ddd;
   border-bottom: 0;
   border-left: 0;
   background-color: #f16522;
@@ -5470,11 +5582,11 @@ main.content .entry-content p:last-child {
 .page-template-page_blog aside.sidebar .widget_search .search-form button {
   width: auto;
   height: auto;
-  padding: 15px;
+  padding: 9px;
   margin: 0;
   position: absolute;
   top: 50%;
-  right: 1px;
+  right: 11px;
   background-color: #fff;
   color: #525252;
   -ms-transform: translateY(-50%);

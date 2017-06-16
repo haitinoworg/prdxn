@@ -387,6 +387,7 @@ Footer Section-1
 			text-align: center;
 
 			@include tab()  { margin: 10px;	}
+			@include mobile()  { margin: 6px 10px;	}
 		}
 
 		a:hover:after {
@@ -544,7 +545,7 @@ Footer Section-1
 
 @include mobile() {
 	.footer-widgets  .social-icons  li{
-		margin: 10px 12px 0 !important;
+		margin: 0 !important;
 	}	
 }
 
@@ -644,7 +645,7 @@ Footer Section-1
 			text-align: center;
 
 			ul {
-				padding-bottom: 10px;
+				padding: 10px 37px;
 				text-align: center !important;
 			}
 		}
@@ -669,4 +670,51 @@ Footer Section-1
 	}
 } 
 
+}
+
+
+/*
+* Back to top button
+*/
+
+.to-top {
+	display:inline-block;
+	position:fixed;
+	bottom:40px;
+	right:10px;
+	z-index: 999;
+	visibility:hidden;
+	opacity:0;
+	-webkit-transition:all .3s;
+	-moz-transition:all .3s;
+	transition:all .3s; 
+	i { color: $cta-color; }
+}
+
+.to-top.top-is-visible {
+	visibility:visible;
+	opacity:1;
+}
+
+.to-top.top-fade-out {
+	opacity: 1;
+}
+
+.no-touch .to-top:hover {
+	
+	opacity:1;
+}
+
+@include tab() {
+	.to-top {
+		right:20px;
+		bottom:20px;
+	}
+}
+
+@include md() {
+	.to-top {
+		right:30px;
+		bottom:30px;
+	}
 }

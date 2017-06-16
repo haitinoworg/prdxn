@@ -1,15 +1,66 @@
+/*
+* Reset Code ==========================================================
+*/
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
-// Font
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* Reset Inputs */
+.wp-admin.settings_page_salesforce-wordpress-to-lead{
+	input[type="text"], 
+	input[type="search"], 
+	input[type="radio"], 
+	input[type="tel"], 
+	input[type="time"], 
+	input[type="url"], 
+	input[type="week"], 
+	input[type="password"], 
+	input[type="checkbox"], 
+	input[type="color"], 
+	input[type="date"], 
+	input[type="datetime"],
+	input[type="datetime-local"], 
+	input[type="email"], 
+	input[type="month"], 
+	input[type="number"], 
+	select, 
+	textarea {
+		width: 100%;
+		padding: 0;
+		border: 0;
+		margin: 0;
+		line-height: normal;
+	}
+	
+}
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .enews-widget input[type="submit"] {
-	@include props(bgcta);
+	background-color: #f1652;
 }
 
 .enews-widget button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"] {
-	@include props(bgw,cb);
+	background-color: #fff;
+	color: #000;
 }
 
 /* Focus */

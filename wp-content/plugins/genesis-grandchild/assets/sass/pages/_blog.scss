@@ -4,9 +4,6 @@
 */
 
 .page-template-page_blog {
-
-
-
 	.content-sidebar-wrap {
 		box-sizing: border-box;
 		width: 84%;
@@ -68,11 +65,11 @@
 				button {
 					width: auto;
 					height: auto;
-					padding: 15px;
+					padding: 9px;
 					margin: 0;
 					position: absolute;
 					top: 50%;
-					right: 1px;
+					right: 11px;
 					background-color: #fff;
 					color: #525252;
 					@include property(transform,translateY(-50%));

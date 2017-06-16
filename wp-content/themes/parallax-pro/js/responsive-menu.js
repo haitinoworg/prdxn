@@ -15,8 +15,8 @@ jQuery(function( $ ){
 
 	$(".responsive-menu > .menu-item").click(function(event){
 		if (event.target !== this)
-		return;
-			$(this).find(".sub-menu:first").slideToggle(function() {
+			return;
+		$(this).find(".sub-menu:first").slideToggle(function() {
 			$(this).parent().toggleClass("menu-open");
 		});
 	});
