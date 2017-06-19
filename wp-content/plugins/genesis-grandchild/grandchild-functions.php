@@ -21,11 +21,8 @@ function grandchild_add_files() {
 add_action('wp_footer','custom_footer_script');
 function custom_footer_script() {
 	// Static url given because, its post publishing error on new post.
-	wp_enqueue_script('blackthorn-script', 'https://donations.blackthorn.io/loader');
 	wp_enqueue_script('multi-select-js', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js', array('jquery'), true);
 	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
-	// wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array('jquery'), true);
-	
 }
 
 // Enable Custom Background
@@ -135,26 +132,6 @@ register_post_type( 'staff',
 		'supports'            => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes' ),'taxonomies' => array('category')
 		)
 	);
-
-
-/*
-*  Registering Custom Post Type For Donation Amount
-*/
-
-register_post_type( 'sfdonation',
-	array(
-		'labels' => array(
-			'name' => __( 'Donation Amount' ),
-			'singular_name' => __( 'Donation Amount' )
-			),
-		'has_archive' => true,
-		'hierarchical' => true,
-		'public' => true,
-		'rewrite'=> array('slug'=>'sfdonation'),
-		'supports' => array( 'title', 'editor','post-formats', 'author', 'excerpt','genesis-seo' )
-		)
-	);
-
 
 }
 
@@ -358,13 +335,6 @@ function custom_dn_shortcode( ) {
 	</section>
 	<?php	
 }
-
-
-add_shortcode('stripe_donate_cta','abc');
-function abc() {
-	echo '<script src="https://donations.blackthorn.io/loader" data-context="ecPh6YChXcP5TZeu_pNsVXyaAJxNuqnnc4-DvuugwEDjOHOmjz58rtPooanml6L_8o9B6PwSrQPoFhtqmfj2SQ" data-type="button"></script>';
-}
-
 
 
 /*

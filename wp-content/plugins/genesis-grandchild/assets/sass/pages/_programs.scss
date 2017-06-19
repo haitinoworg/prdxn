@@ -344,19 +344,55 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	.hero-content {
 		width: 100%;
 		display: inline-block;
+		position: relative;
+		
 		.donate-desc { 
 			width: 45%;
+			margin-top: 58px;
 			float: right;
+			text-align: right;
 			@include tab() {
 				width: 100%;
+				margin-top: 0;
 				margin-bottom: 39px;
 				float: none;
+				text-align: left;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			p { 
+				text-align: right; 
+				@include tab() {
+					text-align: left;
+				}
+			}
+
+			h2,
+			h3,
+			h4,
+			h5 {
+				margin-bottom: 12px;
 			}
 		}
-		h1,h2,h3,h4,h5,h6 { margin-bottom: 4px;	}
+
+		.page-title { 
+			width: auto;
+			margin-bottom: 4px;	
+			position: absolute;
+			bottom: 33px;
+			right: 0;
+			@include tab() {
+				position: static;
+				margin: 36px 0 15px;
+				
+			}
+		}
 
 		p { 
-			width: 74%;
+			width: 100%;
 			margin: 0 0 27px; 
 			@include tab() { width: 100%; }
 		}
@@ -375,6 +411,15 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 				min-width: inherit;
 			}
 		}
+
+		iframe {	
+			margin: 0 auto;	
+			@include mobile() {
+				min-width: 100%;
+				box-sizing: border-box;
+			}
+		}
+
 	}
 
 	form {

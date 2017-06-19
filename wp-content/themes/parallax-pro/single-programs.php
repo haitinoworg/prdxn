@@ -18,7 +18,7 @@
 	function programs_single_hero() {
 		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
 		echo the_field("donate_text");
-		echo '<h3>';
+		echo '<h3 class="page-title">';
 		echo the_title() . '</h3></div>';
 		echo the_field("donate_shortcode");
 		echo '</div></div>';

@@ -1,30 +1,22 @@
   (function($) {
 
-  /*
-  * Document Ready Starts Here
-  */
-  $.holdReady( true );
-  $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js", function() {
-    $.holdReady( false );
-  });
 
+    $(document).ready(function() {
 
-  $(document).ready(function() {
+      /* Multiselect click */
+      $( "body" ).delegate( ".dropdown-toggle", "click", function() {
+        $('.check-mark').addClass('fa fa-check fa-1x');
+        $('.dropdown-menu.open').css('min-height', '100%');
+        $('.dropdown-menu.open').css('overflow', 'visible');
+        $('.dropdown-menu.open').slideToggle();
+        $('ul.dropdown-menu li:first-child').css('display','none');
+      });
 
-    /* Multiselect click */
-    $( "body" ).delegate( ".dropdown-toggle", "click", function() {
-      $('.check-mark').addClass('fa fa-check fa-1x');
-      $('.dropdown-menu.open').css('min-height', '100%');
-      $('.dropdown-menu.open').css('overflow', 'visible');
-      $('.dropdown-menu.open').slideToggle();
-      $('ul.dropdown-menu li:first-child').css('display','none');
-    });
-
-    /*Pagination on mobile*/
-    if($(window).width() < 481) {
-      $('.pagination-next').children('a').text('»');
-      $('.pagination-previous').children('a').text('«');
-    } 
+      /*Pagination on mobile*/
+      if($(window).width() < 481) {
+        $('.pagination-next').children('a').text('»');
+        $('.pagination-previous').children('a').text('«');
+      } 
 
   // Header Height
   var headerHeight = $('.site-header').outerHeight();
@@ -65,22 +57,6 @@
     donateVal = $(this).val();
     $("#donationvalue").val(donateVal);
   });
-
-
-  $(".dntplgn_monthly_other_sum").hide();
-  $( '.dntplgn_donate_monthly input[ name="a3" ]' ).click( function() {
-    if ( $( this ).parent( '.dntplgn_donate_monthly' ).children( '#fourth_button' ).attr( 'checked' ) ) {
-      $( this ).parent( '.dntplgn_donate_monthly' ).children( '.dntplgn_monthly_other_sum' ).addClass( 'checked' );
-      $( this ).parent( '.dntplgn_donate_monthly' ).children( '.dntplgn_submit_button' ).click( function() {
-        $( this ).parent( '.dntplgn_donate_monthly' ).children( 'input[ name="a3" ]' ).val( $( this ).parent( '.dntplgn_donate_monthly' ).children( '.dntplgn_monthly_other_sum' ).val() );
-      })
-    } else {
-      $( this ).parent( '.dntplgn_donate_monthly' ).children( '.dntplgn_monthly_other_sum' ).removeClass( 'checked' );
-      $( this ).parent( '.dntplgn_donate_monthly' ).children( '.dntplgn_monthly_other_sum' ).val( '' );
-    }
-  });
-
-  $( '.dntplgn_form_wrapper' ).tabs();
 
 
   /*

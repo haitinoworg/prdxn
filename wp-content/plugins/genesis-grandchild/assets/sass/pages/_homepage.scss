@@ -116,144 +116,63 @@ Content Area
 		}
 
 
-		// Home Page Section 1 Styling
-		// .home-section-1 {
-		// 	height: auto;
-		// 	padding: 63px 0 33px;
-		// 	background-size: cover;
-		// 	.wrap { 
-		// 		width: 84%;
-		// 		margin: 0 auto;
-		// 		padding: 0; 
-		// 		clear: both;
-		// 	}
-		// 	h4 { 
-		// 		width: 80%;
-		// 		margin-bottom: 5px;
-		// 		font: 900 39px $font;
-		// 		text-align: left; 
-		// 		text-shadow: 2px 2px 10px #000;
-
-		// 	}
-		// 	section {
-		// 		width: 498px;
-		// 		text-align: left;
-		// 		&:first-child {
-		// 			float: right;
-		// 		}
-
-		// 		a {
-		// 			width: 100%;
-		// 			padding: 12px 25px;
-		// 			margin-top: 30px;
-		// 			display: block;
-		// 			background-color: #1e73be;
-		// 			background-image: none;
-		// 			color: #fff;
-		// 			font-size: 20px;
-		// 			text-align: center;
-		// 			&:hover {
-		// 				background-color: #1e73be;
-		// 				color: #fff;
-		// 			}
-		// 		}
-		// 	}
-
-		// 	h4,
-		// 	section {
-		// 		@include tab() {
-		// 			width: 100%;
-		// 			text-align: center;
-		// 		}
-		// 	}
-
-		// 	.textwidget {
-		// 		width: 77%;
-		// 		margin-bottom: 35px;
-		// 		font: 17px/23px $font;
-		// 		text-shadow: 2px 2px 10px #000;
-		// 		@include md() {
-		// 			width: 100%;
-		// 		}
-		// 	}
-
-		// 	section form {
-		// 		width: 100%;
-		// 		text-align: center;
-		// 	}	
-		// }
-
+		/*
+		* Home Page Section 1 Styling -----------------------------
+		*/
 		.home-section-1 {
 			height: auto;
-			padding: 63px 0 32px;
+			padding: 63px 0;
+			background-size: cover;
+			
 			.wrap { 
 				width: 84%;
 				margin: 0 auto;
 				padding: 0; 
+				clear: both;
 			}
-			h4 { 
-				width: 80%;
+
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 { 
+				width: 100%;
 				margin-bottom: 5px;
 				font: 900 39px $font;
 				text-align: left; 
+				text-shadow: 2px 2px 10px #000;
 
-				@include mobile() {
-					font-size: 26px;
+				@include tab() {
+					margin-bottom: 12px;
 				}
 			}
+
+			p { 
+				font: 17px $font; 
+				text-shadow: 2px 2px 10px #000;
+			}
+
 			section {
 				width: 498px;
-				min-width: 498px;
 				text-align: left;
 
-				@include minWidth(2000px) {
-					width: 800px;
-				}
-
-				@include mobile() {
-					min-width: 100%;
-				}
-
-				a {
-					width: 100%;
-					padding: 12px 25px;
-					margin-top: 30px;
-					display: block;
-					background-color: #1e73be;
-					background-image: none;
-					color: #fff;
-					font-size: 20px;
-					text-align: center;
-					&:hover {
-						background-color: #1e73be;
-						color: #fff;
-					}
-				}
-			}
-
-			h4,
-			section {
 				@include tab() {
 					width: 100%;
-					text-align: center;
+					margin-top: 0;
+					margin-bottom: 39px;
+					float: none;
 				}
-			}
 
-			.textwidget {
-				width: 77%;
-				// min-width: 531px;
-				margin-bottom: 35px;
-				font: 17px/23px $font;
-				@include md() {
-					width: 100%;
+				&:first-child {
+					float: right;
 				}
-			}
 
-			section form {
-				width: 100%;
-				text-align: center;
-			}	
+			}
 		}
+
+		/*
+		* Home Section 2 ------------------------------------
+		*/
 
 		.home-section-2 {
 			height: auto;

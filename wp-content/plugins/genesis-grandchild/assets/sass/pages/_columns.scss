@@ -165,13 +165,13 @@
 			@include props(bgb);
 			h3 {
 				top: 50%;
-				@include minWidth(768px) {
+				@include minWidth(769px) {
 					@include property(transform, translateY(-50%));
 					@include property(animation,heading-fade 0.5s linear both);
 				}
 			}
 			p {   
-				@include minWidth(768px) {
+				@include minWidth(769px) {
 					@include property(animation,text-overlay 0.5s linear both);
 				}
 			}
@@ -215,16 +215,16 @@
 	* Three Columns Styling (Books, Staff) ================================
 	*/
 	.three-columns {
-		@include boxmodel(3,31%,5,0,7,0 0 54px);
+		@include boxmodel(3,29.5%,5,0,7,0 0 54px);
 		@include props(dib,tac,vat);
 		@include props(ovh);
-		&:nth-child(3n + 2) { margin: 0 3% 54px; }
+		&:nth-child(3n + 2) { margin: 0 4.5% 54px; }
 
 		@include md() { 
-			width: 48%;
+			width: 46%;
 			&:nth-child(3n + 2) { margin: 0; }			
 			&:nth-child(2n) { 
-				margin-left: 2%; 
+				margin-left: 6%; 
 				margin-bottom: 54px;
 			}
 			margin: 0 0 54px;

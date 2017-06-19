@@ -321,8 +321,59 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 	border: none;
 	border-radius: 0;
 	position: static;
-	background: url(https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-60px.png) no-repeat center;
 	background-size: 45%;
 	background-color: #009cde;
 	text-indent: -9999px;
+}
+
+
+#tabs.dntplgn_form_wrapper {
+	width: 80%;
+	max-width: 400px;
+	min-width: 220px;
+	margin: 0 auto;
+	text-align: center;
+	@include tab() {
+		width: 100%;
+	}
+
+	form.dntplgn_donate_monthly,
+	form { 
+		width: 100%;
+		margin: 0 auto;
+
+		input {
+			width: 16%;
+			min-width: 40px;
+			display: inline-block;
+		}
+
+		label {
+			width: 80%;
+			margin: 10px 0;
+			display: inline-block;
+			text-align: left;
+		}
+
+		input, label {
+			font: 23px $font;
+
+			span {
+				font-size: 13px;
+			}
+		}
+
+		.dntplgn_monthly_other_sum,
+		#dntplgn_once_amount {
+			width: 100%;
+			border: 1px solid #ccc;
+			margin: 14px 0 0;
+		}
+
+		.dntplgn_submit_button {
+			@include cta;
+			margin-bottom: 30px;
+		}
+	}
+
 }

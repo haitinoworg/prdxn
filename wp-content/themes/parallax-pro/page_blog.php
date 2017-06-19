@@ -29,6 +29,18 @@ function custom_blog_title() {
 remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 
 
+//Remove Default Post Pagination
+// remove_action('genesis_after_endwhile','genesis_posts_nav');
+add_action('genesis_after_endwhile','abc');
+function abc() {
+	the_posts_pagination( array(
+		'mid_size' => 0,
+		'prev_text' => __( 'Back', 'textdomain' ),
+		'next_text' => __( 'Onward', 'textdomain' ),
+		) ); 
+}
+
+
 add_action('genesis_entry_content','custom_blog_loop');
 function custom_blog_loop() {
 
