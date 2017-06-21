@@ -11,27 +11,6 @@
 			top: 0;
 			left: 0;
 		}
-
-		// & span {
-		// 	box-sizing: border-box;
-		// 	width: 100%;
-		// 	padding: 12px 0 13px 10px;
-		// 	border: 1px solid #ddd;
-		// 	display: block;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0;
-		// 	z-index: 10;
-		// 	background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
-		// 	background-size: 10px;
-		// 	background-color: #fff;
-		// 	color: #aaa;
-		// 	font: 14px $font;
-		// 	text-align: left;
-		// 	&.disablespan {
-		// 		display: none;
-		// 	}
-		// }
 	}
 }
 
@@ -65,6 +44,8 @@
 					outline: none;
 					font-size: 15px;
 					line-height: 10px;
+					-webkit-border-radius: 0;
+					-webkit-appearance: none;
 				}
 
 				textarea { 
@@ -132,8 +113,6 @@
 	}
 
 	// Volunteer Heading Styilng
-
-
 
 	.email-us {
 		padding: 32px 0;
@@ -214,7 +193,6 @@
 		position: relative;
 		form {
 			text-align: center;
-			input,
 			p { text-align: left; }
 			.w2lsubmit { 		
 				display: inline-block; 
@@ -272,6 +250,9 @@
 			input { 
 				margin-bottom: 0px;
 				padding: 11px 12px;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
+				border-radius: 0;
 				font: 15px $font;
 
 				@include mobile() {	margin-bottom: 0; }
@@ -288,16 +269,24 @@
 
 			&:hover {/* border: 1px solid #aaa;*/ }
 		}
+
 		input[type="submit"] { 
 			padding: 11px;
 			border: 1px solid #f16522;
 			background-color: #f16522;
 
-			@include tab() { width: 100%; }
+			&:active,
+			&:focus,
+			&:visited {
+				color: #fff;
+			}
 
-			&:hover { 
-				background-color: #fff;
-				color: #f16522; 
+			@include tab() { width: 100%; }
+			@include minWidth(769px) {
+				&:hover { 
+					background-color: #fff;
+					color: #f16522; 
+				}
 			}
 		}
 
@@ -321,6 +310,9 @@
 			textarea { 
 				margin-bottom: 0px;
 				padding: 11px 12px;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
+				border-radius: 0;
 				font: 16px $font;
 				resize: none;
 
@@ -347,11 +339,14 @@
 				max-height: 42px;
 				padding: 13px 11px 10px; 	
 				border: 1px solid #ddd;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
 				border-radius: 0;
 				outline: none;
 				display: block;
 				background-color: transparent;
-				color: #aaa;
+				color: #000;
+				font-family: $font;
 				font-size: 13px;
 				line-height: 15px;
 				text-transform: capitalize;
@@ -365,6 +360,9 @@
 			}
 
 			button {
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
+				border-radius: 0;
 				background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
 				background-size: 10px;
 			}
@@ -387,13 +385,27 @@
 					top: 100%;
 					left: 0;
 					background-color: #fff;
-					li { 
+					li, li.selected { 
 						box-sizing: border-box;
 						padding: 5px 10px; 
 						list-style-type: none; 
 						text-align: left;
 						a {
+							width: 100%;
+							padding: 0;
+							border: 0;
+							border-radius: 0;
+							outline: 0;
+							@include property(box-shadow,none);
+							display: block;
+							background: #fff;
 							color: #000;
+							text-shadow: none;
+							span {
+								border: 0;
+								border-radius: 0;
+								outline: 0;
+							}
 						}
 					}
 				}
@@ -402,14 +414,23 @@
 			input[type="submit"] { 
 				padding: 11px;
 				border: 1px solid #f16522;
+				-webkit-appearance: none;
 				border-radius: 3px;
 				background-color: #f16522;
 
 				@include tab() { width: 100%; }
 
-				&:hover { 
-					background-color: #fff;
-					color: #f16522; 
+				&:active,
+				&:visited,
+				&:focus {
+					color: #fff;
+				}
+
+				@include minWidth(769px) {
+					&:hover { 
+						background-color: #fff;
+						color: #f16522; 
+					}
 				}
 			}
 
@@ -418,8 +439,12 @@
 				margin-bottom: 0;
 				color: #f00;
 				font-size: 13px;
+				&.blank-text {
+					visibility: hidden;
+				}
 			}
 		}
+
 		.sf_field { 
 			min-height: 75px; 
 			@include tab() {

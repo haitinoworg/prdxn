@@ -4,7 +4,7 @@ Plugin Name: Brilliant Web-to-Lead for Salesforce
 Plugin URI: http://wordpress.org/plugins/salesforce-wordpress-to-lead/
 Description: Easily embed a contact form into your posts, pages or your sidebar, and capture the entries straight into Salesforce CRM. Also supports Web to Case and Comments to leads.
 Author: BrilliantPlugins
-Version: 2.7.3
+Version: 2.7.3.2
 Author URI: https://brilliantplugins.com/
 License: GPL2
 */
@@ -432,7 +432,12 @@ function salesforce_form($options, $is_sidebar = false, $errors = null, $form_id
 
 			$content .= '<div class="sf_field sf_field_recaptcha sf_type_recaptcha">';
 				$content .= '<br>';
-				$content .= '<div class="g-recaptcha" data-sitekey="' . esc_attr( salesforce_get_option('recaptcha_site_key', $form_id, $options ) ) . '"></div>';
+				
+				if( $sidebar ){
+					$content .= '<div class="g-recaptcha" data-size="compact" data-sitekey="' . esc_attr( salesforce_get_option('recaptcha_site_key', $form_id, $options ) ) . '"></div>';
+				}else{
+					$content .= '<div class="g-recaptcha" data-sitekey="' . esc_attr( salesforce_get_option('recaptcha_site_key', $form_id, $options ) ) . '"></div>';
+				}
 
 			if( $errors && !$errors['recaptcha']['valid'] ){
 				$content .=  "<span class=\"error_message\">" . $errors['recaptcha']['message'] . '</span>';
@@ -920,9 +925,17 @@ function salesforce_form_shortcode($atts) {
 
 		if( $form_id != $form ){
 			$content = salesforce_form($options, $sidebar, null, $form);
-			return '<div class="salesforce_w2l_lead">'.$content.'</div>';
+
+			$layout = salesforce_get_option('layout', $form, $options );
+
+			if( $layout ){
+				$layout = 'sf_' . $layout;
+			}
+
+			return '<div class="salesforce_w2l_lead ' . sanitize_html_class( $layout ) . '">' . $content . '</div>';
 
 		}
+
 	}
 
 	//this is the right form, continue
@@ -1131,7 +1144,14 @@ function salesforce_form_shortcode($atts) {
 		$content = salesforce_form($options, $sidebar, null, $form);
 	}
 
-	return '<div class="salesforce_w2l_lead">'.$content.'</div>';
+	$layout = salesforce_get_option( 'layout', $form, $options );
+
+	if( $layout ){
+		$layout = 'sf_' . $layout;
+	}
+
+	return '<div class="salesforce_w2l_lead ' . sanitize_html_class( $layout ) . '">'.$content.'</div>';
+
 }
 
 function salesforce_clean_field( $value ){

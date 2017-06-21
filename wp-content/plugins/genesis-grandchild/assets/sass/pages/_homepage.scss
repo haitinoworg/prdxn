@@ -137,7 +137,7 @@ Content Area
 			h5,
 			h6 { 
 				width: 100%;
-				margin-bottom: 5px;
+				margin-bottom: 18px;
 				font: 900 39px $font;
 				text-align: left; 
 				text-shadow: 2px 2px 10px #000;
@@ -245,7 +245,12 @@ Content Area
 	}
 }
 
-.contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
+.contact-form-7 .salesforce_w2l_lead .w2lsubmit { 
+	border: 0px solid;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
 
 
 

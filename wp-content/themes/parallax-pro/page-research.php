@@ -71,15 +71,17 @@ function sponsors_loop(){
     $page_object = get_field('select_tab_pages');
     ?>
 
-    <div class="tab-detail">
-      <?php
-      $accordion_code = get_field('accordion_shortcode'); 
-      if($accordion_code) {
-        echo do_shortcode($accordion_code); 
-      }
-      ?>
-    </div>
     <?php
+    $accordion_code = get_field('accordion_shortcode'); 
+    if($accordion_code) {
+      ?>
+      <div class="tab-detail">
+        <?php
+        echo do_shortcode($accordion_code); 
+        ?>
+      </div>
+      <?php
+    }
 
     if( $page_object ): setup_postdata( $page_object ); 
     foreach($page_object as $post): 

@@ -1,0 +1,58 @@
+.page-template-page_donate {
+	main.content {
+
+		article.entry {
+			padding: 58px 0 65px;
+		}
+
+		.entry-content,
+		.paypal-section {
+			width: 48%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+
+			@include tab() {
+				width: 100%;
+				display: block;
+			}
+
+			/* Important is used to override the template style */
+			h1,h2,h3,h4,h5,h6 {
+				margin: 0 0 20px;
+				text-align: center !important;
+			}
+
+			#tabs.dntplgn_form_wrapper .ui-tabs-nav {
+				border-bottom: 1px solid #aaa;
+				.ui-tabs-anchor {
+					font: 15px $font;
+
+					@include md() {
+						font: 13px;
+					}
+				}
+			}
+		}
+
+		.paypal-section {
+			position: relative;
+
+			@include tab () {
+				padding: 63px 0 0;
+			}
+
+			@include minWidth(769px) {
+				&:before {
+					content: " ";
+					height: 60%;
+					border: 0.5px solid $cta-color;
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 50%;
+				}
+			}
+		}
+	}
+}

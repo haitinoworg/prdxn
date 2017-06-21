@@ -50,43 +50,46 @@ jQuery.fn.statsCounter = function(){
 jQuery(document).ready(function(jQuery){
 
    var statistics = jQuery('.statistics');
+    var n = 0;
 
    if( statistics.length > 0 ) {
 
-      //setting counts to 0
-     if( jQuery('.stat').length > 0 ){
-        var stat = jQuery('.stat');
-        stat.each(function(){
-           var icon = jQuery(this).find('span');
-           icon.each(function(){
-             var val = jQuery(this).attr('class');
-             if( val.indexOf('.') != -1 && jQuery(this).find('img').length <= 0 ) {
-                jQuery(this).append('<img src="'+val+'" />');
-              }
-           });
-          stat.find('.number').text(0);
-        })
-      }
-      //animating when scrolled
-      var countDone = 0;
-      if( jQuery(window).width() > 780 ) {
-        jQuery(window).scroll(function(){
-          //if .statistics exists, initialize
-          if( jQuery('.statistics').length ){
-            var visible = isElementVisible('.statistics');
-          
-          //if stats section visible, start the counting after 400ms
-           if( visible && countDone == 0 ) { //check if it's not already done
-             setTimeout(function(){
-              jQuery('.statistics').statsCounter();
-              countDone = 1;
-             },400);
-            }//if visible && not shown
-           }//if exists
-        });//scroll function
-      } else {
-          jQuery('.statistics').statsCounter();
-          countDone = 1;
-      }// window.width()
+       statistics.each(function(){
+           var thisStats = jQuery(this);
+           thisStats.addClass( 'stats-custom-' + n );
+
+           //setting counts to 0
+           if( jQuery('.stat').length > 0 ){
+               var stat = jQuery('.stat');
+               stat.each(function(){
+                   var icon = jQuery(this).find('span');
+                   icon.each(function(){
+                       var val = jQuery(this).attr('class');
+                       if( val.indexOf('.') != -1 && jQuery(this).find('img').length <= 0 ) {
+                           jQuery(this).append('<img src="'+val+'" />');
+                       }
+                   });
+                   stat.find('.number').text(0);
+               })
+           }
+           //animating when scrolled
+           var countDone = 0;
+           if( jQuery(window).width() > 780 ) {
+               jQuery(window).scroll(function(){
+                   var visible = isElementVisible('.stats-custom-' + n);
+
+                   //if stats section visible, start the counting after 400ms
+                   if( visible && countDone == 0 ) { //check if it's not already done
+                       setTimeout(function(){
+                           thisStats.statsCounter();
+                           countDone = 1;
+                       },400);
+                   }//if visible && not shown
+               });//scroll function
+           } else {
+               jQuery('.statistics').statsCounter();
+               countDone = 1;
+           }// window.width()
+       });
   }
 })

@@ -23,11 +23,6 @@ function parallax_add_body_class( $classes ) {
 //* Force full width content layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
-//* Remove site header elements
-// remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
-// remove_action( 'genesis_header', 'genesis_do_header' );
-// remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
-
 //* Remove navigation
 remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
@@ -39,8 +34,8 @@ add_action( 'genesis_before_entry_content', 'rtug_before_entry_content', 5 );
 function rtug_before_entry_content() {
 	$subtitle = get_field('sub_title');
 	if($subtitle) {
-	echo '<h3>' . $subtitle . '</h3>';
-}
+		echo '<h3>' . $subtitle . '</h3>';
+	}
 }
 
 //* Remove site footer widgets

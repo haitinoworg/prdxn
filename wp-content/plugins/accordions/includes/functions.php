@@ -14,10 +14,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-
-
-
-
 function accordions_add_shortcode_column( $columns ) {
     return array_merge( $columns, 
         array( 'shortcode' => __( 'Shortcode', 'accordions' ) ) );

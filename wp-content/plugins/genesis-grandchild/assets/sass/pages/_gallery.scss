@@ -1,12 +1,32 @@
+
+.page-template-page-gallery {
+  .entry {
+   margin-bottom: 0px;
+   padding: 55px 0 53px;
+ }
+}
+
+.page-template-page-research {
+ .entry {
+   margin-bottom: 0px;
+   padding: 55px 0 0;
+ } 
+}
+
+
 .page-template-page-gallery,
 .page-template-page-research {
-	.entry {
-   margin-bottom: 0px;
-   padding: 55px 0 0 0;
- }
- .content { padding: 0; }
 
- @include tab() {
+ .content { padding: 0; }
+ .programs-hero-image { 
+  padding: 63px 0;
+}
+
+.hero-content {
+  padding: 18px 0;
+}
+
+@include maxWidth(569px) {
   .programs-hero-image {
     padding: 85px 0 0;
     .hero-content {
@@ -19,6 +39,14 @@
 .gallery {
   width: 84%;
   margin: 0 auto;
+}
+
+.page-template-page-gallery {
+  .gallery {
+    width: 87%;
+    margin: 0 auto;
+  }
+
 }
 
 .tab-detail {
@@ -143,32 +171,33 @@
 	.tabs  {
 		ul{
 			margin: 0px;
-      position: absolute;
       bottom: 0px;
+      position: absolute;
       left: 8%;
       z-index: 100;
-      background: #f16522;
+      background-color: $cta-color;
       color: #fff;
-      @include mobile() { 
-        display: flex;
+      @include maxWidth(569px) { 
+        display: block;
         position: relative;
         left: 0;
-        background-color: #c3c3c3;
-        overflow: auto;
+        bottom: 0;
+        overflow-y: auto;
       }
       article { display: none; }
     }
 
     li {   	   
+      width: auto;
       padding: 9px 28px;
       float: left;
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
 
-      @include mobile() { 
-        width: 100%;
+      @include maxWidth(569px) { 
         border-left: 1px solid #c3c3c3;
+        display: table-cell;
         float: none;
         background-color: #f16522; 
         white-space: nowrap;
@@ -249,11 +278,6 @@
   }
 }
 
-.page-template-page-gallery {
-  .programs-hero-image {
-    max-height: 220px;
-  }
-}
 }
 
 @include mobile() {
@@ -263,15 +287,152 @@
   }
 }
 
-.page-template-page-gallery {
-  .programs-hero-image {
-    height: 150px;
-  }
-}
-
 img {
  width: auto;
 }
 }
 
 
+
+
+.gallery-section {
+  width: 100%;
+  height: 100%;
+  padding: 63px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.9);
+  overflow-y: auto;
+
+  .grid .thumbnail {
+    border: 0;
+    border-bottom: 0;
+    a { 
+      width: 200px;
+      height: 200px;
+      display: block; 
+      overflow: hidden;
+      img { 
+        width: auto; 
+        height: 100%;
+      }
+    }
+  }
+
+}
+
+.tab-detail {
+  .albums {
+    background-color: #000;
+    position: relative;
+    @include property(transition, all 0.3s linear);
+
+    .thumbimage {
+      @include md() {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover {
+
+      .thumbimage {
+        @include property(animation, album-hover 0.3s linear both);
+      }
+
+      .details {
+        width: 100%;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        color: #fff;
+        font: 17px $font;
+        text-align: center;
+        @include property(transform,translateY(-50%));
+        opacity: 1;
+        @include property(animation, album-details 0.3s linear both);
+        a,
+        a:hover {
+          color: #fff;
+          text-decoration: none;
+          font: 17px $font;
+
+        }
+
+      }
+    }
+  }
+
+  .grid {
+    margin: 0 auto;
+
+    .thumbnail {
+      border: 0;
+      border-bottom: 0;
+      margin: 15px;
+      // float: none;
+      a { 
+        width: 100%;
+        height: 250px;
+        display: block;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .details {
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      color: #fff;
+      font: 17px $font;
+      text-align: center;
+      @include property(transform,translateY(-50%));
+      opacity: 0;
+
+      @include md() {
+        opacity: 1;
+      }
+
+      a,
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+        font: 17px $font;
+
+      }
+
+    }
+  }
+}
+.close-lightbox {
+ width: 50px;
+ height: 50px;
+ color: #fff;
+ font-size: 43px;
+ position: fixed;
+ z-index: 1001;
+ right: 37px;
+ top: 30px;
+}
+
+
+@include minWidth(1025px) {
+
+ @keyframes album-hover {
+  0% { opacity: 1; }  
+  100% { opacity: 0.3; }
+}
+
+@keyframes album-details {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+}

@@ -60,6 +60,8 @@ TF-Numbers can be installed in two different ways:
 
 == Changelog ==
 
+= 1.4.14 =
+* Fixed counting triggering on scroll when multiple sections are used
 = 1.4.13 =
 * Added redirect to the about page after plugin activation
 * improved pages code

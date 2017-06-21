@@ -9,6 +9,17 @@
 
 		@include tab() { min-width: 275px; }
 
+		.addtoany_share_save_container {
+			margin: 45px 0 0;
+			a:first-child {
+				padding-left: 0;
+			}
+		}
+
+		.addtoany_header {
+			margin-bottom: 26px;
+		}
+
 	}
 
 }

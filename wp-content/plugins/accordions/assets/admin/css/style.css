@@ -36,6 +36,8 @@
   cursor: pointer;
   border: 1px solid rgb(255, 89, 16);
   font-size: 30px;
+  vertical-align: top;
+  text-align: center;
 }
 
 #accordions_metabox .accordions_icons_custom_minus {
@@ -47,6 +49,8 @@
   cursor: pointer;
   border: 1px solid rgb(255, 89, 16);
   font-size: 30px;
+  vertical-align: top;
+  text-align: center;
 }
 
 

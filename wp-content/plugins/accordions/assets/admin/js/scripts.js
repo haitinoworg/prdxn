@@ -53,29 +53,31 @@ jQuery(document).ready(function($)
 
 
 
-		$(document).on('click', '.accordions_icons_custom_plus', function()
-			{	
-			var icon_id = prompt("font awesome icon id ?","");
-			if(icon_id != null && icon_id != '')
-				{
+		$(document).on('keyup', '.accordions_icons_custom_plus_input', function()
+			{
 
-					$(this).addClass(icon_id);
-					$(".accordions_icons_custom_plus input").val(icon_id);
-				}
+				icon_id = $(this).val();
+
+				$('.accordions_icons_custom_plus i').removeAttr('class');
+				$('.accordions_icons_custom_plus i').addClass('fa '+icon_id);
+				console.log(icon_id);
+
 
 			})
+
+
+
+
 		
-		
-		$(document).on('click', '.accordions_icons_custom_minus', function()
-			{	
-			var icon_id = prompt("font awesome icon id ?","");
-			if(icon_id != null && icon_id != '')
-				{
-		
-					
-					$(this).addClass(icon_id);
-					$(".accordions_icons_custom_minus input").val(icon_id);
-				}
+		$(document).on('keyup', '.accordions_icons_custom_minus_input', function()
+			{
+
+				icon_id = $(this).val();
+
+				$('.accordions_icons_custom_minus i').removeAttr('class');
+				$('.accordions_icons_custom_minus i').addClass('fa '+icon_id);
+				console.log(icon_id);
+
 
 			})		
 		

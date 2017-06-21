@@ -678,21 +678,21 @@ Footer Section-1
 */
 
 .to-top {
-	display:inline-block;
-	position:fixed;
-	bottom:40px;
-	right:10px;
+	display: inline-block;
+	position: fixed;
+	bottom: 40px;
+	right: 46px;
 	z-index: 999;
-	visibility:hidden;
-	opacity:0;
-	-webkit-transition:all .3s;
-	-moz-transition:all .3s;
-	transition:all .3s; 
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s; 
 	i { color: $cta-color; }
 }
 
 .to-top.top-is-visible {
-	visibility:visible;
+	visibility: visible;
 	opacity:1;
 }
 

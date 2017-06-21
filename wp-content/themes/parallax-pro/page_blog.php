@@ -35,8 +35,8 @@ add_action('genesis_after_endwhile','abc');
 function abc() {
 	the_posts_pagination( array(
 		'mid_size' => 0,
-		'prev_text' => __( 'Back', 'textdomain' ),
-		'next_text' => __( 'Onward', 'textdomain' ),
+		'prev_text' => __( 'Previous Page', 'textdomain' ),
+		'next_text' => __( 'Next Page', 'textdomain' ),
 		) ); 
 }
 

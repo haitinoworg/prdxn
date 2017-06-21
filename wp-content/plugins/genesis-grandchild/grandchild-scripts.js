@@ -1,9 +1,27 @@
   (function($) {
 
 
+
     $(document).ready(function() {
 
-      /* Multiselect click */
+      /*
+      * Gallery Lightbox
+      */
+
+      $('.gallery-section').hide();
+      if($('.gallery-section').find('*').hasClass('grid-item')) {
+        $('.gallery-section').show(); 
+        $('.gallery-section').addClass('gallery-modal');
+        $('body').css('overflow-y','hidden');
+      } 
+
+      $('.close-lightbox').click(function(){
+        $('.gallery-section').hide();
+        $('body').css('overflow-y','auto');
+      });
+
+      $('.cws-pagination').children('span').remove();
+
       $( "body" ).delegate( ".dropdown-toggle", "click", function() {
         $('.check-mark').addClass('fa fa-check fa-1x');
         $('.dropdown-menu.open').css('min-height', '100%');
@@ -111,10 +129,22 @@
         }
 
         $('.less-content').hide();
+
+        postcont = $('.detailed-content');
+
+        postcont.each(function(){ 
+          var posttxt = $(this).text();
+          $(this).html('<span>' + posttxt.slice(0,132) +  '</span>' + '<span class="excerpt-content">' + posttxt.slice(132,posttxt.length) + '</span>');
+        });
+
+        $('.excerpt-content').slideUp('fast', function(){
+          $(this).css('display','none');
+        });
+
         $('.more-content').click(function() {
           $(this).hide();
           $(this).siblings('span').show();
-          $(this).siblings('.detailed-content').children('.excerpt-content').slideDown('fast', function(){
+          $(this).siblings('.detailed-content').children('.excerpt-content').slideDown(function(){
             $(this).css('display','inline');
           });
         });
@@ -163,7 +193,6 @@
       $(this).css('display','none');
     });
   });
-
 
 
   /*
@@ -215,9 +244,11 @@ var validate = function(field, id, regx) {
   var reg = regx;
   if(input_value != "") {
     if(!(reg.test(input_value))) {
+      $(id).siblings('p').removeClass('blank-text');
       $(id).siblings('p').text('Please enter a valid ' + field);
     } else {
-      $(id).siblings('p').text('');
+      $(id).siblings('p').addClass('blank-text');
+
     }
   } else {
     event.preventDefault();
@@ -239,14 +270,19 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
   function elements_validate(elemen_id, param1, param2) {
     $(elemen_id).on('focusout', function() {
+      $(elemen_id).siblings('p').removeClass('blank-text');
       validate(param1, elemen_id, param2);
     });
 
     $(elemen_id).on('focusin', function() {
-      $(elemen_id).siblings('p').text('');
+      $(elemen_id).siblings('p').addClass('blank-text');
     });
 
-    $(".w2linput.submit").click(function(event) { 
+    $("#sf_form_salesforce_w2l_lead_7 .w2linput.submit").click(function(event) { 
+     validate(param1, elemen_id, param2);
+   });
+
+    $("#sf_form_salesforce_w2l_lead_8 .w2linput.submit").click(function(event) { 
      validate(param1, elemen_id, param2);
    });
   }
@@ -269,6 +305,9 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
   // Country
   elements_validate("#sf_country", 'country', name_reg);
 
+  //Volunteer Skills
+  elements_validate("#sf_00NA000000723Db", 'volunteer skills', name_reg);
+
   // Search Form
 
   elements_validate(".search-form input[type='search']",'', name_reg);
@@ -276,6 +315,11 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
   $(".search-form button").click(function(event) {
     validate('search', ".search-form input", '');
+  });
+
+  $("#sf_form_salesforce_w2l_lead_6 .w2linput.submit").click(function(event) { 
+    validate( 'name', "#sf_form_salesforce_w2l_lead_6 #sf_first_name", name_reg);
+    validate('first name', "#sf_form_salesforce_w2l_lead_6 #sf_email", name_reg);
   });
 
 /*
@@ -319,6 +363,7 @@ $('.tabs-nav').click(function(){
 
 
   $('.sf_type_multi-select').children('select').addClass('selectpicker');
+  $('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
 
   $('ul.dropdown-menu a').parent().click(function(){
     console.log('clickekdie');

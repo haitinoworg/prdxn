@@ -137,6 +137,12 @@
 				left: 0;
 				color: #fff; 
 				font-size: 32px;	
+
+				@include maxWidth(1025px) {
+					@include property(transform, translateY(-50%));
+				}
+
+
 				@include property(animation,heading-fade-w 0.5s ease-out both);
 
 				@include mobile() {
@@ -145,6 +151,7 @@
 
 				@include tab() {
 					position: static;
+					@include property(transform, translateY(0%));
 				}
 				
 			}
@@ -154,7 +161,7 @@
 				position: absolute;
 				top: 100%;
 				left: 0;
-				@include minWidth(768px) {
+				@include minWidth(1025px) {
 					@include property(animation,text-overlay-w 0.5s linear both);
 				}
 			}
@@ -165,13 +172,13 @@
 			@include props(bgb);
 			h3 {
 				top: 50%;
-				@include minWidth(769px) {
+				@include minWidth(1025px) {
 					@include property(transform, translateY(-50%));
 					@include property(animation,heading-fade 0.5s linear both);
 				}
 			}
 			p {   
-				@include minWidth(769px) {
+				@include minWidth(1025px) {
 					@include property(animation,text-overlay 0.5s linear both);
 				}
 			}
@@ -184,11 +191,10 @@
 			top: 50%;
 			@include property(transform,translateY(-50%));
 
-			@include tab() {
+			@include maxWidth(769px) {
 				height: auto;
 				left: auto;
 				top: 50%;
-				@include property(transform, translateY(-50%));
 			}
 
 			@include mobile() {
@@ -369,7 +375,7 @@
 
 /* Two Column Image Overlay Animation Keyframe */
 
-@include minWidth(769px) {
+@include minWidth(1025px) {
 
 	@keyframes heading-fade {
 		0% {
@@ -590,7 +596,7 @@
 	margin-bottom: 57px;
 	display: inline-block;
 
-	@include tab() { width: 100%; }
+	@include md() { width: 100%; }
 	
 	.accordion-content {
 		p { margin: 15px 0 17px; }

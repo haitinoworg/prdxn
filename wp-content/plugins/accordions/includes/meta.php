@@ -85,13 +85,13 @@ function meta_boxes_accordions_input( $post ) {
 	$accordions_icons_plus = get_post_meta( $post->ID, 'accordions_icons_plus', true );
 	
 	if(empty($accordions_icons_plus)){
-		$accordions_icons_plus = 'fa-chevron-up';
+		$accordions_icons_plus = apply_filters('accordions_filter_default_icon_plus', 'fa-chevron-up');
 		}
 	
 	$accordions_icons_minus = get_post_meta( $post->ID, 'accordions_icons_minus', true );	
 
 	if(empty($accordions_icons_minus)){
-		$accordions_icons_minus = 'fa-chevron-down';
+		$accordions_icons_minus = apply_filters('accordions_filter_default_icon_minus', 'fa-chevron-down');
 		}
 		
 
@@ -330,14 +330,12 @@ function meta_boxes_accordions_input( $post ) {
 
                     	
                     <p class="option-info"><?php _e('Plus Icon.','accordions'); ?></p>
-                    <span title="Plus Icon" class="accordions_icons_custom_plus fa <?php echo $accordions_icons_plus; ?>">
-                    <input type="hidden" name="accordions_icons_plus" value="<?php if(!empty($accordions_icons_plus)) echo $accordions_icons_plus; ?>" />
-                    </span>
+                    <span title="Plus Icon" class="accordions_icons_custom_plus"><i class="fa <?php echo $accordions_icons_plus; ?>"></i></span>
+                    <input type="text" class="accordions_icons_custom_plus_input" name="accordions_icons_plus" value="<?php if(!empty($accordions_icons_plus)) echo $accordions_icons_plus; ?>" />
                     
                     <p class="option-info"><?php _e('Minus Icon.','accordions'); ?></p>
-                    <span title="Minus Icon" class="accordions_icons_custom_minus fa <?php echo $accordions_icons_minus; ?>">
-                    <input type="hidden" name="accordions_icons_minus" value="<?php if(!empty($accordions_icons_minus)) echo $accordions_icons_minus; ?>" />
-                    </span>
+                    <span title="Minus Icon" class="accordions_icons_custom_minus"><i class="fa <?php echo $accordions_icons_minus; ?>"></i></span>
+                    <input type="text" class="accordions_icons_custom_minus_input" name="accordions_icons_minus" value="<?php if(!empty($accordions_icons_minus)) echo $accordions_icons_minus; ?>" />
 
 
                     <p class="option-info"><?php _e('Icon color.','accordions'); ?></p>
