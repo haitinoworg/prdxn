@@ -4,9 +4,18 @@
 
     $(document).ready(function() {
 
-      /* Ayiti Now */
+      /* Donate Paypal Form */
       $('.dntplgn_donate_monthly label span').text('/ month');
-      $('#dntplgn_once_amount').attr('placeholder','$');
+      $('.dntplgn_form_wrapper input[type="text"]').parent().append('<span class="paypal-currency-format">$</span>');
+      $('.dntplgn_form_wrapper input[type="radio"]').click(function(){
+        if($(this).attr('value') == "other") {
+          $('.dntplgn_donate_monthly .paypal-currency-format').addClass('active');
+        }
+        else {
+         $('.dntplgn_donate_monthly .paypal-currency-format').removeClass('active'); 
+       }
+     });
+
 
       /*
       * Gallery Lightbox

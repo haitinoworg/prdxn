@@ -606,13 +606,14 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly,
 body #tabs.dntplgn_form_wrapper form {
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly input,
 body #tabs.dntplgn_form_wrapper form input {
-  width: 16%;
   min-width: 40px;
+  width: 16%;
+  padding: 15px 10px 15px 30px;
   display: inline-block;
-  position: relative;
 }
 body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly input::-webkit-input-placeholder,
 body #tabs.dntplgn_form_wrapper form input::-webkit-input-placeholder {
@@ -628,6 +629,11 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly input:-ms-input-plac
 body #tabs.dntplgn_form_wrapper form input:-ms-input-placeholder {
   color: #aaa;
   font-size: 23px;
+}
+body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly input[type="radio"],
+body #tabs.dntplgn_form_wrapper form input[type="radio"] {
+  color: #000;
+  font-size: 25px;
 }
 body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly label,
 body #tabs.dntplgn_form_wrapper form label {
@@ -666,6 +672,34 @@ body #tabs.dntplgn_form_wrapper form .dntplgn_submit_button {
 body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly .dntplgn_submit_button:hover,
 body #tabs.dntplgn_form_wrapper form .dntplgn_submit_button:hover {
   color: #fff;
+}
+body #tabs.dntplgn_form_wrapper form span.paypal-currency-format {
+  content: "$";
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  color: #aaa;
+  font: 23px Roboto, sans-serif;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency-format {
+  content: "$";
+  display: none;
+  position: absolute;
+  top: 231px;
+  left: 10px;
+  color: #aaa;
+  font: 23px Roboto, sans-serif;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency-format.active {
+  display: inline-block;
 }
 
 /*

@@ -372,12 +372,12 @@ body #tabs.dntplgn_form_wrapper {
 	form { 
 		width: 100%;
 		margin: 0 auto;
-
+		position: relative;
 		input {
-			width: 16%;
 			min-width: 40px;
+			width: 16%;
+			padding: 15px 10px 15px 30px;
 			display: inline-block;
-			position: relative;
 			&::-webkit-input-placeholder
 			{	
 				color: #aaa;	
@@ -393,6 +393,11 @@ body #tabs.dntplgn_form_wrapper {
 				color: #aaa;	
 				font-size: 23px;
 			}
+		}
+
+		input[type="radio"] {
+			color: #000;
+			font-size: 25px;
 		}
 
 		label {
@@ -428,6 +433,32 @@ body #tabs.dntplgn_form_wrapper {
 			&:hover {
 				color: #fff;	
 			}
+		}
+	}
+
+	form {
+		span.paypal-currency-format {
+			content: "$";
+			position: absolute;
+			top: 45px;
+			left: 10px;
+			color: #aaa;
+			font: 23px $font;
+			@include property(transform, translateY(-50%));
+		}
+	}
+
+	form.dntplgn_donate_monthly {
+		span.paypal-currency-format {
+			content: "$";
+			display: none;
+			position: absolute;
+			top: 231px;
+			left: 10px;
+			color: #aaa;
+			font: 23px $font;
+			@include property(transform, translateY(-50%));
+			&.active { display: inline-block;	}
 		}
 	}
 
