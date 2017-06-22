@@ -4,6 +4,10 @@
 
     $(document).ready(function() {
 
+      /* Ayiti Now */
+      $('.dntplgn_donate_monthly label span').text('/ month');
+      $('#dntplgn_once_amount').attr('placeholder','$');
+
       /*
       * Gallery Lightbox
       */
@@ -31,10 +35,8 @@
       });
 
       /*Pagination on mobile*/
-      if($(window).width() < 481) {
-        $('.pagination-next').children('a').text('»');
-        $('.pagination-previous').children('a').text('«');
-      } 
+      $('.pagination-next').children('a').text('»');
+      $('.pagination-previous').children('a').text('«');
 
   // Header Height
   var headerHeight = $('.site-header').outerHeight();

@@ -327,16 +327,47 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 }
 
 
-#tabs.dntplgn_form_wrapper {
-	width: 80%;
-	max-width: 400px;
-	min-width: 220px;
-	margin: 0 auto;
-	text-align: center;
-	@include tab() {
-		width: 100%;
+body #tabs.dntplgn_form_wrapper {
+	width: 360px;
+	border-radius: 4px;
+	display: inline-block;
+
+	/* Paypal Tabs Styling */
+	.ui-tabs-nav {
+		border: 2px solid #000;
+		border-radius: 4px;
+		.ui-tabs-anchor {
+			font: 15px $font;
+			@include md() {
+				font: 13px;
+			}
+		}
+
+		li.ui-state-default {
+			padding-bottom: 1px;
+			border-top-right-radius: 0; 
+			border-top-left-radius: 0; 
+			background-color: #000;
+
+			a { 
+				padding: 15px 15px;
+				color: #fff; 
+			}
+		}
+
+		li.ui-state-active {
+			background-color: #fff;
+
+			a { 
+				color: #000; 
+				font-weight: 900;
+			}
+
+		}
 	}
 
+
+	/* Paypal Form Styling */
 	form.dntplgn_donate_monthly,
 	form { 
 		width: 100%;
@@ -346,6 +377,22 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 			width: 16%;
 			min-width: 40px;
 			display: inline-block;
+			position: relative;
+			&::-webkit-input-placeholder
+			{	
+				color: #aaa;	
+				font-size: 23px;
+			}
+			&::-moz-placeholder
+			{	
+				color: #aaa;	
+				font-size: 23px;
+			}
+			&:-ms-input-placeholder
+			{	
+				color: #aaa;	
+				font-size: 23px;
+			}
 		}
 
 		label {
@@ -370,9 +417,17 @@ div#n2-ss-2 .n2-grab { 	cursor: default; }
 			margin: 14px 0 0;
 		}
 
-		.dntplgn_submit_button {
-			@include cta;
-			margin-bottom: 30px;
+		.dntplgn_submit_button {	
+			width: 100%;
+			padding: 15px 0;
+			margin: 30px 0 0;
+			background-color: #000;
+			font: 15px $font;
+			text-align: center;
+
+			&:hover {
+				color: #fff;	
+			}
 		}
 	}
 

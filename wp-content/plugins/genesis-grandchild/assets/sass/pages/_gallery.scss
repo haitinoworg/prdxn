@@ -175,7 +175,6 @@
       position: absolute;
       left: 8%;
       z-index: 100;
-      background-color: $cta-color;
       color: #fff;
       @include maxWidth(569px) { 
         display: block;
@@ -191,15 +190,14 @@
       width: auto;
       padding: 9px 28px;
       float: left;
+      background-color: $cta-color;
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-
       @include maxWidth(569px) { 
         border-left: 1px solid #c3c3c3;
         display: table-cell;
         float: none;
-        background-color: #f16522; 
         white-space: nowrap;
       }
     }
@@ -335,43 +333,32 @@ img {
       }
     }
 
-    &:hover {
 
-      .thumbimage {
-        @include property(animation, album-hover 0.3s linear both);
-      }
-
-      .details {
-        width: 100%;
-        height: 20px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        color: #fff;
-        font: 17px $font;
-        text-align: center;
-        @include property(transform,translateY(-50%));
-        opacity: 1;
-        @include property(animation, album-details 0.3s linear both);
-        a,
-        a:hover {
-          color: #fff;
-          text-decoration: none;
-          font: 17px $font;
-
-        }
-
-      }
+    .thumbimage {
+      opacity: 0.3;
     }
+
+    &:hover {
+     .thumbimage {
+      @include property(animation, album-hover 0.3s linear both);
+    }
+
+    .details {
+      @include property(animation, album-details 0.3s linear both);
+    }
+
   }
 
-  .grid {
-    margin: 0 auto;
 
-    .thumbnail {
-      border: 0;
-      border-bottom: 0;
-      margin: 15px;
+}
+
+.grid {
+  margin: 0 auto;
+
+  .thumbnail {
+    border: 0;
+    border-bottom: 0;
+    margin: 15px;
       // float: none;
       a { 
         width: 100%;
@@ -394,12 +381,7 @@ img {
       font: 17px $font;
       text-align: center;
       @include property(transform,translateY(-50%));
-      opacity: 0;
-
-      @include md() {
-        opacity: 1;
-      }
-
+      opacity: 1;
       a,
       a:hover {
         color: #fff;
@@ -426,13 +408,13 @@ img {
 @include minWidth(1025px) {
 
  @keyframes album-hover {
-  0% { opacity: 1; }  
-  100% { opacity: 0.3; }
+  0% { opacity: 0.3; }  
+  100% { opacity: 1; }
 }
 
 @keyframes album-details {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 }
