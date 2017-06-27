@@ -1,16 +1,21 @@
 /*
 * About Template Styling
 */
-
+.page-template-page-research,
+.page-template-page-gallery,
 .page-template-template_about.full-width-content {
 
 	.programs-hero-image {
 		height: 272px;
 		max-height: 500px;
 		.wrap { margin-top: 50px; }
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 	.content {
-		width: 84%;
+		width: 100%;
 		max-width: 2000px;
 		padding: 0;
 		margin: 0 auto;

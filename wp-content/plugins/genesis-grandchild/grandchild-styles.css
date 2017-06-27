@@ -1210,8 +1210,9 @@ Content Area
 }
 .site-inner .content .home-section-1 {
   height: auto;
-  padding: 63px 0;
-  background-size: cover;
+  padding: 65px 0 65px;
+  background-position: 100% !important;
+  background-size: 100%;
 }
 .site-inner .content .home-section-1 .wrap {
   width: 84%;
@@ -1800,8 +1801,6 @@ Content Area
   width: 100%;
   height: auto;
   max-width: 480px;
-  transition: max-width 0.5s ease-out;
-  -webkit-transition: max-width 0.5s;
 }
 @media screen and (max-width: 768px) {
   .page-template-page_twocolumns .content .program-posts .post-images.content-default > a img,
@@ -1817,11 +1816,13 @@ Content Area
     max-width: 480px;
   }
 }
-.page-template-page_twocolumns .content .program-posts .post-images.content-default > a:hover img,
-.page-template-page_get_involved .content .program-posts .post-images.content-default > a:hover img {
-  max-width: 100%;
-  transition: max-width 0.5s ease-out;
-  -webkit-transition: max-width 0.5s;
+@media screen and (min-width: 1025px) {
+  .page-template-page_twocolumns .content .program-posts .post-images.content-default > a:hover img,
+  .page-template-page_get_involved .content .program-posts .post-images.content-default > a:hover img {
+    max-width: 100%;
+    transition: max-width 0.5s ease-out;
+    -webkit-transition: max-width 0.5s;
+  }
 }
 .page-template-page_twocolumns .content .program-posts .post-images.content-default div.entry-content,
 .page-template-page_get_involved .content .program-posts .post-images.content-default div.entry-content {
@@ -2080,17 +2081,18 @@ div#n2-ss-6 .n2-grab {
   background-color: #000;
 }
 .programs-hero-image img {
-  width: 100%;
-  height: auto;
+  max-width: initial;
+  width: auto;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .programs-hero-image img {
-    width: 1700px;
-    max-width: 1700px;
+    width: 2200px;
+    height: auto;
   }
 }
 .programs-hero-image h1, .programs-hero-image h2, .programs-hero-image h3, .programs-hero-image h4, .programs-hero-image h5, .programs-hero-image h6 {
@@ -5669,44 +5671,70 @@ main.content .entry-content p:last-child {
 /*
 * About Template Styling
 */
+.page-template-page-research .programs-hero-image,
+.page-template-page-gallery .programs-hero-image,
 .page-template-template_about.full-width-content .programs-hero-image {
   height: 272px;
   max-height: 500px;
 }
+.page-template-page-research .programs-hero-image .wrap,
+.page-template-page-gallery .programs-hero-image .wrap,
 .page-template-template_about.full-width-content .programs-hero-image .wrap {
   margin-top: 50px;
 }
+.page-template-page-research .programs-hero-image img,
+.page-template-page-gallery .programs-hero-image img,
+.page-template-template_about.full-width-content .programs-hero-image img {
+  width: 100%;
+  height: auto;
+}
+.page-template-page-research .content,
+.page-template-page-gallery .content,
 .page-template-template_about.full-width-content .content {
-  width: 84%;
+  width: 100%;
   max-width: 2000px;
   padding: 0;
   margin: 0 auto;
   float: none;
 }
+.page-template-page-research .content article.entry,
+.page-template-page-gallery .content article.entry,
 .page-template-template_about.full-width-content .content article.entry {
   padding: 60px 0;
   margin: 0;
 }
+.page-template-page-research .content article.entry h3,
+.page-template-page-gallery .content article.entry h3,
 .page-template-template_about.full-width-content .content article.entry h3 {
   margin: 0 0 15px;
   font-size: 32px;
 }
 @media screen and (max-width: 569px) {
+  .page-template-page-research .content article.entry h3,
+  .page-template-page-gallery .content article.entry h3,
   .page-template-template_about.full-width-content .content article.entry h3 {
     font-size: 30px;
   }
 }
+.page-template-page-research .content article.entry p,
+.page-template-page-gallery .content article.entry p,
 .page-template-template_about.full-width-content .content article.entry p {
   margin-bottom: 0;
 }
+.page-template-page-research .content article.entry .entry-content,
+.page-template-page-gallery .content article.entry .entry-content,
 .page-template-template_about.full-width-content .content article.entry .entry-content {
   clear: both;
 }
+.page-template-page-research .content article.entry .entry-content div,
+.page-template-page-gallery .content article.entry .entry-content div,
 .page-template-template_about.full-width-content .content article.entry .entry-content div {
   padding: 24px 0;
   display: table;
   clear: both;
 }
+.page-template-page-research .content article.entry .entry-content div:first-child,
+.page-template-page-gallery .content article.entry .entry-content div:first-child,
 .page-template-template_about.full-width-content .content article.entry .entry-content div:first-child {
   padding: 30px;
 }

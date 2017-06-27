@@ -14,7 +14,7 @@ global $post;
 $post_slug=$post->post_name;
 
 
-if($post_slug == "our-programs" || $post_slug == "get-involved") {
+if($post_slug == "our-programs") {
 	// * Add the featured image after post title
 	add_action( 'genesis_before_entry', 'programs_featured_image' );
 	function programs_featured_image() {

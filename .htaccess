@@ -80,3 +80,7 @@ RewriteRule . /ayiti2/index.php [L]
 </IfModule>
 
 # END WordPress
+
+
+ErrorDocument 403 /ayiti2/404.php
+ErrorDocument 404 /ayiti2/404.php

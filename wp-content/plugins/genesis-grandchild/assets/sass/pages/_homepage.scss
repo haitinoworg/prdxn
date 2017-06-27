@@ -121,8 +121,9 @@ Content Area
 		*/
 		.home-section-1 {
 			height: auto;
-			padding: 63px 0;
-			background-size: cover;
+			padding: 65px 0 65px;
+			background-position: 100% !important;
+			background-size: 100%;
 			
 			.wrap { 
 				width: 84%;

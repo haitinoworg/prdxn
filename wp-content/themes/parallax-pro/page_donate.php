@@ -19,34 +19,54 @@ function parallax_add_body_class( $classes ) {
 	return $classes;
 
 }
-remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-//* Force full width content layout
-add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
-
-//* Remove navigation
-remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
-remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
-
-//* Remove breadcrumbs
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-
-//* Remove site footer widgets
-// remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 
 
-// Email Us Section Structure
-add_action('genesis_entry_footer','email_us_func');
-function email_us_func() {
+	/* Add the featured image */
+	add_action( 'genesis_before_entry', 'programs_featured_image' );
+	function programs_featured_image() {
+		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
+		echo the_field("donate_text");
+		echo '<h3 class="page-title">';
+		echo the_title() . '</h3></div>';
+		echo the_field("donate_shortcode");
+		echo '</div></div>';
+		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
+			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
+			echo '</div>';
+		} else {
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
+			. '/images/empty-image.png" /></div>';
+		}
 
-	$paypal = get_field('paypal_code');
-	if($paypal) {
-		?>
-		<div class="paypal-section">
-			<?php echo $paypal; ?>
-		</div>
-		<?php
+
 	}
-}
+
+  /* For Icons section */
+	add_action('genesis_after_entry','custom_list_content');
+	function custom_list_content() {
+		$donation_data = get_field('donation_data');
+		$questions = get_field('question_field');
+		if($donation_data) {	
+			?>
+			<article class="entry donate-entry">
+				<div class="real-time-data entry-content">
+					<?php echo $donation_data; ?>
+				</div>
+			</article>
+			<?php
+		} else { echo '';	}
+
+		if($questions) {
+			?>
+			<article class="entry questions-section">
+				<div class="entry-content">
+					<?php echo $questions; ?>
+				</div>
+			</article>
+			<?php
+		} else { echo ''; }
+
+	}
 
 //* Remove site footer elements
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
