@@ -415,11 +415,12 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 			}
 		}
 
-		iframe {	
-			margin: 0 auto;	
+		iframe {
+			margin: 0;	
 			@include mobile() {
-				min-width: 100%;
 				box-sizing: border-box;
+				min-width: 100%;
+				margin: 0 auto;	
 			}
 		}
 

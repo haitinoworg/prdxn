@@ -4,18 +4,29 @@
 
     $(document).ready(function() {
 
-      /* Donate Paypal Form */
-      $('.dntplgn_donate_monthly label span').text('/ month');
-      $('.dntplgn_form_wrapper input[type="text"]').parent().append('<span class="paypal-currency-format">$</span>');
-      $('.dntplgn_form_wrapper input[type="radio"]').click(function(){
-        if($(this).attr('value') == "other") {
-          $('.dntplgn_donate_monthly .paypal-currency-format').addClass('active');
-        }
-        else {
-         $('.dntplgn_donate_monthly .paypal-currency-format').removeClass('active'); 
-       }
-     });
+      /* Fundraising Paypal Form */
+      // $('#featured-page-4').hide();
+      $('#featured-page-2').append('<span class="fundraise-close">close</span>');
 
+      $('.fundraise-open a').click(function(){
+        $('#featured-page-2').show();
+        $('body').css('overflow-y','hidden');
+      });
+      $('.fundraise-close').click(function(){
+        $('#featured-page-2').hide();
+        $('body').css('overflow-y','auto');
+      });
+
+      $('#featured-page-4').append('<span class="fundraise-close">close</span>');
+
+      $('.fundraise-open a').click(function(){
+        $('#featured-page-4').show();
+        $('body').css('overflow-y','hidden');
+      });
+      $('.fundraise-close').click(function(){
+        $('#featured-page-4').hide();
+        $('body').css('overflow-y','auto');
+      });
 
       /*
       * Gallery Lightbox
@@ -296,6 +307,7 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
     $("#sf_form_salesforce_w2l_lead_8 .w2linput.submit").click(function(event) { 
      validate(param1, elemen_id, param2);
    });
+
   }
 
   // Adding Error Message
@@ -330,8 +342,13 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
 
   $("#sf_form_salesforce_w2l_lead_6 .w2linput.submit").click(function(event) { 
     validate( 'name', "#sf_form_salesforce_w2l_lead_6 #sf_first_name", name_reg);
-    validate('first name', "#sf_form_salesforce_w2l_lead_6 #sf_email", name_reg);
+    validate('email', "#sf_form_salesforce_w2l_lead_6 #sf_email", email_reg);
   });
+
+  $(".question-form .w2linput.submit").click(function(event) { 
+   validate( 'name', "#sf_form_salesforce_w2l_lead_6 #sf_first_name", name_reg);
+   validate('email', "#sf_form_salesforce_w2l_lead_6 #sf_email", email_reg);
+ });
 
 /*
 * Tabs Functionality for Accordion Plugin

@@ -101,37 +101,3 @@ body.faq {
 		article.entry { padding: 63px 0 60px; }
 	}
 }
-
-
-/*
-* Donate Page
-*/
-
-.page-id-65 {
-	main.content {
-		article {
-			div.entry-content {
-				&>div {
-					width: 49.5%;
-					float: left;
-					text-align: center;
-
-					&:first-child {  border-right: 1px solid $cta-color;	}
-					h3,
-					p {
-						text-align: center;
-					}
-
-					h2,
-					h3,
-					h4,
-					h5,
-					h6 {
-						margin: 36px 0 20px;
-					}
-
-				}
-			}
-		}
-	}
-}

@@ -702,6 +702,157 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
   display: inline-block;
 }
 
+/* Image Caption Styling */
+#featured-page-1,
+#featured-page-4,
+#featured-page-2,
+#featured-page-5,
+#featured-page-6 {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #475193;
+  z-index: 1003;
+  overflow-y: auto;
+  /* Close Icon */
+}
+#featured-page-1 .fundraise-close,
+#featured-page-4 .fundraise-close,
+#featured-page-2 .fundraise-close,
+#featured-page-5 .fundraise-close,
+#featured-page-6 .fundraise-close {
+  width: 25px;
+  height: 25px;
+  margin: 25px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  z-index: 1;
+  background: url(../../uploads/2017/02/close.png) no-repeat 100%;
+  background-size: 25px 25px;
+  text-indent: -9999px;
+}
+#featured-page-1 h1, #featured-page-1 h2, #featured-page-1 h3,
+#featured-page-4 h1,
+#featured-page-4 h2,
+#featured-page-4 h3,
+#featured-page-2 h1,
+#featured-page-2 h2,
+#featured-page-2 h3,
+#featured-page-5 h1,
+#featured-page-5 h2,
+#featured-page-5 h3,
+#featured-page-6 h1,
+#featured-page-6 h2,
+#featured-page-6 h3 {
+  margin-bottom: 42px;
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+}
+#featured-page-1 .entry,
+#featured-page-4 .entry,
+#featured-page-2 .entry,
+#featured-page-5 .entry,
+#featured-page-6 .entry {
+  width: 84%;
+  padding: 58px 0 63px;
+  margin: 0 auto;
+}
+#featured-page-1 .entry-content .wp-caption,
+#featured-page-4 .entry-content .wp-caption,
+#featured-page-2 .entry-content .wp-caption,
+#featured-page-5 .entry-content .wp-caption,
+#featured-page-6 .entry-content .wp-caption {
+  min-width: 28%;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+@media screen and (max-width: 768px) {
+  #featured-page-1 .entry-content .wp-caption,
+  #featured-page-4 .entry-content .wp-caption,
+  #featured-page-2 .entry-content .wp-caption,
+  #featured-page-5 .entry-content .wp-caption,
+  #featured-page-6 .entry-content .wp-caption {
+    min-width: 100%;
+  }
+}
+#featured-page-1 .entry-content .wp-caption:nth-of-type(2),
+#featured-page-4 .entry-content .wp-caption:nth-of-type(2),
+#featured-page-2 .entry-content .wp-caption:nth-of-type(2),
+#featured-page-5 .entry-content .wp-caption:nth-of-type(2),
+#featured-page-6 .entry-content .wp-caption:nth-of-type(2) {
+  margin: 0 4.5%;
+}
+@media screen and (max-width: 768px) {
+  #featured-page-1 .entry-content .wp-caption:nth-of-type(2),
+  #featured-page-4 .entry-content .wp-caption:nth-of-type(2),
+  #featured-page-2 .entry-content .wp-caption:nth-of-type(2),
+  #featured-page-5 .entry-content .wp-caption:nth-of-type(2),
+  #featured-page-6 .entry-content .wp-caption:nth-of-type(2) {
+    margin: 45px 0;
+  }
+}
+#featured-page-1 .entry-content .wp-caption img,
+#featured-page-4 .entry-content .wp-caption img,
+#featured-page-2 .entry-content .wp-caption img,
+#featured-page-5 .entry-content .wp-caption img,
+#featured-page-6 .entry-content .wp-caption img {
+  height: 100px;
+  border-radius: 100%;
+  padding: 18px;
+  background-color: #fff;
+}
+#featured-page-1 .entry-content .wp-caption .wp-caption-text,
+#featured-page-4 .entry-content .wp-caption .wp-caption-text,
+#featured-page-2 .entry-content .wp-caption .wp-caption-text,
+#featured-page-5 .entry-content .wp-caption .wp-caption-text,
+#featured-page-6 .entry-content .wp-caption .wp-caption-text {
+  margin-top: 12px;
+  font: 17px Roboto, sans-serif;
+}
+#featured-page-1 .entry-content a,
+#featured-page-4 .entry-content a,
+#featured-page-2 .entry-content a,
+#featured-page-5 .entry-content a,
+#featured-page-6 .entry-content a {
+  width: auto;
+  padding: 10px 35px;
+  margin: 53px 0 0;
+  border-color: #f16522;
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: #f16522;
+  color: #fff !important;
+  font: 700 16px Roboto, sans-serif;
+}
+#featured-page-1 .entry-content a:focus,
+#featured-page-4 .entry-content a:focus,
+#featured-page-2 .entry-content a:focus,
+#featured-page-5 .entry-content a:focus,
+#featured-page-6 .entry-content a:focus {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff !important;
+}
+#featured-page-1 .entry-content a:hover,
+#featured-page-4 .entry-content a:hover,
+#featured-page-2 .entry-content a:hover,
+#featured-page-5 .entry-content a:hover,
+#featured-page-6 .entry-content a:hover {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff !important;
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -2212,12 +2363,13 @@ div#n2-ss-6 .n2-grab {
   }
 }
 .programs-hero-image .hero-content iframe {
-  margin: 0 auto;
+  margin: 0;
 }
 @media screen and (max-width: 569px) {
   .programs-hero-image .hero-content iframe {
-    min-width: 100%;
     box-sizing: border-box;
+    min-width: 100%;
+    margin: 0 auto;
   }
 }
 .programs-hero-image form {
@@ -3510,29 +3662,6 @@ body.faq p a {
 
 .page-id-889 main.content article.entry {
   padding: 63px 0 60px;
-}
-
-/*
-* Donate Page
-*/
-.page-id-65 main.content article div.entry-content > div {
-  width: 49.5%;
-  float: left;
-  text-align: center;
-}
-.page-id-65 main.content article div.entry-content > div:first-child {
-  border-right: 1px solid #f16522;
-}
-.page-id-65 main.content article div.entry-content > div h3,
-.page-id-65 main.content article div.entry-content > div p {
-  text-align: center;
-}
-.page-id-65 main.content article div.entry-content > div h2,
-.page-id-65 main.content article div.entry-content > div h3,
-.page-id-65 main.content article div.entry-content > div h4,
-.page-id-65 main.content article div.entry-content > div h5,
-.page-id-65 main.content article div.entry-content > div h6 {
-  margin: 36px 0 20px;
 }
 
 /* Contact Form
@@ -6111,59 +6240,281 @@ main.content .entry-content p:last-child {
   color: #f16522;
 }
 
-.page-template-page_donate main.content article.entry {
+.page-template-page_donate main.content {
+  max-width: 2000px;
   width: 100%;
-  padding: 58px 0 65px;
-  position: relative;
+  margin: 0 auto;
+  /* Real Time Donation Data Section */
+  /*
+  * Donation Hero Image Styling
+  */
+}
+.page-template-page_donate main.content .donate-title-bar {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f16522;
+  color: #fff;
+  font: 50px/46px Roboto, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+.page-template-page_donate main.content article.entry {
+  padding: 0;
+  margin: 0;
+}
+.page-template-page_donate main.content article.entry .entry-content {
+  width: 84%;
+  padding: 63px 0 63px;
+  margin: 0 auto;
+  clear: both;
   text-align: center;
 }
-@media screen and (min-width: 769px) {
-  .page-template-page_donate main.content article.entry:after {
-    content: " ";
-    height: 250px;
-    border: 0.5px solid #f16522;
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
+.page-template-page_donate main.content article.entry .entry-content h1, .page-template-page_donate main.content article.entry .entry-content h2, .page-template-page_donate main.content article.entry .entry-content h3, .page-template-page_donate main.content article.entry .entry-content h4, .page-template-page_donate main.content article.entry .entry-content h5, .page-template-page_donate main.content article.entry .entry-content h6 {
+  text-align: center;
 }
-.page-template-page_donate main.content .entry-content,
-.page-template-page_donate main.content .paypal-section {
-  width: 48%;
+.page-template-page_donate main.content article.entry .entry-content .wp-caption {
+  margin: 0 25px;
+  display: inline-block;
   display: inline-block;
   vertical-align: top;
-  text-align: center;
-  /* Important is used to override the template style */
 }
-@media screen and (max-width: 768px) {
-  .page-template-page_donate main.content .entry-content,
-  .page-template-page_donate main.content .paypal-section {
-    width: 100%;
-    display: block;
+.page-template-page_donate main.content article.entry .entry-content .wp-caption .wp-caption-text {
+  margin-top: 12px;
+  font: 28px/39px Roboto, sans-serif;
+  color: #000;
+}
+.page-template-page_donate main.content .donate-entry {
+  background-color: #f2f2f2;
+}
+.page-template-page_donate main.content .programs-hero-image {
+  min-height: 450px;
+  width: 100%;
+  height: auto;
+  padding: 65px 0 63px;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+.page-template-page_donate main.content .programs-hero-image img {
+  max-width: initial;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+@media screen and (min-width: 1400px) {
+  .page-template-page_donate main.content .programs-hero-image img {
+    width: 2200px;
+    height: auto;
   }
 }
-.page-template-page_donate main.content .entry-content h1, .page-template-page_donate main.content .entry-content h2, .page-template-page_donate main.content .entry-content h3, .page-template-page_donate main.content .entry-content h4, .page-template-page_donate main.content .entry-content h5, .page-template-page_donate main.content .entry-content h6,
-.page-template-page_donate main.content .paypal-section h1,
-.page-template-page_donate main.content .paypal-section h2,
-.page-template-page_donate main.content .paypal-section h3,
-.page-template-page_donate main.content .paypal-section h4,
-.page-template-page_donate main.content .paypal-section h5,
-.page-template-page_donate main.content .paypal-section h6 {
-  margin: 0 0 20px;
-  text-align: center !important;
+.page-template-page_donate main.content .programs-hero-image h1, .page-template-page_donate main.content .programs-hero-image h2, .page-template-page_donate main.content .programs-hero-image h3, .page-template-page_donate main.content .programs-hero-image h4, .page-template-page_donate main.content .programs-hero-image h5, .page-template-page_donate main.content .programs-hero-image h6 {
+  width: 100%;
+  color: #fff;
+  font: 900 39px Roboto, sans-serif;
+  text-decoration: 2px 2px 10px #000;
 }
-.page-template-page_donate main.content .paypal-section {
+.page-template-page_donate main.content .programs-hero-image p {
+  font-size: 17px;
+  text-decoration: 2px 2px 10px #000;
+}
+.page-template-page_donate main.content .programs-hero-image .wrap {
+  box-sizing: border-box;
+  width: 84%;
+  color: #fff;
+  position: relative;
+  z-index: 5;
+}
+.page-template-page_donate main.content .programs-hero-image .wrap > h1, .page-template-page_donate main.content .programs-hero-image .wrap > h2, .page-template-page_donate main.content .programs-hero-image .wrap > h3, .page-template-page_donate main.content .programs-hero-image .wrap > h4, .page-template-page_donate main.content .programs-hero-image .wrap > h5, .page-template-page_donate main.content .programs-hero-image .wrap > h6 {
+  width: 54%;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 39px;
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_donate main.content .programs-hero-image .wrap > h1, .page-template-page_donate main.content .programs-hero-image .wrap > h2, .page-template-page_donate main.content .programs-hero-image .wrap > h3, .page-template-page_donate main.content .programs-hero-image .wrap > h4, .page-template-page_donate main.content .programs-hero-image .wrap > h5, .page-template-page_donate main.content .programs-hero-image .wrap > h6 {
+    width: 100%;
+    left: 0;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 569px) {
+  .page-template-page_donate main.content .programs-hero-image .wrap > h1, .page-template-page_donate main.content .programs-hero-image .wrap > h2, .page-template-page_donate main.content .programs-hero-image .wrap > h3, .page-template-page_donate main.content .programs-hero-image .wrap > h4, .page-template-page_donate main.content .programs-hero-image .wrap > h5, .page-template-page_donate main.content .programs-hero-image .wrap > h6 {
+    font-size: 26px;
+  }
+}
+.page-template-page_donate main.content .programs-hero-image .hero-content {
+  width: 100%;
+  display: inline-block;
   position: relative;
 }
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc {
+  width: 45%;
+  margin-top: 58px;
+  float: right;
+  text-align: right;
+}
 @media screen and (max-width: 768px) {
-  .page-template-page_donate main.content .paypal-section {
-    padding: 63px 0 0;
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 39px;
+    float: none;
+    text-align: left;
   }
+}
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h2,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h3,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h4,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h5,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc p {
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h2,
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h3,
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h4,
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h5,
+  .page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc p {
+    text-align: left;
+  }
+}
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h2,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h3,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h4,
+.page-template-page_donate main.content .programs-hero-image .hero-content .donate-desc h5 {
+  margin-bottom: 12px;
+}
+.page-template-page_donate main.content .programs-hero-image .hero-content p {
+  width: 100%;
+  margin: 0 0 27px;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_donate main.content .programs-hero-image .hero-content p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-template-page_donate main.content .programs-hero-image .hero-content {
+    width: 100%;
+  }
+}
+.page-template-page_donate main.content .programs-hero-image .hero-content iframe {
+  margin: 0;
+}
+@media screen and (max-width: 569px) {
+  .page-template-page_donate main.content .programs-hero-image .hero-content iframe {
+    box-sizing: border-box;
+    min-width: 100%;
+    margin: 0 auto;
+  }
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead {
+  max-width: 800px;
+  width: 74%;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead .sf_field {
+  width: 47.5%;
+  display: inline-block;
+  vertical-align: top;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead .sf_field:first-child {
+  margin-right: 5%;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead .sf_type_textarea {
+  width: 100%;
+  min-height: 168px;
+  margin-left: 0;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead .sf_type_textarea textarea {
+  min-height: 120px;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead form {
+  text-align: center;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead form p {
+  text-align: left;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead form .w2lsubmit {
+  display: inline-block;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead form .w2lsubmit input {
+  padding: 11px;
+  font: 15px/10px Roboto, sans-serif;
+}
+.page-template-page_donate main.content .question-form .salesforce_w2l_lead .sf_required_fields_msg {
+  position: absolute;
+  bottom: 51px;
+  color: #f00;
+  font-size: 13px;
+}
+
+/*
+* Thankyou Page styling
+*/
+.page-id-1429 main.content .programs-hero-image .wrap,
+.page-id-1340 main.content .programs-hero-image .wrap {
+  min-height: 450px;
+}
+.page-id-1429 main.content .programs-hero-image .wrap .hero-content,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.page-id-1429 main.content .programs-hero-image .wrap .hero-content .donate-desc,
+.page-id-1429 main.content .programs-hero-image .wrap .hero-content h1, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h2, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h3, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h4, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h5, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h6,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content .donate-desc,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h1,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h2,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h3,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h4,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h5,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h6 {
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .page-id-1429 main.content .programs-hero-image .wrap .hero-content .donate-desc,
+  .page-id-1429 main.content .programs-hero-image .wrap .hero-content h1, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h2, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h3, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h4, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h5, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h6,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content .donate-desc,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h1,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h2,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h3,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h4,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h5,
+  .page-id-1340 main.content .programs-hero-image .wrap .hero-content h6 {
+    text-align: center;
+  }
+}
+.page-id-1429 main.content .programs-hero-image .wrap .hero-content h1, .page-id-1429 main.content .programs-hero-image .wrap .hero-content h2,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h1,
+.page-id-1340 main.content .programs-hero-image .wrap .hero-content h2 {
+  font: 50px/46px Roboto, sans-serif;
+}
+.page-id-1429 main.content article.entry,
+.page-id-1340 main.content article.entry {
+  padding: 63px 0 60px;
+}
+.page-id-1429 main.content article.entry .entry-content iframe,
+.page-id-1340 main.content article.entry .entry-content iframe {
+  margin: 0 5px;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=grandchild-styles.css.map */

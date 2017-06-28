@@ -21,15 +21,30 @@ function parallax_add_body_class( $classes ) {
 }
 
 
-	/* Add the featured image */
-	add_action( 'genesis_before_entry', 'programs_featured_image' );
-	function programs_featured_image() {
-		echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
-		echo the_field("donate_text");
-		echo '<h3 class="page-title">';
-		echo the_title() . '</h3></div>';
-		echo the_field("donate_shortcode");
-		echo '</div></div>';
+/* Add the featured image */
+add_action( 'genesis_before_entry', 'programs_featured_image' );
+function programs_featured_image() {
+	?>
+	<h2 class="donate-title-bar"><?php the_title() ?></h2>
+	<div class="programs-hero-image">
+		<div class="wrap">
+			<div class="hero-content">
+				<!-- Hero Image Description -->
+				<div class="donate-desc">
+					<?php echo the_field("donate_text"); ?>
+				</div>
+
+				<!-- Donation shortcode section -->
+				<?php
+				$donate_shortcode = get_field('donate_shortcode');
+				if($donate_shortcode) {
+					echo the_field("donate_shortcode");
+				}
+
+				?>
+			</div>
+		</div>
+		<?php
 		if ( $image = genesis_get_image( 'format=url&size=programs' ) ) {
 			printf( '<img src="%s" alt="%s" />', $image, the_title_attribute( 'echo=0' ) );
 			echo '</div>';
@@ -38,10 +53,11 @@ function parallax_add_body_class( $classes ) {
 			. '/images/empty-image.png" /></div>';
 		}
 
-
 	}
 
-  /* For Icons section */
+	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+
+	/* For Icons section */
 	add_action('genesis_after_entry','custom_list_content');
 	function custom_list_content() {
 		$donation_data = get_field('donation_data');
@@ -58,8 +74,8 @@ function parallax_add_body_class( $classes ) {
 
 		if($questions) {
 			?>
-			<article class="entry questions-section">
-				<div class="entry-content">
+			<article class="entry">
+				<div class="entry-content question-form">
 					<?php echo $questions; ?>
 				</div>
 			</article>
@@ -69,9 +85,9 @@ function parallax_add_body_class( $classes ) {
 	}
 
 //* Remove site footer elements
-remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
-remove_action( 'genesis_footer', 'genesis_do_footer' );
-remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+	remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
+	remove_action( 'genesis_footer', 'genesis_do_footer' );
+	remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 //* Run the Genesis loop
-genesis();
+	genesis();
