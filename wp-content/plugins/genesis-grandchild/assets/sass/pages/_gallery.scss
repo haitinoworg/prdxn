@@ -461,4 +461,21 @@ img {
       }
     }
   }
+
+  .super-list {
+    width: 826px;
+    margin: 0 auto;
+    @include minWidth(1300px) {
+      width: 86.5%;
+    }
+
+    &>.super-list { 
+      width: 100%;
+      margin: 0; 
+      @include minWidth(1300px) {
+        width: 100%;
+      }
+
+    }
+  }
 }

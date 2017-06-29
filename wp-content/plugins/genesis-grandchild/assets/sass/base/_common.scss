@@ -466,96 +466,102 @@ body #tabs.dntplgn_form_wrapper {
 
 
 /* Image Caption Styling */
-
-
-#featured-page-1,
-#featured-page-4,
-#featured-page-2,
-#featured-page-5,
-#featured-page-6 {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: #475193;
-	z-index: 1003;
-	overflow-y: auto;
-
-	/* Close Icon */
-	.fundraise-close {
-		width: 25px;
-		height: 25px;
-		margin: 25px;
-		display: inline-block;
-		position: absolute;
+body .site-container .footer-widgets {
+	section.featuredpage {
+		width: 100% !important;
+		height: 100% !important;
+		display: none;
+		position: fixed;
 		top: 0;
-		right: 5px;
-		z-index: 1;
-		background: url(../../uploads/2017/02/close.png) no-repeat 100%;
-		background-size: 25px 25px;
-		text-indent: -9999px;
-	}
+		left: 0;
+		background-color: rgba(0,0,0,0.9);
+		z-index: 1003;
+		overflow-y: auto;
 
-	h1,h2,h3 { 
-		margin-bottom: 42px;
-		color: #fff;
-		font-size: 50px;
-		text-align: center; 
-	}
-
-	.entry { 
-		width: 84%;
-		padding: 58px 0 63px; 
-		margin: 0 auto;
-	}
-
-	.entry-content { 
-		.wp-caption {	
-			min-width: 28%;
-			margin: 0;
-			@include props(dib,vat);
-
-			@include tab() { min-width: 100%; } 
-
-			&:nth-of-type(2) {
-				margin: 0 4.5%;
-				@include tab() { margin: 45px 0; }
-			}
-
-			img {
-				height: 100px;
-				border-radius: 100%;
-				padding: 18px;
-				background-color: #fff;
-			}
-
-			.wp-caption-text { 
-				margin-top: 12px; 
-				font: 17px $font;
-			}
+		.widget-wrap { 
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 
-		a { 
-			@include boxmodel(3,auto,5,10px 35px,7,53px 0 0);
-			border-color: $cta-color;
-			@include property(border-radius,4px);
+		/* Close Icon */
+		.fundraise-close {
+			width: 25px;
+			height: 25px;
+			margin: 25px;
 			display: inline-block;
-			background-color: $cta-color;
-			color: #fff !important;
-			font: 700 16px $font;
-			&:focus {
-				border-color: $cta-color;
-				background-color: $cta-color;
-				color: #fff !important;
+			position: absolute;
+			top: 0;
+			right: 5px;
+			z-index: 1;
+			background: url(../../uploads/2017/02/close.png) no-repeat 100%;
+			background-size: 25px 25px;
+			text-indent: -9999px;
+		}
+
+		h1,h2,h3 { 
+			margin-bottom: 42px;
+			color: #fff;
+			font-size: 32px;
+			letter-spacing: 1px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.entry { 
+			width: 84%;
+			padding: 58px 0 63px; 
+			margin: 0 auto;
+		}
+
+		.entry-content { 
+			padding: 40px 30px 45px;
+			background-color: #475193;
+			.wp-caption {	
+				min-width: 28%;
+				margin: 0;
+				@include props(dib,vat);
+
+				@include tab() { min-width: 100%; } 
+
+				&:nth-of-type(2) {
+					margin: 0 4.5%;
+					@include tab() { margin: 45px 0; }
+				}
+
+				img {
+					height: 100px;
+					border-radius: 100%;
+					padding: 18px;
+					background-color: #fff;
+				}
+
+				.wp-caption-text { 
+					margin-top: 18px; 
+					font: 17px $font;
+				}
 			}
-			&:hover {
+
+			a { 
+				@include boxmodel(3,auto,5,10px 35px,7,53px 0 0);
 				border-color: $cta-color;
+				@include property(border-radius,4px);
+				display: inline-block;
 				background-color: $cta-color;
 				color: #fff !important;
+				font: 700 16px $font;
+				&:focus {
+					border-color: $cta-color;
+					background-color: $cta-color;
+					color: #fff !important;
+				}
+				&:hover {
+					border-color: $cta-color;
+					background-color: $cta-color;
+					color: #fff !important;
+				}
 			}
 		}
-	}
 
+	}
 }

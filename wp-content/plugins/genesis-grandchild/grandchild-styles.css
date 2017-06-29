@@ -1,23 +1,8 @@
 /*
 * Reset Code ==========================================================
 */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
 /* HTML5 display-role reset for older browsers */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -703,27 +688,24 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
 }
 
 /* Image Caption Styling */
-#featured-page-1,
-#featured-page-4,
-#featured-page-2,
-#featured-page-5,
-#featured-page-6 {
-  width: 100%;
-  height: 100%;
+body .site-container .footer-widgets section.featuredpage {
+  width: 100% !important;
+  height: 100% !important;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #475193;
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 1003;
   overflow-y: auto;
   /* Close Icon */
 }
-#featured-page-1 .fundraise-close,
-#featured-page-4 .fundraise-close,
-#featured-page-2 .fundraise-close,
-#featured-page-5 .fundraise-close,
-#featured-page-6 .fundraise-close {
+body .site-container .footer-widgets section.featuredpage .widget-wrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .site-container .footer-widgets section.featuredpage .fundraise-close {
   width: 25px;
   height: 25px;
   margin: 25px;
@@ -736,91 +718,53 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
   background-size: 25px 25px;
   text-indent: -9999px;
 }
-#featured-page-1 h1, #featured-page-1 h2, #featured-page-1 h3,
-#featured-page-4 h1,
-#featured-page-4 h2,
-#featured-page-4 h3,
-#featured-page-2 h1,
-#featured-page-2 h2,
-#featured-page-2 h3,
-#featured-page-5 h1,
-#featured-page-5 h2,
-#featured-page-5 h3,
-#featured-page-6 h1,
-#featured-page-6 h2,
-#featured-page-6 h3 {
+body .site-container .footer-widgets section.featuredpage h1, body .site-container .footer-widgets section.featuredpage h2, body .site-container .footer-widgets section.featuredpage h3 {
   margin-bottom: 42px;
   color: #fff;
-  font-size: 50px;
+  font-size: 32px;
+  letter-spacing: 1px;
   text-align: center;
+  text-transform: uppercase;
 }
-#featured-page-1 .entry,
-#featured-page-4 .entry,
-#featured-page-2 .entry,
-#featured-page-5 .entry,
-#featured-page-6 .entry {
+body .site-container .footer-widgets section.featuredpage .entry {
   width: 84%;
   padding: 58px 0 63px;
   margin: 0 auto;
 }
-#featured-page-1 .entry-content .wp-caption,
-#featured-page-4 .entry-content .wp-caption,
-#featured-page-2 .entry-content .wp-caption,
-#featured-page-5 .entry-content .wp-caption,
-#featured-page-6 .entry-content .wp-caption {
+body .site-container .footer-widgets section.featuredpage .entry-content {
+  padding: 40px 30px 45px;
+  background-color: #475193;
+}
+body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption {
   min-width: 28%;
   margin: 0;
   display: inline-block;
   vertical-align: top;
 }
 @media screen and (max-width: 768px) {
-  #featured-page-1 .entry-content .wp-caption,
-  #featured-page-4 .entry-content .wp-caption,
-  #featured-page-2 .entry-content .wp-caption,
-  #featured-page-5 .entry-content .wp-caption,
-  #featured-page-6 .entry-content .wp-caption {
+  body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption {
     min-width: 100%;
   }
 }
-#featured-page-1 .entry-content .wp-caption:nth-of-type(2),
-#featured-page-4 .entry-content .wp-caption:nth-of-type(2),
-#featured-page-2 .entry-content .wp-caption:nth-of-type(2),
-#featured-page-5 .entry-content .wp-caption:nth-of-type(2),
-#featured-page-6 .entry-content .wp-caption:nth-of-type(2) {
+body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption:nth-of-type(2) {
   margin: 0 4.5%;
 }
 @media screen and (max-width: 768px) {
-  #featured-page-1 .entry-content .wp-caption:nth-of-type(2),
-  #featured-page-4 .entry-content .wp-caption:nth-of-type(2),
-  #featured-page-2 .entry-content .wp-caption:nth-of-type(2),
-  #featured-page-5 .entry-content .wp-caption:nth-of-type(2),
-  #featured-page-6 .entry-content .wp-caption:nth-of-type(2) {
+  body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption:nth-of-type(2) {
     margin: 45px 0;
   }
 }
-#featured-page-1 .entry-content .wp-caption img,
-#featured-page-4 .entry-content .wp-caption img,
-#featured-page-2 .entry-content .wp-caption img,
-#featured-page-5 .entry-content .wp-caption img,
-#featured-page-6 .entry-content .wp-caption img {
+body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption img {
   height: 100px;
   border-radius: 100%;
   padding: 18px;
   background-color: #fff;
 }
-#featured-page-1 .entry-content .wp-caption .wp-caption-text,
-#featured-page-4 .entry-content .wp-caption .wp-caption-text,
-#featured-page-2 .entry-content .wp-caption .wp-caption-text,
-#featured-page-5 .entry-content .wp-caption .wp-caption-text,
-#featured-page-6 .entry-content .wp-caption .wp-caption-text {
-  margin-top: 12px;
+body .site-container .footer-widgets section.featuredpage .entry-content .wp-caption .wp-caption-text {
+  margin-top: 18px;
   font: 17px Roboto, sans-serif;
 }
-#featured-page-1 .entry-content a,
-#featured-page-4 .entry-content a,
-#featured-page-2 .entry-content a,
-#featured-page-5 .entry-content a,
-#featured-page-6 .entry-content a {
+body .site-container .footer-widgets section.featuredpage .entry-content a {
   width: auto;
   padding: 10px 35px;
   margin: 53px 0 0;
@@ -834,20 +778,12 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
   color: #fff !important;
   font: 700 16px Roboto, sans-serif;
 }
-#featured-page-1 .entry-content a:focus,
-#featured-page-4 .entry-content a:focus,
-#featured-page-2 .entry-content a:focus,
-#featured-page-5 .entry-content a:focus,
-#featured-page-6 .entry-content a:focus {
+body .site-container .footer-widgets section.featuredpage .entry-content a:focus {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff !important;
 }
-#featured-page-1 .entry-content a:hover,
-#featured-page-4 .entry-content a:hover,
-#featured-page-2 .entry-content a:hover,
-#featured-page-5 .entry-content a:hover,
-#featured-page-6 .entry-content a:hover {
+body .site-container .footer-widgets section.featuredpage .entry-content a:hover {
   border-color: #f16522;
   background-color: #f16522;
   color: #fff !important;
@@ -4745,6 +4681,24 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
   text-transform: capitalize;
   white-space: normal;
 }
+.page-template .super-list {
+  width: 826px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1300px) {
+  .page-template .super-list {
+    width: 86.5%;
+  }
+}
+.page-template .super-list > .super-list {
+  width: 100%;
+  margin: 0;
+}
+@media screen and (min-width: 1300px) {
+  .page-template .super-list > .super-list {
+    width: 100%;
+  }
+}
 
 /*
 * Error Page Styling ----------------------------------------------------
@@ -6311,6 +6265,7 @@ main.content .entry-content p:last-child {
 .page-template-page_donate main.content .donate-title-bar {
   width: 100%;
   padding: 20px 0;
+  margin: 0;
   background-color: #f16522;
   color: #fff;
   font: 50px/46px Roboto, sans-serif;

@@ -6,27 +6,18 @@
 
       /* Fundraising Paypal Form */
       // $('#featured-page-4').hide();
-      $('#featured-page-2').append('<span class="fundraise-close">close</span>');
+      $('.footer-widgets .featuredpage').append('<span class="fundraise-close">close</span>');
 
-      $('.fundraise-open a').click(function(){
-        $('#featured-page-2').show();
+      $('.fundraise-open a[title="Fundraising"], .footer-widgets a[title="Fundraise"]').click(function(){
+        $('.footer-widgets .featuredpage').show();
         $('body').css('overflow-y','hidden');
       });
+
       $('.fundraise-close').click(function(){
-        $('#featured-page-2').hide();
+        $('.footer-widgets .featuredpage').hide();
         $('body').css('overflow-y','auto');
       });
 
-      $('#featured-page-4').append('<span class="fundraise-close">close</span>');
-
-      $('.fundraise-open a').click(function(){
-        $('#featured-page-4').show();
-        $('body').css('overflow-y','hidden');
-      });
-      $('.fundraise-close').click(function(){
-        $('#featured-page-4').hide();
-        $('body').css('overflow-y','auto');
-      });
 
       /*
       * Gallery Lightbox
