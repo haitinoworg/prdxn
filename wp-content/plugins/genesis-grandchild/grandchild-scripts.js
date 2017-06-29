@@ -346,8 +346,9 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
   });
 
   $(".question-form .w2linput.submit").click(function(event) { 
-   validate( 'name', "#sf_form_salesforce_w2l_lead_6 #sf_first_name", name_reg);
-   validate('email', "#sf_form_salesforce_w2l_lead_6 #sf_email", email_reg);
+   validate( 'name', ".question-form #sf_first_name", name_reg);
+   validate('email', ".question-form #sf_email", email_reg);
+   validate('email', ".question-form .textarea", textarea_reg);
  });
 
 /*
@@ -389,7 +390,7 @@ $('.tabs-nav').click(function(){
     );
   });
 
-
+  /* Multi-select Dropdown */
   $('.sf_type_multi-select').children('select').addClass('selectpicker');
   $('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
 

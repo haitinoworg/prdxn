@@ -288,15 +288,22 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	overflow: hidden;
 	background-color: #000;
 	img { 
-		max-width: initial;
-		width: auto; 
-		height: 100%;
+		width: 100%; 
+		height: auto;
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 0;
 
 		@include minWidth(1400px) {
+			max-width: initial;
+			width: 2200px;
+			height: auto;
+		}
+
+
+		@include maxWidth(1025px) {
+			max-width: initial;
 			width: 2200px;
 			height: auto;
 		}
@@ -306,6 +313,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		width: 100%;	
 		color: #fff;
 		font: 900 39px $font;
+		line-height: 44px;
 		text-decoration: 2px 2px 10px #000;
 	}
 

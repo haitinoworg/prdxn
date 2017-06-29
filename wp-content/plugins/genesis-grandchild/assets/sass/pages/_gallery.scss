@@ -2,7 +2,7 @@
 .page-template-page-gallery {
   .entry {
    margin-bottom: 0px;
-   padding: 55px 0 53px;
+   padding: 53px 0 53px;
  }
 }
 
@@ -221,11 +221,11 @@
    overflow: auto;
 
    .huge_it_big_li {
-    width: 31.3333%;
+    width: 28%;
     max-width: none;
     height: auto;
     padding: 0px !important; 
-    margin: 0px 2.3333% 32px 0px !important;
+    margin: 0px 4.5% 45px 0px !important;
     border: none;
     border-radius: 0px;
     float: left;
@@ -245,18 +245,6 @@
 
   .overLayer,
   .infoLayer {display: none;}
-
-  a::after {
-   content: ' ';
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   background: url('../../uploads/2017/04/play-icon.png') no-repeat;
-   background-position: center;
-   background-size: 23% 33%;
- }
 }
 
 .huge_it_big_li:nth-child(3n+2) {
@@ -296,7 +284,7 @@ img {
 .gallery-section {
   width: 100%;
   height: 100%;
-  padding: 63px;
+  padding: 58px;
   position: fixed;
   top: 0;
   left: 0;
@@ -316,6 +304,17 @@ img {
         width: auto; 
         height: 100%;
       }
+    }
+  }
+
+  .grid { margin: 0 auto; }
+
+  #album_title {
+    h1,h2,h3,h4,h5 { 
+      font-size: 50px;
+      margin-bottom: 42px;
+      color: #fff;
+      text-align: center;
     }
   }
 
@@ -386,7 +385,7 @@ img {
       a:hover {
         color: #fff;
         text-decoration: none;
-        font: 17px $font;
+        font: 24px $font;
 
       }
 
@@ -417,4 +416,49 @@ img {
   100% { opacity: 0; }
 }
 
+}
+
+
+/* Video Gallery Text alignment
+*/
+
+/* Lightbox text styling */
+.rwd-title-text { 
+  min-width: 100%; 
+  font: 17px $font;
+}
+
+
+/* Video Title */
+.page-template {
+  .video-element_4 {
+    max-width: 255px;
+    margin: 10px 0;
+    .title-block_4 {
+      height: 100%;
+      top: 0;
+      text-align: center;
+      // @include property(transition,  0.3s linear);
+      &:hover {
+        background: url('../../uploads/2017/04/play-icon.png') no-repeat !important;
+        background-position: center !important;
+        background-size: 23% 33% !important;
+        a {  opacity: 0; }
+      }
+
+      a,
+      a:link,
+      a:visited { 
+        padding: 0 15px;
+        top: 50%;
+        color: #fff;
+        font: 17px Roboto, sans-serif;
+        @include property(transform,translateY(-50%));
+        // @include property(transition, all 0.3s linear);
+        text-decoration: none;
+        text-transform: capitalize;
+        white-space: normal;
+      }
+    }
+  }
 }
