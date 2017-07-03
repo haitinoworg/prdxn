@@ -46,19 +46,20 @@ $post_slug=$post->post_name;
 			?>
 			<div class="entry-content">
 				<div>
-					<h3><?php the_title(); ?></h3>
-					<p><?php 
-						$book_desc = get_field('books_description'); 
-						if($book_desc) {
-							echo $book_desc;
-						}
-						else { the_content(); }
-						
-						?></p>
-					</div>
+						<h3><?php the_title(); ?></h3>
+						<div><?php 
+							$book_desc = get_field('books_description'); 
+							if($book_desc) {
+								echo $book_desc;
+							}
+							else { the_content(); }
+							
+							?>
+						</div>
 				</div>
-			</a>
-		</div>
+			</div>
+		</a>
+	</div>
 		<?php 
 
 		endwhile;

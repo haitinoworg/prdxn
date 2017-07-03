@@ -259,6 +259,7 @@ var validate = function(field, id, regx) {
     if(!(reg.test(input_value))) {
       $(id).siblings('p').removeClass('blank-text');
       $(id).siblings('p').text('Please enter a valid ' + field);
+      event.preventDefault();
     } else {
       $(id).siblings('p').addClass('blank-text');
 
@@ -291,18 +292,35 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
       $(elemen_id).siblings('p').addClass('blank-text');
     });
 
-    $("#sf_form_salesforce_w2l_lead_7 .w2linput.submit").click(function(event) { 
+    /* Submit Validations */
+
+    $(".inside .submit").click(function(event) { 
      validate(param1, elemen_id, param2);
    });
 
-    $("#sf_form_salesforce_w2l_lead_8 .w2linput.submit").click(function(event) { 
-     validate(param1, elemen_id, param2);
-   });
+    $(".search-form button").click(function(event) {
+      validate('search', ".search-form input", '');
+    });
+
+    $(".volunteer-form .w2linput.submit").click(function(event) { 
+      validate(param1, elemen_id, param2);
+
+      var comments = $("textarea[placeholder='Volunteer Comments']").val();
+      if(comments == '') {
+        event.preventDefault();
+      }
+
+    });
+
+    $(".question-form .w2linput.submit").click(function(event) { 
+      validate(param1, elemen_id, param2);
+    });
+
 
   }
 
   // Adding Error Message
-  $('#sf_first_name, #sf_last_name, #phone-number, #sf_email, #sf_country, .w2linput.textarea').parent().append('<p>&nbsp;</p>');
+  $('.site-inner .sf_field').append('<p>&nbsp;</p>');
 
    // First Name
    elements_validate("#sf_first_name", 'first name', name_reg);
@@ -320,27 +338,30 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{1,3}$/;
   elements_validate("#sf_country", 'country', name_reg);
 
   //Volunteer Skills
-  elements_validate("#sf_00NA000000723Db", 'volunteer skills', name_reg);
+  elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg);
 
   // Search Form
 
   elements_validate(".search-form input[type='search']",'', name_reg);
 
 
-  $(".search-form button").click(function(event) {
-    validate('search', ".search-form input", '');
+  /* subscribe form fields */
+  //First Name
+  elements_validate(".textwidget #sf_first_name", 'first name', name_reg);
+
+  // Email
+  elements_validate(".textwidget #sf_email", 'email', email_reg);
+
+
+  /* Submit Validations */
+
+  $(".textwidget .w2linput.submit").click(function(event) { 
+    // First Name
+    validate( 'first name',".textwidget #sf_first_name", name_reg);
+    // Email
+    validate( 'email', ".textwidget #sf_email", email_reg);
   });
 
-  $("#sf_form_salesforce_w2l_lead_6 .w2linput.submit").click(function(event) { 
-    validate( 'name', "#sf_form_salesforce_w2l_lead_6 #sf_first_name", name_reg);
-    validate('email', "#sf_form_salesforce_w2l_lead_6 #sf_email", email_reg);
-  });
-
-  $(".question-form .w2linput.submit").click(function(event) { 
-   validate( 'name', ".question-form #sf_first_name", name_reg);
-   validate('email', ".question-form #sf_email", email_reg);
-   validate('email', ".question-form .textarea", textarea_reg);
- });
 
 /*
 * Tabs Functionality for Accordion Plugin

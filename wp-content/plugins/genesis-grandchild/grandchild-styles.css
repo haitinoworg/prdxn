@@ -789,6 +789,11 @@ body .site-container .footer-widgets section.featuredpage .entry-content a:hover
   color: #fff !important;
 }
 
+.entry-content ol > li,
+.entry-content ul > li {
+  list-style-type: inherit;
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -2736,7 +2741,7 @@ main.content .movies .image img {
 .page-template-page_columns .two-columns > a img {
   opacity: 0.4;
 }
-.page-template-page_columns .two-columns > a h3 {
+.page-template-page_columns .two-columns > a .columns-title {
   width: 100%;
   display: inline-block;
   position: absolute;
@@ -2750,7 +2755,7 @@ main.content .movies .image img {
   animation: heading-fade-w 0.5s ease-out both;
 }
 @media screen and (max-width: 1025px) {
-  .page-template-page_columns .two-columns > a h3 {
+  .page-template-page_columns .two-columns > a .columns-title {
     -ms-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -2758,12 +2763,12 @@ main.content .movies .image img {
   }
 }
 @media screen and (max-width: 569px) {
-  .page-template-page_columns .two-columns > a h3 {
+  .page-template-page_columns .two-columns > a .columns-title {
     font-size: 30px;
   }
 }
 @media screen and (max-width: 768px) {
-  .page-template-page_columns .two-columns > a h3 {
+  .page-template-page_columns .two-columns > a .columns-title {
     position: static;
     -ms-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -2771,29 +2776,37 @@ main.content .movies .image img {
     transform: translateY(0%);
   }
 }
-.page-template-page_columns .two-columns > a p {
+.page-template-page_columns .two-columns > a .hover-content {
   width: 100%;
+  padding: 0 10px;
   display: block;
   position: absolute;
   top: 100%;
   left: 0;
 }
 @media screen and (min-width: 1025px) {
-  .page-template-page_columns .two-columns > a p {
+  .page-template-page_columns .two-columns > a .hover-content {
     -ms-animation: text-overlay-w 0.5s linear both;
     -moz-animation: text-overlay-w 0.5s linear both;
     -webkit-animation: text-overlay-w 0.5s linear both;
     animation: text-overlay-w 0.5s linear both;
   }
 }
+.page-template-page_columns .two-columns > a .hover-content h1, .page-template-page_columns .two-columns > a .hover-content h2, .page-template-page_columns .two-columns > a .hover-content h3, .page-template-page_columns .two-columns > a .hover-content h4, .page-template-page_columns .two-columns > a .hover-content h5, .page-template-page_columns .two-columns > a .hover-content h6, .page-template-page_columns .two-columns > a .hover-content ul, .page-template-page_columns .two-columns > a .hover-content li {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  color: #fff;
+  font-size: 17px;
+}
 .page-template-page_columns .two-columns > a:hover {
   background-color: #000;
 }
-.page-template-page_columns .two-columns > a:hover h3 {
+.page-template-page_columns .two-columns > a:hover .columns-title {
   top: 50%;
 }
 @media screen and (min-width: 1025px) {
-  .page-template-page_columns .two-columns > a:hover h3 {
+  .page-template-page_columns .two-columns > a:hover .columns-title {
     -ms-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -2805,7 +2818,7 @@ main.content .movies .image img {
   }
 }
 @media screen and (min-width: 1025px) {
-  .page-template-page_columns .two-columns > a:hover p {
+  .page-template-page_columns .two-columns > a:hover .hover-content {
     -ms-animation: text-overlay 0.5s linear both;
     -moz-animation: text-overlay 0.5s linear both;
     -webkit-animation: text-overlay 0.5s linear both;

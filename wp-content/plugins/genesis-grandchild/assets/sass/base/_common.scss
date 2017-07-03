@@ -565,3 +565,7 @@ body .site-container .footer-widgets {
 
 	}
 }
+
+
+.entry-content ol > li,
+.entry-content ul > li { list-style-type: inherit; }

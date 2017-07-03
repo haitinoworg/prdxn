@@ -18,9 +18,6 @@ remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
 //* Remove breadcrumbs
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
-//* Remove site footer widgets
-// remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-
 
 // Add our custom loop
 add_action( 'genesis_loop', 'columns_loop' );
@@ -36,11 +33,6 @@ function columns_loop() {
 	<?php
 	$post_style = get_field('column_layout');
 
-			// $select_post = get_field('select_post');
-		/*
-		Image Post Section Ends Here ========================
-		*/
-
 		//* Condition for checking post thumbnail
 		if($post_style == "Two Columns") {
 			get_template_part( 'template-parts/page/two', 'columns' );
@@ -49,13 +41,6 @@ function columns_loop() {
 		if($post_style == "Three Columns") {
 			get_template_part( 'template-parts/page/three', 'columns' );
 		}
-		if($post_style == "Two Column Links") {
-			get_template_part( 'template-parts/page/content', 'links' );
-		}
-
-		?>
-		
-		<?php
 
 	}
 

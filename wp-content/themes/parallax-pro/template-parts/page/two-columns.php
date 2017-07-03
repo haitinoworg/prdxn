@@ -40,11 +40,11 @@
 				}
 				?>
 				<div class="entry-content">
-					<h3><?php the_title(); ?></h3>
+					<h3 class="columns-title"><?php the_title(); ?></h3>
 					<?php 
 					$content = get_the_content();
-					echo '<p>';
-					echo mb_strimwidth($content, 0, 100, "...") . '</p>';
+					echo '<div class="hover-content">'; 
+					echo mb_strimwidth($content, 0, 100, "...") . '</div>';
 					?>
 				</div>
 			</a>
@@ -69,11 +69,12 @@
 				} 
 				?>
 				<div class="entry-content">
-					<h3><?php the_title(); ?></h3>
+					<h3 class="columns-title"><?php the_title(); ?></h3>
 
 					<?php 
-					$content = get_the_content();
-					echo '<p>' . mb_strimwidth($content, 0, 100, "...") . '</p>';
+					$content = $post->post_content;
+					echo '<div class="hover-content">';
+					echo mb_strimwidth($content, 0, 100, "...") . '</div>';
 					?>
 				</div>
 			</a>

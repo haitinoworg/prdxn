@@ -129,7 +129,7 @@
 			img { opacity: 0.4; } 
 
 			text-align: center;
-			h3 {
+			.columns-title {
 				width: 100%;
 				display: inline-block;
 				position: absolute;
@@ -155,8 +155,9 @@
 				}
 				
 			}
-			p {
+			.hover-content {
 				width: 100%;
+				padding: 0 10px;
 				display: block;
 				position: absolute;
 				top: 100%;
@@ -164,20 +165,28 @@
 				@include minWidth(1025px) {
 					@include property(animation,text-overlay-w 0.5s linear both);
 				}
+
+				h1,h2,h3,h4,h5,h6,ul,li {
+					padding: 0;
+					margin: 0;
+					display: inline;
+					color: #fff;
+					font-size: 17px;
+				}
 			}
 		}
 
 
 		&>a:hover {
 			@include props(bgb);
-			h3 {
+			.columns-title {
 				top: 50%;
 				@include minWidth(1025px) {
 					@include property(transform, translateY(-50%));
 					@include property(animation,heading-fade 0.5s linear both);
 				}
 			}
-			p {   
+			.hover-content {   
 				@include minWidth(1025px) {
 					@include property(animation,text-overlay 0.5s linear both);
 				}
