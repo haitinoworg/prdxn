@@ -2743,18 +2743,13 @@ main.content .movies .image img {
 }
 .page-template-page_columns .two-columns > a .columns-title {
   width: 100%;
+  margin-bottom: 17px;
   display: inline-block;
-  position: absolute;
-  top: 50%;
   left: 0;
   color: #fff;
   font-size: 32px;
-  -ms-animation: heading-fade-w 0.5s ease-out both;
-  -moz-animation: heading-fade-w 0.5s ease-out both;
-  -webkit-animation: heading-fade-w 0.5s ease-out both;
-  animation: heading-fade-w 0.5s ease-out both;
 }
-@media screen and (max-width: 1025px) {
+@media screen and (min-width: 1025px) {
   .page-template-page_columns .two-columns > a .columns-title {
     -ms-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -2764,32 +2759,32 @@ main.content .movies .image img {
 }
 @media screen and (max-width: 569px) {
   .page-template-page_columns .two-columns > a .columns-title {
-    font-size: 30px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .page-template-page_columns .two-columns > a .columns-title {
-    position: static;
-    -ms-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
+    font-size: 28px;
   }
 }
 .page-template-page_columns .two-columns > a .hover-content {
   width: 100%;
   padding: 0 10px;
   display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
 }
 @media screen and (min-width: 1025px) {
   .page-template-page_columns .two-columns > a .hover-content {
+    -ms-transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
     -ms-animation: text-overlay-w 0.5s linear both;
     -moz-animation: text-overlay-w 0.5s linear both;
     -webkit-animation: text-overlay-w 0.5s linear both;
     animation: text-overlay-w 0.5s linear both;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .page-template-page_columns .two-columns > a .hover-content {
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 .page-template-page_columns .two-columns > a .hover-content h1, .page-template-page_columns .two-columns > a .hover-content h2, .page-template-page_columns .two-columns > a .hover-content h3, .page-template-page_columns .two-columns > a .hover-content h4, .page-template-page_columns .two-columns > a .hover-content h5, .page-template-page_columns .two-columns > a .hover-content h6, .page-template-page_columns .two-columns > a .hover-content ul, .page-template-page_columns .two-columns > a .hover-content li {
@@ -2802,21 +2797,6 @@ main.content .movies .image img {
 .page-template-page_columns .two-columns > a:hover {
   background-color: #000;
 }
-.page-template-page_columns .two-columns > a:hover .columns-title {
-  top: 50%;
-}
-@media screen and (min-width: 1025px) {
-  .page-template-page_columns .two-columns > a:hover .columns-title {
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -ms-animation: heading-fade 0.5s linear both;
-    -moz-animation: heading-fade 0.5s linear both;
-    -webkit-animation: heading-fade 0.5s linear both;
-    animation: heading-fade 0.5s linear both;
-  }
-}
 @media screen and (min-width: 1025px) {
   .page-template-page_columns .two-columns > a:hover .hover-content {
     -ms-animation: text-overlay 0.5s linear both;
@@ -2827,13 +2807,19 @@ main.content .movies .image img {
 }
 .page-template-page_columns .two-columns .entry-content {
   height: 100%;
-  padding: 0 8%;
+  padding: 17vh 8% 0;
+  display: block;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 1025px) {
+  .page-template-page_columns .two-columns .entry-content {
+    -ms-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
 }
 @media screen and (max-width: 769px) {
   .page-template-page_columns .two-columns .entry-content {
@@ -2841,6 +2827,13 @@ main.content .movies .image img {
     left: auto;
     top: 50%;
   }
+}
+.page-template-page_columns .two-columns .entry-content:hover {
+  -ms-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  padding-top: 9vh;
 }
 @media screen and (max-width: 569px) {
   .page-template-page_columns .two-columns .entry-content p {
@@ -3049,27 +3042,18 @@ main.content .movies .image img {
 @media screen and (min-width: 1025px) {
   @keyframes heading-fade {
     0% {
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-    40% {
       -ms-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
     }
     50% {
-      top: 40%;
-      -ms-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
+      -ms-transform: translateY(-20%);
+      -moz-transform: translateY(-20%);
+      -webkit-transform: translateY(-20%);
+      transform: translateY(-20%);
     }
     100% {
-      top: 21%;
       -ms-transform: translateY(0);
       -moz-transform: translateY(0);
       -webkit-transform: translateY(0);
@@ -3147,13 +3131,10 @@ main.content .movies .image img {
   }
   @keyframes text-overlay {
     0% {
-      top: 100%;
-    }
-    50% {
-      top: 63%;
+      transform: translateY(200px);
     }
     100% {
-      top: 40%;
+      transform: translateY(-35%);
     }
   }
   @-webkit-keyframes text-overlay {
@@ -3267,13 +3248,10 @@ main.content .movies .image img {
   /* Reading materials Heading animation ends here */
   @keyframes text-overlay-w {
     0% {
-      top: 40%;
-    }
-    50% {
-      top: 63%;
+      transform: translateY(0);
     }
     100% {
-      top: 100%;
+      transform: translateY(200px);
     }
   }
   @-webkit-keyframes text-overlay-w {
