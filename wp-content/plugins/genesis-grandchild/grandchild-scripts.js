@@ -37,13 +37,26 @@
 
       $('.cws-pagination').children('span').remove();
 
+      /* Dropdown Button */
       $( "body" ).delegate( ".dropdown-toggle", "click", function() {
         $('.check-mark').addClass('fa fa-check fa-1x');
         $('.dropdown-menu.open').css('min-height', '100%');
         $('.dropdown-menu.open').css('overflow', 'visible');
         $('.dropdown-menu.open').slideToggle();
         $('ul.dropdown-menu li:first-child').css('display','none');
+
+        // if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
+        //   $('.dropdown-toggle').css('font-size', '13px');
+        // } else {
+        //   $('.dropdown-toggle').css('font-size', '15px');
+        // }
+
       });
+
+      // $('.dropdown-menu.inner li').on("click", function(){
+        
+      // });
+
 
       /*Pagination on mobile*/
       $('.pagination-next').children('a').text('»');
@@ -258,25 +271,23 @@ var validate = function(field, id, regx) {
   if(input_value != "") {
     if(!(reg.test(input_value))) {
       $(id).siblings('p').removeClass('blank-text');
-      $(id).siblings('p').text('Please enter a valid ' + field);
-      event.preventDefault();
+      $(id).siblings('p').text('Please enter a valid ' + field + '.');
     } else {
       $(id).siblings('p').addClass('blank-text');
 
     }
   } else {
-    event.preventDefault();
-    $(id).siblings('p').text('Please enter your ' + field);
+    $(id).siblings('p').text('Please enter your ' + field + '.');
   }
 
 }
 
 // Regex
 
-var name_reg = /[a-zA-Z0-9$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,100}/;
-var textarea_reg = /[a-zA-Z$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,500}/;
-var phone_reg = /[{0-9}$&+,:;=@#|'"\\\[\]. ^()%!{}-]{6,20}/;
-var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
+var name_reg = /^[a-zA-Z0-9$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
+var textarea_reg = /^[a-zA-Z$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,500}$/;
+var phone_reg = /^[{0-9}$&+,:;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
+var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
 
   /*
   * Volunteer Form
@@ -308,6 +319,14 @@ var email_reg = /[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
       var comments = $("textarea[placeholder='Volunteer Comments']").val();
       if(comments == '') {
         event.preventDefault();
+      }
+
+    if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
+        event.preventDefault();
+        $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
+     } else {
+      $('.dropdown-toggle').parent().siblings('p').text(' ');
+        $('.volunteer-form .w2linput.submit').submit();
       }
 
     });
@@ -405,6 +424,8 @@ $('.tabs-nav').click(function(){
   /* Multi-select Dropdown */
   $('.sf_type_multi-select').children('select').addClass('selectpicker');
   $('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
+
+
 
   $('ul.dropdown-menu a').parent().click(function(){
     console.log('clickekdie');

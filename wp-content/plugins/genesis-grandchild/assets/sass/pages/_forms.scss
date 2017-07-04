@@ -11,6 +11,12 @@
 			top: 0;
 			left: 0;
 		}
+
+		p {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 
@@ -50,11 +56,6 @@
 				textarea { 
 					max-height: 150px; 
 					min-height: 120px;
-				}
-
-				#sf_00NA000000723Db { 
-					min-height: 42px;
-					padding: 16px 11px 5px;
 				}
 
 				label {
@@ -105,6 +106,9 @@
 			&.volunteer-form,
 			& .inside {
 				p:last-child { margin-bottom: 11px; }
+				.sf_type_multi-select {
+					p {	margin-bottom: 5px;	}
+				}
 			}
 
 		}
@@ -154,6 +158,11 @@
 			}
 		}
 
+		div.sf_type_textarea textarea[placeholder="Volunteer Professional Skills"] {
+			min-height: 42px;
+			max-height: 42px;
+			padding: 11px 11px 9px;
+		}
 
 	}
 
@@ -366,6 +375,14 @@
 				background-size: 10px;
 			}
 
+			.bootstrap-select .dropdown-toggle { 
+				font-size: 15px;
+				letter-spacing: normal; 
+				&[title="Volunteer Languages"] {
+					font-size: 13px;
+				}
+			}
+
 			.bootstrap-select .dropdown-toggle:focus {
 				outline: 0 !important;
 			}
@@ -378,6 +395,7 @@
 				position: relative;
 				background-color: #fff;
 				display: none;
+				z-index: 2;
 				.dropdown-menu.inner {
 					border: 1px solid #ddd;
 					position: absolute;

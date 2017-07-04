@@ -3615,6 +3615,11 @@ body.faq p a {
   top: 0;
   left: 0;
 }
+.contact-form-7 .sf_field.sf_type_multi-select p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 .contact-form-7 .content {
   width: 84%;
@@ -3649,10 +3654,6 @@ body.faq p a {
 .contact-form-7 .content .entry-content form textarea {
   max-height: 150px;
   min-height: 120px;
-}
-.contact-form-7 .content .entry-content form #sf_00NA000000723Db {
-  min-height: 42px;
-  padding: 16px 11px 5px;
 }
 .contact-form-7 .content .entry-content form label {
   margin-bottom: -18px;
@@ -3716,6 +3717,9 @@ body.faq p a {
 .contact-form-7 .content .entry-content.volunteer-form p:last-child, .contact-form-7 .content .entry-content .inside p:last-child {
   margin-bottom: 11px;
 }
+.contact-form-7 .content .entry-content.volunteer-form .sf_type_multi-select p, .contact-form-7 .content .entry-content .inside .sf_type_multi-select p {
+  margin-bottom: 5px;
+}
 .contact-form-7 .email-us {
   padding: 32px 0;
   background-color: #f2f2f2;
@@ -3757,6 +3761,11 @@ body.faq p a {
   width: 100%;
   min-height: 168px;
   margin-left: 0;
+}
+.contact-form-7 .volunteer-form div.sf_type_textarea textarea[placeholder="Volunteer Professional Skills"] {
+  min-height: 42px;
+  max-height: 42px;
+  padding: 11px 11px 9px;
 }
 .contact-form-7 .inside .salesforce_w2l_lead {
   padding: 46px 0 3px;
@@ -3974,6 +3983,13 @@ body.faq p a {
   background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
   background-size: 10px;
 }
+.salesforce_w2l_lead form.w2llead > div .bootstrap-select .dropdown-toggle {
+  font-size: 15px;
+  letter-spacing: normal;
+}
+.salesforce_w2l_lead form.w2llead > div .bootstrap-select .dropdown-toggle[title="Volunteer Languages"] {
+  font-size: 13px;
+}
 .salesforce_w2l_lead form.w2llead > div .bootstrap-select .dropdown-toggle:focus {
   outline: 0 !important;
 }
@@ -3984,6 +4000,7 @@ body.faq p a {
   position: relative;
   background-color: #fff;
   display: none;
+  z-index: 2;
 }
 .salesforce_w2l_lead form.w2llead > div div.dropdown-menu .dropdown-menu.inner {
   border: 1px solid #ddd;
