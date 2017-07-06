@@ -4,6 +4,7 @@
 
     $(document).ready(function() {
 
+
       /* Fundraising Paypal Form */
       // $('#featured-page-4').hide();
       $('.footer-widgets .featuredpage').append('<span class="fundraise-close">close</span>');
@@ -52,11 +53,6 @@
         // }
 
       });
-
-      // $('.dropdown-menu.inner li').on("click", function(){
-        
-      // });
-
 
       /*Pagination on mobile*/
       $('.pagination-next').children('a').text('»');
@@ -265,38 +261,46 @@
 
 
 // form validation
-var validate = function(field, id, regx) {
+var validate = function(field, id, regx, range, btn_event) {
   var input_value = $(id).val();
   var reg = regx;
+
   if(input_value != "") {
     if(!(reg.test(input_value))) {
       $(id).siblings('p').removeClass('blank-text');
       $(id).siblings('p').text('Please enter a valid ' + field + '.');
+      btn_event.preventDefault(btn_event);      
+    } else if( input_value.length > range  ) {
+      $(id).siblings('p').removeClass('blank-text');
+      $(id).siblings('p').text('User can not physically enter more than ' + range + ' characters.');
+      btn_event.preventDefault(btn_event); 
     } else {
       $(id).siblings('p').addClass('blank-text');
-
     }
+
   } else {
     $(id).siblings('p').text('Please enter your ' + field + '.');
+    btn_event.preventDefault(btn_event);
   }
 
 }
 
+
 // Regex
 
-var name_reg = /^[a-zA-Z0-9$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
-var textarea_reg = /^[a-zA-Z$&+,:;=@#|'"\\\[\]. ^()%!{}-]{1,500}$/;
-var phone_reg = /^[{0-9}$&+,:;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
+var name_reg = /^[a-zA-Z0-9$ &+,:;=^@#|'"\\\[\]. ^()%!{}-]{1,1000}$/;
+var textarea_reg = /^[a-zA-Z$ &+,:;=#|'"\\\[\]. ^()%!{}-]{1,1000}$/;
+var phone_reg = /^[{0-9}$&+,:;=@#|'"\\\[\]. ^()%!{}-]{6,200}$/;
 var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
 
   /*
   * Volunteer Form
   */
 
-  function elements_validate(elemen_id, param1, param2) {
+  function elements_validate(elemen_id, param1, param2, param_range) {
     $(elemen_id).on('focusout', function() {
       $(elemen_id).siblings('p').removeClass('blank-text');
-      validate(param1, elemen_id, param2);
+      validate(param1, elemen_id, param2, param_range, event);
     });
 
     $(elemen_id).on('focusin', function() {
@@ -304,81 +308,86 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
     });
 
     /* Submit Validations */
-
     $(".inside .submit").click(function(event) { 
-     validate(param1, elemen_id, param2);
+     validate(param1, elemen_id, param2, param_range, event);
    });
 
     $(".search-form button").click(function(event) {
-      validate('search', ".search-form input", '');
+      validate('search', ".search-form input", '', '', 500, event);
     });
 
     $(".volunteer-form .w2linput.submit").click(function(event) { 
-      validate(param1, elemen_id, param2);
+      validate(param1, elemen_id, param2, param_range, event);
 
-      var comments = $("textarea[placeholder='Volunteer Comments']").val();
-      if(comments == '') {
-        event.preventDefault();
-      }
+      /* Dropdown list validation */
+        if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
+          $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
 
-    if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
-        event.preventDefault();
-        $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
-     } else {
-      $('.dropdown-toggle').parent().siblings('p').text(' ');
-        $('.volunteer-form .w2linput.submit').submit();
-      }
+        } else {
+        $('.dropdown-toggle').parent().siblings('p').text(' '); }
 
     });
 
     $(".question-form .w2linput.submit").click(function(event) { 
-      validate(param1, elemen_id, param2);
+      validate(param1, elemen_id, param2, param_range, event);
     });
 
 
   }
 
+
   // Adding Error Message
   $('.site-inner .sf_field').append('<p>&nbsp;</p>');
 
    // First Name
-   elements_validate("#sf_first_name", 'first name', name_reg);
+   elements_validate("#sf_first_name", 'first name', name_reg, 100);
 
    // Last Name
-   elements_validate("#sf_last_name", 'last name', name_reg);
+   elements_validate("#sf_last_name", 'last name', name_reg, 100);
 
   // Phone Number
-  elements_validate("#phone-number", 'phone number', phone_reg);
+  elements_validate("#phone-number", 'phone number', phone_reg, 20);
 
   // Email
-  elements_validate("#sf_email", 'email', email_reg);
+  elements_validate("#sf_email", 'email', email_reg, 50);
 
   // Country
-  elements_validate("#sf_country", 'country', name_reg);
+  elements_validate("#sf_country", 'country', name_reg, 100);
 
   //Volunteer Skills
-  elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg);
+  elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg, 500);
+
+  //Volunteer Comments
+  elements_validate("textarea[placeholder='Volunteer Comments']", 'volunteer comments', textarea_reg, 500);
+
+  //Volunteer Comments
+  elements_validate("textarea[placeholder='Description']", 'description', textarea_reg, 500);
+
+
+  $("textarea[placeholder='Volunteer Comments']").siblings('p').hide();
+
+  $("textarea[placeholder='Description']").siblings('p').hide();
 
   // Search Form
 
-  elements_validate(".search-form input[type='search']",'', name_reg);
+  elements_validate(".search-form input[type='search']",'', name_reg, 100);
 
 
   /* subscribe form fields */
   //First Name
-  elements_validate(".textwidget #sf_first_name", 'first name', name_reg);
+  elements_validate(".textwidget #sf_first_name", 'first name', name_reg, 100);
 
   // Email
-  elements_validate(".textwidget #sf_email", 'email', email_reg);
+  elements_validate(".textwidget #sf_email", 'email', email_reg, 50);
 
 
-  /* Submit Validations */
+  /* Subscribe Validations */
 
   $(".textwidget .w2linput.submit").click(function(event) { 
     // First Name
-    validate( 'first name',".textwidget #sf_first_name", name_reg);
+    validate( 'first name',".textwidget #sf_first_name", name_reg, 100, event);
     // Email
-    validate( 'email', ".textwidget #sf_email", email_reg);
+    validate( 'email', ".textwidget #sf_email", email_reg, 50, event);
   });
 
 
@@ -414,7 +423,7 @@ $('.tabs-nav').click(function(){
 
   //Smoothy scroll to top
   $back_to_top.on('click', function(event){
-    event.preventDefault();
+    event.preventDefault(event);
     $('body,html').animate({
       scrollTop: 0 ,
     }, scroll_top_duration

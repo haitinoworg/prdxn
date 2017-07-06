@@ -2278,7 +2278,7 @@ div#n2-ss-6 .n2-grab {
   margin-bottom: 12px;
 }
 .programs-hero-image .hero-content .page-title {
-  width: auto;
+  width: 45%;
   margin-bottom: 4px;
   position: absolute;
   bottom: 33px;
@@ -3644,7 +3644,7 @@ body.faq p a {
 }
 .contact-form-7 .content .entry-content form input,
 .contact-form-7 .content .entry-content form textarea {
-  padding: 11px;
+  padding: 10px;
   outline: none;
   font-size: 15px;
   line-height: 20px;
