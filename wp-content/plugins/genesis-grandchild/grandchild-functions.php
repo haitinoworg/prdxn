@@ -162,12 +162,12 @@ Footer Simple Social Share
 */
 
 
-add_action('genesis_before_footer','social_icons_section');
+add_action('genesis_before_footer','subscribe_section');
 
-function social_icons_section() {
+function subscribe_section() {
 
-	genesis_widget_area( 'home-section-5', array(
-		'before' => '<div class="home-odd home-section-5 widget-area"><div class="wrap">',
+	genesis_widget_area( 'home-section-10', array(
+		'before' => '<div class="home-odd home-section-10 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
 }

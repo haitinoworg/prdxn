@@ -231,7 +231,7 @@ Content Area
 	}
 }
 
-.home-section-5.home-odd {
+.home-section-10.home-odd {
 	height: auto;
 	padding: 63px 0 36px;
 	background-color: #2e2b2b;
@@ -281,227 +281,31 @@ Content Area
 
 .home-section-3 { 
 	height: auto;
-	background-color: #f2f2f2;
 	clear: both;
 	
 	// Wrapper Styling
 	.wrap { width: 84%; }
 
-	// Featured Content
-
-
-	.widget-title { 
-		margin-bottom: 45px;
-		color: #333; 
 	}
 
-	.featured-content article {
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		@include props(ovh,fll,posr);
 
-		@include property(transition, all 2s linear);
+/* Section common style
+*/
 
-		.widget-title { margin-bottom: 44px; }
+.home-section-1,
+.home-section-2,
+.home-section-3,
+.home-section-4,
+.home-section-5,
+.home-section-6,
+.home-section-7,
+.home-section-8,
+.home-section-9 { 
+	background-repeat: no-repeat; 
+	background-size: cover;
 
-		&:nth-of-type(3n+2) { margin: 4% 0; }
+	.widget-title { margin-bottom: 0; }
 
-		@include tab() {
-			width: 100%;
-			float: none;
-			margin-bottom: 49px;
-
-			&:nth-of-type(3n+2) { margin: 0 0 49px; }
-
-			&:last-child { 
-				margin-bottom: 0;
-				margin-left: 0; 
-			}
-		}
-
-		&>a { 
-			width: 48%;
-			padding: 13% 0;
-			margin-right: 4%;
-			margin-bottom: 22px;
-			position: relative;
-			float: left;
-			background-color: #000;
-			overflow: hidden;
-
-			@include tab() {
-				width: 100%;
-				padding: 23% 0;
-			}
-
-			img {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				@include property(transition, all 0.4s ease-in);
-				&:hover { opacity: 1;}
-			}
-
-			&:after {
-				content: " ";
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				background-color: #000;
-				opacity: 0.6;
-				transition: all 0.4s ease-out;
-			}
-
-			@include md() {
-				&:hover {
-					&:after {
-						opacity: 0;
-						border-radius: 0;
-					}
-				}
-			}
-		}
-
-		.entry-content {
-			width: 48%;
-			float: left;
-			text-align: left;
-
-			@include tab() {
-				width: 100%;
-			}
-
-			p{
-				margin-bottom: 0;
-				color: #333;
-				font-size: 17px;
-				text-align: left;
-			}
-
-			.common-links {
-				width: auto;
-				padding: 10px 25px;
-				margin: 30px 0 0;      
-				border: 1px solid #f16522;
-				display: inline-block;
-				background-color: #f16522;
-				color: #fff;
-				font: 14px/20px Roboto, sans-serif;  
-			}
-
-			.common-links:hover {    
-				background-color: #fff;
-				color: #f16522;}
-			}
-
-			header.entry-header {
-				width: 48%;
-				float: left;
-
-				@include maxWidth(768px) {
-					width: 100%;
-				}
-
-				a { 
-					color: #333;
-
-					&:hover {
-						color: #333;
-					}
-				}
-
-				h2.entry-title {
-					margin-bottom: 12px;
-					font: 32px $font;
-					text-align: left;
-
-					@include mobile() {
-						font-size: 30px;
-					}
-
-					&:after { display: none; }
-
-					@include tab() {
-						margin-bottom: 17px;
-						font-size: 32px;
-						line-height: 36px;
-
-					}
-				}
-			}
-		}
-	}
-
-// Pricing Table Animation
-
-@include minWidth(1025px) {
-
-	.ptsCol:hover .ptsColHeader img {
-		animation: cols 1s both;
-	}
-
-	.ptsCol .ptsColHeader img {
-		animation: cols-remove 1s both;
-	}
-
-	@keyframes cols {
-		0%{
-			@include property(transform,scale(1));
-		}
-		100% {
-			@include property(transform,scale(1.3));
-		}
-	} 
-
-	@keyframes cols-remove {
-		0%{
-			@include property(transform,scale(1.3));
-		}
-		100% {
-			@include property(transform,scale(1));
-		}
-	} 
-
-	@-webkit-keyframes cols-remove {
-		0%{
-			@include property(transform,scale(1.3));
-		}
-		100% {
-			@include property(transform,scale(1));
-		}
-	}
-
-	@-webkit-keyframes cols {
-		0%{
-			@include property(transform,scale(1));
-		}
-		100% {
-			@include property(transform,scale(1.3));
-		}
-	} 
-
-	@keyframes title {
-		0%{
-			@include property(transform,scale(1));
-		}
-		100% {
-			@include property(transform,scale(1.3));
-		}
-	} 
-
-	@-webkit-keyframes title {
-		0%{
-			@include property(transform,scale(1));
-		}
-		100% {
-			@include property(transform,scale(1.3));
-		}
-	} 
+	.wrap { width: 84%; }
 
 }

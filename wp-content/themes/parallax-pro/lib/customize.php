@@ -48,7 +48,7 @@ class Child_Parallax_Image_Control extends WP_Customize_Image_Control {
 
 	global $wp_customize;
 
-	$images = apply_filters( 'parallax_images', array( '1', '3', '5' ) );
+	$images = apply_filters( 'parallax_images', array( '1', '2', '3', '4', '5','6','7','8','9' ) );
 	
 	$wp_customize->add_section( 'parallax-settings', array(
 		'title'    => __( 'Background Images', 'parallax' ),

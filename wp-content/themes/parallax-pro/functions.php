@@ -151,6 +151,41 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the home section 5 section.', 'parallax' ),
 	) );
 
+// Custome Section Registering
+genesis_register_sidebar( array(
+	'id'          => 'home-section-6',
+	'name'        => __( 'Home Section 6', 'parallax' ),
+	'description' => __( 'This is the home section 6 section.', 'parallax' ),
+	) );
+
+// Custome Section Registering
+genesis_register_sidebar( array(
+	'id'          => 'home-section-7',
+	'name'        => __( 'Home Section 7', 'parallax' ),
+	'description' => __( 'This is the home section 7 section.', 'parallax' ),
+	) );
+
+// Custome Section Registering
+genesis_register_sidebar( array(
+	'id'          => 'home-section-8',
+	'name'        => __( 'Home Section 8', 'parallax' ),
+	'description' => __( 'This is the home section 8 section.', 'parallax' ),
+	) );
+
+// Custome Section Registering
+genesis_register_sidebar( array(
+	'id'          => 'home-section-9',
+	'name'        => __( 'Home Section 9', 'parallax' ),
+	'description' => __( 'This is the home section 9 section.', 'parallax' ),
+	) );
+
+// Custome Section Registering
+genesis_register_sidebar( array(
+	'id'          => 'home-section-10',
+	'name'        => __( 'Home Section 10', 'parallax' ),
+	'description' => __( 'This is the home section 10 section.', 'parallax' ),
+	) );
+
 
 
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
