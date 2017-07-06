@@ -23,8 +23,9 @@
 .contact-form-7 {
 
 	.content {
-		width: 84%;
+		box-sizing: border-box;
 		max-width: 2000px;
+		width: 84%;
 
 		.entry-content {
 			margin: 0 auto;
@@ -32,11 +33,22 @@
 
 			@include tab() { min-width: 275px; }
 
+			@include mobile() { 
+				box-sizing: border-box;
+				min-width: 80%; 
+				width: 80%;
+			}
+
 			form {
 				input,
 				textarea,
 				select {
+					box-sizing: border-box;
+					@include mobile() { width: 215px; }
+
 					& + p {
+						box-sizing: border-box;
+						width: 215px;
 						height: 30px;
 						margin-bottom: 0;
 						color: #f00;
@@ -209,7 +221,7 @@
 		}
 		.sf_required_fields_msg {
 			position: absolute;
-			bottom: 39px;
+			bottom: 50px;
 			color: #f00;
 			font-size: 13px;
 		}

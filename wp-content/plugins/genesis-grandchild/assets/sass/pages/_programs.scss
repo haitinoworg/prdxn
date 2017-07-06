@@ -396,6 +396,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 			bottom: 33px;
 			right: 0;
 			@include tab() {
+				width: 100%;
 				position: static;
 				margin: 36px 0 15px;
 				
