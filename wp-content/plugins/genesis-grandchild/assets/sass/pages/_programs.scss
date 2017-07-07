@@ -426,11 +426,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 
 		iframe {
 			margin: 0;	
-			@include mobile() {
-				box-sizing: border-box;
-				min-width: 100%;
-				margin: 0 auto;	
-			}
+			@include mobile() { box-sizing: border-box;	}
 		}
 
 	}

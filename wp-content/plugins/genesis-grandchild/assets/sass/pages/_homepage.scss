@@ -304,8 +304,23 @@ Content Area
 	background-repeat: no-repeat; 
 	background-size: cover;
 
-	.widget-title { margin-bottom: 0; }
-
 	.wrap { width: 84%; }
+
+	a {	
+		@include cta();	
+		display: inline-block;
+	}
+
+}
+
+
+.home-section-2,
+.home-section-3,
+.home-section-4,
+.home-section-5,
+.home-section-6,
+.home-section-7,
+.home-section-8,
+.home-section-9 { 
 
 }

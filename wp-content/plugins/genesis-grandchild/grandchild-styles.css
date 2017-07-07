@@ -688,6 +688,9 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
 }
 
 /* Image Caption Styling */
+body .site-container section.featuredpage .entry {
+  padding: 0;
+}
 body .site-container section.featuredpage .entry-content .wp-caption {
   min-width: 28%;
   margin: 0;
@@ -1441,17 +1444,6 @@ Content Area
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home-section-1 .widget-title,
-.home-section-2 .widget-title,
-.home-section-3 .widget-title,
-.home-section-4 .widget-title,
-.home-section-5 .widget-title,
-.home-section-6 .widget-title,
-.home-section-7 .widget-title,
-.home-section-8 .widget-title,
-.home-section-9 .widget-title {
-  margin-bottom: 0;
-}
 .home-section-1 .wrap,
 .home-section-2 .wrap,
 .home-section-3 .wrap,
@@ -1462,6 +1454,50 @@ Content Area
 .home-section-8 .wrap,
 .home-section-9 .wrap {
   width: 84%;
+}
+.home-section-1 a,
+.home-section-2 a,
+.home-section-3 a,
+.home-section-4 a,
+.home-section-5 a,
+.home-section-6 a,
+.home-section-7 a,
+.home-section-8 a,
+.home-section-9 a {
+  width: auto;
+  padding: 10px 15px;
+  margin: 30px 0 0;
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+  font: 15px Roboto, sans-serif;
+  display: inline-block;
+}
+.home-section-1 a:focus,
+.home-section-2 a:focus,
+.home-section-3 a:focus,
+.home-section-4 a:focus,
+.home-section-5 a:focus,
+.home-section-6 a:focus,
+.home-section-7 a:focus,
+.home-section-8 a:focus,
+.home-section-9 a:focus {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
+}
+.home-section-1 a:hover,
+.home-section-2 a:hover,
+.home-section-3 a:hover,
+.home-section-4 a:hover,
+.home-section-5 a:hover,
+.home-section-6 a:hover,
+.home-section-7 a:hover,
+.home-section-8 a:hover,
+.home-section-9 a:hover {
+  border-color: #f16522;
+  background-color: #f16522;
+  color: #fff;
 }
 
 /* Program Page - Two Column Layout
@@ -2067,8 +2103,6 @@ div#n2-ss-6 .n2-grab {
 @media screen and (max-width: 569px) {
   .programs-hero-image .hero-content iframe {
     box-sizing: border-box;
-    min-width: 100%;
-    margin: 0 auto;
   }
 }
 .programs-hero-image form {
@@ -3169,26 +3203,30 @@ main.content .entry-content h2.list-title {
 .single-programs article.entry p {
   text-align: center;
 }
-.single-programs article.entry ul {
+.single-programs article.entry ul,
+.single-programs article.entry ol {
   width: 100%;
   margin: 39px 0px 0px 55px;
   display: flex;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 1024px) {
-  .single-programs article.entry ul {
+  .single-programs article.entry ul,
+  .single-programs article.entry ol {
     width: 90%;
   }
 }
 @media screen and (max-width: 569px) {
-  .single-programs article.entry ul {
+  .single-programs article.entry ul,
+  .single-programs article.entry ol {
     width: 60%;
     min-width: 260px;
     display: inline-block;
     text-align: left;
   }
 }
-.single-programs article.entry ul li {
+.single-programs article.entry ul li,
+.single-programs article.entry ol li {
   width: 33.33333%;
   margin: 2px 0 15px;
   position: relative;
@@ -3197,11 +3235,15 @@ main.content .entry-content h2.list-title {
   list-style: none;
 }
 @media screen and (max-width: 569px) {
-  .single-programs article.entry ul li {
+  .single-programs article.entry ul li,
+  .single-programs article.entry ol li {
     width: 100%;
   }
 }
-.single-programs article.entry ul li::after {
+.single-programs article.entry ul li::after,
+.single-programs article.entry ol li::after,
+.single-programs article.entry ul li:after,
+.single-programs article.entry ol li:after {
   content: '.';
   display: block;
   width: 100%;
@@ -3964,8 +4006,11 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
 }
 @media screen and (max-width: 768px) {
   .single-programs .one-half {
-    padding: 29px 0 0;
+    padding: 0;
     width: 100%;
+  }
+  .single-programs .one-half.first {
+    padding: 29px 0 0;
   }
 }
 .single-programs .one-half h1, .single-programs .one-half h2, .single-programs .one-half h3, .single-programs .one-half h4, .single-programs .one-half h5, .single-programs .one-half h6, .single-programs .one-half p {
@@ -5062,7 +5107,6 @@ body .site-container .footer-widgets .copyright p,
 body .footer-widgets .copyright p {
   padding-left: 8px;
   margin-left: 5px;
-  border-left: 2px solid;
   display: inline-block;
   font-size: 12px;
   font-weight: 700;
@@ -6233,8 +6277,6 @@ main.content .entry-content p:last-child {
 @media screen and (max-width: 569px) {
   .page-template-page_donate main.content .programs-hero-image .hero-content iframe {
     box-sizing: border-box;
-    min-width: 100%;
-    margin: 0 auto;
   }
 }
 .page-template-page_donate main.content .question-form .salesforce_w2l_lead {

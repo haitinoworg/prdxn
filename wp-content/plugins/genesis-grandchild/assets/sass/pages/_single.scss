@@ -53,8 +53,12 @@
 		font-family: $font;
 		text-align: left; 
 		@include tab() {
-			padding: 29px 0 0;
+			padding: 0;
 			width: 100%;
+
+			&.first {
+				padding: 29px 0 0;
+			}
 		}
 
 		h1,h2,h3,h4,h5,h6,p { font-family: $font; }

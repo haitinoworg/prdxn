@@ -469,38 +469,9 @@ body #tabs.dntplgn_form_wrapper {
 body .site-container {
 	section.featuredpage {
 
-		// /* Close Icon */
-		// .fundraise-close {
-		// 	width: 25px;
-		// 	height: 25px;
-		// 	margin: 25px;
-		// 	display: inline-block;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	right: 5px;
-		// 	z-index: 1;
-		// 	background: url(../../uploads/2017/02/close.png) no-repeat 100%;
-		// 	background-size: 25px 25px;
-		// 	text-indent: -9999px;
-		// }
-
-		// h1,h2,h3 { 
-		// 	margin-bottom: 42px;
-		// 	color: #fff;
-		// 	font-size: 32px;
-		// 	letter-spacing: 1px;
-		// 	text-align: center;
-		// 	text-transform: uppercase;
-		// }
-
-		// .entry { 
-		// 	width: 84%;
-		// 	margin: 0 auto;
-		// }
+		.entry { padding: 0; }
 
 		.entry-content { 
-			// padding: 40px 30px 45px;
-			// background-color: #475193;
 			.wp-caption {	
 				min-width: 28%;
 				margin: 0;

@@ -61,7 +61,8 @@ main.content {
 		&,
 		p { text-align: center; }
 
-		ul { 
+		ul,
+		ol { 
 			width: 100%;
 			margin: 39px 0px 0px 55px;
 			display: flex;
@@ -74,7 +75,8 @@ main.content {
 				text-align: left;
 			}
 		}
-		ul li { 
+		ul li,
+		ol li { 
 			width: 33.33333%;
 			margin: 2px 0 15px;
 			position: relative;
@@ -83,7 +85,10 @@ main.content {
 			list-style: none;
 			@include mobile() { width: 100%; }
 		}
-		ul li::after {
+		ul li::after,
+		ol li::after,
+		ul li:after,
+		ol li:after {
 			content: '.';
 			display: block;
 			width: 100%;

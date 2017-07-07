@@ -46,12 +46,6 @@
         $('.dropdown-menu.open').slideToggle();
         $('ul.dropdown-menu li:first-child').css('display','none');
 
-        // if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
-        //   $('.dropdown-toggle').css('font-size', '13px');
-        // } else {
-        //   $('.dropdown-toggle').css('font-size', '15px');
-        // }
-
       });
 
       /*Pagination on mobile*/
@@ -260,13 +254,15 @@
   });
 
 
-// form validation
+/*
+* Form Validation Function =====================================
+*/
 var validate = function(field, id, regx, range, btn_event) {
   var input_value = $(id).val();
   var reg = regx;
 
-  if(input_value != "") {
-    if(!(reg.test(input_value))) {
+  if(input_value != "" && input_value != null) {
+    if(!(reg.test(input_value)) && input_value.length <= range) {
       $(id).siblings('p').removeClass('blank-text');
       $(id).siblings('p').text('Please enter a valid ' + field + '.');
       btn_event.preventDefault(btn_event);      
@@ -278,6 +274,8 @@ var validate = function(field, id, regx, range, btn_event) {
       $(id).siblings('p').addClass('blank-text');
     }
 
+    console.log('its ok');
+
   } else {
     $(id).siblings('p').text('Please enter your ' + field + '.');
     btn_event.preventDefault(btn_event);
@@ -286,15 +284,17 @@ var validate = function(field, id, regx, range, btn_event) {
 }
 
 
-// Regex
+/* 
+* Regex =======================================================
+*/
 
-var name_reg = /^[a-zA-Z0-9$ &+, :;=^@#|'"\\\[\]. ^()%!{}-]{1,100000}$/;
-var textarea_reg = /^[a-zA-Z$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,1000000}$/;
-var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,2000}$/;
+var name_reg = /^[a-zA-Z0-9$ &+, :;=^@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
+var textarea_reg = /^[a-zA-Z0-9$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,500}$/;
+var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
 var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
 
   /*
-  * Volunteer Form
+  * Form Focus in and Focus out ==================================
   */
 
   function elements_validate(elemen_id, param1, param2, param_range) {
@@ -307,36 +307,11 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
       $(elemen_id).siblings('p').addClass('blank-text');
     });
 
-    /* Submit Validations */
-    $(".inside .submit").click(function(event) { 
-     validate(param1, elemen_id, param2, param_range, event);
-   });
-
-    $(".search-form button").click(function(event) {
-      validate('search', ".search-form input", '', '', 500, event);
-    });
-
-    $(".volunteer-form .w2linput.submit").click(function(event) { 
-      validate(param1, elemen_id, param2, param_range, event);
-
-      /* Dropdown list validation */
-        if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
-          $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
-
-        } else {
-        $('.dropdown-toggle').parent().siblings('p').text(' '); }
-
-    });
-
-    $(".question-form .w2linput.submit").click(function(event) { 
-      validate(param1, elemen_id, param2, param_range, event);
-    });
-
-
   }
 
-
-  // Adding Error Message
+  /*
+  * Fields data ====================================
+  */
   $('.site-inner .sf_field').append('<p>&nbsp;</p>');
 
    // First Name
@@ -357,12 +332,6 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
   //Volunteer Skills
   elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg, 500);
 
-  //Volunteer Comments
-  elements_validate("textarea[placeholder='Volunteer Comments']", 'volunteer comments', textarea_reg, 500);
-
-  //Volunteer Comments
-  elements_validate("textarea[placeholder='Description']", 'description', textarea_reg, 500);
-
 
   $("textarea[placeholder='Volunteer Comments']").siblings('p').hide();
 
@@ -381,14 +350,78 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
   elements_validate(".textwidget #sf_email", 'email', email_reg, 50);
 
 
-  /* Subscribe Validations */
+/*
+* Submit Button Validation =========================================
+*/
+/* Subscribe Submit */
 
-  $(".textwidget .w2linput.submit").click(function(event) { 
+$(".textwidget .w2linput.submit").click(function(event) { 
     // First Name
     validate( 'first name',".textwidget #sf_first_name", name_reg, 100, event);
     // Email
     validate( 'email', ".textwidget #sf_email", email_reg, 50, event);
   });
+
+
+/* Contact us Submit */
+$(".inside .w2linput.submit").click(function(event) { 
+  /* First Name */
+  validate( 'first name', ".inside #sf_first_name", name_reg, 100, event);
+
+  /* Last Name*/
+  validate( 'last name', ".inside #sf_last_name", name_reg, 100, event);
+
+  /* Email*/
+  validate( 'email', ".inside #sf_email", email_reg, 50, event);
+
+  /* Description */
+  validate('description', ".inside .textarea", textarea_reg, 500, event);
+
+});
+
+
+/* Search Submit */
+$(".search-form button").click(function(event) {
+  validate('search', ".search-form input", '', '', 500, event);
+});
+
+/* Questions Submit */
+$(".question-form .w2linput.submit").click(function(event) { 
+  validate(param1, elemen_id, param2, param_range, event);
+});
+
+/* Volunteer Submit */
+$(".volunteer-form .w2linput.submit").click(function(event) { 
+  /* First Name */
+  validate( 'first name', ".volunteer-form #sf_first_name", name_reg, 100, event);
+
+  /* Last Name*/
+  validate( 'last name', ".volunteer-form #sf_last_name", name_reg, 100, event);
+
+  /* Email*/
+  validate( 'email', ".volunteer-form #sf_email", email_reg, 50, event);
+
+  /* Country */
+  validate( 'country', ".volunteer-form #sf_country", name_reg, 100, event);
+
+  /* Volunteer Skills */
+  validate('volunteer skills', "textarea[placeholder='Volunteer Professional Skills']", textarea_reg, 500, event);
+
+  /* Volunteer comments */
+  validate('volunteer comments', "textarea[placeholder='Volunteer Comments']", textarea_reg, 500, event);  
+
+  /* Volunteers Language - Dropdown list Validation */
+  /*  */
+  if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
+    $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
+    event.preventDefault(event);
+  } else {
+    $('.dropdown-toggle').parent().siblings('p').text(' '); 
+  }
+
+
+});
+
 
 
 /*
