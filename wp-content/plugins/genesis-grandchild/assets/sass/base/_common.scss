@@ -469,7 +469,9 @@ body #tabs.dntplgn_form_wrapper {
 body .site-container {
 	section.featuredpage {
 
-		.entry { padding: 0; }
+		h1,h2,h3,h4 {	margin-bottom: 42px;	}
+
+		.entry { @include boxmodel(1,"",5,0,7,0);	}
 
 		.entry-content { 
 			.wp-caption {	
@@ -521,15 +523,19 @@ body .site-container {
 	}
 
 	.gs_logo_single {
-		height: 100px;
 		padding: 10px 0;
+		background-color: #fff;
+
+		a { display: block; }
+		
 			img { 
 				width: auto;
-				height: 100%;	
+				height: 150px;	
 			}
 	}
 
 	.bx-wrapper { padding: 0 45px; }
+
 }
 
 

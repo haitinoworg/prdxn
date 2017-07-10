@@ -55,7 +55,7 @@ main.content {
 		.entry-content { 
 			@include boxmodel(3,70%,5,63px 0 48px,7,0 auto);
 			clear: both;
-			@include tab() { width: 93%; }
+			@include tab() { width: 84%; }
 			@include mobile() { text-align: center; }
 		}
 		&,

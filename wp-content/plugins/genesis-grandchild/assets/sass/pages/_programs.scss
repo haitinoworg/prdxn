@@ -17,7 +17,7 @@
 		}
 
 		article.entry {
-			@include boxmodel(3,84%,5,58px 0 0,7,0 auto);
+			@include boxmodel(3,70%,5,58px 0 0,7,0 auto);
 			text-align: center;
 
 			@include tab() { width: 84%;  }
@@ -295,17 +295,10 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		left: 0;
 		z-index: 0;
 
-		@include minWidth(1400px) {
-			max-width: initial;
-			width: 2200px;
-			height: auto;
-		}
-
-
 		@include maxWidth(1025px) {
 			max-width: initial;
-			width: 2200px;
-			height: auto;
+			width: auto;
+			height: 100%;
 		}
 	}
 

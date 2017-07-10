@@ -122,7 +122,7 @@ Content Area
 		.home-section-1 {
 			height: auto;
 			padding: 65px 0 65px;
-			background-position: 100% left !important;
+			background-position: top center !important;
 			background-size: cover;
 			
 			.wrap { 
@@ -231,12 +231,11 @@ Content Area
 	}
 }
 
-.home-section-10.home-odd {
+.home-section-9.home-odd {
 	height: auto;
 	padding: 63px 0 36px;
-	background-color: #2e2b2b;
 	border-top: 1px solid #e3ffbc;
-
+	background-color: #3060b8;
 	section h4.widget-title { margin-bottom: 23px; }
 
 	@include mobile() { .textwidget { margin-bottom: 31px; } }
@@ -302,7 +301,6 @@ Content Area
 .home-section-8,
 .home-section-9 { 
 	background-repeat: no-repeat; 
-	background-size: cover;
 
 	.wrap { width: 84%; }
 
@@ -313,14 +311,16 @@ Content Area
 
 }
 
+.home-section-1,
+.home-section-3,
+.home-section-5 { background-attachment: inherit; }
 
 .home-section-2,
-.home-section-3,
 .home-section-4,
-.home-section-5,
 .home-section-6,
 .home-section-7,
 .home-section-8,
-.home-section-9 { 
+.home-section-9,
+.home-section-10 { background-size: cover; }
 
-}
+.home-section-10 { background-color: #2e2b2b; }

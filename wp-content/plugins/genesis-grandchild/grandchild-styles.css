@@ -179,9 +179,9 @@ Common Classes
   text-transform: capitalize;
   text-align: center;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .entry-header .entry-title {
-    font: 40px;
+    font-size: 40px;
   }
 }
 .entry-header .entry-title:after {
@@ -207,9 +207,9 @@ Common Classes
   text-transform: capitalize;
   text-align: center;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .entry-title {
-    font: 40px;
+    font-size: 40px;
   }
 }
 .entry-title:after {
@@ -351,10 +351,10 @@ main.content .entry-content a {
   text-transform: capitalize;
   text-align: center;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .home-even .widget-title,
   .home-odd .widget-title {
-    font: 40px;
+    font-size: 40px;
   }
 }
 .home-even .textwidget p,
@@ -688,8 +688,12 @@ body #tabs.dntplgn_form_wrapper form.dntplgn_donate_monthly span.paypal-currency
 }
 
 /* Image Caption Styling */
+body .site-container section.featuredpage h1, body .site-container section.featuredpage h2, body .site-container section.featuredpage h3, body .site-container section.featuredpage h4 {
+  margin-bottom: 42px;
+}
 body .site-container section.featuredpage .entry {
   padding: 0;
+  margin: 0;
 }
 body .site-container section.featuredpage .entry-content .wp-caption {
   min-width: 28%;
@@ -745,12 +749,15 @@ body .site-container section.featuredpage .entry-content a:hover {
   color: #fff !important;
 }
 body .site-container .gs_logo_single {
-  height: 100px;
   padding: 10px 0;
+  background-color: #fff;
+}
+body .site-container .gs_logo_single a {
+  display: block;
 }
 body .site-container .gs_logo_single img {
   width: auto;
-  height: 100%;
+  height: 150px;
 }
 body .site-container .bx-wrapper {
   padding: 0 45px;
@@ -1270,7 +1277,7 @@ Content Area
 .site-inner .content .home-section-1 {
   height: auto;
   padding: 65px 0 65px;
-  background-position: 100% left !important;
+  background-position: top center !important;
   background-size: cover;
 }
 .site-inner .content .home-section-1 .wrap {
@@ -1350,9 +1357,9 @@ Content Area
   text-align: center;
   margin-bottom: 43px !important;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .site-inner .content .home-section-2 section.statistics h3 {
-    font: 40px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 569px) {
@@ -1385,34 +1392,34 @@ Content Area
   margin: 0 !important;
 }
 
-.home-section-10.home-odd {
+.home-section-9.home-odd {
   height: auto;
   padding: 63px 0 36px;
-  background-color: #2e2b2b;
   border-top: 1px solid #e3ffbc;
+  background-color: #3060b8;
 }
-.home-section-10.home-odd section h4.widget-title {
+.home-section-9.home-odd section h4.widget-title {
   margin-bottom: 23px;
 }
 @media screen and (max-width: 569px) {
-  .home-section-10.home-odd .textwidget {
+  .home-section-9.home-odd .textwidget {
     margin-bottom: 31px;
   }
 }
-.home-section-10.home-odd .wrap {
+.home-section-9.home-odd .wrap {
   position: static;
   -ms-transform: translateY(0%);
   -moz-transform: translateY(0%);
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
-.home-section-10.home-odd .salesforce_w2l_lead {
+.home-section-9.home-odd .salesforce_w2l_lead {
   width: 75%;
   margin: 0 auto;
   overflow: auto;
 }
 @media screen and (max-width: 569px) {
-  .home-section-10.home-odd .salesforce_w2l_lead {
+  .home-section-9.home-odd .salesforce_w2l_lead {
     width: 100%;
     margin-bottom: 30px;
   }
@@ -1453,7 +1460,6 @@ Content Area
 .home-section-8,
 .home-section-9 {
   background-repeat: no-repeat;
-  background-size: cover;
 }
 .home-section-1 .wrap,
 .home-section-2 .wrap,
@@ -1511,6 +1517,26 @@ Content Area
   color: #fff;
 }
 
+.home-section-1,
+.home-section-3,
+.home-section-5 {
+  background-attachment: inherit;
+}
+
+.home-section-2,
+.home-section-4,
+.home-section-6,
+.home-section-7,
+.home-section-8,
+.home-section-9,
+.home-section-10 {
+  background-size: cover;
+}
+
+.home-section-10 {
+  background-color: #2e2b2b;
+}
+
 /* Program Page - Two Column Layout
 --------------------------------------------- */
 .page-template-page_twocolumns,
@@ -1545,7 +1571,7 @@ Content Area
 }
 .page-template-page_twocolumns .content article.entry,
 .page-template-page_get_involved .content article.entry {
-  width: 84%;
+  width: 70%;
   padding: 58px 0 0;
   margin: 0 auto;
   text-align: center;
@@ -1976,18 +2002,11 @@ div#n2-ss-6 .n2-grab {
   left: 0;
   z-index: 0;
 }
-@media screen and (min-width: 1400px) {
-  .programs-hero-image img {
-    max-width: initial;
-    width: 2200px;
-    height: auto;
-  }
-}
 @media screen and (max-width: 1025px) {
   .programs-hero-image img {
     max-width: initial;
-    width: 2200px;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
 }
 .programs-hero-image h1, .programs-hero-image h2, .programs-hero-image h3, .programs-hero-image h4, .programs-hero-image h5, .programs-hero-image h6 {
@@ -3151,9 +3170,9 @@ main.content .movies .image img {
   text-align: center;
   text-transform: uppercase;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .archive .content-sidebar-wrap .entry-title {
-    font: 40px;
+    font-size: 40px;
   }
 }
 .archive .content-sidebar-wrap .entry-title:after {
@@ -3202,7 +3221,7 @@ main.content .entry-content h2.list-title {
 }
 @media screen and (max-width: 768px) {
   .single-programs article.entry .entry-content {
-    width: 93%;
+    width: 84%;
   }
 }
 @media screen and (max-width: 569px) {
@@ -3332,9 +3351,9 @@ main.content .entry-content h2.list-title {
   text-transform: capitalize;
   text-align: center;
 }
-@media screen and (max-width: 569px) {
+@media screen and (max-width: 768px) {
   .parallax-landing .content .entry-content h1, .parallax-landing .content .entry-content h2 {
-    font: 40px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 569px) {
@@ -3642,45 +3661,45 @@ body.faq p a {
 
 /* News
 --------------------------------------------- */
-.home-odd.home-section-10 .wrap {
+.home-odd.home-section-9 .wrap {
   width: 73%;
 }
 @media screen and (max-width: 569px) {
-  .home-odd.home-section-10 .wrap {
+  .home-odd.home-section-9 .wrap {
     width: 84%;
   }
 }
 
-.home-odd.home-section-10 section {
+.home-odd.home-section-9 section {
   width: 100%;
   margin: 0 auto;
   font: 16px Roboto, sans-serif;
 }
-.home-odd.home-section-10 section .widget-title {
+.home-odd.home-section-9 section .widget-title {
   margin-bottom: 14px;
   color: #fff;
   font: 32px Roboto, sans-serif;
 }
 @media screen and (max-width: 569px) {
-  .home-odd.home-section-10 section .widget-title {
+  .home-odd.home-section-9 section .widget-title {
     font: 30px;
   }
 }
-.home-odd.home-section-10 section form {
+.home-odd.home-section-9 section form {
   clear: both;
 }
-.home-odd.home-section-10 section form > div {
+.home-odd.home-section-9 section form > div {
   width: 33.333%;
   float: left;
 }
 @media screen and (max-width: 768px) {
-  .home-odd.home-section-10 section form > div {
+  .home-odd.home-section-9 section form > div {
     width: 100%;
     display: block;
     float: none;
   }
 }
-.home-odd.home-section-10 section form > div input {
+.home-odd.home-section-9 section form > div input {
   margin-bottom: 0px;
   padding: 11px 12px;
   -webkit-appearance: none;
@@ -3689,43 +3708,43 @@ body.faq p a {
   font: 15px Roboto, sans-serif;
 }
 @media screen and (max-width: 569px) {
-  .home-odd.home-section-10 section form > div input {
+  .home-odd.home-section-9 section form > div input {
     margin-bottom: 0;
   }
 }
-.home-odd.home-section-10 section form > div input::-webkit-input-placeholder {
+.home-odd.home-section-9 section form > div input::-webkit-input-placeholder {
   color: #aaa;
   font-size: 13px;
 }
-.home-odd.home-section-10 section form > div input::-moz-placeholder {
+.home-odd.home-section-9 section form > div input::-moz-placeholder {
   color: #aaa;
 }
-.home-odd.home-section-10 section form > div input:-ms-input-placeholder {
+.home-odd.home-section-9 section form > div input:-ms-input-placeholder {
   color: #aaa;
 }
-.home-odd.home-section-10 section form > div input:hover {
+.home-odd.home-section-9 section form > div input:hover {
   /* border: 1px solid #aaa;*/
 }
-.home-odd.home-section-10 section form > div input[type="submit"] {
+.home-odd.home-section-9 section form > div input[type="submit"] {
   padding: 11px;
   border: 1px solid #f16522;
   background-color: #f16522;
 }
-.home-odd.home-section-10 section form > div input[type="submit"]:active, .home-odd.home-section-10 section form > div input[type="submit"]:focus, .home-odd.home-section-10 section form > div input[type="submit"]:visited {
+.home-odd.home-section-9 section form > div input[type="submit"]:active, .home-odd.home-section-9 section form > div input[type="submit"]:focus, .home-odd.home-section-9 section form > div input[type="submit"]:visited {
   color: #fff;
 }
 @media screen and (max-width: 768px) {
-  .home-odd.home-section-10 section form > div input[type="submit"] {
+  .home-odd.home-section-9 section form > div input[type="submit"] {
     width: 100%;
   }
 }
 @media screen and (min-width: 769px) {
-  .home-odd.home-section-10 section form > div input[type="submit"]:hover {
+  .home-odd.home-section-9 section form > div input[type="submit"]:hover {
     background-color: #fff;
     color: #f16522;
   }
 }
-.home-odd.home-section-10 section form > div p {
+.home-odd.home-section-9 section form > div p {
   margin-top: 0;
   margin-bottom: 0;
   color: #f00;

@@ -3,7 +3,8 @@ jQuery(function( $ ){
 	// Enable parallax and fade effects on homepage sections
 	$(window).scroll(function(){
 
-		scrolltop = $(window).scrollTop()
+		scrolltop = $(window).scrollTop();
+
 		scrollwindow = scrolltop + $(window).height();
 
 		$(".home-section-1").css("backgroundPosition", "50% " + -(scrolltop/6) + "px");
@@ -31,34 +32,6 @@ jQuery(function( $ ){
 				// Enable parallax effect
 				backgroundscroll = scrollwindow - sectionfiveoffset;
 				$(".home-section-5").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
-
-			}
-		
-		}
-
-			if ( $(".home-section-7").length ) {
-		
-			sectionfiveoffset = $(".home-section-7").offset().top;		  
-
-			if( scrollwindow > sectionfiveoffset ) {
-
-				// Enable parallax effect
-				backgroundscroll = scrollwindow - sectionfiveoffset;
-				$(".home-section-7").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
-
-			}
-		
-		}
-
-			if ( $(".home-section-9").length ) {
-		
-			sectionfiveoffset = $(".home-section-9").offset().top;		  
-
-			if( scrollwindow > sectionfiveoffset ) {
-
-				// Enable parallax effect
-				backgroundscroll = scrollwindow - sectionfiveoffset;
-				$(".home-section-9").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
 
 			}
 		

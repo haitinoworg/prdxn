@@ -86,8 +86,8 @@ Common Mixins ============================================
 	text-transform: capitalize;
 	text-align: center;
 
-	@include mobile() {
-		font: 40px;
+	@include tab() {
+		font-size: 40px;
 	}
 }
 

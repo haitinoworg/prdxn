@@ -166,6 +166,16 @@ add_action('genesis_before_footer','subscribe_section');
 
 function subscribe_section() {
 
+	genesis_widget_area( 'home-section-8', array(
+		'before' => '<div class="home-even home-section-8 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+		) );
+
+	genesis_widget_area( 'home-section-9', array(
+		'before' => '<div class="home-odd home-section-9 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	) );
+
 	genesis_widget_area( 'home-section-10', array(
 		'before' => '<div class="home-odd home-section-10 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
@@ -279,61 +289,6 @@ function ajax_load_more_books() {
 	endif; 
 	wp_reset_postdata();
 	die();
-}
-
-
-add_shortcode( 'donate_shortcode', 'custom_dn_shortcode' );
-
-function custom_dn_shortcode( ) {
-	?>
-	<section class="salesforce-form" >
-
-		<div id="tabs" class="stripe-paypal dntplgn_form_wrapper">
-			<ul>
-				<li><a href="#tabs-1">Donate Once</a></li>
-				<li><a href="#tabs-2">Donate Monthly</a></li>
-			</ul>
-			<div id="tabs-1">
-				<form action="#" class="donate-form" value="submit" method="POST">
-
-					<input type=hidden name="oid" value="00D7F0000002Vh5">
-					<div class="salesforce-form">
-						<div class="donation-box">
-							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-						</div>
-						<button type="button" class="donate-btn">Donate</button>
-					</div>
-				</form>
-				<div class="stripe-paypal-form">
-					<?php 
-					echo do_shortcode('[direct-stripe type="donation" amount="" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
-					echo do_shortcode('	[wp_paypal button="donate" amount="1.00" name="My product"]');
-					?>
-				</div>
-				<div class="clear"></div>
-			</div>
-
-			<div id="tabs-2">
-				<form action="#" class="donate-form" value="submit" method="POST">
-					<input type=hidden name="oid" value="00D7F0000002Vh5">
-					<div class="salesforce-form">
-						<div class="donation-box">
-							<input  aria-labelledby="00N7F000001pAWj_pcl" id="00N7F000001pAWj" maxlength="100" name="00N7F000001pAWj" size="20" type="text" value="60" />
-						</div>
-						<button type="button" class="donate-btn">Donate</button>
-					</div>
-				</form>
-				<div class="stripe-paypal-form">
-					<?php 
-					echo do_shortcode('[direct-stripe type="donation" amount="'. $value2 .'" name="Pay for Ayiti Now" label="Credit Card" panellabel="Pay Amount" currency="USD" display_amount="true"]');
-					echo do_shortcode('	[wp_paypal button="donate" amount="1.00" name="My product"]');
-					?>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-	</section>
-	<?php	
 }
 
 

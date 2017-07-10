@@ -99,11 +99,6 @@ function parallax_homepage_widgets() {
 		'before' => '<div class="home-even home-section-8 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
-
-	genesis_widget_area( 'home-section-9', array(
-		'before' => '<div class="home-odd home-section-9 widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-		) );
 }
 
 genesis();
