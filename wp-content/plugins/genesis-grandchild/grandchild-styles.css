@@ -744,6 +744,17 @@ body .site-container section.featuredpage .entry-content a:hover {
   background-color: #f16522;
   color: #fff !important;
 }
+body .site-container .gs_logo_single {
+  height: 100px;
+  padding: 10px 0;
+}
+body .site-container .gs_logo_single img {
+  width: auto;
+  height: 100%;
+}
+body .site-container .bx-wrapper {
+  padding: 0 45px;
+}
 
 .entry-content ol > li,
 .entry-content ul > li {
