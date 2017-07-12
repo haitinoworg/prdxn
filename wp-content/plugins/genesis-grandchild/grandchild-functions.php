@@ -165,19 +165,27 @@ Footer Simple Social Share
 add_action('genesis_before_footer','subscribe_section');
 
 function subscribe_section() {
+	global $post;
 
-	genesis_widget_area( 'home-section-8', array(
-		'before' => '<div class="home-even home-section-8 widget-area"><div class="wrap">',
+
+	$section_checkbox = get_field('add_sections',$post->ID);
+
+	if($section_checkbox[1] == "Add Salesforce Section") {
+		genesis_widget_area( 'home-section-6', array(
+		'before' => '<div class="home-even home-section-6 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
+	}
+
+	if($section_checkbox[0] == "Add Fundraise Section") {
+		genesis_widget_area( 'home-section-7', array(
+		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+		) );
+	} 
 
 	genesis_widget_area( 'home-section-9', array(
 		'before' => '<div class="home-odd home-section-9 widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
-
-	genesis_widget_area( 'home-section-10', array(
-		'before' => '<div class="home-odd home-section-10 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
 }

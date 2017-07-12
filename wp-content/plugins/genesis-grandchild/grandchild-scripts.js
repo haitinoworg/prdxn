@@ -65,35 +65,6 @@
 
 
   /*
-  * Donate Tabs 
-  */
-  var $donatevalue = $("#donationvalue"),
-  $inputamt = $("#00N7F000001pAWj");
-  
-  $donatevalue.wrap('<div class="donation-box"></div>');
-  $donatevalue.val(60);
-
-  var donationVal = $inputamt.val(),
-  donateVal;
-
-  $(".stripe-paypal-form").hide();
-
-  $(".donate-btn").click(function() {
-    var container = $(this).parent(".salesforce-form");
-    $(this).parent().hide();
-    $(this).siblings(".donation-box").remove();
-    $(".direct-stripe input").hide();
-    container.parent(".donate-form").siblings(".stripe-paypal-form").show();
-  });
-
-  $donatevalue.attr("value", donationVal);
-  $inputamt.keyup(function() {
-    donateVal = $(this).val();
-    $("#donationvalue").val(donateVal);
-  });
-
-
-  /*
   * Site Logo
   */
 

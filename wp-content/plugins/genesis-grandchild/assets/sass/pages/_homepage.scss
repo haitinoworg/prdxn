@@ -235,7 +235,7 @@ Content Area
 	height: auto;
 	padding: 63px 0 36px;
 	border-top: 1px solid #e3ffbc;
-	background-color: #3060b8;
+	background-color: #149548;
 	section h4.widget-title { margin-bottom: 23px; }
 
 	@include mobile() { .textwidget { margin-bottom: 31px; } }
@@ -298,8 +298,7 @@ Content Area
 .home-section-5,
 .home-section-6,
 .home-section-7,
-.home-section-8,
-.home-section-9 { 
+.home-section-8 { 
 	background-repeat: no-repeat; 
 
 	.wrap { width: 84%; }
@@ -323,4 +322,24 @@ Content Area
 .home-section-9,
 .home-section-10 { background-size: cover; }
 
-.home-section-10 { background-color: #2e2b2b; }
+.home-section-10 { 
+	background-color: #fff; 
+
+	a { background: #fff;	}
+}
+
+.home-section-7 { background-color: #3060b8; }
+
+/* Partners Slider Styling */
+body .rt-wpls .slick-prev { 
+	left: -30px; 
+	@include tab() { left: -5px; }
+}
+body .rt-wpls .slick-next { 
+	right: -15px; 
+	@include tab() { right: -5px; }
+}
+body .rt-wpls .slick-next,
+body .rt-wpls .slick-prev { background-color: #fff; }
+body .rt-wpls .slick-prev:before, 
+body .rt-wpls .slick-next:before { font-size: 30px; }

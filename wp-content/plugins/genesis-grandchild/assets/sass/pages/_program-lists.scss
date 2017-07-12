@@ -51,7 +51,6 @@ main.content {
 	article.entry {
 		padding: 0;
 		margin-bottom: 63px;
-		background-color: #f2f2f2;
 		.entry-content { 
 			@include boxmodel(3,70%,5,63px 0 48px,7,0 auto);
 			clear: both;

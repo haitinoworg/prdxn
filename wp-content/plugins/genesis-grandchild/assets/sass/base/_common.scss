@@ -478,6 +478,7 @@ body .site-container {
 				min-width: 28%;
 				margin: 0;
 				@include props(dib,vat);
+				text-align: center;
 
 				@include tab() { min-width: 100%; } 
 
