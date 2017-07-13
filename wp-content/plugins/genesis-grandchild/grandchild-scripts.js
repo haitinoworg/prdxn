@@ -351,6 +351,23 @@ $(".inside .w2linput.submit").click(function(event) {
 });
 
 
+/* Parnters Contact Form */
+$(".page-template-page-sponsor .w2linput.submit").click(function(event) { 
+  /* First Name */
+  validate( 'first name', ".page-template-page-sponsor #sf_first_name", name_reg, 100, event);
+
+  /* Last Name*/
+  validate( 'last name', ".page-template-page-sponsor #sf_last_name", name_reg, 100, event);
+
+  /* Email*/
+  validate( 'email', ".page-template-page-sponsor #sf_email", email_reg, 50, event);
+
+  /* Description */
+  validate('description', ".page-template-page-sponsor .textarea", textarea_reg, 500, event);
+
+});
+
+
 /* Search Submit */
 $(".search-form button").click(function(event) {
   validate('search', ".search-form input", '', '', 500, event);

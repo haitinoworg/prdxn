@@ -184,7 +184,12 @@
 */
 .site-inner {
 	.research-accordions {
-		padding: 48px 0 66px;
+		padding: 61px 0 66px;
+
+		.tab-page-content { 
+			box-sizing: border-box;
+			padding-bottom: 27px; 
+		}
 
 		.accordions-themes { 
 			margin-bottom: 0; 
@@ -200,6 +205,7 @@
 				}
 			}
 		}
+
 		.accordion-content {
 			box-sizing: border-box; 
 			padding: 31px 15px 29px 36px;

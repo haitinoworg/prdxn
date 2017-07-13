@@ -170,14 +170,14 @@ function subscribe_section() {
 
 	$section_checkbox = get_field('add_sections',$post->ID);
 
-	if($section_checkbox[1] == "Add Salesforce Section") {
+	if($section_checkbox[0] == "Add Salesforce Section") {
 		genesis_widget_area( 'home-section-6', array(
 		'before' => '<div class="home-even home-section-6 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 		) );
 	}
 
-	if($section_checkbox[0] == "Add Fundraise Section") {
+	if(($section_checkbox[0] == "Add Fundraise Section") || ($section_checkbox[1] == "Add Fundraise Section") ) {
 		genesis_widget_area( 'home-section-7', array(
 		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',

@@ -141,38 +141,10 @@
 
 				@include mobile() { font-size: 28px;	}
 			}
-
-			.hover-content {
-				width: 100%;
-				padding: 0 10px;
-				display: block;
-				@include minWidth(1025px) {
-					@include property(transform, translateY(200px));
-					@include property(animation, text-overlay-w 0.5s linear both);
-				}
-
-				@include md() {	@include property(transform, translateY(0));	}
-
-				h1,h2,h3,h4,h5,h6,ul,li {
-					padding: 0;
-					margin: 0;
-					display: inline;
-					color: #fff;
-					font-size: 17px;
-				}
-			}
 		}
 
 
-		&>a:hover {
-			@include props(bgb);
-
-			@include minWidth(1025px) {
-				.hover-content {   
-					@include property(animation, text-overlay 0.5s linear both);
-				}
-			}
-		}
+		&>a:hover { @include props(bgb); }
 
 		.entry-content {
 			height: 100%;
@@ -181,20 +153,11 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			
-			@include minWidth(1025px) {
-				@include property(transition, all 0.2s linear)
-			}
 
 			@include maxWidth(769px) {
 				height: auto;
 				left: auto;
 				top: 50%;
-			}
-
-			&:hover {	
-				@include property(transition-delay, 0.5s); 
-				padding-top: 9vh;
 			}
 
 			@include mobile() {

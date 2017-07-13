@@ -1,5 +1,5 @@
 
-/* Contact Form
+/* Volunteer Form
 --------------------------------------------- */
 .contact-form-7 {
 	.content { article.entry { padding: 63px 0; } }
@@ -20,7 +20,8 @@
 	}
 }
 
-.contact-form-7 {
+.contact-form-7,
+.page-template-page-sponsor {
 
 	.content {
 		box-sizing: border-box;
@@ -44,11 +45,11 @@
 				textarea,
 				select {
 					box-sizing: border-box;
-					@include mobile() { width: 215px; }
+					@include mobile() { width: 100%; }
 
 					& + p {
 						box-sizing: border-box;
-						width: 215px;
+						width: 100%;
 						height: 30px;
 						margin-bottom: 0;
 						color: #f00;
@@ -548,4 +549,66 @@ body.contact-form-7 .inside,
 		background-size: 5px 10px;
 		outline: none;
 	}
+}
+
+
+/* Contact Form in sponsors */
+
+.page-template-page-sponsor {
+		div.salesforce_w2l_lead {
+		width: 74%;
+		margin: 0 auto;
+
+		@include md() {
+			width: 100%;
+		}
+
+		@include tab() {
+			max-width: 500px;
+		}
+
+		@include mobile() {
+			width: 100%;
+		}
+	}
+
+		.salesforce_w2l_lead {
+				@include boxmodel(3, 74%, 5, 46px 0 3px, 7, 0 auto);
+				text-align: center;
+			
+			form.w2llead {
+				.sf_field { 
+					text-align: left;
+					width: 30%; 
+					display: inline-block;
+					vertical-align: top;
+
+					&:nth-child(3n+2) { margin: 0 4.5%;	}
+
+
+					@include tab() {
+						width: 100%;
+
+						&:nth-child(3n+2) { margin: 0; }
+					}
+				}
+				.sf_type_textarea { 
+					width: 100%;
+					min-height: 168px;
+					margin-left: 0;
+				}
+			}
+		}
+
+		.w2lsubmit { display: inline-block;	}
+		.sf_type_textarea { min-height: 1568px; }
+		textarea { 
+			max-height: 150px;
+    	min-height: 120px;
+		}
+
+		main.content .entry-content p:last-child {
+			margin-bottom: 11px;
+		}
+
 }

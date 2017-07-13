@@ -109,6 +109,25 @@
 
     a:nth-child(3n+3){margin-right: 0;}
   }
+
+  .tab-page-content {
+    p {
+     a { 
+       min-height: inherit;
+      max-height: inherit;
+      &::after { display: none;  }
+     }
+     & span,
+     & a span {
+        width: auto;
+        padding: 0;
+        position: static;
+        text-align: left;
+        color: #000;
+        font-size: 17px;
+     }
+   }
+  }
 }
 
 .album {
