@@ -152,7 +152,10 @@ body.body-overflow {
 
 .header-image {	
 	.site-title {	
+		width: 280px;
 		text-align: left;
+		@include maxWidth(400px) { width: 250px; }
+
 		a { 
 			padding: 22px 10px;
 			margin: 0; 
@@ -161,7 +164,9 @@ body.body-overflow {
 			color: #f16522 !important;
 			text-indent: 50px;
 			font-family: Roboto;
-			font-size: 20px;
+			font-size: 35px;
+			font-weight: 100;
+			line-height: 20px;
 		}	
 	}	
 }

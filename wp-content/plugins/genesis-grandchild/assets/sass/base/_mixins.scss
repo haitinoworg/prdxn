@@ -120,10 +120,10 @@ Common Mixins ============================================
 	}
 	&:hover {
 		border-color: $cta-color;
-		background-color: $cta-color;
+		background-color: #fff;
 
 		// important used here, to override parent theme styling
-		color: #fff;
+		color: $cta-color;
 	}
 }
 

@@ -104,10 +104,5 @@ function sponsors_loop(){
 }
 
 
-//* Remove site footer elements
-
-// remove_action( 'genesis_footer', 'genesis_do_footer' );
-
-
 //* Run the Genesis loop
 genesis();

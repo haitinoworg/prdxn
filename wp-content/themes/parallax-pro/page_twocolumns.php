@@ -97,7 +97,7 @@ else {
 							the_post_thumbnail();	
 						} else {
 							echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-							. '/images/empty-image.png" />';
+							. '/images/movies-empty.png" />';
 						}
 						?>
 					</div>

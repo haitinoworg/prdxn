@@ -6,11 +6,6 @@
 //* Force full width content layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
-//* Remove site header elements
-// remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
-// remove_action( 'genesis_header', 'genesis_do_header' );
-// remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
-
 //* Remove navigation
 remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 remove_action( 'genesis_footer', 'genesis_do_subnav', 7 );
@@ -27,7 +22,7 @@ function sponsors_loop(){
            <?php
            $wp_query = new WP_Query(array('post_type'=>'sponsors', 'post_status'=>'publish', 'posts_per_page'=>-1, 'order' => 'ASC')); 
 
-            if($wp_query->have_posts() ): ?>
+            if($wp_query->have_posts() ): setup_postdata($wp_query); ?>
             <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
                        <div class="sponsor-list">
                            <div class="news-image">
@@ -35,7 +30,9 @@ function sponsors_loop(){
                            </div>
                         </div>
                 <?php endwhile; // end of the loop. ?>
-            <?php endif; ?>
+            <?php endif; 
+            wp_reset_postdata();
+             ?>
       </div>
 <?php
 }

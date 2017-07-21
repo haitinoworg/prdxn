@@ -28,43 +28,6 @@ function custom_blog_title() {
 
 remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 
-
-//Remove Default Post Pagination
-remove_action('genesis_after_endwhile','genesis_posts_nav');
-add_action('genesis_after_endwhile','abc');
-function abc() {
-	global $wp_query;
-
-	$args = array(
-	'total' => $wp_query->max_num_pages,
-	'current' => 0,
-	'end_size' => 1,
-	'mid_size' => 0,
-	'prev_next' => false,
-	'type' => 'plain'
-);
-
-?>
-<div class="archive-pagination pagination">
-<ul>
-<?php
-$paginate =  array(paginate_links( $args ));
-echo '<li class="pagination-previous">';
-echo previous_posts_link('«') . '</li>';
-	for( $x = 0; $x <= count($paginate); $x++) {
-		echo '<li>';
-		echo $paginate[$x] . '</li>';
-	}
-echo '<li class="pagination-next">';
-echo next_posts_link('»'). '</li>';
-?>
-</ul>
-</div>
-
-<?php
-}
-
-
 add_action('genesis_entry_content','custom_blog_loop');
 function custom_blog_loop() {
 
@@ -87,7 +50,7 @@ function custom_blog_loop() {
 		<div>
 			<?php 
 			$content = get_the_content();
-			echo mb_strimwidth($content, 0, 100, "...");
+			echo mb_strimwidth(strip_tags($content), 0, 100, "...");
 			?>
 		</div>
 	</div>

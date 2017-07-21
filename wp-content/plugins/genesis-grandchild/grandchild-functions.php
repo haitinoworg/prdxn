@@ -67,8 +67,8 @@ register_post_type( 'programs',
 register_post_type( 'sponsors',
 	array(
 		'labels' => array(
-			'name' => __( 'Sponsors' ),
-			'singular_name' => __( 'Sponsors' )
+			'name' => __( 'Partners' ),
+			'singular_name' => __( 'Partners' )
 			),
 		'has_archive' => true,
 		'hierarchical' => true,
@@ -119,17 +119,17 @@ register_post_type( 'movies',
 * Registering Custom Post Type Staff
 */
 
-register_post_type( 'staff',
+register_post_type( 'team',
 	array(
 		'labels' => array(
-			'name' => __( 'Staffs' ),
-			'singular_name' => __( 'Staffs' )
+			'name' => __( 'Team' ),
+			'singular_name' => __( 'Team' )
 			),
 		'has_archive' => true,
 		'hierarchical' => true,
 		'public' => true,
-		'rewrite'=> array('slug'=>'staff'),
-		'supports'            => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes' ),'taxonomies' => array('category')
+		'rewrite'=> array('slug'=>'team'),
+		'supports' => array( 'title', 'editor', 'post-formats', 'thumbnail', 'trackbacks', 'revisions', 'page-attributes' ),'taxonomies' => array('category')
 		)
 	);
 
@@ -225,8 +225,7 @@ function ajax_load_more() {
 			if ( has_post_thumbnail() ) { 
 				the_post_thumbnail();	
 			} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-				. '/images/empty-image.png" />';
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/movies-empty.png" />';
 			}
 			?>
 		</div>
@@ -273,7 +272,7 @@ function ajax_load_more_books() {
 			if(has_post_thumbnail()){
 				the_post_thumbnail();	
 			} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/movies-empty.png" />';
 			}
 			?>
 			<div class="entry-content">

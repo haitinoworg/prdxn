@@ -41,7 +41,7 @@ $post_slug=$post->post_name;
 			if(has_post_thumbnail()){
 				the_post_thumbnail();	
 			} else {
-				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/empty-image.png" />';
+				echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/movies-empty.png" />';
 			}
 			?>
 			<div class="entry-content">

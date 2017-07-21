@@ -308,10 +308,8 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
 
   $("textarea[placeholder='Description']").siblings('p').hide();
 
-  // Search Form
-
+  /* Search Form */
   elements_validate(".search-form input[type='search']",'', name_reg, 100);
-
 
   /* subscribe form fields */
   //First Name
@@ -324,8 +322,8 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
 /*
 * Submit Button Validation =========================================
 */
-/* Subscribe Submit */
 
+/* Subscribe Submit */
 $(".textwidget .w2linput.submit").click(function(event) { 
     // First Name
     validate( 'first name',".textwidget #sf_first_name", name_reg, 100, event);
@@ -375,7 +373,17 @@ $(".search-form button").click(function(event) {
 
 /* Questions Submit */
 $(".question-form .w2linput.submit").click(function(event) { 
-  validate(param1, elemen_id, param2, param_range, event);
+   /* First Name */
+  validate( 'first name', ".page-template-page_donate #sf_first_name", name_reg, 100, event);
+
+  /* Last Name*/
+  validate( 'last name', ".page-template-page_donate #sf_last_name", name_reg, 100, event);
+
+  /* Email*/
+  validate( 'email', ".page-template-page_donate #sf_email", email_reg, 50, event);
+
+  /* Description */
+  validate('description', ".page-template-page_donate .textarea", textarea_reg, 500, event);
 });
 
 /* Volunteer Submit */

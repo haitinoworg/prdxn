@@ -20,9 +20,7 @@
 	}
 }
 
-.contact-form-7,
-.page-template-page-sponsor {
-
+.contact-form-7 {
 	.content {
 		box-sizing: border-box;
 		max-width: 2000px;
@@ -323,7 +321,6 @@
 }
 
 .salesforce_w2l_lead {
-	margin: 0 0 40px;
 	form.w2llead {
 		&>div { 
 			input,
@@ -341,6 +338,7 @@
 
 				&:focus { border: 1px solid #ddd; }
 			}
+
 			input,
 			textarea {
 				&::-webkit-input-placeholder
@@ -554,27 +552,18 @@ body.contact-form-7 .inside,
 
 /* Contact Form in sponsors */
 
-.page-template-page-sponsor {
+.page-template-page-sponsor .site-inner,
+.page-template-page_donate .site-inner {
+	
 		div.salesforce_w2l_lead {
-		width: 74%;
-		margin: 0 auto;
-
-		@include md() {
-			width: 100%;
-		}
-
-		@include tab() {
-			max-width: 500px;
-		}
-
-		@include mobile() {
-			width: 100%;
-		}
-	}
-
-		.salesforce_w2l_lead {
 				@include boxmodel(3, 74%, 5, 46px 0 3px, 7, 0 auto);
+				position: relative;
 				text-align: center;
+
+				@include md() { width: 100%; }
+				@include tab() { max-width: 500px; }
+				@include mobile() {	width: 100%; }
+
 			
 			form.w2llead {
 				.sf_field { 
@@ -597,6 +586,13 @@ body.contact-form-7 .inside,
 					min-height: 168px;
 					margin-left: 0;
 				}
+			}
+
+			.sf_required_fields_msg {
+				position: absolute;
+				bottom: 50px;
+				color: #f00;
+				font-size: 13px;
 			}
 		}
 

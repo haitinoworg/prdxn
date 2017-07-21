@@ -185,53 +185,6 @@
 			}
 		}
 
-
-		.question-form {
-			.salesforce_w2l_lead {
-				max-width: 800px;
-				width: 74%;
-				padding: 0;
-				margin: 0 auto;
-				position: relative;
-				text-align: center;
-				.sf_field { 
-					width: 47.5%;
-					display: inline-block;
-					vertical-align: top;
-					&:first-child { margin-right: 5%; }
-				}
-				.sf_type_textarea { 
-					width: 100%;
-					min-height: 168px;
-					margin-left: 0;
-
-					textarea { min-height: 120px;	}
-				}
-
-				form {
-					text-align: center;
-
-					p { text-align: left; }
-
-					.w2lsubmit { 		
-						display: inline-block; 
-						input {	
-							padding: 11px;	
-							font: 15px/10px $font;
-						}
-					}
-
-				}
-
-				.sf_required_fields_msg {
-					position: absolute;
-					bottom: 51px;
-					color: #f00;
-					font-size: 13px;
-				}
-			}
-		}
-
 	}
 }
 
