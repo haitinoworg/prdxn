@@ -502,22 +502,7 @@ body .site-container {
 
 			a { 
 				@include boxmodel(3,auto,5,10px 35px,7,53px 0 0);
-				border-color: $cta-color;
-				@include property(border-radius,4px);
-				display: inline-block;
-				background-color: $cta-color;
-				color: #fff !important;
-				font: 700 16px $font;
-				&:focus {
-					border-color: $cta-color;
-					background-color: $cta-color;
-					color: #fff !important;
-				}
-				&:hover {
-					border-color: $cta-color;
-					background-color: $cta-color;
-					color: #fff !important;
-				}
+				@include cta();
 			}
 		}
 

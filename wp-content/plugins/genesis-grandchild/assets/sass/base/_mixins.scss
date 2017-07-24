@@ -109,7 +109,7 @@ Common Mixins ============================================
 
 @mixin cta() {
 	@include boxmodel(3,auto,5,10px 15px,7,30px 0 0);
-	border-color: $cta-color;
+	border: 1px solid $cta-color;
 	background-color: $cta-color;
 	color: #fff;
 	font: 15px $font;
@@ -121,9 +121,18 @@ Common Mixins ============================================
 	&:hover {
 		border-color: $cta-color;
 		background-color: #fff;
-
-		// important used here, to override parent theme styling
 		color: $cta-color;
+
+	}
+
+	@include maxWidth(1025) {
+		&:focus,
+		&:hover {
+			border: 1px solid $cta-color;
+			background-color: $cta-color;
+			color: #fff;
+			font: 15px $font;
+		}
 	}
 }
 

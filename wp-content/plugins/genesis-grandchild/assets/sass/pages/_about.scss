@@ -22,6 +22,10 @@
 		img {
 			width: 100%;
 			height: auto;
+			@include maxWidth(568px) {
+				width: auto;
+				height: 100%;
+			}
 		}
 	}
 	.content {

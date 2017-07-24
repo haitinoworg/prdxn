@@ -7,8 +7,6 @@ jQuery(function( $ ){
 
 		scrollwindow = scrolltop + $(window).height();
 
-		$(".home-section-1").css("backgroundPosition", "50% " + -(scrolltop/6) + "px");
-
 		if ( $(".home-section-3").length ) {
 		
 			sectionthreeoffset = $(".home-section-3").offset().top;		  
@@ -17,7 +15,7 @@ jQuery(function( $ ){
 
 				// Enable parallax effect
 				backgroundscroll = scrollwindow - sectionthreeoffset;
-				$(".home-section-3").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
+				$(".home-section-3").css("backgroundPosition", "50% " + -(backgroundscroll/20) + "px");
 
 			}
 		
@@ -31,7 +29,7 @@ jQuery(function( $ ){
 
 				// Enable parallax effect
 				backgroundscroll = scrollwindow - sectionfiveoffset;
-				$(".home-section-5").css("backgroundPosition", "50% " + -(backgroundscroll/6) + "px");
+				$(".home-section-5").css("backgroundPosition", "50% " + -(backgroundscroll/20) + "px");
 
 			}
 		

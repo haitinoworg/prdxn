@@ -245,8 +245,6 @@ var validate = function(field, id, regx, range, btn_event) {
       $(id).siblings('p').addClass('blank-text');
     }
 
-    console.log('its ok');
-
   } else {
     $(id).siblings('p').text('Please enter your ' + field + '.');
     btn_event.preventDefault(btn_event);
@@ -303,10 +301,11 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w]+\.[a-z.]{2,3}$/;
   //Volunteer Skills
   elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg, 500);
 
+  // Volunteer Comments
+  elements_validate("textarea[placeholder='Volunteer Comments']", 'volunteer comments', textarea_reg, 500);
 
-  $("textarea[placeholder='Volunteer Comments']").siblings('p').hide();
-
-  $("textarea[placeholder='Description']").siblings('p').hide();
+  // Contact Description
+  elements_validate("textarea", 'description', textarea_reg, 500);
 
   /* Search Form */
   elements_validate(".search-form input[type='search']",'', name_reg, 100);
