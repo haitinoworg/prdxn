@@ -113,6 +113,10 @@ Common Mixins ============================================
 	background-color: $cta-color;
 	color: #fff;
 	font: 15px $font;
+	line-height: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.7px;
+
 	&:focus {
 		border-color: $cta-color;
 		background-color: $cta-color;

@@ -372,6 +372,9 @@ main.content .entry-content a {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
 }
 .home-even .textwidget a.button:focus,
 .home-odd .textwidget a.button:focus {
@@ -746,6 +749,9 @@ body .site-container section.featuredpage .entry-content a {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
 }
 body .site-container section.featuredpage .entry-content a:focus {
   border-color: #f16522;
@@ -1223,6 +1229,9 @@ Content Area
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   width: 100%;
   margin-top: 0;
   padding: 10px 20px;
@@ -1518,6 +1527,9 @@ Content Area
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   display: inline-block;
 }
 .home-section-1 a:focus,
@@ -1716,6 +1728,9 @@ body .rt-wpls .slick-next:before {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   background-color: #fff;
   color: #000;
 }
@@ -2038,6 +2053,9 @@ body .rt-wpls .slick-next:before {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   padding: 10px 25px;
   border: 1px solid #f16522;
   margin-top: 10px;
@@ -2552,6 +2570,9 @@ main.content .movies .image img {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   display: inline-block;
 }
 .page-template-page_columns .program-posts .entry .ajax-load-more-wrap button#load-more.read-more:focus {
@@ -3272,20 +3293,11 @@ main.content .entry-content h2.list-title {
   margin-bottom: 63px;
 }
 .single-programs article.entry .entry-content {
-  width: 70%;
+  width: 100%;
   padding: 63px 0 48px;
   margin: 0 auto;
   clear: both;
-}
-@media screen and (max-width: 768px) {
-  .single-programs article.entry .entry-content {
-    width: 84%;
-  }
-}
-@media screen and (max-width: 569px) {
-  .single-programs article.entry .entry-content {
-    text-align: center;
-  }
+  text-align: center;
 }
 .single-programs article.entry,
 .single-programs article.entry p {
@@ -3341,6 +3353,9 @@ main.content .entry-content h2.list-title {
   left: -28px;
   color: #f16522;
   font-size: 70px;
+}
+.single-programs .home-odd article.entry .entry-content {
+  padding-top: 0;
 }
 
 @keyframes close-animate {
@@ -3566,6 +3581,9 @@ body.faq p a {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   width: 100%;
   border: 3 solid #000;
   background-color: #fff;
@@ -6265,6 +6283,9 @@ main.content .entry-content p:last-child {
   background-color: #f16522;
   color: #fff;
   font: 15px Roboto, sans-serif;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   margin: 0px;
 }
 .archive-pagination.pagination li a:focus {
