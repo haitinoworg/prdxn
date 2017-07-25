@@ -16,16 +16,29 @@
 .page-template-template_about.full-width-content {
 
 	.programs-hero-image {
-		height: 272px;
-		max-height: 500px;
-		.wrap { margin-top: 50px; }
-		img {
-			width: 100%;
-			height: auto;
-			@include maxWidth(568px) {
-				width: auto;
-				height: 100%;
+		max-height: calc(100vh - 150px);
+		height: 100%;
+		padding: 0;
+		.wrap { 
+			margin-top: 0; 
+			position: static;
+			
+			.hero-content {
+				width: 100%;
+		    position: absolute;
+		    top: 50%;
+		    @include property(transform, translateY(-50%));
+		    z-index: 5;
+
+		    h1, h2, h3 { margin-bottom: 0; }
 			}
+		}
+		img {
+	    width: 100%;
+	    height: 100%;
+	    padding: 0;
+	    margin-bottom: -10px;
+	    position: static;
 		}
 	}
 	.content {

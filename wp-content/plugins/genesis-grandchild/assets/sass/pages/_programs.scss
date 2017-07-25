@@ -17,10 +17,9 @@
 		}
 
 		article.entry {
-			@include boxmodel(3,70%,5,58px 0 0,7,0 auto);
+			@include boxmodel(3,84%,5,58px 0 0,7,0 auto);
 			text-align: center;
 
-			@include tab() { width: 84%;  }
 			.entry-content {
 				padding: 0 0 59px;
 				p {
@@ -306,10 +305,22 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	h1,h2,h3,h4,h5,h6 { 
 		width: 100%;	
 		color: #fff;
-		font: 900 39px $font;
+		font-family: $font;
+		font-weight: 900;
 		line-height: 44px;
 		text-decoration: 2px 2px 10px #000;
 	}
+
+	h1, h2 { 
+		font-size: 50px; 
+			line-height: 46px;
+			@include mobile() {
+				font-size: 40px;
+			}
+	}
+
+	h3 { font-size: 39px; }
+	h4 { font-size: 24px; }
 
 	p { 
 		font-size: 17px; 

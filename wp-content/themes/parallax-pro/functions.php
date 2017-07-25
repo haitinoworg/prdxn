@@ -201,9 +201,3 @@ remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 )
 
 //* Remove the entry meta in the entry footer
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
-
-@ini_set( 'upload_max_size' , '64M' );
-
-@ini_set( 'post_max_size', '64M');
-
-@ini_set( 'max_execution_time', '300' );
