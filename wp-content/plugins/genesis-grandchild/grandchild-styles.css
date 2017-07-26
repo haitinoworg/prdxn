@@ -4686,14 +4686,16 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
 }
 
 .close-lightbox {
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  font-size: 43px;
+  width: 23px;
+  height: 27px;
   position: fixed;
-  z-index: 1001;
   right: 37px;
   top: 30px;
+  z-index: 1001;
+  color: #fff;
+  font-size: 43px;
+  line-height: 19px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1025px) {

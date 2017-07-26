@@ -63,6 +63,7 @@ function Gallery_Video_Content_Popup(id) {
         galleryVideoIsotope(_this.container.children().first());
         galleryVideoIsotope(_this.container.children(), options);
     };
+    
     _this.showCenter = function () {
         if (_this.isCentered) {
             var count = _this.element.length;
