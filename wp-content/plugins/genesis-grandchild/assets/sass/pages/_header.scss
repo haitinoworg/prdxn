@@ -96,8 +96,10 @@ body.body-overflow {
 						text-align: center;
 						@include md() { padding: 15px 42px 20px; }
 					}
+
 					a {
-						border-radius: 2px;
+						border: 1px solid $cta-color;
+						@include property(border-radius, 2px);
 						background: #f16522;
 						font-weight: 100;
 						font-size: 15px;

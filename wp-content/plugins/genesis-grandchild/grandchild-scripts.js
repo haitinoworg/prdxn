@@ -260,7 +260,7 @@ var validate = function(field, id, regx, range, btn_event) {
 var name_reg = /^[a-zA-Z0-9$ &+, :;=^@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
 var textarea_reg = /^[a-zA-Z0-9$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,500}$/;
 var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
-var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w.-_]+\.[a-z.]{2,3}$/;
+var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w-_]+\.[a-z.]{2,3}$/;
 
   /*
   * Form Focus in and Focus out ==================================
@@ -305,7 +305,7 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w.-_]+\.[a-z.]{2,3}$/;
   elements_validate("textarea[placeholder='Volunteer Comments']", 'volunteer comments', textarea_reg, 500);
 
   // Contact Description
-  elements_validate("textarea", 'description', textarea_reg, 500);
+  elements_validate("textarea[placeholder='Description']", 'description', textarea_reg, 500);
 
   /* Search Form */
   elements_validate(".search-form input[type='search']",'', name_reg, 100);
