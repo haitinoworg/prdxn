@@ -234,8 +234,6 @@ function ajax_load_more() {
 			<div class="detailed-content">
 				<?php the_content(); ?>
 			</div>
-			<span class="custom-links read-more more-content">Read More</span>
-			<span class="custom-links read-more less-content">Read Less</span>
 		</div>
 
 	</div>

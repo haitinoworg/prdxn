@@ -32,23 +32,24 @@ foreach( $subpost as $posts ) : setup_postdata( $posts );
 		<?php
 		if ( isset($thumbnail_image) ) {  
 			?>
-			<img src='<?php echo $thumbnail_image; ?>' />
+			<img src='<?php echo $thumbnail_image; ?>' alt="<?php echo get_the_title($posts); ?>" />
 			<?php
 		}
 		else {
-			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-			. '/images/empty-image.png" />';
+			echo '<img src="' . get_bloginfo( 'stylesheet_directory' )	. '/images/empty-image.png" />';
 		}
 		?>
 	</a>
+
 	<div class="entry-content">
 		<h3><?php echo get_the_title($posts); ?></h3>
 		<div class="post-object-content">
+		<div>
 			<?php 
 			$content = get_the_content($posts);
-			echo '<p>';
-			echo mb_strimwidth($content, 0, 100, "...") . '</p>';
+			echo mb_strimwidth($content, 0, 100, "...");
 			?>
+		</div>
 			<div><a class="common-links read-more more-content"  href="<?php the_permalink($posts); ?>">Read More</a></div>
 		</div>
 	</div>

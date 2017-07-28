@@ -209,12 +209,13 @@
 
 		.entry-content {
 			height: 100%;
-			padding: 5px 8% 10px;
+			padding: 0;
 			top: 0;
 			@include property(animation, text-off 0.4s linear both);
 			color: #000;
 			
 			h3 { 
+				margin-bottom: 0;
 				color: #000;
 				font-size: 32px;	
 				@include mobile() {
@@ -227,7 +228,6 @@
 			}
 
 			@include tab() {
-				height: auto;
 				top: 50%;
 				color: #fff;
 				@include property(transform, translateY(-50%));
@@ -237,11 +237,12 @@
 				}
 				p { font-size: 17px; }
 			}
+
 		}
 
 
 		&>a { 
-			padding: 31% 0 60%;
+			padding: 75% 0;
 			background-color: #fff;
 			img {
 				@include property(animation, image-flip 0.4s linear both);
@@ -261,11 +262,9 @@
 					border: 1px solid #7b7b7b;
 					&>div {
 						width: 100%;
-						padding: 0 15px;
-						position: absolute;
-						left: 0;
-						top: 50%;
-						@include property(transform, translateY(-50%));
+						height: 100%; 
+						padding: 20px 15px;
+						overflow-y: auto;
 					}
 				}
 			}
