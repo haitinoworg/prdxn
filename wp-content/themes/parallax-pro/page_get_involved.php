@@ -49,6 +49,27 @@ function get_involved_loop() {
 }
 
 
+add_action('genesis_before_footer','subscribe_section');
+add_action('genesis_before_footer','salesforce_section');
+function salesforce_section() {
+	global $post;
+
+
+	$section_checkbox = get_field('add_sections',$post->ID);
+
+	if(($section_checkbox[0] == "Add Fundraise Section") || ($section_checkbox[1] == "Add Fundraise Section") ) {
+		genesis_widget_area( 'home-section-7', array(
+		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+		) );
+	} 
+
+	genesis_widget_area( 'home-section-9', array(
+		'before' => '<div class="home-odd home-section-9 widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+		) );
+
+}
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 genesis();

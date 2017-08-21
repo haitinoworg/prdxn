@@ -115,35 +115,6 @@
           $loadmore.hide();
         }
 
-        // $('.less-content').hide();
-
-        // postcont = $('.detailed-content');
-
-        // postcont.each(function(){ 
-        //   var posttxt = $(this).text();
-        //   $(this).html('<span>' + posttxt.slice(0,132) +  '</span>' + '<span class="excerpt-content">' + posttxt.slice(132,posttxt.length) + '</span>');
-        // });
-
-        // $('.excerpt-content').slideUp('fast', function(){
-        //   $(this).css('display','none');
-        // });
-
-        // $('.more-content').click(function() {
-        //   $(this).hide();
-        //   $(this).siblings('span').show();
-        //   $(this).siblings('.detailed-content').children('.excerpt-content').slideDown(function(){
-        //     $(this).css('display','inline');
-        //   });
-        // });
-
-        // $('.less-content').click(function() {
-        //   $(this).hide();
-        //   $(this).siblings('span').show();
-        //   $(this).siblings('.detailed-content').children('.excerpt-content').slideUp('fast', function(){
-        //     $(this).css('display','none');
-        //   });
-        // });
-
       }
 
     });
@@ -229,7 +200,7 @@ var validate = function(field, id, regx, range, btn_event) {
 var name_reg = /^[a-zA-Z0-9$ &+, :;=^@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
 var textarea_reg = /^[a-zA-Z0-9$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,500}$/;
 var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
-var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w-_]+\.[a-z.]{2,3}$/;
+var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,3}$/;
 
   /*
   * Form Focus in and Focus out ==================================
@@ -251,7 +222,8 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[\w-_]+\.[a-z.]{2,3}$/;
   * Fields data ====================================
   */
   $('.site-inner .sf_field').append('<p>&nbsp;</p>');
-
+  $('.site-inner .sf_field_description').children('p').text('User can not physically enter more than 500 characters.');
+  $('.site-inner .sf_field_00NA000000723E0').children('p').text('User can not physically enter more than 500 characters.');
    // First Name
    elements_validate("#sf_first_name", 'first name', name_reg, 100);
 

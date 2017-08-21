@@ -471,7 +471,16 @@
 					visibility: hidden;
 				}
 			}
+
+			&.sf_field_description,
+			&:last-child {
+				p, 
+				p.blank-text {
+					visibility: visible;
+				}
+			}
 		}
+
 
 		.sf_field { 
 			min-height: 75px; 
