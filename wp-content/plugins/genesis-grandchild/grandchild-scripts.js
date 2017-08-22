@@ -179,7 +179,7 @@ var validate = function(field, id, regx, range, btn_event) {
       btn_event.preventDefault(btn_event);      
     } else if( input_value.length > range  ) {
       $(id).siblings('p').removeClass('blank-text');
-      $(id).siblings('p').text('User can not physically enter more than ' + range + ' characters.');
+      $(id).siblings('p').text('Maximum limit is ' + range + ' characters.');
       btn_event.preventDefault(btn_event); 
     } else {
       $(id).siblings('p').addClass('blank-text');
@@ -222,8 +222,12 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,
   * Fields data ====================================
   */
   $('.site-inner .sf_field').append('<p>&nbsp;</p>');
-  $('.site-inner .sf_field_description').children('p').text('User can not physically enter more than 500 characters.');
-  $('.site-inner .sf_field_00NA000000723E0').children('p').text('User can not physically enter more than 500 characters.');
+  if(!$('.widget .sf_field').has('p')) {
+  $('.widget .sf_field').append('<p>&nbsp;</p>');
+  }
+  
+  $('.site-inner .sf_field_description').children('p').text('Maximum limit is 500 characters.');
+  $('.site-inner .sf_field_00NA000000723E0').children('p').text('Maximum limit is 500 characters.');
    // First Name
    elements_validate("#sf_first_name", 'first name', name_reg, 100);
 
@@ -438,26 +442,30 @@ $research_tabs.on('click', function() {
 
 /*Program detail Page animation*/
 var $program_desc = $('.program-desc');
-var section_height = $program_desc.offset().top;
-if($(window).width() > 480) {
- section_height = section_height + 250;
-} else {
-  section_height = section_height + 100;
+if($program_desc) {
+  let section_height = $program_desc.offset().top;
+  if($(window).width() > 480) {
+   section_height = section_height + 250;
+  } else {
+    section_height = section_height + 100;
 
-  /*Pagination on mobile*/
+    /*Pagination on mobile*/
 
-  $('.pagination-next').children('a').text('»');
-  $('.pagination-previous').children('a').text('«');
+    $('.pagination-next').children('a').text('»');
+    $('.pagination-previous').children('a').text('«');
+
+  }
+
+
+  $(this).scroll(function() {
+    var window_height = $(window).scrollTop() + $(window).height();
+    if(window_height > section_height){
+      $program_desc.addClass("program-visible");
+      $program_desc.addClass("active");
+    }
+  });
 
 }
-
-$(this).scroll(function() {
-  var window_height = $(window).scrollTop() + $(window).height();
-  if(window_height > section_height){
-    $program_desc.addClass("program-visible");
-    $program_desc.addClass("active");
-  }
-});
 
 })(jQuery);
 

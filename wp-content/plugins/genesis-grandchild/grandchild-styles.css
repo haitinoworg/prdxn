@@ -932,6 +932,10 @@ body.body-overflow {
   font-weight: 100;
   font-size: 15px;
 }
+.site-container .site-header .genesis-nav-menu > li:last-child a:focus {
+  color: #fff;
+  background: #f16522;
+}
 .site-container .site-header .genesis-nav-menu > li:last-child a:hover {
   background: #fff;
   color: #f16522;
@@ -4779,30 +4783,44 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
 /*
 * Error Page Styling ----------------------------------------------------
 */
-.error404 .search-form {
+.error404 .entry,
+.page-template-sitemap .entry {
+  margin-bottom: 0;
+}
+.error404 .search-form,
+.page-template-sitemap .search-form {
   position: relative;
   margin: 31px 0;
 }
-.error404 .search-form input[type="search"] {
+.error404 .search-form input[type="search"],
+.page-template-sitemap .search-form input[type="search"] {
   padding-right: 80px;
 }
 .error404 .search-form ::-webkit-input-placeholder,
 .error404 .search-form ::-moz-placeholder,
-.error404 .search-form :-ms-input-placeholder {
+.error404 .search-form :-ms-input-placeholder,
+.page-template-sitemap .search-form ::-webkit-input-placeholder,
+.page-template-sitemap .search-form ::-moz-placeholder,
+.page-template-sitemap .search-form :-ms-input-placeholder {
   color: #c4acac;
 }
-.error404 .search-form button[type="submit"] {
+.error404 .search-form button[type="submit"],
+.page-template-sitemap .search-form button[type="submit"] {
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
 }
-.error404 .search-form button[type="submit"]:hover, .error404 .search-form button[type="submit"]:focus {
+.error404 .search-form button[type="submit"]:hover, .error404 .search-form button[type="submit"]:focus,
+.page-template-sitemap .search-form button[type="submit"]:hover,
+.page-template-sitemap .search-form button[type="submit"]:focus {
   background-color: #f16522;
   color: #fff;
 }
 .error404 p a,
-.error404 li a {
+.error404 li a,
+.page-template-sitemap p a,
+.page-template-sitemap li a {
   color: #f16522;
   cursor: pointer;
 }

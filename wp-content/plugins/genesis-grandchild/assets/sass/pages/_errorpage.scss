@@ -3,8 +3,11 @@
 * Error Page Styling ----------------------------------------------------
 */
 
-.error404 {
+.error404,
+.page-template-sitemap {
 	// Search Form Styling
+	.entry { margin-bottom: 0; }
+	
 	.search-form {
 		position: relative;
 		margin: 31px 0;

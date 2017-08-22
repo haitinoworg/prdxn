@@ -103,9 +103,14 @@ body.body-overflow {
 						background: #f16522;
 						font-weight: 100;
 						font-size: 15px;
+						&:focus {
+							color: #fff;
+							background: $cta-color;
+						}
+						
 						&:hover {
 							background: #fff;
-							color: #f16522;
+							color: $cta-color;
 						}
 						@include md() {	font-size: 24px; }
 					}
