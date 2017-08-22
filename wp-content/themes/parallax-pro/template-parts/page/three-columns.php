@@ -31,13 +31,18 @@ $post_slug=$post->post_name;
 		while ($post_count->have_posts() ): $post_count->the_post();
 		?>
 		<div class="three-columns">
-			<a href="<?php 
+			<?php
 			$book_link = get_field('book_link'); 
-			if($book_link) {
-				echo $book_link; 
+			 if($book_link) {
+			?>
+			<a href="<?php echo $book_link; ?>" title="<?php echo the_title_attribute(); ?>" target="_blank">
+			<?php
+			} else {
+				?> 
+				<a class="team-link" href="javascript:void(0)" title="<?php echo the_title_attribute(); ?>">
+				<?php
 			}
-			else { echo '#fixme'; }
-			?>" title="<?php the_title(); ?>" target="_blank"><?php	
+
 			if(has_post_thumbnail()){
 				the_post_thumbnail();	
 			} else {

@@ -2677,6 +2677,12 @@ main.content .movies .image img {
     height: auto;
   }
 }
+.page-template-page_columns .two-columns > a.team-link, .page-template-page_columns .two-columns > a.team-link:hover, .page-template-page_columns .two-columns > a.team-link:focus,
+.page-template-page_columns .three-columns > a.team-link,
+.page-template-page_columns .three-columns > a.team-link:hover,
+.page-template-page_columns .three-columns > a.team-link:focus {
+  cursor: default;
+}
 .page-template-page_columns .two-columns .entry-content,
 .page-template-page_columns .three-columns .entry-content {
   box-sizing: border-box;
@@ -4561,10 +4567,6 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
   height: 100%;
   border-radius: 0px;
 }
-.gallery-video-content #huge_it_videogallery .huge_it_big_li .overLayer,
-.gallery-video-content #huge_it_videogallery .huge_it_big_li .infoLayer {
-  display: none;
-}
 .gallery-video-content #huge_it_videogallery .huge_it_big_li:nth-child(3n+2) {
   margin-right: 0px !important;
 }
@@ -4686,7 +4688,7 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
 .tab-detail .grid .details a:hover {
   color: #fff;
   text-decoration: none;
-  font: 24px Roboto, sans-serif;
+  font: 16px Roboto, sans-serif;
 }
 
 .close-lightbox {
@@ -4760,6 +4762,49 @@ body.contact-form-7 .inside div.salesforce_w2l_lead,
   text-decoration: none;
   text-transform: capitalize;
   white-space: normal;
+}
+.page-template section #huge_it_videogallery li .overLayer,
+.page-template section #huge_it_videogallery li .infoLayer {
+  max-width: 100%;
+  height: 100%;
+  opacity: 1 !important;
+}
+.page-template section #huge_it_videogallery li .overLayer ul li h2,
+.page-template section #huge_it_videogallery li .overLayer ul li p,
+.page-template section #huge_it_videogallery li .infoLayer ul li h2,
+.page-template section #huge_it_videogallery li .infoLayer ul li p {
+  font-family: Roboto, sans-serif;
+}
+.page-template section #huge_it_videogallery li .infoLayer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.page-template section #huge_it_videogallery li .infoLayer ul {
+  width: 100%;
+  margin-top: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.page-template section #huge_it_videogallery li:hover .infoLayer {
+  opacity: 0 !important;
+}
+.page-template section #huge_it_videogallery li .overLayer:hover {
+  opacity: 1;
+}
+.page-template section #huge_it_videogallery li.huge_it_big_li img {
+  margin: 0 0 -9px !important;
+}
+.page-template section #huge_it_videogallery li .overLayer {
+  background: url("../../uploads/2017/04/play-icon.png") no-repeat !important;
+  background-position: center !important;
+  background-size: 23% 33% !important;
+}
+.page-template section #huge_it_videogallery li .overLayer a {
+  opacity: 0;
 }
 .page-template .super-list {
   width: 826px;
@@ -4886,7 +4931,7 @@ body .footer-widgets .footer-widgets-1 {
 }
 body .site-container .footer-widgets .footer-widgets-1 .title-area,
 body .footer-widgets .footer-widgets-1 .title-area {
-  width: 250px;
+  width: 95px;
   margin-bottom: 21px;
   float: left;
 }
@@ -4897,6 +4942,12 @@ body .footer-widgets .footer-widgets-1 .title-area {
     float: left;
   }
 }
+@media screen and (max-width: 1024px) {
+  body .site-container .footer-widgets .footer-widgets-1 .title-area,
+  body .footer-widgets .footer-widgets-1 .title-area {
+    width: 10%;
+  }
+}
 @media screen and (max-width: 569px) {
   body .site-container .footer-widgets .footer-widgets-1 .title-area,
   body .footer-widgets .footer-widgets-1 .title-area {
@@ -4905,6 +4956,12 @@ body .footer-widgets .footer-widgets-1 .title-area {
   body .site-container .footer-widgets .footer-widgets-1 .title-area .site-title,
   body .footer-widgets .footer-widgets-1 .title-area .site-title {
     text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .site-container .footer-widgets .footer-widgets-1 .site-title,
+  body .footer-widgets .footer-widgets-1 .site-title {
+    width: 100%;
   }
 }
 body .site-container .footer-widgets section,
@@ -5226,6 +5283,10 @@ body .copyright {
   body .copyright {
     padding-top: 0;
   }
+}
+body .site-container .copyright img,
+body .copyright img {
+  width: 30%;
 }
 body .site-container .footer-right,
 body .footer-right {

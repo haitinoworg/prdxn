@@ -38,7 +38,7 @@ body {
 			}
 
 			.title-area { 
-				width: 250px;
+				width: 95px;
 				margin-bottom: 21px;
 				float: left; 
 
@@ -47,11 +47,15 @@ body {
 					float: left;
 				}
 
+			@include md() { width: 10%; }
+
 				@include mobile() { 
 					/*float: none; */
 					.site-title { text-align: center; }
 				}
 			}
+
+			@include tab() { .site-title { width: 100%; }	}
 		}
 
 		section {
@@ -326,6 +330,8 @@ Site Footer
 	@include tab() {
 		padding-top: 0;
 	}
+
+	img { width: 30%; }
 }
 
 .footer-right {

@@ -80,6 +80,10 @@
 
 				@include tab() { height: auto; }
 			}
+
+			&.team-link,
+			&.team-link:hover,
+			&.team-link:focus { cursor: default; }
 		}
 
 		.entry-content {

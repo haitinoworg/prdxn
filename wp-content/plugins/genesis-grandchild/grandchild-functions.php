@@ -310,3 +310,25 @@ add_action( 'genesis_before', 'genesis_to_top');
 function genesis_to_top() {
 	echo '<a href="#0" class="to-top" title="Back To Top"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></a>';
 }
+
+
+/*
+* ShortCodes 
+* =======================================================================
+*/
+
+add_shortcode( 'footer_img', 'custom_copyrights' );
+
+function custom_copyrights( $atts ) {
+	$a = shortcode_atts( array(
+		'imgsrc' => '',
+		'alttext' => ''
+		), $atts );
+
+	$altText = $a['alttext'];
+
+	$imgTag = sprintf('<img src="%1$s" alt="%2$s" class="footer-icon">', esc_attr(site_url() . "/{$a['imgsrc']}"), esc_attr($altText));
+
+	return $imgTag;
+
+}

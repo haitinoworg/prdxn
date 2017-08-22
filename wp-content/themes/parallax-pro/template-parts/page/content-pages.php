@@ -46,8 +46,8 @@ foreach( $subpost as $posts ) : setup_postdata( $posts );
 		<div class="post-object-content">
 		<div>
 			<?php 
-			$content = get_the_content($posts);
-			echo mb_strimwidth($content, 0, 100, "...");
+				$excerpt = wp_trim_words( $posts->post_content, $num_words = 20 );
+				echo $excerpt;
 			?>
 		</div>
 			<div><a class="common-links read-more more-content"  href="<?php the_permalink($posts); ?>">Read More</a></div>
