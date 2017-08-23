@@ -2111,10 +2111,6 @@ body .rt-wpls .slick-next:before {
     font: 15px Roboto, sans-serif;
   }
 }
-.custom-links.more-content,
-.common-links.more-content {
-  margin-top: 15px;
-}
 .custom-links:hover,
 .common-links:hover {
   background-color: #fff;
@@ -5284,10 +5280,6 @@ body .copyright {
     padding-top: 0;
   }
 }
-body .site-container .copyright img,
-body .copyright img {
-  width: 30%;
-}
 body .site-container .footer-right,
 body .footer-right {
   margin: 22px 0 0 5px;
@@ -5449,6 +5441,39 @@ body .footer-widgets .copyright p {
   body .footer-widgets .copyright p {
     border-left: none;
   }
+}
+body .site-container .footer-widgets .copyright .title-area,
+body .footer-widgets .copyright .title-area {
+  width: 195px;
+  font-size: 0;
+}
+body .site-container .footer-widgets .copyright .title-area h1, body .site-container .footer-widgets .copyright .title-area p,
+body .footer-widgets .copyright .title-area h1,
+body .footer-widgets .copyright .title-area p {
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+body .site-container .footer-widgets .copyright .title-area h1 a, body .site-container .footer-widgets .copyright .title-area p a,
+body .footer-widgets .copyright .title-area h1 a,
+body .footer-widgets .copyright .title-area p a {
+  font-size: 0;
+}
+body .site-container .footer-widgets .copyright .title-area h1 a, body .site-container .footer-widgets .copyright .title-area h1 img, body .site-container .footer-widgets .copyright .title-area p a, body .site-container .footer-widgets .copyright .title-area p img,
+body .footer-widgets .copyright .title-area h1 a,
+body .footer-widgets .copyright .title-area h1 img,
+body .footer-widgets .copyright .title-area p a,
+body .footer-widgets .copyright .title-area p img {
+  width: 100%;
+}
+body .site-container .footer-widgets .copyright .title-area h1,
+body .footer-widgets .copyright .title-area h1 {
+  width: 30%;
+}
+body .site-container .footer-widgets .copyright .title-area p,
+body .footer-widgets .copyright .title-area p {
+  width: 46%;
+  padding-left: 5%;
 }
 body .site-container .footer-widgets section #menu-secondary-menus > li > a,
 body .footer-widgets section #menu-secondary-menus > li > a {
@@ -6031,7 +6056,6 @@ main.content .entry-content p:last-child {
 .page-template-page-research .content article.entry h3,
 .page-template-page-gallery .content article.entry h3,
 .page-template-template_about.full-width-content .content article.entry h3 {
-  margin: 0 0 15px;
   font-size: 32px;
 }
 @media screen and (max-width: 569px) {

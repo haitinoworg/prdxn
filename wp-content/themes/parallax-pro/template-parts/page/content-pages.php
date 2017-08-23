@@ -44,12 +44,12 @@ foreach( $subpost as $posts ) : setup_postdata( $posts );
 	<div class="entry-content">
 		<h3><?php echo get_the_title($posts); ?></h3>
 		<div class="post-object-content">
-		<div>
+		<p>
 			<?php 
 				$excerpt = wp_trim_words( $posts->post_content, $num_words = 20 );
 				echo $excerpt;
 			?>
-		</div>
+		</p>
 			<div><a class="common-links read-more more-content"  href="<?php the_permalink($posts); ?>">Read More</a></div>
 		</div>
 	</div>

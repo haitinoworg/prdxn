@@ -326,8 +326,27 @@ function custom_copyrights( $atts ) {
 		), $atts );
 
 	$altText = $a['alttext'];
-
+?>
+<div class="copyright">
+<div class="title-area">
+<h1 class="site-title">
+<a title="Haiti Now" href="http://localhost/ayiti2/">Haiti Now</a></h1>
+<?php
 	$imgTag = sprintf('<img src="%1$s" alt="%2$s" class="footer-icon">', esc_attr(site_url() . "/{$a['imgsrc']}"), esc_attr($altText));
+	?>
+
+</div>
+<div class="footer-right">
+
+Copyright © 2010-2017 Ayiti Now Corp All Rights reserved | <a title="Terms of Use" href="http://localhost/ayiti2/wp-content/uploads/2017/07/LegalTermsofUse2017.pdf" target="_blank" rel="noopener">Terms of Use</a> | <a title="Privacy" href="http://localhost/ayiti2/wp-content/uploads/2017/07/Privacy-Policy-2017.pdf" target="_blank" rel="noopener">Privacy Policy</a> | <a title="Sitemap" href="#fixme" target="_blank" rel="noopener">Sitemap</a>
+
+Built By <a title="PRDXN" href="http://www.prdxn.com" target="_blank" rel="noopener">PRDXN</a>
+
+</div>
+</div>
+
+<div class="footer-left"></div>
+<?php
 
 	return $imgTag;
 

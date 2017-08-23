@@ -330,8 +330,6 @@ Site Footer
 	@include tab() {
 		padding-top: 0;
 	}
-
-	img { width: 30%; }
 }
 
 .footer-right {
@@ -469,6 +467,23 @@ Footer Section-1
 				border-left: none;
 			}
 		} 
+
+		.title-area {
+			width: 195px;
+			font-size: 0;
+			h1, p {
+				margin-left: 0;
+				display: inline-block;
+				vertical-align: top;
+				a { font-size: 0; }
+				a, img { width: 100%;	}
+			}
+			h1 { width: 30% }
+			p { 
+				width: 46%;
+				padding-left: 5%; 
+			}
+		}
 
 	}
 
