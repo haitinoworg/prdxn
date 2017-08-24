@@ -169,15 +169,21 @@ function subscribe_section() {
 
 
 	$section_checkbox = get_field('add_sections',$post->ID);
+	$section_title = get_field('salesforce_section_title',$post->ID);
+	$salesforce_section = get_field('salesforce_data',$post->ID);
 
-	if($section_checkbox[0] == "Add Salesforce Section") {
-		genesis_widget_area( 'home-section-6', array(
-		'before' => '<div class="home-even home-section-6 widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-		) );
-	}
-
-	if(($section_checkbox[0] == "Add Fundraise Section") || ($section_checkbox[1] == "Add Fundraise Section") ) {
+?>
+<div class="home-even home-section-6 widget-area">
+	<div class="wrap">
+		<h2><?php echo $section_title; ?></h2>
+		<div class="salesforce-data">
+	  	<?php echo $salesforce_section; ?>
+		</div>
+	</div>
+</div>
+		
+<?php
+	if(($section_checkbox[0] == "Add Fundraise Section")) {
 		genesis_widget_area( 'home-section-7', array(
 		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
@@ -320,33 +326,15 @@ function genesis_to_top() {
 add_shortcode( 'footer_img', 'custom_copyrights' );
 
 function custom_copyrights( $atts ) {
-	$a = shortcode_atts( array(
+	$args = shortcode_atts( array(
 		'imgsrc' => '',
 		'alttext' => ''
 		), $atts );
 
-	$altText = $a['alttext'];
-?>
-<div class="copyright">
-<div class="title-area">
-<h1 class="site-title">
-<a title="Haiti Now" href="http://localhost/ayiti2/">Haiti Now</a></h1>
-<?php
-	$imgTag = sprintf('<img src="%1$s" alt="%2$s" class="footer-icon">', esc_attr(site_url() . "/{$a['imgsrc']}"), esc_attr($altText));
-	?>
+	$imgSrc = $args['imgsrc'];
+	$altText = $args['alttext'];
 
-</div>
-<div class="footer-right">
-
-Copyright © 2010-2017 Ayiti Now Corp All Rights reserved | <a title="Terms of Use" href="http://localhost/ayiti2/wp-content/uploads/2017/07/LegalTermsofUse2017.pdf" target="_blank" rel="noopener">Terms of Use</a> | <a title="Privacy" href="http://localhost/ayiti2/wp-content/uploads/2017/07/Privacy-Policy-2017.pdf" target="_blank" rel="noopener">Privacy Policy</a> | <a title="Sitemap" href="#fixme" target="_blank" rel="noopener">Sitemap</a>
-
-Built By <a title="PRDXN" href="http://www.prdxn.com" target="_blank" rel="noopener">PRDXN</a>
-
-</div>
-</div>
-
-<div class="footer-left"></div>
-<?php
+	$imgTag = sprintf('<img src="%1$s" alt="%2$s" class="footer-icon">', esc_attr(site_url() . $imgSrc), esc_attr($altText));
 
 	return $imgTag;
 

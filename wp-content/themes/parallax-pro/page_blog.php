@@ -32,7 +32,11 @@ add_action('genesis_entry_content','custom_blog_loop');
 function custom_blog_loop() {
 
 	if(has_post_thumbnail()) {
-		echo '';
+		?>
+		<a href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail(); ?>
+		</a>
+		<?php
 	}
 	else {
 		?>

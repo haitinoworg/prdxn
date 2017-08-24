@@ -124,6 +124,8 @@ else {
 
 	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
+
+
 	genesis();
 
 

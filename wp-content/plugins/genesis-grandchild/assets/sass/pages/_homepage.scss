@@ -11,110 +11,6 @@ Content Area
 .site-inner {
 	padding-top: 0;
 	.content-sidebar-wrap { overflow: hidden;	}
-	.content {
-		
-		// Pricing Table Styling
-		.ptsCol { 
-			max-width: 31%;
-			height: auto;
-			border: 1px solid #cfcfcf;
-			float: left;
-			background-color: #fff;
-			@include property(transition, 0.4s linear);
-
-			&:nth-of-type(2) { margin: 0 3%;	}
-
-			@include tab() { 
-				min-width: 100%; 
-				max-width: 100%;
-				&:nth-of-type(2) {	margin: 53px 0;	}
-			}
-
-			@include maxWidth(553px) {
-				min-width: 100%;
-				margin-right: 0;
-			}
-
-			.ptsActBtn {
-				width:100%;
-
-				.ptsEditArea  {
-					@include cta();
-					width: 100%;
-					margin-top: 0;
-					padding: 10px 20px;
-					color: #fff;
-					font: 14px $font !important;
-					text-align: center;
-				}			
-			}
-		}
-
-		/*
-		* Home Page Section 4 Styling
-		*/
-		.home-section-4 {
-			height: auto;
-			.textwidget { 
-				width: 100%;
-				margin: 0 auto;
-				.ptsRows { 
-					padding: 40px 0;
-					text-align: center;
-					p {	
-						box-sizing: border-box;
-						width: 83%;
-						margin: 0;
-						display: inline-block;
-						font: 17px/26px $font;
-						@include common-desc();	
-					}
-
-				}
-				.ptsCell { 
-					text-align: center; 
-					p { text-align: left; }
-				}
-
-				.ptsElImg { 
-					width: 100%; 
-					height: 100%;
-					position: absolute;
-					left: 0;
-					top: 0;
-
-					.ptsElArea { 
-						position: static;
-					}
-
-					img { 
-						width: 100%;
-						height: auto;
-						position: absolute;
-						left: 0;
-						top: 0;
-					}
-				}
-
-				.ptsBlock .ptsBlockContent .ptsCol .ptsRows .ptsCell.ptsCellAlignLeft {
-					text-align: center;
-				}
-
-				.ptsColHeader { 
-					padding: 26% 0;
-					position: relative;
-					overflow: hidden;
-				}
-			}
-			.wrap { 
-				position: static;
-				-webkit-transform: translateY(0%);
-				-moz-transform: translateY(0%); 
-				-ms-transform: translateY(0%);
-				transform: translateY(0%);
-			}
-		}
-
 
 		/*
 		* Home Page Section 1 Styling -----------------------------
@@ -125,13 +21,6 @@ Content Area
 			background-position: top center !important;
 			background-size: cover;
 			
-			.wrap { 
-				width: 84%;
-				margin: 0 auto;
-				padding: 0; 
-				clear: both;
-			}
-
 			h2,
 			h3,
 			h4,
@@ -151,7 +40,8 @@ Content Area
 
 			p { 
 				text-align: right;
-				font: 17px $font; 
+				font: 28px $font; 
+				line-height: normal;
 				text-shadow: 2px 2px 10px #000;
 				@include tab() {
 					text-align: left;
@@ -180,56 +70,8 @@ Content Area
 
 		}
 	}
-
-		/*
-		* Home Section 2 ------------------------------------
-		*/
-
-		.home-section-2 {
-			height: auto;
-			.wrap {	width: 70%;	}
-
-			section { 
-				box-sizing: border-box;
-				width: 100%; 
-				padding: 0;
-
-				&.statistics h3 { 
-					@include common-title();	
-					margin-bottom: 43px !important;
-					@include mobile() {
-						font-size: 40px;
-					}
-				}
-
-				.statistics-inner {
-					padding: 0;
-					margin-top: 30px;
-				}
-
-				.statistics-inner .stat {
-					width: 26%;
-					margin: 0;
-					padding: 0;
-
-					&:nth-of-type(2) { margin: 0 7%; }
-
-					@include mobile() { 
-						width: 100%; 
-						margin: 0;
-
-						&:nth-of-type(2) {
-							margin: 30px 0;
-						}
-					}
-
-					.number { margin: 0 !important; }
-				}
-			}
-		}
 		
 	}
-}
 
 .home-section-9.home-odd {
 	height: auto;
@@ -264,30 +106,6 @@ Content Area
 	border-radius: 0;
 }
 
-
-
-
-#ptsBlock_167808 .ptsCol-1 .ptsTableElementContent,
-#ptsBlock_167808 .ptsCol-3 .ptsTableElementContent {
-	border: none;
-	
-}
-
-
-/*
-* Home Section 3 Styling
-*/
-
-.home-section-3 { 
-	height: auto;
-	clear: both;
-	
-	// Wrapper Styling
-	.wrap { width: 84%; }
-
-	}
-
-
 /* Section common style
 */
 
@@ -299,10 +117,15 @@ Content Area
 .home-section-6,
 .home-section-7,
 .home-section-8 { 
-	background-repeat: no-repeat; 
-
-	.wrap { width: 84%; }
-
+	height: auto;
+	background-repeat: no-repeat;
+	
+	.wrap { 
+				width: 84%;
+				margin: 0 auto;
+				padding: 0; 
+				clear: both;
+			} 
 	a {	
 		@include cta();	
 		display: inline-block;
@@ -312,7 +135,30 @@ Content Area
 
 .home-section-1,
 .home-section-3,
-.home-section-5 { background-size: cover; }
+.home-section-5 { 
+	background-size: cover; 
+}
+
+.home-section-3,
+.home-section-5 { 
+	position: relative;
+	&:after {
+		width: 100%;
+		height: 100%;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-color: #000;
+		opacity: 0.56;
+	}
+
+	.wrap { 
+		position: relative;
+		z-index: 1;
+	 }
+}
 
 .home-section-2,
 .home-section-4,

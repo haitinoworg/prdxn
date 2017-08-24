@@ -88,6 +88,15 @@
 		line-height: 24px; 
 		text-align: left;
 	}
+
+
+	.programs-hero-image {
+		p { 
+			font-size: 28px; 
+			line-height: normal;
+		}
+	}
+
 }
 
 
@@ -106,16 +115,6 @@
 				width: 100%;
 				padding: 0;
 			}
-		}
-	}
-
-	.post-hero-image {
-		max-height: 500px;
-		margin-top: 65px;
-		overflow: hidden;
-		img { 
-			width: 100%;
-			height: 100%;
 		}
 	}
 

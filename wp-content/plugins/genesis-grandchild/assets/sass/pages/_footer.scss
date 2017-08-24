@@ -33,8 +33,12 @@ body {
 					text-align: center;
 					clear: both;
 				}
-
 				
+			}
+
+			section:first-of-type { 
+				display: none; 
+				@include tab() { display: block; }
 			}
 
 			.title-area { 
@@ -48,6 +52,8 @@ body {
 				}
 
 			@include md() { width: 10%; }
+
+			@include tab() { width: 100%;	}
 
 				@include mobile() { 
 					/*float: none; */
@@ -66,6 +72,7 @@ body {
 
 			@include tab() {
 				float: none;
+				width: 100%;
 			}
 			
 			#menu-secondary-menus {
@@ -326,24 +333,29 @@ Site Footer
 	margin-top: 20px;
 	border-top: 2px solid #f16522;
 	overflow: auto;
-
-	@include tab() {
-		padding-top: 0;
-	}
+	@include tab() { padding-top: 0; }
 }
 
 .footer-right {
+	width: 65%;
 	margin: 22px 0 0 5px;
 	float: right;
+	text-align: right;
+	@include md() { text-align: center; }
+	@include tab() { 
+		margin-left: 0;
+		width: 100%; 
+		p { 
+			padding-left: 0; 
+			margin-left: 0;
+		}
+	}
 }
 
 .footer-left {
 	margin-top: 22px;
 	float: right;
-
-	p {
-		display: inline-block;
-	}
+	p { display: inline-block;}
 }
 
 /**
@@ -379,9 +391,7 @@ Footer Section-1
 	.social-icons {
 		margin: 37px auto 0;
 		display: inline-block;
-
 		@include tab() { margin: 10px auto 0; }
-
 		a { 
 			box-sizing: border-box;
 			width: 25px;
@@ -389,7 +399,6 @@ Footer Section-1
 			position: relative;
 			display: block;
 			text-align: center;
-
 			@include tab()  { margin: 10px;	}
 			@include mobile()  { margin: 6px 10px;	}
 		}
@@ -471,26 +480,28 @@ Footer Section-1
 		.title-area {
 			width: 195px;
 			font-size: 0;
+
+			@include tab() { display: none; }
 			h1, p {
 				margin-left: 0;
 				display: inline-block;
 				vertical-align: top;
 				a { font-size: 0; }
-				a, img { width: 100%;	}
+				a { width: 100%;	}
 			}
 			h1 { width: 30% }
 			p { 
-				width: 46%;
+				width: 46.2%;
 				padding-left: 5%; 
 			}
 		}
 
+		img { width: 100%; }
+
 	}
 
 	section {
-		#menu-secondary-menus  > li > a {
-			color: #f16522 !important;
-		}
+		#menu-secondary-menus  > li > a { color: #f16522 !important; }
 
 		#menu-secondary-menus {
 			.sub-menu {
@@ -550,9 +561,7 @@ Footer Section-1
 
 	@include md() { 
 		width: 30%; 
-		iframe {
-			margin: 10px 0;
-		}
+		iframe { margin: 10px 0; }
 	}
 }
 
@@ -569,11 +578,6 @@ Footer Section-1
 	}	
 }
 
-#text-19 {
-	.title-area {
-		display: none;
-	}
-}
 
 /*footer responsive styling*/
 @include md() {
@@ -583,9 +587,7 @@ Footer Section-1
 				width: 17.5%;
 				margin: 0 0 30px 3%;
 			}
-			#menu-secondary-menus > li:last-child {
-				padding-left: 0;
-			}
+			#menu-secondary-menus > li:last-child { padding-left: 0; }
 		}
 	}
 }
@@ -597,25 +599,19 @@ Footer Section-1
 				width: 27%;
 				margin: 0 0 30px 3%;
 			}
-			#menu-secondary-menus > li:last-child {
-				padding-left: 0;
-			}
+			#menu-secondary-menus > li:last-child { padding-left: 0; }
 		}
 	}
 }
 
 @include tab() {
 	.footer-widgets {
-		padding: 45px 0 65px;
+		padding: 45px 0 45px;
 		
 		section {
-			#menu-secondary-menus > li {
-				margin: 0 0 36px;
-			}
+			#menu-secondary-menus > li { margin: 0 0 36px; }
 		}
-		li {
-			margin: 25px 0;
-		}
+		li { margin: 25px 0; }
 
 		section {
 			#menu-secondary-menus > li:last-child {
@@ -624,20 +620,37 @@ Footer Section-1
 			}
 			#menu-secondary-menus > li {width: 100%;}
 		}
-
-		#text-19 {
-			width: 100%;
-			margin: 25px 0;
-
-			.title-area {
+	
+	.title-area {
 				width: 100%;
-				display: inline-block;
+				height: auto;
+				// display: inline-block;
 
-				.site-title{
-					text-align: center;
+				.site-title{ text-align: center; }
+			h1, p {
+				margin-left: 0;
+				display: inline-block;
+				vertical-align: top;
+				a { 
+					width: 52px;
+					font-size: 0; 
 				}
 			}
-		}
+
+			h1 { width: 100% }
+			p { 
+				width: 100%;
+				padding-left: 0; 
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+
+			img { width: 75px; }
+			
+
+			}
+
+	
 
 		#text-7 {
 
@@ -656,9 +669,7 @@ Footer Section-1
 			}
 		}
 
-		#text-18 {
-			width: 100%;
-		}
+		#text-18 { width: 100%;	}
 
 		.widget_cnss_widget {
 			width: 100%;
@@ -675,23 +686,15 @@ Footer Section-1
 			margin: 0 auto;
 			float: none;
 			overflow: auto;
-
-			iframe {
-				float: none;
-			}
+    	iframe { float: none;	}
 		}
-
-		.copyright {
-			.site-title {display: none;}
-		}
+		.copyright { .title-area {display: none; }	}
 
 		.footer-right,
 		.footer-left {float: none;}
 	}
 } 
-
 }
-
 
 /*
 * Back to top button
@@ -716,14 +719,9 @@ Footer Section-1
 	opacity:1;
 }
 
-.to-top.top-fade-out {
-	opacity: 1;
-}
+.to-top.top-fade-out { opacity: 1; }
 
-.no-touch .to-top:hover {
-	
-	opacity:1;
-}
+.no-touch .to-top:hover { opacity:1; }
 
 @include tab() {
 	.to-top {

@@ -71,6 +71,7 @@
 //* Removes only the comment form
 	remove_action( 'genesis_comment_form', 'genesis_do_comment_form' );
 
+
 	genesis();
 
 	?>

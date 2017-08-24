@@ -7,6 +7,8 @@ jQuery(function( $ ){
 
 		scrollwindow = scrolltop + $(window).height();
 
+		if($(window).width() > 769) {
+
 		if ( $(".home-section-3").length ) {
 		
 			sectionthreeoffset = $(".home-section-3").offset().top;		  
@@ -34,6 +36,7 @@ jQuery(function( $ ){
 			}
 		
 		}
+	 }
 
 	});
 

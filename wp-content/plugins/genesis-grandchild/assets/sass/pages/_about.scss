@@ -27,8 +27,16 @@
 				width: 100%;
 		    position: absolute;
 		    top: 50%;
+		    right: 8%;
 		    @include property(transform, translateY(-50%));
 		    z-index: 5;
+		    text-align: right;
+				
+				@include tab() { 
+					text-align: left; 
+					left: 8%;
+					right: initial;
+				}
 
 		    h1, h2, h3 { margin-bottom: 0; }
 			}
@@ -59,15 +67,20 @@
 
 			p { margin-bottom: 0; }
 			.entry-content { clear: both;	}
+		}
+	}
+}
 
-			.entry-content div {
+.page-template-page-research,
+.page-template-page-gallery {
+
+			.content .entry-content div {
 				&:first-child { padding: 30px; }
 				padding: 24px 0;
 				display: table;
 				clear: both;
 			}
-		}
-	}
+
 }
 
 
@@ -206,6 +219,8 @@
 			box-sizing: border-box;
 			padding-bottom: 27px; 
 		}
+	}
+
 
 		.accordions-themes { 
 			margin-bottom: 0; 
@@ -220,10 +235,23 @@
 					@include property(transform,rotate(180deg) translateY(-4px));
 				}
 			}
+
+			.accordions-head { 
+				width: 100%; 
+				padding: 10px;
+			}
+
+			.accordions-head-title {
+    		box-sizing: border-box;
+				width: 90%;
+		    display: inline-block;
+		    vertical-align: top;
+			}
 		}
 
 		.accordion-content {
 			box-sizing: border-box; 
+			width: 100%;
 			padding: 31px 15px 29px 36px;
 			overflow: visible;
 			li { 
@@ -257,7 +285,6 @@
 				&:hover { color: $cta-color; }
 			}
 		}
-	}
 
 	.accordions-tabs-themes {
 		.tabs-content { padding-top: 32px; }
