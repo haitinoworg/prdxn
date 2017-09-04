@@ -1,0 +1,23 @@
+/*
+* Content Links Styling ===================================================
+*/
+.page-template-page_columns {
+	.links-page {
+		div.entry {	
+			max-width: 2000px;
+			text-align: left;	
+		}
+
+		.content-links {
+			width: 47.5%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+			&:nth-child(2n) {
+				margin-left: 4%;
+			}
+
+		}
+
+	}
+}

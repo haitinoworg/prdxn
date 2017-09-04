@@ -1,0 +1,13 @@
+
+
+// Font
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.enews-widget input[type="submit"] {
+	@include props(bgcta);
+}
+
+.enews-widget button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"] {
+	@include props(bgw,cb);
+}

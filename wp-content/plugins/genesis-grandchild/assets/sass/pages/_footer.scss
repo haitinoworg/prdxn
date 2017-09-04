@@ -33,12 +33,8 @@ body {
 					text-align: center;
 					clear: both;
 				}
-				
-			}
 
-			section:first-of-type { 
-				display: none; 
-				@include tab() { display: block; }
+				
 			}
 
 			.title-area { 
@@ -52,8 +48,6 @@ body {
 				}
 
 			@include md() { width: 10%; }
-
-			@include tab() { width: 100%;	}
 
 				@include mobile() { 
 					/*float: none; */
@@ -72,7 +66,6 @@ body {
 
 			@include tab() {
 				float: none;
-				width: 100%;
 			}
 			
 			#menu-secondary-menus {
@@ -343,11 +336,13 @@ Site Footer
 	text-align: right;
 	@include md() { text-align: center; }
 	@include tab() { 
-		margin-left: 0;
 		width: 100%; 
+		margin-left: 0;
+
 		p { 
-			padding-left: 0; 
-			margin-left: 0;
+			padding-left: 0;
+			margin-left: 0; 
+			margin-right: 0;
 		}
 	}
 }
@@ -473,6 +468,8 @@ Footer Section-1
 			font-weight: 700;
 
 			@include mobile() {
+				padding-left: 0;
+				margin-left: 0;
 				border-left: none;
 			}
 		} 
@@ -480,8 +477,6 @@ Footer Section-1
 		.title-area {
 			width: 195px;
 			font-size: 0;
-
-			@include tab() { display: none; }
 			h1, p {
 				margin-left: 0;
 				display: inline-block;
@@ -578,6 +573,9 @@ Footer Section-1
 	}	
 }
 
+.textwidget {
+	.title-area { display: none; }
+}
 
 /*footer responsive styling*/
 @include md() {
@@ -606,9 +604,10 @@ Footer Section-1
 
 @include tab() {
 	.footer-widgets {
-		padding: 45px 0 45px;
+		padding: 45px 0 65px;
 		
 		section {
+			width: 100%;
 			#menu-secondary-menus > li { margin: 0 0 36px; }
 		}
 		li { margin: 25px 0; }
@@ -620,48 +619,42 @@ Footer Section-1
 			}
 			#menu-secondary-menus > li {width: 100%;}
 		}
-	
-	.title-area {
+
+		.textwidget {
+			width: 100%;
+			margin: 25px 0;
+
+			.title-area {
 				width: 100%;
 				height: auto;
-				// display: inline-block;
+				margin-bottom: 0;
+				display: block;
+				float: none;
 
-				.site-title{ text-align: center; }
-			h1, p {
-				margin-left: 0;
-				display: inline-block;
-				vertical-align: top;
-				a { 
-					width: 52px;
-					font-size: 0; 
+				.site-title { 
+					text-align: center; 
+					a { 
+						width: 51px;
+    				display: inline-block;
+						font-size: 0; 
+					}
+				}
+
+				p { 
+					width: 32.2%; 
+					margin-top: 20px;
+					display: inline-block;
 				}
 			}
 
-			h1 { width: 100% }
-			p { 
-				width: 100%;
-				padding-left: 0; 
-				padding-top: 15px;
-				padding-bottom: 15px;
-			}
-
-			img { width: 75px; }
-			
-
-			}
-
-	
+			.copyright { 
+				.title-area { display: none; }
+			 }
+		}
 
 		#text-7 {
 
-			.title-area {display: inline-block;}
-
 			h4 {display: none;}
-
-			.title-area {
-				width: 47%;
-				float: left;
-			}
 
 			.address {
 				width: 100%;
@@ -688,7 +681,7 @@ Footer Section-1
 			overflow: auto;
     	iframe { float: none;	}
 		}
-		.copyright { .title-area {display: none; }	}
+		.copyright { .site-title {display: none;}	}
 
 		.footer-right,
 		.footer-left {float: none;}

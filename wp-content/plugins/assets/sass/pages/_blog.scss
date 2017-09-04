@@ -1,0 +1,124 @@
+.page-template-page_blog {
+
+	.content-sidebar-wrap {
+		box-sizing: border-box;
+		width: 84%;
+		padding: 63px 0;
+		margin: 0 auto;
+	}
+
+	main.content { 
+		width: 60%;
+		padding-bottom: 0;
+
+		@include tab() {
+			width: 100%;
+		}
+	}
+
+	aside.sidebar {
+		width: 40%;
+		padding-left: 50px;
+
+		@include tab() {
+			width: 100%;
+			padding-left: 0;
+			padding-top: 63px;
+		}
+
+		.widget { padding: 0;	}
+
+		.widget_search {
+			.search-form {
+				position: relative;
+
+				input,
+				input:focus { 
+					outline: none;
+					border-color: #ddd;
+				}
+
+				button {
+					width: auto;
+					height: auto;
+					padding: 15px;
+					margin: 0;
+					position: absolute;
+					top: 50%;
+					right: 1px;
+					background-color: #fff;
+					color: #525252;
+					@include property(transform,translateY(-50%));
+
+				}
+			}
+		}
+
+		select,
+		input {
+			color: #525252;
+			&,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		select {
+			@include property(appearance, none);
+			background: url(../../uploads/2017/05/ic_arrow_drop_down_48px-128.png) no-repeat center right;
+			background-size: 40px;
+		}
+	}
+
+	article.entry {
+		padding: 0 0 50px;
+		margin: 0;
+
+		.entry-title { display: none;	}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font: 32px $font;
+			text-align: left;
+			&:after {
+				display: none;
+			}
+		}
+
+
+
+		.entry-content {
+			a {
+				display: block;
+				width: 100%;
+				img { 
+					width: 100%;
+				}
+			}
+		}
+	}
+
+}
+
+.widget_categories,
+.widget_archive {
+	.screen-reader-text { display: none; }
+}
+
+.archive-pagination.pagination {
+	margin: 0;
+	li a {
+		margin: 5px;
+		border: 1px solid $cta-color;
+		@include cta();
+	}
+
+	li.active a {
+		background-color: #fff;
+		color: $cta-color;
+	}
+}

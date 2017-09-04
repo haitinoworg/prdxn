@@ -258,3 +258,10 @@ RewriteRule . /ayiti2/index.php [L]
 ErrorDocument 403 /ayiti2/404.php
 ErrorDocument 404 /ayiti2/404.php
 
+
+
+<IfModule mod_php5.c>
+php_value upload_max_filesize 25M
+php_value post_max_size 27M
+php_value memory_limit 64M
+</IfModule>

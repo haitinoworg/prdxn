@@ -84,7 +84,8 @@ function programs_featured_image() {
 
 	}
 
-//* Remove site footer elements
+//* Remove site elements
+	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 	remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 	remove_action( 'genesis_footer', 'genesis_do_footer' );
 	remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );

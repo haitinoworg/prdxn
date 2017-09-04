@@ -104,15 +104,8 @@
 	}
 
 	article.entry {
-		padding: 0 0 27px;
-		border-bottom: 1px solid $grey;
-		margin: 0 0 50px;
-
-		&:last-of-type {
-			padding-bottom: 50px;
-			border-bottom: 0;
-			margin-bottom: 0;
-		}
+		padding: 0 0 50px;
+		margin: 0;
 
 		.entry-title { display: none;	}
 

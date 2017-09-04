@@ -40,8 +40,7 @@ Content Area
 
 			p { 
 				text-align: right;
-				font: 28px $font; 
-				line-height: normal;
+				font: 17px $font; 
 				text-shadow: 2px 2px 10px #000;
 				@include tab() {
 					text-align: left;

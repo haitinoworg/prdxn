@@ -222,10 +222,7 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,
   * Fields data ====================================
   */
   $('.site-inner .sf_field').append('<p>&nbsp;</p>');
-  if(!$('.widget .sf_field').has('p')) {
   $('.widget .sf_field').append('<p>&nbsp;</p>');
-  }
-  
   $('.site-inner .sf_field_description').children('p').text('Maximum limit is 500 characters.');
   $('.site-inner .sf_field_00NA000000723E0').children('p').text('Maximum limit is 500 characters.');
    // First Name

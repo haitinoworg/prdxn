@@ -1,0 +1,478 @@
+
+/*
+Content Area
+---------------------------------------------------------------------------------------------------- */
+
+/* Homepage
+--------------------------------------------- */
+
+// Main
+
+.site-inner {
+	padding-top: 0;
+	.content-sidebar-wrap { overflow: hidden;	}
+	.content {
+		
+		// Pricing Table Styling
+		.ptsCol { 
+			max-width: 31%;
+			height: auto;
+			border: 1px solid #cfcfcf;
+			background-color: #fff;
+			@include property(transition, 0.4s linear);
+
+			&:nth-of-type(2) { margin: 0 3%;	}
+
+			@include tab() { 
+				min-width: 100%; 
+				max-width: 100%;
+				&:nth-of-type(2) {	margin: 30px 0;	}
+			}
+
+			@include maxWidth(553px) {
+				min-width: 100%;
+				margin-right: 0;
+				margin-bottom: 0;
+				&:nth-of-type(1) { margin-bottom: 30px;	}
+			}
+
+			.ptsActBtn {
+				width:100%;
+
+				.ptsEditArea  {
+					@include cta();
+					width: 100%;
+					margin-top: 0;
+					padding: 10px 20px;
+					color: #fff;
+					font: 14px $font !important;
+					text-align: center;
+				}			
+			}
+		}
+
+		/*
+		* Home Page Section 4 Styling
+		*/
+		.home-section-4 {
+			height: auto;
+			.textwidget { 
+				width: 100%;
+				margin: 0 auto;
+				.ptsRows { 
+					padding: 40px 0;
+					text-align: center;
+					p {	
+						width: 83%;
+						display: inline-block;
+						box-sizing: border-box;
+						margin: 0;
+						font: 17px/26px Roboto, sans-serif;
+						@include common-desc();	
+						
+						@include maxWidth(1024px) {
+							font: 15px/24px Roboto, sans-serif;
+						}
+					}
+
+				}
+				.ptsCell { 
+					text-align: center; 
+					p { text-align: left; }
+				}
+
+				.ptsElImg { 
+					width: 100%; 
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+
+					.ptsElArea { 
+						position: static;
+					}
+
+					img { 
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+				}
+
+				.ptsBlock .ptsBlockContent .ptsCol .ptsRows .ptsCell.ptsCellAlignLeft {
+					text-align: center;
+				}
+
+				.ptsColHeader { 
+					padding: 26% 0;
+					position: relative;
+					overflow: hidden;
+				}
+			}
+			.wrap { 
+				position: static;
+				-webkit-transform: translateY(0%);
+				-moz-transform: translateY(0%); 
+				-ms-transform: translateY(0%);
+				transform: translateY(0%);
+			}
+		}
+
+
+		// Home Page Section 1 Styling
+		.home-section-1 {
+			height: calc(100vh - 70px);
+			padding: 0;
+			.wrap { 
+				width: 84%;
+				margin: 0 auto;
+				padding: 0; 
+				position: relative;
+				top: 50%;
+				@include property(transform, translateY(-50%));
+			}
+			h4 { 
+				width: 80%;
+				margin-bottom: 5px;
+				font: 900 39px $font;
+				text-align: left; 
+
+				@include mobile() {
+					font-size: 26px;
+				}
+			}
+			section {
+				width: 498px;
+				text-align: left;
+			}
+
+			h4,
+			section {
+				@include tab() {
+					width: 100%;
+					text-align: center;
+				}
+			}
+
+			.textwidget {
+				width: 77%;
+				// min-width: 531px;
+				margin-bottom: 35px;
+				font: 17px/23px $font;
+				@include md() {
+					width: 100%;
+				}
+			}
+
+			section form {
+				width: 100%;
+				text-align: center;
+			}	
+		}
+
+		.home-section-2 {
+			height: auto;
+			.wrap {	width: 70%;	}
+
+			section { 
+				box-sizing: border-box;
+				width: 100%; 
+				padding: 0;
+
+				&.statistics h3 { 
+					@include common-title();	
+					margin-bottom: 43px !important;
+				}
+
+				.statistics-inner {
+					padding: 0;
+					margin-top: 30px;
+				}
+
+				.statistics-inner .stat {
+					width: 26%;
+					margin: 0 0 0 7%;
+					padding: 0;
+
+					@include mobile() { 
+						width: 100%; 
+						margin: 0;
+
+						&:nth-of-type(2) {
+							margin: 30px 0;
+						}
+					}
+
+					.number { margin: 0 !important; }
+				}
+			}
+		}
+		
+	}
+}
+
+.home-section-5.home-odd {
+	height: auto;
+	padding: 31px 0;
+	background-color: #2e2b2b;
+	border-top: 1px solid #e3ffbc;
+
+	section h4.widget-title { margin-bottom: 18px; }
+
+	@include mobile() { .textwidget { margin-bottom: 31px; } }
+
+	.wrap { 
+		position: static; 
+		@include property(transform,translateY(0%));
+	}
+
+	.salesforce_w2l_lead {
+		width: 75%;
+		margin: 0 auto;
+		overflow: auto;
+
+		@include mobile() {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.contact-form-7 .salesforce_w2l_lead .w2lsubmit {border: 0px solid;}
+
+
+
+
+#ptsBlock_167808 .ptsCol-1 .ptsTableElementContent,
+#ptsBlock_167808 .ptsCol-3 .ptsTableElementContent {
+	border: none;
+	
+}
+
+
+/*
+* Home Section 3 Styling
+*/
+
+.home-section-3 { 
+	height: auto;
+	background-color: #f2f2f2;
+	clear: both;
+	
+	// Wrapper Styling
+	.wrap { 
+		width: 82%; 
+		@include mobile() {	width: 93%;	}
+	}
+
+	// Featured Content
+
+
+	.widget-title { 
+		margin-bottom: 45px;
+		color: #333; 
+	}
+
+	.featured-content article {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		@include props(ovh,fll,posr);
+
+		@include property(transition, all 2s linear);
+
+		.widget-title { margin-bottom: 44px; }
+
+		&:nth-of-type(3n+2) { margin: 4% 0; }
+
+		@include tab() {
+			width: 100%;
+			float: none;
+
+			&:last-child { 
+				margin-top: 30px;
+				margin-left: 0; 
+			}
+		}
+
+		@include mobile() {
+			/*max-height: 180px;*/
+		}
+
+		&>a { 
+			width: 48%;
+			padding: 13% 0;
+			margin-right: 4%;
+			/*display: block;*/
+			position: relative;
+			float: left;
+			background-color: #000;
+			overflow: hidden;
+
+			@include tab() {
+				width: 100%;
+				padding: 23% 0;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include property(transition, all 0.4s ease-in);
+				&:hover { opacity: 1;}
+			}
+
+			&:after {
+				content: " ";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: 0.6;
+				transition: all 0.4s ease-out;
+			}
+
+			&:hover {
+				&:after {
+					opacity: 0;
+					border-radius: 0;
+				}
+			}
+		}
+
+		.entry-content {
+			width: 48%;
+			float: left;
+			text-align: left;
+
+			@include tab() {
+				width: 100%;
+			}
+
+			p{
+				margin-bottom: 0;
+				color: #333;
+				font-size: 17px;
+				text-align: left;
+			}
+
+			.common-links {
+				width: auto;
+				padding: 10px 25px;
+				margin: 30px 0 0;      
+				border: 1px solid #f16522;
+				display: inline-block;
+				background-color: #f16522;
+				color: #fff;
+				font: 14px/20px Roboto, sans-serif;  
+			}
+
+			.common-links:hover {    
+				background-color: #fff;
+				color: #f16522;}
+			}
+
+			header.entry-header {
+				width: 48%;
+				float: left;
+
+				@include maxWidth(768px) {
+					width: 100%;
+				}
+
+				a { 
+					color: #333;
+
+					&:hover {
+						color: #333;
+					}
+				}
+
+				h2.entry-title {
+					margin-bottom: 12px;
+					font: 32px $font;
+					text-align: left;
+
+					&:after { display: none; }
+					@include maxWidth(1024px) {
+						font-size: 18px;
+					}
+
+					@include maxWidth(768px) {
+						line-height: 36px;
+						font-size: 32px;
+					}
+				}
+			}
+		}
+	}
+
+// Pricing Table Animation
+
+.ptsCol:hover .ptsColHeader img {
+	animation: cols 1s both;
+}
+
+.ptsCol .ptsColHeader img {
+	animation: cols-remove 1s both;
+}
+
+@keyframes cols {
+	0%{
+		@include property(transform,scale(1));
+	}
+	100% {
+		@include property(transform,scale(1.3));
+	}
+} 
+
+@keyframes cols-remove {
+	0%{
+		@include property(transform,scale(1.3));
+	}
+	100% {
+		@include property(transform,scale(1));
+	}
+} 
+
+@-webkit-keyframes cols-remove {
+	0%{
+		@include property(transform,scale(1.3));
+	}
+	100% {
+		@include property(transform,scale(1));
+	}
+}
+
+@-webkit-keyframes cols {
+	0%{
+		@include property(transform,scale(1));
+	}
+	100% {
+		@include property(transform,scale(1.3));
+	}
+} 
+
+@keyframes title {
+	0%{
+		@include property(transform,scale(1));
+	}
+	100% {
+		@include property(transform,scale(1.3));
+	}
+} 
+
+@-webkit-keyframes title {
+	0%{
+		@include property(transform,scale(1));
+	}
+	100% {
+		@include property(transform,scale(1.3));
+	}
+} 

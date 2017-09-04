@@ -77,7 +77,11 @@ p,
 span,
 a,
 ul,
-li { font-family: $font; }
+li,
+div,
+section,
+aside,
+iframe { font-family: $font; }
 
 main.content {
 	.entry-content {
@@ -527,3 +531,14 @@ body {
 
 .entry-content ol > li,
 .entry-content ul > li { list-style-type: inherit; }
+
+
+/*
+ BreadCrumbs Styling
+*/
+
+body .breadcrumb {
+	padding: 50px;
+	margin-bottom: 0;
+	font: 17px $font;
+}

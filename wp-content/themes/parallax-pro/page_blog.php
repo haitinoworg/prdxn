@@ -13,9 +13,12 @@
  * @link    http://my.studiopress.com/themes/genesis/
  */
 
+/* Adding BreadCrumbs
+*/
+
 // The blog page loop logic is located in lib/structure/loops.php.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-// remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
@@ -41,7 +44,7 @@ function custom_blog_loop() {
 	else {
 		?>
 		<a href="<?php the_permalink(); ?>">
-			<img src="<?php echo get_bloginfo( 'stylesheet_directory' )
+			<img src="<?php echo get_stylesheet_directory_uri()
 			. '/images/empty-image.png'; ?>" alt="<?php the_title(); ?>">
 		</a>
 

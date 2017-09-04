@@ -171,7 +171,7 @@ function subscribe_section() {
 	$section_checkbox = get_field('add_sections',$post->ID);
 	$section_title = get_field('salesforce_section_title',$post->ID);
 	$salesforce_section = get_field('salesforce_data',$post->ID);
-
+if($section_title) {
 ?>
 <div class="home-even home-section-6 widget-area">
 	<div class="wrap">
@@ -183,6 +183,7 @@ function subscribe_section() {
 </div>
 		
 <?php
+}
 	if(($section_checkbox[0] == "Add Fundraise Section")) {
 		genesis_widget_area( 'home-section-7', array(
 		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',

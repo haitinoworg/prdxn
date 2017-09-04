@@ -3,6 +3,7 @@
 * Template Name: Our Impact
 * Author: PRDXN
 */
+
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );

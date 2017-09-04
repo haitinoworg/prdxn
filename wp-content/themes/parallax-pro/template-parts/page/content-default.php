@@ -38,7 +38,13 @@ if($post_slug == "our-programs") {
 		</a>
 		<div class="entry-content">
 			<h3><?php the_title(); ?></h3>
-			<?php the_excerpt(); ?>
+			<p>
+			<?php 
+				$excerpt = wp_trim_words( $post->post_content, $num_words = 20 );
+				echo $excerpt;
+			?>
+		</p>
+			<div><a class="common-links read-more more-content"  href="<?php the_permalink($post); ?>">Read More</a></div>
 		</div>
 	</div>
 
