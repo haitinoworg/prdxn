@@ -38,7 +38,7 @@
 		*/
 
 		.post_content {
-			@include boxmodel(1,border-box,3,49.7%,5,0 0 0 3%);
+			@include boxmodel(2,border-box,3,49.7%,5,0 0 0 3%);
 			@include md() { padding: 25px 0 0;	}
 
 			a {
@@ -306,7 +306,6 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 		font-family: $font;
 		font-weight: 900;
 		line-height: 44px;
-		text-decoration: 2px 2px 10px #000;
 	}
 
 	h1, h2 { 
@@ -320,10 +319,7 @@ div#n2-ss-6 .n2-grab { cursor: default; }
 	h3 { font-size: 39px; }
 	h4 { font-size: 24px; }
 
-	p { 
-		font-size: 17px; 
-		text-decoration: 2px 2px 10px #000;
-	}
+	p { font-size: 17px; }
 
 	.wrap {
 		box-sizing: border-box;

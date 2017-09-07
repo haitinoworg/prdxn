@@ -10,20 +10,6 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
-// * Removing Comment Section
-remove_action( 'genesis_after_post', 'genesis_get_comments_template' );
-
-// Removing Genesis Before Loop and Footer Default Copy Right Section
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-remove_action( 'genesis_footer', 'genesis_do_footer' );
-
-remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
-remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
-
-//* Remove the entry meta in the entry footer
-remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
-
 // * Add the featured image after post title
 add_action( 'genesis_before_content', 'custom_about_heroimage' );
 function custom_about_heroimage() {
@@ -47,6 +33,48 @@ function custom_single_post_title() {
 
 
 //* Removes only the comment form
+	add_action( 'genesis_before_content_sidebar_wrap', 'custom_breadcrumbs', 15 );
+	function custom_breadcrumbs() {
+		?>
+		<div class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">You are here: <span class="breadcrumb-link-wrap" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="<?php echo site_url(); ?>" itemprop="item"><span itemprop="name">Home</span></a></span> 
+		<span aria-label="breadcrumb separator">/</span> 
+		<span class="breadcrumb-link-wrap" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="<?php echo site_url(); ?>/blog" itemprop="item"><span itemprop="name">Blog</span></a></span> 
+		<span aria-label="breadcrumb separator">/</span> <?php echo get_the_title(); ?></div>
+		<?php
+	}
+	
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_comment_form', 'genesis_do_comment_form' );
+
+
+/*
+* Single Post Pagination
+*/
+
+//Remove Default Post Pagination
+remove_action('genesis_after_endwhile','genesis_posts_nav');
+add_action('genesis_after_endwhile','custom_post_pagination');
+function custom_post_pagination() {
+	$prev = get_previous_post_link();
+	$next = get_next_post_link();
+		?>
+	<div class="post-navigations">
+	<?php if($prev){ ?>
+		<div class="left-link">
+			<?php echo get_previous_post_link(); ?>
+		</div>
+		<?php } if($prev && $next) { ?>
+		<div class="right-link">
+			<?php echo get_next_post_link(); ?>
+		</div>
+		<?php } if($next && ! $next) { ?>
+		<div class="left-link">
+			<?php echo get_next_post_link(); ?>
+		</div>
+		<?php } ?>
+	</div>
+	<?php
+}
+
 
 genesis();

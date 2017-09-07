@@ -201,3 +201,5 @@ remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 )
 
 //* Remove the entry meta in the entry footer
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
+
+

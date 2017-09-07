@@ -37,7 +37,7 @@ body.body-overflow {
 
 		// Widget Styling
 		.widget-area {
-			@include boxmodel(1," ",3,70%,5,9px 0 4px);
+			@include boxmodel(1,"",3,70%,5,9px 0 4px);
 			float: right;
 			text-align: right;
 

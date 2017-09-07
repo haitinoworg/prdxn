@@ -577,6 +577,10 @@ Footer Section-1
 	.title-area { display: none; }
 }
 
+.copyright { 
+ .title-area { display: block; }
+}
+
 /*footer responsive styling*/
 @include md() {
 	.footer-widgets {
@@ -641,7 +645,7 @@ Footer Section-1
 				}
 
 				p { 
-					width: 32.2%; 
+					width: 80px; 
 					margin-top: 20px;
 					display: inline-block;
 				}
