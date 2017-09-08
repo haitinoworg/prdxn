@@ -11,14 +11,10 @@
 
 		.addtoany_share_save_container {
 			margin: 45px 0 0;
-			a:first-child {
-				padding-left: 0;
-			}
+			a:first-child { padding-left: 0;	}
 		}
 
-		.addtoany_header {
-			margin-bottom: 26px;
-		}
+		.addtoany_header { margin-bottom: 26px;	}
 
 	}
 
@@ -32,19 +28,19 @@
 	font-family: $font;
 	.entry-content {
 		h1, h2, h3, h4, h5, h6 { 
-			text-align: center; 
 			color: #333;
+			text-align: center; 
 		}
 	}
 	.wrap { width: 84%; }
 
 	.content>.wrap { 
 		width: 71%; 
-		@include tab() { width: 93%; }
+		@include tab() { width: 84%; }
 	}
 
 	.content>.entry {
-		max-width: 2000px;
+		max-width: $maxWidth;
 		width: 84%;
 		margin: 0 auto;
 	}
@@ -73,13 +69,10 @@
 	.list-title { 
 		width: 84%;
 		margin: 0 auto;
-		font-family: $font;
-		font-size: 50px;
+		font: 50px $font;
 		text-align: center; 
 
-		@include mobile() {
-			font-size: 40px;
-		}
+		@include mobile() { font-size: 40px; }
 	}
 
 	p { 
@@ -95,7 +88,7 @@
 	font-family: $font;
 	.content {
 		width: 84%;
-		max-width: 2000px;
+		max-width: $maxWidth;
 		padding: 0;
 		margin: 0 auto;
 		float: none;
@@ -123,8 +116,6 @@
 		margin-bottom: 36px;
 		font: 50px $font;
 		line-height: 46px;
-		@include mobile() {
-			font-size: 40px;
-		}
+		@include mobile() { font-size: 40px; }
 	}
 }

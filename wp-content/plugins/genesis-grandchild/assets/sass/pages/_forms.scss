@@ -23,7 +23,7 @@
 .contact-form-7 {
 	.content {
 		box-sizing: border-box;
-		max-width: 2000px;
+		max-width: $maxWidth;
 		width: 84%;
 
 		.entry-content {
@@ -228,97 +228,6 @@
 
 }
 
-/* News
---------------------------------------------- */
-.home-odd.home-section-9 {
-	.wrap { 
-		width: 73%;	
-
-		@include mobile() {
-			width: 84%;
-		}
-	}
-}
-
-.home-odd.home-section-9 section {
-	width: 100%;
-	margin: 0 auto;
-	font: 16px $font;
-
-	.widget-title { 
-		margin-bottom: 14px; 
-		color: #fff;
-		font: 32px $font;
-		@include mobile() {
-			font: 30px;
-		}
-	}
-
-	form {
-		clear: both;
-		&>div { 
-			width: 33.333%;
-			float: left;
-
-			@include maxWidth(768px) {
-				width: 100%;
-				display: block;
-				float: none;
-			}
-
-			input { 
-				margin-bottom: 0px;
-				padding: 11px 12px;
-				-webkit-appearance: none;
-				-webkit-border-radius: 0;
-				border-radius: 0;
-				font: 15px $font;
-
-				@include mobile() {	margin-bottom: 0; }
-
-				&::-webkit-input-placeholder
-				{	
-					color: #aaa;	
-					font-size: 13px;
-				}
-				&::-moz-placeholder
-				{	color: #aaa;	}
-				&:-ms-input-placeholder
-				{	color: #aaa;	}
-
-			&:hover {/* border: 1px solid #aaa;*/ }
-		}
-
-		input[type="submit"] { 
-			padding: 11px;
-			border: 1px solid #f16522;
-			background-color: #f16522;
-
-			&:active,
-			&:focus,
-			&:visited {
-				color: #fff;
-			}
-
-			@include tab() { width: 100%; }
-			@include minWidth(769px) {
-				&:hover { 
-					background-color: #fff;
-					color: #f16522; 
-				}
-			}
-		}
-
-		p {
-			margin-top: 0;
-			margin-bottom: 0;
-			color: #f00;
-			font-size: 14px;
-			text-align: left;
-		}
-	}
-}
-}
 
 .salesforce_w2l_lead {
 	form.w2llead {
@@ -359,29 +268,22 @@
 				padding: 13px 11px 10px; 	
 				border: 1px solid #ddd;
 				-webkit-appearance: none;
-				-webkit-border-radius: 0;
-				border-radius: 0;
+				@include property(border-radius, 0);
 				outline: none;
 				display: block;
 				background-color: transparent;
 				color: #000;
-				font-family: $font;
-				font-size: 13px;
+				font: 13px $font;
 				line-height: 15px;
 				text-transform: capitalize;
 				option { 
 					padding: 5px 0;
 					color: #000; 
-					&:first-child {
-						color: #b9afaa;
-					}
+					&:first-child { color: #b9afaa;	}
 				}
 			}
 
 			button {
-				-webkit-appearance: none;
-				-webkit-border-radius: 0;
-				border-radius: 0;
 				background: url(../../uploads/2017/05/caret-down.png) no-repeat 95% center;
 				background-size: 10px;
 			}
@@ -389,23 +291,19 @@
 			.bootstrap-select .dropdown-toggle { 
 				font-size: 15px;
 				letter-spacing: normal; 
-				&[title="Volunteer Languages"] {
-					font-size: 13px;
-				}
+				&[title="Volunteer Languages"] { font-size: 13px;	}
 			}
 
-			.bootstrap-select .dropdown-toggle:focus {
-				outline: 0 !important;
-			}
+			.bootstrap-select .dropdown-toggle:focus { outline: 0 !important;	}
 
 			.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
 				width: 100%;
 			}
 
 			div.dropdown-menu {
+				display: none;
 				position: relative;
 				background-color: #fff;
-				display: none;
 				z-index: 2;
 				.dropdown-menu.inner {
 					border: 1px solid #ddd;
@@ -475,34 +373,26 @@
 			&.sf_field_description,
 			&:last-child {
 				p, 
-				p.blank-text {
-					visibility: visible;
-				}
+				p.blank-text { visibility: visible;	}
 			}
 		}
 
-
 		.sf_field { 
 			min-height: 75px; 
-			@include tab() {
-				min-height: 90px;
-			}
+			@include tab() { min-height: 90px; }
 		}
 
 	}
 	
 }
 
-.home .salesforce_w2l_lead form.w2llead > div input[type="submit"],
-.salesforce_w2l_lead #sf_form_salesforce_w2l_lead_6 input[type="submit"] {border-radius: 0px;}
+.home .salesforce_w2l_lead form.w2llead > div input[type="submit"] {border-radius: 0px;}
 
 /* volunteer page responsive */
 @include tab() {
 	.contact-form-7 { 
 		.volunteer-form { 
-			.sf_field {
-				width: 100%;
-			}
+			.sf_field { width: 100%;	}
 
 			.sf_field:nth-child(3n+2) {
 				margin: 0px;	
@@ -612,8 +502,6 @@ body.contact-form-7 .inside,
     	min-height: 120px;
 		}
 
-		main.content .entry-content p:last-child {
-			margin-bottom: 11px;
-		}
+		main.content .entry-content p:last-child { margin-bottom: 11px;	}
 
 }

@@ -2,7 +2,7 @@
   .site-inner {
     .content {
       width: 84%;
-      max-width: 2000px;
+      max-width: $maxWidth;
       padding: 0;
       margin: 0 auto;
       float: none;
@@ -39,17 +39,15 @@
     width: 56%;
     display: inline-block;
     font-family: $font;
-    @include property(animation,sponsors-icons-back 0.3s ease-in forwards);
+    @include property(animation,sponsors-icons-back .3s ease-in forwards);
   }
 
 
-  &:nth-child(4n+4) {
-    margin-right: 0px;
-  }
+  &:nth-child(4n+4) { margin-right: 0px; }
 
-  // Sponsors Animation
+  /* Sponsors Animation */
   &:hover .news-image a {
-    @include property(animation,sponsors-icons 0.3s ease-in-out forwards);
+    @include property(animation,sponsors-icons .3s ease-in-out forwards);
   }
 
 }
@@ -70,13 +68,7 @@
     font-family: $font;
   }
 
-  // .sponsor-list:nth-child(3n+3) {
-  // 	margin-right: 8%; 
-  // }
-
-  .sponsor-list:nth-child(2n+2) {
-  	margin-right: 0px; 
-  }
+  .sponsor-list:nth-child(2n+2) { margin-right: 0px; }
 }
 
 @include mobile() {
@@ -86,9 +78,7 @@
     margin: 12px 10%;
   }
 
-  .sponsor-list:nth-child(2n+2) {
-    margin-right: 10%; 
-  }
+  .sponsor-list:nth-child(2n+2) { margin-right: 10%; }
 
 }
 

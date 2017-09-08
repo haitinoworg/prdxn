@@ -25,24 +25,24 @@
 			
 			.hero-content {
 				width: 100%;
-		    position: absolute;
-		    top: 50%;
-		    @include property(transform, translateY(-50%));
-		    z-index: 5;
+				position: absolute;
+				top: 50%;
+				@include property(transform, translateY(-50%));
+				z-index: 5;
 
-		    h1, h2, h3 { margin-bottom: 0; }
+				h1, h2, h3 { margin-bottom: 0; }
 			}
 		}
 		img {
-	    width: 100%;
-	    height: 100%;
-	    padding: 0;
-	    margin-bottom: -10px;
-	    position: static;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin-bottom: -10px;
+			position: static;
 		}
 	}
 	.content {
-		max-width: 2000px;
+		max-width: $maxWidth;
 		padding: 0;
 		margin: 0 auto;
 		float: none;
@@ -95,7 +95,7 @@
 				@include tab() { 
 					display:flex;
 					flex-wrap: wrap;
-				 }
+				}
 
 				li.ui-tabs-active {
 					@include tab() { margin-bottom: -2px; }
@@ -132,7 +132,7 @@
 					}
 					a {
 						padding: 12px 28px;
-						border: 0.5px solid #ddd;
+						border: .5px solid #ddd;
 						border-bottom: 0;
 						border-left: 0;
 						background-color: $cta-color;

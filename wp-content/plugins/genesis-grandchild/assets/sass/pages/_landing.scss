@@ -7,7 +7,7 @@
 	font-family: $font;
 	.entry { @include boxmodel(1,"",5,63px 0 58px,7,0);	}
 	.site-inner {  
-		max-width: 2000px;
+		max-width: $maxWidth;
 		margin: 0 auto; 
 	}
 	.content {
@@ -18,9 +18,7 @@
 		h3,h4 { 
 			font-size: 32px; 
 			font-family: $font;
-			@include mobile() {
-				font-size: 30px;
-			}
+			@include mobile() { font-size: 30px;	}
 		}
 
 		article.entry { padding: 63px 0 58px; }
@@ -39,9 +37,7 @@
 			}
 		}
 
-		p {
-			@include common-desc();
-		}
+		p { @include common-desc();	}
 
 	}
 
@@ -86,7 +82,7 @@ body.faq {
 				margin-top: 36px;
 				margin-bottom: 0;
 				border-radius: 2px;
-				background: rgba(241, 101, 34, 0.82);
+				background: rgba(241, 101, 34, .82);
 				color: #fff;
 
 				&:first-child { margin: 0 0 5px; }

@@ -116,7 +116,7 @@ Common Mixins ============================================
 	font: 15px $font;
 	line-height: 20px;
 	text-transform: uppercase;
-	letter-spacing: 0.7px;
+	letter-spacing: .7px;
 
 	&:focus {
 		border-color: $cta-color;

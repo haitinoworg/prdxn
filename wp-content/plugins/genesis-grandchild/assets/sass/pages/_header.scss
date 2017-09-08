@@ -21,7 +21,7 @@ body.body-overflow {
 
 		.wrap {
 			@include boxmodel(2, border-box, 3, 93%, 5, 10px 0);
-			max-width: 2000px;
+			max-width: $maxWidth;
 			@include md() { width: 93%; }
 		}
 
@@ -258,7 +258,7 @@ body.body-overflow {
 			left: auto;
 			z-index: 99;
 			opacity: 1;
-			background-color: rgba(255, 255, 255, 0.05);
+			background-color: rgba(255, 255, 255, .05);
 			-moz-transition: opacity .4s ease-in-out;
 			-ms-transition: opacity .4s ease-in-out;
 			-o-transition: opacity .4s ease-in-out;
@@ -337,7 +337,7 @@ body.body-overflow {
 					left: auto;
 					z-index: 99;
 					opacity: 1;
-					background-color: rgba(255, 255, 255, 0.05);
+					background-color: rgba(255, 255, 255, .05);
 					-moz-transition: opacity .4s ease-in-out;
 					-ms-transition: opacity .4s ease-in-out;
 					-o-transition: opacity .4s ease-in-out;

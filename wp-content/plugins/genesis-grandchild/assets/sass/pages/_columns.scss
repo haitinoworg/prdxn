@@ -130,7 +130,7 @@
 
 			@include md() { padding: 25% 0; }
 
-			img { opacity: 0.4; } 
+			img { opacity: .4; } 
 
 			text-align: center;
 
@@ -278,185 +278,185 @@
 @include minWidth(769px) {
 
 	@keyframes text-off {
-    from {
-      z-index: 1;
-      opacity: 1;
-    }
-    to {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
-  @-webkit-keyframes text-off {
-   from {
-      z-index: 1;
-      opacity: 1;
-    }
+	@-webkit-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
 
-    to {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
-  @-moz-keyframes text-off {
-    from {
-      z-index: 1;
-      opacity: 1;
-    }
+	@-moz-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
 
-    to {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
-  @-o-keyframes text-off {
-    from {
-      z-index: 1;
-      opacity: 1;
-    }
+	@-o-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
 
-    to {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
-  @keyframes text-on {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-   @-webkit-keyframes text-on {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@-webkit-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-   @-moz-keyframes text-on {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@-moz-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-   @-o-keyframes text-on {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@-o-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-  @keyframes image-flip {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-  @-webkit-keyframes image-flip {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@-webkit-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-@-moz-keyframes image-flip {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
-
-
-@-o-keyframes image-flip {
-    0% {
-      z-index: 0;
-      opacity: 0;
-    }
-    100% {
-      z-index: 1;
-      opacity: 1;
-    }
-  }
+	@-moz-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
 
-  @keyframes image-off {
-    0% {
-      z-index: 1;
-      opacity: 1;
-    }
-    100% {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+	@-o-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
 
-  @-webkit-keyframes image-off {
-    0% {
-      z-index: 1;
-      opacity: 1;
-    }
-    100% {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
 
-  @-moz-keyframes image-off {
-    0% {
-      z-index: 1;
-      opacity: 1;
-    }
-    100% {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+	@keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
-  @-o-keyframes image-off {
-    0% {
-      z-index: 1;
-      opacity: 1;
-    }
-    100% {
-      z-index: 0;
-      opacity: 0;
-    }
-  }
+	@-webkit-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-moz-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-o-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
 
 }
 

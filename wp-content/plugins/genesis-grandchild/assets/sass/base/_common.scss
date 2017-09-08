@@ -1,13 +1,84 @@
 
+
+
+/* Site Containers
+--------------------------------------------- */
+/*
+Overriding Parallax Pro Styling
+*/
+
+.wrap {
+	max-width: $maxWidth;
+	margin: 0 auto;
+}
+
+.site-inner {
+	max-width: 100%;
+	margin-top: 0;
+	clear: both;
+}
+
+
+.site-inner,
+.wrap {
+	@include tab() { padding: 0; }
+}
+
+.parallax-home .site-inner {
+	max-width: 100%;
+	margin-top: 0;
+}
+
+
+/* Column Classes
+	Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+	--------------------------------------------- */
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		float: left;
+		margin-left: 2.564102564102564%;
+	}
+
+	.one-half,
+	.three-sixths,
+	.two-fourths { width: 48.717948717948715%;	}
+	.one-third,
+	.two-sixths {	width: 31.623931623931625%;	}
+
+	.four-sixths,
+	.two-thirds { width: 65.81196581196582%;	}
+
+	.one-fourth { width: 23.076923076923077%;	}
+
+	.three-fourths { width: 74.35897435897436%;	}
+
+	.one-sixth { width: 14.52991452991453%;	}
+
+	.five-sixths { width: 82.90598290598291%;	}
+
+	.first {
+		clear: both;
+		margin-left: 0;
+	}
+
+
 /*
 Common Classes
 ---------------------------------------------------------------------------------------------------- */
 @include minWidth(1200px) {
 	.site-container {
 		.site-inner,
-		.wrap {
-			max-width: 2000px;
-		}
+		.wrap {	max-width: $maxWidth;	}
 	}
 }
 
@@ -29,24 +100,13 @@ Common Classes
 	}
 }
 
-.entry-header {
+.entry-header .entry-title,
 	.entry-title {
 		@include common-title();
 		@include title-after();
-		@include mobile() {
-			font-size: 40px;
-		}
+		@include mobile() { font-size: 40px; }
 	}
-	&:after { display: none; }
-}
-
-.entry-title {
-	@include common-title();
-	@include title-after();
-	@include mobile() {
-		font-size: 40px;
-	}
-}
+.entry-header:after { display: none; }
 
 .site-header {
 	.widget-area {
@@ -97,17 +157,13 @@ main.content {
 		h2 { 
 			font-size: 50px; 
 			line-height: 46px;
-			@include mobile() {
-				font-size: 40px;
-			}
+			@include mobile() {	font-size: 40px;	}
 		}
 
 		h3 { 
 			font-size: 32px;	
 			line-height: 38px;
-			@include mobile() {
-				font-size: 30px;
-			}
+			@include mobile() {	font-size: 30px;	}
 		}
 
 		h4,h5 { font-size: 24px; }
@@ -161,9 +217,7 @@ main.content {
 
 	.textwidget {
 		p { @include common-desc();	}
-		a.button {
-			@include cta();
-		}
+		a.button { @include cta();	}
 	}
 }
 
@@ -176,298 +230,6 @@ main.content {
 div#n2-ss-2 .n2-grab { 	cursor: default; }
 
 .ui-tabs .ui-tabs-panel { padding: 30px 15px; }
-.direct-stripe { margin: 0; }
-
-.stripe-button-ds,
-.stripe-button-ds:focus {
-	width: 100%;
-	padding: 12px 25px;
-	margin-top: 30px;
-	display: block;
-	background-color: #1e73be;
-	background-image: none;
-	color: #fff;
-	font-size: 20px;
-	text-align: center;
-
-}
-
-.stripe-button-ds:hover,
-.stripe-button-ds:focus:hover {
-	color: #fff;
-	background-color: #1e73be;
-}
-
-.stripe-button-ds span,
-.stripe-button-ds:focus span {
-	box-shadow: none;
-	background-image: none;
-	background-color: #1e73be;
-	font: 16px Roboto, sans-serif;
-}
-
-.donation-box {
-	width: 100%;
-	border: 1px solid #ccc;
-	position: relative;
-	background-color: #fff;
-	overflow: hidden;
-}
-
-.donation-box:after {
-	content: "USD";
-	position: absolute;
-	top: 9px;
-	width: 46px;
-	right: 10px;
-	background-color: #fff;
-	color: #aaa;
-	font: 20px Roboto, sans-serif;
-	text-align: center;
-}
-
-.donation-box:before {
-	content: "$";
-	width: 10px;
-	position: absolute;
-	left: 8px;
-	right: 10px;
-	top: 9px;
-	background-color: #fff;
-	color: #aaa;
-	font: 20px Roboto, sans-serif;
-}
-
-.donation-box input {
-	min-width: 100%;
-	width: 100%;
-	padding: 8px 0;
-	padding-left: 23px;
-	padding-right: 38px;
-	border-color: transparent;
-	outline: none;
-	color: #747373;
-
-	@include tab() { width: 72%; }
-}
-
-/*
-* Button Styling
-*/
-.donate-btn {
-	width: 100%;
-	padding: 10px 0 8px;
-	margin-top: 30px;
-	background-color: #1e73be;
-	background-image: none;
-	font: 16px Roboto, sans-serif;
-
-	&:hover {
-		color: #fff;
-		background-color: #1e73be;
-	}
-
-}
-
-/*
-* Stripe Paypal Donate page styling
-*/
-
-.stripe-paypal {
-	width: 70%;
-	max-width: 700px;
-	padding: 0;
-	border: 0;
-	margin: 0 auto;
-
-	/* Tabs panel for stripe paypal */
-	.ui-tabs-panel { 
-		padding: 10% 15%;
-	}
-
-	/* Tabs for stripe paypal */
-	.ui-tabs-nav { 
-		padding: 0; 
-		border: 0;
-		.ui-state-default {
-			width: 50%;
-			border: 0;
-			margin: 0;
-			text-align: center;
-		}
-
-		.ui-state-default a.ui-tabs-anchor {
-			width: 100%;
-			display: block;
-			float: none;
-			font: 18px Roboto, sans-serif;
-		}
-	}
-
-	.stripe-button-ds { margin-top: 0; }
-
-}
-
-
-.stripe-paypal-form .direct-stripe {
-	width: 100%;
-	margin: 0;
-	margin-bottom: 30px;
-	.donation-box { border: 0; }
-}
-
-/*
-* Paypal Button Styling
-*/
-.paypal-button button.paypal-button.large {
-	width: 100%;
-	padding: 12px 19px;
-	border: none;
-	border-radius: 0;
-	position: static;
-	background-size: 45%;
-	background-color: #009cde;
-	text-indent: -9999px;
-}
-
-
-body #tabs.dntplgn_form_wrapper {
-	width: 360px;
-	border-radius: 4px;
-	display: inline-block;
-
-	/* Paypal Tabs Styling */
-	.ui-tabs-nav {
-		border: 2px solid #000;
-		border-radius: 4px;
-		.ui-tabs-anchor {
-			font: 15px $font;
-			@include md() {
-				font: 13px;
-			}
-		}
-
-		li.ui-state-default {
-			padding-bottom: 1px;
-			border-top-right-radius: 0; 
-			border-top-left-radius: 0; 
-			background-color: #000;
-
-			a { 
-				padding: 15px 15px;
-				color: #fff; 
-			}
-		}
-
-		li.ui-state-active {
-			background-color: #fff;
-
-			a { 
-				color: #000; 
-				font-weight: 900;
-			}
-
-		}
-	}
-
-
-	/* Paypal Form Styling */
-	form.dntplgn_donate_monthly,
-	form { 
-		width: 100%;
-		margin: 0 auto;
-		position: relative;
-		input {
-			min-width: 40px;
-			width: 16%;
-			padding: 15px 10px 15px 30px;
-			display: inline-block;
-			&::-webkit-input-placeholder
-			{	
-				color: #aaa;	
-				font-size: 23px;
-			}
-			&::-moz-placeholder
-			{	
-				color: #aaa;	
-				font-size: 23px;
-			}
-			&:-ms-input-placeholder
-			{	
-				color: #aaa;	
-				font-size: 23px;
-			}
-		}
-
-		input[type="radio"] {
-			color: #000;
-			font-size: 25px;
-		}
-
-		label {
-			width: 80%;
-			margin: 10px 0;
-			display: inline-block;
-			text-align: left;
-		}
-
-		input, label {
-			font: 23px $font;
-
-			span {
-				font-size: 13px;
-			}
-		}
-
-		.dntplgn_monthly_other_sum,
-		#dntplgn_once_amount {
-			width: 100%;
-			border: 1px solid #ccc;
-			margin: 14px 0 0;
-		}
-
-		.dntplgn_submit_button {	
-			width: 100%;
-			padding: 15px 0;
-			margin: 30px 0 0;
-			background-color: #000;
-			font: 15px $font;
-			text-align: center;
-
-			&:hover {
-				color: #fff;	
-			}
-		}
-	}
-
-	form {
-		span.paypal-currency-format {
-			content: "$";
-			position: absolute;
-			top: 45px;
-			left: 10px;
-			color: #aaa;
-			font: 23px $font;
-			@include property(transform, translateY(-50%));
-		}
-	}
-
-	form.dntplgn_donate_monthly {
-		span.paypal-currency-format {
-			content: "$";
-			display: none;
-			position: absolute;
-			top: 231px;
-			left: 10px;
-			color: #aaa;
-			font: 23px $font;
-			@include property(transform, translateY(-50%));
-			&.active { display: inline-block;	}
-		}
-	}
-
-}
-
 
 /* Image Caption Styling */
 body {
@@ -492,6 +254,7 @@ body {
 				}
 
 				img {
+					width: 100px;
 					height: 100px;
 					border-radius: 100%;
 					padding: 18px;
@@ -523,11 +286,8 @@ body {
 				height: 150px;	
 			}
 	}
-
 	.bx-wrapper { padding: 0 45px; }
-
 }
-
 
 .entry-content ol > li,
 .entry-content ul > li { list-style-type: inherit; }
@@ -571,5 +331,4 @@ body .breadcrumb {
 	
 .right-link {	padding-bottom: 58px; }
 
-	
 }

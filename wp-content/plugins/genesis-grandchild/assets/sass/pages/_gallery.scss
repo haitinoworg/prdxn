@@ -89,22 +89,22 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.39);
-      animation: hover-album-rev 0.4s forwards;
+      background: rgba(0, 0, 0, .39);
+      animation: hover-album-rev .4s forwards;
     }
 
     a:hover::after {
-      animation: hover-album 0.4s forwards;
+      animation: hover-album .4s forwards;
     }
 
     @keyframes hover-album{
-      0% {background: rgba(0, 0, 0, 0.39);}
+      0% {background: rgba(0, 0, 0, .39);}
       100% {background: rgba(0, 0, 0, 0);}
     }
 
     @keyframes hover-album-rev{
       0% {background: rgba(0, 0, 0, 0);}
-      100% {background: rgba(0, 0, 0, 0.39);}
+      100% {background: rgba(0, 0, 0, .39);}
     }
 
     a:nth-child(3n+3){margin-right: 0;}
@@ -114,20 +114,20 @@
     p {
      a { 
        min-height: inherit;
-      max-height: inherit;
-      &::after { display: none;  }
+       max-height: inherit;
+       &::after { display: none;  }
      }
      & span,
      & a span {
-        width: auto;
-        padding: 0;
-        position: static;
-        text-align: left;
-        color: #000;
-        font-size: 17px;
-     }
-   }
+      width: auto;
+      padding: 0;
+      position: static;
+      text-align: left;
+      color: #000;
+      font-size: 17px;
+    }
   }
+}
 }
 
 .album {
@@ -161,13 +161,13 @@
       position: absolute;
       top: 0px;
       left: 0px;
-      background: rgba(0, 0, 0, 0.38);
+      background: rgba(0, 0, 0, .38);
     }
 
     a:hover:before {
       background: rgba(0, 0, 0, 0);
-      transition: background 0.4s;
-      -webkit-transition: background 0.4s;
+      transition: background .4s;
+      -webkit-transition: background .4s;
     }
 
     a::after {
@@ -269,7 +269,7 @@
 }
 }
 
-.huge_it_big_li:hover a::after {opacity: 0.6;}
+.huge_it_big_li:hover a::after {opacity: .6;}
 
 @include tab() {
 	.gallery-video-content { 
@@ -305,7 +305,7 @@ img {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,.9);
   overflow-y: auto;
 
   .grid .thumbnail {
@@ -340,26 +340,20 @@ img {
   .albums {
     background-color: #000;
     position: relative;
-    @include property(transition, all 0.3s linear);
+    @include property(transition, all .3s linear);
 
     .thumbimage {
-      @include md() {
-        opacity: 0.5;
-      }
-    }
-
-
-    .thumbimage {
-      opacity: 0.3;
+      opacity: .3;
+      @include md() { opacity: .5; }
     }
 
     &:hover {
      .thumbimage {
-      @include property(animation, album-hover 0.3s linear both);
+      @include property(animation, album-hover .3s linear both);
     }
 
     .details {
-      @include property(animation, album-details 0.3s linear both);
+      @include property(animation, album-details .3s linear both);
     }
 
   }
@@ -410,23 +404,23 @@ img {
 }
 
 .close-lightbox {
-    width: 23px;
-    height: 27px;
-    position: fixed;
-    right: 37px;
-    top: 30px;
-    z-index: 1001;
-    color: #fff;
-    font-size: 43px;
-    line-height: 19px;
-    cursor: pointer;
-  }
+  width: 23px;
+  height: 27px;
+  position: fixed;
+  right: 37px;
+  top: 30px;
+  z-index: 1001;
+  color: #fff;
+  font-size: 43px;
+  line-height: 19px;
+  cursor: pointer;
+}
 
 
 @include minWidth(1025px) {
 
  @keyframes album-hover {
-  0% { opacity: 0.3; }  
+  0% { opacity: .3; }  
   100% { opacity: 1; }
 }
 
@@ -457,7 +451,6 @@ img {
       height: 100%;
       top: 0;
       text-align: center;
-      // @include property(transition,  0.3s linear);
       &:hover {
         background: url('../../uploads/2017/04/play-icon.png') no-repeat !important;
         background-position: center !important;
@@ -473,15 +466,14 @@ img {
         color: #fff;
         font: 17px Roboto, sans-serif;
         @include property(transform,translateY(-50%));
-        // @include property(transition, all 0.3s linear);
         text-decoration: none;
         text-transform: capitalize;
         white-space: normal;
       }
     }
   }
-section #huge_it_videogallery li .overLayer, 
-section #huge_it_videogallery li .infoLayer {
+  section #huge_it_videogallery li .overLayer, 
+  section #huge_it_videogallery li .infoLayer {
     max-width: 100%;
     height: 100%;
     opacity: 1 !important;
@@ -492,17 +484,17 @@ section #huge_it_videogallery li .infoLayer {
 
   section #huge_it_videogallery li {
     .infoLayer {
-    
-    background-color: rgba(0,0,0,0.8);
 
-    ul {
-      width: 100%;
-      margin-top: 0;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      @include property(transform, translateY(-50%));
-    }
+      background-color: rgba(0,0,0,.8);
+
+      ul {
+        width: 100%;
+        margin-top: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        @include property(transform, translateY(-50%));
+      }
     }
     &:hover .infoLayer {
       opacity: 0 !important;
@@ -515,12 +507,12 @@ section #huge_it_videogallery li .infoLayer {
     }
   }
 
-section #huge_it_videogallery li .overLayer {
-  background: url('../../uploads/2017/04/play-icon.png') no-repeat !important;
-        background-position: center !important;
-        background-size: 23% 33% !important;
-       a {  opacity: 0; }
-    }
+  section #huge_it_videogallery li .overLayer {
+    background: url('../../uploads/2017/04/play-icon.png') no-repeat !important;
+    background-position: center !important;
+    background-size: 23% 33% !important;
+    a {  opacity: 0; }
+  }
   // .infoLayer {
   //       background: url('../../uploads/2017/04/play-icon.png') no-repeat !important;
   //       background-position: center !important;

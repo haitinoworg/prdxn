@@ -69,8 +69,8 @@ Content Area
 
 		}
 	}
-		
-	}
+	
+}
 
 .home-section-9.home-odd {
 	height: auto;
@@ -120,11 +120,11 @@ Content Area
 	background-repeat: no-repeat;
 	
 	.wrap { 
-				width: 84%;
-				margin: 0 auto;
-				padding: 0; 
-				clear: both;
-			} 
+		width: 84%;
+		margin: 0 auto;
+		padding: 0; 
+		clear: both;
+	} 
 	a {	
 		@include cta();	
 		display: inline-block;
@@ -150,13 +150,13 @@ Content Area
 		left: 0;
 		z-index: 0;
 		background-color: #000;
-		opacity: 0.56;
+		opacity: .56;
 	}
 
 	.wrap { 
 		position: relative;
 		z-index: 1;
-	 }
+	}
 }
 
 .home-section-2,
