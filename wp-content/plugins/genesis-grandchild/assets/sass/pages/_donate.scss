@@ -9,7 +9,7 @@
 			padding: 20px 0;
 			margin: 0;
 			background-color: $cta-color;
-			color: #fff;
+			color: $white;
 			font: 50px/46px $font;
 			text-align: center;
 			text-transform: uppercase;
@@ -37,8 +37,8 @@
 
 					.wp-caption-text { 
 						margin-top: 12px; 
-						font: 28px/39px $font;
 						color: $green;
+						font: 28px/39px $font;
 					}
 				}
 			}
@@ -68,7 +68,7 @@
 			@include boxmodel(3,100%,4,auto,5, 65px 0 63px);
 			position: relative;
 			overflow: hidden;
-			background-color: #000;
+			background-color: $black;
 			img { 
 				max-width: inherit;
 				width: 100%; 
@@ -88,19 +88,19 @@
 
 			h1,h2,h3,h4,h5,h6 { 
 				width: 100%;	
-				color: #fff;
+				color: $white;
 				font: 900 39px $font;
 				line-height: 44px;
 			}
 
-			p { font-size: 17px; }
+			p { font-size: 28px; }
 
 			.wrap {
 				box-sizing: border-box;
 				width: 84%;
-				color: #fff;
 				position: relative;
 				z-index: 5;
+				color: $white;
 
 				&>h1,
 				&>h2,
@@ -150,17 +150,13 @@
 					h5,
 					p { 
 						text-align: right; 
-						@include tab() {
-							text-align: left;
-						}
+						@include tab() { text-align: left;	}
 					}
 
 					h2,
 					h3,
 					h4,
-					h5 {
-						margin-bottom: 12px;
-					}
+					h5 { margin-bottom: 12px;	}
 				}
 
 				p { 
@@ -169,9 +165,7 @@
 					@include tab() { width: 100%; }
 				}
 
-				@include tab() { 
-					width: 100%;
-				}
+				@include tab() { width: 100%;	}
 
 
 				iframe {	
@@ -198,14 +192,14 @@
 				min-height: 450px;
 				.hero-content {
 					position: absolute;
-					left: 0;
 					top: 50%;
+					left: 0;
 					@include property(transform,translateY(-50%));
 					.donate-desc,
 					h1,h2,h3,h4,h5,h6 { 
 						width: 100%;
-						margin-bottom: 0;
 						margin-top: 0;
+						margin-bottom: 0;
 						text-align: left; 
 						text-transform: uppercase;
 						@include tab() { text-align: center; }

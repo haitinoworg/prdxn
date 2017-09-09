@@ -43,7 +43,7 @@
   }
 
 
-  &:nth-child(4n+4) { margin-right: 0px; }
+  &:nth-child(4n+4) { margin-right:0; }
 
   /* Sponsors Animation */
   &:hover .news-image a {
@@ -64,11 +64,11 @@
 @include tab() {
   .sponsor-list {
     width: 46%;
-    margin: 28px 8% 0px 0px;
+    margin: 28px 8%00;
     font-family: $font;
   }
 
-  .sponsor-list:nth-child(2n+2) { margin-right: 0px; }
+  .sponsor-list:nth-child(2n+2) { margin-right:0; }
 }
 
 @include mobile() {

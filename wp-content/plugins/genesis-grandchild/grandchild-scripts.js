@@ -1,24 +1,7 @@
   (function($) {
 
-
-
+    /* Document Starts Here */
     $(document).ready(function() {
-
-
-      /* Fundraising Paypal Form */
-      // $('#featured-page-4').hide();
-      $('.footer-widgets .featuredpage').append('<span class="fundraise-close">close</span>');
-
-      $('.fundraise-open a[title="Fundraising"], .footer-widgets a[title="Fundraise"]').click(function(){
-        $('.footer-widgets .featuredpage').show();
-        $('body').css('overflow-y','hidden');
-      });
-
-      $('.fundraise-close').click(function(){
-        $('.footer-widgets .featuredpage').hide();
-        $('body').css('overflow-y','auto');
-      });
-
 
       /*
       * Gallery Lightbox
@@ -93,7 +76,7 @@
     var thatelement = $(this);
     var page1= thatelement.data('page');
     var total = thatelement.data('total');
-    var newPage = page1+1;
+    var newPage1 = page1 + 1;
     var ajaxurl = thatelement.data('url');
     var category = thatelement.data('category');
     $.ajax({
@@ -108,10 +91,10 @@
         console.log(response);
       },
       success: function( response ) {
-        thatelement.data("page", newPage);
+        thatelement.data("page", newPage1);
         $('#loadmore-data').append( response );
 
-        if( newPage == total) {
+        if( newPage1 == total) {
           $loadmore.hide();
         }
 
@@ -126,36 +109,36 @@
   * Ajax Load More Functionality for books
   */
   var $loadmore_books = $(".loadmore-books");
-  var page1 = $loadmore_books.data('page'),
+  var page2 = $loadmore_books.data('page'),
   totalpages = $loadmore_books.data('totalcount');
-  if( page1 == totalpages) {
+  if( page2 == totalpages) {
     $loadmore_books.hide();
   }
 
   $( document ).on( 'click', '.loadmore-books', function() {
-    var thatelement = $(this);
-    var page1= thatelement.data('page');
-    var total = thatelement.data('totalcount');
-    var newPage = page1+1;
-    var ajaxurl = thatelement.data('url');
-    var type = thatelement.data('post');
+    var thatelement2 = $(this);
+    var page1= thatelement2.data('page');
+    var totalBooks = thatelement2.data('totalcount');
+    var newPage2 = page2 + 1;
+    var ajaxurl2 = thatelement2.data('url');
+    var typePost2 = thatelement2.data('post');
 
     $.ajax({
-      url: ajaxurl,
+      url: ajaxurl2,
       type: 'post',
       data: {
-        page: page1,
-        books: type,
+        page: page2,
+        books: typePost2,
         action: 'ajax_load_more_books'
       },
       error: function( response ) {
       },
       success: function( response ) {
-        thatelement.data("page", newPage);
+        thatelement2.data("page", newPage2);
 
         $('#load-books').append( response );
 
-        if( newPage == total) {
+        if( newPage2 == totalBooks) {
           $loadmore_books.hide();
         }
       }
@@ -190,7 +173,7 @@ var validate = function(field, id, regx, range, btn_event) {
     btn_event.preventDefault(btn_event);
   }
 
-}
+};
 
 
 /* 
@@ -241,13 +224,13 @@ var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,
   elements_validate("#sf_country", 'country', name_reg, 100);
 
   //Volunteer Skills
-  elements_validate("textarea[placeholder='Volunteer Professional Skills']", 'volunteer skills', textarea_reg, 500);
+  elements_validate("textarea[placeholder='Volunteer Professional Skills *']", 'volunteer skills', textarea_reg, 500);
 
   // Volunteer Comments
-  elements_validate("textarea[placeholder='Volunteer Comments']", 'volunteer comments', textarea_reg, 500);
+  elements_validate("textarea[placeholder='Volunteer Comments *']", 'volunteer comments', textarea_reg, 500);
 
   // Contact Description
-  elements_validate("textarea[placeholder='Description']", 'description', textarea_reg, 500);
+  elements_validate("textarea[placeholder='Description *']", 'description', textarea_reg, 500);
 
   /* Search Form */
   elements_validate(".search-form input[type='search']",'', name_reg, 100);
@@ -314,17 +297,17 @@ $(".search-form button").click(function(event) {
 
 /* Questions Submit */
 $(".question-form .w2linput.submit").click(function(event) { 
-   /* First Name */
-  validate( 'first name', ".page-template-page_donate #sf_first_name", name_reg, 100, event);
+ /* First Name */
+ validate( 'first name', ".page-template-page_donate #sf_first_name", name_reg, 100, event);
 
-  /* Last Name*/
-  validate( 'last name', ".page-template-page_donate #sf_last_name", name_reg, 100, event);
+ /* Last Name*/
+ validate( 'last name', ".page-template-page_donate #sf_last_name", name_reg, 100, event);
 
-  /* Email*/
-  validate( 'email', ".page-template-page_donate #sf_email", email_reg, 50, event);
+ /* Email*/
+ validate( 'email', ".page-template-page_donate #sf_email", email_reg, 50, event);
 
-  /* Description */
-  validate('description', ".page-template-page_donate .textarea", textarea_reg, 500, event);
+ /* Description */
+ validate('description', ".page-template-page_donate .textarea", textarea_reg, 500, event);
 });
 
 /* Volunteer Submit */
@@ -342,10 +325,10 @@ $(".volunteer-form .w2linput.submit").click(function(event) {
   validate( 'country', ".volunteer-form #sf_country", name_reg, 100, event);
 
   /* Volunteer Skills */
-  validate('volunteer skills', "textarea[placeholder='Volunteer Professional Skills']", textarea_reg, 500, event);
+  validate('volunteer skills', "textarea[placeholder='Volunteer Professional Skills *']", textarea_reg, 500, event);
 
   /* Volunteer comments */
-  validate('volunteer comments', "textarea[placeholder='Volunteer Comments']", textarea_reg, 500, event);  
+  validate('volunteer comments', "textarea[placeholder='Volunteer Comments *']", textarea_reg, 500, event);  
 
   /* Volunteers Language - Dropdown list Validation */
   /*  */
@@ -356,10 +339,7 @@ $(".volunteer-form .w2linput.submit").click(function(event) {
     $('.dropdown-toggle').parent().siblings('p').text(' '); 
   }
 
-
 });
-
-
 
 /*
 * Tabs Functionality for Accordion Plugin
@@ -374,42 +354,17 @@ $('.tabs-nav').click(function(){
  $('div.tabs-content').not('.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','none');
 });
 
-  // Scroll (in pixels) after which the "To Top" link is shown
-  var offset = 300,
-    //Scroll (in pixels) after which the "back to top" link opacity is reduced
-    offset_opacity = 1200,
-    //Duration of the top scrolling animation (in ms)
-    scroll_top_duration = 700,
-    //Get the "To Top" link
-    $back_to_top = $('.to-top');
 
-  //Visible or not "To Top" link
-  $(window).scroll(function(){
-    ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('top-is-visible') : $back_to_top.removeClass('top-is-visible top-fade-out');
-    if( $(this).scrollTop() > offset_opacity ) { 
-      $back_to_top.addClass('top-fade-out');
-    }
-  });
-
-  //Smoothy scroll to top
-  $back_to_top.on('click', function(event){
-    event.preventDefault(event);
-    $('body,html').animate({
-      scrollTop: 0 ,
-    }, scroll_top_duration
-    );
-  });
-
-  /* Multi-select Dropdown */
-  $('.sf_type_multi-select').children('select').addClass('selectpicker');
-  $('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
+/* Multi-select Dropdown */
+$('.sf_type_multi-select').children('select').addClass('selectpicker');
+$('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
 
 
 
-  $('ul.dropdown-menu a').parent().click(function(){
-    console.log('clickekdie');
-    $(this).addClass('fa-check');
-  });
+$('ul.dropdown-menu a').parent().click(function(){
+  console.log('clickekdie');
+  $(this).addClass('fa-check');
+});
 
 });
   /* Document ready ends here */
@@ -418,8 +373,8 @@ $('.tabs-nav').click(function(){
 var $tabs_li = $("#tabs li");
 $(".page-template-page-gallery .entry-content").addClass("tab-detail");
 $tabs_li.on('click', function() {
- var index = $(this).index();
- var child = index+1;
+ var itemNum = $(this).index();
+ var child = itemNum+1;
  $tabs_li.removeClass('active');
  $(this).addClass('active');
  $(".tabs .tab-detail").hide();
@@ -428,31 +383,52 @@ $tabs_li.on('click', function() {
 
 var $research_tabs = $("#research-tabs li");
 $research_tabs.on('click', function() {
- var index = $(this).index();
- var child = index;
- $research_tabs.removeClass('active');
- $(this).addClass('active');
- $(".tabs .tab-detail").hide();
- $(".tabs .tab-detail:nth-child("+ child +")").show();
+  var itemNum = $(this).index();
+  var child = itemNum;
+  $research_tabs.removeClass('active');
+  $(this).addClass('active');
+  $(".tabs .tab-detail").hide();
+  $(".tabs .tab-detail:nth-child("+ child +")").show();
+});
+
+
+/* Scroll (in pixels) after which the "To Top" link is shown*/
+var offset = 300,
+offset_opacity = 1200,
+scroll_top_duration = 700,
+/*Get the "To Top" link*/
+$back_to_top = $('.to-top');
+
+
+/* Visible or not "To Top" link*/
+$(window).scroll(function(){
+  ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('top-is-visible') : $back_to_top.removeClass('top-is-visible top-fade-out');
+  if ( $(this).scrollTop() > offset_opacity ) { 
+    $back_to_top.addClass('top-fade-out');
+  }
+
+});
+
+
+/*Smoothy scroll to top*/
+$back_to_top.on('click', function(event){
+  event.preventDefault(event);
+  $('body,html').animate({
+    scrollTop: 0 ,
+  }, scroll_top_duration
+  );
 });
 
 
 /*Program detail Page animation*/
 var $program_desc = $('.program-desc');
-if($program_desc) {
+if($program_desc[0]) {
   let section_height = $program_desc.offset().top;
   if($(window).width() > 480) {
    section_height = section_height + 250;
   } else {
     section_height = section_height + 100;
-
-    /*Pagination on mobile*/
-
-    $('.pagination-next').children('a').text('»');
-    $('.pagination-previous').children('a').text('«');
-
   }
-
 
   $(this).scroll(function() {
     var window_height = $(window).scrollTop() + $(window).height();

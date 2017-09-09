@@ -69,7 +69,7 @@
 					position: absolute;
 					top: 50%;
 					right: 11px;
-					background-color: #fff;
+					background-color: $white;
 					color: #525252;
 					@include property(transform,translateY(-50%));
 
@@ -142,13 +142,13 @@
 	li a {
 		border: 1px solid $cta-color;
 		@include cta();
-		margin: 0px;
+		margin:0;
 	}
 
 	li.active a,
 	li.pagination-next a,
 	li.pagination-previous a {
-		background-color: #fff;
+		background-color: $white;
 		color: $cta-color;
 	}
 }

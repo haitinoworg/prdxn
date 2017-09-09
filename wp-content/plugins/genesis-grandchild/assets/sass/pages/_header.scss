@@ -9,9 +9,9 @@ body.body-overflow {
 
 .site-container {
 	.site-header {
-		box-shadow: 0px 2px 11px -3px #000;
+		box-shadow:0 2px 11px -3px $black;
 		width: 100%;
-		background-color: #000;
+		background-color: $black;
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -68,7 +68,7 @@ body.body-overflow {
 				font-size: 24px;
 				position: absolute;
 				left: 0;
-				background-color: #000;
+				background-color: $black;
 			}
 
 			@include mobile() { font-size: 18px; }
@@ -104,12 +104,12 @@ body.body-overflow {
 						font-weight: 100;
 						font-size: 15px;
 						&:focus {
-							color: #fff;
 							background: $cta-color;
+							color: $white;
 						}
 						
 						&:hover {
-							background: #fff;
+							background: $white;
 							color: $cta-color;
 						}
 						@include md() {	font-size: 24px; }
@@ -117,15 +117,15 @@ body.body-overflow {
 
 
 					&.current-menu-item a {
-						background-color: #fff;
+						background-color: $white;
 					}
 				}
 
 				a,
 				a:hover {
-					line-height: 50px;
 					padding: 0 1vw;
 					font-family: $font;
+					line-height: 50px;
 
 					@include lg() { padding: 0 13px; }
 				}
@@ -140,8 +140,8 @@ body.body-overflow {
 						padding: 20px 0 20px 12px;
 					}
 					a, a:hover {
-						line-height: 20px;
 						padding: 0 15px 15px;
+						line-height: 20px;
 
 						@include tab () { line-height: 34px; }
 					}
@@ -170,7 +170,7 @@ body.body-overflow {
 			// Important used to override theme styling
 			color: #f16522 !important;
 			text-indent: 50px;
-			font-family: Roboto;
+			font-family: $font;
 			font-size: 35px;
 			font-weight: 100;
 			line-height: 20px;
@@ -239,10 +239,10 @@ body.body-overflow {
 			& > a {	margin-right: 60px;	}
 			&:before {
 				height: 20px;
-				content: "\f347";
 				float: right;
 				font: normal 20px/1 'dashicons';
 				right: 0;
+				content: "\f347";
 				text-align: right;
 				z-index: 9999;
 			}
@@ -266,8 +266,8 @@ body.body-overflow {
 			transition: opacity .4s ease-in-out;
 
 			.sub-menu {
-				margin: 0;
 				padding-left: 25px;
+				margin: 0;
 				background-color: transparent;
 			}
 			li a,
@@ -291,8 +291,6 @@ body.body-overflow {
 	.site-header {
 		.genesis-nav-menu {
 			&.responsive-menu	{
-				// .sub-menu li a,
-				// .sub-menu { color: #fff; }
 				li a:hover,
 				.sub-menu a:hover {	color: #f16522;	}
 			}
@@ -320,8 +318,8 @@ body.body-overflow {
 						height: 20px;
 						padding: 0;
 						display: inline-block;
-						content: "\f347";
 						float: right;
+						content: "\f347";
 						font: normal 20px/1 'dashicons';
 						text-align: right;
 					}
@@ -336,17 +334,17 @@ body.body-overflow {
 					position: relative;
 					left: auto;
 					z-index: 99;
-					opacity: 1;
 					background-color: rgba(255, 255, 255, .05);
 					-moz-transition: opacity .4s ease-in-out;
 					-ms-transition: opacity .4s ease-in-out;
 					-o-transition: opacity .4s ease-in-out;
 					-webkit-transition: opacity .4s ease-in-out;
+					opacity: 1;
 					transition: opacity .4s ease-in-out;
 
 					.sub-menu {
-						margin: 0;
 						padding-left: 25px;
+						margin: 0;
 						background-color: transparent;
 					}
 					li a,

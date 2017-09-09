@@ -186,7 +186,7 @@ main.content {
 
 	.entry-title {
 		a {
-			color: #000;
+			color: $black;
 			&:hover { color: $cta-color;	}
 		}
 	}
@@ -258,7 +258,7 @@ body {
 					height: 100px;
 					border-radius: 100%;
 					padding: 18px;
-					background-color: #fff;
+					background-color: $white;
 				}
 
 				.wp-caption-text { 
@@ -277,7 +277,7 @@ body {
 
 	.gs_logo_single {
 		padding: 10px 0;
-		background-color: #fff;
+		background-color: $white;
 
 		a { display: block; }
 		
@@ -310,7 +310,7 @@ body .breadcrumb {
 .post-navigations {
 	width: 100%;
 	display: block;
-	font-size: 0px;
+	font-size:0;
 
 	.left-link { text-align: left; }
 	.right-link { text-align: right; }

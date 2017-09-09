@@ -27,10 +27,20 @@
 				width: 100%;
 				position: absolute;
 				top: 50%;
+				right: 4%;
 				@include property(transform, translateY(-50%));
 				z-index: 5;
+			
+			@include tab() { right: inherit; }
 
-				h1, h2, h3 { margin-bottom: 0; }
+				h1, h2, h3 { 
+					margin-bottom: 0; 
+					text-align: right;
+					text-transform: uppercase;
+					@include tab() {
+						text-align: left;
+					}
+				}
 			}
 		}
 		img {
@@ -106,7 +116,7 @@
 					a.accordions-tab-head {
 						border: 1px solid #ddd;
 						border-bottom: none;
-						background-color: #fff;
+						background-color: $white;
 						/* Important used here to override plugin style */
 						color: $cta-color !important;
 						font-weight: 700;
@@ -121,8 +131,8 @@
 
 				li {
 					@include tab() { 
-						float: left;
 						width: 49.9%; 
+						float: left;
 						text-align: center;
 					}
 
@@ -135,8 +145,7 @@
 						border: .5px solid #ddd;
 						border-bottom: 0;
 						border-left: 0;
-						background-color: $cta-color;
-						color: #fff;
+						@include props(bgcta, bgcta);
 						i { display: none; }	
 					}
 				}
@@ -164,19 +173,16 @@
 					&:after {
 						content: ">";
 						position: absolute;
-						left: -20px;
 						top: 0;
+						left: -20px;
 						font: 900 17px $font;
 					}
 				}
 
 				h2, h3, h4 { 
-					font-size: 32px;
 					margin: 33px 0 9px;
-
-					@include mobile() {
-						font-size: 30px;
-					}
+					font-size: 32px;
+					@include mobile() { font-size: 30px; }
 				}
 
 				h2, h3 { &:first-child { margin-top: 9px; } }
@@ -233,8 +239,8 @@
 				&:after {
 					content: ">";
 					position: absolute;
-					left: -20px;
 					top: 0;
+					left: -20px;
 					font: 900 17px $font;
 				}
 			}

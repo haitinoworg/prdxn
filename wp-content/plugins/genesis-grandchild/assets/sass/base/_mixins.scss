@@ -93,12 +93,12 @@ Common Mixins ============================================
 
 @mixin title-after() {
 	&:after {
-		border-bottom: 1px solid #000;
-		content: "";
-		display: block;
-		margin: 0 auto;
-		padding-bottom: 30px;
 		width: 10%;
+		padding-bottom: 30px;
+		border-bottom: 1px solid $black;
+		margin: 0 auto;
+		display: block;
+		content: "";
 	}
 }
 
@@ -112,22 +112,21 @@ Common Mixins ============================================
 	border: 1px solid $cta-color;
 	@include property(border-radius, 2px);
 	background-color: $cta-color;
-	color: #fff;
+	color: $white;
 	font: 15px $font;
 	line-height: 20px;
-	text-transform: uppercase;
 	letter-spacing: .7px;
+	text-transform: uppercase;
 
 	&:focus {
 		border-color: $cta-color;
 		background-color: $cta-color;
-		color: #fff;
+		color: $white;
 	}
 	&:hover {
 		border-color: $cta-color;
-		background-color: #fff;
+		background-color: $white;
 		color: $cta-color;
-
 	}
 
 	@include maxWidth(1025) {
@@ -135,51 +134,14 @@ Common Mixins ============================================
 		&:hover {
 			border: 1px solid $cta-color;
 			background-color: $cta-color;
-			color: #fff;
+			color: $white;
 			font: 15px $font;
 		}
 	}
 }
 
 @mixin sub-title() {
-	margin-bottom: 5px;
 	font: 30px Roboto, sans-serif;
 	text-transform: capitalize;
 }
 
-
-@mixin single-article-content() {
-	article.entry {
-		padding: 0;
-		margin-bottom: 63px;
-		background-color: #f2f2f2;
-		.entry-content { 
-			@include boxmodel(3,70%,5,63px 0,7,0 auto);
-			clear: both;
-			@include tab() { width: 93%; }
-			@include mobile() { text-align: center; }
-		}
-		&,
-		p { text-align: center; }
-
-		ul { 
-			width: 65%;
-			margin: 30px auto 0;
-			display: flex;
-			flex-wrap: wrap;
-			@include md() { width: 90%; }
-			@include mobile() { 
-				width: 60%; 
-				min-width: 260px;
-				display: inline-block;
-				text-align: left;
-			}
-		}
-		ul li { 
-			width: 49%;
-			margin: 5px 0;
-			list-style-position: inside;
-			@include mobile() { width: 100%; }
-		}
-	}
-}

@@ -9,8 +9,8 @@
 	.entry { margin-bottom: 0; }
 	
 	.search-form {
-		position: relative;
 		margin: 31px 0;
+		position: relative;
 		input[type="search"] {
 			padding-right: 80px;
 		}
@@ -22,13 +22,13 @@
 		button[type="submit"] {
 			height: 100%;
 			position: absolute;
-			right: 0;
 			top: 0;
+			right: 0;
 
 			&:hover,
 			&:focus {
 				background-color: $cta-color;
-				color: #fff;
+				color: $white;
 			}
 		}
 	}

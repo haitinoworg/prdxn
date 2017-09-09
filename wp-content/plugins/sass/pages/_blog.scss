@@ -1,0 +1,154 @@
+
+/*
+* Blog Page Styling =========================================================
+*/
+
+.page-template-page_blog {
+	.content-sidebar-wrap {
+		box-sizing: border-box;
+		width: 84%;
+		padding: 63px 0 66px;
+		margin: 0 auto;
+
+	}
+
+	main.content { 
+		width: 60%;
+		padding-bottom: 0;
+
+		@include tab() {
+			width: 100%;
+		}
+
+		.entry-title {	margin-bottom: 48px;	}
+	}
+
+	aside.sidebar {
+		width: 40%;
+		padding-left: 50px;
+		padding-top: 118px;
+		font-family: $font;
+		
+		@include tab() {
+			width: 100%;
+			padding-left: 0;
+			padding-top: 63px;
+		}
+
+		.widget { padding: 0;	}
+
+		.widget-title { 
+			margin-bottom: 24px; 
+			font: 32px $font;
+			line-height: 28px;
+
+			@include mobile() {
+				font-size: 30px;
+			}
+		}
+
+		.widget_search {
+			margin-bottom: 0;
+
+			.widget-wrap { margin-bottom: 48px; }
+			.search-form {
+				position: relative;
+				font-size: 15px;
+				input,
+				input:focus { 
+					border-color: #ddd;
+					outline: none;
+					font-size: 15px;
+				}
+
+				button {
+					width: auto;
+					height: auto;
+					padding: 9px;
+					margin: 0;
+					position: absolute;
+					top: 50%;
+					right: 11px;
+					background-color: #fff;
+					color: #525252;
+					@include property(transform,translateY(-50%));
+
+				}
+			}
+
+			&:after { 
+				content: "";
+				width: 100%;
+				border: 1px solid $cta-color;
+				margin-bottom: 45px;
+			}
+		}
+
+		select,
+		input {
+			color: #525252;
+			&,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		select {
+			@include property(appearance, none);
+			background: url(../../uploads/2017/05/ic_arrow_drop_down_48px-128.png) no-repeat center right;
+			background-size: 40px;
+		}
+
+		iframe { margin: 0 auto;  }
+		
+	}
+
+	article.entry {
+		padding: 0 0 50px;
+		margin: 0;
+
+		.entry-title { display: none;	}
+
+		.entry-content {
+			h3 { margin: 5px 0 10px; }
+
+			a {
+				display: block;
+				width: 100%;
+				img { width: 100%;	}
+			}
+
+			.blog-post-main-title {
+				div {
+					font: 17px $font;
+					h2, h3, h4, h5, p {
+						margin: 0;
+						font: 17px $font;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.widget_categories,
+.widget_archive {
+	.screen-reader-text { display: none; }
+}
+
+.archive-pagination.pagination {
+	margin: 0;
+	li a {
+		border: 1px solid $cta-color;
+		@include cta();
+		margin: 0px;
+	}
+
+	li.active a,
+	li.pagination-next a,
+	li.pagination-previous a {
+		background-color: #fff;
+		color: $cta-color;
+	}
+}
