@@ -26,10 +26,10 @@
 			.hero-content {
 				width: 100%;
 				position: absolute;
+				z-index: 5;
 				top: 50%;
 				right: 4%;
 				@include property(transform, translateY(-50%));
-				z-index: 5;
 			
 			@include tab() { right: inherit; }
 
@@ -116,7 +116,7 @@
 			margin-top: 59px;
 			ul.ui-tabs-nav {
 				@include tab() { 
-					display:flex;
+					display: flex;
 					flex-wrap: wrap;
 				}
 
@@ -166,12 +166,12 @@
 
 			.tabs-content { 
 				min-height: 273px;
-				padding-left: 28px;
 				padding-bottom: 0;
+				padding-left: 28px;
 
 				@include tab() {
-					padding-left: 0;
 					padding-right: 0;
+					padding-left: 0;
 				}
 
 				ul { 
@@ -203,8 +203,8 @@
 				p { margin: 10px 0 0; }
 
 				a { 
-					font-size: 15px; 
 					font-family: $font;
+					font-size: 15px; 
 					&:hover { color: $cta-color; }
 				}
 			}

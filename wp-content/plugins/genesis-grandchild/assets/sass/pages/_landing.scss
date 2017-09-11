@@ -16,8 +16,8 @@
 
 		h3,h4,h5,h6 { margin: 0 0 13px;	}
 		h3,h4 { 
-			font-size: 32px; 
 			font-family: $font;
+			font-size: 32px; 
 			@include mobile() { font-size: 30px;	}
 		}
 
@@ -81,6 +81,7 @@ body.faq {
 				padding: 6px 12px;
 				margin-top: 36px;
 				margin-bottom: 0;
+				-webkit-border-radius: 2px;
 				border-radius: 2px;
 				background: rgba(241, 101, 34, .82);
 				color: $white;

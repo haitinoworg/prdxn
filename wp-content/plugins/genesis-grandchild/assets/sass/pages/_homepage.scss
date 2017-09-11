@@ -99,10 +99,11 @@ Content Area
 }
 
 .contact-form-7 .salesforce_w2l_lead .w2lsubmit { 
-	border:0 solid;
-	-webkit-appearance: none;
+	border: 0 solid;
 	-webkit-border-radius: 0;
 	border-radius: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
 }
 
 /* Section common style
@@ -121,8 +122,8 @@ Content Area
 	
 	.wrap { 
 		width: 84%;
-		margin: 0 auto;
 		padding: 0; 
+		margin: 0 auto;
 		clear: both;
 	} 
 	a {	
@@ -145,9 +146,9 @@ Content Area
 		width: 100%;
 		height: 100%;
 		position: absolute;
+		z-index: 0;
 		top: 0;
 		left: 0;
-		z-index: 0;
 		background-color: $black;
 		content: "";
 		opacity: .56;

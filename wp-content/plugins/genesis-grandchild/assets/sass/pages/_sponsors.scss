@@ -1,8 +1,8 @@
 .page-template-page-sponsor {
   .site-inner {
     .content {
-      width: 84%;
       max-width: $maxWidth;
+      width: 84%;
       padding: 0;
       margin: 0 auto;
       float: none;
@@ -31,15 +31,15 @@
   float: left;
   cursor: pointer;
   font-family: $font;
+  @include property(perspective, 1px);
   text-align: center;
   @include property(transform-style, preserve-3d);
-  @include property(perspective, 1px);
 
   .news-image a {
     width: 56%;
     display: inline-block;
-    font-family: $font;
     @include property(animation,sponsors-icons-back .3s ease-in forwards);
+    font-family: $font;
   }
 
 
@@ -55,9 +55,9 @@
 
 .news-image {
 	padding: 3%;
-	white-space: nowrap;
-	@include props(dtbc, vam, posr);
+  @include props(dtbc, vam, posr);
   font-family: $font;
+	white-space: nowrap;
 }
 
 
@@ -100,10 +100,7 @@ main.content {
   }
 }
 
-@keyframes sponsors-icons {
-  from { @include property(transform,scale(1)); }
-  to { @include property(transform,scale(1.4)); }
-}
+
 
 @-webkit-keyframes sponsors-icons {
   from { @include property(transform,scale(1)); }
@@ -120,9 +117,9 @@ main.content {
   to { @include property(transform,scale(1.4)); }
 }
 
-@keyframes sponsors-icons-back {
- from { @include property(transform,scale(1.4)); }
- to { @include property(transform,scale(1)); } 
+@keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
 }
 
 @-webkit-keyframes sponsors-icons-back {
@@ -136,6 +133,11 @@ main.content {
 }
 
 @-o-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@keyframes sponsors-icons-back {
  from { @include property(transform,scale(1.4)); }
  to { @include property(transform,scale(1)); } 
 }

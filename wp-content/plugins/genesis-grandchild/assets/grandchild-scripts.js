@@ -1,34 +1,66 @@
-(function( $ ) {
+  (function($) {
 
-    // Header Height
+
+//   /* Document Starts Here */
+//   $(document).ready(function() {
+
+
+    /* Header Height*/
     var headerHeight = $('.site-header').height();
     $('.site-inner').css('margin-top', headerHeight + 'px');
 
-    // Header Responsive Scroll
+    /*
+    * Header Responsive Scroll
+    */
     $('.responsive-menu-icon').click(function() { 
       $('body').toggleClass('body-overflow');
     });
 
-    // Gallery Lightbox
-    var $gallerySec = $('.gallery-section');
-    $gallerySec.hide();
-    if($gallerySec.find('*').hasClass('grid-item')) {
-      $gallerySec.show(); 
-      $gallerySec.addClass('gallery-modal');
-      $('body').addClass('body-overflow');
-    }
 
-    $('.close-lightbox').click( function() {
-      $gallerySec.hide();
-      $('body').removeClass('body-overflow');
+    /*
+    * Gallery Lightbox
+    */
+
+    $('.gallery-section').hide();
+    if($('.gallery-section').find('*').hasClass('grid-item')) {
+      $('.gallery-section').show(); 
+      $('.gallery-section').addClass('gallery-modal');
+      $('body').css('overflow-y','hidden');
+    } 
+
+    $('.close-lightbox').click(function(){
+      $('.gallery-section').hide();
+      $('body').css('overflow-y','auto');
     });
 
     $('.cws-pagination').children('span').remove();
 
-    // Site Logo
+    /* Dropdown Button */
+    $( "body" ).delegate( ".dropdown-toggle", "click", function() {
+      $('.check-mark').addClass('fa fa-check fa-1x');
+      $('.dropdown-menu.open').css('min-height', '100%');
+      $('.dropdown-menu.open').css('overflow', 'visible');
+      $('.dropdown-menu.open').slideToggle();
+      $('ul.dropdown-menu li:first-child').css('display','none');
+    });
+
+
+    /*
+    * Site Logo
+    */
     $('.site-title').children('a').attr("title",'Haiti Now');
 
-    // Ajax Load More For movies page
+    /*
+    * Search Button on Blog
+    */
+    var $search = $('.search-form');
+    $search.children('input[type=submit]').addClass('fa fa-search fa-lg');
+    $search.children('input[type=submit]').remove();
+    $search.append('<button type="submit"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>');
+
+    /*
+    * Ajax Load More
+    */
     var $loadmore = $(".loadmore");
     var moviespage = $loadmore.data('page'),
     total = $loadmore.data('total');
@@ -62,11 +94,17 @@
           if( newPage1 == total) {
             $loadmore.hide();
           }
+
         }
+
       });
+
     });
 
-    // Ajax Load More Functionality for books
+
+    /*
+    * Ajax Load More Functionality for books
+    */
     var $loadmore_books = $(".loadmore-books");
     var page2 = $loadmore_books.data('page'),
     totalpages = $loadmore_books.data('totalcount');
@@ -101,24 +139,21 @@
             $loadmore_books.hide();
           }
         }
+
       });
+
     });
 
-      /**
-     * [validate(): This function is used for form validations.
-     *  @param  {[type]} field    [input field type like name, email, etc.]
-     *  @param  {[type]} id   [Input field id]
-     *  @param  {[type]} regx   [Regular expression]
-     *  @param  {[type]} range  [Maximum allowed range into specific inputs]
-     *  @param  {[type]} btn_event  [button event to trigger or prevent click event.]
-     *  @return {[type]} error message  [Return error message.]
-     */
+
+    /*
+    * Form Validation Function =====================================
+    */
     var validate = function(field, id, regx, range, btn_event) {
       var input_value = $(id).val();
       var reg = regx;
 
       if(input_value != "" && input_value != null) {
-        if(!(reg.test(input_value)) && (input_value.length <= range)) {
+        if(!(reg.test(input_value)) && input_value.length <= range) {
           $(id).siblings('p').removeClass('blank-text');
           $(id).siblings('p').text('Please enter a valid ' + field + '.');
           btn_event.preventDefault(btn_event);      
@@ -138,25 +173,17 @@
     };
 
 
-    /**
-     * Regex
-     * Regex type: name regex, textarea regex, phone regex, email regex.
-     */
+    /* 
+    * Regex =======================================================
+    */
     var name_reg = /^[a-zA-Z0-9$ &+, :;=^@#|'"\\\[\]. ^()%!{}-]{1,100}$/;
     var textarea_reg = /^[a-zA-Z0-9$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,500}$/;
     var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
     var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,3}$/;
 
-    /**
-     * [elements_validate: Passes argument into validate() 
-     *  function for focus-out and focus-in of input fields.]
-     *  @param  {[type]} elemen_id    [input field id]
-     *  @param  {[type]} param1   [Input field type]
-     *  @param  {[type]} param2   [Regular expression]
-     *  @param  {[type]} param_range  [Maximum allowed range into specific inputs]
-     *  @return   {[type]} validate()  [This function is used to validate inputs.]
-     */
-    
+    /*
+    * Form Focus in and Focus out ==================================
+    */
     function elements_validate(elemen_id, param1, param2, param_range) {
       $(elemen_id).on('focusout', function() {
         $(elemen_id).siblings('p').removeClass('blank-text');
@@ -169,132 +196,201 @@
 
     }
 
-   /**
-    * Fields Validations
-    * Input Fields Name: First name, Last Name, Email, Country, Volunteer Skills,
-    * Volunteer Comments, Contact Description
+    /*
+    * Fields data ====================================
     */
     $('.site-inner .sf_field').append('<p>&nbsp;</p>');
     $('.widget .sf_field').append('<p>&nbsp;</p>');
     $('.site-inner .sf_field_description').children('p').text('Maximum limit is 500 characters.');
     $('.site-inner .sf_field_00NA000000723E0').children('p').text('Maximum limit is 500 characters.');
-    elements_validate("#sf_first_name", 'first name', name_reg, 100);
-    elements_validate("#sf_last_name", 'last name', name_reg, 100);
-    elements_validate("#phone-number", 'phone number', phone_reg, 20);
-    elements_validate("#sf_email", 'email', email_reg, 50);
-    elements_validate("#sf_country", 'country', name_reg, 100);
-    elements_validate("textarea[placeholder='Volunteer Professional Skills *']", 'volunteer skills', textarea_reg, 500);
-    elements_validate("textarea[placeholder='Volunteer Comments *']", 'volunteer comments', textarea_reg, 500);
-    elements_validate("textarea[placeholder='Description *']", 'description', textarea_reg, 500);
-    elements_validate(".search-form input[type='search']",'', name_reg, 100);
+     // First Name
+     elements_validate("#sf_first_name", 'first name', name_reg, 100);
 
-    /**
-     * Subscribe form fields 
-     * Fields Name: First Name, Email
-     */
-    elements_validate(".textwidget #sf_first_name", 'first name', name_reg, 100); 
-    elements_validate(".textwidget #sf_email", 'email', email_reg, 50);
+     // Last Name
+     elements_validate("#sf_last_name", 'last name', name_reg, 100);
 
-    /**
-     * Subscribe form Submition
-     * Fields name: First name, Email 
-     */
+      // Phone Number
+      elements_validate("#phone-number", 'phone number', phone_reg, 20);
+
+      // Email
+      elements_validate("#sf_email", 'email', email_reg, 50);
+
+      // Country
+      elements_validate("#sf_country", 'country', name_reg, 100);
+
+      //Volunteer Skills
+      elements_validate("textarea[placeholder='Volunteer Professional Skills *']", 'volunteer skills', textarea_reg, 500);
+
+      // Volunteer Comments
+      elements_validate("textarea[placeholder='Volunteer Comments *']", 'volunteer comments', textarea_reg, 500);
+
+      // Contact Description
+      elements_validate("textarea[placeholder='Description *']", 'description', textarea_reg, 500);
+
+      /* Search Form */
+      elements_validate(".search-form input[type='search']",'', name_reg, 100);
+
+      /* subscribe form fields */
+      //First Name
+      elements_validate(".textwidget #sf_first_name", 'first name', name_reg, 100);
+
+      // Email
+      elements_validate(".textwidget #sf_email", 'email', email_reg, 50);
+
+
+    /*
+    * Submit Button Validation =========================================
+    */
+
+    /* Subscribe Submit */
     $(".textwidget .w2linput.submit").click(function(event) { 
+      // First Name
       validate( 'first name',".textwidget #sf_first_name", name_reg, 100, event);
+      // Email
       validate( 'email', ".textwidget #sf_email", email_reg, 50, event);
     });
 
 
-    /**
-     * Contact us form Submition
-     * Fields name: First name, Last name, Email, description
-     */
+    /* Contact us Submit */
     $(".inside .w2linput.submit").click(function(event) { 
+      /* First Name */
       validate( 'first name', ".inside #sf_first_name", name_reg, 100, event);
+
+      /* Last Name*/
       validate( 'last name', ".inside #sf_last_name", name_reg, 100, event);
+
+      /* Email*/
       validate( 'email', ".inside #sf_email", email_reg, 50, event);
+
+      /* Description */
       validate('description', ".inside .textarea", textarea_reg, 500, event);
+
     });
 
-    /**
-     * Parnters form Submition
-     *  Fields Name: First Name, Last Name, Email, Description
-     */
+
+    /* Parnters Contact Form */
     $(".page-template-page-sponsor .w2linput.submit").click(function(event) { 
+      /* First Name */
       validate( 'first name', ".page-template-page-sponsor #sf_first_name", name_reg, 100, event);
+
+      /* Last Name*/
       validate( 'last name', ".page-template-page-sponsor #sf_last_name", name_reg, 100, event);
+
+      /* Email*/
       validate( 'email', ".page-template-page-sponsor #sf_email", email_reg, 50, event);
+
+      /* Description */
       validate('description', ".page-template-page-sponsor .textarea", textarea_reg, 500, event);
+
     });
 
-    // Search form Submition  Field Name: Search
+
+    /* Search Submit */
     $(".search-form button").click(function(event) {
       validate('search', ".search-form input", '', '', 500, event);
     });
 
-
-    /** 
-     * Questions form Submition 
-     * Fields Name: First Name, Last Name, Email, Description
-     */
+    /* Questions Submit */
     $(".question-form .w2linput.submit").click(function(event) { 
+     /* First Name */
      validate( 'first name', ".page-template-page_donate #sf_first_name", name_reg, 100, event);
+
+     /* Last Name*/
      validate( 'last name', ".page-template-page_donate #sf_last_name", name_reg, 100, event);
+
+     /* Email*/
      validate( 'email', ".page-template-page_donate #sf_email", email_reg, 50, event);
+
+     /* Description */
      validate('description', ".page-template-page_donate .textarea", textarea_reg, 500, event);
     });
 
-    /**
-     * Volunteer form Submition
-     * Fields Name: First name, Last name, Email, Country, Volunteer Skills,
-     * Volunteer Comments, Volunteers Language - Dropdown list
-     */
+    /* Volunteer Submit */
     $(".volunteer-form .w2linput.submit").click(function(event) { 
+      /* First Name */
       validate( 'first name', ".volunteer-form #sf_first_name", name_reg, 100, event);
+
+      /* Last Name*/
       validate( 'last name', ".volunteer-form #sf_last_name", name_reg, 100, event);
+
+      /* Email*/
       validate( 'email', ".volunteer-form #sf_email", email_reg, 50, event);
+
+      /* Country */
       validate( 'country', ".volunteer-form #sf_country", name_reg, 100, event);
+
+      /* Volunteer Skills */
       validate('volunteer skills', "textarea[placeholder='Volunteer Professional Skills *']", textarea_reg, 500, event);
+
+      /* Volunteer comments */
       validate('volunteer comments', "textarea[placeholder='Volunteer Comments *']", textarea_reg, 500, event);  
 
-      var $dropdownTog = $('.dropdown-toggle');
-      if($dropdownTog.attr('title') == "Volunteer Languages") {
-        $dropdownTog.parent().siblings('p').text('Please select volunteer languages.');
+      /* Volunteers Language - Dropdown list Validation */
+      /*  */
+      if($('.dropdown-toggle').attr('title') == "Volunteer Languages") {
+        $('.dropdown-toggle').parent().siblings('p').text('Please select volunteer languages.');
         event.preventDefault(event);
       } else {
-        $dropdownTog.parent().siblings('p').text(' '); 
+        $('.dropdown-toggle').parent().siblings('p').text(' '); 
       }
 
     });
 
-    // gallery page1tab
-    $(".page-template-page-gallery .entry-content").addClass("tab-detail");
-    $("#tabs ul li").on('click', function() {
-     var itemNum = $(this).index();
-     var child = itemNum + 1;
-     $(this).siblings('li').removeClass('active');
-     $(this).addClass('active');
-     $(".tabs .tab-detail").hide();
-     $(".tabs .tab-detail:nth-child("+ child +")").show();
+    /*
+    * Tabs Functionality for Accordion Plugin
+    */
+
+    $('.tabs-nav').click(function(){
+      var myEm = $(this).attr('aria-labelledby');
+      var tabcontent = $('div.tabs-content').attr('aria-labelledby');
+      $(this).addClass('ui-tabs-active');
+      $(this).siblings('.tabs-nav').removeClass('ui-tabs-active');
+      $('div.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','block');
+      $('div.tabs-content').not('.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').css('display','none');
     });
 
-    $("#research-tabs ul li").on('click', function() {
+
+    /* Multi-select Dropdown */
+    $('.sf_type_multi-select').children('select').addClass('selectpicker');
+    $('.sf_type_multi-select').children('select').attr('title','Volunteer Languages');
+
+
+
+    $('ul.dropdown-menu a').parent().click(function(){
+      $(this).addClass('fa-check');
+    });
+
+    // gallery page1tab
+    var $tabs_li = $("#tabs li");
+    $(".page-template-page-gallery .entry-content").addClass("tab-detail");
+    $tabs_li.on('click', function() {
+     var itemNum = $(this).index();
+     var child = itemNum + 1;
+     $tabs_li.removeClass('active');
+     $(this).addClass('active');
+     $(".tabs .tab-detail").hide();
+     $(".tabs .tab-detail:nth-child("+child+")").show();
+    });
+
+    var $research_tabs = $("#research-tabs li");
+    $research_tabs.on('click', function() {
       var itemNum = $(this).index();
       var child = itemNum;
-      $(this).siblings().removeClass('active');
+      $research_tabs.removeClass('active');
       $(this).addClass('active');
       $(".tabs .tab-detail").hide();
       $(".tabs .tab-detail:nth-child("+ child +")").show();
     });
 
 
-    // Scroll (in pixels) after which the "To Top" link is shown
+    /* Scroll (in pixels) after which the "To Top" link is shown*/
     var offset = 300,
     offset_opacity = 1200,
     scroll_top_duration = 700,
     $back_to_top = $('.to-top');
 
-    // Visible or not "To Top" link
+
+    /* Visible or not "To Top" link*/
     $(window).scroll(function(){
       ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('top-is-visible') : $back_to_top.removeClass('top-is-visible top-fade-out');
       if ( $(this).scrollTop() > offset_opacity ) { 
@@ -304,7 +400,7 @@
     });
 
 
-    // Smoothy scroll to top
+    /*Smoothy scroll to top*/
     $back_to_top.on('click', function(event){
       event.preventDefault(event);
       $('body,html').animate({
@@ -314,10 +410,10 @@
     });
 
 
-    // Program detail Page animation
+    /*Program detail Page animation*/
     var $program_desc = $('.program-desc');
-    if($program_desc.length > 0) {
-      var section_height = $program_desc.offset().top;
+    if($program_desc[0]) {
+      let section_height = $program_desc.offset().top;
       if($(window).width() > 480) {
        section_height = section_height + 250;
       } else {
@@ -334,31 +430,10 @@
 
     }
 
-  // Multi-select Dropdown
-  var $multiSelect = $('.sf_type_multi-select').children('select');
-  $multiSelect.addClass('selectpicker');
-  $multiSelect.attr('title','Volunteer Languages');
-
-    // Dropdown Button
-    $( "body" ).delegate( ".dropdown-toggle", "click", function() {
-      var $dropdownOpen = $('.dropdown-menu.open');
-      $('.check-mark').addClass('fa fa-check fa-1x');
-      $dropdownOpen.css('min-height', '100%');
-      $dropdownOpen.css('overflow', 'visible');
-      $dropdownOpen.slideToggle();
-      $('ul.dropdown-menu li:first-child').hide();
-    });
-
-  // Tabs Functionality for Accordion Plugin
-  $('.tabs-nav').click(function() {
-    var myEm = $(this).attr('aria-labelledby');
-    var tabcontent = $('div.tabs-content').attr('aria-labelledby');
-    $(this).addClass('ui-tabs-active');
-    $(this).siblings('.tabs-nav').removeClass('ui-tabs-active');
-    $('div.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').show();
-    $('div.tabs-content').not('.tabs-content[aria-labelledby = '+ $(this).attr('aria-labelledby') +']').hide();
-  });
+// });
+// /* Document ready ends here */
 
 
-})( jQuery );
+
+})(jQuery);
 

@@ -17,10 +17,10 @@
 
 	// main
 	.content {
-		@include property(transform-style,preserve-3d);
-		@include property(perspective, 30px);
 		@include boxmodel(3,84%,5,0,7,0 auto);
 		float: none;
+		@include property(perspective, 30px);
+		@include property(transform-style,preserve-3d);
 		article.entry { margin: 0; }
 	}
 
@@ -41,7 +41,7 @@
 	}
 
 	.columns-page.books {
-		.entry { margin: 0 auto 0; }
+		.entry { margin: 0 auto; }
 	}
 
 
@@ -70,12 +70,12 @@
 			padding: 54%;
 			@include props(db,ovh, posr);	
 			img {
-				width: 100%;
 				max-width: inherit;
+				width: 100%;
 				height: auto;
 				position: absolute;
-				left: 0;
 				top: 0;
+				left: 0;
 
 				@include tab() { height: auto; }
 			}
@@ -88,9 +88,9 @@
 		.entry-content {
 			box-sizing: border-box;
 			width: 100%;
+			@include props(ovh);
 			@include props(posa);
 			left: 0;
-			@include props(ovh);
 
 			@include tab() {
 				width: 100%;
@@ -111,14 +111,14 @@
 
 	.two-columns {
 		@include boxmodel(3,38%,5,0,7,0);
-		@include props(dib, ovh, tac, vat);
+		@include props(dib, ovh, vat, tac);
 
 		&:nth-child(2n) { margin-left: 9.1%; }
 
 		@include tab() {
 			width: 100%;
-			display: block;
 			margin: 30px 0 0;
+			display: block;
 			&:nth-child(2n) { margin-left: 0; }
 		}
 
@@ -183,15 +183,15 @@
 	*/
 	.three-columns {
 		@include boxmodel(3,29.5%,5,0,7,0 0 54px);
-		@include props(dib, ovh, tac, vat);
+		@include props(dib, ovh, vat, tac);
 		&:nth-child(3n + 2) { margin: 0 4.5% 54px; }
 
 		@include md() { 
 			width: 46%;
 			&:nth-child(3n + 2) { margin: 0; }			
 			&:nth-child(2n) { 
-				margin-left: 6%; 
 				margin-bottom: 54px;
+				margin-left: 6%; 
 			}
 			margin: 0 0 54px;
 		}
@@ -274,186 +274,189 @@
 
 @include minWidth(769px) {
 
-	@keyframes text-off {
-		from {
-			opacity: 1;
-			z-index: 1;
-		}
-		to {
-			opacity: 0;
-			z-index: 0;
-		}
-	}
-
 	@-webkit-keyframes text-off {
 		from {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 
 		to {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
 
 	@-moz-keyframes text-off {
 		from {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 
 		to {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
 
 	@-o-keyframes text-off {
 		from {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 
 		to {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
 
-	@keyframes text-on {
-		0% {
-			opacity: 0;
-			z-index: 0;
-		}
-		100% {
-			opacity: 1;
+
+	@keyframes text-off {
+		from {
 			z-index: 1;
+			opacity: 1;
+		}
+		to {
+			z-index: 0;
+			opacity: 0;
 		}
 	}
 
 	@-webkit-keyframes text-on {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
 	@-moz-keyframes text-on {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
 	@-o-keyframes text-on {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
-	@keyframes image-flip {
+	@keyframes text-on {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
+	
 	@-webkit-keyframes image-flip {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
 	@-moz-keyframes image-flip {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
 
 	@-o-keyframes image-flip {
 		0% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 	}
 
-
-	@keyframes image-off {
+	@keyframes image-flip {
 		0% {
-			opacity: 1;
-			z-index: 1;
+			z-index: 0;
+			opacity: 0;
 		}
 		100% {
-			opacity: 0;
-			z-index: 0;
+			z-index: 1;
+			opacity: 1;
 		}
 	}
+
 
 	@-webkit-keyframes image-off {
 		0% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 		100% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
 
 	@-moz-keyframes image-off {
 		0% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 		100% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
 
 	@-o-keyframes image-off {
 		0% {
-			opacity: 1;
 			z-index: 1;
+			opacity: 1;
 		}
 		100% {
-			opacity: 0;
 			z-index: 0;
+			opacity: 0;
 		}
 	}
+
+	@keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
 
 }
 
@@ -472,10 +475,10 @@
 	.accordion-content {
 		p { margin: 15px 0 17px; }
 		p a {
-			width: auto;
-			height: auto;
 			max-height: 100%;
 			min-height: 100%;
+			width: auto;
+			height: auto;
 			margin: 0;
 			float: none;
 			text-decoration: none;
@@ -498,7 +501,7 @@
 
 	.entry-content { 
 		max-height: 100%;
-		display: inline;
+		display: block;
 	}
 
 	.detailed-content {

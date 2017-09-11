@@ -66,17 +66,17 @@
 		.programs-hero-image {
 			min-height: 450px;
 			@include boxmodel(3,100%,4,auto,5, 65px 0 63px);
-			position: relative;
 			overflow: hidden;
+			position: relative;
 			background-color: $black;
 			img { 
 				max-width: inherit;
 				width: 100%; 
 				height: auto;
 				position: absolute;
+				z-index: 0;
 				top: 0;
 				left: 0;
-				z-index: 0;
 
 				@include maxWidth(1025px) {
 					max-width: inherit;

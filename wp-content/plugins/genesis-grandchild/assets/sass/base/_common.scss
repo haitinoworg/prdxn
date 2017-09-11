@@ -1,6 +1,4 @@
 
-
-
 /* Site Containers
 --------------------------------------------- */
 /*
@@ -45,8 +43,8 @@ Overriding Parallax Pro Styling
 	.two-fourths,
 	.two-sixths,
 	.two-thirds {
-		float: left;
 		margin-left: 2.564102564102564%;
+		float: left;
 	}
 
 	.one-half,
@@ -67,8 +65,8 @@ Overriding Parallax Pro Styling
 	.five-sixths { width: 82.90598290598291%;	}
 
 	.first {
-		clear: both;
 		margin-left: 0;
+		clear: both;
 	}
 
 
@@ -113,8 +111,8 @@ Common Classes
 		@include maxWidth(1140) { width: 83%;	}
 	}
 	.search-form{
-		float: right;
 		margin-top: 4px;
+		float: right;
 	}
 }
 
@@ -170,8 +168,8 @@ main.content {
 		h6 { font-size: 17px; }
 
 		p {	
-			font-size: 17px;
 			margin-bottom: 15px; 
+			font-size: 17px;
 		}
 
 		a { font-size: 15px; }
@@ -202,8 +200,8 @@ main.content {
 
 	.wrap { 
 		width: 84%;
-		margin: 0 auto;
 		padding: 0; 
+		margin: 0 auto;
 	}
 
 	.widget { margin-bottom: 0; }
@@ -256,8 +254,8 @@ body {
 				img {
 					width: 100px;
 					height: 100px;
-					border-radius: 100%;
 					padding: 18px;
+					border-radius: 100%;
 					background-color: $white;
 				}
 
@@ -310,7 +308,7 @@ body .breadcrumb {
 .post-navigations {
 	width: 100%;
 	display: block;
-	font-size:0;
+	font-size: 0;
 
 	.left-link { text-align: left; }
 	.right-link { text-align: right; }

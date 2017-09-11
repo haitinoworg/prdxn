@@ -34,8 +34,8 @@
 
 			@include mobile() { 
 				box-sizing: border-box;
-				min-width: 80%; 
-				width: 80%;
+				min-width: 84%; 
+				width: 84%;
 			}
 
 			form {
@@ -57,10 +57,11 @@
 				input,
 				textarea { 
 					padding: 10px;	
-					outline: none;
 					-webkit-border-radius: 0;
 					border-radius: 0;
+					outline: none;
 					-webkit-appearance: none;
+					appearance: none;
 					font-size: 15px;
 					line-height: 20px;
 				}
@@ -109,7 +110,6 @@
 				}
 
 				strong { 
-					// margin: 39px 0 8px;
 					display: block;
 					font: 700 20px $font;
 				}
@@ -171,8 +171,8 @@
 		}
 
 		div.sf_type_textarea textarea[placeholder="Volunteer Professional Skills *"] {
-			min-height: 42px;
 			max-height: 42px;
+			min-height: 42px;
 			padding: 11px 11px 9px;
 		}
 
@@ -268,11 +268,12 @@
 			}
 
 			input { 
-				margin-bottom: 0px;
 				padding: 11px 12px;
-				-webkit-appearance: none;
+				margin-bottom: 0;
 				-webkit-border-radius: 0;
 				border-radius: 0;
+				-webkit-appearance: none;
+				appearance: none;
 				font: 15px $font;
 
 				@include mobile() {	margin-bottom: 0; }
@@ -286,8 +287,6 @@
 				{	color: #aaa;	}
 				&:-ms-input-placeholder
 				{	color: #aaa;	}
-
-			&:hover {/* border: 1px solid #aaa;*/ }
 		}
 
 		input[type="submit"] { 
@@ -329,10 +328,11 @@
 			select,
 			textarea { 
 				padding: 11px 12px;
-				margin-bottom:0;
 				-webkit-border-radius: 0;
 				border-radius: 0;
+				margin-bottom: 0;
 				-webkit-appearance: none;
+				appearance: none;
 				font: 16px $font;
 				resize: none;
 
@@ -360,10 +360,12 @@
 				max-height: 42px;
 				padding: 13px 11px 10px; 	
 				border: 1px solid #ddd;
-				-webkit-appearance: none;
-				@include property(border-radius, 0);
-				outline: none;
+				-webkit-border-radius: 0;
+				border-radius: 0;
 				display: block;
+				outline: none;
+				-webkit-appearance: none;
+				appearance: none;
 				background-color: transparent;
 				color: $black;
 				font: 13px $font;
@@ -396,8 +398,8 @@
 			div.dropdown-menu {
 				display: none;
 				position: relative;
-				background-color: $white;
 				z-index: 2;
+				background-color: $white;
 				.dropdown-menu.inner {
 					border: 1px solid #ddd;
 					position: absolute;
@@ -413,10 +415,11 @@
 							width: 100%;
 							padding: 0;
 							border: 0;
+							-webkit-border-radius: 0;
 							border-radius: 0;
-							outline: 0;
-							@include property(box-shadow,none);
 							display: block;
+							outline: 0;
+							@include property(box-shadow, none);
 							background: $white;
 							color: $black;
 							text-shadow: none;
@@ -433,8 +436,10 @@
 			input[type="submit"] { 
 				padding: 11px;
 				border: 1px solid #f16522;
-				-webkit-appearance: none;
+				-webkit-border-radius: 3px;
 				border-radius: 3px;
+				-webkit-appearance: none;
+				appearance: none;
 				background-color: #f16522;
 
 				@include tab() { width: 100%; }
@@ -479,17 +484,14 @@
 	
 }
 
-.home .salesforce_w2l_lead form.w2llead > div input[type="submit"] {border-radius:0;}
+.home .salesforce_w2l_lead form.w2llead > div input[type="submit"] { border-radius: 0; }
 
 /* volunteer page responsive */
 @include tab() {
 	.contact-form-7 { 
 		.volunteer-form { 
 			.sf_field { width: 100%;	}
-
-			.sf_field:nth-child(3n+2) {
-				margin:0;	
-			}
+			.sf_field:nth-child(3n + 2) { margin:0;	}
 		}
 
 		.content .entry-content form #sf_00NA000000723Db { max-height: 150px; }
@@ -531,13 +533,13 @@ body.contact-form-7 .inside,
 	select {
 		@include boxmodel(2,border-box,3,100%,5,15px 11px);
 		display: block;
+		-webkit-border-radius: 0;
+		 border-radius: 0;
+		outline: none;
 		-webkit-appearance: none;
-		-webkit-border-radius:0;
-		-moz-appearance: none;
 		appearance: none;
 		background: url('../../uploads/2017/05/caret-down.png') no-repeat 97% 50% $white;
 		background-size: 5px 10px;
-		outline: none;
 	}
 }
 
@@ -559,17 +561,14 @@ body.contact-form-7 .inside,
 			
 			form.w2llead {
 				.sf_field { 
-					text-align: left;
 					width: 30%; 
 					display: inline-block;
 					vertical-align: top;
-
+					text-align: left;
 					&:nth-child(3n+2) { margin: 0 4.5%;	}
-
 
 					@include tab() {
 						width: 100%;
-
 						&:nth-child(3n+2) { margin: 0; }
 					}
 				}
