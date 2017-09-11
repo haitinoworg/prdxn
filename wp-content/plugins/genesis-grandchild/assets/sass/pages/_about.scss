@@ -76,6 +76,19 @@
 				display: table;
 				clear: both;
 			}
+
+			.entry-content {
+				.accordions-head,
+				.accordions-head:first-child {
+					padding: 10px;
+					display: block;
+				}
+
+				.accordion-content {
+					box-sizing: border-box;
+   				padding: 31px 15px 29px 36px;
+				}
+			}
 		}
 	}
 }

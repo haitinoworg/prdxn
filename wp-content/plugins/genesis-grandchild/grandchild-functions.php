@@ -11,18 +11,16 @@ add_action( 'wp_enqueue_scripts', 'grandchild_add_files' );
 function grandchild_add_files() {
 	wp_enqueue_style('grandchild-style', plugins_url( 'grandchild-styles.css', __FILE__ ), array());
 	
-	// wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '4.5' );
-	wp_enqueue_style( 'fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5' );
-	wp_enqueue_style( 'select-bootstrap-css', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css', array(), '4.5' );
+	wp_enqueue_style( 'fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '' );
+	wp_enqueue_style( 'select-bootstrap-css', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css', array(), '' );
 
 	
 }
 
 add_action('wp_footer','custom_footer_script');
 function custom_footer_script() {
-	// Static url given because, its post publishing error on new post.
 	wp_enqueue_script('multi-select-js', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js', array('jquery'), true);
-	wp_enqueue_script(  'grandchild-script', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
+	wp_enqueue_script(  'grandchild-scripts', plugins_url( 'grandchild-scripts.js', __FILE__ ), array( 'jquery'), true);
 }
 
 // Enable Custom Background

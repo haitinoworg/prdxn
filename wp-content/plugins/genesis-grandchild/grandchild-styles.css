@@ -68,7 +68,7 @@ Overriding Parallax Pro Styling
 
 .site-inner {
   max-width: 100%;
-  margin-top: 0;
+  margin-top: 90px;
   clear: both;
 }
 
@@ -5263,7 +5263,7 @@ body .copyright .title-area {
 @media screen and (max-width: 768px) {
   .sponsor-list {
     width: 46%;
-    margin: 28px 8% 0;
+    margin: 28px 0 0 2%;
     font-family: Roboto, sans-serif;
   }
 
@@ -5540,6 +5540,21 @@ main.content .entry-content p:last-child {
 .page-template-page-gallery .content article.entry .entry-content div:first-child,
 .page-template-template_about.full-width-content .content article.entry .entry-content div:first-child {
   padding: 30px;
+}
+.page-template-page-research .content article.entry .entry-content .accordions-head,
+.page-template-page-research .content article.entry .entry-content .accordions-head:first-child,
+.page-template-page-gallery .content article.entry .entry-content .accordions-head,
+.page-template-page-gallery .content article.entry .entry-content .accordions-head:first-child,
+.page-template-template_about.full-width-content .content article.entry .entry-content .accordions-head,
+.page-template-template_about.full-width-content .content article.entry .entry-content .accordions-head:first-child {
+  padding: 10px;
+  display: block;
+}
+.page-template-page-research .content article.entry .entry-content .accordion-content,
+.page-template-page-gallery .content article.entry .entry-content .accordion-content,
+.page-template-template_about.full-width-content .content article.entry .entry-content .accordion-content {
+  box-sizing: border-box;
+  padding: 31px 15px 29px 36px;
 }
 
 /*
