@@ -1,0 +1,99 @@
+
+/* Landing Page Template
+--------------------------------------------- */
+
+
+.parallax-landing {
+	font-family: $font;
+	.entry { @include boxmodel(1,"",5,63px 0 58px,7,0);	}
+	.site-inner {  
+		max-width: $maxWidth;
+		margin: 0 auto; 
+	}
+	.content {
+		@include boxmodel(3,84%,5,0,7,0 auto);
+		float: none;
+
+		h3,h4,h5,h6 { margin: 0 0 13px;	}
+		h3,h4 { 
+			font-size: 32px; 
+			font-family: $font;
+			@include mobile() { font-size: 30px;	}
+		}
+
+		article.entry { padding: 63px 0 58px; }
+		.entry-content {
+			h1, h2 { 
+				@include common-title();
+				@include mobile() {
+					font-size: 40px;
+				}
+			}
+			h2,h3,h4,h5,h6 { text-align: left; }
+
+			&>div {
+				width: auto;
+				margin: 0 auto;
+			}
+		}
+
+		p { @include common-desc();	}
+
+	}
+
+	iframe { 
+		min-width: auto;
+		margin: 0 auto;
+		text-align: left;
+	}
+}
+
+
+/*
+* Landing Template FAQ Page Styling
+*/
+
+body.faq {
+
+	.entry-title { margin-bottom: 48px; }
+
+	h2 { display: inline-block; }
+	main.content {
+		.entry-content {
+			h1,h2,h3 { margin: 36px 0 10px; }
+		}
+
+		article.entry { padding: 63px 0 58px; }
+	}
+
+	p a { 
+		color: $cta-color; 
+		cursor: pointer;
+	}
+}
+
+
+.page-id-42 {
+	.content{
+		.entry-content {
+			p{ margin-bottom: -2px; }
+			h2 {    
+				padding: 6px 12px;
+				margin-top: 36px;
+				margin-bottom: 0;
+				border-radius: 2px;
+				background: rgba(241, 101, 34, .82);
+				color: #fff;
+
+				&:first-child { margin: 0 0 5px; }
+			}
+		}
+	}
+	.entry-header {	padding-top: 63px; }
+}
+
+.page-id-889 {
+	main.content {
+		article.entry { padding: 63px 0 60px; }
+	}
+}

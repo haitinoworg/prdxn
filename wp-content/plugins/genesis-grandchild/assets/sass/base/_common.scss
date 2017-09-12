@@ -1,0 +1,331 @@
+
+/* Site Containers
+--------------------------------------------- */
+/*
+Overriding Parallax Pro Styling
+*/
+
+.wrap {
+	max-width: $maxWidth;
+	margin: 0 auto;
+}
+
+.site-inner {
+	max-width: 100%;
+	margin-top: 90px;
+	clear: both;
+}
+
+
+.site-inner,
+.wrap {
+	@include tab() { padding: 0; }
+}
+
+.parallax-home .site-inner {
+	max-width: 100%;
+	margin-top: 0;
+}
+
+/* Column Classes
+	Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+	--------------------------------------------- */
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		margin-left: 2.564102564102564%;
+		float: left;
+	}
+
+	.one-half,
+	.three-sixths,
+	.two-fourths { width: 48.717948717948715%;	}
+	.one-third,
+	.two-sixths {	width: 31.623931623931625%;	}
+
+	.four-sixths,
+	.two-thirds { width: 65.81196581196582%;	}
+
+	.one-fourth { width: 23.076923076923077%;	}
+
+	.three-fourths { width: 74.35897435897436%;	}
+
+	.one-sixth { width: 14.52991452991453%;	}
+
+	.five-sixths { width: 82.90598290598291%;	}
+
+	.first {
+		margin-left: 0;
+		clear: both;
+	}
+
+
+/*
+Common Classes
+---------------------------------------------------------------------------------------------------- */
+@include minWidth(1200px) {
+	.site-container {
+		.site-inner,
+		.wrap {	max-width: $maxWidth;	}
+	}
+}
+
+
+/* Search Form
+--------------------------------------------- */
+
+.search-form {
+	input[type="search"] {
+		&::-webkit-input-placeholder
+		{	
+			color: #aaa;	
+			font: 16px $font;
+		}
+		&::-moz-placeholder
+		{	color: #aaa;	}
+		&:-ms-input-placeholder
+		{	color: #aaa;	}
+	}
+}
+
+.entry-header .entry-title,
+	.entry-title {
+		@include common-title();
+		@include title-after();
+		@include mobile() { font-size: 40px; }
+	}
+.entry-header:after { display: none; }
+
+.site-header {
+	.widget-area {
+		@include maxWidth(1140) { width: 83%;	}
+	}
+	.search-form{
+		margin-top: 4px;
+		float: right;
+	}
+}
+
+.entry-content,
+.site-header {
+	.search-form {
+		@include minWidth(1200) { width: 70px; }
+		width: auto;
+		overflow: hidden;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li,
+div,
+section,
+aside,
+iframe { font-family: $font; }
+
+main.content {
+	.entry-content {
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 { margin: 0;	}	
+
+		h1,
+		h2 { 
+			font-size: 50px; 
+			line-height: 46px;
+			@include mobile() {	font-size: 40px;	}
+		}
+
+		h3 { 
+			font-size: 32px;	
+			line-height: 38px;
+			@include mobile() {	font-size: 30px;	}
+		}
+
+		h4,h5 { font-size: 24px; }
+		h6 { font-size: 17px; }
+
+		p {	
+			margin-bottom: 15px; 
+			font-size: 17px;
+		}
+
+		a { font-size: 15px; }
+	}
+}
+
+/* Titles
+--------------------------------------------- */
+
+.sidebar {
+	text-align: left;
+
+	.entry-title {
+		a {
+			color: $black;
+			&:hover { color: $cta-color;	}
+		}
+	}
+}
+
+// Home Even odd section title and text styling
+.home-even,
+.home-odd {
+	height: auto;
+	padding: 63px 0 64px;
+
+	@include tab() { padding: 63px 0 66px; }
+
+	.wrap { 
+		width: 84%;
+		padding: 0; 
+		margin: 0 auto;
+	}
+
+	.widget { margin-bottom: 0; }
+
+	@include tab() { 
+		box-sizing: initial;
+		height: auto;
+	}
+
+	.widget-title {	@include common-title(); }
+
+	.textwidget {
+		p { @include common-desc();	}
+		a.button { @include cta();	}
+	}
+}
+
+#text-5 {
+	.button { margin: 30px 2% 0; }
+}
+
+
+// Slider Cursor Pointer
+div#n2-ss-2 .n2-grab { 	cursor: default; }
+
+.ui-tabs .ui-tabs-panel { padding: 30px 15px; }
+
+/* Image Caption Styling */
+body {
+	section.featuredpage {
+
+		h1,h2,h3,h4 {	margin-bottom: 42px;	}
+
+		.entry { @include boxmodel(1,"",5,0,7,0);	}
+
+		.entry-content { 
+			.wp-caption {	
+				min-width: 28%;
+				margin: 0;
+				@include props(dib,vat);
+				text-align: center;
+
+				@include tab() { min-width: 100%; } 
+
+				&:nth-of-type(2) {
+					margin: 0 4.5%;
+					@include tab() { margin: 45px 0; }
+				}
+
+				img {
+					width: 100px;
+					height: 100px;
+					padding: 18px;
+					border-radius: 100%;
+					background-color: $white;
+				}
+
+				.wp-caption-text { 
+					margin-top: 18px; 
+					font: 17px $font;
+				}
+			}
+
+			a { 
+				@include boxmodel(3,auto,5,10px 35px,7,53px 0 0);
+				@include cta();
+			}
+		}
+
+	}
+
+	.gs_logo_single {
+		padding: 10px 0;
+		background-color: $white;
+
+		a { display: block; }
+		
+			img { 
+				width: auto;
+				height: 150px;	
+			}
+	}
+	.bx-wrapper { padding: 0 45px; }
+}
+
+.entry-content ol > li,
+.entry-content ul > li { list-style-type: inherit; }
+
+
+/*
+ BreadCrumbs Styling
+*/
+
+body .breadcrumb {
+	padding: 50px;
+	margin-bottom: 0;
+	font: 17px $font;
+}
+
+/*
+* Post Navigation Style
+*/
+
+.post-navigations {
+	width: 100%;
+	display: block;
+	font-size: 0;
+
+	.left-link { text-align: left; }
+	.right-link { text-align: right; }
+
+	.left-link,
+	.right-link { 
+		width: 50%; 
+		padding: 0 0 30px;
+		display: inline-block;
+		vertical-align: top;
+		font: 16px $font;
+
+		@include tab() { 
+			width: 100%;	
+			text-align: left;
+		}
+	}
+	
+.right-link {	padding-bottom: 58px; }
+
+}

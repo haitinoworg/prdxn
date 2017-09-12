@@ -1,0 +1,123 @@
+$font: Roboto, sans-serif;
+$maxWidth: 2000px;
+
+// Colors
+$cta-color: #f16522;
+$black: #000;
+$white: #fff;
+$blue: #3060b8;
+$green: #118e3c;
+
+// Box Modal Mixin
+// ===========1=======2=========3========4=========5========6========7=====
+$box-model: " " "box-sizing" "width" "height" "padding" "border" "margin";
+
+
+// Object Key values pairs
+$props: (
+	e: "",
+	dn: display,
+	db: display,
+	dib: display,
+	dtb: display,
+	dtbc: display,
+	vabl: vertical-align,
+	vab: vertical-align,
+	vam: vertical-align,
+	vat: vertical-align,
+	vatb: vertical-align,
+	vatt: vertical-align,
+	ovxa: overflow-x,
+	ovxh: overflow-x,
+	ovxs: overflow-x,
+	ovxv: overflow-x,
+	ovya: overflow-y,
+	ovyh: overflow-y,
+	ovys: overflow-y,
+	ovyv: overflow-y,
+	ova: overflow,
+	ovh: overflow,
+	ovs: overflow,
+	ovv: overflow,
+	fll: float,
+	fln: float,
+	flr: float,
+	clb: clear,
+	cll: clear,
+	clr: clear,
+	cln: clear,
+	posa: position,
+	poss: position,
+	posf: position,
+	posr: position,
+	tac: text-align,
+	tal: text-align,
+	tar: text-align,
+	ttn: text-transform,
+	ttc: text-transform,
+	ttl: text-transform,
+	ttu: text-transform,
+	fxww: flex-wrap,
+	visv: visibility,
+	vish: visibility,
+	cb: color,
+	cw: color,
+	ccta: color,
+	bgb: background-color,
+	bgw: background-color,
+	bgcta: background-color
+	);
+
+$css-values: (
+	e: "",
+	dn: none,
+	db: block,
+	dib: inline-block,
+	dtb: table,
+	dtbc: table-cell,
+	vabl: baseline,
+	vab: bottom,
+	vam: middle,
+	vat: top,
+	vatb: bottom,
+	vatt: top,
+	ovxa: auto,
+	ovxh: hidden,
+	ovxs: scroll,
+	ovxv: visible,
+	ovya: auto,
+	ovyh: hidden,
+	ovys: scroll,
+	ovyv: visible,
+	ova: auto,
+	ovh: hidden,
+	ovs: scroll,
+	ovv: visible,
+	fll: left,
+	fln: none,
+	flr: right,
+	clb: both,
+	cll: left,
+	clr: right,
+	cln: none,
+	posa: absolute,
+	poss: static,
+	posf: fixed,
+	posr: relative,
+	tac: center,
+	tal: left,
+	tar: right,
+	ttn: none,
+	ttc: capitalize,
+	ttl: lowercase,
+	ttu: uppercase,
+	fxww: flex-wrap,
+	visv: visible,
+	vish: hidden,
+	cb: $black,
+	cw: $white,
+	ccta: $cta-color,
+	bgb: $black,
+	bgw: $white,
+	bgcta: $cta-color
+	);

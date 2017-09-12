@@ -1,0 +1,284 @@
+/*
+* About Template Styling
+*/
+
+.page-template-template_about.full-width-content {
+	.content { width: 84%; }
+}
+
+.page-template-page-research,
+.page-template-page-gallery { 
+	.content { width: 100%; }
+}
+
+.page-template-page-research,
+.page-template-page-gallery,
+.page-template-template_about.full-width-content {
+
+	.programs-hero-image {
+		max-height: calc(100vh - 150px);
+		height: 100%;
+		padding: 0;
+		.wrap { 
+			margin-top: 0; 
+			position: static;
+			
+			.hero-content {
+				width: 100%;
+				position: absolute;
+				z-index: 5;
+				top: 50%;
+				right: 4%;
+				@include property(transform, translateY(-50%));
+			
+			@include tab() { right: inherit; }
+
+				h1, h2, h3 { 
+					margin-bottom: 0; 
+					text-align: right;
+					text-transform: uppercase;
+					@include tab() {
+						text-align: left;
+					}
+				}
+			}
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin-bottom: -10px;
+			position: static;
+		}
+	}
+	.content {
+		max-width: $maxWidth;
+		padding: 0;
+		margin: 0 auto;
+		float: none;
+		article.entry {
+			padding: 60px 0;
+			margin: 0;
+			
+			h3 {   
+				font-size: 32px;
+				@include mobile() {
+					font-size: 30px;
+				}
+			}
+
+			p { margin-bottom: 0; }
+			.entry-content { clear: both;	}
+
+			.entry-content div {
+				&:first-child { padding: 30px; }
+				padding: 24px 0;
+				display: table;
+				clear: both;
+			}
+
+			.entry-content {
+				.accordions-head,
+				.accordions-head:first-child {
+					padding: 10px;
+					display: block;
+				}
+
+				.accordion-content {
+					box-sizing: border-box;
+   				padding: 31px 15px 29px 36px;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+* Corporate Info Page Tabs Styling
+*/
+.parallax-landing,
+.page-template-page-research {
+
+	.programs-hero-image {
+		padding: 63px 0;
+		@include tab() {
+			padding: 63px 0;
+		}
+
+		@include maxWidth(569px) {
+			padding: 85px 0 0;
+		}
+	}
+
+	article.entry {
+		.accordions-tabs-themes {
+			margin-top: 59px;
+			ul.ui-tabs-nav {
+				@include tab() { 
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				li.ui-tabs-active {
+					@include tab() { margin-bottom: -2px; }
+					@include mobile() {
+						margin-bottom: 0;
+						@include property(transform, scale(1.1));
+					}
+					a.accordions-tab-head {
+						border: 1px solid #ddd;
+						border-bottom: none;
+						background-color: $white;
+						/* Important used here to override plugin style */
+						color: $cta-color !important;
+						font-weight: 700;
+
+					}
+				}
+				
+				a.accordions-tab-head { 
+					font-size: 15px;
+					font-weight: 700;  
+				}
+
+				li {
+					@include tab() { 
+						width: 49.9%; 
+						float: left;
+						text-align: center;
+					}
+
+					@include mobile() {
+						width: 100%;
+						float: none;
+					}
+					a {
+						padding: 12px 28px;
+						border: .5px solid #ddd;
+						border-bottom: 0;
+						border-left: 0;
+						@include props(bgcta, bgcta);
+						i { display: none; }	
+					}
+				}
+			}
+
+			.tabs-content { 
+				min-height: 273px;
+				padding-bottom: 0;
+				padding-left: 28px;
+
+				@include tab() {
+					padding-right: 0;
+					padding-left: 0;
+				}
+
+				ul { 
+					margin: 0; 
+					margin-left: 27px;
+				}
+
+				li { 
+					margin: 15px 0 0; 
+					position: relative;
+					list-style-type: none;
+					&:after {
+						content: ">";
+						position: absolute;
+						top: 0;
+						left: -20px;
+						font: 900 17px $font;
+					}
+				}
+
+				h2, h3, h4 { 
+					margin: 33px 0 9px;
+					font-size: 32px;
+					@include mobile() { font-size: 30px; }
+				}
+
+				h2, h3 { &:first-child { margin-top: 9px; } }
+
+				p { margin: 10px 0 0; }
+
+				a { 
+					font-family: $font;
+					font-size: 15px; 
+					&:hover { color: $cta-color; }
+				}
+			}
+		}
+
+	}
+}
+
+
+/*
+* Research Page Styling ==========================
+*/
+.site-inner {
+	.research-accordions {
+		padding: 61px 0 66px;
+
+		.tab-page-content { 
+			box-sizing: border-box;
+			padding-bottom: 27px; 
+		}
+
+		.accordions-themes { 
+			margin-bottom: 0; 
+			.ui-accordion-header-active { 
+				border: 1px solid transparent; 
+				outline: none;
+			}
+			.ui-accordion-header {
+				border: 1px solid transparent; 
+				outline: none;  
+				.accordion-icons {
+					@include property(transform,rotate(180deg) translateY(-4px));
+				}
+			}
+		}
+
+		.accordion-content {
+			box-sizing: border-box; 
+			padding: 31px 15px 29px 36px;
+			overflow: visible;
+			li { 
+				margin: 15px 0; 
+				position: relative;
+				list-style-type: none;
+				&:after {
+					content: ">";
+					position: absolute;
+					top: 0;
+					left: -20px;
+					font: 900 17px $font;
+				}
+			}
+
+			h2, h3, h4 { 
+				margin: 39px 0 10px;
+				font-size: 32px;
+				word-wrap: break-word;
+			}
+
+			p { 
+				margin: 13px 0 17px; 
+				word-wrap: break-word;
+			}
+
+			a { 
+				font-size: 15px; 
+				font-family: $font;
+				word-wrap: break-word;
+				&:hover { color: $cta-color; }
+			}
+		}
+	}
+
+	.accordions-tabs-themes {
+		.tabs-content { padding-top: 32px; }
+	}  
+}

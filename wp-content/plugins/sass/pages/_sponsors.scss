@@ -1,0 +1,143 @@
+.page-template-page-sponsor {
+  .site-inner {
+    .content {
+      width: 84%;
+      max-width: 2000px;
+      padding: 0;
+      margin: 0 auto;
+      float: none;
+
+      article.entry { 
+        padding: 63px 0; 
+        margin: 0;
+      }
+    }
+  }
+}
+
+.sponsors-container {
+	border-top: 1px solid #333;
+  margin-top: 52px;
+  display: block;
+  clear: both;
+}
+
+.sponsor-list {
+  width: 23%;
+  min-height: 165px;
+  margin-top: 16px;
+  margin-right: 2%;
+  display: table;
+  float: left;
+  cursor: pointer;
+  font-family: $font;
+  text-align: center;
+  @include property(transform-style, preserve-3d);
+  @include property(perspective, 1px);
+
+  .news-image a {
+    width: 56%;
+    display: inline-block;
+    font-family: $font;
+    @include property(animation,sponsors-icons-back .3s ease-in forwards);
+  }
+
+
+  &:nth-child(4n+4) {
+    margin-right: 0px;
+  }
+
+  // Sponsors Animation
+  &:hover .news-image a {
+    @include property(animation,sponsors-icons .3s ease-in-out forwards);
+  }
+
+}
+
+
+.news-image {
+	padding: 3%;
+	white-space: nowrap;
+	@include props(dtbc, vam, posr);
+  font-family: $font;
+}
+
+
+@include tab() {
+  .sponsor-list {
+    width: 46%;
+    margin: 28px 8% 0px 0px;
+    font-family: $font;
+  }
+
+  .sponsor-list:nth-child(2n+2) { margin-right: 0px; }
+}
+
+@include mobile() {
+  .sponsor-list {
+    width: 80%;
+    min-height: 75px;
+    margin: 12px 10%;
+  }
+
+  .sponsor-list:nth-child(2n+2) { margin-right: 10%; }
+
+}
+
+main.content {
+  .entry-content {
+    h3 {
+      margin: 36px 0 11px; 
+      font-size: 32px;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    h4 { font-size: 24px; }
+    h5,h6 { font-size: 17px; }
+
+    h1,h2,h3,h4,h4,h6,p { font-family: $font; }
+    p { font-size: 17px; }
+    p:last-child { margin-bottom: 0; }
+  }
+}
+
+@keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@-webkit-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@-moz-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@-o-keyframes sponsors-icons {
+  from { @include property(transform,scale(1)); }
+  to { @include property(transform,scale(1.4)); }
+}
+
+@keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-webkit-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-moz-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}
+
+@-o-keyframes sponsors-icons-back {
+ from { @include property(transform,scale(1.4)); }
+ to { @include property(transform,scale(1)); } 
+}

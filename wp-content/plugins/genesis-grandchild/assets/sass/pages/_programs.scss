@@ -1,0 +1,674 @@
+
+/* Program Page - Two Column Layout
+--------------------------------------------- */
+.page-template-page_twocolumns,
+.page-template-page_get_involved {
+	font-family: $font;
+	p { font-size: 17px; }
+	.content {
+		padding: 0;
+		div.entry {
+			@include boxmodel(3,84%,5,0,7,0 auto);
+			max-width: $maxWidth;
+			margin: 0 auto;
+			text-align: center;
+			@include tab() { width: 84%; }
+		}
+
+		article.entry {
+			@include boxmodel(3,84%,5,58px 0 0,7,0 auto);
+			text-align: center;
+
+			.entry-content {
+				padding: 0 0 59px;
+				p {
+					@include common-desc();
+					max-width: $maxWidth;
+					margin: 0 auto; 
+					text-align: left;
+				}
+
+			}
+		}
+
+		/* Default Posts Styling -----------------*/
+		.post_content {
+			@include boxmodel(2,border-box,3,49.7%,5,0 0 0 3%);
+			@include md() { padding: 25px 0 0;	}
+
+			a {
+				color: $black;
+				font: 27px/23px $font;
+				&:hover { color: $cta-color; }
+			}
+		}
+
+		.program-posts {
+			text-align: center;
+
+			.button {
+				border: 3px solid $black;
+				@include cta();
+				@include props(bgw,cb);
+			}
+
+			/* Default Two Column Styling Starts Here */
+			.post-images.content-default {
+				@include boxmodel(1,"",3,100%,7,0 0 55px);
+				@include props(db, ovh, tac);
+
+				&>a,
+				div.entry-content {
+					display: inline-block;
+					vertical-align: top;
+					@include tab() { width: 100%; }
+				}
+
+				&>div.entry-content { 
+					width: 50%;
+					@include tab() { width: 100%; }
+
+					.post-object-content {
+						h2,h3,h4,h5,h6, p { 
+							font-size: 16px;
+							line-height: 24px;
+						}
+					}
+				}
+
+				&>a {
+					width: 50%;
+					height: 250px;
+					@include props(dib);
+					overflow: hidden;
+					float: left;
+					text-align: right;
+					@include tab() { 
+						width: 100%;
+						height: 350px;	
+					}
+
+					@include mobile() {	height: 200px; }
+
+					img { 
+						@include boxmodel(1,"",3,100%,4,auto); 
+						max-width: 480px;
+						@include tab() {
+							width: 768px;
+							max-width: 768px;
+						}
+
+						@include mobile() {
+							width: 480px;
+							max-width: 480px;
+						}
+					}
+				}
+
+				@include minWidth(1025px) {
+					&>a:hover img{
+						max-width: 100%; 
+						@include property(transition, max-width .5s ease-out);
+					}
+				}
+
+				div.entry-content {
+					box-sizing: border-box;
+					padding: 0 0 0 30px;
+					float: left;
+					text-align: left;
+
+					@include tab() { 
+						padding: 30px 0 0;
+						margin: 0;
+					}
+
+					h3 { 
+						margin: 0 0 20px; 
+						font-size: 30px;
+						line-height: 28px;
+						@include tab() { line-height: 36px;	}
+						@include mobile() { font-size: 30px; }
+					}
+				}
+			}
+			.post-images {
+				@include boxmodel(1,"",3,47%,5,0);
+				@include props(dib, vat, tac);
+				
+				@include tab() { padding: 0; }
+
+				&.two-columns {
+					@include tab() { width: 100%;	}	
+				}
+
+				&:last-child {
+					padding: 0;
+					margin-bottom: 65px;
+				}
+
+				/* Video Styling Starts Here */
+
+				iframe {
+					@include boxmodel(1,"",3,400px,4,200px);
+					@include md() {
+						@include boxmodel(1,"",3,300px,4,158px);
+					}
+					@include tab() {
+						@include boxmodel(1,"",3,500px,4,initial);
+					}
+					@include mobile() { width: 300px; }
+				}
+
+				/* Video Styling Ends Here */
+
+				.entry-content {
+					width: 60%;
+					@include props(dib,ovh);
+					@include tab() { width: 80%; }
+					@include mobile() {	width: 100%; }
+
+					h3,h4,h5,h6 {
+						@include sub-title();
+						margin-top: 25px;
+						margin-bottom: 17px;
+					}
+					p {
+						margin: 0 0 15px;
+						
+						@include mobile() { font-size: 18px; }
+					}
+				}
+
+
+
+				/* Image Overlay styling Starts Here */
+				&.content-image {
+					@include props(ovh);
+
+					&>a { @include props(posr);	}
+
+					.entry-content {
+						@include props(ovh);
+						@include props(posa);
+						left: 50%;
+						@include property(transform,translateX(-50%));
+						&, h3 {	color: $white;	}
+						h3 { font-size: 22px;	}
+						p {
+							@include boxmodel(4,126px,5,0 25px 0 15px,1,"");
+							margin-right: -15px;
+							@include props(ovh);
+							font-size: 18px;
+
+							@include md() { height: 106px; }
+							@include tab() { height: 225px; }
+							@include mobile() { height: 88px; }
+						}
+					}
+
+					&>a:hover {
+						@include props(bgb);
+						img { opacity: .3;	}
+
+						.entry-content {
+							box-sizing: border-box;
+							@include property(animation,text-overlay .3s ease-in forwards);
+						}
+					}
+				}
+			}
+			
+			.movies:last-child { margin-bottom: 47px; }
+		}
+	}
+}
+
+.custom-links,
+.common-links {
+	@include cta();
+	padding: 10px 25px;
+	border: 1px solid $cta-color;
+	margin-top: 10px;
+	font-size: 15px;
+	line-height: 20px;
+	display: inline-block;
+
+	&:hover {
+		background-color: $white;
+		color: $cta-color;
+	}
+}
+
+
+
+div#n2-ss-6 .n2-grab { cursor: default; }
+
+// Two Column Image Overlay Animation Keyframe
+
+@keyframes text-overlay {
+	from { top: 100%; }
+	to { top: 0; }
+}
+
+@-webkit-keyframes text-overlay {
+	from { top: 100%; }
+	to { top: 0; }
+}
+
+@-moz-keyframes text-overlay {
+	from { top: 100%; }
+	to { top: 0; }
+}
+
+@-o-keyframes text-overlay {
+	from { top: 100%; }
+	to { top: 0; }
+}
+
+
+/*
+* Donation Hero Image Styling
+*/
+
+.programs-hero-image {
+	@include boxmodel(3,100%,4,auto,5, 65px 0 63px);
+	overflow: hidden;
+	position: relative;
+	background-color: $black;
+	img { 
+		max-width: inherit;
+		width: 100%; 
+		height: auto;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+
+		@include maxWidth(1025px) {
+			max-width: inherit;
+			width: auto;
+			height: 100%;
+		}
+	}
+
+	h1,h2,h3,h4,h5,h6 { 
+		width: 100%;	
+		color: $white;
+		font-family: $font;
+		font-weight: 900;
+		line-height: 44px;
+	}
+
+	h1, h2 { 
+		font-size: 50px; 
+		line-height: 46px;
+		@include mobile() {
+			font-size: 40px;
+		}
+	}
+
+	h3 { font-size: 39px; }
+	h4 { font-size: 24px; }
+
+	p { font-size: 28px; }
+
+	.wrap {
+		box-sizing: border-box;
+		width: 84%;
+		position: relative;
+		z-index: 5;
+		color: $white;
+
+		&>h1,
+		&>h2,
+		&>h3,
+		&>h4,
+		&>h5,
+		&>h6 { 
+			width: 54%;
+			margin-bottom: 0;
+			display: inline-block;
+			vertical-align: bottom;
+			font-size: 39px;
+			text-align: right;
+
+			@include tab() {
+				width: 100%;
+				left: 0;
+				text-align: left;
+			}
+
+			@include mobile() {	font-size: 26px; }
+		}
+	}
+
+	.hero-content {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		
+		.donate-desc { 
+			width: 45%;
+			margin-top: 58px;
+			float: right;
+			text-align: right;
+			@include tab() {
+				width: 100%;
+				margin-top: 0;
+				margin-bottom: 39px;
+				float: none;
+				text-align: left;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			p { 
+				text-align: right; 
+				@include tab() {
+					text-align: left;
+				}
+			}
+
+			h2,
+			h3,
+			h4,
+			h5 {
+				margin-bottom: 12px;
+			}
+
+			p { 
+				font-size: 28px; 
+				line-height: normal;
+			}
+		}
+
+		.page-title { 
+			width: 45%;
+			margin-bottom: 4px;	
+			position: absolute;
+			right: 0;
+			bottom: 33px;
+			text-transform: uppercase;
+			@include tab() {
+				width: 100%;
+				margin: 36px 0 15px;
+				position: static;
+			}
+		}
+
+		p { 
+			width: 100%;
+			margin: 0 0 27px; 
+			@include tab() { width: 100%; }
+		}
+
+		// Responsive Tab View
+		@include tab() { 
+			width: 100%;
+		}
+
+		form { 
+			min-width: 426px;
+			width: 70%; 
+
+			@include tab() { 
+				min-width: inherit;
+				width: 100%; 
+			}
+		}
+
+		iframe {
+			margin: 0;	
+			@include mobile() { box-sizing: border-box;	}
+		}
+
+	}
+
+	form {
+		width: 100%;
+		display: inline-block;
+
+		.donation-box {
+			width: 100%;
+			text-align: center;
+			span {
+				width: 11%;
+				display: inline-block;
+				color: #aaa;
+				font: 19px Roboto, sans-serif;
+
+				&:first-child {
+					width: 5%;
+				}
+			}
+		}
+		button { width: 100%; }
+	}
+
+	.direct-stripe-button { 
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 8px;
+		margin-top: 29px;
+	}
+
+	.direct-stripe-button:hover { 
+		background-color: #1e73be; 
+		color: $white;
+	}
+}
+
+.programs-hero-image:after {
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .6);
+}
+
+/*program acrivities description section*/
+.prgram-wrapper {
+	padding: 58px 0 27px;
+	position: relative;
+	h2,
+	p {
+		position: relative;
+		z-index: 100;
+		color: $white;
+	}
+}
+
+.prgram-wrapper::after {
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(38, 43, 48, .69);
+}
+
+.program-desc {
+	visibility: hidden;
+	&.program-visible {
+		visibility: visible;
+	}
+}
+
+.one-half {
+	position: relative;
+	z-index: 100;
+}
+
+.active .one-half:nth-child(2) {
+	padding-right: 0;
+	padding-left: 35px;
+	@include property(transform, translateX(-300%));
+	@include property(animation, heading 3s forwards);
+
+	@include tab() {
+		@include property(animation-duration,1.5s);
+	}
+}
+
+@keyframes heading {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	100% {
+		opacity: 1;
+		@include property(transform,translateX(0%));
+	}
+}
+
+
+@-webkit-keyframes heading {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+		@include property(transform,translateX(0%));
+	}
+}
+
+.active .one-half:nth-child(1) {
+	@include property(transform,translateX(-300%));
+	@include property(animation, description 3s forwards);
+
+	@include tab() {
+		@include property(animation-duration, 1.5s);
+	}
+}
+
+@include tab() {
+	.active .one-half:nth-child(2) {
+		padding-left: 0;
+		margin-left: 0;
+	}
+}
+
+
+
+@-webkit-keyframes description {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	100% {
+		opacity: 1;
+		@include property(transform,translateX(0%));
+	}
+}
+
+@-moz-keyframes description {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	100% {
+		opacity: 1;
+		@include property(transform,translateX(0%));
+	}
+}
+
+@-o-keyframes description {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	100% {
+		opacity: 1;
+		@include property(transform,translateX(0%));
+	}
+}
+
+@keyframes description {
+	0% {
+		opacity: 0;
+		@include property(transform,translateX(-300%));
+	}
+	20%{
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		@include property(transform,translateX(0%));
+	}
+}
+
+.footer-widgets  {
+	#text-7 {
+		p { font-size: 14px; }
+	}
+}
+
+/*
+* Movies page styling
+*/
+
+#loadmore-data {
+	width: 72%;
+	@include tab() {
+		width: 84%;
+	}
+}
+
+main.content {
+	.two-columns {
+		margin-top: 55px;
+		text-align: left;
+
+		&:nth-child(2n) {
+			margin-left: 4.1%;
+			@include tab() {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.loadmore,
+	.loadmore-books {
+		padding: 10px 25px;
+		border: 1px solid #f16522;
+		margin-top: 0;
+		margin-bottom: 54px;
+		display: inline-block;
+		background-color: #f16522;
+		color: $white;
+		font: 15px $font;
+		line-height: 20px;
+		text-transform: capitalize;
+	}
+
+	.movies {
+		margin-top: 0;
+		margin-bottom: 47px;
+
+		.image {
+			width: 100%;
+			padding: 45% 0;
+			overflow: hidden;
+			position: relative;
+			img {
+				max-width: inherit;
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+}
+

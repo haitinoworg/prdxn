@@ -1,0 +1,57 @@
+/*
+* Reset Code ==========================================================
+*/
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* Reset Inputs */
+.wp-admin.settings_page_salesforce-wordpress-to-lead{
+	input[type="text"], 
+	input[type="search"], 
+	input[type="radio"], 
+	input[type="tel"], 
+	input[type="time"], 
+	input[type="url"], 
+	input[type="week"], 
+	input[type="password"], 
+	input[type="checkbox"], 
+	input[type="color"], 
+	input[type="date"], 
+	input[type="datetime"],
+	input[type="datetime-local"], 
+	input[type="email"], 
+	input[type="month"], 
+	input[type="number"], 
+	select, 
+	textarea {
+		width: 100%;
+		padding: 0;
+		border: 0;
+		margin: 0;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-webkit-appearance: none;
+	}
+	
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Focus */
+body {
+	a, input, button, select {
+		&:focus,
+		&:active { 
+			outline: none;	
+			border-color: transparent;
+		}
+	}
+
+	a, p, h1, h2, h3, h4, h5, h6 {
+		word-wrap: break-word;
+	}
+}

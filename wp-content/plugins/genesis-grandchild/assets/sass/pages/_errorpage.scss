@@ -1,0 +1,47 @@
+
+/*
+* Error Page Styling ----------------------------------------------------
+*/
+
+.error404,
+.page-template-sitemap {
+	// Search Form Styling
+	.entry { margin-bottom: 0; }
+	
+	.search-form {
+		margin: 31px 0;
+		position: relative;
+		input[type="search"] {
+			padding-right: 80px;
+			border: 1px solid #ddd;
+			&:focus {
+				border: 1px solid #ddd;
+			}
+		}
+
+		::-webkit-input-placeholder,
+		::-moz-placeholder,
+		:-ms-input-placeholder { color: #c4acac; }
+		
+		button[type="submit"] {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			&:hover,
+			&:focus {
+				background-color: $cta-color;
+				color: $white;
+			}
+		}
+	}
+
+	// Anchor Styling
+	p a,
+	li a {
+		color: $cta-color;
+		cursor: pointer;
+	}
+
+}

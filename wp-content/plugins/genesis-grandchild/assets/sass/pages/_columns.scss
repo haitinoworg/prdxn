@@ -1,0 +1,516 @@
+/*
+* Columns Styling -------------------------------------------
+*/
+
+
+.page-id-30 {
+	.program-posts.columns-page div.entry { margin-top: 5px;	}
+}
+
+.page-id-881 {
+	main.content {
+		padding: 0 0 12px;
+	}
+}
+
+.page-template-page_columns {
+
+	// main
+	.content {
+		@include boxmodel(3,84%,5,0,7,0 auto);
+		float: none;
+		@include property(perspective, 30px);
+		@include property(transform-style,preserve-3d);
+		article.entry { margin: 0; }
+	}
+
+	article.entry {	padding: 63px 0 0;	}
+
+	.program-posts .entry { 
+		@include boxmodel(3,89%,5,0,7,0 auto 66px);
+
+		.ajax-load-more-wrap { 
+			width: 100%;	
+			text-align: center;
+			button#load-more.read-more {
+				@include cta();
+				display: inline-block;
+			}
+
+		}
+	}
+
+	.columns-page.books {
+		.entry { margin: 0 auto; }
+	}
+
+
+
+	div.entry {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.columns-page {
+
+		div.entry { 
+			display: block; 
+			text-align: center;
+			@include tab() { width: 100%;  }
+		}
+
+	}
+
+	/* 
+	* Common Two Columns and Three Columns Styling ======================
+	*/
+	.two-columns,
+	.three-columns {
+		&>a { 
+			padding: 54%;
+			@include props(db,ovh, posr);	
+			img {
+				max-width: inherit;
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				@include tab() { height: auto; }
+			}
+
+			&.team-link,
+			&.team-link:hover,
+			&.team-link:focus { cursor: default; }
+		}
+
+		.entry-content {
+			box-sizing: border-box;
+			width: 100%;
+			@include props(ovh);
+			@include props(posa);
+			left: 0;
+
+			@include tab() {
+				width: 100%;
+				padding: 0 4%;
+			}
+
+			@include mobile() {
+				p { display: none; }
+			}
+		}
+
+	}
+
+
+	/*
+	* Two Columns Styling (Reading Materials, Movies) =======================
+	*/
+
+	.two-columns {
+		@include boxmodel(3,38%,5,0,7,0);
+		@include props(dib, ovh, vat, tac);
+
+		&:nth-child(2n) { margin-left: 9.1%; }
+
+		@include tab() {
+			width: 100%;
+			margin: 30px 0 0;
+			display: block;
+			&:nth-child(2n) { margin-left: 0; }
+		}
+
+		&>a { 
+			padding: 31% 0;
+			background-color: $black;
+
+			@include md() { padding: 25% 0; }
+
+			img { opacity: .4; } 
+
+			text-align: center;
+
+			.columns-title {
+				width: 100%;
+				margin-bottom: 0;
+				display: inline-block;
+				left: 0;
+				color: $white; 
+				font-size: 32px;
+
+				@include mobile() { font-size: 28px;	}
+			}
+		}
+
+
+		&>a:hover { @include props(bgb); }
+
+		.entry-content {
+			height: auto;
+			padding: 0 8%;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			@include property(transform, translateY(-50%));
+
+			@include maxWidth(769px) {	left: auto;	}
+
+			@include mobile() {
+				p { display: none; }
+			}
+
+			&, h3 {	color: $white;	}
+			h3 { 
+				font-size: 32px;	
+				@include mobile() {
+					font-size: 30px;
+				}
+			}
+			p {
+				@include boxmodel(4,auto,5,0 8%,7,0);
+				color: $white;
+				font-size: 17px;
+			}
+		}
+	}
+
+
+	/*
+	* Three Columns Styling (Books, Staff) ================================
+	*/
+	.three-columns {
+		@include boxmodel(3,29.5%,5,0,7,0 0 54px);
+		@include props(dib, ovh, vat, tac);
+		&:nth-child(3n + 2) { margin: 0 4.5% 54px; }
+
+		@include md() { 
+			width: 46%;
+			&:nth-child(3n + 2) { margin: 0; }			
+			&:nth-child(2n) { 
+				margin-bottom: 54px;
+				margin-left: 6%; 
+			}
+			margin: 0 0 54px;
+		}
+
+		@include tab() {
+			width: 100%;
+			&:nth-child(3n + 2) { margin: 0 0 54px; }	
+			&:nth-child(2n) { margin-left: 0; }
+			margin: 0 0 54px;
+			display: block;
+		}
+
+		.entry-content {
+			height: 100%;
+			top: 0;
+			@include property(animation, text-off .4s linear both);
+			color: $black;
+			
+			h3 { 
+				margin-bottom: 0;
+				color: $black;
+				font-size: 32px;	
+				@include mobile() {
+					font-size: 30px;
+				}
+			}
+			p {
+				@include boxmodel(4,auto,5,0,7,0);
+				font-size: 17px;
+			}
+
+			@include tab() {
+				top: 50%;
+				color: $white;
+				@include property(transform, translateY(-50%));
+				h3 { 
+					color: $white; 
+					font-size: 32px;
+				}
+				p { font-size: 17px; }
+			}
+
+		}
+
+
+		&>a { 
+			padding: 75% 0;
+			background-color: $white;
+			img {
+				@include property(animation, image-flip .4s linear both);
+			}
+			&:hover {
+				img {	@include property(animation, image-off .4s linear both);	}
+				.entry-content { @include property(animation, text-on .4s linear both); }
+			}
+
+			@include tab() { 
+				background-color: $black;
+				img {	opacity: .4; }
+			}
+
+			.entry-content {
+				border: 1px solid #7b7b7b;
+				&>div {
+					width: 100%;
+					height: 100%; 
+					padding: 20px 15px;
+					overflow-y: auto;
+				}
+			}
+		}
+	}
+
+}
+
+// Three Columns Animation Keyframes
+
+@include minWidth(769px) {
+
+	@-webkit-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
+
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-moz-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
+
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-o-keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
+
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+
+	@keyframes text-off {
+		from {
+			z-index: 1;
+			opacity: 1;
+		}
+		to {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-webkit-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	@-moz-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	@-o-keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	@keyframes text-on {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	
+	@-webkit-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	@-moz-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+
+	@-o-keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+	@keyframes image-flip {
+		0% {
+			z-index: 0;
+			opacity: 0;
+		}
+		100% {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+
+
+	@-webkit-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-moz-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@-o-keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+	@keyframes image-off {
+		0% {
+			z-index: 1;
+			opacity: 1;
+		}
+		100% {
+			z-index: 0;
+			opacity: 0;
+		}
+	}
+
+
+}
+
+
+/*
+* Gallery Accordion Styling =========================================
+*/
+
+.accordions-themes {
+	width: 50%;
+	margin-bottom: 57px;
+	display: inline-block;
+
+	@include md() { width: 100%; }
+	
+	.accordion-content {
+		p { margin: 15px 0 17px; }
+		p a {
+			width: auto;
+			max-height: 100%;
+			min-height: 100%;
+			height: auto;
+			margin: 0;
+			float: none;
+			text-decoration: none;
+			&:after {
+				display: none;
+			}
+
+			&:hover {
+				color: $cta-color;
+			}
+		}
+	}
+}
+
+
+/*
+* Movies Page Styling ===========================================
+*/
+.movies {
+
+	.entry-content { 
+		max-height: 100%;
+		display: block;
+	}
+
+	.detailed-content {
+		margin-bottom: 12px;
+	}
+}
+
+/*
+* Ajax Load More Books Styling
+*/
+
+.books { 
+	padding: 60px 0 11px;
+	text-align: center; 
+}

@@ -1,0 +1,147 @@
+
+
+// Mixin for box model css
+@mixin boxmodel($n1,$value1,$n2,$value2,$n3,$value3) {
+	#{nth($box-model,$n1)}: #{$value1};
+	#{nth($box-model,$n2)}: #{$value2};
+	#{nth($box-model,$n3)}: #{$value3};
+}
+
+
+// Css Properties and Values Mixin n arguments
+@mixin props($values...) {
+	@each $val in $values {
+		#{map-get($props,$val)}: #{map-get($css-values,$val)};
+	}
+}
+
+// Mixin for Border-radius property
+
+@mixin property($name,$value) {
+	-ms-#{$name}: $value;
+	-moz-#{$name}: $value;
+	-webkit-#{$name}: $value;
+	#{$name}: $value;
+}
+
+
+/*
+Media Queries ============================================
+*/
+
+/** User Defined Media Query Mixin **/
+@mixin maxWidth($max-width) {
+	@media screen and (max-width: #{$max-width}) {
+		@content;
+	}
+}
+
+@mixin minWidth($min-width) {
+	@media screen and (min-width: #{$min-width}) {
+		@content;
+	}
+}
+
+/*** Large Desktop Media Query Mixin **/
+
+@mixin lg() {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+
+/*** Desktop Media Query Mixin **/
+
+@mixin md() {
+	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+/*** Tab Media Query Mixin **/
+
+@mixin tab() {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+/*** Mobile Media Query Mixin **/
+
+@mixin mobile() {
+	@media screen and (max-width: 569px) {
+		@content;
+	}
+}
+
+
+/*
+Common Mixins ============================================
+*/
+
+@mixin common-title() {
+	margin-bottom: 42px;
+	font: 50px/46px $font;
+	text-transform: capitalize;
+	text-align: center;
+
+	@include tab() {
+		font-size: 40px;
+	}
+}
+
+@mixin title-after() {
+	&:after {
+		content: "";
+		width: 10%;
+		padding-bottom: 30px;
+		border-bottom: 1px solid $black;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+@mixin common-desc() {
+	@include boxmodel(2,"border-box",7,0,1,"");
+	font: 17px/26px $font;
+}
+
+@mixin cta() {
+	@include boxmodel(3,auto,5,10px 15px,7,30px 0 0);
+	border: 1px solid $cta-color;
+	@include property(border-radius, 2px);
+	background-color: $cta-color;
+	color: $white;
+	font: 15px $font;
+	line-height: 20px;
+	letter-spacing: .7px;
+	text-transform: uppercase;
+
+	&:focus {
+		border-color: $cta-color;
+		background-color: $cta-color;
+		color: $white;
+	}
+	&:hover {
+		border-color: $cta-color;
+		background-color: $white;
+		color: $cta-color;
+	}
+
+	@include maxWidth(1025) {
+		&:focus,
+		&:hover {
+			border: 1px solid $cta-color;
+			background-color: $cta-color;
+			color: $white;
+			font: 15px $font;
+		}
+	}
+}
+
+@mixin sub-title() {
+	font: 30px Roboto, sans-serif;
+	text-transform: capitalize;
+}
+

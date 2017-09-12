@@ -1,0 +1,43 @@
+
+/*
+* Error Page Styling ----------------------------------------------------
+*/
+
+.error404,
+.page-template-sitemap {
+	// Search Form Styling
+	.entry { margin-bottom: 0; }
+	
+	.search-form {
+		position: relative;
+		margin: 31px 0;
+		input[type="search"] {
+			padding-right: 80px;
+		}
+
+		::-webkit-input-placeholder,
+		::-moz-placeholder,
+		:-ms-input-placeholder { color: #c4acac; }
+		
+		button[type="submit"] {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			&:hover,
+			&:focus {
+				background-color: $cta-color;
+				color: #fff;
+			}
+		}
+	}
+
+	// Anchor Styling
+	p a,
+	li a {
+		color: $cta-color;
+		cursor: pointer;
+	}
+
+}

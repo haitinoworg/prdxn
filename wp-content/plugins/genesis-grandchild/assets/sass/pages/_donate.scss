@@ -1,0 +1,222 @@
+.page-template-page_donate {
+	main.content {
+		max-width: $maxWidth;
+		width: 100%;
+		margin: 0 auto;
+
+		.donate-title-bar { 
+			width: 100%; 
+			padding: 20px 0;
+			margin: 0;
+			background-color: $cta-color;
+			color: $white;
+			font: 50px/46px $font;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		article.entry {
+			padding: 0;
+			margin: 0;
+
+			.entry-content { 
+				@include boxmodel(3,84%,5,63px 0 63px,7,0 auto);
+				clear: both;
+				text-align: center;
+
+
+				h1,h2,h3,h4,h5,h6 { text-align: center; }
+
+				.wp-caption {	
+					margin: 0 2vw;
+					display: inline-block;	
+					@include props(dib,vat);
+
+					@include tab() { margin: 0 4vw 44px; }
+					img { @include boxmodel(1,"",3,84px, 4,84px); }
+
+					.wp-caption-text { 
+						margin-top: 12px; 
+						color: $green;
+						font: 28px/39px $font;
+					}
+				}
+			}
+
+
+			&:nth-of-type(1) {
+				.entry-content { 
+					padding: 63px 0 56px; 
+					@include tab() { padding: 63px 0 12px; }
+				}
+			}
+
+		}
+
+
+
+
+		/* Real Time Donation Data Section */
+		.donate-entry { background-color: #f2f2f2; }
+
+		/*
+		* Donation Hero Image Styling
+		*/
+
+		.programs-hero-image {
+			min-height: 450px;
+			@include boxmodel(3,100%,4,auto,5, 65px 0 63px);
+			overflow: hidden;
+			position: relative;
+			background-color: $black;
+			img { 
+				max-width: inherit;
+				width: 100%; 
+				height: auto;
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 0;
+
+				@include maxWidth(1025px) {
+					max-width: inherit;
+					width: auto;
+					height: 100%;
+				}
+
+			}
+
+			h1,h2,h3,h4,h5,h6 { 
+				width: 100%;	
+				color: $white;
+				font: 900 39px $font;
+				line-height: 44px;
+			}
+
+			p { font-size: 28px; }
+
+			.wrap {
+				box-sizing: border-box;
+				width: 84%;
+				position: relative;
+				z-index: 5;
+				color: $white;
+
+				&>h1,
+				&>h2,
+				&>h3,
+				&>h4,
+				&>h5,
+				&>h6 { 
+					width: 54%;
+					margin-bottom: 0;
+					display: inline-block;
+					vertical-align: bottom;
+					font-size: 39px;
+					text-align: right;
+
+					@include tab() {
+						width: 100%;
+						left: 0;
+						text-align: left;
+					}
+
+					@include mobile() {	font-size: 26px; }
+				}
+			}
+
+			.hero-content {
+				width: 100%;
+				display: inline-block;
+				position: relative;
+
+				.donate-desc { 
+					width: 45%;
+					margin-top: 58px;
+					float: right;
+					text-align: right;
+
+					@include tab() {
+						width: 100%;
+						margin-top: 0;
+						margin-bottom: 39px;
+						float: none;
+						text-align: left;
+					}
+
+					h2,
+					h3,
+					h4,
+					h5,
+					p { 
+						text-align: right; 
+						@include tab() { text-align: left;	}
+					}
+
+					h2,
+					h3,
+					h4,
+					h5 { margin-bottom: 12px;	}
+				}
+
+				p { 
+					width: 100%;
+					margin: 0 0 27px; 
+					@include tab() { width: 100%; }
+				}
+
+				@include tab() { width: 100%;	}
+
+
+				iframe {	
+					margin: 0;
+					@include mobile() {	box-sizing: border-box;	}
+				}
+			}
+		}
+
+	}
+}
+
+
+
+/*
+* Thankyou Page styling
+*/
+
+.page-id-1429,
+.page-id-1340 {
+	main.content {
+		.programs-hero-image {
+			.wrap {		
+				min-height: 450px;
+				.hero-content {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					@include property(transform,translateY(-50%));
+					.donate-desc,
+					h1,h2,h3,h4,h5,h6 { 
+						width: 100%;
+						margin-top: 0;
+						margin-bottom: 0;
+						text-align: left; 
+						text-transform: uppercase;
+						@include tab() { text-align: center; }
+					}
+					h1,h2 { font: 50px/46px $font; }
+				}
+			}
+		}
+
+		article.entry {
+			padding: 63px 0 60px;
+			.entry-content {
+				iframe { 
+					margin: 0 5px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
