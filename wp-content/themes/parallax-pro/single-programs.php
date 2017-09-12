@@ -10,7 +10,6 @@
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );
-// remove_action( 'genesis_entry_content', 'genesis_do_post_content'); 
 
 // * Hero Image with donate content
 	
@@ -31,10 +30,10 @@
 		}
 	}
 
-	// * Post List Content
-	//* Remove the author box on single posts XHTML Themes
+// * Post List Content
+//* Remove the author box on single posts XHTML Themes
 	remove_action( 'genesis_after_post', 'genesis_do_author_box_single' );
-	//* Remove the author box on single posts HTML5 Themes
+//* Remove the author box on single posts HTML5 Themes
 	remove_action( 'genesis_after_entry', 'genesis_do_author_box_single', 8 );
 
 	add_action('genesis_after_entry','custom_list_content');
@@ -42,7 +41,7 @@
 		$list_title = get_field('list-title');
 		$left_content = get_field('left_column_topic');
 		$right_content = get_field('right_column_topic');
-        // the_field('activities_list');
+      // the_field('activities_list');
 		if($list_title) {	echo '<div class="prgram-wrapper" style="background: url('. get_field('custom_background_image') .') no-repeat center; background-size: cover;"><h2 class="list-title">'. $list_title . '</h2>';	} 
 		else { echo '';	}
 		if($left_content && $right_content) {	

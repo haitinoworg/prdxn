@@ -8,12 +8,10 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 
-
-// echo get_page_template_slug( $post_id );
 global $post;
 $post_slug=$post->post_name;
 
-	// * Add the featured image after post title
+// * Add the featured image after post title
 add_action( 'genesis_before_entry', 'get_involved_featured_image' );
 function get_involved_featured_image() {
 	echo '<div class="programs-hero-image"><div class="wrap"><div class="hero-content"><div class="donate-desc">';
@@ -59,9 +57,9 @@ function salesforce_section() {
 
 	if(($section_checkbox[0] == "Add Fundraise Section") || ($section_checkbox[1] == "Add Fundraise Section") ) {
 		genesis_widget_area( 'home-section-7', array(
-		'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-		) );
+			'before' => '<div class="home-odd home-section-7 widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+			) );
 	} 
 
 	genesis_widget_area( 'home-section-9', array(

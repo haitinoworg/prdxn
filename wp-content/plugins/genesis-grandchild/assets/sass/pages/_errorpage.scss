@@ -13,6 +13,10 @@
 		position: relative;
 		input[type="search"] {
 			padding-right: 80px;
+			border: 1px solid #ddd;
+			&:focus {
+				border: 1px solid #ddd;
+			}
 		}
 
 		::-webkit-input-placeholder,

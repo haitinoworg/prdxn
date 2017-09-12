@@ -187,7 +187,7 @@ genesis_register_sidebar( array(
 	) );
 
 
-
+//* Remove the default entry headers
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
@@ -203,3 +203,9 @@ remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 )
 remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
 
 
+/* Changing Login Error Message */
+function wrong_login()
+{ 
+	return ' Enter valid username and password'; 
+} 
+add_filter('login_errors','wrong_login');

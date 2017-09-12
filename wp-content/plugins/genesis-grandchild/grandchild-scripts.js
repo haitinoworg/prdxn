@@ -105,13 +105,12 @@
     });
 
       /**
-     * [validate(): This function is used for form validations.
-     *  @param  {[type]} field    [input field type like name, email, etc.]
-     *  @param  {[type]} id   [Input field id]
-     *  @param  {[type]} regx   [Regular expression]
-     *  @param  {[type]} range  [Maximum allowed range into specific inputs]
-     *  @param  {[type]} btn_event  [button event to trigger or prevent click event.]
-     *  @return {[type]} error message  [Return error message.]
+     *  This function is used for form validations.
+     *  @param  {String} field  input field type like name, email, etc.
+     *  @param  {String} id   Input field id
+     *  @param  {String} regx   Regular expression
+     *  @param  {Number} range   Maximum allowed range into specific inputs
+     *  @param  {Object} btn_event  button event to trigger or prevent click event.
      */
     var validate = function(field, id, regx, range, btn_event) {
       var input_value = $(id).val();
@@ -146,15 +145,15 @@
     var textarea_reg = /^[a-zA-Z0-9$ &+, :;=#|'"\\\[\]. ^()%!{}-]{1,500}$/;
     var phone_reg = /^[{0-9}$&+, :;=@#|'"\\\[\]. ^()%!{}-]{6,20}$/;
     var email_reg = /^[\w._~`!@#$%^&\-=\+\\|\[\]'";:.,]+@[a-zA-Z\w-_]+\.[a-zA-Z.]{2,3}$/;
+    var search_reg = /^[a-zA-Z0-9]{1,500}$/;
 
     /**
-     * [elements_validate: Passes argument into validate() 
-     *  function for focus-out and focus-in of input fields.]
-     *  @param  {[type]} elemen_id    [input field id]
-     *  @param  {[type]} param1   [Input field type]
-     *  @param  {[type]} param2   [Regular expression]
-     *  @param  {[type]} param_range  [Maximum allowed range into specific inputs]
-     *  @return   {[type]} validate()  [This function is used to validate inputs.]
+     *  This function passes argument into validate() 
+     *  function for focus-out and focus-in of input fields.
+     *  @param  {String} elemen_id   input field id
+     *  @param  {String} param1   Input field type
+     *  @param  {String} param2   Regular expression
+     *  @param  {Number} param_range  Maximum allowed range into specific inputs
      */
     
     function elements_validate(elemen_id, param1, param2, param_range) {
@@ -186,7 +185,7 @@
     elements_validate("textarea[placeholder='Volunteer Professional Skills *']", 'volunteer skills', textarea_reg, 500);
     elements_validate("textarea[placeholder='Volunteer Comments *']", 'volunteer comments', textarea_reg, 500);
     elements_validate("textarea[placeholder='Description *']", 'description', textarea_reg, 500);
-    elements_validate(".search-form input[type='search']",'', name_reg, 100);
+    elements_validate(".search-form input[type='search']",'', search_reg, 100);
 
     /**
      * Subscribe form fields 
@@ -228,8 +227,8 @@
     });
 
     // Search form Submition  Field Name: Search
-    $(".search-form button").click(function(event) {
-      validate('search', ".search-form input", '', '', 500, event);
+    $(".search-form input[type='submit']").click(function(event) {
+      validate('search', ".search-form input[type='search']", search_reg, 500, event);
     });
 
 
@@ -275,7 +274,13 @@
      $(this).siblings('li').removeClass('active');
      $(this).addClass('active');
      $(".tabs .tab-detail").hide();
+     if($(".tabs .tab-detail:nth-child("+ child +")").children('div').hasClass('listviewxxx')) {
+      $('.listviewxxx .js-masonry').masonry( 'destroy' );
+      $(".tabs .tab-detail:nth-child("+ child +")").show();
+      $('.listviewxxx .js-masonry').masonry({ "itemSelector": "figure", "isOriginLeft": true, "isFitWidth": true });
+   } else {
      $(".tabs .tab-detail:nth-child("+ child +")").show();
+   }
     });
 
     $("#research-tabs ul li").on('click', function() {

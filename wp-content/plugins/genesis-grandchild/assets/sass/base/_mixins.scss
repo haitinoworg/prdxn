@@ -93,12 +93,12 @@ Common Mixins ============================================
 
 @mixin title-after() {
 	&:after {
+		content: "";
 		width: 10%;
 		padding-bottom: 30px;
 		border-bottom: 1px solid $black;
 		margin: 0 auto;
 		display: block;
-		content: "";
 	}
 }
 

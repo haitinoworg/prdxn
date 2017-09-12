@@ -38,10 +38,6 @@ function rtug_before_entry_content() {
 	}
 }
 
-//* Remove site footer widgets
-// remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-
-
 // Form Section Structure
 add_action('genesis_after_entry','form_structure');
 function form_structure() {

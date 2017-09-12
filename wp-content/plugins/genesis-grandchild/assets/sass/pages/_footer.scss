@@ -390,6 +390,7 @@ Footer Section-1
 		}
 
 		a:hover:after {
+			content: '';
 			width: 100%;
 			height: 100%;
 			border-radius: 50%;
@@ -398,10 +399,10 @@ Footer Section-1
 			position: absolute;
 			top: 0;
 			left: 0;
-			content: '';
 		} 
 
 		a:hover::after {
+			content: '';
 			width: 100%;
 			height: 100%;
 			-webkit-border-radius: 50%;
@@ -411,7 +412,6 @@ Footer Section-1
 			position: absolute;
 			top: 0;
 			left: 0;
-			content: '';
 		} 
 
 		// Icons Hover Images
@@ -527,8 +527,8 @@ Footer Section-1
 			width: 100px;
 			height: 20px;
 			margin-right: 10px;
-			float: left;
 			overflow: hidden !important;
+			float: left;
 
 			@include md() { 
 				display: inline-block; 
@@ -673,8 +673,8 @@ Footer Section-1
 		.like {
 			width: 75%;
 			margin: 0 auto;
-			float: none;
 			overflow: auto;
+			float: none;
     	iframe { float: none;	}
 		}
 		.copyright { .site-title { display: none; }	}

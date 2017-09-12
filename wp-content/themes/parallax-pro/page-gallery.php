@@ -35,7 +35,6 @@ function programs_featured_image() {
 }
 
 //* Remove site footer widgets
-// remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_entry_footer', 'sponsors_loop' );
 function sponsors_loop(){
   ?>      

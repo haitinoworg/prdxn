@@ -43,7 +43,7 @@
 
 .page-template-page-gallery {
   .gallery {
-    width: 87%;
+    width: 84%;
     margin: 0 auto;
   }
 
@@ -51,6 +51,13 @@
 
 .tab-detail {
 	display: none;
+
+  .listview {
+    .thumbnail { 
+      width: 25%;
+      float: left;
+    }
+  }
 
   p {
     a{
@@ -82,6 +89,7 @@
     }
 
     a::after {
+      content: ' ';
       width: 100%;
       height: 100%;
       display: block;
@@ -90,7 +98,6 @@
       left: 0;
       animation: hover-album-rev .4s forwards;
       background: rgba(0, 0, 0, .39);
-      content: ' ';
     }
 
     a:hover::after {
@@ -163,12 +170,12 @@
 .album {
 	position: relative;
 	a::after {
+    content: ' ';
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    content: ' ';
   }
 }
 
@@ -184,6 +191,7 @@
     }
     
     a::before {
+      content: ' ';
       width: 100%;
       height: 100%;
       display: block;
@@ -191,7 +199,6 @@
       top: 0;
       left: 0;
       background: rgba(0, 0, 0, .38);
-      content: ' ';
     }
 
     a:hover:before {
@@ -216,6 +223,11 @@
 
 .programs-hero-image {
 	.tabs  {
+    @include maxWidth(569px) {
+      position: absolute;
+      bottom: 0;
+    }
+
 		ul{
 			margin: 0;
       position: absolute;
@@ -262,9 +274,9 @@
 .gallery-video-content { 
   #huge_it_videogallery {
    padding: 0;
-   box-shadow: none;
    overflow: auto;
    background: $white;
+   box-shadow: none;
    text-align: left;
 
    .huge_it_big_li {
@@ -278,6 +290,16 @@
     margin: 0 4.5% 45px 0 !important;
     float: left;
     position: relative;
+
+
+    @include md() {
+      height: 150px;
+    }
+
+    @include tab() {
+      width: 100%; 
+      height: 55vw;
+    }
 
     img {
      max-width: none;
@@ -299,15 +321,6 @@
 }
 
 .huge_it_big_li:hover a::after { opacity: .6; }
-
-@include tab() {
-	.gallery-video-content { 
-   #huge_it_videogallery {
-     .huge_it_big_li { width: 100%; }
-  }
-}
-
-}
 
 @include mobile() {
     .page-template-page-gallery {

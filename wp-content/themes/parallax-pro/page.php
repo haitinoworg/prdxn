@@ -13,8 +13,6 @@
 
 // This file handles pages, but only exists for the sake of child theme forward compatibility.
 
-// remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-
 if(!is_page('blog')) {
 	remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 }

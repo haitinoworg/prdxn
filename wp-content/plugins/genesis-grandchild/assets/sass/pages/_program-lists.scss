@@ -87,6 +87,7 @@ main.content {
 		ol li::after,
 		ul li:after,
 		ol li:after {
+			content: '.';
 			width: 100%;
 			height: 100%;
 			display: block;
@@ -94,7 +95,6 @@ main.content {
 			top: -52px;
 			left: -28px;
 			color: #f16522;
-			content: '.';
 			font-size: 70px;
 		}
 	}

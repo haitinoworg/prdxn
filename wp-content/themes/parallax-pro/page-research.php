@@ -57,7 +57,6 @@ function research_tabs_loop() {
 }
 
 //* Remove site footer widgets
-// remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_after_loop', 'sponsors_loop' );
 function sponsors_loop(){
   ?>     
@@ -69,25 +68,25 @@ function sponsors_loop(){
     $post_slug = $post->post_name;
     $accordion_code = get_field('accordion_shortcode'); 
 
-      ?>
-      <div class="tab-detail">
-        <div class="tab-page-content">
-          <?php the_content(); ?>
-        </div>
-        <?php if($accordion_code) { echo do_shortcode($accordion_code); }   ?>
+    ?>
+    <div class="tab-detail">
+      <div class="tab-page-content">
+        <?php the_content(); ?>
       </div>
-      <?php
+      <?php if($accordion_code) { echo do_shortcode($accordion_code); }   ?>
+    </div>
+    <?php
     $page_object = get_field('select_tab_pages');
     if( $page_object ): setup_postdata( $page_object ); 
     foreach($page_object as $post): 
       ?>
     <div class="tab-detail">
-    <div class="tab-page-content">
-          <?php 
-          $content = $post->post_content;
-          echo $content;
-          ?>
-    </div>
+      <div class="tab-page-content">
+        <?php 
+        $content = $post->post_content;
+        echo $content;
+        ?>
+      </div>
       <?php
       $accordion_code = get_field('accordion_shortcode'); 
       if($accordion_code) {  echo do_shortcode($accordion_code); }
